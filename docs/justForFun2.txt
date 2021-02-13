@@ -1,4 +1,0 @@
-<<<<<<< HEAD
-abcd2 abc3
-=======
->>>>>>> parent of e191f99 (csak azért is)

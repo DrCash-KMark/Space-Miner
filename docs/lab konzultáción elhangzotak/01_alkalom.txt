@@ -13,12 +13,17 @@ Felhasznált eszközöket, majd fel kell sorolni.
 ARchitektura 3 komponens felsorolása
 
 =================================================================
+2.2.1
+Áttekintés, az MVC modellen keresztül kell leírni, hogy a készülő szoftver melyik része mit csinál.
 
 2.2.2 LEGFONTOSABB
 Mit tud csinálni a szoftver? Követelmények: Logika (Tárgylapon lévő leírás pontosítása) pl:bányászunk aszteroidából kiszedünk akkor üregesé válik? {logikus ha igen}. NE legyen utalás, hogy néz ki, vagy mivel irányitjuk. Ne legyen PLOT.
 
 2.2.3
 Mit tud kezelni, milyen rendszerben tud futni (minimum gép igény).
+
+2.2.4
+Milyen rendszeren fog futni, milyen környezetet várunk el?
 
 2.3
 Formalizálni a 2.2.2-t +leírás hozzá érdemes a legfontosabb mondatokat listázni
@@ -30,6 +35,13 @@ Forrás: honan származik egy-egy követelmény
 
 USE-Case: Mi fedi le az egyes követelményeket.
 
+2.3.2
+Mennyi memória, milyen környezet stb
+
+2.3.3
+Átadás, mikor mondhatjuk, hogy a szoftver elkészült? Mikor veheti használatba a felhasználó?
+
+2.3.4
 Egyéb követelmények: Soft-tech-ből tanult dolgok, jó válasz idő, kényelmes GUI.
 
 2.4 „Ne spilázuk túl” Mit tud a játékos/felhasználó kezdeni a játékkal (fúrni, bányászni, kaput építeni)

@@ -1,0 +1,50 @@
+Skeleton
+
+Prototipus
+
+Grafikus
+
+Legalább 40% a minimum.
+
+Minden fázis szoftver leadás, ami tesztelve is lesz.
+Minden fázis végén % munka, teljesítmény leírása.
+Csak JAVA, előírt környezetben futnia kell.
+Felhasznált eszközöket, majd fel kell sorolni.
+ARchitektura 3 komponens felsorolása
+
+=================================================================
+
+2.2.2 LEGFONTOSABB
+Mit tud csinálni a szoftver? Követelmények: Logika (Tárgylapon lévő leírás pontosítása) pl:bányászunk aszteroidából kiszedünk akkor üregesé válik? {logikus ha igen}. NE legyen utalás, hogy néz ki, vagy mivel irányitjuk. Ne legyen PLOT.
+
+2.2.3
+Mit tud kezelni, milyen rendszerben tud futni (minimum gép igény).
+
+2.3
+Formalizálni a 2.2.2-t +leírás hozzá érdemes a legfontosabb mondatokat listázni
+tesztelés teszt program vagy kézi
+
+Prioritás: mi kell a futáshoz
+
+Forrás: honan származik egy-egy követelmény
+
+USE-Case: Mi fedi le az egyes követelményeket.
+
+Egyéb követelmények: Soft-tech-ből tanult dolgok, jó válasz idő, kényelmes GUI.
+
+2.4 „Ne spilázuk túl” Mit tud a játékos/felhasználó kezdeni a játékkal (fúrni, bányászni, kaput építeni)
+4-5 gomboc elég, nem kell túl bonyolítani. USE-CASE azonosító egyezen a táblázatban lévővel.
+Aktor a felhasználó (HA nagyon muszáj, akkor lehet belső aktor {Robot nem aktor!})
+
+Szótár: meg kell magyarázni a szinonimákat, teljes leírás. Ne csak főnév hanem igék is (fúrni, bányászni, …) ABC sorendben
+
+2.6 projekt terv, projekt űtemezése + erőforások.
+Web oldalon lévő ütemezés átvétele érdemes, (az jelzi mi mire épül, és mennyi időt vesz igénybe nagyjából).
+
+Adott héten ki mit csinált, a konzultációs részvételnek is.
+
+=====================================================================
+
+Teams csatornán lesz válasz hétvégén nem.
+
+Az elkészített dokumentuációt el lehet küldeni Balázsnak, hogy vissza tudjon jelezni még beadás előtt.

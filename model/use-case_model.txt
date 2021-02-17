@@ -1,0 +1,191 @@
+
+	 _______________________
+	|						|
+	|	USE-CASE LEÍRÁSOK	|
+	|_______________________|
+
+
+	Use-case neve			Rövid leírás				Aktorok					Forgatókönyv
+======================================================================================================================================================
+
+Kapcsolódó szótárbejegyzések:
+
+lép ~ átkerül ~ mozog:
+egy objektum megváltoztatja a pozícióját. Egy kiindulási helyről egy célállomásra jut.
+
+
+
+--------------------------------------------------------------------------------------------------
+Use-case neve
+mozgás
+
+Rövid leírás
+A játékos utasítást ad a telepesnek, hogy a pozícióját változtassa meg. 
+Így a telepes az egyik aszteroidáról a másik szomszédos aszteroidára kerül.
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1. A játékos választ a szomszédos aszteroidák közül.
+2. Paraméterként átadja a telepesnek a választott aszteroidát.
+3. A telepes megváltoztatja a pozícióját a kapott, új aszteroidára.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+fúrás
+
+Rövid leírás
+A játékos utasítást ad egy telepesnek, hogy végezzen egy egységnyi fúrást az aszteroidán.
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1. A telepes az aszteroida köpenyében egy egységgel mélyíti a lyukat.
+2a. Ha átfúrta a köpenyt, akkor a mag tartalma elérhetővé válik bányászásra.
+
+2b. Ha az aszteroida üreges, akkor a továbbiakban nem lehetséges bányászás.
+2c. Ha az aszteroida tartalma radioaktív és az aszteroida napközelben tartózkodik, felrobban az aszteroida.
+	Elpusztul az aszteroida és a rajta tartózkodó telepes.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+bányászás
+
+Rövid leírás
+A játékos utasítást ad a telepesnek, hogy egy átfúrt köpenyű aszteroida tartalmát kinyerje.
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1. A telepes a magban lévő nyersanyagból kibányászik egy egységnyit.
+2. A kibányászott nyersanyagot az űrhajója tárolójába helyezi. Így szállítható a nyersanyag.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+automatikus lépés
+
+Rövid leírás
+Az órajelre történő műveletek vezénylése, amelyek a játékos beavatkozása nélkül történnek.
+
+Aktorok
+Kontroller
+
+Forgatókönyv
+1. Eldönti, van-e napvihar.
+2. Minden aszteroidáról eldönti, hogy az napközelben tartózkodik-e.
+3. Elvégzi a robotok automatikus cselekvéseit.
+------------------------------------------------------------------------------------------------
+Use-case neve
+robot cselekvés
+
+Rövid leírás
+A robot autonóm cselekvései. Ezeket a játékos beavatkozása nélkül végzi.
+
+Aktorok
+Kontroller
+
+Forgatókönyv
+1a. Robot fúrás.
+1b. Robot mozgás.
+1c. Ha egyiket sem tudja megtenni, akkor nem csinál semmit.
+------------------------------------------------------------------------------------------------
+Use-case neve
+robot mozgás
+
+Rövid leírás
+A robot pozíciója megváltozik. Egyik aszteroidáról egy másik, szomszédos aszteroidára lép.
+
+Aktorok
+Kontroller
+
+Forgatókönyv
+1. Kiválasztódik egy a robot jelenelgi pozíciójával szomszédos aszteroidák közül.
+2. A robot megváltoztatja a pozícióját a kapott, új aszteroidára.
+------------------------------------------------------------------------------------------------
+Use-case neve
+robot fúrás
+
+Rövid leírás
+A Kontroller utasítására a robot egy egységnyi fúrást végez az aszteroidán.
+
+Aktorok
+Kontroller
+
+Forgatókönyv
+1. Ha a köpeny még nincs teljesen átfúrva, a robot az aszteroida köpenyében egy egységgel mélyíti a lyukat.
+------------------------------------------------------------------------------------------------
+Use-case neve
+napvihar vizsgálat
+
+Rövid leírás
+Időnként napvihar figyelhető meg. Minden pillanatban meg lehet állapítani, hogy éppen van-e napvihar.
+
+Aktorok
+Kontroller
+
+Forgatókönyv
+1. Ha napvihar alakul ki, a nem átfúrt köpenyű aszteroidán tartózkodó telepesek és robotok megsemmisülnek.
+1b. Ha napvihar közben a telepesek vagy robotok átfúrt köpenyű aszteroidán tartózkodnak, akkor megmenekülnek a napvihartól.
+------------------------------------------------------------------------------------------------
+Use-case neve
+napközelség vizsgálat
+
+Rövid leírás
+Időnként az aszteroidák napközelből naptávolba kerülnek vagy naptávolból napközelbe kerülnek.
+Minden pillanatban meg lehet állapítani, hogy egy aszteroida éppen napközelben tartózkodik-e.
+
+Aktorok
+Kontroller
+
+Forgatókönyv
+1. Ha a bázis aszteroidán egyszerre tartózkodnak telepesek, amelyek által szállított nyersanyagok elégségesek az építkezéshez,
+akkor a telepesek megnyerték a játékot.
+------------------------------------------------------------------------------------------------
+Use-case neve
+napközelség vizsgálat
+
+Rövid leírás
+Időnként az aszteroidák napközelből naptávolba kerülnek vagy naptávolból napközelbe kerülnek.
+Minden pillanatban meg lehet állapítani, hogy egy aszteroida éppen napközelben tartózkodik-e.
+
+Aktorok
+Kontroller
+
+Forgatókönyv
+1a. Ha az aszteroida napközelben tartózkodik, a köpenye átfúrt és radioaktív a magja, akkor az aszteroida felrobban.
+1b. Ha az aszteroida napközelben tartózkodik, de a köpenye nem átfúrt vagy nem radioaktív a magja, akkor az aszteroida nem robban fel.
+1c. Ha az aszteroida nem tartózkodik napközelben és a magja radioaktív,
+	akkor a nyersanyag kibányászható és a továbbiakban semlegesként (nem radioaktívként) kezelhető.
+2. A felrobbant aszteroidán tartózkodott telepesek megsemmisülnek, a robotok egy-egy a felrobbant aszteroidával szomszédos aszteroidára repülnek.
+------------------------------------------------------------------------------------------------
+Use-case neve
+győzelem
+
+Rövid leírás
+Eldönthető, hogy a telepesek megnyerték-e  a játékot. Ennek feltétele, hogy minden szükséges nyersanyagból gyűjtsenek össze egy egységet egy közös, bázis aszteroidára.
+
+Aktorok
+Játékos
+Kontroller
+
+Forgatókönyv
+1. Ha a bázis aszteroidán egyszerre tartózkodnak telepesek, amelyek által szállított nyersanyagok elégségesek az építkezéshez,
+akkor a telepesek megnyerték a játékot.
+------------------------------------------------------------------------------------------------
+Use-case neve
+vereség
+
+Rövid leírás
+Eldönthető, hogy a telepesek elvesztették-e  a játékot. Ennek feltétele, hogy az összes telepes halott legyen.
+
+Aktorok
+Játékos
+Kontroller
+
+Forgatókönyv
+1. Ha minden telepes meghalt, akkor a telepesek veszítenek.
+------------------------------------------------------------------------------------------------
+

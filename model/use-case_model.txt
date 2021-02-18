@@ -225,7 +225,7 @@ Rövid leírás
 Eldönthető, hogy a telepesek megnyerték-e  a játékot. Ennek feltétele, hogy minden szükséges nyersanyagból gyűjtsenek össze egy egységet egy közös, bázis aszteroidára.
 
 Aktorok
-Játékos
+Felhasználó
 Kontroller
 
 Forgatókönyv
@@ -239,7 +239,7 @@ Rövid leírás
 Eldönthető, hogy a telepesek elvesztették-e  a játékot. Ennek feltétele, hogy az összes telepes halott legyen.
 
 Aktorok
-Játékos
+Felhasználó
 Kontroller
 
 Forgatókönyv

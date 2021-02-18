@@ -11,9 +11,22 @@
 Kapcsolódó szótárbejegyzések:
 
 lép ~ átkerül ~ mozog:
-egy objektum megváltoztatja a pozícióját. Egy kiindulási helyről egy célállomásra jut.
+	egy objektum megváltoztatja a pozícióját. Egy kiindulási helyről egy célállomásra jut.
 
+aszteroida:
 
+üreges aszteroida:
+	Amely magjában nincsen nyersanyag.
+
+elhasznál:
+	A nyersanyag megsemmisül.
+
+kapu ~ teleportkapu
+
+--------------------------------------------------------------------------------------------------
+Megbeszélendő:
+	A bányászás során a karakterek egyszerre csak egy egységnyi, vagy akár az összes magban lévő nyersanyagot tudják kinyerni? Motiváció: Visszahelyezni egységenként lehet.
+	Szét legyen-e ennyire bontva a robot viselkedése?
 
 --------------------------------------------------------------------------------------------------
 Use-case neve
@@ -60,10 +73,68 @@ Aktorok
 Felhasználó
 
 Forgatókönyv
-1. A telepes a magban lévő nyersanyagból kibányászik egy egységnyit.
-2. A kibányászott nyersanyagot az űrhajója tárolójába helyezi. Így szállítható a nyersanyag.
+1. A telepes a magban lévő nyersanyagot a saját tárolójába rakja.
+	Így szállítható a nyersanyag.
+	Egyszerre legfeljebb 10 egységnyi nyersanyag lehet az űrhajóban.
 
 ------------------------------------------------------------------------------------------------
+Use-case neve
+visszahelyezés
+
+Rövid leírás
+Üreges aszteroidába visszahelyezhető nyersanyag. Így felszabadítható a tároló kapacitás valamilyen más nyersanyag típus számára.
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1. Ha a telepes átfúrt köpenyű, üreges aszteroidán tartózkodik, akkor a saját tárolójában lévő nyersanyagok közül kiválaszthat egy egységnyit visszahelyezésre.
+2. A kiválasztott nyersanyag visszahelyeződi a tárolóból az aszteroida magjába.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+robotépítés
+
+Rövid leírás
+A telepesek autonóm robotot hozhatnak létre. 
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1. Ha egy telepes tárolójában van legalább egy egységnyi vas, szén és urán, akkor ezen nyersanyagokból egy-egy egységet elhasználva létrehozhat egy robotot.
+2. A robot azon az aszteroidán helyeződik el, amelyen a telepese tartózkodott, amikor létrehozta.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+kapu készítés
+
+Rövid leírás
+A telepesek teleportkapukat építhetnek. 
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1. Ha egy telepes tárolójában van legalább egy egységnyi vízjég és urán, akkor ezen nyersanyagokból egy-egy egységet elhasználva létrehozhat egy teleportkapu-párt.
+	Az egyszerre létrehozott két kapu összeköttetésben lesz.
+	Egy telepesnél legfeljebb két darab kapu lehet.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+kapu lerakás
+
+Rövid leírás
+A telepesek az aszteroidákon teleportkapukat tudnak lerakni. 
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1. Ha egy telepes tárolójában van legalább egy teleportkapu, akkor azt le tudja rakni az aktuális tartózkodási helyén (aszteroidán).
+	Ha egy kapupár mindkét eleme el van helyezve egy-egy aszteroidán, akkor az egyik kapuba lépve a másik kapu aszteroidájára kerül a telepes vagy robot.
+------------------------------------------------------------------------------------------------
+
 Use-case neve
 automatikus lépés
 
@@ -127,22 +198,8 @@ Aktorok
 Kontroller
 
 Forgatókönyv
-1. Ha napvihar alakul ki, a nem átfúrt köpenyű aszteroidán tartózkodó telepesek és robotok megsemmisülnek.
+1a. Ha napvihar alakul ki, a nem átfúrt köpenyű aszteroidán tartózkodó telepesek és robotok megsemmisülnek.
 1b. Ha napvihar közben a telepesek vagy robotok átfúrt köpenyű aszteroidán tartózkodnak, akkor megmenekülnek a napvihartól.
-------------------------------------------------------------------------------------------------
-Use-case neve
-napközelség vizsgálat
-
-Rövid leírás
-Időnként az aszteroidák napközelből naptávolba kerülnek vagy naptávolból napközelbe kerülnek.
-Minden pillanatban meg lehet állapítani, hogy egy aszteroida éppen napközelben tartózkodik-e.
-
-Aktorok
-Kontroller
-
-Forgatókönyv
-1. Ha a bázis aszteroidán egyszerre tartózkodnak telepesek, amelyek által szállított nyersanyagok elégségesek az építkezéshez,
-akkor a telepesek megnyerték a játékot.
 ------------------------------------------------------------------------------------------------
 Use-case neve
 napközelség vizsgálat

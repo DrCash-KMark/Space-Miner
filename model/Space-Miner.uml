@@ -45,7 +45,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="WhD7hf4QGky9xE0BpTBiswAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="o44FR4Ncd0CpJIr+DPZ+sAAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">j&#225;t&#233;kos</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Felhaszn&#225;l&#243;</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="ocurAyjKBkW9m0HoXa2UEAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -74,7 +74,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="VFE/McGR6U+PH06rlmCriAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="rC2CRvPQe0W3GM7+/FhKpgAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">kontroller</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Kontroller</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="A26lpfv3ukqZzGgJv1/kQwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -96,7 +96,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedElements" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLActor" guid="6C7YXWxOjEa30cqUksgxuwAA">
-<XPD:ATTR name="Name" type="string">j&#225;t&#233;kos</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Felhaszn&#225;l&#243;</XPD:ATTR>
 <XPD:REF name="Namespace">vU2h/8dVcE2AFQ3Vrg4/6QAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">3</XPD:ATTR>
 <XPD:REF name="Views[0]">KJXs898MH0WuOobMZNTpFAAA</XPD:REF>
@@ -104,7 +104,7 @@
 <XPD:REF name="Views[2]">ZLN5OcSqfkGu4XnI0R+NJQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[1]" type="UMLActor" guid="r/PTs2u4mEy/MYpBBvwBSwAA">
-<XPD:ATTR name="Name" type="string">kontroller</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Kontroller</XPD:ATTR>
 <XPD:REF name="Namespace">vU2h/8dVcE2AFQ3Vrg4/6QAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">3</XPD:ATTR>
 <XPD:REF name="Views[0]">8B6DU9kzz0KvEzCSuiH+rQAA</XPD:REF>

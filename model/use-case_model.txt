@@ -23,6 +23,18 @@ elhasznál:
 
 kapu ~ teleportkapu
 
+telepes
+aszteroidaöv
+bázis
+robot
+nap
+aszteroia
+napkitörés, napvihar
+fúrás
+bányászat
+robotépítés
+entitás
+
 --------------------------------------------------------------------------------------------------
 Megbeszélendő:
 	A bányászás során a karakterek egyszerre csak egy egységnyi, vagy akár az összes magban lévő nyersanyagot tudják kinyerni? Motiváció: Visszahelyezni egységenként lehet.

@@ -79,7 +79,7 @@ Aktorok
 Felhasználó
 
 Forgatókönyv
-1a. Ha a telepes tárolójában kevesebb, mint 10 egység nyersanyag van, az aszteroida köpenye át van fúrva és a magjában van nyersanyag,
+1. Ha a telepes tárolójában kevesebb, mint 10 egység nyersanyag van, az aszteroida köpenye át van fúrva és a magjában van nyersanyag,
 akkor a telepes a magban lévő nyersanyagból egy egységet a saját tárolójába rak.
 
 ------------------------------------------------------------------------------------------------
@@ -147,7 +147,7 @@ Forgatókönyv
 
 ------------------------------------------------------------------------------------------------
 Use-case neve
-napvihar vizsgálat
+napvihar
 
 Rövid leírás
 Időnként napvihar figyelhető meg. Minden pillanatban meg lehet állapítani, hogy éppen van-e napvihar.
@@ -160,22 +160,3 @@ Forgatókönyv
 2a. Ha minden telepes meghalt, akkor a telepesek veszítenek.
 1b. Ha napvihar közben a telepesek vagy robotok átfúrt köpenyű aszteroidán tartózkodnak, akkor megmenekülnek a napvihartól.
 ------------------------------------------------------------------------------------------------
-Use-case neve
-napközelség vizsgálat
-
-Rövid leírás
-Időnként az aszteroidák napközelből naptávolba kerülnek, vagy naptávolból napközelbe kerülnek.
-Minden pillanatban meg lehet állapítani, hogy egy aszteroida éppen napközelben tartózkodik-e.
-
-Aktorok
-Kontroller
-
-Forgatókönyv
-1a. Ha az aszteroida napközelben tartózkodik, a köpenye átfúrt és radioaktív a magja, akkor az aszteroida felrobban.
-1b. Ha az aszteroida nem tartózkodik napközelben és a magja radioaktív,
-	akkor a nyersanyag kibányászható és a továbbiakban semlegesként (nem radioaktívként) kezelhető.
-2a. A felrobbant aszteroidán tartózkodott telepesek megsemmisülnek, a robotok a felrobbant aszteroidával szomszédos aszteroidára repülnek.
-Az aszteroidán lévő teleportkapuk és párjaik megsemmisülnek.
-3a. Ha minden telepes meghalt, akkor a telepesek veszítenek.
-------------------------------------------------------------------------------------------------
-

@@ -1,0 +1,162 @@
+
+	 _______________________
+	|						|
+	|	USE-CASE LEÍRÁSOK	|
+	|_______________________|
+
+
+	Use-case neve			Rövid leírás				Aktorok					Forgatókönyv
+======================================================================================================================================================
+
+Kapcsolódó szótárbejegyzések:
+
+lép ~ átkerül ~ mozog:
+	egy objektum megváltoztatja a pozícióját. Egy kiindulási helyről egy célállomásra jut.
+
+aszteroida:
+
+üreges aszteroida:
+	Amely magjában nincsen nyersanyag.
+
+elhasznál:
+	A nyersanyag megsemmisül.
+
+kapu ~ teleportkapu
+
+--------------------------------------------------------------------------------------------------
+Megbeszélendő:
+	A bányászás során a karakterek egyszerre csak egy egységnyi, vagy akár az összes magban lévő nyersanyagot tudják kinyerni? Motiváció: Visszahelyezni egységenként lehet.
+	Eredmény:
+		Igen, egyszerre egy elemet.
+		
+	Szét legyen-e ennyire bontva a robot viselkedése?
+	Eredmény:
+		NEM!!!
+
+--------------------------------------------------------------------------------------------------
+Use-case neve
+mozgás
+
+Rövid leírás
+Egy entitás az aktuális tartózkodási helyéről egy másik, szomszédos aszteroidára kerül. 
+
+Aktorok
+Felhasználó
+Kontroller
+
+Forgatókönyv
+1a. Az entitás megváltoztatja a pozícióját egy szomszédos aszteroidára.
+1b. Olyan teleportkaput használva, amelynek a párja is el van helyezve egy másik aszteroidán, az entitás a másik kapu aszteroidájára kerül.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+fúrás
+
+Rövid leírás
+Egy entitás fúrást végez az aszteroidán.
+
+Aktorok
+Felhasználó
+Kontroller
+
+Forgatókönyv
+1. Az entitás az aszteroida köpenyében egy egységgel mélyíti a lyukat.
+2a. Ha átfúrta a köpenyt, akkor a mag tartalma elérhetővé válik bányászásra.
+
+2b. Ha az aszteroida tartalma radioaktív és az aszteroida napközelben tartózkodik, felrobban az aszteroida.
+3b. A felrobbant aszteroidán tartózkodott telepesek megsemmisülnek, a robotok a felrobbant aszteroidával szomszédos aszteroidára repülnek.
+Az aszteroidán lévő teleportkapuk és párjaik megsemmisülnek.
+4b. Ha minden telepes meghalt, akkor a telepesek veszítenek.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+bányászás
+
+Rövid leírás
+A felhasználó utasítást ad a telepesnek, hogy egy átfúrt köpenyű aszteroida tartalmát kinyerje.
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1. Ha a telepes tárolójában kevesebb, mint 10 egység nyersanyag van, az aszteroida köpenye át van fúrva és a magjában van nyersanyag,
+akkor a telepes a magban lévő nyersanyagból egy egységet a saját tárolójába rak.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+visszahelyezés
+
+Rövid leírás
+Aszteroida magjába visszahelyezhető nyersanyag. Így felszabadítható a tároló kapacitás valamilyen más nyersanyag típus számára.
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1a. Ha a telepes átfúrt köpenyű, üreges aszteroidán tartózkodik, akkor a saját tárolójában lévő nyersanyagok közül kiválaszthat egy egységnyit visszahelyezésre.
+1b. Ha a telepes olyan átfúrt köpenyű aszteroidán tartózkodik, amely magjában található nyersanyag, de fér még ebből a nyersanyag típusból,
+akkor a saját tárolójában lévő nyersanyagok közül kiválaszthat ilyen típusú nyersanyagból egy egységnyit visszahelyezésre.
+2. A kiválasztott nyersanyag visszahelyeződi a tárolóból az aszteroida magjába.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+építés
+
+Rövid leírás
+A telepes a megfelelő nyersanyagok felhasználásával különböző segédeszközöket, gépeket tud építeni.
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1a. Ha egy telepes tárolójában van legalább egy egységnyi vas, szén és urán, akkor ezen nyersanyagokból egy-egy egységet elhasználva létrehozhat egy robotot.
+2a. A robot azon az aszteroidán helyeződik el, amelyen a telepes tartózkodott, amikor létrehozta.
+1b. Ha egy telepes tárolójában van legalább egy egységnyi vízjég és urán, illetve nincs nála teleportkapu,
+akkor a felsorolt nyersanyagokból egy-egy egységet elhasználva létrehozhat egy teleportkapu-párt.
+	Az egyszerre létrehozott két kapu összeköttetésben lesz, amikor a pár mindkét eleme el lesz helyezve egy-egy aszteroidán.
+1c. Ha egy aszteroidán egyszerre tartózkodó telepesek tárolójában együttesen megtalálható az összes nyersanyagtípusból típusonként legalább 3 egységnyi,
+	akkor a telepesek megépíthetik a bázist. Ezzel megnyerik a játékot.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+kapu lerakás
+
+Rövid leírás
+A telepesek az aszteroidákon teleportkapukat tudnak lerakni. 
+
+Aktorok
+Felhasználó
+
+Forgatókönyv
+1. Ha egy telepes tárolójában van legalább egy teleportkapu, akkor azt le tudja rakni az aktuális tartózkodási helyén (aszteroidán).
+Ha egy kapupár mindkét eleme el van helyezve egy-egy aszteroidán, akkor az egyik kapuba lépve a másik kapu aszteroidájára kerül a telepes vagy robot.
+------------------------------------------------------------------------------------------------
+Use-case neve
+autonóm cselekvés
+
+Rövid leírás
+A robot autonóm módon dönt néhány cselekvés végrehajtásáról. Ezekből körönként egyet tud elvégezni a felhasználó beavatkozása nélkül.
+
+Aktorok
+Kontroller
+
+Forgatókönyv
+1a. Robot fúrás.
+1b. Robot mozgás.
+1c. Ha egyiket sem tudja megtenni, akkor nem csinál semmit.
+
+------------------------------------------------------------------------------------------------
+Use-case neve
+napvihar
+
+Rövid leírás
+Időnként napvihar figyelhető meg. Minden pillanatban meg lehet állapítani, hogy éppen van-e napvihar.
+
+Aktorok
+Kontroller
+
+Forgatókönyv
+1a. Ha napvihar alakul ki, a nem átfúrt köpenyű aszteroidán tartózkodó entitások megsemmisülnek.
+2a. Ha minden telepes meghalt, akkor a telepesek veszítenek.
+1b. Ha napvihar közben a telepesek vagy robotok átfúrt köpenyű aszteroidán tartózkodnak, akkor megmenekülnek a napvihartól.
+------------------------------------------------------------------------------------------------

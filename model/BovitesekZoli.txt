@@ -1,0 +1,11 @@
+Az aszteroidához felvettem egy napkozelseg flagat.
+Javitom a hibasan felvett tagvaltozokat. (Nev es tipus felcserelve.)
+
+Felvennek egy destroyMe(asteroid) metodust a Game-be, hogy az a kor vegen fel tudja szabaditani a megsemmisulo aszteroidakat.
+
+Fel kellett vennem egy asteroidExploded() fuggvenyt az entitasba, hogy a felrobbanaskor az entitas maga tudja eldonteni, hogy at kell repulnie egy szomszedos aszteroidara (Robot), vagy meg kell halnia(Settler).
+
+Kerdesek:
+Ki inditsa a szekvenciat ha a kontroller es jatekos is tehetne?
+
+Befejezni: napkitores meg dolgok

@@ -11,8 +11,7 @@ Felveszek egy notifyAllAboutSunFlare() metodust a game-be, hogy a Sun ertesithes
 
 Csinalnek egy isHollow() metodust az asteroidahoz, mert segitene tesztelni pl. az elbujas lehetoseget.
 
-Felvennek egy planMove(asteroid) metodust a Settlerbe, hogy kulon lehessen kezelni, amikor a felhasznalo megmondja, hova menjen es, amikor a kontroller vegrehajtja a mozgast.
-
+A removeInventory-nak visszateresi erteket allitottam be. (Material)
 --------------------------------------------------------------------------------------
 Kerdesek:
 Ki inditsa a szekvenciat ha a kontroller es jatekos is tehetne?
@@ -21,3 +20,16 @@ Hogyan kell a teljes argumentumokkal megjeleniteni a mteodus hivasokat???
 
 --------------------------------------------------------------------------------------
 Befejezni: napkitores meg dolgok
+
+
+Altalam letrehozott metodusok leirasa:
+Game -> destroyMe(toDestroy : Controllable): void	Meghívásával egy Controllable értesíti a Game-et, hogy az szüntesse meg a rá mutató hivatkozást a kör végén.
+Game -> notifyAllAboutSunFlare() : void				A Sun hívja a Game-en, amikor napkitörést kezdeményez. Hatására a Game értesíti az összes Controllable-t a getNotifiedAboutSunFlare hívással.
+
+Controllable -> getNotifiedAboutSunFlare() : void	Napkitörésről értesül a Controllable interface-t megvalósító objektum.
+
+Entity -> asteroidExploded(): void 					Ezt a metódust egy felrobbanó aszteroida hívja meg az összes rajta található entitáson, hogy azok tudják, hogy me kell halniuk, vagy szomszédos aszteroidára kell ugraniuk.
+
+Asteroid -> isHollow() : Boolean					Visszatérési értékében megadja, hogy üreges-e az aszteroida.	 
+
+A removeInventory-nak visszateresi erteket allitottam be. (Material)

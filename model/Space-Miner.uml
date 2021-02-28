@@ -2429,10 +2429,12 @@
 <XPD:ATTR name="Alpha" type="real">-0,486899353432919</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">38,4707681233427</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">-asteroid</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">#asteroid</XPD:ATTR>
 <XPD:REF name="Model">/qwvwkU+MU2IkLd8DdqZkgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="S06LJxVnQkuOHzd/X1PmyQAA">
+<XPD:ATTR name="Alpha" type="real">0,68231624899251</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">20,6155281280883</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">-entities</XPD:ATTR>
 <XPD:REF name="Model">gv7cs4uIgUiWEmWoB0c3jgAA</XPD:REF>
@@ -2443,6 +2445,8 @@
 <XPD:REF name="Model">/qwvwkU+MU2IkLd8DdqZkgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailMultiplicityLabel" type="EdgeLabelView" guid="jVrNFkANGUeUHKUtAITzaAAA">
+<XPD:ATTR name="Alpha" type="real">-1,00406678574205</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">26,0768096208106</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">0..*</XPD:ATTR>
 <XPD:REF name="Model">gv7cs4uIgUiWEmWoB0c3jgAA</XPD:REF>
@@ -2506,7 +2510,8 @@
 <XPD:REF name="Model">zYxsevu+4UWwRVesRjzTdwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="fxjo9KZwCUud7Rbw2SbBTwAA">
-<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0,580002616137836</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">34,6698716467194</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">-material</XPD:ATTR>
 <XPD:REF name="Model">IIfpwMKZqEi+Bkxt2QPj8wAA</XPD:REF>
@@ -2518,7 +2523,8 @@
 <XPD:REF name="Model">zYxsevu+4UWwRVesRjzTdwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailMultiplicityLabel" type="EdgeLabelView" guid="0zmYgPtY3ECEJ7Dv+mdJrwAA">
-<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-0,862169780157487</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">27,6586333718787</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">0..1</XPD:ATTR>
 <XPD:REF name="Model">IIfpwMKZqEi+Bkxt2QPj8wAA</XPD:REF>
@@ -2988,10 +2994,12 @@
 <XPD:OBJ name="HeadRoleNameLabel" type="EdgeLabelView" guid="MtWRwapKI0CBnoStXMWhjwAA">
 <XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">-asteroid</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">#asteroid</XPD:ATTR>
 <XPD:REF name="Model">BT0NNhCaPECcFCv3lCj5HwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="0nVOOXBuCES/YjG1NakGQQAA">
+<XPD:ATTR name="Alpha" type="real">-1,04751771609471</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">30,0166620396073</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">-buildings</XPD:ATTR>
 <XPD:REF name="Model">zBzMoXAJ8kWy+bhJhArwhQAA</XPD:REF>
@@ -3003,7 +3011,8 @@
 <XPD:REF name="Model">BT0NNhCaPECcFCv3lCj5HwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailMultiplicityLabel" type="EdgeLabelView" guid="065eDOMCt0ytILBQ0G3FFgAA">
-<XPD:ATTR name="Distance" type="real">26</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0,56672901164122</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">26,0768096208106</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">0..*</XPD:ATTR>
 <XPD:REF name="Model">zBzMoXAJ8kWy+bhJhArwhQAA</XPD:REF>
@@ -3708,6 +3717,7 @@
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="0yufyn6Q7kKXjkx7tYM15wAA">
 <XPD:ATTR name="Name" type="string">addInventory</XPD:ATTR>
+<XPD:ATTR name="IsAbstract" type="boolean">True</XPD:ATTR>
 <XPD:REF name="Owner">UC4zfocaQkyut7HqEthgbAAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="ycaVvoonlUSi267JN07lZQAA">
@@ -3727,19 +3737,19 @@
 <XPD:ATTR name="#Attributes" type="integer">3</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="JizY2La9206bncv8iDsUYwAA">
 <XPD:ATTR name="Name" type="string">isRadio</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Boolean</XPD:ATTR>
 <XPD:REF name="Owner">UC4zfocaQkyut7HqEthgbAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="Kdr5RKZ4mU69vkbADL1hIwAA">
 <XPD:ATTR name="Name" type="string">steam</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Boolean</XPD:ATTR>
 <XPD:REF name="Owner">UC4zfocaQkyut7HqEthgbAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="F9uw5nsQlkmScYWvDsL/7AAA">
 <XPD:ATTR name="Name" type="string">name</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="Owner">UC4zfocaQkyut7HqEthgbAAA</XPD:REF>
 </XPD:OBJ>
@@ -3977,7 +3987,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="/qwvwkU+MU2IkLd8DdqZkgAA">
 <XPD:ATTR name="Name" type="string">asteroid</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">1</XPD:ATTR>
 <XPD:REF name="Association">svu6aqY6VkaoTDzO5iT4gQAA</XPD:REF>
 <XPD:REF name="Participant">SkR5x/YQwUmbZRBNY6OkEQAA</XPD:REF>
@@ -4242,7 +4252,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="BT0NNhCaPECcFCv3lCj5HwAA">
 <XPD:ATTR name="Name" type="string">asteroid</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:ATTR name="Aggregation" type="UMLAggregationKind">akComposite</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">1</XPD:ATTR>
 <XPD:REF name="Association">yNL+kMIJDEmU+S5W3x6KaQAA</XPD:REF>

@@ -1,11 +1,23 @@
-Az aszteroidához felvettem egy napkozelseg flagat.
+Az aszteroidához felvettem egy napkozelseg flaget.
 Javitom a hibasan felvett tagvaltozokat. (Nev es tipus felcserelve.)
 
-Felvennek egy destroyMe(asteroid) metodust a Game-be, hogy az a kor vegen fel tudja szabaditani a megsemmisulo aszteroidakat.
+Felvennek egy destroyMe(Controllable) metodust a Game-be, hogy az a kor vegen fel tudja szabaditani a megsemmisulo aszteroidakat.
 
-Fel kellett vennem egy asteroidExploded() fuggvenyt az entitasba, hogy a felrobbanaskor az entitas maga tudja eldonteni, hogy at kell repulnie egy szomszedos aszteroidara (Robot), vagy meg kell halnia(Settler).
+Fel kellett vennem egy asteroidExploded() fuggvenyt az entitasba, hogy a felrobbanaskor az entitas maga tudja eldonteni,
+hogy at kell repulnie egy szomszedos aszteroidara (Robot), vagy meg kell halnia(Settler).
 
+Felveszek egy notifyAllAboutSunFlare() metodust a game-be, hogy a Sun ertesithesse a tobbi objektumot.
++ Felveszek egy getNotifiedAboutSunFlare metodust a Controllable interface-be.
+
+Csinalnek egy isHollow() metodust az asteroidahoz, mert segitene tesztelni pl. az elbujas lehetoseget.
+
+Felvennek egy planMove(asteroid) metodust a Settlerbe, hogy kulon lehessen kezelni, amikor a felhasznalo megmondja, hova menjen es, amikor a kontroller vegrehajtja a mozgast.
+
+--------------------------------------------------------------------------------------
 Kerdesek:
 Ki inditsa a szekvenciat ha a kontroller es jatekos is tehetne?
+Lehet kene egy lose es win metodus a game-be. Akkor a megfelelo helyeken ezeket lehetne hivni.
+Hogyan kell a teljes argumentumokkal megjeleniteni a mteodus hivasokat???
 
+--------------------------------------------------------------------------------------
 Befejezni: napkitores meg dolgok

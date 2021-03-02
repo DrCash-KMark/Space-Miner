@@ -33,3 +33,12 @@ Entity -> asteroidExploded(): void 					Ezt a metódust egy felrobbanó aszteroi
 Asteroid -> isHollow() : Boolean					Visszatérési értékében megadja, hogy üreges-e az aszteroida.	 
 
 A removeInventory-nak visszateresi erteket allitottam be. (Material)
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+
+A neigbour destroyed a kapuhoz, amit a destroybol hivunk.
+
+

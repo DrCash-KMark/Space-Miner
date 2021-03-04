@@ -42,3 +42,18 @@ A removeInventory-nak visszateresi erteket allitottam be. (Material)
 A neigbour destroyed a kapuhoz, amit a destroybol hivunk.
 
 
+----------------------------------------------------------------------------------------
+Csütörtöki gondolatok:
+
+A materialba felvettem egy exposedAndCloseToSun() metódust, ami akkor hivódik, ha átfúródik aszteroida, vagy napközelbe kerül az aszeteroida, illetve egyszerre mindkettő effektus érvényben van.
+Az aszteroida felrobbantása ezzel lett megoldva.
+
+
+A konzulens tanácsára töröltem a Robot move és Robot drill szekvenciákat.
+
+
+Kérdések:
+Ha loop van, akkor lehet-e egy lifeline, ami egy egy ciklus által iterált összes objektumot reprezentál.
+A Sunflare-ben hogyan legyen megoldva, hogy az entity ne kérdezze le az aszteroida állapotait? Legyen egy boolean visszatérésű isHidingSpot() az aszeteroidában, vagy az aszteroida hivjon a settler felé.
+
+

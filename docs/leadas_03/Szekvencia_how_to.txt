@@ -19,4 +19,10 @@ Robot crafting szekvencián hogyan hozzuk létre a robotot, itt tüntessük fel 
 Ezután tőle kérdeznénk meg, hogy megépíthető-e, ha nem akkor törölnénk az objektumot. Ez az ötlet, így még mindig hibás?
 Ha ez nem lenne jó, felmerült még egy statikus metódus használata, ami megnézné, hogy maga az objektum "megépíthető"-e.
 
+
+-----
 mine és place gate-en van két void-dal visszatérő hívás, aminek nem annak kéne lennie
+sunflare szekvencia, honnan tudja a sun hogy ki a game?
+explode robot szekvencia, honnan tudja az asteroid, hogy ki a game?
+párolgásnak külön szekvencia kéne
+győzelemnek külön szekvencia

@@ -2329,6 +2329,8 @@
 <XPD:REF name="Model">/qwvwkU+MU2IkLd8DdqZkgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="S06LJxVnQkuOHzd/X1PmyQAA">
+<XPD:ATTR name="Alpha" type="real">0,21109326005204</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">28,6356421265527</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">-entities</XPD:ATTR>
 <XPD:REF name="Model">gv7cs4uIgUiWEmWoB0c3jgAA</XPD:REF>
@@ -2339,6 +2341,8 @@
 <XPD:REF name="Model">/qwvwkU+MU2IkLd8DdqZkgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailMultiplicityLabel" type="EdgeLabelView" guid="jVrNFkANGUeUHKUtAITzaAAA">
+<XPD:ATTR name="Alpha" type="real">-0,661042899620011</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">22,8035085019828</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">0..*</XPD:ATTR>
 <XPD:REF name="Model">gv7cs4uIgUiWEmWoB0c3jgAA</XPD:REF>
@@ -2649,6 +2653,8 @@
 <XPD:REF name="Model">9VhgkU2gwUyOX2VnhBnqWAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadRoleNameLabel" type="EdgeLabelView" guid="fjK/f8dDiE2iJ/QaLY5DNAAA">
+<XPD:ATTR name="Alpha" type="real">-0,390607147248009</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">36,7695526217005</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">-materialMap</XPD:ATTR>
 <XPD:REF name="Model">CSsLta85w0qmmKleY0/IXQAA</XPD:REF>
@@ -2660,6 +2666,8 @@
 <XPD:REF name="Model">Ye3db9z1jU2vr6k4jPMDWQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadMultiplicityLabel" type="EdgeLabelView" guid="gaA/W10zpE6tLJF0++8FRgAA">
+<XPD:ATTR name="Alpha" type="real">0,394791267628808</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">26</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">0..10</XPD:ATTR>
 <XPD:REF name="Model">CSsLta85w0qmmKleY0/IXQAA</XPD:REF>
@@ -3891,7 +3899,7 @@
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="f9AVisK21kig0zy/iP6lWQAA">
 <XPD:ATTR name="Name" type="string">rockThickness</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">Integer</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="Owner">SkR5x/YQwUmbZRBNY6OkEQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="qH/XxlA7aU2x5yNALuTbCQAA">

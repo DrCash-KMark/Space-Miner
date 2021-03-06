@@ -1,0 +1,178 @@
+Base
+
+Felelosség
+Ez az osztály felel a bázis kezeléséért, ezen kívül a bázis tulajdonságait pl.: itt tároljuk a bázis helyét.
+
+Ososztályok
+Building -> Base
+
+Interfészek
+-
+
+Attribútumok
+	#asteroid : Asteroid : Azt az aszteroidát tárolja amelyiken a bázis található.
+
+Metódusok
+	+onPlace(a: Asteroid) : Ez a függvény inicializálja a bázist abba a pillanatba amikor ráhelyezodik egy aszteroidára, illetve elvégez minden feladatot ami ezzel jár (pl.: a játék megnyerése)
+	+destroy() : Ez a függvény felel a bázis elpusztításáért, mielott elpusztul szól az aszteroidának amin tartózkodik arról hogy el fog pusztulni így az is ezt a változást figyelembe tudja venni.
+
+Building
+
+Felelosség
+Ez az ososztálya minden épületnek, felelos azért hogy megvalósítsa az épületek általános funkcióit.
+
+Ososztályok
+-
+
+Interfészek
+-
+
+Attribútumok
+	#asteroid : Asteroid : Azt az aszteroidát tárolja amelyiken az épület található.
+
+Metódusok
+	+onPlace(a: Asteroid) : Ez a függvény inicializálja az épületet abba a pillanatba amikor ráhelyezodik egy aszteroidára, illetve elvégez minden feladatot ami ezzel jár.
+	+destroy() : Ez a függvény felel az épület elpusztításáért, mielott elpusztul szól az aszteroidának amin tartózkodik arról hogy el fog pusztulni így az is ezt a változást figyelembe tudja venni.
+
+Controllable
+
+Felelosség
+Ezt az interfészt olyan osztáylok valósítják meg amelyeknek autonóm módon mineden körben csinálniuk kell valamit, tehát például a robotok.
+
+Ososztályok
+-
+
+Metódusok
+	+onTurn() : Ez a függvény elvégzi az adott dolog körönkénti cselekedetét/cselekedeteit.
+	+getNotifiedAboutSunFlare() : Ez a függvény felel azért hogy az egyes controllable objektumok realizálják, hogy épp napkitörés van s elvégezzék az ezzel kapcsolatos feladataikat.
+
+Entity
+
+Felelosség
+Ez az ososztálya minden entitásnak. Azért felelos, hogy az entitások általános feladatait megvalósítsa. 
+
+Ososztályok
+-
+
+Interfészek
+-
+
+Attribútumok
+	#asteroid : Asteroid : Azt tárolja, hogy az adott entitás éppen melyik aszteroidán tartózkodik.
+
+Metódusok
+	+move(destination: Asteroid) : Az entitást mozgatja a mostani aszetroidájáról a célaszteroidájára. Mindkét aszteroidának ezt jelzi, hogy azok tehessék a dolgukat.
+	+drill() : Annak az aszteroidának a kérgét csökkenti amelyiken az entitás tartózkodik (ha van még kérge).
+	+die() : Elpusztítja az entitást s errol szól az aszteroidának, hogy az kivehesse ot az általa tárolt entitások listájából.
+	+asteroidExploded() : Ezt a függvényt akkor hívjuk amikor az aszteroida amin az entitás áll felrobban, mivel más típusú entitások erre az eseményre másképp reagálnak, ezért ez egy absztrakt függvény.
+
+Game
+
+Felelosség
+Ez az osztály felel a játék körönkénti menetéért, az összes olyan osztálynak amelynek dolga van a körben a kör elején szól, hogy végezze el a dolgát.
+
+Ososztályok
+-
+
+Interfészek
+-
+
+Attribútumok
+	-controllables : Controllable : Egy lista amelyben az összes autonóm dolog a játékban megtalálható.
+
+Metódusok
+	+destroyMe(toDestroy: Controllable) : Ez a függvény eltöröl egy controllablet a játékból, vagyis kitörli a rá mutató referenciát a controllables listából.
+	+notifyAllAboutSunFlare() : Ez a függvény szól az összes controllablenek, hogy éppen napkitörés van.
+
+Inventory
+
+Felelosség
+Ez az osztály egy telepes hátizsákjában található dolgokért felel, abba a megfelelo nyersanyagokat berakja ha a telepes kitermeli azokat, illetve onnan kiveszi oket ha a telepes felhasználja azokat.
+
+Ososztályok
+-
+
+Interfészek
+-
+
+Attribútumok
+	-inventoryMap : ??? : Egy nyersanyag lista map. Az összes lehetséges nyersanyagnak van egy listája amiben az inventoryban található nyersanyagokat tároljuk.
+	-starGate : Teleport : A hátizsákban tárolható teleporkapukat tartalmazza.
+
+Metódusok
+	+removeInventory(m: string): Material : Ezzel a fügvénnyel ki tudunk venni egy adott nyersanyagot az inventoryból. Mivel ez a nyersanyag egy mapban van stringgel is címezhetjük annak helyét. Visszatérni az adott nyersanyaggal térünk vissza.
+	+removeStarGate(): Teleport : A hátizsákból kivesz egy teleportkaput.
+	+subSet(i: Inventory): bool : Ez a függvény eldönti, hogy az argumentumként kapott inventory tartalma ennek az inventorynak részhalmaza-e, vagyis hogy ebben az inventoryban minden nyersanyag legalább annyiszor szerepel mint a másik inventoryban a megfelelo nyersanyagok.
+
+Robot
+
+Felelosség
+Ez az osztály felel a robotokért s azoknak a mozgatásáért, irányításáért.
+
+Ososztályok
+Entity -> Robot
+
+Interfészek
+Buildable, Controllable
+
+Attribútumok
+	#asteroid : Asteroid : Azt tárolja, hogy az adott robot éppen melyik aszteroidán tartózkodik.
+
+Metódusok
+	+move(destination: Asteroid) : A robotot mozgatja a mostani aszetroidájáról a célaszteroidájára. Mindkét aszteroidának ezt jelzi, hogy azok tehessék a dolgukat.
+	+drill() : Annak az aszteroidának a kérgét csökkenti amelyiken a robot tartózkodik (ha van még kérge).
+	+die() : Elpusztítja a robotot s errol szól az aszteroidának, hogy az kivehesse ot az általa tárolt entitások listájából.
+	+asteroidExploded() : Ezt a függvényt akkor hívjuk amikor az aszteroida amin a robot áll felrobban, ennek hatására a robot átkerül egy szomszédos aszteroidára.
+	+onTurn() : Ez a függvény elvégzi a robot körönkénti cselekedetét/cselekedeteit.
+	+getNotifiedAboutSunFlare() : Ez a függvény akkor hívódik meg a roboton amikor napkitörés van. A függvény elvégzi a roboton elvégzendó feladatokat ennél az eseménynél.
+
+Settler
+
+Felelosség
+Ez az osztály felel a telepesekért, azok mozgatásáért s irányításáért.
+
+Ososztályok
+Entity -> Settler
+
+Interfészek
+-
+
+Attribútumok
+	#asteroid : Asteroid : Azt tárolja, hogy az adott telepes éppen melyik aszteroidán tartózkodik.
+	-inventory : Inventory : Ez tárolja a telepes hátizsákját, ennek segítségével tud a telepes nyersaynagokat felhasználni s tárolni.
+	-TELEPORT_RECIPE : Inventory : Ez egy inventory típusú konstans változó amely tartalmazza a teleportkapu megépítéséhez szükséges nyersanyagokat.
+	-BASE_RECIPE : Inventory : Ez egy inventory típusú konstans változó amely tartalmazza a bázis megépítéséhez szükséges nyersanyagokat.
+	-ROBOT_RECIPE : Inventory : Ez egy inventory típusú konstans változó amely tartalmazza a robot megépítéséhez szükséges nyersanyagokat.
+
+Metódusok
+	+move(destination: Asteroid) : A telepest mozgatja a mostani aszetroidájáról a célaszteroidájára. Mindkét aszteroidának ezt jelzi, hogy azok tehessék a dolgukat.
+	+drill() : Annak az aszteroidának a kérgét csökkenti amelyiken a telepes tartózkodik (ha van még kérge).
+	+die() : Elpusztítja a telepest s errol szól az aszteroidának, hogy az kivehesse ot az általa tárolt entitások listájából.
+	+asteroidExploded() : Ezt a függvényt akkor hívjuk amikor az aszteroida amin a telepes áll felrobban, ennek hatására a telepes meghal.	
+	+mine() : Az aszteroidának a belsejébol kitermeli a benne található nyersanyagot s eltárolja azt.
+	+buildTeleport() : A telepes megépít egy teleportkaput (ha meg tud) s azt elhelyezi a hátizsákjába.
+	+buildRobot() : A telepes megépít egy robotot (ha meg tud) s azt elhelyezi az aszteroidáján.
+	+buildBase() : A telepes megépít egy bázist (ha meg tud) s azt elhelyezi az aszteroidán.
+	+dropMaterial() : A telepes visszahelyez egy nyersanyagot a hátizsákjából az aszteroida belsjébe amelyiken tartózkodik (ha az az aszteroida üreges).
+	+placeStarGate() : A telepes lehelyez egy teleportkaput a hátizsákjából az aszteroidájára.
+
+Teleport
+
+Felelosség
+Ez az osztály felel a teleportkapukért, hogy azok csak akkor muködjenek amikor muködniük szabad s hogy minden szükséges információt eljuttassanak az aszteroidájuknak.
+
+Ososztályok
+Building -> Teleport
+
+Interfészek
+Buildable
+
+Attribútumok
+	#asteroid : Asteroid : Azt az aszteroidát tárolja amelyiken az épület található.
+	-neighbour : Teleport : Tárolja a vele összekötött teleportkaput.
+	-works : bool : Azt jelzi, hogy muködik-e a teleportkapu, akkor nem muködik, ha nincs lehelyezve a párja, vagy már elpusztult a párja.
+
+Metódusok
+	+onPlace(a: Asteroid) : Ez a függvény inicializálja a teleportkaput abba a pillanatba amikor ráhelyezodik egy aszteroidára, illetve elvégez minden feladatot ami ezzel jár.
+	+destroy() : Ez a függvény felel a teleport elpusztításáért, mielott elpusztul szól az aszteroidának amin tartózkodik arról hogy el fog pusztulni így az is ezt a változást figyelembe tudja venni. Ezen kívül szól a párosított teleportkapujának (ha az le van helyezve) hogy deaktiválja magát.
+	+getNeighbourAsteroid() : Miután le van helyezve mindkét fele egy teleportkapunak azok két aszteroidát szomszédossá tesznek, ez a függvény azért van, hogy az aszteroida le tudja kérdezni az új szomszédját. 

@@ -1,0 +1,70 @@
+A szkeleton célja, hogy az analízis modell helyességét igazolja. Ennek megfelelően ez valójában egy tesztprogram.
+
+A szkeleton modell valóságos use-case-ei: lényegében a belső működésre tervezett forgatókönyvek, amiket majd konkrétan el lehet indítani.
+Pl. űrhajós napközelben megfúr egy olyan aszteroidát, amiben radioaktív a mag, és ettől felrobbannak. Ez egy use-case (teszteset) a sok közül.
+Kb. 15-20 ilyen eset van ebben a játékban.
+
+Minden egyes ilyen teszteset önálló menüpontot kap, és a use-case diagramon önálló gombócot.
+Az aktor a szkeleton programot használó felhasználó lesz majd, aki a menüpontok közül válogathat.
+A use-case diagram tehát egy szép nagy csillag lesz, középen az aktor, körülötte a gombócok.
+
+Minden tesztesethez (menüponthoz) kell önálló szekvencia diagram, ami nagyban hasonlít az analízis modellben szereplőkre, de itt pontosan meg kell adni, hogy kik vesznek részt, mert őket kell majd Java-ban példányosítani.
+Egy szekvencia egy oldalon férjen el, nem lehet feldarabolva, nem lehetnek benne referenciák más szekvenciákra, nem lehetnek benne ciklusok, mindent teljes egészében ki kell fejteni.
+Feltételek (alt, opt) maradhatnak, de ha belső állapotváltozón múlik a feltétel, arra majd kérdés kell (ld. alább).
+Fenti példában: lesz egy űrhajós, egy aszteroida és annak a magja. Üzenünk az űrhajósnak, hogy fúrjon, és onnantól lezajlik a történet.
+Ezt az indító üzenetet a főprogram fogja kiadni, a szekvencián jelölhetjük úgy, hogy ő az első lifeline. Ebben a példában a fúrási mélység és a napközelség az aszteroida belső állapotváltozója, így az ezeket érintő feltételre majd rá kell kérdezni (ld. alább).
+
+Minden tesztesethez (menüponthoz) kell önálló kommunikációs diagram, amely a tesztesetben szereplő objektumok létrehozását és az asszociációik mentén történő összekötését mutatja be.
+A példányosítást a főprogram végezheti, a kommunikációs diagramon jelölhetjük úgy, hogy ő az, aki minden objektumot a megfelelő konstruktorhívásokkal példányosít, és beállítja a közöttük lévő asszociációkat a megfelelő függvényhívásokkal.
+Fenti példában: a főprogram létrehoz egy telepest, egy aszteroidát és egy radioaktív magot, a telepesnek szól, hogy ez az aszteroidája (ha szükséges, az aszteroidának is szól, hogy ez a telepes van rajta), az aszteroidának szól, hogy ez a magja.
+Fontos, hogy az így előálló kezdőhelyzetből fog majd indulni a megfelelő szekvencia, tehát mindent inicializálni kell, ami a szekvencia lefutásához szükséges lesz.
+
+A szkeleton osztályai csak asszociációkat tárolnak, egyéb állapotot nem!
+Így minden belső döntést igénylő ponton kérdést kell feltenni a felhasználó számára (pl. milyen vastag a kérgem? stb.), de az objektumok közötti metódus- (üzenet-)váltásoknak automatikusan meg kell történniük, azaz a szkeletonban ezeket a függvényhívásokat implementálni kell.
+Innen a neve a szkeletonnak: csak egy minimális csontvázát implementáljuk az alkalmazásnak.
+Mivel a szekvencia diagramok konkrét futási eseteket írnak le, interfészt és absztrakt osztályt nem tartalmazhatnak.
+
+A szkeleton futása során ki kell rajzolódnia a kommunikációs és szekvencia diagramoknak megfelelő szövegnek.
+A konzolra naplózni kell, hogy belépünk egy függvénybe és azt, amikor kilépünk belőle. Jellemzően egy naplóüzenet egy sor.
+Az áttekinthetőség kedvéért legyenek indentálva a hívások, ahogy egyre mélyebbre haladunk a hívási hierarchiában.
+Nem kell túlbonyolítani, elég egyszerű -> és <- nyilakkal jelezni a belépést illetve visszatérést, és utánuk odaírni, melyik függvényről van szó, melyik objektumon hívódott a függvény, milyen paraméterekkel, visszatéréskor pedig milyen eredménnyel.
+A naplózást legegyszerűbb valami központi statikus osztályban végezni, amely az objektumok neveit is képes adminisztrálni.
+Az azonosítókat célszerű HashMap-ben hozzárendelni, és nem a modellt átírni.
+Fontos, hogy az objektumok legyenek egyértelműen beazonosíthatók a szekvenciákhoz, azaz a képernyőn ugyanolyan azonosítóval szerepeljenek majd, mint a nekik megfelelő lifeline neve a szekvencián.
+
+A szkeleton kezelői felületének terve, dialógusok: a szkeleton által kiírt és kérdezett dolgok formátumának terveit kell itt megadni néhány egyszerű példával illusztrálva.
+Ezt előre meg kell határozni, nem az implementáció végén derül ki, hogy hogyan is néz ki a dolog!
+Pl. Hogyan néznek ki a menüpontok?
+Hogyan választhatunk? 
+Hogyan jelöljük bekezdéssel a függvényhívást, visszatérést?
+Hogyan látszik az objektumok azonosítója?
+Hogyan látszanak a paraméterek és visszatérési értékek?
+Hogyan teszünk fel kérdést?
+Hogyan adható majd meg a válasz?
+Lényegében pontosítani kell azokat a dolgokat, amiket ebben az emailben leírtam.
+Fontos, hogy ebben a doksiban nem kell minden szekvencia konkrét szöveges változatát megadni, csak körül kell írni, és néhány naplósor példájával illusztrálni, hogy mi lesz az a formátum, amit a szkeleton kiíráskor követni fog majd, amikor a szekvenciákat nyomtatja a képernyőre.
+
+A főprogram és a naplózó osztály nyugodtan ismerhet minden objektumot személyesen, lehet bennük használni típusellenőrzést és akár reflection-t is, ha az megkönnyíti a naplózást.
+
+Nagyon fontos: ahány use-case (teszteset), annyi menüpont a program indításakor, minden egyes menüponthoz egy kommunikációs diagram az inicializálásra, minden egyes menüponthoz egy szekvencia a teszt lefutására.
+A dokumentumban a szakaszok számozása legyen konzisztens: az x. use-case-hez (menüponthoz) tartozó szekvencia sorszáma 5.3.x legyen, a hozzá tartozó inicializálást leíró kommunikációs diagram sorszáma pedig 5.4.x legyen.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Ami konzin elhangzott:
+
+Azon szekvenciák, amiket itt tervezünk majd a programból ki kell jönnie.
+Ezeken a szekvenciákon csak és kizárólag konkrét, példányosított objektumok szerepelhetnek.
+Nincs interfész, nincs absztrakt osztály.
+Mivel csak konkrét, nevesített példányok szerepelhetnek, így kikerülnek a ciklusok a szekvenciákból, (nem is szabad használni őket).
+Fontos, hogy ref sem lehet rajtuk, minden egyben kell hogy legyen.
+
+Minden egyes tesztesethez, use-case-hez kell egy ilyen szekvenciát társítani és ehhez a szekvenciához jön a kommunikációs diagram.
+Ez a kommunikációs diagram csak az inicializálást írja le. A főprogram az adott use-case, szekvencia minden résztvevőjét <<create>> létrehozza a default constructorral.
+Majd a setterek beállítják egymás között az asszociációkat, ezeket már ábrázolni kell a komm. diagramon.
+Fontos, hogy ezen a komm. diagramon nem állíthatunk be belső állapotváltozókat. Ezket majd egy-egy tesztesetnél, majd a felhasználó adja meg.
+
+Ezen felül majd meg kell adnunk hogy fog kinézni a szkeleton felülete.
+Hogy navigál majd a menüben, tesztesetek között a felhasználó, hogyan teszünk fel neki kérdést az egyes objektumok belső állapotáról.
+Milyen lesz majd a kimenete, ezt majd valahogy indentálni is kell.
+
+A doksi legelejére kellenek a use-case-ek, amik a szkeletonra vonatkoznak. Gondolom ezek lesznek majd szekvenciákban és a komm. diagrammokon.

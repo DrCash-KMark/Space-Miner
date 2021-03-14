@@ -22837,7 +22837,7 @@ of asteroid a.
 <XPD:OBJ name="OwnedElements[2]" type="UMLModel" guid="FKtMQOO5mUm+lNqFQwu4gAAA">
 <XPD:ATTR name="Name" type="string">SkeletonCommunicationDiagrams</XPD:ATTR>
 <XPD:REF name="Namespace">u9VbaWEMHEu8QQz9jKwengAA</XPD:REF>
-<XPD:ATTR name="#OwnedCollaborationInstanceSets" type="integer">2</XPD:ATTR>
+<XPD:ATTR name="#OwnedCollaborationInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[0]" type="UMLCollaborationInstanceSet" guid="LrliAce+4Um445krKCS8pgAA">
 <XPD:ATTR name="Name" type="string">Mining_Collabs</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">FKtMQOO5mUm+lNqFQwu4gAAA</XPD:REF>
@@ -26065,24 +26065,6 @@ of asteroid a.
 <XPD:REF name="Stimuli[0]">tL/Y9JUbZkuNo6ePbSCGagAA</XPD:REF>
 <XPD:REF name="Stimuli[1]">yyBvtEkqbUG09P8i3PyeAwAA</XPD:REF>
 <XPD:REF name="Stimuli[2]">BLGffx1BxkeDxoiZrMtjPAAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="OwnedCollaborationInstanceSets[1]" type="UMLCollaborationInstanceSet" guid="Ewa5T4sPmEqNQ3cON7qEEQAA">
-<XPD:ATTR name="Name" type="string">Crafting_Collabs</XPD:ATTR>
-<XPD:REF name="RepresentedClassifier">FKtMQOO5mUm+lNqFQwu4gAAA</XPD:REF>
-<XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="V/+/sjSqc02cKKG6P1mmFQAA">
-<XPD:ATTR name="Name" type="string">InteractionInstanceSet1</XPD:ATTR>
-<XPD:REF name="Context">Ewa5T4sPmEqNQ3cON7qEEQAA</XPD:REF>
-<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="OwnedDiagrams[0]" type="UMLCollaborationDiagram" guid="AbBlKavwXkaqSdSQO8El1AAA">
-<XPD:ATTR name="Name" type="string">CollaborationDiagram1</XPD:ATTR>
-<XPD:REF name="DiagramOwner">V/+/sjSqc02cKKG6P1mmFQAA</XPD:REF>
-<XPD:OBJ name="DiagramView" type="UMLCollaborationDiagramView" guid="u0rCCslM2US4STVS9uW9KAAA">
-<XPD:REF name="Model">AbBlKavwXkaqSdSQO8El1AAA</XPD:REF>
-<XPD:REF name="Diagram">AbBlKavwXkaqSdSQO8El1AAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>

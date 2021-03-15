@@ -7114,7 +7114,7 @@
 <XPD:ATTR name="TypeExpression" type="string">Boolean</XPD:ATTR>
 <XPD:REF name="Owner">IBR3qlnNAkqw4xIeajc8FAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#Instances" type="integer">13</XPD:ATTR>
+<XPD:ATTR name="#Instances" type="integer">14</XPD:ATTR>
 <XPD:REF name="Instances[0]">lvHkU/hiW06ukfCBfPyH7AAA</XPD:REF>
 <XPD:REF name="Instances[1]">CILSOSnDVUeY0qbaiT3CMQAA</XPD:REF>
 <XPD:REF name="Instances[2]">7IbOtRMffkiTzSNtSUb0SwAA</XPD:REF>
@@ -7128,6 +7128,7 @@
 <XPD:REF name="Instances[10]">JuUduStue0qPaHcCdGc9jwAA</XPD:REF>
 <XPD:REF name="Instances[11]">nebko2NuT0yP4bPst1BgowAA</XPD:REF>
 <XPD:REF name="Instances[12]">Qs4YvJ2YP06UI9z6cmqZtwAA</XPD:REF>
+<XPD:REF name="Instances[13]">0Sv65whpik2fWOOHKc+XAAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[8]" type="UMLClass" guid="SkR5x/YQwUmbZRBNY6OkEQAA">
 <XPD:ATTR name="Name" type="string">Asteroid</XPD:ATTR>
@@ -7847,12 +7848,13 @@
 <XPD:ATTR name="TypeExpression" type="string">StarGate</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">2KBJ4VjxRUKpwevx+XKEEAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#CallActions" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="#CallActions" type="integer">6</XPD:ATTR>
 <XPD:REF name="CallActions[0]">w4UDJUr60U+X/rA8NR7TRwAA</XPD:REF>
 <XPD:REF name="CallActions[1]">WAnhaBILFEu9nNiaL+5bcAAA</XPD:REF>
 <XPD:REF name="CallActions[2]">AAaG17jOL02zq63VWY+/hQAA</XPD:REF>
 <XPD:REF name="CallActions[3]">KmPlP3+hhkqI4SbvVY3IIwAA</XPD:REF>
 <XPD:REF name="CallActions[4]">hHx6fRgzYkGqq4jz1Zni4wAA</XPD:REF>
+<XPD:REF name="CallActions[5]">vn544d2OK0qkyphehtQLeAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[4]" type="UMLOperation" guid="YO39rX91pUi+AGt2pzvX7gAA">
 <XPD:ATTR name="Name" type="string">addInventory</XPD:ATTR>
@@ -51913,14 +51915,14 @@ of asteroid a.
 <XPD:OBJ name="DiagramView" type="UMLCollaborationDiagramView" guid="59QmKcdiDUCeaIBi6sbRtgAA">
 <XPD:REF name="Model">3E2NMA6FqEaNS+OGv4kUWQAA</XPD:REF>
 <XPD:REF name="Diagram">3E2NMA6FqEaNS+OGv4kUWQAA</XPD:REF>
-<XPD:ATTR name="#OwnedViews" type="integer">24</XPD:ATTR>
+<XPD:ATTR name="#OwnedViews" type="integer">28</XPD:ATTR>
 <XPD:OBJ name="OwnedViews[0]" type="UMLFrameView" guid="rls99FMU3kqQA3KOHacXUgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">20</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">20</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">16</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">821</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">328</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">389</XPD:ATTR>
 <XPD:REF name="Model">YmL6M6bK2EGGjEOhZ/mpLAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="LabelView" guid="n3buxO+OaES3IrkaBhvIogAA">
 <XPD:ATTR name="Text" type="string">Place_StarGate_First_Communication</XPD:ATTR>
@@ -52170,7 +52172,7 @@ of asteroid a.
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">80,99;80,191;744,191</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">88,99;88,191;744,191</XPD:ATTR>
 <XPD:REF name="Model">FBarQOp8uEOC/Mz7raAoIQAA</XPD:REF>
 <XPD:REF name="Head">LDgCXilPKkugMHnJCO6U8wAA</XPD:REF>
 <XPD:REF name="Tail">gQBbhtGqkUCai1D+aNf9AQAA</XPD:REF>
@@ -52213,7 +52215,7 @@ of asteroid a.
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">64,99;64,256;716,256</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">72,99;72,256;716,256</XPD:ATTR>
 <XPD:REF name="Model">gPVtObdERUSDCyiLwcHSAgAA</XPD:REF>
 <XPD:REF name="Head">4nQLJCAqJkOdQdQvQ9jJZAAA</XPD:REF>
 <XPD:REF name="Tail">gQBbhtGqkUCai1D+aNf9AQAA</XPD:REF>
@@ -52256,7 +52258,7 @@ of asteroid a.
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">48,99;48,312;724,312</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">60,99;60,312;724,312</XPD:ATTR>
 <XPD:REF name="Model">enFB9HHwH0aCfczUkB/XAQAA</XPD:REF>
 <XPD:REF name="Head">2//EV5cVlUKqsr4zrdBbpwAA</XPD:REF>
 <XPD:REF name="Tail">gQBbhtGqkUCai1D+aNf9AQAA</XPD:REF>
@@ -52474,7 +52476,7 @@ of asteroid a.
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : addControllable(asteroid): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">7 : addControllable(asteroid): void</XPD:ATTR>
 <XPD:REF name="Model">qc8ky9w3UUqXbdAo/Mh1UgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="c2yGJewmAUyxuoyF63PFZAAA">
@@ -52506,7 +52508,7 @@ of asteroid a.
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">7 : addSettler(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">8 : addSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">Vb8hyICLiUa6BKe/toO3JQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="nd/k3A+u2EqiO7NXxNyHyAAA">
@@ -52538,7 +52540,7 @@ of asteroid a.
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">8 : setOwner(owner)</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">9 : setOwner(owner)</XPD:ATTR>
 <XPD:REF name="Model">AR59z2VyAEmg20/Ka4GjpQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="nEm872NODUG6RbHjP3jMywAA">
@@ -52566,11 +52568,11 @@ of asteroid a.
 <XPD:REF name="Model">1ZisR7XPRUqD9SLTyy8gLgAA</XPD:REF>
 <XPD:REF name="HostEdge">E0rTkqtxi02rJtwLo9mj3AAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="ux5HN1TO8U6voPSBRHfrmgAA">
-<XPD:ATTR name="Width" type="integer">128</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">134</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">9 : addEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">10 : addEntity(settler): void</XPD:ATTR>
 <XPD:REF name="Model">1ZisR7XPRUqD9SLTyy8gLgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="BCZUiOfruU6DJ6FzD7tjeQAA">
@@ -52602,7 +52604,7 @@ of asteroid a.
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">10 : setAsteroid(asteroid)</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">11 : setAsteroid(asteroid)</XPD:ATTR>
 <XPD:REF name="Model">E9sSt9iwLkSkCmp3+USi+wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="B1ZfSLhCTk67BCNi70QcjQAA">
@@ -52634,7 +52636,7 @@ of asteroid a.
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">11 : setInventory(inventory)</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">12 : setInventory(inventory)</XPD:ATTR>
 <XPD:REF name="Model">kGBCexZ2mkGViOFsbULeBgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="sgKecjEaoUaVDDKnI4VrEgAA">
@@ -52666,7 +52668,7 @@ of asteroid a.
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">12 : addStarGate(stargate): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">13 : addStarGate(stargate): void</XPD:ATTR>
 <XPD:REF name="Model">BleU1CXaf0i7jDfzPukRfgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="7Uf/LBb9OUWAbLTK1FSYZQAA">
@@ -52684,9 +52686,142 @@ of asteroid a.
 <XPD:REF name="Model">BleU1CXaf0i7jDfzPukRfgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
+<XPD:OBJ name="OwnedViews[24]" type="UMLColObjectView" guid="FR4snQhieU+9AP7VRI/7ZQAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">716</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">356</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">111</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">40</XPD:ATTR>
+<XPD:REF name="Model">0Sv65whpik2fWOOHKc+XAAAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="83uCP6YO7k+jBYCTNn8gDwAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="/tPrQH2eWk6A4MihSeiuvQAA">
+<XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">neighbour : StarGate</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="HVeZt0eNn026o8J5fQZlbgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="AlcouRUsPkC9MnHVE7pSrAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#ParticipatingStimuli" type="integer">12</XPD:ATTR>
+<XPD:OBJ name="SlotCompartment" type="UMLSlotCompartmentView" guid="gyf9dfWy0kaZOR5rFQmbsgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:REF name="Model">0Sv65whpik2fWOOHKc+XAAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[25]" type="UMLLinkView" guid="eqgWX72CoE2rpTdlcM8PRgAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">48,99;48,372;716,372</XPD:ATTR>
+<XPD:REF name="Model">eXAlTCgCck+P8yJLWgM8EgAA</XPD:REF>
+<XPD:REF name="Head">FR4snQhieU+9AP7VRI/7ZQAA</XPD:REF>
+<XPD:REF name="Tail">gQBbhtGqkUCai1D+aNf9AQAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="a1YRWxLClUCy9+QtMgd5qwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
+<XPD:REF name="Model">eXAlTCgCck+P8yJLWgM8EgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="kAL4e8uXi06S4v7DypuiXwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:REF name="Model">eXAlTCgCck+P8yJLWgM8EgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="x0MzJs5nXUCl2vN5S2427AAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
+<XPD:REF name="Model">eXAlTCgCck+P8yJLWgM8EgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="HeadEndLabel" type="EdgeLabelView" guid="ZfZKAcLJnkukSrVHLrosuAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-0.523598775598299</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">+</XPD:ATTR>
+<XPD:REF name="Model">n+DqkJ9NmUyXr6gh0DXLBwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="TailEndLabel" type="EdgeLabelView" guid="7iROSSq3MkSRjOZ4DlaNnAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0.523598775598299</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">+</XPD:ATTR>
+<XPD:REF name="Model">TeuTZJHZ3UOMzJuv0hPYfgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[26]" type="UMLColStimulusView" guid="MOz9S0EG5kCijWWTkjF1jQAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">40</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0.0265718166615983</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">301.106293524396</XPD:ATTR>
+<XPD:REF name="Model">CPZXpaJh7Emnp+TbQxaNxgAA</XPD:REF>
+<XPD:REF name="HostEdge">eqgWX72CoE2rpTdlcM8PRgAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="NodeLabelView" guid="OGDb3qfsQ0W/zdYaNbLauAAA">
+<XPD:ATTR name="Width" type="integer">6</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6</XPD:ATTR>
+<XPD:REF name="Model">CPZXpaJh7Emnp+TbQxaNxgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="PSl8SSRz50K23AxKR/GO+AAA">
+<XPD:ATTR name="Width" type="integer">63</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">&lt;&lt;create&gt;&gt;</XPD:ATTR>
+<XPD:REF name="Model">CPZXpaJh7Emnp+TbQxaNxgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="NodeLabelView" guid="gL5XwueEPkGVipwitlVxRAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">CPZXpaJh7Emnp+TbQxaNxgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[27]" type="UMLColStimulusView" guid="h7nc4SjWTkCOeYeHTjhSSQAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">40</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-3.31018897480521</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">47.6759897642409</XPD:ATTR>
+<XPD:REF name="Model">F6X1FtSU9U6ai7RMehKvmQAA</XPD:REF>
+<XPD:REF name="HostEdge">5OuUzVxW9U61eGar2wljgQAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="NodeLabelView" guid="mBsMcjRGS0Cw2E36Z6Zz2wAA">
+<XPD:ATTR name="Width" type="integer">166</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">14 : addStarGate(neighbour): void</XPD:ATTR>
+<XPD:REF name="Model">F6X1FtSU9U6ai7RMehKvmQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="vhOYrwCUaUWwXurOAABmyQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:REF name="Model">F6X1FtSU9U6ai7RMehKvmQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="NodeLabelView" guid="IDKEVqeD2UKhunxcGWTzZQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">F6X1FtSU9U6ai7RMehKvmQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#ParticipatingStimuli" type="integer">14</XPD:ATTR>
 <XPD:OBJ name="ParticipatingStimuli[0]" type="UMLStimulus" guid="nx1i4qTkSkWe/LqSk/4/YAAA">
 <XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
 <XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
@@ -52762,7 +52897,22 @@ of asteroid a.
 <XPD:REF name="Views[2]">6EghJ7aZX0GymRJ8tHf07wAA</XPD:REF>
 <XPD:REF name="Views[3]">s11rAS6q8kW2OKeVU4Z9QQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[5]" type="UMLStimulus" guid="qc8ky9w3UUqXbdAo/Mh1UgAA">
+<XPD:OBJ name="ParticipatingStimuli[5]" type="UMLStimulus" guid="CPZXpaJh7Emnp+TbQxaNxgAA">
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
+<XPD:REF name="Receiver">0Sv65whpik2fWOOHKc+XAAAA</XPD:REF>
+<XPD:REF name="CommunicationLink">eXAlTCgCck+P8yJLWgM8EgAA</XPD:REF>
+<XPD:OBJ name="Action" type="UMLCallAction" guid="mk+/XFuHwEqy2aWW3VcShwAA">
+<XPD:REF name="Stimulus">CPZXpaJh7Emnp+TbQxaNxgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:REF name="InteractionInstanceSet">lTkCJ1fxekC9hhpWjf59pwAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">MOz9S0EG5kCijWWTkjF1jQAA</XPD:REF>
+<XPD:REF name="Views[1]">OGDb3qfsQ0W/zdYaNbLauAAA</XPD:REF>
+<XPD:REF name="Views[2]">PSl8SSRz50K23AxKR/GO+AAA</XPD:REF>
+<XPD:REF name="Views[3]">gL5XwueEPkGVipwitlVxRAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="ParticipatingStimuli[6]" type="UMLStimulus" guid="qc8ky9w3UUqXbdAo/Mh1UgAA">
 <XPD:ATTR name="Arguments" type="string">asteroid</XPD:ATTR>
 <XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
 <XPD:REF name="Receiver">7lKwstUQcUqKjK9Kb4Ou+gAA</XPD:REF>
@@ -52778,7 +52928,7 @@ of asteroid a.
 <XPD:REF name="Views[2]">c2yGJewmAUyxuoyF63PFZAAA</XPD:REF>
 <XPD:REF name="Views[3]">v4LZCgbtLEaadru496xv1wAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[6]" type="UMLStimulus" guid="Vb8hyICLiUa6BKe/toO3JQAA">
+<XPD:OBJ name="ParticipatingStimuli[7]" type="UMLStimulus" guid="Vb8hyICLiUa6BKe/toO3JQAA">
 <XPD:ATTR name="Arguments" type="string">settler</XPD:ATTR>
 <XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
 <XPD:REF name="Receiver">7lKwstUQcUqKjK9Kb4Ou+gAA</XPD:REF>
@@ -52794,7 +52944,7 @@ of asteroid a.
 <XPD:REF name="Views[2]">nd/k3A+u2EqiO7NXxNyHyAAA</XPD:REF>
 <XPD:REF name="Views[3]">UqwXBbHKaUWKV0weP2qboQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[7]" type="UMLStimulus" guid="AR59z2VyAEmg20/Ka4GjpQAA">
+<XPD:OBJ name="ParticipatingStimuli[8]" type="UMLStimulus" guid="AR59z2VyAEmg20/Ka4GjpQAA">
 <XPD:ATTR name="Name" type="string">setOwner</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">owner</XPD:ATTR>
 <XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
@@ -52810,7 +52960,7 @@ of asteroid a.
 <XPD:REF name="Views[2]">nEm872NODUG6RbHjP3jMywAA</XPD:REF>
 <XPD:REF name="Views[3]">SANYBYxQzkSwrk1Kupj6WgAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[8]" type="UMLStimulus" guid="1ZisR7XPRUqD9SLTyy8gLgAA">
+<XPD:OBJ name="ParticipatingStimuli[9]" type="UMLStimulus" guid="1ZisR7XPRUqD9SLTyy8gLgAA">
 <XPD:ATTR name="Arguments" type="string">settler</XPD:ATTR>
 <XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
 <XPD:REF name="Receiver">X6hUHLxR7EiZHl8XGPaSHAAA</XPD:REF>
@@ -52826,7 +52976,7 @@ of asteroid a.
 <XPD:REF name="Views[2]">BCZUiOfruU6DJ6FzD7tjeQAA</XPD:REF>
 <XPD:REF name="Views[3]">B/wbfpCDjU2HgujKZymotQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[9]" type="UMLStimulus" guid="E9sSt9iwLkSkCmp3+USi+wAA">
+<XPD:OBJ name="ParticipatingStimuli[10]" type="UMLStimulus" guid="E9sSt9iwLkSkCmp3+USi+wAA">
 <XPD:ATTR name="Name" type="string">setAsteroid</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">asteroid</XPD:ATTR>
 <XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
@@ -52842,7 +52992,7 @@ of asteroid a.
 <XPD:REF name="Views[2]">B1ZfSLhCTk67BCNi70QcjQAA</XPD:REF>
 <XPD:REF name="Views[3]">UkClFMwY60ipP0KtxmwPXwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[10]" type="UMLStimulus" guid="kGBCexZ2mkGViOFsbULeBgAA">
+<XPD:OBJ name="ParticipatingStimuli[11]" type="UMLStimulus" guid="kGBCexZ2mkGViOFsbULeBgAA">
 <XPD:ATTR name="Name" type="string">setInventory</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">inventory</XPD:ATTR>
 <XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
@@ -52858,7 +53008,7 @@ of asteroid a.
 <XPD:REF name="Views[2]">sgKecjEaoUaVDDKnI4VrEgAA</XPD:REF>
 <XPD:REF name="Views[3]">jT/NPyqWnUK9dAMElXADPQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[11]" type="UMLStimulus" guid="BleU1CXaf0i7jDfzPukRfgAA">
+<XPD:OBJ name="ParticipatingStimuli[12]" type="UMLStimulus" guid="BleU1CXaf0i7jDfzPukRfgAA">
 <XPD:ATTR name="Arguments" type="string">stargate</XPD:ATTR>
 <XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
 <XPD:REF name="Receiver">aRs3x3Ro/02DnQZoIdfKkgAA</XPD:REF>
@@ -52873,6 +53023,22 @@ of asteroid a.
 <XPD:REF name="Views[1]">eQc6lJa/m0af/w234m4YfQAA</XPD:REF>
 <XPD:REF name="Views[2]">7Uf/LBb9OUWAbLTK1FSYZQAA</XPD:REF>
 <XPD:REF name="Views[3]">hwGPssEg2UOhF0mcopdgBgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="ParticipatingStimuli[13]" type="UMLStimulus" guid="F6X1FtSU9U6ai7RMehKvmQAA">
+<XPD:ATTR name="Arguments" type="string">neighbour</XPD:ATTR>
+<XPD:REF name="Sender">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
+<XPD:REF name="Receiver">aRs3x3Ro/02DnQZoIdfKkgAA</XPD:REF>
+<XPD:REF name="CommunicationLink">gPVtObdERUSDCyiLwcHSAgAA</XPD:REF>
+<XPD:OBJ name="Action" type="UMLCallAction" guid="vn544d2OK0qkyphehtQLeAAA">
+<XPD:REF name="Stimulus">F6X1FtSU9U6ai7RMehKvmQAA</XPD:REF>
+<XPD:REF name="Operation">2KBJ4VjxRUKpwevx+XKEEAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:REF name="InteractionInstanceSet">lTkCJ1fxekC9hhpWjf59pwAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">h7nc4SjWTkCOeYeHTjhSSQAA</XPD:REF>
+<XPD:REF name="Views[1]">mBsMcjRGS0Cw2E36Z6Zz2wAA</XPD:REF>
+<XPD:REF name="Views[2]">vhOYrwCUaUWwXurOAABmyQAA</XPD:REF>
+<XPD:REF name="Views[3]">IDKEVqeD2UKhunxcGWTzZQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedFrames" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="OwnedFrames[0]" type="UMLFrame" guid="YmL6M6bK2EGGjEOhZ/mpLAAA">
@@ -53864,7 +54030,7 @@ of asteroid a.
 <XPD:REF name="Views[0]">VYZL2mo+ikqW8BtPiRnjqQAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#ParticipatingInstances" type="integer">20</XPD:ATTR>
+<XPD:ATTR name="#ParticipatingInstances" type="integer">21</XPD:ATTR>
 <XPD:OBJ name="ParticipatingInstances[0]" type="UMLObject" guid="smrcfQ45A0u6Bv9wCk79twAA">
 <XPD:ATTR name="Name" type="string">main</XPD:ATTR>
 <XPD:REF name="Classifier">BrHNn958/kClmjk+G/7OwAAA</XPD:REF>
@@ -54000,13 +54166,14 @@ of asteroid a.
 <XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
 <XPD:REF name="Views[0]">gQBbhtGqkUCai1D+aNf9AQAA</XPD:REF>
 <XPD:REF name="Views[1]">fco6lSets0WNC8dzhx/ULgAA</XPD:REF>
-<XPD:ATTR name="#LinkEnds" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="#LinkEnds" type="integer">6</XPD:ATTR>
 <XPD:REF name="LinkEnds[0]">QXccGPMXqkKGEKkvXtYN4QAA</XPD:REF>
 <XPD:REF name="LinkEnds[1]">vM4bzdxoCUCWv7LUOQdD8wAA</XPD:REF>
 <XPD:REF name="LinkEnds[2]">Dsa6Y00cUkeodA6AcDYP4gAA</XPD:REF>
 <XPD:REF name="LinkEnds[3]">SvAsZjVutkabyXPR/nSFnAAA</XPD:REF>
 <XPD:REF name="LinkEnds[4]">LehnK41VnkaTD1lcE+j/BgAA</XPD:REF>
-<XPD:ATTR name="#SendingStimuli" type="integer">12</XPD:ATTR>
+<XPD:REF name="LinkEnds[5]">TeuTZJHZ3UOMzJuv0hPYfgAA</XPD:REF>
+<XPD:ATTR name="#SendingStimuli" type="integer">14</XPD:ATTR>
 <XPD:REF name="SendingStimuli[0]">nx1i4qTkSkWe/LqSk/4/YAAA</XPD:REF>
 <XPD:REF name="SendingStimuli[1]">HLQuj0uj9ESpwMaH0Bge7AAA</XPD:REF>
 <XPD:REF name="SendingStimuli[2]">ZNNZ08FQGkep5EwaGpjw3wAA</XPD:REF>
@@ -54019,6 +54186,8 @@ of asteroid a.
 <XPD:REF name="SendingStimuli[9]">E9sSt9iwLkSkCmp3+USi+wAA</XPD:REF>
 <XPD:REF name="SendingStimuli[10]">kGBCexZ2mkGViOFsbULeBgAA</XPD:REF>
 <XPD:REF name="SendingStimuli[11]">BleU1CXaf0i7jDfzPukRfgAA</XPD:REF>
+<XPD:REF name="SendingStimuli[12]">CPZXpaJh7Emnp+TbQxaNxgAA</XPD:REF>
+<XPD:REF name="SendingStimuli[13]">F6X1FtSU9U6ai7RMehKvmQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[9]" type="UMLObject" guid="7lKwstUQcUqKjK9Kb4Ou+gAA">
 <XPD:ATTR name="Name" type="string">owner</XPD:ATTR>
@@ -54071,9 +54240,10 @@ of asteroid a.
 <XPD:REF name="Views[1]">6v+xMHlfakmHqUEqqUUz6QAA</XPD:REF>
 <XPD:ATTR name="#LinkEnds" type="integer">1</XPD:ATTR>
 <XPD:REF name="LinkEnds[0]">cSr7/uuUjkKk5Y+azjmtqAAA</XPD:REF>
-<XPD:ATTR name="#ReceivingStimuli" type="integer">2</XPD:ATTR>
+<XPD:ATTR name="#ReceivingStimuli" type="integer">3</XPD:ATTR>
 <XPD:REF name="ReceivingStimuli[0]">/0y5XfJhxkOWJ1SAOUONdQAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[1]">BleU1CXaf0i7jDfzPukRfgAA</XPD:REF>
+<XPD:REF name="ReceivingStimuli[2]">F6X1FtSU9U6ai7RMehKvmQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[13]" type="UMLObject" guid="nebko2NuT0yP4bPst1BgowAA">
 <XPD:ATTR name="Name" type="string">stargate</XPD:ATTR>
@@ -54181,7 +54351,19 @@ of asteroid a.
 <XPD:REF name="ReceivingStimuli[0]">E3pE7AxoqkmQqLWvlujhSAAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[1]">yXbI+of+xUan3RStfMmbZgAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#ParticipatingLinks" type="integer">17</XPD:ATTR>
+<XPD:OBJ name="ParticipatingInstances[20]" type="UMLObject" guid="0Sv65whpik2fWOOHKc+XAAAA">
+<XPD:ATTR name="Name" type="string">neighbour</XPD:ATTR>
+<XPD:REF name="Classifier">IBR3qlnNAkqw4xIeajc8FAAA</XPD:REF>
+<XPD:REF name="CollaborationInstanceSet">rcN0PiWAwUKXPQ9scooXCAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
+<XPD:REF name="Views[0]">FR4snQhieU+9AP7VRI/7ZQAA</XPD:REF>
+<XPD:REF name="Views[1]">gyf9dfWy0kaZOR5rFQmbsgAA</XPD:REF>
+<XPD:ATTR name="#LinkEnds" type="integer">1</XPD:ATTR>
+<XPD:REF name="LinkEnds[0]">n+DqkJ9NmUyXr6gh0DXLBwAA</XPD:REF>
+<XPD:ATTR name="#ReceivingStimuli" type="integer">1</XPD:ATTR>
+<XPD:REF name="ReceivingStimuli[0]">CPZXpaJh7Emnp+TbQxaNxgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:ATTR name="#ParticipatingLinks" type="integer">18</XPD:ATTR>
 <XPD:OBJ name="ParticipatingLinks[0]" type="UMLLink" guid="nBgVBPXM0UaKWJRCMGTlywAA">
 <XPD:REF name="CollaborationInstanceSet">rcN0PiWAwUKXPQ9scooXCAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
@@ -54448,9 +54630,10 @@ of asteroid a.
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
 <XPD:REF name="Views[0]">DMVqn5KnG02OATI+BqWSNQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#Stimuli" type="integer">2</XPD:ATTR>
+<XPD:ATTR name="#Stimuli" type="integer">3</XPD:ATTR>
 <XPD:REF name="Stimuli[0]">/0y5XfJhxkOWJ1SAOUONdQAA</XPD:REF>
 <XPD:REF name="Stimuli[1]">BleU1CXaf0i7jDfzPukRfgAA</XPD:REF>
+<XPD:REF name="Stimuli[2]">F6X1FtSU9U6ai7RMehKvmQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingLinks[11]" type="UMLLink" guid="enFB9HHwH0aCfczUkB/XAQAA">
 <XPD:REF name="CollaborationInstanceSet">rcN0PiWAwUKXPQ9scooXCAAA</XPD:REF>
@@ -54596,6 +54779,29 @@ of asteroid a.
 <XPD:ATTR name="#Stimuli" type="integer">2</XPD:ATTR>
 <XPD:REF name="Stimuli[0]">E3pE7AxoqkmQqLWvlujhSAAA</XPD:REF>
 <XPD:REF name="Stimuli[1]">yXbI+of+xUan3RStfMmbZgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="ParticipatingLinks[17]" type="UMLLink" guid="eXAlTCgCck+P8yJLWgM8EgAA">
+<XPD:REF name="CollaborationInstanceSet">rcN0PiWAwUKXPQ9scooXCAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">eqgWX72CoE2rpTdlcM8PRgAA</XPD:REF>
+<XPD:REF name="Views[1]">a1YRWxLClUCy9+QtMgd5qwAA</XPD:REF>
+<XPD:REF name="Views[2]">kAL4e8uXi06S4v7DypuiXwAA</XPD:REF>
+<XPD:REF name="Views[3]">x0MzJs5nXUCl2vN5S2427AAA</XPD:REF>
+<XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Connections[0]" type="UMLLinkEnd" guid="TeuTZJHZ3UOMzJuv0hPYfgAA">
+<XPD:REF name="Instance">nc4G9FwcB0CZ4aKioEMEiwAA</XPD:REF>
+<XPD:REF name="Link">eXAlTCgCck+P8yJLWgM8EgAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
+<XPD:REF name="Views[0]">7iROSSq3MkSRjOZ4DlaNnAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Connections[1]" type="UMLLinkEnd" guid="n+DqkJ9NmUyXr6gh0DXLBwAA">
+<XPD:REF name="Instance">0Sv65whpik2fWOOHKc+XAAAA</XPD:REF>
+<XPD:REF name="Link">eXAlTCgCck+P8yJLWgM8EgAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
+<XPD:REF name="Views[0]">ZfZKAcLJnkukSrVHLrosuAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:ATTR name="#Stimuli" type="integer">1</XPD:ATTR>
+<XPD:REF name="Stimuli[0]">CPZXpaJh7Emnp+TbQxaNxgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[4]" type="UMLCollaborationInstanceSet" guid="JtmPcE09kUWCHzW08AVoXgAA">

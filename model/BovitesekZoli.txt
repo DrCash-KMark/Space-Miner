@@ -53,7 +53,7 @@ A konzulens tanácsára töröltem a Robot move és Robot drill szekvenciákat.
 
 
 Kérdések:
-Ha loop van, akkor lehet-e egy lifeline, ami egy egy ciklus által iterált összes objektumot reprezentál.
+Ha loop van, akkor lehet-e egy lifeline, ami egy-egy ciklus által iterált összes objektumot reprezentál.
 A Sunflare-ben hogyan legyen megoldva, hogy az entity ne kérdezze le az aszteroida állapotait? Legyen egy boolean visszatérésű isHidingSpot() az aszeteroidában, vagy az aszteroida hivjon a settler felé.
 
 

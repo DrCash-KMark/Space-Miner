@@ -1,3 +1,4 @@
+
 Robot crafting szekvencia hibás: nincs létrehozva robot, ráadásul tőle kérdezzük meg, hogy megépíthető-e.
 Hasonlóan hibás a Gate crafting és Base crafting.
 Crafting szekvencia hibás: interfész függvényt hív.

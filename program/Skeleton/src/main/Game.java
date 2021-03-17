@@ -1,3 +1,6 @@
+package main;
+
+import java.util.ArrayList;
 import java.util.List;
 
 //
@@ -16,24 +19,27 @@ import java.util.List;
 
 public class Game {
 	private List<Controllable> controllables;
-	private List<Asteroid> asteroids;		//???
+	private List<Planet> planets;		//???
 	private List<Settler> settlers;
 	
 	public Game() {
-		//ToDo;
+		controllables = new ArrayList<>();
+		planets = new ArrayList<>();
+		settlers = new ArrayList<>();
 	}
 	
 	public void destroyMe(Controllable toDestroy) {
 		controllables.remove(toDestroy);
 	}
 	
+	
 	public void killMe(Settler toKill) {
 		settlers.remove(toKill);
 	}
 	
 	public void notifyAllAboutSunFlare() {
-		for (Asteroid asteroid : asteroids) {
-			asteroid.getNotifiedAboutSunflare();
+		for (Planet planet : planets) {
+			planet.getNotifiedAboutSunflare();
 		}
 	}
 	

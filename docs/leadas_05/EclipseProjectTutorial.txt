@@ -1,0 +1,54 @@
+Eclipse project tutorial
+
+Hogyan állitsuk be az uj workspace-t és projektet?
+
+Ha meg van nyitva a Környzet, akkor File / Switch Workspace / other.../
+Browse...
+
+Itt a gitkönyvtárunk root mappáját válasszuk. (Lehetne a program almappát is.)
+Klikk a Launch-ra!
+
+Miután megnyilt az üdvözlő lap, azt nyugodtan kiikszelhetjük!
+
+-----------------------------------------------------------------------
+Ezek után fogjuk létrehozni a projektet a forrásfájlokból.
+A Package Explorer-ben kattintsunk a Create a Java project... szövegre!
+
+Válasszunk tetszőleges projekt nevet. (pl. Skeleton project)
+
+Ne pipáljuk ki a Use default location-t, hanem válasszuk ki a
+\program\Skeleton mappát.
+
+NE pipáljuk ki a Working sets / Add project to working sets pontot!!!
+
+Nyomjunk Next>-et!!!
+-----------------------------------------------------------------------
+Ellenőrizzük, hogy a Source fül alatt megjelent-e a src és test mappa.
+A src-t szétkattintva egy main, a test-et szétkattintva egy tests package kell hogy látszódjon.
+
+Az Allow output folders for source folders és Create module-info.java file
+pontokat NEM kell bejelölni!
+
+Az output foldernek megfelel a felajánlott: <projekt név>/bin
+
+Finish!
+-----------------------------------------------------------------------
+
+Létrejött a projekt, de a test mappa tartalma hibát jelez.
+Még hozzá kell adni a projekthez a JUnit-ot.
+
+Menüsorban: Project / Properties / Java Build Path / Libraries
+Jelöljük ki a Classepath-t, majd jobboldalon nyomjunk az Add Library... gombra!
+
+Válasszuk a JUnit-ot, mjad Next>!
+
+Válasszuk pl. a JUnit 4 verziót és Finish.
+
+Most már a teszteknek is működnie kell. :)
+
+
+
+
+
+
+

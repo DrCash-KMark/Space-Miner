@@ -14,6 +14,16 @@
 
 public abstract class Planet {
 	protected Game owner;
+	
+	public Game getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Game owner) {
+		this.owner = owner;
+	}
+
 	public void getNotifiedAboutSunflare() {
+		//Do nothing.
 	}
 }

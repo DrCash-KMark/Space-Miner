@@ -14,12 +14,13 @@
 
 public class Sun extends Planet implements Controllable {
 	
-	public void sunFlare() {	
+	public void sunFlare() {
+		owner.notifyAllAboutSunFlare();
 	}
 
 	@Override
 	public void onTurn() {
-		// TODO Auto-generated method stub
-		
+		sunFlare();
 	}
+	
 }

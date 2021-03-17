@@ -15,6 +15,23 @@
 public abstract class Entity {
 	protected Asteroid asteroid;
 	protected Game owner;
+	
+	public Asteroid getAsteroid() {
+		return asteroid;
+	}
+
+	public void setAsteroid(Asteroid asteroid) {
+		this.asteroid = asteroid;
+	}
+
+	public Game getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Game owner) {
+		this.owner = owner;
+	}
+
 	public void move(Asteroid destination) {
 	}
 	

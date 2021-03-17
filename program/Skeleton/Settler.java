@@ -17,6 +17,7 @@ public class Settler extends Entity {
 	private Inventory BASE_RECIPE;
 	private Inventory ROBOT_RECIPE;
 	private Inventory STARGATE_RECIPE;
+	
 	public void mine() {
 	}
 	
@@ -34,4 +35,9 @@ public class Settler extends Entity {
 	
 	public void placeStarGate() {
 	}
+	
+	public void die() {
+		owner.killMe(this);
+	}
+
 }

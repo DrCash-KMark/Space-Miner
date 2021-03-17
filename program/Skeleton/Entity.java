@@ -12,7 +12,7 @@
 
 
 
-public abstract class Entity implements Destroyable {
+public abstract class Entity {
 	protected Asteroid asteroid;
 	protected Game owner;
 	public void move(Asteroid destination) {

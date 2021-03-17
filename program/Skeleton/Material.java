@@ -13,9 +13,9 @@
 
 
 public abstract class Material {
-	protected bool isRadio;
+	protected boolean isRadio;
 	protected String name;
-	protected bool canEvaporate;
+	protected boolean canEvaporate;
 	public void exposedAndCloseToSun(Asteroid a) {
 	}
 }

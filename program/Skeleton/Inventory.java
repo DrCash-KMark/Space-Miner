@@ -16,12 +16,15 @@ public class Inventory {
 	private Material materials;
 	private StarGate starGate;
 	public Material removeInventory(Material m) {
+		return null;
 	}
 	
 	public StarGate removeStarGate() {
+		return null;
 	}
 	
-	public bool subSet(Inventory i) {
+	public boolean subSet(Inventory i) {
+		return false;
 	}
 	
 	public void addStarGate(StarGate sg) {

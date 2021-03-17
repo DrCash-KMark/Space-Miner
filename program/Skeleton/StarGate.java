@@ -18,9 +18,11 @@ public class StarGate extends Building {
 	public void getNeighbourAsteroid() {
 	}
 	
-	public bool getWorks() {
+	public boolean getWorks() {
+		return false;
 	}
 	
 	public Asteroid getAsteroid() {
+		return null;
 	}
 }

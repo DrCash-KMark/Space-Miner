@@ -13,4 +13,11 @@
 
 
 public class Robot extends Entity implements Controllable {
+
+	@Override
+	public void onTurn() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

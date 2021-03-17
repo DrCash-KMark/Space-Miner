@@ -12,7 +12,7 @@
 
 
 
-public class Asteroid extends Planet implements Destroyable, Controllable, Controllable {
+public class Asteroid extends Planet implements Controllable {
 	private int rockThickness;
 	private Boolean closeToSun;
 	private Entity entities;
@@ -32,9 +32,11 @@ public class Asteroid extends Planet implements Destroyable, Controllable, Contr
 	}
 	
 	public Material removeMaterial() {
+		return null;
 	}
 	
-	public bool addMaterial(Material m) {
+	public boolean addMaterial(Material m) {
+		return true;
 	}
 	
 	public void removeNeighbour(Asteroid a) {
@@ -49,12 +51,19 @@ public class Asteroid extends Planet implements Destroyable, Controllable, Contr
 	public void removeBuilding(Building b) {
 	}
 	
-	public bool isHollow() {
+	public boolean isHollow() {
+		return true;
 	}
 	
 	public void evaporateMaterial() {
 	}
 	
 	public void removeNeighbour() {
+	}
+
+	@Override
+	public void onTurn() {
+		// TODO Auto-generated method stub
+		
 	}
 }

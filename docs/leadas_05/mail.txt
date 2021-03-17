@@ -27,3 +27,12 @@ Egy zip fájlban legyen a forrás és a doksi. Amit feltöltötök, annak kell t
 Amit ellenőrizni fogok:
 * sikerül-e a fordítás és futtatás a leírásban megadott parancsok begépelése alapján
 * adott menüpont kiválasztása után az adott teszthez a szkeleton tervekben meghatározott formában ki kell íródnia a függvényhívásoknak (először a kommunikációs diagram hívásai, majd a szekvencia hívásai)
+
+------------------
+Megbeszélés:
+IDE: Eclipse
+Totya: Entity, Settler, Robot
+Márk: Aszteroida, Controllable
+Moha: Main, Buildingek
+Zoli: Sun, Planet, Game
+Csabi: Inventory, Material, összes nyersanyag

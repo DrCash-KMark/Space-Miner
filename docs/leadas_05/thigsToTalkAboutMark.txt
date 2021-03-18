@@ -1,0 +1,4 @@
+material should have a copy constructor because of the removeMaterial function of Asteroid
+a removeMaterial csak akkor hívodik meg, amikor már szabad kiveni? ha nem javitando
+destroyMe function happens before asteroid addMaterial returns. idea: game sets a flag that this should be destory when turns end.
+onTurn nincs megcsinálva

@@ -1,0 +1,38 @@
+Köv lépés skeleton programja:
+
+Forráskód, segédfileok kellenek, doksi -> egy zipben.
+Pontosan megadni a fordítási parancsot, javac java parancsok.
+A felhőben kell a konkrét parancsokkal működtetni.
+
+Kiválasztunk egy menüt, akkor először lefut e a komm diagramnak, majd a szekvenciának megfelelő program.
+Lesz keresztbe ellenőrzés, majd megkapjuk másik csapatét és majd az kell ellenőrizni, jegyzőkönyv.
+Erre is kapunk pontot.
+Ahhoz hogy ez működjön, erre is kell teams csatorna, ahol beszélünk majd a másik csapattal.
+
+-------------------
+Mail:
+
+A jövő heti beadás a szkeleton elkészítése. Amennyiben fent hiányosságokat írtam, azokat javítani kell, és a javításokat a következő anyag elején jelezni kell.
+
+A szkeleton legalább 20% kommentet tartalmazzon (osztályok és metódusok előtt, javadoc stílusban). Ide nyugodtan bemásolhatók az analízis modell részletes leírásai.
+
+Pontos fájllista kell a doksiban, ugyanaz, mint amit feltölt a csapat. Nemcsak a forráskódok, hanem minden feltöltött fájl szerepeljen.
+
+Kell fordítási és futtatási útmutató is, amely segítségével a forráskódból indulva lefordítható és futtatható a program! Pontos parancsok kellenek, de célszerű létrehozni batch fájlokat, hogy könnyebb legyen a használat. Érdemes előre kipróbálni a virtuális gépen, mivel ott kell működnie!
+
+Személyenkénti értékelés: a projekt kezdete óta eltelt időszakra százalékban.
+
+Egy zip fájlban legyen a forrás és a doksi. Amit feltöltötök, annak kell tudnia fordíthatónak és futtathatónak lennie.
+
+Amit ellenőrizni fogok:
+* sikerül-e a fordítás és futtatás a leírásban megadott parancsok begépelése alapján
+* adott menüpont kiválasztása után az adott teszthez a szkeleton tervekben meghatározott formában ki kell íródnia a függvényhívásoknak (először a kommunikációs diagram hívásai, majd a szekvencia hívásai)
+
+------------------
+Megbeszélés:
+IDE: Eclipse
+Totya: Entity, Settler, Robot
+Márk: Aszteroida, Controllable
+Moha: Main, Buildingek
+Zoli: Sun, Planet, Game
+Csabi: Inventory, Material, összes nyersanyag

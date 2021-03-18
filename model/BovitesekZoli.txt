@@ -1,0 +1,59 @@
+Az aszteroidához felvettem egy napkozelseg flaget.
+Javitom a hibasan felvett tagvaltozokat. (Nev es tipus felcserelve.)
+
+Felvennek egy destroyMe(Controllable) metodust a Game-be, hogy az a kor vegen fel tudja szabaditani a megsemmisulo aszteroidakat.
+
+Fel kellett vennem egy asteroidExploded() fuggvenyt az entitasba, hogy a felrobbanaskor az entitas maga tudja eldonteni,
+hogy at kell repulnie egy szomszedos aszteroidara (Robot), vagy meg kell halnia(Settler).
+
+Felveszek egy notifyAllAboutSunFlare() metodust a game-be, hogy a Sun ertesithesse a tobbi objektumot.
++ Felveszek egy getNotifiedAboutSunFlare metodust a Controllable interface-be.
+
+Csinalnek egy isHollow() metodust az asteroidahoz, mert segitene tesztelni pl. az elbujas lehetoseget.
+
+A removeInventory-nak visszateresi erteket allitottam be. (Material)
+--------------------------------------------------------------------------------------
+Kerdesek:
+Ki inditsa a szekvenciat ha a kontroller es jatekos is tehetne?
+Lehet kene egy lose es win metodus a game-be. Akkor a megfelelo helyeken ezeket lehetne hivni.
+Hogyan kell a teljes argumentumokkal megjeleniteni a mteodus hivasokat???
+
+--------------------------------------------------------------------------------------
+Befejezni: napkitores meg dolgok
+
+
+Altalam letrehozott metodusok leirasa:
+Game -> destroyMe(toDestroy : Controllable): void	Meghívásával egy Controllable értesíti a Game-et, hogy az szüntesse meg a rá mutató hivatkozást a kör végén.
+Game -> notifyAllAboutSunFlare() : void				A Sun hívja a Game-en, amikor napkitörést kezdeményez. Hatására a Game értesíti az összes Controllable-t a getNotifiedAboutSunFlare hívással.
+
+Controllable -> getNotifiedAboutSunFlare() : void	Napkitörésről értesül a Controllable interface-t megvalósító objektum.
+
+Entity -> asteroidExploded(): void 					Ezt a metódust egy felrobbanó aszteroida hívja meg az összes rajta található entitáson, hogy azok tudják, hogy me kell halniuk, vagy szomszédos aszteroidára kell ugraniuk.
+
+Asteroid -> isHollow() : Boolean					Visszatérési értékében megadja, hogy üreges-e az aszteroida.	 
+
+A removeInventory-nak visszateresi erteket allitottam be. (Material)
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+
+A neigbour destroyed a kapuhoz, amit a destroybol hivunk.
+
+
+----------------------------------------------------------------------------------------
+Csütörtöki gondolatok:
+
+A materialba felvettem egy exposedAndCloseToSun() metódust, ami akkor hivódik, ha átfúródik aszteroida, vagy napközelbe kerül az aszeteroida, illetve egyszerre mindkettő effektus érvényben van.
+Az aszteroida felrobbantása ezzel lett megoldva.
+
+
+A konzulens tanácsára töröltem a Robot move és Robot drill szekvenciákat.
+
+
+Kérdések:
+Ha loop van, akkor lehet-e egy lifeline, ami egy-egy ciklus által iterált összes objektumot reprezentál.
+A Sunflare-ben hogyan legyen megoldva, hogy az entity ne kérdezze le az aszteroida állapotait? Legyen egy boolean visszatérésű isHidingSpot() az aszeteroidában, vagy az aszteroida hivjon a settler felé.
+
+

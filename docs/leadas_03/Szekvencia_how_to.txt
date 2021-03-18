@@ -1,0 +1,29 @@
+
+Robot crafting szekvencia hibás: nincs létrehozva robot, ráadásul tőle kérdezzük meg, hogy megépíthető-e.
+Hasonlóan hibás a Gate crafting és Base crafting.
+Crafting szekvencia hibás: interfész függvényt hív.
+Place gate szekvencia hibás: paraméterek nevei nem stimmelnek a lifeline-ok neveivel, ne a telepes tudja, aktív-e a teleport.
+DropMaterial szekvencia: a removeInventory paramétere nem tudni honnan jön. <--- Ide meg kell adni egy stringet paraméterben és akkor már tudjuk.
+Drill szekvencia: az aszteroida ne tudja, hogy radioaktív-e a nyersanyag.
+Mine szekvencia: paraméterek nevei nem stimmelnek a lifeline-ok neveivel.
+SunFlare szekvencia: ne kérdezgesse a telepes az aszteroida állapotát.
+RobotMove és RobotDrill szekvencia: ugyanaz az onTurn függvény kétféleképpen működik.
+
+-----
+1. Sosem teszünk szekvenciára interfészt, SOSEM!!! Mindig szétszedjük.
+2. Figyeljünk hogy mivel tér vissza, mivel kéne neki és legyen rajta a nyílon.
+3. Figyeljünk arraa hogy a lifeline-ok nevei egyezzenek a paraméterek neveivel.
+
+-----
+Kérdésünk:
+Robot crafting szekvencián hogyan hozzuk létre a robotot, itt tüntessük fel a konstruktor hívásást a <<create>> sztereotípiával a szekvencián?
+Ezután tőle kérdeznénk meg, hogy megépíthető-e, ha nem akkor törölnénk az objektumot. Ez az ötlet, így még mindig hibás?
+Ha ez nem lenne jó, felmerült még egy statikus metódus használata, ami megnézné, hogy maga az objektum "megépíthető"-e.
+
+
+-----
+mine és place gate-en van két void-dal visszatérő hívás, aminek nem annak kéne lennie
+sunflare szekvencia, honnan tudja a sun hogy ki a game?
+explode robot szekvencia, honnan tudja az asteroid, hogy ki a game?
+párolgásnak külön szekvencia kéne
+győzelemnek külön szekvencia

@@ -1,0 +1,36 @@
+---Analízis modell konzi---
+
+Itt még ne osszuk körökre, fázisokra, még azt nem tárgyaljuk.
+Az első részben a követelmények alapján kell dolgozni, magyar nyelven fogalmazzunk, kerüljük a szakszavakat.
+Az objektum katalógus elemeit a követelményekből kell kivenni.
+
+Osztályok tervezésénél:
+Cél az, hogy minél inkább OOP legyen a program.
+Ne nagyon legyenek központi irányítóelemek.
+
+Szekvenciadiagram:
+Sok kell, mutassa meg a dinamikát.
+Az osztálydiagram, csak a szekvencia diagramokkal együtt értelmes, a kettő együtt határozza meg a modell működését.
+Minden szekvencia elérhető kell hogy legyen egy aktor akciójából.
+A szekvenciákban ne legyenek "altok", külön viselkedést, külön diagramon kell ábrázolni.
+
+---Tipikus hibák (szekveniáknál):---
+-Nincs a nyílon semmi, nincs a függvény a diagramon, nincs megadva paraméter.
+-Úgy hív egy obj egy fv-t, hogy nem ismeri a típusát.
+-Két különböző, de azonos típusú obj.-nak nincs külön lifeline-a.
+-Absztrakt fv-t, vagy interfészt hívni lehet, viszont a megvalósítást külön szekvenciákon ábrázolni kell.
+-Ugyanaz a fv. máshogyan viselkedik más más szekvencián.
+(Visszatérő értéket jelölni a szaggatott nyílon lehet.)
+
+---Tipikus hibák UML-nél:---
+-Ha a leszármazott üres, nem definiál felül semmit.
+(Persze absztrakt osztályt, interfészt nem kell ismételni.)
+-Ha felül akarunk valamit definiálni, akkor azt jelenítsük meg.
+-Tiltott a kódolt típus lekérdezés is.
+
+A nyersanyagok lekérdezésére:
+Tfh, hogy kíváncsi vagyok, hogy az órámon milyen "hallgatók" vannak.
+Körbeküldök egy "lapot" a "teremben", hogy mindenki írja rá a "nevét".
+
+A state-chartok-ra:
+Akkor érdemes megcsinálni, mikor ha implementáljuk az oszályokat, van e olyan érték kombinációjuk, amit érdemes implemntálni.

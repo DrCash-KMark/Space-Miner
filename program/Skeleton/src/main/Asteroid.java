@@ -56,6 +56,9 @@ public class Asteroid extends Planet implements Controllable {
 		this.buildings = buildings;
 	}
 	
+	
+	
+	
 	/**
 	 * Add a new entity to the entities which are on the asteroid
 	 * @param e the entity that will be added to the asteroid.
@@ -162,7 +165,7 @@ public class Asteroid extends Planet implements Controllable {
 	}
 	
 	/**
-	 * destroy the material which was inside the asteroid
+	 * Destroys the material which was inside the asteroid
 	 */
 	public void evaporateMaterial() {
 		this.material=null;

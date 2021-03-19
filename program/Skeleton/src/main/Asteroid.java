@@ -56,8 +56,51 @@ public class Asteroid extends Planet implements Controllable {
 		this.buildings = buildings;
 	}
 	
-	
-	
+	public int getRockThickness() {
+		return rockThickness;
+	}
+
+	public void setRockThickness(int rockThickness) {
+		this.rockThickness = rockThickness;
+	}
+
+	public Boolean getCloseToSun() {
+		return closeToSun;
+	}
+
+	public void setCloseToSun(Boolean closeToSun) {
+		this.closeToSun = closeToSun;
+	}
+
+	public List<Entity> getEntities() {
+		return entities;
+	}
+
+	public void setEntities(List<Entity> entities) {
+		this.entities = entities;
+	}
+
+	public Material getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(Material material) {
+		this.material = material;
+	}
+
+	public List<Asteroid> getNeighbours() {
+		return neighbours;
+	}
+
+	public void setNeighbours(List<Asteroid> neighbours) {
+		this.neighbours = neighbours;
+	}
+	public List<Building> getBuildings() {
+		return buildings;
+	}
+	public void setBuildings(List<Building> buildings) {
+		this.buildings = buildings;
+	}	
 	
 	/**
 	 * Add a new entity to the entities which are on the asteroid
@@ -113,9 +156,12 @@ public class Asteroid extends Planet implements Controllable {
 	
 	/**
 	 * returns the material, that was in the asteroid, and remove the material from the asteroid setting it to null.
+	 * If the asteroids thickness is greater than 0 it won't remove the material
 	 * @return the material the was in the asteroid
 	 */
 	public Material removeMaterial() {
+		if(this.rockThickness>0) //checks if the material can be removed
+			return null;
 		Material returnValue=this.material;
 		this.material=null;
 		return returnValue;

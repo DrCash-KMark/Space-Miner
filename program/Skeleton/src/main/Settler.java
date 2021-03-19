@@ -7,39 +7,94 @@ package main;
 //  @ Project : Space-Miner
 //  @ File Name : Settler.java
 //  @ Date : 17/03/2021
-//  @ Author : 
+//  @ Author : Tadam
 //
 //
 
 
 
-
+/**
+ * Settler class, extends Entity
+ * @author Tadam
+ *
+ */
 public class Settler extends Entity {
 	private Inventory inventory;
 	private Inventory BASE_RECIPE;
 	private Inventory ROBOT_RECIPE;
 	private Inventory STARGATE_RECIPE;
 	
-	public void mine() {
+	/**
+	 * Default Constructor without parameters.
+	 */
+	public Settler() {
+		super();
+		inventory = new Inventory();
+		BASE_RECIPE = new Inventory();
+		ROBOT_RECIPE = new Inventory();
+		STARGATE_RECIPE = new Inventory();
 	}
-	
+	/**
+	 * Constructor with parameters.
+	 * @param asteroid: Asteroid: The Asteroid which this Settler is standing on.
+	 * @param owner: Game: The game which this Settler belongs to.
+	 */
+	public Settler(Asteroid asteroid, Game owner) {
+		super(asteroid, owner);
+		inventory = new Inventory();
+		BASE_RECIPE = new Inventory();
+		ROBOT_RECIPE = new Inventory();
+		STARGATE_RECIPE = new Inventory();
+	}
+	/**
+	 * This settler mines on his asteroid.
+	 */
+	public void mine() {
+		Material m = this.asteroid.removeMaterial();
+		inventory.addInventory(m);
+	}
+	/**
+	 * This settler builds a Stargate.
+	 */
 	public void buildStarGate() {
 	}
-	
+	/**
+	 * This settler builds a Robot.
+	 */
 	public void buildRobot() {
 	}
-	
+	/**
+	 * This settler builds a Base.
+	 */
 	public void buildBase() {
 	}
-	
+	/**
+	 * This settler tries to drop a material.
+	 * If he can drop it, he removes it from his inventory.
+	 * @param m: Material: The material which the settler wants to drop.
+	 */
 	public void dropMaterial(Material m) {
+		boolean b = asteroid.addMaterial(m);
+		if(b == true) {
+			this.inventory.removeInventory(m);
+		}
 	}
-	
+	/**
+	 * The settler places a Stargate on the current asteroid.
+	 */
 	public void placeStarGate() {
 	}
-	
+	/**
+	 * The settler dies.
+	 */
 	public void die() {
+		super.die();
 		owner.killMe(this);
 	}
-
+	/**
+	 * The asteroid of this settler has been exploded.
+	 */
+	public void asteroidExploded() {
+		this.die();
+	}
 }

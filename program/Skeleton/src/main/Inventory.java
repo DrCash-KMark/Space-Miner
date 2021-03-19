@@ -101,6 +101,7 @@ public class Inventory {
 		return true;
 	}
 	
+	
 	/**
 	 * Adds the given stargate to the stargate list.
 	 * @param sg the stargate the will be added to the stargate list

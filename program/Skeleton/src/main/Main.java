@@ -18,16 +18,7 @@ public class Main {
 	
     public static void main(String[] args) {
     	System.out.println("Hello Skeleton!");
-    	
-    	// Test:-------------------------------
-    	Game game = new Game();
-    	Settler settler = new Settler();
-    	
-    	game.addSettler(settler);
-    	settler.setOwner(game);
-    	settler.die();
-    	//----------------------------------------
-    	
+    	//ToDo
 	}
     
     

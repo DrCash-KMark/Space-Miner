@@ -13,10 +13,21 @@ package main;
 
 
 
-
+/**
+ * Abstract parent class of different space objects in game.
+ * @author simon
+ *
+ */
 public abstract class Planet {
 	protected Game owner;
 	
+	/**
+	 * Called when sun flare occurs.
+	 * Could be overwritten in derived classes. 
+	 */
+	public void getNotifiedAboutSunflare() {
+	}
+
 	public Game getOwner() {
 		return owner;
 	}
@@ -25,6 +36,4 @@ public abstract class Planet {
 		this.owner = owner;
 	}
 
-	public void getNotifiedAboutSunflare() {
-	}
 }

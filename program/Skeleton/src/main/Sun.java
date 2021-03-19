@@ -13,13 +13,23 @@ package main;
 
 
 
-
+/**
+ * Represents the Star in the game. It can cause sun flares.
+ * @author simon
+ *
+ */
 public class Sun extends Planet implements Controllable {
 	
+	/**
+	 * Causes sun flare. Calls back to the owner Game object.
+	 */
 	public void sunFlare() {
 		owner.notifyAllAboutSunFlare();
 	}
 
+	/**
+	 * Implements autonomous behavior performed in every game turn.   
+	 */
 	@Override
 	public void onTurn() {
 		sunFlare();

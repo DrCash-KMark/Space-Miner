@@ -7,7 +7,7 @@ package main;
 //  @ Project : Space-Miner
 //  @ File Name : Uran.java
 //  @ Date : 17/03/2021
-//  @ Author : 
+//  @ Author : Barkanyi
 //
 //
 
@@ -15,4 +15,19 @@ package main;
 
 
 public class Uran extends Material {
+	
+	/**
+	 * Constructor for Uran.
+	 */
+	Uran(){
+		super(true, "Uran", false);
+	}
+	
+	/**
+	 * Blow up the asteroid which contains the material.
+	 */
+	public void exposedAndCloseToSun(Asteroid a) {
+		
+		a.explode();
+	}
 }

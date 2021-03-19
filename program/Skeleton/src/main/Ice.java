@@ -7,7 +7,7 @@ package main;
 //  @ Project : Space-Miner
 //  @ File Name : Ice.java
 //  @ Date : 17/03/2021
-//  @ Author : 
+//  @ Author : Barkanyi
 //
 //
 
@@ -15,4 +15,19 @@ package main;
 
 
 public class Ice extends Material {
+	
+	/**
+	 * Constructor for Ice.
+	 */
+	Ice(){
+		super(false, "Ice", true);
+	}
+	
+	/**
+	 * Evaporate the ice from the asteroid.
+	 */
+	public void exposedAndCloseToSun(Asteroid a) {
+		
+		a.evaporateMaterial();
+	}
 }

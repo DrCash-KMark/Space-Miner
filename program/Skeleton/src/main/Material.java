@@ -7,7 +7,7 @@ package main;
 //  @ Project : Space-Miner
 //  @ File Name : Material.java
 //  @ Date : 17/03/2021
-//  @ Author : 
+//  @ Author : Barkanyi
 //
 //
 
@@ -18,6 +18,19 @@ public abstract class Material {
 	protected boolean isRadio;
 	protected String name;
 	protected boolean canEvaporate;
+	
+	/**
+	 * constructor for the Material which sets all parameters at once	
+	 * @param isRadio
+	 * @param name
+	 * @param canEvaporate
+	 */
+	Material(boolean isRadio, String name, boolean canEvaporate){
+		this.isRadio = isRadio;
+		this.name = name;
+		this.canEvaporate = canEvaporate;
+	}
+	
 	public void exposedAndCloseToSun(Asteroid a) {
 	}
 }

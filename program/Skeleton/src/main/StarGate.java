@@ -13,7 +13,9 @@ package main;
 
 
 
-
+/**
+ * StarGate class. Responsible for creating destroying and managing StarGates.
+ */
 public class StarGate extends Building {
 	private boolean works;
 	private StarGate neighbour;
@@ -24,10 +26,17 @@ public class StarGate extends Building {
 	public StarGate getNeighbour() { return neighbour; }
 	public void setNeighbour(StarGate sg) { neighbour = sg; }
 	
+	/**
+	 * constructor for StarGate without parameter
+	 */
 	public StarGate() {
 		works = false;
 	}
 	
+	/**
+	 * function for placing the StarGate on an asteroid
+	 * @param a: Asteroid: asteroid on which the StarGate is placed
+	 */
 	public void onPlace(Asteroid a) {
 		main.log(false, "stargate", "StarGate", "onPlace(asteroid:Asteroid");
 		
@@ -43,6 +52,9 @@ public class StarGate extends Building {
 		main.log(true, "void", "Void", "");
 	}
 	
+	/**
+	 * function for destroying the StarGate
+	 */
 	public void destroy() {
 		main.log(false, "stargate", "StarGate", "destroy()");
 		
@@ -56,6 +68,10 @@ public class StarGate extends Building {
 		main.log(true, "void", "Void", "");
 	}
 	
+	/**
+	 * function for getting the asteroid on which the neighbouring StarGate is placed
+	 * @return neighbour: Asteroid: this is the neighbouring StarGate's asteroid
+	 */
 	public Asteroid getNeighbourAsteroid() {
 		main.log(false, "stargate", "StarGate", "getNeighbourAsteroid()");
 		

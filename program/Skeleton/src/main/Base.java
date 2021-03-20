@@ -13,13 +13,18 @@ package main;
 
 
 
-
+/**
+ * Base class. Responsible for creating destroying and managing Bases.
+ */
 public class Base extends Building {
 	
 	public Base () {
 	}
 	
-	@Override
+	/**
+	 * function for placing the base on an asteroid
+	 * @param a: Asteroid: asteroid on which the base is placed
+	 */
 	public void onPlace(Asteroid a) {
 		main.log(false, "base", "Base", "onPlace(asteroid:Asteroid)");
 		
@@ -28,6 +33,9 @@ public class Base extends Building {
 		owner.gameWon();
 	}
 
+	/**
+	 * function for destroying the base
+	 */
 	public void destroy() {
 	}
 }

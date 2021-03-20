@@ -15,13 +15,21 @@ import java.util.Scanner;
 
 
 
-
+/**
+ * Main class. Responsible for executing the skeleton use cases.
+ */
 public class Main {
 	
 	private int tabulation;
 	private int menuState;
 	
-	// This function helps us log function calls and returns
+	/**
+	 * function for logging the functions executed by individual objects
+	 * @param isReturn: boolean: this boolean marks if this is a "forward" or return call
+	 * @param obj: String: this string holds the name of the object that calls this function
+	 * @param cls: String: this string holds the name of the class that calls this function
+	 * @param fnc: String: this string holds the functioncall in a string
+	 */
 	public void log(boolean isReturn, String obj, String cls, String fnc)
 	{
 		if (!isReturn)
@@ -44,6 +52,9 @@ public class Main {
 		}
 	}
 	
+	/**
+	 * constructor without parameters
+	 */
 	public Main() {
 		tabulation = 0;
 		menuState = 0;
@@ -53,7 +64,10 @@ public class Main {
     	printMenu();
 	}
     
-	// This function reads an int from the standard input
+	/**
+	 * this function reads an int from the standard input
+	 * @return num: int: returns the number read from the standard input
+	 */
     public int scanNumber()
     {
     	Scanner scan = new Scanner(System.in);
@@ -66,7 +80,9 @@ public class Main {
         return num;
     }
     
-    // This function prints the menu and all its sub menus onto the standard output
+    /**
+	 * this function prints the main and its sub menus onto the standard output
+	 */
     public void printMenu()
     {
     	int num;
@@ -379,7 +395,9 @@ public class Main {
     	}
     }
     
-    // This function sets up everything for the vas_banyaszasa sequence and then executes it.
+    /**
+     * This function sets up everything for the vas_banyaszasa sequence and then executes it.
+	 */
     public void vas_banyaszasa() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vas banyaszasa");
@@ -419,7 +437,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the szen_banyaszasa sequence and then executes it.
+    /**
+     * This function sets up everything for the szen_banyaszasa sequence and then executes it.
+	 */
     public void szen_banyaszasa() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Szen banyaszasa");
@@ -459,7 +479,9 @@ public class Main {
     	return;
     }
 
-    // This function sets up everything for the vizjeg_banyaszasa sequence and then executes it.
+    /**
+     * This function sets up everything for the vizjeg_banyaszasa sequence and then executes it.
+	 */
     public void vizjeg_banyaszasa() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vizjeg banyaszasa");
@@ -499,7 +521,9 @@ public class Main {
     	return;
     }
 
-    // This function sets up everything for the uran_banyaszasa sequence and then executes it.
+    /**
+     * This function sets up everything for the uran_banyaszasa sequence and then executes it.
+	 */
     public void uran_banyaszasa() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Uran banyaszasa");
@@ -539,7 +563,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the vas_visszahelyezese sequence and then executes it.
+    /**
+     * This function sets up everything for the vas_visszahelyezese sequence and then executes it.
+	 */
     public void vas_visszahelyezese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vas visszahelyezese");
@@ -589,7 +615,9 @@ public class Main {
     	return;
     }
 
-    // This function sets up everything for the szen_visszahelyezese sequence and then executes it.
+    /**
+     * This function sets up everything for the szen_visszahelyezese sequence and then executes it.
+	 */
     public void szen_visszahelyezese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Szen visszahelyezese");
@@ -639,7 +667,9 @@ public class Main {
     	return;
     }
 
-    // This function sets up everything for the vizjeg_visszahelyezese sequence and then executes it.
+    /**
+     * This function sets up everything for the vizjeg_visszahelyezese sequence and then executes it.
+	 */
     public void vizjeg_visszahelyezese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vizjeg visszahelyezese");
@@ -689,7 +719,9 @@ public class Main {
     	return;
     }
 
-    // This function sets up everything for the uran_visszahelyezese sequence and then executes it.
+    /**
+     * This function sets up everything for the uran_visszahelyezese sequence and then executes it.
+	 */
     public void uran_visszahelyezese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Uran visszahelyezese");
@@ -757,7 +789,9 @@ public class Main {
     	return;
     }
 
-    // This function sets up everything for the napvihar_tortenik sequence and then executes it.
+    /**
+     * This function sets up everything for the napvihar_tortenik sequence and then executes it.
+	 */
     public void napvihar_tortenik() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Napviher tortenik");
@@ -813,7 +847,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the furas_robottal_elparolog sequence and then executes it.
+    /**
+     * This function sets up everything for the furas_robottal_elparolog sequence and then executes it.
+	 */
     public void furas_robottal_elparolog() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal elparolog");
@@ -858,7 +894,9 @@ public class Main {
     	return;
     }
    
-    // This function sets up everything for the furas_telepessel_elparolog sequence and then executes it.
+    /**
+     * This function sets up everything for the furas_telepessel_elparolog sequence and then executes it.
+	 */
     public void furas_telepessel_elparolog() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepessel elparolog");
@@ -905,7 +943,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the furas_robottal_robban_van_szomszed sequence and then executes it.
+    /**
+     * This function sets up everything for the furas_robottal_robban_van_szomszed sequence and then executes it.
+	 */
     public void furas_robottal_robban_van_szomszed() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal robban van szomszed");
@@ -967,7 +1007,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the furas_robottal_robban_nincs_szomszed sequence and then executes it.
+    /**
+     * This function sets up everything for the furas_robottal_robban_nincs_szomszed sequence and then executes it.
+	 */
     public void furas_robottal_robban_nincs_szomszed() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal nincs szomszed");
@@ -1021,7 +1063,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the furas_telepessel_robban sequence and then executes it.
+    /**
+     * This function sets up everything for the furas_telepessel_robban sequence and then executes it.
+	 */
     public void furas_telepessel_robban() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepssel robban");
@@ -1083,7 +1127,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the furas_robottal sequence and then executes it.
+    /**
+     * This function sets up everything for the furas_robottal sequence and then executes it.
+	 */
     public void furas_robottal() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal");
@@ -1128,7 +1174,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the furas_telepessel sequence and then executes it.
+    /**
+     * This function sets up everything for the furas_telepessel sequence and then executes it.
+	 */
     public void furas_telepessel() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepessel");
@@ -1171,7 +1219,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the mozgas_robottal sequence and then executes it.
+    /**
+     * This function sets up everything for the mozgas_robottal sequence and then executes it.
+	 */
     public void mozgas_robottal() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Mozgas robottal");
@@ -1205,7 +1255,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the mozgas_telepessel sequence and then executes it.
+    /**
+     * This function sets up everything for the mozgas_telepessel sequence and then executes it.
+	 */
     public void mozgas_telepessel() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Mozgas telepessel");
@@ -1239,7 +1291,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the teleportkapu_lehelyezese_par_egy_masik_aszteroidan sequence and then executes it.
+    /**
+     * This function sets up everything for the teleportkapu_lehelyezese_par_egy_masik_aszteroidan sequence and then executes it.
+	 */
     public void teleportkapu_lehelyezese_par_egy_masik_aszteroidan() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu lehelyezese par egy masik aszteroidan");
@@ -1295,7 +1349,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the teleportkapu_lehelyezese_par_a_telepes_inventoryjaban sequence and then executes it.
+    /**
+     * This function sets up everything for the teleportkapu_lehelyezese_par_a_telepes_inventoryjaban sequence and then executes it.
+	 */
     public void teleportkapu_lehelyezese_par_a_telepes_inventoryjaban() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu lehelyezese par a telepes inventory-jában");
@@ -1338,6 +1394,9 @@ public class Main {
     	return;
     }
 
+    /**
+     * 
+	 */
     // This function sets up everything for the teleportkapu_lehelyezese_par_mar_elpusztult sequence and then executes it.
     public void teleportkapu_lehelyezese_par_mar_elpusztult() {
     	System.out.println("Aszteroida banyaszat");
@@ -1374,7 +1433,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the teleportkapu_epitese sequence and then executes it.
+    /**
+     * This function sets up everything for the teleportkapu_epitese sequence and then executes it.
+	 */
     public void teleportkapu_epitese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu epitese");
@@ -1430,6 +1491,9 @@ public class Main {
     	return;
     }
     
+    /**
+     * 
+	 */
     // This function sets up everything for the bazis_epitese sequence and then executes it.
     public void bazis_epitese() {
     	System.out.println("Aszteroida banyaszat");
@@ -1558,7 +1622,9 @@ public class Main {
     	return;
     }
     
-    // This function sets up everything for the robot_epitese sequence and then executes it.
+    /**
+     * This function sets up everything for the robot_epitese sequence and then executes it.
+	 */
     public void robot_epitese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Robot epitese");

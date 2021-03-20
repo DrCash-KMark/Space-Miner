@@ -13,7 +13,9 @@ package main;
 
 
 
-
+/**
+ * Building abstract base class.
+ */
 public abstract class Building {
 	protected Asteroid asteroid;
 	protected Game owner;
@@ -27,10 +29,20 @@ public abstract class Building {
 	
 	public void setMain(Main m) { main = m; }
 	
+	/**
+	 * constructor for Building without parameters
+	 */
 	public Building() {
 	}
 	
+	/**
+	 * abstract function for placing the building on an asteroid
+	 * @param a: Asteroid: asteroid on which the building is placed
+	 */
 	public abstract void onPlace(Asteroid a); 
 	
+	/**
+	 * abstract function for destroying the building
+	 */
 	public abstract void destroy(); 
 }

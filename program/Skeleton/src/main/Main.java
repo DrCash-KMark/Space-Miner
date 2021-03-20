@@ -841,9 +841,9 @@ public class Main {
     	
     	asteroid.addEntity(robot);
     	asteroid.addMaterial(uran);
-    	asteroid.setNeighbour(neighbour);
+    	asteroid.addNeighbour(neighbour);
     	
-    	neighbour.setNeighbour(asteroid);
+    	neighbour.addNeighbour(asteroid);
     	
     	robot.setOwner(owner);
     	
@@ -937,9 +937,9 @@ public class Main {
     	
     	asteroid.addEntity(settler);
     	asteroid.addMaterial(uran);
-    	asteroid.setNeighbour(neighbour);
+    	asteroid.addNeighbour(neighbour);
     	
-    	neighbour.setNeighbour(asteroid);
+    	neighbour.addNeighbour(asteroid);
     	
     	settler.setOwner(owner);
     	
@@ -987,7 +987,7 @@ public class Main {
     	robot.setAsteroid(asteroid);
     	
     	asteroid.addMaterial(coal);
-    	asteroid.addEntiry(robot);
+    	asteroid.addEntity(robot);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -1025,7 +1025,7 @@ public class Main {
     	settler.setAsteroid(asteroid);
     	
     	asteroid.addMaterial(coal);
-    	asteroid.addEntiry(settler);
+    	asteroid.addEntity(settler);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -1057,7 +1057,7 @@ public class Main {
     	currentAsteroid.addNeighbour(destination);
     	currentAsteroid.addEntity(settler);
     	
-    	destination.setNeihbour(currentAsteroid);
+    	destination.addNeighbour(currentAsteroid);
     	
     	settler.move(destination);
     	
@@ -1086,7 +1086,7 @@ public class Main {
     	currentAsteroid.addNeighbour(destination);
     	currentAsteroid.addEntity(robot);
     	
-    	destination.setNeihbour(currentAsteroid);
+    	destination.addNeighbour(currentAsteroid);
     	
     	robot.move(destination);
     	

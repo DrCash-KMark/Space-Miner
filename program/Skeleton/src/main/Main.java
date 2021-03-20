@@ -48,7 +48,7 @@ public class Main {
 		menuState = 0;
 	}
 	
-	public static void main(String[] args) {
+	public void main(String[] args) {
     	printMenu();
 	}
     
@@ -66,6 +66,8 @@ public class Main {
     
     public void printMenu()
     {
+    	int num;
+    	
     	System.out.println("Aszteroida banyaszat");
     	
     	switch(menuState) {
@@ -80,7 +82,7 @@ public class Main {
     			System.out.println("7 Epites");
     			System.out.println("8 Kilepes");
     			
-    			int num = scanNumber();
+    			num = scanNumber();
     	        
     	        if (num < 8)
     	        {
@@ -88,7 +90,7 @@ public class Main {
     	        	printMenu();
     	        }
     	        else
-    	        	System.exit();
+    	        	System.exit(0);
     	        
     			break;
     		case 1:
@@ -100,9 +102,10 @@ public class Main {
     			System.out.println("3 Szen banyaszasa");
     			System.out.println("4 Vizjeg banyaszasa");
     			
-    			int num = scanNumber();
+    			num = scanNumber();
     	        
     	        switch (num)
+    	        {
     				case 0:
     					menuState = num;
     					printMenu();
@@ -127,6 +130,7 @@ public class Main {
     					
     					printMenu();
     					break;
+    	        }
     			
     			break;
     		case 2:
@@ -138,9 +142,10 @@ public class Main {
     			System.out.println("3 Szen visszahelyezese");
     			System.out.println("4 Vizjeg visszahelyezese");
     			
-    			int num = scanNumber();
+    			num = scanNumber();
     	        
     	        switch (num)
+    	        {
     				case 0:
     					menuState = num;
     					printMenu();
@@ -156,7 +161,7 @@ public class Main {
     					printMenu();
     					break;
     				case 3:
-    					szen_viszahelyezese();
+    					szen_visszahelyezese();
     					
     					printMenu();
     					break;
@@ -165,6 +170,7 @@ public class Main {
     					
     					printMenu();
     					break;
+    	        }
     			
     			break;
     		case 3:
@@ -173,9 +179,10 @@ public class Main {
     			System.out.println("0 Vissza a fomenube");
     			System.out.println("1 Napvihar tortenik");
     			
-    			int num = scanNumber();
+    			num = scanNumber();
     	        
     	        switch (num)
+    	        {
     				case 0:
     					menuState = num;
     					printMenu();
@@ -185,6 +192,7 @@ public class Main {
     					
     					printMenu();
     					break;
+    	        }
     			
     			break;
     		case 4:
@@ -199,9 +207,10 @@ public class Main {
     			System.out.println("6 Furas robottal");
     			System.out.println("7 Furas telepessel");
     			
-    			int num = scanNumber();
+    			num = scanNumber();
     	        
     	        switch (num)
+    	        {
     				case 0:
     					menuState = num;
     					printMenu();
@@ -241,6 +250,7 @@ public class Main {
     					
     					printMenu();
     					break;
+    	        }
     			
     			break;
     		case 5:
@@ -250,9 +260,10 @@ public class Main {
     			System.out.println("1 Mozgas robottal");
     			System.out.println("2 Mozgas telepessel");
     			
-    			int num = scanNumber();
+    			num = scanNumber();
     	        
     	        switch (num)
+    	        {
     				case 0:
     					menuState = num;
     					printMenu();
@@ -267,6 +278,7 @@ public class Main {
     					
     					printMenu();
     					break;
+    	        }
     			
     			break;
     		case 6:
@@ -277,9 +289,10 @@ public class Main {
     			System.out.println("2 Teleportkapu lehelyezese, par a telepes inventory-jában");
     			System.out.println("3 Teleportkapu lehelyezese, par mar elpusztult");
     			
-    			int num = scanNumber();
+    			num = scanNumber();
     	        
     	        switch (num)
+    	        {
     				case 0:
     					menuState = num;
     					printMenu();
@@ -299,6 +312,7 @@ public class Main {
     					
     					printMenu();
     					break;
+    	        }
     			
     			break;
     		case 7:
@@ -309,9 +323,10 @@ public class Main {
     			System.out.println("2 Bazis epitese");
     			System.out.println("3 Robot epitese");
     			
-    			int num = scanNumber();
+    			num = scanNumber();
     	        
     	        switch (num)
+    	        {
     				case 0:
     					menuState = num;
     					printMenu();
@@ -331,6 +346,7 @@ public class Main {
     					
     					printMenu();
     					break;
+    	        }
     			
     			break;
     	}
@@ -489,9 +505,9 @@ public class Main {
     	asteroid.addEntity(settler);
     	
     	settler.setAsteroid(asteroid);
-    	settler.setInventory(Inventory);
+    	settler.setInventory(inventory);
     	
-    	inventory.AddMaterial(iron);
+    	inventory.addMaterial(iron);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -527,9 +543,9 @@ public class Main {
     	asteroid.addEntity(settler);
     	
     	settler.setAsteroid(asteroid);
-    	settler.setInventory(Inventory);
+    	settler.setInventory(inventory);
     	
-    	inventory.AddMaterial(coal);
+    	inventory.addMaterial(coal);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -565,9 +581,9 @@ public class Main {
     	asteroid.addEntity(settler);
     	
     	settler.setAsteroid(asteroid);
-    	settler.setInventory(Inventory);
+    	settler.setInventory(inventory);
     	
-    	inventory.AddMaterial(ice);
+    	inventory.addMaterial(ice);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -932,7 +948,7 @@ public class Main {
     	
     	robot.setAsteroid(asteroid);
     	
-    	asteroid.addMaterial(Coal);
+    	asteroid.addMaterial(coal);
     	asteroid.addEntiry(robot);
     	
     	asteroid.setRockThickness(thickness);
@@ -949,7 +965,7 @@ public class Main {
     	else return;
     }
     
-    public voud furas_telepessel() {
+    public void furas_telepessel() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepessel");
     	
@@ -969,7 +985,7 @@ public class Main {
     	
     	settler.setAsteroid(asteroid);
     	
-    	asteroid.addMaterial(Coal);
+    	asteroid.addMaterial(coal);
     	asteroid.addEntiry(settler);
     	
     	asteroid.setRockThickness(thickness);
@@ -996,7 +1012,7 @@ public class Main {
     	Asteroid currentAsteroid = new Asteroid();
     	Asteroid destination = new Asteroid();
     	
-    	robot.setAsteroid(currentAsteroid);
+    	settler.setAsteroid(currentAsteroid);
     	
     	currentAsteroid.addNeighbour(destination);
     	currentAsteroid.addEntity(settler);
@@ -1020,7 +1036,7 @@ public class Main {
     	
     	System.out.println("Lefutas:");
     	
-    	Robor robot = new Robor();
+    	Robot robot = new Robot();
     	Asteroid currentAsteroid = new Asteroid();
     	Asteroid destination = new Asteroid();
     	
@@ -1031,7 +1047,7 @@ public class Main {
     	
     	destination.addNeihbour(currentAsteroid);
     	
-    	settler.move(destination);
+    	robot.move(destination);
     	
     	System.out.println("0 Visszalepes");
     	

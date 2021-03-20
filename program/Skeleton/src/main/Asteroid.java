@@ -10,7 +10,7 @@ import java.util.List;
 //  @ Project : Space-Miner
 //  @ File Name : Asteroid.java
 //  @ Date : 17/03/2021
-//  @ Author : Karpati
+//  @ Author : Karpati Mark
 //
 //
 
@@ -119,7 +119,8 @@ public class Asteroid extends Planet implements Controllable {
 	}
 	
 	/**
-	 * this function notifies the entities, that it have exploded, and removes itself from it's neighbours' neighbours list
+	 * this function notifies the entities, buildings that it have exploded,
+	 * and removes itself from it's neighbours' neighbours list.
 	 */
 	public void explode() {
 		for(int i=0;i<this.entities.size();i++) {
@@ -127,6 +128,9 @@ public class Asteroid extends Planet implements Controllable {
 		}
 		for(int i=0;i<this.neighbours.size();i++) {
 			this.neighbours.get(i).removeNeighbour(this);
+		}
+		for(int i=0;i<this.buildings.size();i++) {
+			this.buildings.get(i).destroy();
 		}
 		owner.destroyMe(this);//TODO this may be problematic with garbae collector
 	}

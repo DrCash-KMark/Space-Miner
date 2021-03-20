@@ -341,11 +341,25 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vas banyaszasa");
     	
-    	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
     	System.out.println("Lefutas:");
     	
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Iron iron = new Iron();
     	
+    	asteroid.addEntity(settler);
+    	asteroid.setMaterial(iron);
+    	
+    	settler.setInventory(inventory);
+    	settler.setAsteroid(asteroid);
+    	
+    	asteroid.setThickness(thickness);
+    	
+    	settler.mine();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -360,11 +374,25 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Szen banyaszasa");
     	
-    	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
     	System.out.println("Lefutas:");
     	
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Coal coal = new Coal();
     	
+    	asteroid.addEntity(settler);
+    	asteroid.setMaterial(coal);
+    	
+    	settler.setInventory(inventory);
+    	settler.setAsteroid(asteroid);
+    	
+    	asteroid.setThickness(thickness);
+    	
+    	settler.mine();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -379,11 +407,25 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vizjeg banyaszasa");
     	
-    	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
     	System.out.println("Lefutas:");
     	
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Ice ice = new Ice();
     	
+    	asteroid.addEntity(settler);
+    	asteroid.setMaterial(ice);
+    	
+    	settler.setInventory(inventory);
+    	settler.setAsteroid(asteroid);
+    	
+    	asteroid.setThickness(thickness);
+    	
+    	settler.mine();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -398,11 +440,25 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Uran banyaszasa");
     	
-    	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
     	System.out.println("Lefutas:");
     	
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Uran uran = new Uran();
     	
+    	asteroid.addEntity(settler);
+    	asteroid.setMaterial(uran);
+    	
+    	settler.setInventory(inventory);
+    	settler.setAsteroid(asteroid);
+    	
+    	asteroid.setThickness(thickness);
+    	
+    	settler.mine();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -417,11 +473,30 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vas visszahelyezese");
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
     	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Iron iron = new Iron();
     	
+    	asteroid.addEntity(settler);
+    	
+    	settler.setAsteroid(asteroid);
+    	settler.setInventory(Inventory);
+    	
+    	inventory.AddMaterial(iron);
+    	
+    	asteroid.setCloseToSun(isClose);
+    	
+    	settler.dropMaterial(iron);
     	
     	System.out.println("0 Visszalepes");
     	
@@ -436,11 +511,30 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Szen visszahelyezese");
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
     	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Coal coal = new Coal();
     	
+    	asteroid.addEntity(settler);
+    	
+    	settler.setAsteroid(asteroid);
+    	settler.setInventory(Inventory);
+    	
+    	inventory.AddMaterial(coal);
+    	
+    	asteroid.setCloseToSun(isClose);
+    	
+    	settler.dropMaterial(coal);
     	
     	System.out.println("0 Visszalepes");
     	
@@ -455,11 +549,30 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vizjeg visszahelyezese");
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
     	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Ice ice = new Ice();
     	
+    	asteroid.addEntity(settler);
+    	
+    	settler.setAsteroid(asteroid);
+    	settler.setInventory(Inventory);
+    	
+    	inventory.AddMaterial(ice);
+    	
+    	asteroid.setCloseToSun(isClose);
+    	
+    	settler.dropMaterial(ice);
     	
     	System.out.println("0 Visszalepes");
     	
@@ -474,11 +587,46 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Uran visszahelyezese");
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
     	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Uran uran = new Uran();
+    	Asteroid neighbour = new Asteroid();
+    	Game owner = new Game();
     	
+    	asteroid.addEntity(settler);
+    	
+    	settler.setAsteroid(asteroid);
+    	settler.setInventory(inventory);
+    	
+    	inventory.addMaterial(uran);
+    	
+    	asteroid.addNeighbour(neighbour);
+    	
+    	neighbour.addNeighbour(asteroid);
+    	
+    	settler.setOwner(owner);
+    	
+    	asteroid.setOwner(owner);
+    	
+    	neighbour.setOwner(owner);
+    	
+    	owner.addSettler(settler);
+    	owner.addControllable(asteroid);
+    	owner.addControllable(neighbour);
+    	
+    	asteroid.setCloseToSun(isClose);
+    	
+    	settler.dropMaterial(uran);
     	
     	System.out.println("0 Visszalepes");
     	
@@ -493,11 +641,40 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Napviher tortenik");
     	
-    	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
     	System.out.println("Lefutas:");
     	
+    	Game game = new Game();
+    	Asteroid asteroid = new Asteroid();
+    	Robot robot = new Robot();
+    	Settler settler = new Settler();
+    	Sun sun = new Sun();
     	
+    	game.addControllable(sun);
+    	
+    	sun.setOwner(game);
+    	
+    	asteroid.addEntity(settler);
+    	asteroid.addEntity(robot);
+    	
+    	robot.setAsteroid(asteroid);
+    	settler.setAsteroid(asteroid);
+    	
+    	game.addControllable(asteroid);
+    	game.addSettler(settler);
+    	game.addRobot(robot);
+    	
+    	asteroid.setOwner(game);
+    	
+    	robot.setOwner(game);
+    	
+    	settler.setOwner(game);
+    	
+    	asteroid.setRockThickness(thickness);
+    	
+    	sun.sunFlare();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -512,11 +689,31 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal elparolog");
     	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
+    	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Robot robot = new Robot();
+    	Asteroid asteroid = new Asteroid();
+    	Ice ice = new Ice();
     	
+    	robot.setAsteroid(asteroid);
+    	
+    	asteroid.addMaterial(ice);
+    	asteroid.addEntity(robot);
+    	
+    	asteroid.setRockThickness(thickness);
+    	asteroid.setCloseToSun(isClose);
+    	
+    	robot.drill();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -531,13 +728,35 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepessel elparolog");
     	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
+    	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Settler settler = new Settler();
+    	Asteroid asteroid = new Asteroid();
+    	Ice ice = new Ice();
     	
+    	settler.setAsteroid(asteroid);
+    	
+    	asteroid.addMaterial(ice);
+    	asteroid.addEntity(settler);
+    	
+    	asteroid.setRockThickness(thickness);
+    	asteroid.setCloseToSun(isClose);
+    	
+    	settler.drill();
     	
     	System.out.println("0 Visszalepes");
+    	
+    	asteroid.setRockThickness(thickness);
     	
     	int num = scanNumber();
     	
@@ -550,11 +769,42 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal robban van szomszed");
     	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
+    	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Robot robot = new Robot();
+    	Asteroid asteroid = new Asteroid();
+    	Uran uran = new Uran();
+    	Asteroid neighbour = new Asteroid();
+    	Game owner = new Game();
     	
+    	robot.setAsteroid(asteroid);
+    	
+    	asteroid.setEntity(robot);
+    	asteroid.addMaterial(uran);
+    	asteroid.setNeighbour(neighbour);
+    	
+    	neighbour.setNeighbour(asteroid);
+    	
+    	robot.setOwner(owner);
+    	
+    	asteroid.setOwner(owner);
+    	
+    	neighbour.setOwner(owner);
+    	
+    	asteroid.setRockThickness(thickness);
+    	asteroid.setCloseToSun(isClose);
+    	
+    	robot.drill();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -569,11 +819,36 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal nincs szomszed");
     	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
+    	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Robot robot = new Robot();
+    	Asteroid asteroid = new Asteroid();
+    	Uran uran = new Uran();
+    	Game owner = new Game();
     	
+    	robot.setAsteroid(asteroid);
+    	
+    	asteroid.setEntity(robot);
+    	asteroid.addMaterial(uran);
+    	
+    	robot.setOwner(owner);
+    	
+    	asteroid.setOwner(owner);
+    	
+    	asteroid.setRockThickness(thickness);
+    	asteroid.setCloseToSun(isClose);
+    	
+    	robot.drill();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -588,11 +863,44 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepssel robban");
     	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
+    	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Settler settler = new Settler();
+    	Asteroid asteroid = new Asteroid();
+    	Uran uran = new Uran();
+    	Asteroid neighbour = new Asteroid();
+    	Game owner = new Game();
     	
+    	settler.setAsteroid(asteroid);
+    	
+    	asteroid.setEntity(settler);
+    	asteroid.addMaterial(uran);
+    	asteroid.setNeighbour(neighbour);
+    	
+    	neighbour.setNeighbour(asteroid);
+    	
+    	settler.setOwner(owner);
+    	
+    	asteroid.setOwner(owner);
+    	
+    	neighbour.setOwner(owner);
+    	
+    	owner.addSettler(settler);
+    	
+    	asteroid.setRockThickness(thickness);
+    	asteroid.setCloseToSun(isClose);
+    	
+    	settler.drill();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -607,11 +915,31 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal");
     	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
+    	
+    	bool isClose = false;
+    	
+    	if (iIsClose == 1) isClose = true;
     	
     	System.out.println("Lefutas:");
     	
+    	Robot robot = new Robot();
+    	Asteroid asteroid = new Asteroid();
+    	Coal coal = new Coal();
     	
+    	robot.setAsteroid(asteroid);
+    	
+    	asteroid.addMaterial(Coal);
+    	asteroid.addEntiry(robot);
+    	
+    	asteroid.setRockThickness(thickness);
+    	asteroid.setCloseToSun(isClose);
+    	
+    	robot.drill();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -626,11 +954,29 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepessel");
     	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
+    	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
+    	int iIsClose = scanNumber();
+    	
+    	bool isClose = false;
     	
     	System.out.println("Lefutas:");
     	
+    	Settler settler = new Settler();
+    	Asteroid asteroid = new Asteroid();
+    	Coal coal = new Coal();
     	
+    	settler.setAsteroid(asteroid);
+    	
+    	asteroid.addMaterial(Coal);
+    	asteroid.addEntiry(settler);
+    	
+    	asteroid.setRockThickness(thickness);
+    	asteroid.setCloseToSun(isClose);
+    	
+    	settler.drill();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -645,11 +991,20 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Mozgas robottal");
     	
-    	
-    	
     	System.out.println("Lefutas:");
     	
+    	Settler settler = new Settler();
+    	Asteroid currentAsteroid = new Asteroid();
+    	Asteroid destination = new Asteroid();
     	
+    	robot.setAsteroid(currentAsteroid);
+    	
+    	currentAsteroid.addNeighbour(destination);
+    	currentAsteroid.addEntity(settler);
+    	
+    	destination.addNeihbour(currentAsteroid);
+    	
+    	settler.move(destination);
     	
     	System.out.println("0 Visszalepes");
     	
@@ -664,11 +1019,20 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Mozgas telepessel");
     	
-    	
-    	
     	System.out.println("Lefutas:");
     	
+    	Robor robot = new Robor();
+    	Asteroid currentAsteroid = new Asteroid();
+    	Asteroid destination = new Asteroid();
     	
+    	robot.setAsteroid(currentAsteroid);
+    	
+    	currentAsteroid.addNeighbour(destination);
+    	currentAsteroid.addEntity(robot);
+    	
+    	destination.addNeihbour(currentAsteroid);
+    	
+    	settler.move(destination);
     	
     	System.out.println("0 Visszalepes");
     	

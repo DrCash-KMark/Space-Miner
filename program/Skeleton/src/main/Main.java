@@ -1062,11 +1062,38 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu lehelyezese par egy masik aszteroidan");
     	
-    	
-    	
     	System.out.println("Lefutas:");
     	
+    	Game owner = new Game();
+    	Asteroid asteroid = new Asteroid();
+    	Asteroid neighbourAsteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	StarGate stargate = new StarGate();
+    	StarGate neighbour = new StarGate();
     	
+    	owner.addControllable(asteroid);
+    	owner.addControllable(neighbourAsteroid);
+    	owner.addSettler(settler);
+    	
+    	asteroid.setOwner(owner);
+    	asteroid.addEntity(settler);
+    	
+    	neighbourAsteroid.setOwner(owner);
+    	
+    	settler.setOwner(owner);
+    	settler.setAsteroid(asteroid);
+    	settler.setInventory(inventory);
+    	
+    	inventory.addStarGate(stargate);
+    	
+    	neighbourAsteroid.addBuilding(neighbour);
+    	
+    	// Linking teleports
+    	stargate.setNeighbour(neighbour);
+    	neighbour.setNeighbour(stargate);
+    	
+    	settler.placeStarGate();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -1081,11 +1108,27 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu lehelyezese par a telepes inventory-jában");
     	
-    	
-    	
     	System.out.println("Lefutas:");
     	
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Asteroid asteroid = new Asteroid();
+    	StarGate stargate = new StarGate();
+    	StarGate neighbour = new StarGate();
     	
+    	settler.setAsteroid(asteroid);
+    	settler.setInventory(inventory);
+    	
+    	inventory.addStarGate(stargate);
+    	inventory.addStarGate(neighbour);
+    	
+    	asteroid.addEntity(settler);
+    	
+    	// Linking teleports
+    	stargate.setNeighbour(neighbour);
+    	neighbour.setNeighbour(stargate);
+    	
+    	settler.placeStarGate();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -1100,11 +1143,21 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu lehelyezese par mar elpusztult");
     	
-    	
-    	
     	System.out.println("Lefutas:");
     	
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Asteroid asteroid = new Asteroid();
+    	StarGate stargate = new StarGate();
     	
+    	settler.setAsteroid(asteroid);
+    	settler.setInventory(inventory);
+    	
+    	inventory.addStarGate(stargate);
+    	
+    	stargate.setNeighbour(null);
+    	
+    	settler.placeStarGate();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -1119,11 +1172,34 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu epitese");
     	
-    	
-    	
     	System.out.println("Lefutas:");
     	
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Inventory STARGATE_RECIPE = new Inventory();
+    	Iron iron1 = new Iron();
+    	Iron iron2 = new Iron();
+    	Uran uran1 = new Uran();
+    	Ice ice1 = new Ice();
+    	Iron iron3 = new Iron();
+    	Iron iron4 = new Iron();
+    	Uran uran2 = new Uran();
+    	Ice ice2 = new Ice();
     	
+    	settler.setInventory(inventory);
+    	settler.setSTARGATE_RECIPE(STARGATE_RECIPE);
+    	
+    	inventory.addInventory(iron1);
+    	inventory.addInventory(iron2);
+    	inventory.addInventory(uran1);
+    	inventory.addInventory(ice1);
+    	
+    	STARGATE_RECIPE.addInventory(iron3);
+    	STARGATE_RECIPE.addInventory(iron4);
+    	STARGATE_RECIPE.addInventory(uran2);
+    	STARGATE_RECIPE.addInventory(ice2);
+    	
+    	settler.buildStarGate();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -1138,11 +1214,86 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Bazis epitese");
     	
-    	
-    	
     	System.out.println("Lefutas:");
     	
+    	Game owner = new Game();
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler1 = new Settler();
+    	Settler settler2 = new Settler();
+    	Inventory inventory1 = new Inventory();
+    	Inventory inventory2 = new Inventory();
+    	Inventory BASE_RECIPE = new Inventory();
+    	Iron iron1 = new Iron();
+    	Iron iron2 = new Iron();
+    	Iron iron3 = new Iron();
+    	Uran uran1 = new Uran();
+    	Uran uran2 = new Uran();
+    	Uran uran3 = new Uran();
+    	Ice ice1 = new Ice();
+    	Ice ice2 = new Ice();
+    	Ice ice3 = new Ice();
+    	Coal coal1 = new Coal();
+    	Coal coal2 = new Coal();
+    	Coal coal3 = new Coal();
+    	Iron iron4 = new Iron();
+    	Iron iron5 = new Iron();
+    	Iron iron6 = new Iron();
+    	Uran uran4 = new Uran();
+    	Uran uran5 = new Uran();
+    	Uran uran6 = new Uran();
+    	Ice ice4 = new Ice();
+    	Ice ice5 = new Ice();
+    	Ice ice6 = new Ice();
+    	Coal coal4 = new Coal();
+    	Coal coal5 = new Coal();
+    	Coal coal6 = new Coal();
     	
+    	owner.addControllable(asteroid);
+    	owner.addSettler(settler1);
+    	owner.addSettler(settler2);
+    	
+    	asteroid.setOwner(owner);
+    	asteroid.addEntity(settler1);
+    	asteroid.addEntity(settler2);
+    	
+    	settler1.setOwner(owner);
+    	settler1.setAsteroid(asteroid);
+    	settler1.setInventory(inventory1);
+    	settler1.setBASE_RECIPE(BASE_RECIPE);
+    	
+    	settler2.setOwner(owner);
+    	settler2.setAsteroid(asteroid);
+    	settler2.setInventory(inventory2);
+    	settler2.setBASE_RECIPE(BASE_RECIPE);
+    	
+    	inventory1.addInventory(iron1);
+    	inventory1.addInventory(iron2);
+    	inventory1.addInventory(iron3);
+    	inventory1.addInventory(uran1);
+    	inventory1.addInventory(uran2);
+    	inventory1.addInventory(uran3);
+    	
+    	inventory2.addInventory(ice1);
+    	inventory2.addInventory(ice2);
+    	inventory2.addInventory(ice3);
+    	inventory2.addInventory(coal1);
+    	inventory2.addInventory(coal2);
+    	inventory2.addInventory(coal3);
+    	
+    	BASE_RECIPE.addInventory(iron4);
+    	BASE_RECIPE.addInventory(iron5);
+    	BASE_RECIPE.addInventory(iron6);
+    	BASE_RECIPE.addInventory(uran4);
+    	BASE_RECIPE.addInventory(uran5);
+    	BASE_RECIPE.addInventory(uran6);
+    	BASE_RECIPE.addInventory(ice4);
+    	BASE_RECIPE.addInventory(ice5);
+    	BASE_RECIPE.addInventory(ice6);
+    	BASE_RECIPE.addInventory(coal4);
+    	BASE_RECIPE.addInventory(coal5);
+    	BASE_RECIPE.addInventory(coal6);
+    	
+    	settler1.buildStarGate();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -1157,11 +1308,40 @@ public class Main {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Robot epitese");
     	
-    	
-    	
     	System.out.println("Lefutas:");
     	
+    	Game owner = new Game();
+    	Asteroid asteroid = new Asteroid();
+    	Settler settler = new Settler();
+    	Inventory inventory = new Inventory();
+    	Inventory ROBOT_RECIPE = new Inventory();
+    	Iron iron1 = new Iron();
+    	Coal coal1 = new Coal();
+    	Uran uran1 = new Uran();
+    	Iron iron2 = new Iron();
+    	Coal coal2 = new Coal();
+    	Uran uran2 = new Uran();
     	
+    	owner.addControllable(asteroid);
+    	owner.addSettler(settler);
+    	
+    	asteroid.setOwner(owner);
+    	asteroid.addEntity(settler);
+    	
+    	settler.setOwner(owner);
+    	settler.setAsteroid(asteroid);
+    	settler.setROBOT_RECIPE(ROBOT_RECIPE);
+    	settler.setInventory(inventory);
+    	
+    	inventory.addInventory(iron1);
+    	inventory.addInventory(coal1);
+    	inventory.addInventory(uran1);
+    	
+    	ROBOT_RECIPE.addInventory(iron2);
+    	ROBOT_RECIPE.addInventory(coal2);
+    	ROBOT_RECIPE.addInventory(uran2);
+    	
+    	settler.buildRobot();
     	
     	System.out.println("0 Visszalepes");
     	

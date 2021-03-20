@@ -738,8 +738,8 @@ public class Main {
     	neighbour.setOwner(owner);
     	
     	owner.addSettler(settler);
-    	owner.addControllable(asteroid);
-    	owner.addControllable(neighbour);
+    	owner.addPlanet(asteroid);
+    	owner.addPlanet(neighbour);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -779,7 +779,7 @@ public class Main {
     	settler.setMain(this);
     	sun.setMain(this);
     	
-    	owner.addControllable(sun);
+    	owner.addPlanet(sun);
     	
     	sun.setOwner(owner);
     	
@@ -789,9 +789,9 @@ public class Main {
     	robot.setAsteroid(asteroid);
     	settler.setAsteroid(asteroid);
     	
-    	owner.addControllable(asteroid);
+    	owner.addPlanet(asteroid);
     	owner.addSettler(settler);
-    	owner.addControllable(robot);
+    	owner.addRobot(robot);
     	
     	asteroid.setOwner(owner);
     	
@@ -948,9 +948,9 @@ public class Main {
     	
     	neighbour.setOwner(owner);
     	
-    	owner.addControllable(robot);
-    	owner.addControllable(asteroid);
-    	owner.addControllable(neighbour);
+    	owner.addRobot(robot);
+    	owner.addPlanet(asteroid);
+    	owner.addPlanet(neighbour);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -1003,8 +1003,8 @@ public class Main {
     	
     	asteroid.setOwner(owner);
     	
-    	owner.addControllable(robot);
-    	owner.addControllable(asteroid);
+    	owner.addRobot(robot);
+    	owner.addPlanet(asteroid);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -1065,8 +1065,8 @@ public class Main {
     	neighbour.setOwner(owner);
     	
     	owner.addSettler(settler);
-    	owner.addControllable(asteroid);
-    	owner.addControllable(neighbour);
+    	owner.addPlanet(asteroid);
+    	owner.addPlanet(neighbour);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -1262,8 +1262,8 @@ public class Main {
     	stargate.setMain(this);
     	
     	
-    	owner.addControllable(asteroid);
-    	owner.addControllable(neighbourAsteroid);
+    	owner.addPlanet(asteroid);
+    	owner.addPlanet(neighbourAsteroid);
     	owner.addSettler(settler);
     	
     	asteroid.setOwner(owner);
@@ -1501,7 +1501,7 @@ public class Main {
     	coal2.setMain(this);
     	coal3.setMain(this);
     	
-    	owner.addControllable(asteroid);
+    	owner.addPlanet(asteroid);
     	owner.addSettler(settler1);
     	owner.addSettler(settler2);
     	

@@ -23,6 +23,8 @@ import java.util.List;
  *
  */
 public class Game {
+	private Main main;	//Logger
+	
 	//Lists of objects present in game:
 	private List<Settler> settlers = new ArrayList<Settler>();
 	private List<Robot> robots = new ArrayList<Robot>();
@@ -57,7 +59,9 @@ public class Game {
 	 */
 	public void notifyAllAboutSunFlare() {
 		for (Planet planet : planets) {
+			main.log(false, "", "", "getNotifiedAboutSunflare()");
 			planet.getNotifiedAboutSunflare();
+			main.log(true, "", "", "getNotifiedAboutSunflare()");
 		}
 	}
 
@@ -126,6 +130,11 @@ public class Game {
 
 	//========================================================================
 	//Only for testing:------------------------------------------------------
+	
+	public void setMain(Main m) {
+		main = m;
+	}
+	
 	/**
 	 * For testing!!!
 	 * @return

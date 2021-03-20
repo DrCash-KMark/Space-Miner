@@ -15,11 +15,11 @@ package main;
 
 
 public class StarGate extends Building {
-	private Boolean works;
+	private boolean works;
 	private StarGate neighbour;
 	
-	public bool getWorks() { return works; }
-	public void setWorks(bool b) { wokrs = b; }
+	public boolean getWorks() { return works; }
+	public void setWorks(boolean b) { wokrs = b; }
 	
 	public StarGate getNeighbour() { return neighbour; }
 	public void setNeighbour(StarGate sg) { neighbour = sg; }
@@ -36,7 +36,7 @@ public class StarGate extends Building {
 			return;
 		
 		asteroid.addNeighbour(getNeighbourasteroid());
-		getNeighbourasteroid().addNeighbour(asteroid);
+		getNeighbour().addNeighbour(asteroid);
 	}
 	
 	public void destroy() {

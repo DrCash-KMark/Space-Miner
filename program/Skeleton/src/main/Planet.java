@@ -19,6 +19,8 @@ package main;
  *
  */
 public abstract class Planet {
+	protected Main main; //Logger
+	
 	protected Game owner;
 	
 	/**
@@ -34,6 +36,11 @@ public abstract class Planet {
 
 	public void setOwner(Game owner) {
 		this.owner = owner;
+	}
+	
+	//Logger:-------------------------------------
+	public void setMain(Main m) {
+		main = m;
 	}
 
 }

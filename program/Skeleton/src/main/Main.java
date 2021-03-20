@@ -16,10 +16,780 @@ package main;
 
 public class Main {
 	
+	private int tabulation;
+	private int menuState;
+	
+	public void log(bool isReturn, string obj, string cls, string, string fnc)
+	{
+		if (!isReturn)
+		{
+			tabulation++;
+			
+			for (int i = 0; i < tabulation; i++)
+				System.out.print("\t|");
+			
+			System.out.print("->"obj + ":" + cls + "." + fnc + "\n");
+		}
+		else
+		{
+			for (int i = 0; i < tabulation; i++)
+				System.out.print("\t|");
+			
+			System.out.print("<-"obj + ":" + cls + "\n");
+			
+			tabulation--;
+		}
+		
+		if (isReturn)
+			tabualtion--;
+	}
+	
+	public Main() {
+		tabulation = 0;
+		menuState = 0;
+	}
+	
     public static void main(String[] args) {
-    	System.out.println("Hello Skeleton!");
-    	//ToDo
+    	printMenu();
 	}
     
+    public int scanNumber()
+    {
+    	Scanner scan = new Scanner(System.in);
+        System.out.print("Kerem a parancs azonositojat: ");
+
+        int num = scan.nextInt();
+
+        scan.close();
+        
+        return num;
+    }
     
+    public void printMenu()
+    {
+    	System.out.println("Aszteroida banyaszat");
+    	
+    	switch(menuState) {
+    		case 0:
+    			System.out.println();
+    			System.out.println("1 Banyaszas");
+    			System.out.println("2 Visszahelyezes");
+    			System.out.println("3 Napkitores");
+    			System.out.println("4 Furas");
+    			System.out.println("5 Mozgas");
+    			System.out.println("6 Teleportkapu lehelyezese");
+    			System.out.println("7 Epites");
+    			System.out.println("8 Kilepes");
+    			
+    			int num = scanNumber();
+    	        
+    	        if (num < 8)
+    	        {
+    	        	menuState = num;
+    	        	printMenu();
+    	        }
+    	        else
+    	        	System.exit();
+    	        
+    			break;
+    		case 1:
+    			System.out.println("Banyaszas");
+    			System.out.println();
+    			System.out.println("0 Vissza a fomenube");
+    			System.out.println("1 Vas banyaszasa");
+    			System.out.println("2 Uran banyaszasa");
+    			System.out.println("3 Szen banyaszasa");
+    			System.out.println("4 Vizjeg banyaszasa");
+    			
+    			int num = scanNumber();
+    	        
+    	        switch (num)
+    				case 0:
+    					menuState = num;
+    					printMenu();
+    					break;
+    				case 1:
+    					vas_banyaszasa();
+    					
+    					printMenu();
+    					break;
+    				case 2:
+    					uran_banyaszasa();
+    					
+    					printMenu();
+    					break;
+    				case 3:
+    					szen_banyaszasa();
+    					
+    					printMenu();
+    					break;
+    				case 4:
+    					vizjeg_banyaszasa();
+    					
+    					printMenu();
+    					break;
+    			
+    			break;
+    		case 2:
+    			System.out.println("Visszahelyezes");
+    			System.out.println();
+    			System.out.println("0 Vissza a fomenube");
+    			System.out.println("1 Vas visszahelyezese");
+    			System.out.println("2 Uran visszahelyezese");
+    			System.out.println("3 Szen visszahelyezese");
+    			System.out.println("4 Vizjeg visszahelyezese");
+    			
+    			int num = scanNumber();
+    	        
+    	        switch (num)
+    				case 0:
+    					menuState = num;
+    					printMenu();
+    					break;
+    				case 1:
+    					vas_visszahelyezese();
+    					
+    					printMenu();
+    					break;
+    				case 2:
+    					uran_visszahelyezese();
+    					
+    					printMenu();
+    					break;
+    				case 3:
+    					szen_viszahelyezese();
+    					
+    					printMenu();
+    					break;
+    				case 4:
+    					vizjeg_visszahelyezese();
+    					
+    					printMenu();
+    					break;
+    			
+    			break;
+    		case 3:
+    			System.out.println("Napkitores");
+    			System.out.println();
+    			System.out.println("0 Vissza a fomenube");
+    			System.out.println("1 Napvihar tortenik");
+    			
+    			int num = scanNumber();
+    	        
+    	        switch (num)
+    				case 0:
+    					menuState = num;
+    					printMenu();
+    					break;
+    				case 1:
+    					napvihar_tortenik();
+    					
+    					printMenu();
+    					break;
+    			
+    			break;
+    		case 4:
+    			System.out.println("Furas");
+    			System.out.println();
+    			System.out.println("0 Vissza a fomenube");
+    			System.out.println("1 Furas robottal, elaprolog");
+    			System.out.println("2 Furas telepessel, elparolog");
+    			System.out.println("3 Furas robottal, robban, van szomszed");
+    			System.out.println("4 Furas robottal, robban, nincs szomszed");
+    			System.out.println("5 Furas telepessel, robban");
+    			System.out.println("6 Furas robottal");
+    			System.out.println("7 Furas telepessel");
+    			
+    			int num = scanNumber();
+    	        
+    	        switch (num)
+    				case 0:
+    					menuState = num;
+    					printMenu();
+    					break;
+    				case 1:
+    					furas_robottal_elparolog();
+    					
+    					printMenu();
+    					break;
+    				case 2:
+    					furas_telepessel_elparolog();
+    					
+    					printMenu();
+    					break;
+    				case 3:
+    					furas_robottal_robban_van_szomszed();
+    					
+    					printMenu();
+    					break;
+    				case 4:
+    					furas_robottal_robban_nincs_szomszed();
+    					
+    					printMenu();
+    					break;
+    				case 5:
+    					furas_telepessel_robban();
+    					
+    					printMenu();
+    					break;
+    				case 6:
+    					furas_robottal();
+    					
+    					printMenu();
+    					break;
+    				case 7:
+    					furas_telepessel();
+    					
+    					printMenu();
+    					break;
+    			
+    			break;
+    		case 5:
+    			System.out.println("Mozgas");
+    			System.out.println();
+    			System.out.println("0 Vissza a fomenube");
+    			System.out.println("1 Mozgas robottal");
+    			System.out.println("2 Mozgas telepessel");
+    			
+    			int num = scanNumber();
+    	        
+    	        switch (num)
+    				case 0:
+    					menuState = num;
+    					printMenu();
+    					break;
+    				case 1:
+    					mozgas_robottal();
+    					
+    					printMenu();
+    					break;
+    				case 2:
+    					mozgas_telepessel();
+    					
+    					printMenu();
+    					break;
+    			
+    			break;
+    		case 6:
+    			System.out.println("Teleportkapu lehelyezese");
+    			System.out.println();
+    			System.out.println("0 Vissza a fomenube");
+    			System.out.println("1 Teleportkapu lehelyezese, par egy masik aszteroidan");
+    			System.out.println("2 Teleportkapu lehelyezese, par a telepes inventory-jában");
+    			System.out.println("3 Teleportkapu lehelyezese, par mar elpusztult");
+    			
+    			int num = scanNumber();
+    	        
+    	        switch (num)
+    				case 0:
+    					menuState = num;
+    					printMenu();
+    					break;
+    				case 1:
+    					teleportkapu_lehelyezese_par_egy_masik_aszteroidan();
+    					
+    					printMenu();
+    					break;
+    				case 2:
+    					teleportkapu_lehelyezese_par_a_telepes_inventoryjaban();
+    					
+    					printMenu();
+    					break;
+    				case 3:
+    					teleportkapu_lehelyezese_par_mar_elpusztult();
+    					
+    					printMenu();
+    					break;
+    			
+    			break;
+    		case 7:
+    			System.out.println("Epites");
+    			System.out.println();
+    			System.out.println("0 Vissza a fomenube");
+    			System.out.println("1 Teleportkapu epitese");
+    			System.out.println("2 Bazis epitese");
+    			System.out.println("3 Robot epitese");
+    			
+    			int num = scanNumber();
+    	        
+    	        switch (num)
+    				case 0:
+    					menuState = num;
+    					printMenu();
+    					break;
+    				case 1:
+    					teleportkapu_epitese();
+    					
+    					printMenu();
+    					break;
+    				case 2:
+    					bazis_epitese();
+    					
+    					printMenu();
+    					break;
+    				case 3:
+    					robot_epitese();
+    					
+    					printMenu();
+    					break;
+    			
+    			break;
+    	}
+    }
+    
+    public void vas_banyaszasa() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Vas banyaszasa");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void szen_banyaszasa() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Szen banyaszasa");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+
+    public void vizjeg_banyaszasa() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Vizjeg banyaszasa");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+
+    public void uran_banyaszasa() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Uran banyaszasa");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void vas_visszahelyezese() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Vas visszahelyezese");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+
+    public void szen_visszahelyezese() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Szen visszahelyezese");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+
+    public void vizjeg_visszahelyezese() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Vizjeg visszahelyezese");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+
+    public void uran_visszahelyezese() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Uran visszahelyezese");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+
+    public void napvihar_tortenik() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Napviher tortenik");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void furas_robottal_elparolog() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Furas robottal elparolog");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void furas_telepessel_elparolog() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Furas telepessel elparolog");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void furas_robottal_robban_van_szomszed() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Furas robottal robban van szomszed");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void furas_robottal_robban_nincs_szomszed() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Furas robottal nincs szomszed");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void furas_telepessel_robban() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Furas telepssel robban");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void furas_robottal() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Furas robottal");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public voud furas_telepessel() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Furas telepessel");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void mozgas_robottal() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Mozgas robottal");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void mozgas_telepessel() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Mozgas telepessel");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void teleportkapu_lehelyezese_par_egy_masik_aszteroidan() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Teleportkapu lehelyezese par egy masik aszteroidan");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void teleportkapu_lehelyezese_par_a_telepes_inventoryjaban() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Teleportkapu lehelyezese par a telepes inventory-jában");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+
+    public void teleportkapu_lehelyezese_par_mar_elpusztult() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Teleportkapu lehelyezese par mar elpusztult");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void teleportkapu_epitese() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Teleportkapu epitese");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void bazis_epitese() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Bazis epitese");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
+    
+    public void robot_epitese() {
+    	System.out.println("Aszteroida banyaszat");
+    	System.out.println("Robot epitese");
+    	
+    	
+    	
+    	System.out.println("Lefutas:");
+    	
+    	
+    	
+    	System.out.println("0 Visszalepes");
+    	
+    	int num = scanNumber();
+    	
+    	if (num == 0)
+    		return;
+    	else return;
+    }
 }

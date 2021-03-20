@@ -83,6 +83,9 @@ public class Main {
     			System.out.println("8 Kilepes");
     			
     			num = scanNumber();
+    			
+    			while (num < 1 && num > 9)
+    				num = scanNumber();
     	        
     	        if (num < 8)
     	        {
@@ -103,7 +106,10 @@ public class Main {
     			System.out.println("4 Vizjeg banyaszasa");
     			
     			num = scanNumber();
-    	        
+    			
+    			while (num < 0 && num > 4)
+    				num = scanNumber();
+    			
     	        switch (num)
     	        {
     				case 0:
@@ -143,6 +149,9 @@ public class Main {
     			System.out.println("4 Vizjeg visszahelyezese");
     			
     			num = scanNumber();
+    			
+    			while (num < 0 && num > 4)
+    				num = scanNumber();
     	        
     	        switch (num)
     	        {
@@ -180,6 +189,9 @@ public class Main {
     			System.out.println("1 Napvihar tortenik");
     			
     			num = scanNumber();
+    			
+    			while (num < 0 && num > 1)
+    				num = scanNumber();
     	        
     	        switch (num)
     	        {
@@ -208,6 +220,9 @@ public class Main {
     			System.out.println("7 Furas telepessel");
     			
     			num = scanNumber();
+    			
+    			while (num < 0 && num > 7)
+    				num = scanNumber();
     	        
     	        switch (num)
     	        {
@@ -261,6 +276,9 @@ public class Main {
     			System.out.println("2 Mozgas telepessel");
     			
     			num = scanNumber();
+    			
+    			while (num < 0 && num > 2)
+    				num = scanNumber();
     	        
     	        switch (num)
     	        {
@@ -290,6 +308,9 @@ public class Main {
     			System.out.println("3 Teleportkapu lehelyezese, par mar elpusztult");
     			
     			num = scanNumber();
+    			
+    			while (num < 0 && num > 3)
+    				num = scanNumber();
     	        
     	        switch (num)
     	        {
@@ -324,6 +345,9 @@ public class Main {
     			System.out.println("3 Robot epitese");
     			
     			num = scanNumber();
+    			
+    			while (num < 0 && num > 3)
+    				num = scanNumber();
     	        
     	        switch (num)
     	        {
@@ -372,7 +396,7 @@ public class Main {
     	settler.setInventory(inventory);
     	settler.setAsteroid(asteroid);
     	
-    	asteroid.setThickness(thickness);
+    	asteroid.setRockThickness(thickness);
     	
     	settler.mine();
     	
@@ -380,9 +404,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void szen_banyaszasa() {
@@ -405,7 +430,7 @@ public class Main {
     	settler.setInventory(inventory);
     	settler.setAsteroid(asteroid);
     	
-    	asteroid.setThickness(thickness);
+    	asteroid.setRockThickness(thickness);
     	
     	settler.mine();
     	
@@ -413,9 +438,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
 
     public void vizjeg_banyaszasa() {
@@ -438,7 +464,7 @@ public class Main {
     	settler.setInventory(inventory);
     	settler.setAsteroid(asteroid);
     	
-    	asteroid.setThickness(thickness);
+    	asteroid.setRockThickness(thickness);
     	
     	settler.mine();
     	
@@ -446,9 +472,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
 
     public void uran_banyaszasa() {
@@ -471,7 +498,7 @@ public class Main {
     	settler.setInventory(inventory);
     	settler.setAsteroid(asteroid);
     	
-    	asteroid.setThickness(thickness);
+    	asteroid.setRockThickness(thickness);
     	
     	settler.mine();
     	
@@ -479,9 +506,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void vas_visszahelyezese() {
@@ -507,7 +535,7 @@ public class Main {
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
     	
-    	inventory.addMaterial(iron);
+    	inventory.addInventory(iron);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -517,9 +545,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
 
     public void szen_visszahelyezese() {
@@ -545,7 +574,7 @@ public class Main {
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
     	
-    	inventory.addMaterial(coal);
+    	inventory.addInventory(coal);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -555,9 +584,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
 
     public void vizjeg_visszahelyezese() {
@@ -583,7 +613,7 @@ public class Main {
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
     	
-    	inventory.addMaterial(ice);
+    	inventory.addInventory(ice);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -593,9 +623,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
 
     public void uran_visszahelyezese() {
@@ -623,7 +654,7 @@ public class Main {
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
     	
-    	inventory.addMaterial(uran);
+    	inventory.addInventory(uran);
     	
     	asteroid.addNeighbour(neighbour);
     	
@@ -647,9 +678,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
 
     public void napvihar_tortenik() {
@@ -695,9 +727,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void furas_robottal_elparolog() {
@@ -734,9 +767,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void furas_telepessel_elparolog() {
@@ -775,9 +809,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void furas_robottal_robban_van_szomszed() {
@@ -804,7 +839,7 @@ public class Main {
     	
     	robot.setAsteroid(asteroid);
     	
-    	asteroid.setEntity(robot);
+    	asteroid.addEntity(robot);
     	asteroid.addMaterial(uran);
     	asteroid.setNeighbour(neighbour);
     	
@@ -825,9 +860,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void furas_robottal_robban_nincs_szomszed() {
@@ -853,7 +889,7 @@ public class Main {
     	
     	robot.setAsteroid(asteroid);
     	
-    	asteroid.setEntity(robot);
+    	asteroid.addEntity(robot);
     	asteroid.addMaterial(uran);
     	
     	robot.setOwner(owner);
@@ -869,9 +905,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void furas_telepessel_robban() {
@@ -898,7 +935,7 @@ public class Main {
     	
     	settler.setAsteroid(asteroid);
     	
-    	asteroid.setEntity(settler);
+    	asteroid.addEntity(settler);
     	asteroid.addMaterial(uran);
     	asteroid.setNeighbour(neighbour);
     	
@@ -921,9 +958,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void furas_robottal() {
@@ -960,9 +998,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void furas_telepessel() {
@@ -997,9 +1036,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void mozgas_robottal() {
@@ -1017,7 +1057,7 @@ public class Main {
     	currentAsteroid.addNeighbour(destination);
     	currentAsteroid.addEntity(settler);
     	
-    	destination.addNeihbour(currentAsteroid);
+    	destination.setNeihbour(currentAsteroid);
     	
     	settler.move(destination);
     	
@@ -1025,9 +1065,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void mozgas_telepessel() {
@@ -1045,7 +1086,7 @@ public class Main {
     	currentAsteroid.addNeighbour(destination);
     	currentAsteroid.addEntity(robot);
     	
-    	destination.addNeihbour(currentAsteroid);
+    	destination.setNeihbour(currentAsteroid);
     	
     	robot.move(destination);
     	
@@ -1053,9 +1094,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void teleportkapu_lehelyezese_par_egy_masik_aszteroidan() {
@@ -1099,9 +1141,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void teleportkapu_lehelyezese_par_a_telepes_inventoryjaban() {
@@ -1134,9 +1177,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
 
     public void teleportkapu_lehelyezese_par_mar_elpusztult() {
@@ -1163,9 +1207,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void teleportkapu_epitese() {
@@ -1205,9 +1250,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void bazis_epitese() {
@@ -1299,9 +1345,10 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
     
     public void robot_epitese() {
@@ -1347,8 +1394,9 @@ public class Main {
     	
     	int num = scanNumber();
     	
-    	if (num == 0)
-    		return;
-    	else return;
+    	while (num != 0)
+    		num = scanNumber();
+    	
+    	return;
     }
 }

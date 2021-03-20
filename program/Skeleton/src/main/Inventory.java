@@ -67,24 +67,25 @@ public class Inventory {
 	
 	/**
 	 * Compares the given and the local inventory materials list and 
-	 * if contains one the other then remove all specific material from local.
+	 * if the given contains the other then remove all specific material from it.
 	 * @param i the given inventory
 	 * @return true if the local contains the given or false
 	 */
 	public boolean subSet(Inventory i) {
-		
+		// contained elements
 		LinkedList<Material> components = new LinkedList<>();
 		
 		Iterator<Material> iComponents;
 		
-		Iterator<Material> iInventory = materials.iterator();
-	    while (iInventory.hasNext()) {
+		Iterator<Material> iRecipe = materials.iterator();
+	    while (iRecipe.hasNext()) {
 	    	
-	    	Material component = i.removeInventory(iInventory.next());
+	    	Material component = i.removeInventory(iRecipe.next());
 	    	if(component!=null) {
 	    		components.add(component);
 	    	}
 	    	else {
+	    		 // if not contains all elements
 	    		 iComponents = components.iterator();
 	    		 while (iComponents.hasNext()) {
 	    			 i.addInventory(iComponents.next());
@@ -93,14 +94,47 @@ public class Inventory {
 	    		 return false;
 	    	}
 	    }
-	    iComponents = components.iterator();
-	    while (iComponents.hasNext()) {
-	    	materials.add(iComponents.next());
-	    }
-	    
 		return true;
 	}
 	
+	/**
+	 * Compares the given and the local inventory materials list and 
+	 * if the given not contains elements from the other then return them.
+	 * @param i the given inventory
+	 * @return differences
+	 */
+	public LinkedList<Material> subSetWithRemainder(Inventory i) {
+		// contained elements
+		LinkedList<Material> remainder = new LinkedList<>();
+		
+		Iterator<Material> iRecipe = materials.iterator();
+	    while (iRecipe.hasNext()) {
+	    	
+	    	Material component = i.removeInventory(iRecipe.next());
+	    	if(component==null) {
+	    		remainder.add(iRecipe.next());
+	    	}
+	    	else {
+	    		i.addInventory(iRecipe.next());
+	    	}
+	    }
+		return remainder;
+	}	
+	
+	/**
+	 *Removes the given inventory elements from the local
+ 	 *if it's contains them.
+	 * @param i the given inventory
+	 */
+	public void subSetWithRemove(Inventory i) {
+		
+		Iterator<Material> iRecipe = materials.iterator();
+	    while (iRecipe.hasNext()) {
+	    	
+	    	i.removeInventory(iRecipe.next());
+
+	    }
+	}
 	
 	/**
 	 * Adds the given stargate to the stargate list.

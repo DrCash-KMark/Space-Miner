@@ -19,7 +19,7 @@ public class StarGate extends Building {
 	private StarGate neighbour;
 	
 	public boolean getWorks() { return works; }
-	public void setWorks(boolean b) { wokrs = b; }
+	public void setWorks(boolean b) { works = b; }
 	
 	public StarGate getNeighbour() { return neighbour; }
 	public void setNeighbour(StarGate sg) { neighbour = sg; }
@@ -35,12 +35,12 @@ public class StarGate extends Building {
 		if (neighbour.getWorks() == false)
 			return;
 		
-		asteroid.addNeighbour(getNeighbourasteroid());
-		getNeighbour().addNeighbour(asteroid);
+		asteroid.addNeighbour(getNeighbourAsteroid());
+		getNeighbourAsteroid().addNeighbour(asteroid);
 	}
 	
 	public void destroy() {
-		neighbour.setWorks() = false;
+		neighbour.setWorks(false);
 		
 		getNeighbourAsteroid().removeNeighbour(asteroid);
 		asteroid.removeNeighbour(getNeighbourAsteroid());
@@ -49,6 +49,6 @@ public class StarGate extends Building {
 	}
 	
 	public Asteroid getNeighbourAsteroid() {
-		neighbour.getAsteroid();
+		return neighbour.getAsteroid();
 	}
 }

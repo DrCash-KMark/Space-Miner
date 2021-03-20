@@ -17,9 +17,17 @@ package main;
 public abstract class Building {
 	protected Asteroid asteroid;
 	protected Game owner;
-	public void onPlace(Asteroid a) {
+	
+	public Asteroid getAsteroid() { return asteroid; }
+	public void setAsteroid(Asteroid a) { asteroid = a; }
+	
+	public Game getGame() { return owner; }
+	public void setGame(Game g) { owner = g; }
+	
+	public Building() {
 	}
 	
-	public void destroy() {
-	}
+	public abstract void onPlace(Asteroid a); 
+	
+	public abstract void destroy(); 
 }

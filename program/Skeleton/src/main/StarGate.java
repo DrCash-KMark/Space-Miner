@@ -17,14 +17,38 @@ package main;
 public class StarGate extends Building {
 	private Boolean works;
 	private StarGate neighbour;
-	public void getNeighbourAsteroid() {
+	
+	public bool getWorks() { return works; }
+	public void setWorks(bool b) { wokrs = b; }
+	
+	public StarGate getNeighbour() { return neighbour; }
+	public void setNeighbour(StarGate sg) { neighbour = sg; }
+	
+	public StarGate() {
+		works = false;
 	}
 	
-	public boolean getWorks() {
-		return false;
+	public void onPlace(Asteroid a) {
+		if (neighbour == null)
+			return;
+		
+		if (neighbour.getWorks() == false)
+			return;
+		
+		asteroid.addNeighbour(getNeighbourasteroid());
+		getNeighbourasteroid().addNeighbour(asteroid);
 	}
 	
-	public Asteroid getAsteroid() {
-		return null;
+	public void destroy() {
+		neighbour.setWorks() = false;
+		
+		getNeighbourAsteroid().removeNeighbour(asteroid);
+		asteroid.removeNeighbour(getNeighbourAsteroid());
+		
+		neighbour.setNeighbour(null);
+	}
+	
+	public Asteroid getNeighbourAsteroid() {
+		neighbour.getAsteroid();
 	}
 }

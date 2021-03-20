@@ -15,4 +15,14 @@ package main;
 
 
 public class Base extends Building {
+	
+	public Base () {
+	}
+	
+	public onPlace() {
+		owner.gameWon();
+	}
+	
+	public destroy {
+	}
 }

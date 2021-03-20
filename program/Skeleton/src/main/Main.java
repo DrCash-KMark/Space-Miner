@@ -21,6 +21,7 @@ public class Main {
 	private int tabulation;
 	private int menuState;
 	
+	// This function helps us log function calls and returns
 	public void log(boolean isReturn, String obj, String cls, String fnc)
 	{
 		if (!isReturn)
@@ -52,6 +53,7 @@ public class Main {
     	printMenu();
 	}
     
+	// This function reads an int from the standard input
     public int scanNumber()
     {
     	Scanner scan = new Scanner(System.in);
@@ -64,6 +66,7 @@ public class Main {
         return num;
     }
     
+    // This function prints the menu and all its sub menus onto the standard output
     public void printMenu()
     {
     	int num;
@@ -376,6 +379,7 @@ public class Main {
     	}
     }
     
+    // This function sets up everything for the vas_banyaszasa sequence and then executes it.
     public void vas_banyaszasa() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vas banyaszasa");
@@ -389,6 +393,11 @@ public class Main {
     	Settler settler = new Settler();
     	Inventory inventory = new Inventory();
     	Iron iron = new Iron();
+    	
+    	asteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	iron.setMain(this);
     	
     	asteroid.addEntity(settler);
     	asteroid.setMaterial(iron);
@@ -410,6 +419,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the szen_banyaszasa sequence and then executes it.
     public void szen_banyaszasa() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Szen banyaszasa");
@@ -423,6 +433,11 @@ public class Main {
     	Settler settler = new Settler();
     	Inventory inventory = new Inventory();
     	Coal coal = new Coal();
+    	
+    	asteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	coal.setMain(this);
     	
     	asteroid.addEntity(settler);
     	asteroid.setMaterial(coal);
@@ -444,6 +459,7 @@ public class Main {
     	return;
     }
 
+    // This function sets up everything for the vizjeg_banyaszasa sequence and then executes it.
     public void vizjeg_banyaszasa() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vizjeg banyaszasa");
@@ -457,6 +473,11 @@ public class Main {
     	Settler settler = new Settler();
     	Inventory inventory = new Inventory();
     	Ice ice = new Ice();
+    	
+    	asteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	ice.setMain(this);
     	
     	asteroid.addEntity(settler);
     	asteroid.setMaterial(ice);
@@ -478,6 +499,7 @@ public class Main {
     	return;
     }
 
+    // This function sets up everything for the uran_banyaszasa sequence and then executes it.
     public void uran_banyaszasa() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Uran banyaszasa");
@@ -491,6 +513,11 @@ public class Main {
     	Settler settler = new Settler();
     	Inventory inventory = new Inventory();
     	Uran uran = new Uran();
+    	
+    	asteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	uran.setMain(this);
     	
     	asteroid.addEntity(settler);
     	asteroid.setMaterial(uran);
@@ -512,12 +539,16 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the vas_visszahelyezese sequence and then executes it.
     public void vas_visszahelyezese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vas visszahelyezese");
     	
     	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
     	int iIsClose = scanNumber();
+    	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
     	boolean isClose = false;
     	
@@ -530,6 +561,11 @@ public class Main {
     	Inventory inventory = new Inventory();
     	Iron iron = new Iron();
     	
+    	asteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	iron.setMain(this);
+    	
     	asteroid.addEntity(settler);
     	
     	settler.setAsteroid(asteroid);
@@ -538,6 +574,8 @@ public class Main {
     	inventory.addInventory(iron);
     	
     	asteroid.setCloseToSun(isClose);
+    	
+    	asteroid.setRockThickness(thickness);
     	
     	settler.dropMaterial(iron);
     	
@@ -551,12 +589,16 @@ public class Main {
     	return;
     }
 
+    // This function sets up everything for the szen_visszahelyezese sequence and then executes it.
     public void szen_visszahelyezese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Szen visszahelyezese");
     	
     	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
     	int iIsClose = scanNumber();
+    	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
     	boolean isClose = false;
     	
@@ -569,6 +611,11 @@ public class Main {
     	Inventory inventory = new Inventory();
     	Coal coal = new Coal();
     	
+    	asteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	coal.setMain(this);
+    	
     	asteroid.addEntity(settler);
     	
     	settler.setAsteroid(asteroid);
@@ -577,6 +624,8 @@ public class Main {
     	inventory.addInventory(coal);
     	
     	asteroid.setCloseToSun(isClose);
+    	
+    	asteroid.setRockThickness(thickness);
     	
     	settler.dropMaterial(coal);
     	
@@ -590,12 +639,16 @@ public class Main {
     	return;
     }
 
+    // This function sets up everything for the vizjeg_visszahelyezese sequence and then executes it.
     public void vizjeg_visszahelyezese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Vizjeg visszahelyezese");
     	
     	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
     	int iIsClose = scanNumber();
+    	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
     	boolean isClose = false;
     	
@@ -608,6 +661,11 @@ public class Main {
     	Inventory inventory = new Inventory();
     	Ice ice = new Ice();
     	
+    	asteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	ice.setMain(this);
+    	
     	asteroid.addEntity(settler);
     	
     	settler.setAsteroid(asteroid);
@@ -616,6 +674,8 @@ public class Main {
     	inventory.addInventory(ice);
     	
     	asteroid.setCloseToSun(isClose);
+    	
+    	asteroid.setRockThickness(thickness);
     	
     	settler.dropMaterial(ice);
     	
@@ -629,12 +689,16 @@ public class Main {
     	return;
     }
 
+    // This function sets up everything for the uran_visszahelyezese sequence and then executes it.
     public void uran_visszahelyezese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Uran visszahelyezese");
     	
     	System.out.println("Kozel van a naphoz az aszteroida (0: nem, 1: igen):");
     	int iIsClose = scanNumber();
+    	
+    	System.out.println("Milyen vastag az aszteroida kerge:");
+    	int thickness = scanNumber();
     	
     	boolean isClose = false;
     	
@@ -648,6 +712,13 @@ public class Main {
     	Uran uran = new Uran();
     	Asteroid neighbour = new Asteroid();
     	Game owner = new Game();
+    	
+    	asteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	uran.setMain(this);
+    	neighbour.setMain(this);
+    	owner.setMain(this);
     	
     	asteroid.addEntity(settler);
     	
@@ -672,6 +743,8 @@ public class Main {
     	
     	asteroid.setCloseToSun(isClose);
     	
+    	asteroid.setRockThickness(thickness);
+    	
     	settler.dropMaterial(uran);
     	
     	System.out.println("0 Visszalepes");
@@ -684,6 +757,7 @@ public class Main {
     	return;
     }
 
+    // This function sets up everything for the napvihar_tortenik sequence and then executes it.
     public void napvihar_tortenik() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Napviher tortenik");
@@ -693,15 +767,21 @@ public class Main {
     	
     	System.out.println("Lefutas:");
     	
-    	Game game = new Game();
+    	Game owner = new Game();
     	Asteroid asteroid = new Asteroid();
     	Robot robot = new Robot();
     	Settler settler = new Settler();
     	Sun sun = new Sun();
     	
-    	game.addControllable(sun);
+    	owner.setMain(this);
+    	asteroid.setMain(this);
+    	robot.setMain(this);
+    	settler.setMain(this);
+    	sun.setMain(this);
     	
-    	sun.setOwner(game);
+    	owner.addControllable(sun);
+    	
+    	sun.setOwner(owner);
     	
     	asteroid.addEntity(settler);
     	asteroid.addEntity(robot);
@@ -709,15 +789,15 @@ public class Main {
     	robot.setAsteroid(asteroid);
     	settler.setAsteroid(asteroid);
     	
-    	game.addControllable(asteroid);
-    	game.addSettler(settler);
-    	game.addRobot(robot);
+    	owner.addControllable(asteroid);
+    	owner.addSettler(settler);
+    	owner.addControllable(robot);
     	
-    	asteroid.setOwner(game);
+    	asteroid.setOwner(owner);
     	
-    	robot.setOwner(game);
+    	robot.setOwner(owner);
     	
-    	settler.setOwner(game);
+    	settler.setOwner(owner);
     	
     	asteroid.setRockThickness(thickness);
     	
@@ -733,6 +813,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the furas_robottal_elparolog sequence and then executes it.
     public void furas_robottal_elparolog() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal elparolog");
@@ -753,6 +834,10 @@ public class Main {
     	Asteroid asteroid = new Asteroid();
     	Ice ice = new Ice();
     	
+    	robot.setMain(this);
+    	asteroid.setMain(this);
+    	ice.setMain(this);
+    	
     	robot.setAsteroid(asteroid);
     	
     	asteroid.addMaterial(ice);
@@ -772,7 +857,8 @@ public class Main {
     	
     	return;
     }
-    
+   
+    // This function sets up everything for the furas_telepessel_elparolog sequence and then executes it.
     public void furas_telepessel_elparolog() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepessel elparolog");
@@ -792,6 +878,10 @@ public class Main {
     	Settler settler = new Settler();
     	Asteroid asteroid = new Asteroid();
     	Ice ice = new Ice();
+    	
+    	settler.setMain(this);
+    	asteroid.setMain(this);
+    	ice.setMain(this);
     	
     	settler.setAsteroid(asteroid);
     	
@@ -815,6 +905,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the furas_robottal_robban_van_szomszed sequence and then executes it.
     public void furas_robottal_robban_van_szomszed() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal robban van szomszed");
@@ -837,6 +928,12 @@ public class Main {
     	Asteroid neighbour = new Asteroid();
     	Game owner = new Game();
     	
+    	robot.setMain(this);
+    	asteroid.setMain(this);
+    	uran.setMain(this);
+    	neighbour.setMain(this);
+    	owner.setMain(this);
+    	
     	robot.setAsteroid(asteroid);
     	
     	asteroid.addEntity(robot);
@@ -850,6 +947,10 @@ public class Main {
     	asteroid.setOwner(owner);
     	
     	neighbour.setOwner(owner);
+    	
+    	owner.addControllable(robot);
+    	owner.addControllable(asteroid);
+    	owner.addControllable(neighbour);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -866,6 +967,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the furas_robottal_robban_nincs_szomszed sequence and then executes it.
     public void furas_robottal_robban_nincs_szomszed() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal nincs szomszed");
@@ -887,6 +989,11 @@ public class Main {
     	Uran uran = new Uran();
     	Game owner = new Game();
     	
+    	robot.setMain(this);
+    	asteroid.setMain(this);
+    	uran.setMain(this);
+    	owner.setMain(this);
+    	
     	robot.setAsteroid(asteroid);
     	
     	asteroid.addEntity(robot);
@@ -895,6 +1002,9 @@ public class Main {
     	robot.setOwner(owner);
     	
     	asteroid.setOwner(owner);
+    	
+    	owner.addControllable(robot);
+    	owner.addControllable(asteroid);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -911,6 +1021,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the furas_telepessel_robban sequence and then executes it.
     public void furas_telepessel_robban() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepssel robban");
@@ -933,6 +1044,12 @@ public class Main {
     	Asteroid neighbour = new Asteroid();
     	Game owner = new Game();
     	
+    	settler.setMain(this);
+    	asteroid.setMain(this);
+    	uran.setMain(this);
+    	neighbour.setMain(this);
+    	owner.setMain(this);
+    	
     	settler.setAsteroid(asteroid);
     	
     	asteroid.addEntity(settler);
@@ -948,6 +1065,8 @@ public class Main {
     	neighbour.setOwner(owner);
     	
     	owner.addSettler(settler);
+    	owner.addControllable(asteroid);
+    	owner.addControllable(neighbour);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -964,6 +1083,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the furas_robottal sequence and then executes it.
     public void furas_robottal() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas robottal");
@@ -983,6 +1103,10 @@ public class Main {
     	Robot robot = new Robot();
     	Asteroid asteroid = new Asteroid();
     	Coal coal = new Coal();
+    	
+    	robot.setMain(this);
+    	asteroid.setMain(this);
+    	coal.setMain(this);
     	
     	robot.setAsteroid(asteroid);
     	
@@ -1004,6 +1128,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the furas_telepessel sequence and then executes it.
     public void furas_telepessel() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Furas telepessel");
@@ -1021,6 +1146,10 @@ public class Main {
     	Settler settler = new Settler();
     	Asteroid asteroid = new Asteroid();
     	Coal coal = new Coal();
+    	
+    	settler.setMain(this);
+    	asteroid.setMain(this);
+    	coal.setMain(this);
     	
     	settler.setAsteroid(asteroid);
     	
@@ -1042,6 +1171,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the mozgas_robottal sequence and then executes it.
     public void mozgas_robottal() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Mozgas robottal");
@@ -1051,6 +1181,10 @@ public class Main {
     	Settler settler = new Settler();
     	Asteroid currentAsteroid = new Asteroid();
     	Asteroid destination = new Asteroid();
+    	
+    	settler.setMain(this);
+    	currentAsteroid.setMain(this);
+    	destination.setMain(this);
     	
     	settler.setAsteroid(currentAsteroid);
     	
@@ -1071,6 +1205,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the mozgas_telepessel sequence and then executes it.
     public void mozgas_telepessel() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Mozgas telepessel");
@@ -1080,6 +1215,10 @@ public class Main {
     	Robot robot = new Robot();
     	Asteroid currentAsteroid = new Asteroid();
     	Asteroid destination = new Asteroid();
+    	
+    	robot.setMain(this);
+    	currentAsteroid.setMain(this);
+    	destination.setMain(this);
     	
     	robot.setAsteroid(currentAsteroid);
     	
@@ -1100,6 +1239,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the teleportkapu_lehelyezese_par_egy_masik_aszteroidan sequence and then executes it.
     public void teleportkapu_lehelyezese_par_egy_masik_aszteroidan() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu lehelyezese par egy masik aszteroidan");
@@ -1113,6 +1253,14 @@ public class Main {
     	Inventory inventory = new Inventory();
     	StarGate stargate = new StarGate();
     	StarGate neighbour = new StarGate();
+    	
+    	owner.setMain(this);
+    	asteroid.setMain(this);
+    	neighbourAsteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	stargate.setMain(this);
+    	
     	
     	owner.addControllable(asteroid);
     	owner.addControllable(neighbourAsteroid);
@@ -1147,6 +1295,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the teleportkapu_lehelyezese_par_a_telepes_inventoryjaban sequence and then executes it.
     public void teleportkapu_lehelyezese_par_a_telepes_inventoryjaban() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu lehelyezese par a telepes inventory-jában");
@@ -1158,6 +1307,12 @@ public class Main {
     	Asteroid asteroid = new Asteroid();
     	StarGate stargate = new StarGate();
     	StarGate neighbour = new StarGate();
+    	
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	asteroid.setMain(this);
+    	stargate.setMain(this);
+    	neighbour.setMain(this);
     	
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
@@ -1183,6 +1338,7 @@ public class Main {
     	return;
     }
 
+    // This function sets up everything for the teleportkapu_lehelyezese_par_mar_elpusztult sequence and then executes it.
     public void teleportkapu_lehelyezese_par_mar_elpusztult() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu lehelyezese par mar elpusztult");
@@ -1193,6 +1349,11 @@ public class Main {
     	Inventory inventory = new Inventory();
     	Asteroid asteroid = new Asteroid();
     	StarGate stargate = new StarGate();
+    	
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	asteroid.setMain(this);
+    	stargate.setMain(this);
     	
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
@@ -1213,6 +1374,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the teleportkapu_epitese sequence and then executes it.
     public void teleportkapu_epitese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Teleportkapu epitese");
@@ -1230,6 +1392,18 @@ public class Main {
     	Iron iron4 = new Iron();
     	Uran uran2 = new Uran();
     	Ice ice2 = new Ice();
+    	
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	STARGATE_RECIPE.setMain(this);
+    	iron1.setMain(this);
+    	iron2.setMain(this);
+    	uran1.setMain(this);
+    	ice1.setMain(this);
+    	iron3.setMain(this);
+    	iron4.setMain(this);
+    	uran2.setMain(this);
+    	ice2.setMain(this);
     	
     	settler.setInventory(inventory);
     	settler.setSTARGATE_RECIPE(STARGATE_RECIPE);
@@ -1256,6 +1430,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the bazis_epitese sequence and then executes it.
     public void bazis_epitese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Bazis epitese");
@@ -1293,6 +1468,38 @@ public class Main {
     	Coal coal4 = new Coal();
     	Coal coal5 = new Coal();
     	Coal coal6 = new Coal();
+    	
+    	owner.setMain(this);
+    	asteroid.setMain(this);
+    	settler1.setMain(this);
+    	settler2.setMain(this);
+    	inventory1.setMain(this);
+    	inventory2.setMain(this);
+    	BASE_RECIPE.setMain(this);
+    	iron1.setMain(this);
+    	iron2.setMain(this);
+    	iron3.setMain(this);
+    	uran1.setMain(this);
+    	uran2.setMain(this);
+    	uran3.setMain(this);
+    	ice1.setMain(this);
+    	ice2.setMain(this);
+    	ice3.setMain(this);
+    	coal1.setMain(this);
+    	coal2.setMain(this);
+    	coal3.setMain(this);
+    	iron4.setMain(this);
+    	iron5.setMain(this);
+    	iron6.setMain(this);
+    	uran4.setMain(this);
+    	uran5.setMain(this);
+    	uran6.setMain(this);
+    	ice4.setMain(this);
+    	ice5.setMain(this);
+    	ice6.setMain(this);
+    	coal1.setMain(this);
+    	coal2.setMain(this);
+    	coal3.setMain(this);
     	
     	owner.addControllable(asteroid);
     	owner.addSettler(settler1);
@@ -1351,6 +1558,7 @@ public class Main {
     	return;
     }
     
+    // This function sets up everything for the robot_epitese sequence and then executes it.
     public void robot_epitese() {
     	System.out.println("Aszteroida banyaszat");
     	System.out.println("Robot epitese");
@@ -1368,6 +1576,18 @@ public class Main {
     	Iron iron2 = new Iron();
     	Coal coal2 = new Coal();
     	Uran uran2 = new Uran();
+    	
+    	owner.setMain(this);
+    	asteroid.setMain(this);
+    	settler.setMain(this);
+    	inventory.setMain(this);
+    	ROBOT_RECIPE.setMain(this);
+    	iron1.setMain(this);
+    	coal1.setMain(this);
+    	uran1.setMain(this);
+    	iron2.setMain(this);
+    	coal2.setMain(this);
+    	uran2.setMain(this);
     	
     	owner.addControllable(asteroid);
     	owner.addSettler(settler);

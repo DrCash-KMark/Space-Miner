@@ -17,12 +17,15 @@ package main;
 public abstract class Building {
 	protected Asteroid asteroid;
 	protected Game owner;
+	protected Main main;
 	
 	public Asteroid getAsteroid() { return asteroid; }
 	public void setAsteroid(Asteroid a) { asteroid = a; }
 	
 	public Game getGame() { return owner; }
 	public void setGame(Game g) { owner = g; }
+	
+	public void setMain(Main m) { main = m; }
 	
 	public Building() {
 	}

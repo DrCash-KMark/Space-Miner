@@ -21,14 +21,13 @@ public class Base extends Building {
 	
 	@Override
 	public void onPlace(Asteroid a) {
-		// TODO Auto-generated method stub
-		owner.gameWon();
+		main.log(false, "base", "Base", "onPlace(asteroid:Asteroid)");
 		
+		main.log(true, "void", "Void", "");
+		
+		owner.gameWon();
 	}
 
-	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
-		
 	}
 }

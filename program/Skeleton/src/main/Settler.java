@@ -47,6 +47,20 @@ public class Settler extends Entity {
 		STARGATE_RECIPE = new Inventory();
 	}
 	/**
+	 * The setter of the inventory.
+	 * @param i: Inventory: The inventory of the settler.
+	 */
+	public void setInventory(Inventory i) {
+		inventory = i;
+	}
+	/**
+	 * The getter of the settler's inventory
+	 * @return inventory: Inventory
+	 */
+	public Inventory getInventory() {
+		return inventory;
+	}
+	/**
 	 * This settler mines on his asteroid.
 	 */
 	public void mine() {

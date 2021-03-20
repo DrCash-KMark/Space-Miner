@@ -37,9 +37,7 @@ public class Robot extends Entity implements Controllable {
 	 * The robot decides what to do.
 	 */
 	@Override
-	public void onTurn() {
-		// TODO Auto-generated method stub
-		
+	public void onTurn() {	
 	}
 	/**
 	 * Robot dies.
@@ -48,10 +46,18 @@ public class Robot extends Entity implements Controllable {
 		super.die();
 		owner.destroyMe(this);
 	}
-	
+	/**
+	 * Az aszteroida felrobban, ha van szomszéd akkor a robot véletlenszerûen választ egyet belõlük.
+	 * Ha nincs szomszéd, akkor viszont meghal.
+	 */
 	public void asteroidExploded() {
-		// TODO Auto-generated method stub
-		
+		if(asteroid.getNeighbours().size() == 0) {
+			this.die();
+		}
+		else {
+			int neighbour_index = (int)Math.random() * asteroid.getNeighbours().size();
+			this.move(asteroid.getNeighbours().get(neighbour_index));
+		}
 	}
 	
 }

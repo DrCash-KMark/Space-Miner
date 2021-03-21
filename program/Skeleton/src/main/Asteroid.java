@@ -211,7 +211,10 @@ public class Asteroid extends Planet implements Controllable {
 		this.main.log(false, this.name, this.getClass().getName(), "removeMaterial()");
 		
 		if (this.rockThickness > 0) // checks if the material can be removed
+		{
+			main.log(true, "null" , "null", "");
 			return null;
+		}
 		Material returnValue = this.material;
 		this.material = null;
 		this.main.log(true, returnValue.getName(),returnValue.getClass().getName() , "");

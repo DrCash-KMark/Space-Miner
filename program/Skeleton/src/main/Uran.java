@@ -27,7 +27,8 @@ public class Uran extends Material {
 	 * Blow up the asteroid which contains the material.
 	 */
 	public void exposedAndCloseToSun(Asteroid a) {
-		
+		this.main.log(false, this.name, this.getClass().getName(), "exposedAndCloseToSun(" + a.getName() + ":" + (a.getClass().getName()));
 		a.explode();
+		this.main.log(true, "void", "void", "");
 	}
 }

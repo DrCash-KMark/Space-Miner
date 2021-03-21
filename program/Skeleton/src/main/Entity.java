@@ -86,15 +86,19 @@ public abstract class Entity {
 	 * @param destination: Asteroid
 	 */
 	public void move(Asteroid destination) {
+		main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":Asteroid)");
 		destination.addEntity(this);
 		asteroid.removeEntity(this);
 		this.setAsteroid(destination);
+		main.log(true, "void", "void", "");
 	}
 	/**
 	 * Entity drills his current asteroid.
 	 */
 	public void drill() {
+		main.log(false, name, this.getClass().getName(), "drill()");
 		asteroid.drilling();
+		main.log(true, "void", "void", "");
 	}
 	/**
 	 * Entity dies.
@@ -103,9 +107,5 @@ public abstract class Entity {
 	public void die() {
 		asteroid.removeEntity(this);
 	}
-	//Ez eddig nem volt abstract
 	public abstract void asteroidExploded();
-	//Ezt nem használtuk napviharnál, csak simán meghalnak.
-	public void getNotifiedAboutSunflare() {
-	}
 }

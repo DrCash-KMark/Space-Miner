@@ -41,13 +41,24 @@ public class StarGate extends Building {
 		main.log(false, name, getClass().getName(), "onPlace(" + a.getName() + ":" + a.getClass().getName() + ")");
 		
 		if (neighbour == null)
+		{
+			main.log(true, "void", "void", "");
 			return;
+		}
 		
 		if (neighbour.getWorks() == false)
+		{
+			main.log(true, "void", "void", "");
 			return;
+		}
 		
-		asteroid.addNeighbour(getNeighbourAsteroid());
-		getNeighbourAsteroid().addNeighbour(asteroid);
+		asteroid = a;
+		
+		if (getNeighbourAsteroid() != null);
+		{
+			asteroid.addNeighbour(getNeighbourAsteroid());
+			getNeighbourAsteroid().addNeighbour(asteroid);
+		}
 		
 		main.log(true, "void", "void", "");
 	}
@@ -75,8 +86,15 @@ public class StarGate extends Building {
 	public Asteroid getNeighbourAsteroid() {
 		main.log(false, name, getClass().getName(), "getNeighbourAsteroid()");
 		
-		main.log(true, neighbour.getAsteroid().getName(), neighbour.getAsteroid().getClass().getName(), "");
-		
-		return neighbour.getAsteroid();
+		if (neighbour.getAsteroid() != null)
+		{
+			main.log(true, neighbour.getAsteroid().getName(), neighbour.getAsteroid().getClass().getName(), "");
+			return neighbour.getAsteroid();
+		}
+		else
+		{
+			main.log(true, "null", "null", "");
+			return null;
+		}
 	}
 }

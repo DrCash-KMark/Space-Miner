@@ -175,7 +175,11 @@ public class Asteroid extends Planet implements Controllable {
 		this.main.log(false, this.name, this.getClass().getName(), "drilling()");
 
 		this.rockThickness--;
-		if (this.closeToSun && this.rockThickness == 0) {
+		
+		if (rockThickness < 0)
+			rockThickness = 0;
+		
+		if (this.closeToSun && this.rockThickness == 0 && this.material != null) {
 			this.material.exposedAndCloseToSun(this);
 		}
 		this.main.log(true, "void", "void", "");
@@ -196,7 +200,7 @@ public class Asteroid extends Planet implements Controllable {
 			this.main.log(true, "false", "boolean", "");
 			return false;
 		}
-		if (this.closeToSun)
+		if (this.closeToSun && this.material != null)
 			m.exposedAndCloseToSun(this);
 		this.main.log(true, "true", "boolean", "");
 		return true;
@@ -298,8 +302,10 @@ public class Asteroid extends Planet implements Controllable {
 	public void getNotifiedAboutSunflare() {
 		this.main.log(false, this.name, this.getClass().getName(), "getNotifiedAboutSunflare()");
 		if (this.rockThickness != 0 || !this.isHollow()) {
-			for (int i = 0; i < this.entities.size(); i++) {
-				this.entities.get(i).die();
+			int size = this.entities.size(); 
+			
+			for (int i = 0; i < size; i++) {
+				this.entities.get(0).die();
 			}
 		}
 		this.main.log(true, "void", "void", "");

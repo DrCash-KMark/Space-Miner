@@ -944,7 +944,10 @@ public class Main {
     	
     	robot.setAsteroid(asteroid);
     	
-    	asteroid.addMaterial(ice);
+    	 
+    	 
+    	
+    	asteroid.setMaterial(ice);
     	asteroid.addEntity(robot);
     	
     	asteroid.setRockThickness(thickness);
@@ -995,7 +998,10 @@ public class Main {
     	
     	settler.setAsteroid(asteroid);
     	
-    	asteroid.addMaterial(ice);
+    	 
+    	 
+    	
+    	asteroid.setMaterial(ice);
     	asteroid.addEntity(settler);
     	
     	asteroid.setRockThickness(thickness);
@@ -1054,8 +1060,11 @@ public class Main {
     	
     	robot.setAsteroid(asteroid);
     	
+    	 
+    	 
+    	
     	asteroid.addEntity(robot);
-    	asteroid.addMaterial(uran);
+    	asteroid.setMaterial(uran);
     	asteroid.addNeighbour(neighbour);
     	
     	neighbour.addNeighbour(asteroid);
@@ -1121,8 +1130,11 @@ public class Main {
     	
     	robot.setAsteroid(asteroid);
     	
+    	 
+    	 
+    	
     	asteroid.addEntity(robot);
-    	asteroid.addMaterial(uran);
+    	asteroid.setMaterial(uran);
     	
     	robot.setOwner(owner);
     	
@@ -1185,8 +1197,11 @@ public class Main {
     	
     	settler.setAsteroid(asteroid);
     	
+    	 
+    	 
+    	
     	asteroid.addEntity(settler);
-    	asteroid.addMaterial(uran);
+    	asteroid.setMaterial(uran);
     	asteroid.addNeighbour(neighbour);
     	
     	neighbour.addNeighbour(asteroid);
@@ -1249,7 +1264,10 @@ public class Main {
     	
     	robot.setAsteroid(asteroid);
     	
-    	asteroid.addMaterial(coal);
+    	 
+    	 
+    	
+    	asteroid.setMaterial(coal);
     	asteroid.addEntity(robot);
     	
     	asteroid.setRockThickness(thickness);
@@ -1298,7 +1316,10 @@ public class Main {
     	
     	settler.setAsteroid(asteroid);
     	
-    	asteroid.addMaterial(coal);
+    	 
+    	 
+    	
+    	asteroid.setMaterial(coal);
     	asteroid.addEntity(settler);
     	
     	asteroid.setRockThickness(thickness);
@@ -1441,6 +1462,7 @@ public class Main {
     	settler.setInventory(inventory);
     	
     	inventory.addStarGate(stargate);
+    	neighbour.setWorks(true);
     	
     	neighbourAsteroid.addBuilding(neighbour);
     	

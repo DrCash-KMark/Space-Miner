@@ -27,7 +27,8 @@ public class Ice extends Material {
 	 * Evaporate the ice from the asteroid.
 	 */
 	public void exposedAndCloseToSun(Asteroid a) {
-		
+		this.main.log(false, this.name, this.getClass().getName(), "exposedAndCloseToSun(" + a.getName() + ":" + (a.getClass().getName()));
 		a.evaporateMaterial();
+		this.main.log(true, "void", "void", "");
 	}
 }

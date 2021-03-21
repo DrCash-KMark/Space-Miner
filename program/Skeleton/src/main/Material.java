@@ -18,6 +18,7 @@ public abstract class Material {
 	protected boolean isRadio;
 	protected String name;
 	protected boolean canEvaporate;
+	protected Main main;
 	
 	/**
 	 * constructor for the Material which sets all parameters at once	
@@ -29,6 +30,15 @@ public abstract class Material {
 		this.isRadio = isRadio;
 		this.name = name;
 		this.canEvaporate = canEvaporate;
+	}
+	
+	/**
+	 * The setter of the Main logger.
+	 * Only for testing.
+	 * @param m: Main
+	 */
+	public void setMain(Main m) {
+		main = m;
 	}
 	
 	public void exposedAndCloseToSun(Asteroid a) {

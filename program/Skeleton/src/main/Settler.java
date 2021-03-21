@@ -61,6 +61,27 @@ public class Settler extends Entity {
 		return inventory;
 	}
 	/**
+	 * The setter of the STARGATE_RECIPE
+	 * @param i: Inventory: Contanins the required materials 
+	 */
+	public void setSTARGATE_RECIPE(Inventory i) {
+		STARGATE_RECIPE = i;
+	}
+	/**
+	 * The setter of the ROBOT_RECIPE
+	 * @param i: Inventory: Contanins the required materials 
+	 */
+	public void setROBOT_RECIPE(Inventory i) {
+		ROBOT_RECIPE = i;
+	}
+	/**
+	 * The setter of the BASE_RECIPE
+	 * @param i: Inventory: Contanins the required materials 
+	 */
+	public void setBASE_RECIPE(Inventory i) {
+		BASE_RECIPE = i;
+	}
+	/**
 	 * This settler mines on his asteroid.
 	 */
 	public void mine() {
@@ -71,11 +92,29 @@ public class Settler extends Entity {
 	 * This settler builds a Stargate.
 	 */
 	public void buildStarGate() {
+		Inventory remainder = STARGATE_RECIPE.subSet(inventory);
+		if(remainder.getMaterials().size() == 0) {
+			this.setInventory(STARGATE_RECIPE.subtraction(inventory));
+			StarGate s1 = new StarGate();
+			StarGate s2 = new StarGate();
+			s1.setNeighbour(s2);
+			s2.setNeighbour(s1);
+			inventory.addStarGate(s1);
+			inventory.addStarGate(s2);
+		}
 	}
 	/**
 	 * This settler builds a Robot.
 	 */
 	public void buildRobot() {
+		Inventory remainder = ROBOT_RECIPE.subSet(inventory);
+		if(remainder.getMaterials().size() == 0) {
+			this.setInventory(ROBOT_RECIPE.subtraction(inventory));
+			Robot robot = new Robot();
+			robot.setAsteroid(asteroid);
+			asteroid.addEntity(robot);
+			owner.addRobot(robot);
+		}
 	}
 	/**
 	 * This settler builds a Base.
@@ -97,6 +136,9 @@ public class Settler extends Entity {
 	 * The settler places a Stargate on the current asteroid.
 	 */
 	public void placeStarGate() {
+		StarGate sg = inventory.removeStarGate();
+		asteroid.addBuilding(sg);
+		sg.onPlace(asteroid);
 	}
 	/**
 	 * The settler dies.

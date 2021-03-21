@@ -25,6 +25,7 @@ public class Inventory {
 	private LinkedList<Material> materials;
 	private LinkedList<StarGate> starGate;
 	private int capacity;
+	private Main main;
 	
 	/**
 	 * Constructor for Inventory without parameters.
@@ -44,6 +45,23 @@ public class Inventory {
 		this.materials = materials;
 		this.starGate = starGate;
 		this.capacity = capacity;
+	}
+	
+	/**
+	 * The setter of the Main logger.
+	 * Only for testing.
+	 * @param m: Main
+	 */
+	public void setMain(Main m) {
+		main = m;
+	}
+	
+	/**
+	 * Getter of the materials.
+	 * @return materials: LinkedList<Material>
+	 */
+	public LinkedList<Material> getMaterials(){
+		return materials;
 	}
 	
 	/**

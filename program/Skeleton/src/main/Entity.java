@@ -21,7 +21,7 @@ package main;
 public abstract class Entity {
 	protected Asteroid asteroid;
 	protected Game owner;
-	
+	protected Main main;
 	/**
 	 * Constructor with parameters.
 	 * @param a: Asteroid: The Asteroid which this Entity is standing on.
@@ -66,12 +66,21 @@ public abstract class Entity {
 		this.owner = owner;
 	}
 	/**
+	 * The setter of the Main logger.
+	 * Only for testing.
+	 * @param m: Main
+	 */
+	public void setMain(Main m) {
+		main = m;
+	}
+	/**
 	 * Moves this Entity to another asteroid.
 	 * @param destination: Asteroid
 	 */
 	public void move(Asteroid destination) {
 		destination.addEntity(this);
 		asteroid.removeEntity(this);
+		this.setAsteroid(destination);
 	}
 	/**
 	 * Entity drills his current asteroid.

@@ -62,21 +62,21 @@ public class Settler extends Entity {
 	}
 	/**
 	 * The setter of the STARGATE_RECIPE
-	 * @param i: Inventory: Contanins the required materials 
+	 * @param i: Inventory: Contains the required materials 
 	 */
 	public void setSTARGATE_RECIPE(Inventory i) {
 		STARGATE_RECIPE = i;
 	}
 	/**
 	 * The setter of the ROBOT_RECIPE
-	 * @param i: Inventory: Contanins the required materials 
+	 * @param i: Inventory: Contains the required materials 
 	 */
 	public void setROBOT_RECIPE(Inventory i) {
 		ROBOT_RECIPE = i;
 	}
 	/**
 	 * The setter of the BASE_RECIPE
-	 * @param i: Inventory: Contanins the required materials 
+	 * @param i: Inventory: Contains the required materials 
 	 */
 	public void setBASE_RECIPE(Inventory i) {
 		BASE_RECIPE = i;

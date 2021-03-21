@@ -15,7 +15,7 @@ package main;
 
 /**
  * Represents the Star in the game. It can cause sun flares.
- * @author simon
+ * @author Simon
  *
  */
 public class Sun extends Planet implements Controllable {
@@ -31,7 +31,7 @@ public class Sun extends Planet implements Controllable {
 	}
 
 	/**
-	 * Implements autonomous behavior performed in every game turn.   
+	 * Implements autonomous behaviour performed in every game turn.   
 	 */
 	@Override
 	public void onTurn() {

@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * Represents an instance of the running game. Hold reference to all the present Settlers, Robots and Planets in the game.
- * @author simon
+ * @author Simon
  *
  */
 public class Game {

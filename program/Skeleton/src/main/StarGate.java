@@ -38,7 +38,8 @@ public class StarGate extends Building {
 	 * @param a: Asteroid: asteroid on which the StarGate is placed
 	 */
 	public void onPlace(Asteroid a) {
-		main.log(false, "stargate", "StarGate", "onPlace(asteroid:Asteroid");
+		//main.log(false, name, "StarGate", "onPlace(" + a.getName() + ":Asteroid");
+		main.log(false, "stargate", "StarGate", "onPlace(asteroid:Asteroid)");
 		
 		if (neighbour == null)
 			return;

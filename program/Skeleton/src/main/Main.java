@@ -36,21 +36,21 @@ public class Main {
 	{
 		if (!isReturn)
 		{
-			tabulation++;
-			
 			for (int i = 0; i < tabulation; i++)
 				System.out.print("\t|");
 			
 			System.out.print("->" + obj + ":" + cls + "." + fnc + "\n");
+			
+			tabulation++;
 		}
 		else
 		{
+			tabulation--;
+			
 			for (int i = 0; i < tabulation; i++)
 				System.out.print("\t|");
 			
 			System.out.print("<-" + obj + ":" + cls + "\n");
-			
-			tabulation--;
 		}
 	}
 	
@@ -433,6 +433,11 @@ public class Main {
     	inventory.setMain(this);
     	iron.setMain(this);
     	
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	iron.setName("iron");
+    	
     	asteroid.addEntity(settler);
     	asteroid.setMaterial(iron);
     	
@@ -474,6 +479,11 @@ public class Main {
     	settler.setMain(this);
     	inventory.setMain(this);
     	coal.setMain(this);
+    	
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	coal.setName("coal");
     	
     	asteroid.addEntity(settler);
     	asteroid.setMaterial(coal);
@@ -517,6 +527,11 @@ public class Main {
     	inventory.setMain(this);
     	ice.setMain(this);
     	
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	ice.setName("ice");
+    	
     	asteroid.addEntity(settler);
     	asteroid.setMaterial(ice);
     	
@@ -558,6 +573,11 @@ public class Main {
     	settler.setMain(this);
     	inventory.setMain(this);
     	uran.setMain(this);
+    	
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	uran.setName("uran");
     	
     	asteroid.addEntity(settler);
     	asteroid.setMaterial(uran);
@@ -607,6 +627,11 @@ public class Main {
     	settler.setMain(this);
     	inventory.setMain(this);
     	iron.setMain(this);
+    	
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	iron.setName("iron");
     	
     	asteroid.addEntity(settler);
     	
@@ -660,6 +685,11 @@ public class Main {
     	inventory.setMain(this);
     	coal.setMain(this);
     	
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	coal.setName("coal");
+    	
     	asteroid.addEntity(settler);
     	
     	settler.setAsteroid(asteroid);
@@ -711,6 +741,11 @@ public class Main {
     	settler.setMain(this);
     	inventory.setMain(this);
     	ice.setMain(this);
+    	
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	ice.setName("ice");
     	
     	asteroid.addEntity(settler);
     	
@@ -767,6 +802,13 @@ public class Main {
     	uran.setMain(this);
     	neighbour.setMain(this);
     	owner.setMain(this);
+    	
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	uran.setName("iron");
+    	neighbour.setName("neighbour");
+    	owner.setName("owner");
     	
     	asteroid.addEntity(settler);
     	
@@ -829,6 +871,12 @@ public class Main {
     	settler.setMain(this);
     	sun.setMain(this);
     	
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	robot.setName("robot");
+    	owner.setName("owner");
+    	sun.setName("sun");
+    	
     	owner.addPlanet(sun);
     	
     	sun.setOwner(owner);
@@ -890,6 +938,10 @@ public class Main {
     	asteroid.setMain(this);
     	ice.setMain(this);
     	
+    	robot.setName("robot");
+    	asteroid.setName("asteroid");
+    	ice.setName("ice");
+    	
     	robot.setAsteroid(asteroid);
     	
     	asteroid.addMaterial(ice);
@@ -936,6 +988,10 @@ public class Main {
     	settler.setMain(this);
     	asteroid.setMain(this);
     	ice.setMain(this);
+    	
+    	settler.setName("settler");
+    	asteroid.setName("asteroid");
+    	ice.setName("ice");
     	
     	settler.setAsteroid(asteroid);
     	
@@ -989,6 +1045,12 @@ public class Main {
     	uran.setMain(this);
     	neighbour.setMain(this);
     	owner.setMain(this);
+    	
+    	robot.setName("robot");
+    	asteroid.setName("asteroid");
+    	uran.setName("uran");
+    	neighbour.setName("neighbour");
+    	owner.setName("owner");
     	
     	robot.setAsteroid(asteroid);
     	
@@ -1052,6 +1114,11 @@ public class Main {
     	uran.setMain(this);
     	owner.setMain(this);
     	
+    	robot.setName("robot");
+    	asteroid.setName("asteroid");
+    	uran.setName("uran");
+    	owner.setName("owner");
+    	
     	robot.setAsteroid(asteroid);
     	
     	asteroid.addEntity(robot);
@@ -1109,6 +1176,12 @@ public class Main {
     	uran.setMain(this);
     	neighbour.setMain(this);
     	owner.setMain(this);
+    	
+    	settler.setName("settler");
+    	asteroid.setName("asteroid");
+    	uran.setName("uran");
+    	neighbour.setName("neighbour");
+    	owner.setName("owner");
     	
     	settler.setAsteroid(asteroid);
     	
@@ -1170,6 +1243,10 @@ public class Main {
     	asteroid.setMain(this);
     	coal.setMain(this);
     	
+    	robot.setName("robot");
+    	asteroid.setName("asteroid");
+    	coal.setName("coal");
+    	
     	robot.setAsteroid(asteroid);
     	
     	asteroid.addMaterial(coal);
@@ -1215,6 +1292,10 @@ public class Main {
     	asteroid.setMain(this);
     	coal.setMain(this);
     	
+    	settler.setName("settler");
+    	asteroid.setName("asteroid");
+    	coal.setName("coal");
+    	
     	settler.setAsteroid(asteroid);
     	
     	asteroid.addMaterial(coal);
@@ -1252,6 +1333,10 @@ public class Main {
     	currentAsteroid.setMain(this);
     	destination.setMain(this);
     	
+    	settler.setName("settler");
+    	currentAsteroid.setName("currentAsteroid");
+    	destination.setName("destination");
+    	
     	settler.setAsteroid(currentAsteroid);
     	
     	currentAsteroid.addNeighbour(destination);
@@ -1287,6 +1372,10 @@ public class Main {
     	robot.setMain(this);
     	currentAsteroid.setMain(this);
     	destination.setMain(this);
+    	
+    	robot.setName("robot");
+    	currentAsteroid.setName("currentAsteroid");
+    	destination.setName("destination");
     	
     	robot.setAsteroid(currentAsteroid);
     	
@@ -1331,6 +1420,12 @@ public class Main {
     	inventory.setMain(this);
     	stargate.setMain(this);
     	
+    	settler.setName("settler");
+    	asteroid.setName("asteroid");
+    	owner.setName("owner");
+    	neighbourAsteroid.setName("neighbourAsteroid");
+    	inventory.setName("inventory");
+    	stargate.setName("stargate");
     	
     	owner.addPlanet(asteroid);
     	owner.addPlanet(neighbourAsteroid);
@@ -1386,6 +1481,12 @@ public class Main {
     	stargate.setMain(this);
     	neighbour.setMain(this);
     	
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	asteroid.setName("asteroid");
+    	stargate.setName("stargate");
+    	neighbour.setName("neighbour");
+    	
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
     	
@@ -1429,6 +1530,11 @@ public class Main {
     	inventory.setMain(this);
     	asteroid.setMain(this);
     	stargate.setMain(this);
+    	
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	asteroid.setName("asteroid");
+    	stargate.setName("stargate");
     	
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
@@ -1481,6 +1587,18 @@ public class Main {
     	iron4.setMain(this);
     	uran2.setMain(this);
     	ice2.setMain(this);
+    	
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	STARGATE_RECIPE.setName("STARGATE_RECIPE");
+    	iron1.setName("iron1");
+    	iron2.setName("iron2");
+    	uran1.setName("uran1");
+    	ice1.setName("ice1");
+    	iron3.setName("iron3");
+    	iron4.setName("iron4");
+    	uran2.setName("uran2");
+    	ice2.setName("ice2");
     	
     	settler.setInventory(inventory);
     	settler.setSTARGATE_RECIPE(STARGATE_RECIPE);
@@ -1577,9 +1695,41 @@ public class Main {
     	ice4.setMain(this);
     	ice5.setMain(this);
     	ice6.setMain(this);
-    	coal1.setMain(this);
-    	coal2.setMain(this);
-    	coal3.setMain(this);
+    	coal4.setMain(this);
+    	coal5.setMain(this);
+    	coal6.setMain(this);
+    	
+    	owner.setName("owner");
+    	asteroid.setName("asteroid");
+    	settler1.setName("settler1");
+    	settler2.setName("settler2");
+    	inventory1.setName("inventory1");
+    	inventory2.setName("inventory2");
+    	BASE_RECIPE.setName("BASE_RECIPE");
+    	iron1.setName("iron1");
+    	iron2.setName("iron2");
+    	iron3.setName("iron3");
+    	uran1.setName("uran1");
+    	uran2.setName("uran2");
+    	uran3.setName("uran3");
+    	ice1.setName("ice1");
+    	ice2.setName("ice2");
+    	ice3.setName("ice3");
+    	coal1.setName("coal1");
+    	coal2.setName("coal2");
+    	coal3.setName("coal3");
+    	iron4.setName("iron4");
+    	iron5.setName("iron5");
+    	iron6.setName("iron6");
+    	uran4.setName("uran4");
+    	uran5.setName("uran5");
+    	uran6.setName("uran6");
+    	ice4.setName("ice4");
+    	ice5.setName("ice5");
+    	ice6.setName("ice6");
+    	coal4.setName("coal4");
+    	coal5.setName("coal5");
+    	coal6.setName("coal6");
     	
     	owner.addPlanet(asteroid);
     	owner.addSettler(settler1);
@@ -1670,6 +1820,18 @@ public class Main {
     	iron2.setMain(this);
     	coal2.setMain(this);
     	uran2.setMain(this);
+    	
+    	owner.setName("owner");
+    	asteroid.setName("asteroid");
+    	settler.setName("settler");
+    	inventory.setName("inventory");
+    	ROBOT_RECIPE.setName("ROBOT_RECIPE");
+    	iron1.setName("iron1");
+    	coal1.setName("coal1");
+    	uran1.setName("uran1");
+    	iron2.setName("iron2");
+    	coal2.setName("coal2");
+    	uran2.setName("uran2");
     	
     	owner.addPlanet(asteroid);
     	owner.addSettler(settler);

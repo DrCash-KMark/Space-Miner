@@ -20,6 +20,7 @@ public abstract class Building {
 	protected Asteroid asteroid;
 	protected Game owner;
 	protected Main main;
+	protected String name;
 	
 	public Asteroid getAsteroid() { return asteroid; }
 	public void setAsteroid(Asteroid a) { asteroid = a; }
@@ -28,6 +29,14 @@ public abstract class Building {
 	public void setGame(Game g) { owner = g; }
 	
 	public void setMain(Main m) { main = m; }
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 	/**
 	 * constructor for Building without parameters

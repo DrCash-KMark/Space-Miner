@@ -1,0 +1,8 @@
+Changes:
+-kommunikácios diagram, teleport kapu lehelyezése, nincsenek párositva
+-kommunikácios diagram, receptek értéke nincs bele helyezve
+-Inventory addInventory megváltozik addMaterialra.
+-Bázis teszt eset megváltozik, mert 1 settler nem tudja le craft-ni, ezért több settler van.
+
+Notes:
+-

@@ -20,6 +20,7 @@ package main;
  */
 public abstract class Planet {
 	protected Main main; //Logger
+	protected String name;
 	
 	protected Game owner;
 	
@@ -42,5 +43,13 @@ public abstract class Planet {
 	public void setMain(Main m) {
 		main = m;
 	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 
 }

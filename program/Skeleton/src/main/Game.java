@@ -24,6 +24,7 @@ import java.util.List;
  */
 public class Game {
 	private Main main;	//Logger
+	private String name;
 	
 	//Lists of objects present in game:
 	private List<Settler> settlers = new ArrayList<Settler>();
@@ -149,6 +150,13 @@ public class Game {
 	 */
 	public List<Settler> getSettlers() {
 		return settlers;
+	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

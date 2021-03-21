@@ -26,6 +26,7 @@ public class Inventory {
 	private LinkedList<StarGate> starGate;
 	private int capacity;
 	private Main main;
+	public String name;
 	
 	/**
 	 * Constructor for Inventory without parameters.
@@ -54,6 +55,14 @@ public class Inventory {
 	 */
 	public void setMain(Main m) {
 		main = m;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	/**

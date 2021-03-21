@@ -22,6 +22,7 @@ public abstract class Entity {
 	protected Asteroid asteroid;
 	protected Game owner;
 	protected Main main;
+	protected String name;
 	/**
 	 * Constructor with parameters.
 	 * @param a: Asteroid: The Asteroid which this Entity is standing on.
@@ -72,6 +73,13 @@ public abstract class Entity {
 	 */
 	public void setMain(Main m) {
 		main = m;
+	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	/**
 	 * Moves this Entity to another asteroid.

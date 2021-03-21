@@ -27,7 +27,9 @@ public class Asteroid extends Planet implements Controllable {
 	private Material material;
 	private List<Asteroid> neighbours;
 	private List<Building> buildings;
+	//for skeleton
 	private Main main;
+	private String name;
 
 	/**
 	 * constructor for Asteroid without parameters
@@ -63,6 +65,16 @@ public class Asteroid extends Planet implements Controllable {
 	 */
 	public void setMain(Main m) {
 		main = m;
+	}
+	
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getRockThickness() {
@@ -119,8 +131,9 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param e the entity that will be added to the asteroid.
 	 */
 	public void addEntity(Entity e) {
-		this.main.log(false, "a", "Asteroid", "addEntity");
+		this.main.log(false, "asteroid", "Asteroid", "addEntity");
 		this.entities.add(e);
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -131,6 +144,7 @@ public class Asteroid extends Planet implements Controllable {
 	public void removeEntity(Entity e) {
 		this.main.log(false, "a", "Asteroid", "removeEntity");
 		this.entities.remove(e);
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -150,6 +164,7 @@ public class Asteroid extends Planet implements Controllable {
 			this.buildings.get(i).destroy();
 		}
 		owner.destroyMe(this);
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -163,7 +178,7 @@ public class Asteroid extends Planet implements Controllable {
 		if (this.closeToSun && this.rockThickness == 0) {
 			this.material.exposedAndCloseToSun(this);
 		}
-
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -174,12 +189,13 @@ public class Asteroid extends Planet implements Controllable {
 	 * @return if the material was successfully added or not.
 	 */
 	public boolean addMaterial(Material m) {
-		this.main.log(true, "a", "Asteroid", "addMaterial");
+		this.main.log(false, "a", "Asteroid", "addMaterial");
 
 		if (this.material != null || this.rockThickness > 0)
 			return false;
 		if (this.closeToSun)
 			m.exposedAndCloseToSun(this);
+		this.main.log(true, "void", "void", "");
 		return true;
 
 	}
@@ -281,6 +297,9 @@ public class Asteroid extends Planet implements Controllable {
 		}
 	}
 
+	/**
+	 * Decides what happens on turn which parameters change.
+	 */
 	@Override
 	public void onTurn() {
 		// TODO Auto-generated method stub

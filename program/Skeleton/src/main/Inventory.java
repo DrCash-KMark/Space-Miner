@@ -80,7 +80,7 @@ public class Inventory {
 	 */
 	public Material removeInventory(Material m) {
 		main.log(false, name, getClass().getName(), "removeInventory(" + m.getName() + ":" + m.getClass().getName() + ")");
-		
+	
 		if(materials.remove(m)) {
 			main.log(true, m.getName(), m.getClass().getName(), "");
 			

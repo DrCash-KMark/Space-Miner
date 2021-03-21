@@ -3,6 +3,10 @@ Changes:
 -kommunikácios diagram, receptek értéke nincs bele helyezve
 -Inventory addInventory megváltozik addMaterialra.
 -Bázis teszt eset megváltozik, mert 1 settler nem tudja le craft-ni, ezért több settler van.
+-onPlace paramétert kivettük most már nincs paramétere, és elötte állitjuk be
+
+6 órás meeting
 
 Notes:
 -Clone készítése, a materialhoz, hogy tudjunk deep-copy-t.
+

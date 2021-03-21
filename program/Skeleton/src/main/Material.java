@@ -14,7 +14,7 @@ package main;
 
 
 
-public abstract class Material {
+public abstract class Material implements Cloneable{
 	protected boolean isRadio;
 	protected String name;
 	protected boolean canEvaporate;
@@ -32,6 +32,38 @@ public abstract class Material {
 		this.canEvaporate = canEvaporate;
 	}
 	
+	Material(Material m)
+	{
+		isRadio = m.isRadio();
+		name = m.getName();
+		canEvaporate = m.isCanEvaporate();
+		main = m.getMain();
+	}
+	
+	public boolean isRadio() {
+		return isRadio;
+	}
+
+	public void setRadio(boolean isRadio) {
+		this.isRadio = isRadio;
+	}
+
+	public boolean isCanEvaporate() {
+		return canEvaporate;
+	}
+
+	public void setCanEvaporate(boolean canEvaporate) {
+		this.canEvaporate = canEvaporate;
+	}
+
+	public Main getMain() {
+		return main;
+	}
+	
+	public Material clone()throws CloneNotSupportedException{  
+		return (Material)super.clone();
+	  }
+
 	/**
 	 * The setter of the Main logger.
 	 * Only for testing.

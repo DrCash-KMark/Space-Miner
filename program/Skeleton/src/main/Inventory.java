@@ -181,9 +181,13 @@ public class Inventory {
 	 * @param m the material the will be added to the materials list
 	 */
 	public void addInventory(Material m) {
-		main.log(false, name, getClass().getName(), "addInventory(" + m.getName() + ":" + m.getClass().getName() + ")");
-		
-		materials.add(m);
+		if (m != null)
+		{
+			main.log(false, name, getClass().getName(), "addInventory(" + m.getName() + ":" + m.getClass().getName() + ")");
+			materials.add(m);
+		}
+		else
+			main.log(false, name, getClass().getName(), "addInventory(null:null)");
 		
 		main.log(true, "void", "void", "");
 	}

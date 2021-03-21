@@ -189,15 +189,17 @@ public class Asteroid extends Planet implements Controllable {
 	 * @return if the material was successfully added or not.
 	 */
 	public boolean addMaterial(Material m) {
-		this.main.log(false, this.name, this.getClass().getName(), "addMaterial(" + m.getName() + ":" + (m.getClass().getName()));
+		this.main.log(false, this.name, this.getClass().getName(), "addMaterial(" + m.getName() + ":" + (m.getClass().getName()) + ")");
 
 		if (this.material != null || this.rockThickness > 0)
+		{
+			this.main.log(true, "false", "boolean", "");
 			return false;
+		}
 		if (this.closeToSun)
 			m.exposedAndCloseToSun(this);
 		this.main.log(true, "true", "boolean", "");
 		return true;
-
 	}
 
 	/**
@@ -217,7 +219,7 @@ public class Asteroid extends Planet implements Controllable {
 		}
 		Material returnValue = this.material;
 		this.material = null;
-		this.main.log(true, returnValue.getName(),returnValue.getClass().getName() , "");
+		this.main.log(true, returnValue.getName(), returnValue.getClass().getName() , "");
 		return returnValue;
 	}
 

@@ -40,6 +40,7 @@ public class Game {
 	//Event related:-----------------------------------------------------------------
 	
 	/**
+	 * For testing only!
 	 * Removes reference to objects, if they called destroyMe or killMe.
 	 */
 	public void cleanup () {
@@ -59,11 +60,11 @@ public class Game {
 	 * Notifies all Planets referenced in this Game, about occurrence of a sun flare. 
 	 */
 	public void notifyAllAboutSunFlare() {
+		main.log(false, getName(), "Game", "notifyAllAboutSunFlare()");
 		for (Planet planet : planets) {
-			main.log(false, "", "", "getNotifiedAboutSunflare()");
 			planet.getNotifiedAboutSunflare();
-			main.log(true, "", "", "getNotifiedAboutSunflare()");
 		}
+		main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -71,7 +72,8 @@ public class Game {
 	 * Finishes the game.
 	 */
 	public void gameWon() {
-		System.out.println("Game won!");
+		main.log(false, getName(), "Game", "gameWon()");
+		main.log(true, "void", "void", "");
 	}
 
 	//Adders:-----------------------------------------------------------------
@@ -81,7 +83,9 @@ public class Game {
 	 * @param settler Settler to be added.
 	 */
 	public void addSettler(Settler settler) {
+		main.log(false, getName(), "Game", "addSettler(" + settler.getName() + ":" + settler.getClass().getName() + ")");
 		settlers.add(settler);
+		main.log(true, "void", "void", "");
 	}
 	
 	/**
@@ -89,7 +93,9 @@ public class Game {
 	 * @param robot Robot to be added.
 	 */
 	public void addRobot(Robot robot) {
+		main.log(false, getName(), "Game", "addRobot(" + robot.getName() + ":" + robot.getClass().getName() + ")");
 		robots.add(robot);
+		main.log(true, "void", "void", "");
 	}	
 
 	/**
@@ -97,7 +103,9 @@ public class Game {
 	 * @param planet Planet to be added.
 	 */
 	public void addPlanet(Planet planet) {
+		main.log(false, getName(), "Game", "addPlanet(" + planet.getName() + ":" + planet.getClass().getName() + ")");
 		planets.add(planet);
+		main.log(true, "void", "void", "");
 	}	
 	
 	//Destroyers:---------------------------------------------------------------
@@ -108,7 +116,9 @@ public class Game {
 	 * @param toKill Settler to kill
 	 */
 	public void killMe(Settler toKill) {
+		main.log(false, getName(), "Game", "killMe(" + toKill.getName() + ":" + toKill.getClass().getName() + ")");
 		settlersToDestroy.add(toKill);
+		main.log(true, "void", "void", "");
 	}
 	
 	/**
@@ -117,7 +127,9 @@ public class Game {
 	 * @param toDestroy Robot to destroy
 	 */
 	public void destroyMe(Robot toDestroy) {
+		main.log(false, getName(), "Game", "destroyMe(" + toDestroy.getName() + ":" + toDestroy.getClass().getName() + ")");
 		robotsToDestroy.add(toDestroy);		
+		main.log(true, "void", "void", "");
 	}
 		
 	/**
@@ -126,7 +138,9 @@ public class Game {
 	 * @param toDestroy Planet to destroy
 	 */
 	public void destroyMe(Planet toDestroy) {
+		main.log(false, getName(), "Game", "destroyMe(" + toDestroy.getName() + ":" + toDestroy.getClass().getName() + ")");
 		planetsToDestroy.add(toDestroy);
+		main.log(true, "void", "void", "");
 	}
 
 	//========================================================================

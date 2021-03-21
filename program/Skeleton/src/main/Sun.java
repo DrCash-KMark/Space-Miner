@@ -24,9 +24,9 @@ public class Sun extends Planet implements Controllable {
 	 * Causes sun flare. Calls back to the owner Game object.
 	 */
 	public void sunFlare() {
-		main.log(false, "sun", "Sun", "notifyAllAboutSunFlare()");
+		main.log(false, getName(), "Sun", "sunFlare()");
 		owner.notifyAllAboutSunFlare();
-		main.log(true, "sun", "Sun", "notifyAllAboutSunFlare()");
+		main.log(true, "void", "void", "");
 		
 	}
 
@@ -35,7 +35,9 @@ public class Sun extends Planet implements Controllable {
 	 */
 	@Override
 	public void onTurn() {
+		main.log(false, getName(), "Sun", "onTurn()");
 		sunFlare();
+		main.log(true, "void", "void", "");
 	}
 	
 }

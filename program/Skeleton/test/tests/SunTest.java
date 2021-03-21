@@ -21,6 +21,8 @@ public class SunTest {
 		sun.setMain(main);
 		owner.setMain(main);
 		owner.addPlanet(sun);
+		sun.setName("sun");
+		owner.setName("owner");
 	}
 
 	@Test

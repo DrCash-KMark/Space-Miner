@@ -7,7 +7,7 @@ package main;
 //  @ Project : Space-Miner
 //  @ File Name : Planet.java
 //  @ Date : 17/03/2021
-//  @ Author : 
+//  @ Author : Simon Zoltán
 //
 //
 

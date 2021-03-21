@@ -23,6 +23,8 @@ public class Main {
 	private int tabulation;
 	private int menuState;
 	
+	private Scanner scan;
+	
 	/**
 	 * function for logging the functions executed by individual objects
 	 * @param isReturn: boolean: this boolean marks if this is a "forward" or return call
@@ -58,10 +60,14 @@ public class Main {
 	public Main() {
 		tabulation = 0;
 		menuState = 0;
+		scan = new Scanner(System.in);
 	}
 	
-	public void main(String[] args) {
-    	printMenu();
+	public static void main(String[] args) {
+		
+		Main m = new Main();
+		
+    	m.printMenu();
 	}
     
 	/**
@@ -70,12 +76,11 @@ public class Main {
 	 */
     public int scanNumber()
     {
-    	Scanner scan = new Scanner(System.in);
-        System.out.print("Kerem a parancs azonositojat: ");
+    	//Scanner scan = new Scanner(System.in);
 
         int num = scan.nextInt();
 
-        scan.close();
+        //scan.close();
         
         return num;
     }
@@ -92,6 +97,7 @@ public class Main {
     	switch(menuState) {
     		case 0:
     			System.out.println();
+    			System.out.println("0 Kilepes");
     			System.out.println("1 Banyaszas");
     			System.out.println("2 Visszahelyezes");
     			System.out.println("3 Napkitores");
@@ -99,20 +105,23 @@ public class Main {
     			System.out.println("5 Mozgas");
     			System.out.println("6 Teleportkapu lehelyezese");
     			System.out.println("7 Epites");
-    			System.out.println("8 Kilepes");
+    			System.out.print("Kerem a parancs azonositojat: ");
     			
     			num = scanNumber();
     			
-    			while (num < 1 && num > 9)
+    			while (num < 0 && num > 8)
     				num = scanNumber();
     	        
-    	        if (num < 8)
+    	        if (num > 0)
     	        {
     	        	menuState = num;
     	        	printMenu();
     	        }
     	        else
+    	        {
+    	        	scan.close();
     	        	System.exit(0);
+    	        }
     	        
     			break;
     		case 1:
@@ -123,6 +132,7 @@ public class Main {
     			System.out.println("2 Uran banyaszasa");
     			System.out.println("3 Szen banyaszasa");
     			System.out.println("4 Vizjeg banyaszasa");
+    			System.out.print("Kerem a parancs azonositojat: ");
     			
     			num = scanNumber();
     			
@@ -166,6 +176,7 @@ public class Main {
     			System.out.println("2 Uran visszahelyezese");
     			System.out.println("3 Szen visszahelyezese");
     			System.out.println("4 Vizjeg visszahelyezese");
+    			System.out.print("Kerem a parancs azonositojat: ");
     			
     			num = scanNumber();
     			
@@ -206,6 +217,7 @@ public class Main {
     			System.out.println();
     			System.out.println("0 Vissza a fomenube");
     			System.out.println("1 Napvihar tortenik");
+    			System.out.print("Kerem a parancs azonositojat: ");
     			
     			num = scanNumber();
     			
@@ -237,6 +249,7 @@ public class Main {
     			System.out.println("5 Furas telepessel, robban");
     			System.out.println("6 Furas robottal");
     			System.out.println("7 Furas telepessel");
+    			System.out.print("Kerem a parancs azonositojat: ");
     			
     			num = scanNumber();
     			
@@ -293,6 +306,7 @@ public class Main {
     			System.out.println("0 Vissza a fomenube");
     			System.out.println("1 Mozgas robottal");
     			System.out.println("2 Mozgas telepessel");
+    			System.out.print("Kerem a parancs azonositojat: ");
     			
     			num = scanNumber();
     			
@@ -325,6 +339,7 @@ public class Main {
     			System.out.println("1 Teleportkapu lehelyezese, par egy masik aszteroidan");
     			System.out.println("2 Teleportkapu lehelyezese, par a telepes inventory-jában");
     			System.out.println("3 Teleportkapu lehelyezese, par mar elpusztult");
+    			System.out.print("Kerem a parancs azonositojat: ");
     			
     			num = scanNumber();
     			
@@ -362,6 +377,7 @@ public class Main {
     			System.out.println("1 Teleportkapu epitese");
     			System.out.println("2 Bazis epitese");
     			System.out.println("3 Robot epitese");
+    			System.out.print("Kerem a parancs azonositojat: ");
     			
     			num = scanNumber();
     			
@@ -1655,7 +1671,7 @@ public class Main {
     	coal2.setMain(this);
     	uran2.setMain(this);
     	
-    	owner.addControllable(asteroid);
+    	owner.addPlanet(asteroid);
     	owner.addSettler(settler);
     	
     	asteroid.setOwner(owner);

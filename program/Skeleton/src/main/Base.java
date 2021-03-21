@@ -25,8 +25,8 @@ public class Base extends Building {
 	 * function for placing the base on an asteroid
 	 * @param a: Asteroid: asteroid on which the base is placed
 	 */
-	public void onPlace(Asteroid a) {
-		main.log(false, name, getClass().getName(), "onPlace(" + a.getName() + ":" + a.getClass().getName() + ")");
+	public void onPlace() {
+		main.log(false, name, getClass().getName(), "onPlace()");
 		
 		main.log(true, "void", "Void", "");
 		

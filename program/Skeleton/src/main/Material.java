@@ -73,6 +73,38 @@ public abstract class Material implements Cloneable{
 		main = m;
 	}
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (canEvaporate ? 1231 : 1237);
+		result = prime * result + (isRadio ? 1231 : 1237);
+		result = prime * result + ((main == null) ? 0 : main.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Material other = (Material) obj;
+		if (canEvaporate != other.canEvaporate)
+			return false;
+		if (isRadio != other.isRadio)
+			return false;
+		if (main == null) {
+			if (other.main != null)
+				return false;
+		} else if (!main.equals(other.main))
+			return false;
+		return true;
+	}
+
 	public void exposedAndCloseToSun(Asteroid a) {
 		this.main.log(false, this.name, this.getClass().getName(), "exposedAndCloseToSun(" + a.getName() + ":" + (a.getClass().getName()));
 		this.main.log(true, "void", "void", "");

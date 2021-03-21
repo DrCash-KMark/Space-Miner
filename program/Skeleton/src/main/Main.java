@@ -438,7 +438,7 @@ public class Main {
     	inventory.setName("inventory");
     	iron.setName("iron");
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	asteroid.setMaterial(iron);
     	
     	settler.setInventory(inventory);
@@ -485,7 +485,7 @@ public class Main {
     	inventory.setName("inventory");
     	coal.setName("coal");
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	asteroid.setMaterial(coal);
     	
     	settler.setInventory(inventory);
@@ -532,7 +532,7 @@ public class Main {
     	inventory.setName("inventory");
     	ice.setName("ice");
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	asteroid.setMaterial(ice);
     	
     	settler.setInventory(inventory);
@@ -579,7 +579,7 @@ public class Main {
     	inventory.setName("inventory");
     	uran.setName("uran");
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	asteroid.setMaterial(uran);
     	
     	settler.setInventory(inventory);
@@ -633,7 +633,7 @@ public class Main {
     	inventory.setName("inventory");
     	iron.setName("iron");
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
@@ -690,7 +690,7 @@ public class Main {
     	inventory.setName("inventory");
     	coal.setName("coal");
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
@@ -747,7 +747,7 @@ public class Main {
     	inventory.setName("inventory");
     	ice.setName("ice");
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
@@ -810,7 +810,7 @@ public class Main {
     	neighbour.setName("neighbour");
     	owner.setName("owner");
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
@@ -881,8 +881,8 @@ public class Main {
     	
     	sun.setOwner(owner);
     	
-    	asteroid.addEntity(settler);
-    	asteroid.addEntity(robot);
+    	asteroid.addSettler(settler);
+    	asteroid.addRobot(robot);
     	
     	robot.setAsteroid(asteroid);
     	settler.setAsteroid(asteroid);
@@ -948,7 +948,7 @@ public class Main {
     	 
     	
     	asteroid.setMaterial(ice);
-    	asteroid.addEntity(robot);
+    	asteroid.addRobot(robot);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -1002,7 +1002,7 @@ public class Main {
     	 
     	
     	asteroid.setMaterial(ice);
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -1063,7 +1063,7 @@ public class Main {
     	 
     	 
     	
-    	asteroid.addEntity(robot);
+    	asteroid.addRobot(robot);
     	asteroid.setMaterial(uran);
     	asteroid.addNeighbour(neighbour);
     	
@@ -1133,7 +1133,7 @@ public class Main {
     	 
     	 
     	
-    	asteroid.addEntity(robot);
+    	asteroid.addRobot(robot);
     	asteroid.setMaterial(uran);
     	
     	robot.setOwner(owner);
@@ -1200,7 +1200,7 @@ public class Main {
     	 
     	 
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	asteroid.setMaterial(uran);
     	asteroid.addNeighbour(neighbour);
     	
@@ -1268,7 +1268,7 @@ public class Main {
     	 
     	
     	asteroid.setMaterial(coal);
-    	asteroid.addEntity(robot);
+    	asteroid.addRobot(robot);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -1320,7 +1320,7 @@ public class Main {
     	 
     	
     	asteroid.setMaterial(coal);
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	
     	asteroid.setRockThickness(thickness);
     	asteroid.setCloseToSun(isClose);
@@ -1361,7 +1361,7 @@ public class Main {
     	settler.setAsteroid(currentAsteroid);
     	
     	currentAsteroid.addNeighbour(destination);
-    	currentAsteroid.addEntity(settler);
+    	currentAsteroid.addSettler(settler);
     	
     	destination.addNeighbour(currentAsteroid);
     	
@@ -1401,7 +1401,7 @@ public class Main {
     	robot.setAsteroid(currentAsteroid);
     	
     	currentAsteroid.addNeighbour(destination);
-    	currentAsteroid.addEntity(robot);
+    	currentAsteroid.addRobot(robot);
     	
     	destination.addNeighbour(currentAsteroid);
     	
@@ -1455,7 +1455,7 @@ public class Main {
     	owner.addSettler(settler);
     	
     	asteroid.setOwner(owner);
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	
     	neighbourAsteroid.setOwner(owner);
     	
@@ -1519,7 +1519,7 @@ public class Main {
     	inventory.addStarGate(stargate);
     	inventory.addStarGate(neighbour);
     	
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	
     	// Linking teleports
     	stargate.setNeighbour(neighbour);
@@ -1762,8 +1762,8 @@ public class Main {
     	owner.addSettler(settler2);
     	
     	asteroid.setOwner(owner);
-    	asteroid.addEntity(settler1);
-    	asteroid.addEntity(settler2);
+    	asteroid.addSettler(settler1);
+    	asteroid.addSettler(settler2);
     	
     	settler1.setOwner(owner);
     	settler1.setAsteroid(asteroid);
@@ -1802,7 +1802,7 @@ public class Main {
     	BASE_RECIPE.addInventory(coal5);
     	BASE_RECIPE.addInventory(coal6);
     	
-    	settler1.buildStarGate();
+    	settler1.buildBase();
     	
     	System.out.println("0 Visszalepes");
     	
@@ -1863,7 +1863,7 @@ public class Main {
     	owner.addSettler(settler);
     	
     	asteroid.setOwner(owner);
-    	asteroid.addEntity(settler);
+    	asteroid.addSettler(settler);
     	
     	settler.setOwner(owner);
     	settler.setAsteroid(asteroid);

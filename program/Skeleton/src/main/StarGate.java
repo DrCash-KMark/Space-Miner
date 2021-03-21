@@ -37,10 +37,9 @@ public class StarGate extends Building {
 	 * function for placing the StarGate on an asteroid
 	 * @param a: Asteroid: asteroid on which the StarGate is placed
 	 */
-	public void onPlace(Asteroid a) {
-		main.log(false, name, getClass().getName(), "onPlace(" + a.getName() + ":" + a.getClass().getName() + ")");
+	public void onPlace() {
+		main.log(false, name, getClass().getName(), "onPlace()");
 		
-		asteroid = a;
 		
 		if (neighbour == null)
 		{

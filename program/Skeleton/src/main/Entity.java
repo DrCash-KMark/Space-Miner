@@ -86,11 +86,6 @@ public abstract class Entity {
 	 * @param destination: Asteroid
 	 */
 	public void move(Asteroid destination) {
-		main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":"+destination.getClass().getName());
-		destination.addEntity(this);
-		asteroid.removeEntity(this);
-		this.setAsteroid(destination);
-		main.log(true, "void", "void", "");
 	}
 	/**
 	 * Entity drills his current asteroid.
@@ -104,8 +99,7 @@ public abstract class Entity {
 	 * Entity dies.
 	 * Removes the entity from the current asteroid.
 	 */
-	public void die() {
-		asteroid.removeEntity(this);
-	}
+	public abstract void die();
+	
 	public abstract void asteroidExploded();
 }

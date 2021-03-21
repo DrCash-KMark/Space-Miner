@@ -26,7 +26,7 @@ public class Base extends Building {
 	 * @param a: Asteroid: asteroid on which the base is placed
 	 */
 	public void onPlace(Asteroid a) {
-		main.log(false, "base", "Base", "onPlace(asteroid:Asteroid)");
+		main.log(false, name, getClass().getName(), "onPlace(" + a.getName() + ":" + a.getClass().getName() + ")");
 		
 		main.log(true, "void", "Void", "");
 		
@@ -37,5 +37,8 @@ public class Base extends Building {
 	 * function for destroying the base
 	 */
 	public void destroy() {
+		main.log(false, name, getClass().getName(), "destroy()");
+		
+		main.log(true, "void", "void", "");
 	}
 }

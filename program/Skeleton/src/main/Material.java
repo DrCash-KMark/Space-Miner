@@ -42,13 +42,15 @@ public abstract class Material {
 	}
 	
 	public void exposedAndCloseToSun(Asteroid a) {
+		this.main.log(false, this.name, this.getClass().getName(), "exposedAndCloseToSun(" + a.getName() + ":" + (a.getClass().getName()));
+		this.main.log(true, "void", "void", "");
 	}
 	
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(String name) {		
 		this.name = name;
 	}
 	

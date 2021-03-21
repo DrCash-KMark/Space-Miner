@@ -131,9 +131,9 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param e the entity that will be added to the asteroid.
 	 */
 	public void addEntity(Entity e) {
-		this.main.log(false, "asteroid", "Asteroid", "addEntity");
+		this.main.log(false, this.name, this.getClass().getName(), "addEntity(" + e.getName() + ":" + (e.getClass().getName()));
 		this.entities.add(e);
-		this.main.log(true, "void", "void", "");
+		this.main.log(true, "void", "Void", "");
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param e the entity that will be removed from the asteroid.
 	 */
 	public void removeEntity(Entity e) {
-		this.main.log(false, "a", "Asteroid", "removeEntity");
+		this.main.log(false, this.name, this.getClass().getName(), "removeEntity(" + e.getName() + ":" + (e.getClass().getName()));
 		this.entities.remove(e);
 		this.main.log(true, "void", "void", "");
 	}
@@ -152,7 +152,7 @@ public class Asteroid extends Planet implements Controllable {
 	 * removes itself from it's neighbours' neighbours list.
 	 */
 	public void explode() {
-		this.main.log(false, "a", "Asteroid", "Explode");
+		this.main.log(false, this.name, this.getClass().getName(), "explode()");
 
 		for (int i = 0; i < this.entities.size(); i++) {
 			this.entities.get(i).asteroidExploded();
@@ -172,7 +172,7 @@ public class Asteroid extends Planet implements Controllable {
 	 * notifies it.
 	 */
 	public void drilling() {
-		this.main.log(false, "a", "Asteroid", "drilling");
+		this.main.log(false, this.name, this.getClass().getName(), "drilling()");
 
 		this.rockThickness--;
 		if (this.closeToSun && this.rockThickness == 0) {
@@ -189,13 +189,13 @@ public class Asteroid extends Planet implements Controllable {
 	 * @return if the material was successfully added or not.
 	 */
 	public boolean addMaterial(Material m) {
-		this.main.log(false, "a", "Asteroid", "addMaterial");
+		this.main.log(false, this.name, this.getClass().getName(), "addMaterial(" + m.getName() + ":" + (m.getClass().getName()));
 
 		if (this.material != null || this.rockThickness > 0)
 			return false;
 		if (this.closeToSun)
 			m.exposedAndCloseToSun(this);
-		this.main.log(true, "void", "void", "");
+		this.main.log(true, "true", "boolean", "");
 		return true;
 
 	}
@@ -208,12 +208,13 @@ public class Asteroid extends Planet implements Controllable {
 	 * @return the material the was in the asteroid
 	 */
 	public Material removeMaterial() {
-		this.main.log(true, "a", "Asteroid", "removeMaterial");
+		this.main.log(false, this.name, this.getClass().getName(), "removeMaterial()");
 		
 		if (this.rockThickness > 0) // checks if the material can be removed
 			return null;
 		Material returnValue = this.material;
 		this.material = null;
+		this.main.log(true, returnValue.getName(),returnValue.getClass().getName() , "");
 		return returnValue;
 	}
 
@@ -223,9 +224,9 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param a the asteroid that will be added to the neighbours list
 	 */
 	public void addNeighbour(Asteroid a) {
-		this.main.log(false, "a", "Asteroid", "addNeighbour");
-		
+		this.main.log(false, this.name, this.getClass().getName(), "addNeighbour(" + a.getName() + ":" + (a.getClass().getName()));		
 		this.neighbours.add(a);
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -234,9 +235,9 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param a the asteroid that will be removed from the neighbours list
 	 */
 	public void removeNeighbour(Asteroid a) {
-		this.main.log(false, "a", "Asteroid", "removeNeighbour");
-		
+		this.main.log(false, this.name, this.getClass().getName(), "removeNeighbour(" + a.getName() + ":" + (a.getClass().getName()));
 		this.neighbours.remove(a);
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -245,9 +246,9 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param b the building the will be added to the asteroid
 	 */
 	public void addBuilding(Building b) {
-		this.main.log(false, "a", "Asteroid", "addBuilding");
-		
+		this.main.log(false, this.name, this.getClass().getName(), "addBuilding(" + b.getName() + ":" + (b.getClass().getName()));
 		this.buildings.add(b);
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -256,9 +257,9 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param b the building the will be removed from the asteroid
 	 */
 	public void removeBuilding(Building b) {
-		this.main.log(false, "a", "Asteroid", "removeBuilding");
-		
+		this.main.log(false, this.name, this.getClass().getName(), "removeBuilding(" + b.getName() + ":" + (b.getClass().getName()));
 		this.buildings.remove(b);
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -267,10 +268,12 @@ public class Asteroid extends Planet implements Controllable {
 	 * @return whether the asteroid is hollow or not.
 	 */
 	public boolean isHollow() {
-		this.main.log(true, "a", "Asteroid", "isHollow");
-		
-		if (this.material == null)
+		this.main.log(false, this.name, this.getClass().getName(), "isHollow()");		
+		if (this.material == null) {
+			this.main.log(true, "true", "boolean", "");
 			return true;
+		}
+		this.main.log(true, "false", "boolean", "");
 		return false;
 	}
 
@@ -278,9 +281,9 @@ public class Asteroid extends Planet implements Controllable {
 	 * Destroys the material which was inside the asteroid
 	 */
 	public void evaporateMaterial() {
-		this.main.log(false, "a", "Asteroid", "evaporateMaterial");
-		
+		this.main.log(false, this.name, this.getClass().getName(), "evaporateMaterial()");
 		this.material = null;
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**
@@ -288,13 +291,13 @@ public class Asteroid extends Planet implements Controllable {
 	 * not hide
 	 */
 	public void getNotifiedAboutSunflare() {
-		this.main.log(false, "a", "Asteroid", "getNotifiedAboutSunflare");
-		
+		this.main.log(false, this.name, this.getClass().getName(), "getNotifiedAboutSunflare()");
 		if (this.rockThickness != 0 || !this.isHollow()) {
 			for (int i = 0; i < this.entities.size(); i++) {
 				this.entities.get(i).die();
 			}
 		}
+		this.main.log(true, "void", "void", "");
 	}
 
 	/**

@@ -38,8 +38,7 @@ public class StarGate extends Building {
 	 * @param a: Asteroid: asteroid on which the StarGate is placed
 	 */
 	public void onPlace(Asteroid a) {
-		//main.log(false, name, "StarGate", "onPlace(" + a.getName() + ":Asteroid");
-		main.log(false, "stargate", "StarGate", "onPlace(asteroid:Asteroid)");
+		main.log(false, name, getClass().getName(), "onPlace(" + a.getName() + ":" + a.getClass().getName() + ")");
 		
 		if (neighbour == null)
 			return;
@@ -50,14 +49,14 @@ public class StarGate extends Building {
 		asteroid.addNeighbour(getNeighbourAsteroid());
 		getNeighbourAsteroid().addNeighbour(asteroid);
 		
-		main.log(true, "void", "Void", "");
+		main.log(true, "void", "void", "");
 	}
 	
 	/**
 	 * function for destroying the StarGate
 	 */
 	public void destroy() {
-		main.log(false, "stargate", "StarGate", "destroy()");
+		main.log(false, name, getClass().getName(), "destroy()");
 		
 		neighbour.setWorks(false);
 		
@@ -66,7 +65,7 @@ public class StarGate extends Building {
 		
 		neighbour.setNeighbour(null);
 		
-		main.log(true, "void", "Void", "");
+		main.log(true, "void", "void", "");
 	}
 	
 	/**
@@ -74,9 +73,9 @@ public class StarGate extends Building {
 	 * @return neighbour: Asteroid: this is the neighbouring StarGate's asteroid
 	 */
 	public Asteroid getNeighbourAsteroid() {
-		main.log(false, "stargate", "StarGate", "getNeighbourAsteroid()");
+		main.log(false, name, getClass().getName(), "getNeighbourAsteroid()");
 		
-		main.log(true, "neighbour", "Asteroid", "");
+		main.log(true, neighbour.getAsteroid().getName(), neighbour.getAsteroid().getClass().getName(), "");
 		
 		return neighbour.getAsteroid();
 	}

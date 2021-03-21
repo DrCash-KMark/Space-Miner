@@ -5,4 +5,4 @@ Changes:
 -Bázis teszt eset megváltozik, mert 1 settler nem tudja le craft-ni, ezért több settler van.
 
 Notes:
--
+-Clone készítése, a materialhoz, hogy tudjunk deep-copy-t.

@@ -229,7 +229,7 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param a the asteroid that will be added to the neighbours list
 	 */
 	public void addNeighbour(Asteroid a) {
-		this.main.log(false, this.name, this.getClass().getName(), "addNeighbour(" + a.getName() + ":" + (a.getClass().getName()));		
+		this.main.log(false, this.name, this.getClass().getName(), "addNeighbour(" + a.getName() + ":" + (a.getClass().getName()) + ")");		
 		this.neighbours.add(a);
 		this.main.log(true, "void", "void", "");
 	}
@@ -240,7 +240,7 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param a the asteroid that will be removed from the neighbours list
 	 */
 	public void removeNeighbour(Asteroid a) {
-		this.main.log(false, this.name, this.getClass().getName(), "removeNeighbour(" + a.getName() + ":" + (a.getClass().getName()));
+		this.main.log(false, this.name, this.getClass().getName(), "removeNeighbour(" + a.getName() + ":" + (a.getClass().getName()) + ")");
 		this.neighbours.remove(a);
 		this.main.log(true, "void", "void", "");
 	}
@@ -251,7 +251,7 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param b the building the will be added to the asteroid
 	 */
 	public void addBuilding(Building b) {
-		this.main.log(false, this.name, this.getClass().getName(), "addBuilding(" + b.getName() + ":" + (b.getClass().getName()));
+		this.main.log(false, this.name, this.getClass().getName(), "addBuilding(" + b.getName() + ":" + (b.getClass().getName()) + ")");
 		this.buildings.add(b);
 		this.main.log(true, "void", "void", "");
 	}
@@ -262,7 +262,7 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param b the building the will be removed from the asteroid
 	 */
 	public void removeBuilding(Building b) {
-		this.main.log(false, this.name, this.getClass().getName(), "removeBuilding(" + b.getName() + ":" + (b.getClass().getName()));
+		this.main.log(false, this.name, this.getClass().getName(), "removeBuilding(" + b.getName() + ":" + (b.getClass().getName()) + ")");
 		this.buildings.remove(b);
 		this.main.log(true, "void", "void", "");
 	}

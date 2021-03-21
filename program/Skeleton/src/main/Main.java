@@ -1440,6 +1440,7 @@ public class Main {
     	settler.setMain(this);
     	inventory.setMain(this);
     	stargate.setMain(this);
+    	neighbour.setMain(this);
     	
     	settler.setName("settler");
     	asteroid.setName("asteroid");
@@ -1447,6 +1448,7 @@ public class Main {
     	neighbourAsteroid.setName("neighbourAsteroid");
     	inventory.setName("inventory");
     	stargate.setName("stargate");
+    	neighbour.setName("neighbour");
     	
     	owner.addPlanet(asteroid);
     	owner.addPlanet(neighbourAsteroid);
@@ -1460,6 +1462,8 @@ public class Main {
     	settler.setOwner(owner);
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
+    	
+    	neighbour.setAsteroid(neighbourAsteroid);
     	
     	inventory.addStarGate(stargate);
     	neighbour.setWorks(true);

@@ -87,8 +87,7 @@ public class Inventory {
 			return m;
 		}
 		
-		main.log(true, "null", "Material", "");
-		
+		main.log(true, "null", "null", "");
 		return null;
 	}
 	
@@ -121,6 +120,9 @@ public class Inventory {
 		
 		Inventory remainder = new Inventory();
 		
+		remainder.setMain(main);
+		remainder.setName("subset");
+		
 		Iterator<Material> iRecipe = materials.iterator();
 	    while (iRecipe.hasNext()) {
 	    	
@@ -133,7 +135,7 @@ public class Inventory {
 	    	}
 	    }
 	    
-	    main.log(true, "subset", remainder.getClass().getName(), "");
+	    main.log(true, remainder.getName(), remainder.getClass().getName(), "");
 	    
 		return remainder;
 	}
@@ -149,6 +151,9 @@ public class Inventory {
 		
 		Inventory remainder = new Inventory();
 		
+		remainder.setMain(main);
+		remainder.setName("subtraction");
+		
 		Iterator<Material> iRecipe = materials.iterator();
 	    while (iRecipe.hasNext()) {
 	    	
@@ -157,7 +162,7 @@ public class Inventory {
 	    		remainder.addInventory(material);
 	    	}
 	    }
-	    main.log(true, "subtraction", remainder.getClass().getName(), "");
+	    main.log(true, remainder.getName(), remainder.getClass().getName(), "");
 	    
 		return remainder;
 	}	

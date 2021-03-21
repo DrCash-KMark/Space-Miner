@@ -153,6 +153,7 @@ public class Settler extends Entity {
 		StarGate sg = inventory.removeStarGate();
 		asteroid.addBuilding(sg);
 		sg.onPlace(asteroid);
+		main.log(true, "void", "void", "");
 	}
 	/**
 	 * The settler dies.

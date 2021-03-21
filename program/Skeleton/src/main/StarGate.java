@@ -40,6 +40,8 @@ public class StarGate extends Building {
 	public void onPlace(Asteroid a) {
 		main.log(false, name, getClass().getName(), "onPlace(" + a.getName() + ":" + a.getClass().getName() + ")");
 		
+		asteroid = a;
+		
 		if (neighbour == null)
 		{
 			main.log(true, "void", "void", "");
@@ -51,8 +53,6 @@ public class StarGate extends Building {
 			main.log(true, "void", "void", "");
 			return;
 		}
-		
-		asteroid = a;
 		
 		if (getNeighbourAsteroid() != null);
 		{

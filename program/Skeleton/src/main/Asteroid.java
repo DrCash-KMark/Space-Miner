@@ -10,14 +10,13 @@ import java.util.List;
 //  @ Project : Space-Miner
 //  @ File Name : Asteroid.java
 //  @ Date : 17/03/2021
-//  @ Author : Karpati Mark
+//  @ Author : KMark
 //
 //
-
-
 
 /**
  * List are only available in java7 or older.
+ * 
  * @author Mark
  *
  */
@@ -28,18 +27,20 @@ public class Asteroid extends Planet implements Controllable {
 	private Material material;
 	private List<Asteroid> neighbours;
 	private List<Building> buildings;
-	
+	private Main main;
+
 	/**
 	 * constructor for Asteroid without parameters
 	 */
 	public Asteroid() {
-		this.entities = new LinkedList<>(); 
-		this.neighbours =new LinkedList<>(); 
-		this.buildings = new LinkedList<>(); 
-	}	
-	
+		this.entities = new LinkedList<>();
+		this.neighbours = new LinkedList<>();
+		this.buildings = new LinkedList<>();
+	}
+
 	/**
-	 * constructor for the Asteroid which sets all parameters at once	
+	 * constructor for the Asteroid which sets all parameters at once
+	 * 
 	 * @param rockThickness
 	 * @param closeToSun
 	 * @param entities
@@ -47,15 +48,23 @@ public class Asteroid extends Planet implements Controllable {
 	 * @param neighbours
 	 * @param buildings
 	 */
-	public Asteroid(int rockThickness, Boolean closeToSun,List<Entity> entities, Material material,List<Asteroid> neighbours, List<Building> buildings) {
-		this.rockThickness=rockThickness;
-		this.closeToSun=closeToSun;
-		this.entities= entities;
+	public Asteroid(int rockThickness, Boolean closeToSun, List<Entity> entities, Material material,
+			List<Asteroid> neighbours, List<Building> buildings) {
+		this.rockThickness = rockThickness;
+		this.closeToSun = closeToSun;
+		this.entities = entities;
 		this.material = material;
 		this.neighbours = neighbours;
 		this.buildings = buildings;
 	}
-	
+
+	/**
+	 * This sets the main logger for the class.
+	 */
+	public void setMain(Main m) {
+		main = m;
+	}
+
 	public int getRockThickness() {
 		return rockThickness;
 	}
@@ -95,138 +104,178 @@ public class Asteroid extends Planet implements Controllable {
 	public void setNeighbours(List<Asteroid> neighbours) {
 		this.neighbours = neighbours;
 	}
+
 	public List<Building> getBuildings() {
 		return buildings;
 	}
+
 	public void setBuildings(List<Building> buildings) {
 		this.buildings = buildings;
-	}	
-	
+	}
+
 	/**
 	 * Add a new entity to the entities which are on the asteroid
+	 * 
 	 * @param e the entity that will be added to the asteroid.
 	 */
 	public void addEntity(Entity e) {
+		this.main.log(false, "a", "Asteroid", "addEntity");
 		this.entities.add(e);
 	}
-	
+
 	/**
 	 * remove an entity to the entities which are on the asteroid
+	 * 
 	 * @param e the entity that will be removed from the asteroid.
 	 */
 	public void removeEntity(Entity e) {
+		this.main.log(false, "a", "Asteroid", "removeEntity");
 		this.entities.remove(e);
 	}
-	
+
 	/**
-	 * this function notifies the entities, buildings that it have exploded,
-	 * and removes itself from it's neighbours' neighbours list.
+	 * this function notifies the entities, buildings that it have exploded, and
+	 * removes itself from it's neighbours' neighbours list.
 	 */
 	public void explode() {
-		for(int i=0;i<this.entities.size();i++) {
+		this.main.log(false, "a", "Asteroid", "Explode");
+
+		for (int i = 0; i < this.entities.size(); i++) {
 			this.entities.get(i).asteroidExploded();
 		}
-		for(int i=0;i<this.neighbours.size();i++) {
+		for (int i = 0; i < this.neighbours.size(); i++) {
 			this.neighbours.get(i).removeNeighbour(this);
 		}
-		for(int i=0;i<this.buildings.size();i++) {
+		for (int i = 0; i < this.buildings.size(); i++) {
 			this.buildings.get(i).destroy();
 		}
-		owner.destroyMe(this);//TODO this may be problematic with garbae collector
+		owner.destroyMe(this);
 	}
-	
+
 	/**
-	 * Decreases the rock's thickness and if the material gets to the surface notifies it.
+	 * Decreases the rock's thickness and if the material gets to the surface
+	 * notifies it.
 	 */
 	public void drilling() {
+		this.main.log(false, "a", "Asteroid", "drilling");
+
 		this.rockThickness--;
-		if(this.closeToSun && this.rockThickness==0) {
+		if (this.closeToSun && this.rockThickness == 0) {
 			this.material.exposedAndCloseToSun(this);
 		}
+
 	}
-	
+
 	/**
-	 * this function adds material to the asteroid if possible and returns whether the operation was successful
+	 * this function adds material to the asteroid if possible and returns whether
+	 * the operation was successful
+	 * 
 	 * @param m the material that the function try to add to the asteroid
 	 * @return if the material was successfully added or not.
 	 */
 	public boolean addMaterial(Material m) {
-		if(this.material!=null||this.rockThickness>0)
+		this.main.log(true, "a", "Asteroid", "addMaterial");
+
+		if (this.material != null || this.rockThickness > 0)
 			return false;
-		if(this.closeToSun)
+		if (this.closeToSun)
 			m.exposedAndCloseToSun(this);
 		return true;
+
 	}
-	
+
 	/**
-	 * returns the material, that was in the asteroid, and remove the material from the asteroid setting it to null.
-	 * If the asteroids thickness is greater than 0 it won't remove the material
+	 * returns the material, that was in the asteroid, and remove the material from
+	 * the asteroid setting it to null. If the asteroids thickness is greater than 0
+	 * it won't remove the material
+	 * 
 	 * @return the material the was in the asteroid
 	 */
 	public Material removeMaterial() {
-		if(this.rockThickness>0) //checks if the material can be removed
+		this.main.log(true, "a", "Asteroid", "removeMaterial");
+		
+		if (this.rockThickness > 0) // checks if the material can be removed
 			return null;
-		Material returnValue=this.material;
-		this.material=null;
+		Material returnValue = this.material;
+		this.material = null;
 		return returnValue;
 	}
-	
+
 	/**
 	 * Adds the given asteroid from the neighbours list.
+	 * 
 	 * @param a the asteroid that will be added to the neighbours list
 	 */
 	public void addNeighbour(Asteroid a) {
+		this.main.log(false, "a", "Asteroid", "addNeighbour");
+		
 		this.neighbours.add(a);
 	}
-	
-	
+
 	/**
 	 * Removes the given asteroid from the neighbours list.
+	 * 
 	 * @param a the asteroid that will be removed from the neighbours list
 	 */
 	public void removeNeighbour(Asteroid a) {
+		this.main.log(false, "a", "Asteroid", "removeNeighbour");
+		
 		this.neighbours.remove(a);
 	}
-		
+
 	/**
-	 *  Adds the given building to the asteroid
+	 * Adds the given building to the asteroid
+	 * 
 	 * @param b the building the will be added to the asteroid
 	 */
 	public void addBuilding(Building b) {
+		this.main.log(false, "a", "Asteroid", "addBuilding");
+		
 		this.buildings.add(b);
 	}
-	
+
 	/**
-	 *  Removes the given building from the asteroid
+	 * Removes the given building from the asteroid
+	 * 
 	 * @param b the building the will be removed from the asteroid
 	 */
 	public void removeBuilding(Building b) {
+		this.main.log(false, "a", "Asteroid", "removeBuilding");
+		
 		this.buildings.remove(b);
 	}
-	
+
 	/**
 	 * Decides whether the asteroid is empty inside.
+	 * 
 	 * @return whether the asteroid is hollow or not.
 	 */
 	public boolean isHollow() {
-		if(this.material==null)
+		this.main.log(true, "a", "Asteroid", "isHollow");
+		
+		if (this.material == null)
 			return true;
 		return false;
 	}
-	
+
 	/**
 	 * Destroys the material which was inside the asteroid
 	 */
 	public void evaporateMaterial() {
-		this.material=null;
+		this.main.log(false, "a", "Asteroid", "evaporateMaterial");
+		
+		this.material = null;
 	}
-	
+
 	/**
-	 * This function kills every entity on the surface of the asteroid, if they can not hide
+	 * This function kills every entity on the surface of the asteroid, if they can
+	 * not hide
 	 */
 	public void getNotifiedAboutSunflare() {
-		if(this.rockThickness!=0 || !this.isHollow()) {
-			for(int i=0;i<this.entities.size();i++) {
+		this.main.log(false, "a", "Asteroid", "getNotifiedAboutSunflare");
+		
+		if (this.rockThickness != 0 || !this.isHollow()) {
+			for (int i = 0; i < this.entities.size(); i++) {
 				this.entities.get(i).die();
 			}
 		}
@@ -235,6 +284,6 @@ public class Asteroid extends Planet implements Controllable {
 	@Override
 	public void onTurn() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

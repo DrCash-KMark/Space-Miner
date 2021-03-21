@@ -7,7 +7,7 @@ package main;
 //  @ Project : Space-Miner
 //  @ File Name : Controllable.java
 //  @ Date : 17/03/2021
-//  @ Author : Karpati Mark
+//  @ Author : KMark
 //
 //
 

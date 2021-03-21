@@ -28,7 +28,7 @@ public class Main {
 	 * @param isReturn: boolean: this boolean marks if this is a "forward" or return call
 	 * @param obj: String: this string holds the name of the object that calls this function
 	 * @param cls: String: this string holds the name of the class that calls this function
-	 * @param fnc: String: this string holds the functioncall in a string
+	 * @param fnc: String: this string holds the function call in a string
 	 */
 	public void log(boolean isReturn, String obj, String cls, String fnc)
 	{

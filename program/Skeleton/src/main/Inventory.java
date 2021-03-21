@@ -22,14 +22,17 @@ import java.util.List;
  *
  */
 public class Inventory {
-	private List<Material> materials;
-	private List<StarGate> starGate;
+	private LinkedList<Material> materials;
+	private LinkedList<StarGate> starGate;
+	private int capacity;
 	
 	/**
 	 * Constructor for Inventory without parameters.
 	 */
 	Inventory(){
-		materials = new LinkedList<>();
+		this.materials = new LinkedList<>();
+		this.starGate = new LinkedList<>();
+		this.capacity = 10;
 	}
 	
 	/**
@@ -37,9 +40,10 @@ public class Inventory {
 	 * @param materials
 	 * @param starGate
 	 */
-	Inventory(List<Material> materials, List<StarGate> starGate){
+	Inventory(LinkedList<Material> materials, LinkedList<StarGate> starGate, int capacity){
 		this.materials = materials;
 		this.starGate = starGate;
+		this.capacity = capacity;
 	}
 	
 	/**
@@ -66,75 +70,49 @@ public class Inventory {
 	}
 	
 	/**
-	 * Compares the given and the local inventory materials list and 
-	 * if the given contains the other then remove all specific material from it.
+	 * Compares the given and the local inventory material list and 
+	 * returns with the not remainder.
 	 * @param i the given inventory
-	 * @return true if the local contains the given or false
+	 * @return remainder
 	 */
-	public boolean subSet(Inventory i) {
-		// contained elements
-		LinkedList<Material> components = new LinkedList<>();
+	public Inventory subSet(Inventory i) {
 		
-		Iterator<Material> iComponents;
+		Inventory remainder = new Inventory();
 		
 		Iterator<Material> iRecipe = materials.iterator();
 	    while (iRecipe.hasNext()) {
 	    	
-	    	Material component = i.removeInventory(iRecipe.next());
-	    	if(component!=null) {
-	    		components.add(component);
+	    	Material material = i.removeInventory(iRecipe.next());
+	    	if(material==null) {
+	    		remainder.addInventory(material);
 	    	}
 	    	else {
-	    		 // if not contains all elements
-	    		 iComponents = components.iterator();
-	    		 while (iComponents.hasNext()) {
-	    			 i.addInventory(iComponents.next());
-	    			 iComponents.remove();
-	    		 }
-	    		 return false;
+	    		 i.addInventory(material);
 	    	}
 	    }
-		return true;
+		return remainder;
 	}
 	
 	/**
-	 * Compares the given and the local inventory materials list and 
-	 * if the given not contains elements from the other then return them.
+ 	 *Compares the given and the local inventory materials list and
+	 *removes all contained element and return the remainder.
 	 * @param i the given inventory
 	 * @return differences
 	 */
-	public LinkedList<Material> subSetWithRemainder(Inventory i) {
-		// contained elements
-		LinkedList<Material> remainder = new LinkedList<>();
+	public Inventory subtraction(Inventory i) {
+		
+		Inventory remainder = new Inventory();
 		
 		Iterator<Material> iRecipe = materials.iterator();
 	    while (iRecipe.hasNext()) {
 	    	
-	    	Material component = i.removeInventory(iRecipe.next());
-	    	if(component==null) {
-	    		remainder.add(iRecipe.next());
-	    	}
-	    	else {
-	    		i.addInventory(iRecipe.next());
+	    	Material material = i.removeInventory(iRecipe.next());
+	    	if(material==null) {
+	    		remainder.addInventory(material);
 	    	}
 	    }
 		return remainder;
 	}	
-	
-	/**
-	 *Removes the given inventory elements from the local
- 	 *if it's contains them.
-	 * @param i the given inventory
-	 */
-	public void subSetWithRemove(Inventory i) {
-		
-		Iterator<Material> iRecipe = materials.iterator();
-	    while (iRecipe.hasNext()) {
-	    	
-	    	i.removeInventory(iRecipe.next());
-
-	    }
-	}
 	
 	/**
 	 * Adds the given stargate to the stargate list.
@@ -151,8 +129,6 @@ public class Inventory {
 	 * @param m the material the will be added to the materials list
 	 */
 	public void addInventory(Material m) {
-		if(materials.size()<10) {
 			materials.add(m);
-		}
 	}
 }

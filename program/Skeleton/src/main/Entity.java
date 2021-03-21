@@ -86,7 +86,7 @@ public abstract class Entity {
 	 * @param destination: Asteroid
 	 */
 	public void move(Asteroid destination) {
-		main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":Asteroid)");
+		main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":"+destination.getClass().getName());
 		destination.addEntity(this);
 		asteroid.removeEntity(this);
 		this.setAsteroid(destination);

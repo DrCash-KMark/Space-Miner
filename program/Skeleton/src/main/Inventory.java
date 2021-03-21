@@ -26,7 +26,7 @@ public class Inventory {
 	private LinkedList<StarGate> starGate;
 	private int capacity;
 	private Main main;
-	public String name;
+	private String name;
 	
 	/**
 	 * Constructor for Inventory without parameters.
@@ -79,9 +79,16 @@ public class Inventory {
 	 * @return removed material or null if the inventory not contains the material
 	 */
 	public Material removeInventory(Material m) {
+		main.log(false, name, getClass().getName(), "removeInventory(" + m.getName() + ":" + m.getClass().getName() + ")");
+		
 		if(materials.remove(m)) {
+			main.log(true, m.getName(), m.getClass().getName(), "");
+			
 			return m;
 		}
+		
+		main.log(true, "null", "Material", "");
+		
 		return null;
 	}
 	
@@ -90,9 +97,16 @@ public class Inventory {
 	 * @return removed stargate or null if the inventory not contains stargate
 	 */
 	public StarGate removeStarGate() {
+		main.log(false, name, getClass().getName(), "removeStarGate()");
+		
 		if(starGate.size()!=0) {
+			main.log(true, starGate.get(0).getName(), starGate.get(0).getClass().getName(), "");
+			
 			return starGate.get(0);
 		}
+		
+		main.log(true, "null", "StarGate", "");
+		
 		return null;
 	}
 	
@@ -103,6 +117,7 @@ public class Inventory {
 	 * @return remainder
 	 */
 	public Inventory subSet(Inventory i) {
+		main.log(false, name, getClass().getName(), "subSet(" + i.getName() + ":" + i.getClass().getName() + ")");
 		
 		Inventory remainder = new Inventory();
 		
@@ -117,6 +132,9 @@ public class Inventory {
 	    		 i.addInventory(material);
 	    	}
 	    }
+	    
+	    main.log(true, "subset", remainder.getClass().getName(), "");
+	    
 		return remainder;
 	}
 	
@@ -127,6 +145,7 @@ public class Inventory {
 	 * @return differences
 	 */
 	public Inventory subtraction(Inventory i) {
+		main.log(false, name, getClass().getName(), "subtraction(" + i.getName() + ":" + i.getClass().getName() + ")");
 		
 		Inventory remainder = new Inventory();
 		
@@ -138,6 +157,8 @@ public class Inventory {
 	    		remainder.addInventory(material);
 	    	}
 	    }
+	    main.log(true, "subtraction", remainder.getClass().getName(), "");
+	    
 		return remainder;
 	}	
 	
@@ -146,9 +167,13 @@ public class Inventory {
 	 * @param sg the stargate the will be added to the stargate list
 	 */
 	public void addStarGate(StarGate sg) {
+		main.log(false, name, getClass().getName(), "addStarGate(" + sg.getName() + ":" + sg.getClass().getName() + ")");
+		
 		if(starGate.size()<2) {
 			starGate.add(sg);
 		}
+		
+		main.log(true, "void", "void", "");
 	}
 	
 	/**
@@ -156,6 +181,10 @@ public class Inventory {
 	 * @param m the material the will be added to the materials list
 	 */
 	public void addInventory(Material m) {
-			materials.add(m);
+		main.log(false, name, getClass().getName(), "addInventory(" + m.getName() + ":" + m.getClass().getName() + ")");
+		
+		materials.add(m);
+		
+		main.log(true, "void", "void", "");
 	}
 }

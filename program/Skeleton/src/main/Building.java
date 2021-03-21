@@ -48,7 +48,7 @@ public abstract class Building {
 	 * abstract function for placing the building on an asteroid
 	 * @param a: Asteroid: asteroid on which the building is placed
 	 */
-	public abstract void onPlace(Asteroid a); 
+	public abstract void onPlace(); 
 	
 	/**
 	 * abstract function for destroying the building

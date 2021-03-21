@@ -66,7 +66,7 @@ public class Robot extends Entity implements Controllable {
 	
 	@Override
 	public void move(Asteroid destination) {
-		main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":"+destination.getClass().getName());
+		main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":"+destination.getClass().getName()+")");
 		destination.addRobot(this);
 		asteroid.removeRobot(this);
 		this.setAsteroid(destination);

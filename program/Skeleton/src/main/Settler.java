@@ -163,7 +163,7 @@ public class Settler extends Entity {
 	 * @param m: Material: The material which the settler wants to drop.
 	 */
 	public void dropMaterial(Material m) {
-		main.log(false, name, this.getClass().getName(), "dropMaterial("+m.getName()+":"+m.getClass().getName());
+		main.log(false, name, this.getClass().getName(), "dropMaterial("+m.getName()+":"+m.getClass().getName()+")");
 		boolean b = asteroid.addMaterial(m);
 		if(b == true) {
 			this.inventory.removeInventory(m);
@@ -202,7 +202,7 @@ public class Settler extends Entity {
 	
 	@Override
 	public void move(Asteroid destination) {
-		main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":"+destination.getClass().getName());
+		main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":"+destination.getClass().getName()+")");
 		destination.addSettler(this);
 		asteroid.removeSettler(this);
 		this.setAsteroid(destination);

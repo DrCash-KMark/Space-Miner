@@ -43,14 +43,17 @@ public class Robot extends Entity implements Controllable {
 	 * Robot dies.
 	 */
 	public void die() {
+		main.log(false, name, this.getClass().getName(), "die()");
 		super.die();
 		owner.destroyMe(this);
+		main.log(true, "void", "void", "");
 	}
 	/**
-	 * Az aszteroida felrobban, ha van szomszéd akkor a robot véletlenszerûen választ egyet belõlük.
-	 * Ha nincs szomszéd, akkor viszont meghal.
+	 * The robot's asteroid explodes. If the asteroid has a neighbour, it chooses a random destination to move to.
+	 * If the asteroid hasn't got a neighbour, the robot dies.
 	 */
 	public void asteroidExploded() {
+		main.log(false, name, this.getClass().getName(), "asteroidExploded()");
 		if(asteroid.getNeighbours().size() == 0) {
 			this.die();
 		}
@@ -58,6 +61,7 @@ public class Robot extends Entity implements Controllable {
 			int neighbour_index = (int)Math.random() * asteroid.getNeighbours().size();
 			this.move(asteroid.getNeighbours().get(neighbour_index));
 		}
+		main.log(true, "void", "void", "");
 	}
 	
 }

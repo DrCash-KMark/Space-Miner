@@ -85,41 +85,52 @@ public class Settler extends Entity {
 	 * This settler mines on his asteroid.
 	 */
 	public void mine() {
+		main.log(false, name, this.getClass().getName(), "mine()");
 		Material m = this.asteroid.removeMaterial();
 		inventory.addInventory(m);
+		main.log(true, "void", "void", "");
 	}
 	/**
 	 * This settler builds a Stargate.
 	 */
 	public void buildStarGate() {
+		main.log(false, name, this.getClass().getName(), "buildStarGate()");
 		Inventory remainder = STARGATE_RECIPE.subSet(inventory);
 		if(remainder.getMaterials().size() == 0) {
 			this.setInventory(STARGATE_RECIPE.subtraction(inventory));
 			StarGate s1 = new StarGate();
+			s1.setName("stargate");
 			StarGate s2 = new StarGate();
+			s2.setName("neighbour");
 			s1.setNeighbour(s2);
 			s2.setNeighbour(s1);
 			inventory.addStarGate(s1);
 			inventory.addStarGate(s2);
 		}
+		main.log(true, "void", "void", "");
 	}
 	/**
 	 * This settler builds a Robot.
 	 */
 	public void buildRobot() {
+		main.log(false, name, this.getClass().getName(), "buildRobot()");
 		Inventory remainder = ROBOT_RECIPE.subSet(inventory);
 		if(remainder.getMaterials().size() == 0) {
 			this.setInventory(ROBOT_RECIPE.subtraction(inventory));
 			Robot robot = new Robot();
+			robot.setName("robot");
 			robot.setAsteroid(asteroid);
 			asteroid.addEntity(robot);
 			owner.addRobot(robot);
 		}
+		main.log(true, "void", "void", "");
 	}
 	/**
 	 * This settler builds a Base.
 	 */
 	public void buildBase() {
+		main.log(false, name, this.getClass().getName(), "buildBase()");
+		main.log(true, "void", "void", "");
 	}
 	/**
 	 * This settler tries to drop a material.
@@ -127,15 +138,18 @@ public class Settler extends Entity {
 	 * @param m: Material: The material which the settler wants to drop.
 	 */
 	public void dropMaterial(Material m) {
+		main.log(false, name, this.getClass().getName(), "dropMaterial("+m.getName()+")");
 		boolean b = asteroid.addMaterial(m);
 		if(b == true) {
 			this.inventory.removeInventory(m);
 		}
+		main.log(true, "void", "void", "");
 	}
 	/**
 	 * The settler places a Stargate on the current asteroid.
 	 */
 	public void placeStarGate() {
+		main.log(false, name, this.getClass().getName(), "placeStarGate()");
 		StarGate sg = inventory.removeStarGate();
 		asteroid.addBuilding(sg);
 		sg.onPlace(asteroid);
@@ -144,13 +158,18 @@ public class Settler extends Entity {
 	 * The settler dies.
 	 */
 	public void die() {
+		main.log(false, name, this.getClass().getName(), "die()");
 		super.die();
 		owner.killMe(this);
+		main.log(true, "void", "void", "");
 	}
 	/**
 	 * The asteroid of this settler has been exploded.
+	 * The settler dies.
 	 */
 	public void asteroidExploded() {
+		main.log(false, name, this.getClass().getName(), "asteroidExploded()");
 		this.die();
+		main.log(true, "void", "void", "");
 	}
 }

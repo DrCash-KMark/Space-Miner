@@ -128,10 +128,10 @@ public class Inventory {
 	    	
 	    	Material material = i.removeInventory(iRecipe.next());
 	    	if(material==null) {
-	    		remainder.addInventory(material);
+	    		remainder.addMaterial(material);
 	    	}
 	    	else {
-	    		 i.addInventory(material);
+	    		 i.addMaterial(material);
 	    	}
 	    }
 	    
@@ -159,7 +159,7 @@ public class Inventory {
 	    	
 	    	Material material = i.removeInventory(iRecipe.next());
 	    	if(material==null) {
-	    		remainder.addInventory(material);
+	    		remainder.addMaterial(material);
 	    	}
 	    }
 	    main.log(true, remainder.getName(), remainder.getClass().getName(), "");
@@ -185,14 +185,14 @@ public class Inventory {
 	 * Adds the given material to the materials list.
 	 * @param m the material the will be added to the materials list
 	 */
-	public void addInventory(Material m) {
+	public void addMaterial(Material m) {
 		if (m != null)
 		{
-			main.log(false, name, getClass().getName(), "addInventory(" + m.getName() + ":" + m.getClass().getName() + ")");
+			main.log(false, name, getClass().getName(), "addMaterial(" + m.getName() + ":" + m.getClass().getName() + ")");
 			materials.add(m);
 		}
 		else
-			main.log(false, name, getClass().getName(), "addInventory(null:null)");
+			main.log(false, name, getClass().getName(), "addMaterial(null:null)");
 		
 		main.log(true, "void", "void", "");
 	}

@@ -638,7 +638,7 @@ public class Main {
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
     	
-    	inventory.addInventory(iron);
+    	inventory.addMaterial(iron);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -695,7 +695,7 @@ public class Main {
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
     	
-    	inventory.addInventory(coal);
+    	inventory.addMaterial(coal);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -752,7 +752,7 @@ public class Main {
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
     	
-    	inventory.addInventory(ice);
+    	inventory.addMaterial(ice);
     	
     	asteroid.setCloseToSun(isClose);
     	
@@ -815,7 +815,7 @@ public class Main {
     	settler.setAsteroid(asteroid);
     	settler.setInventory(inventory);
     	
-    	inventory.addInventory(uran);
+    	inventory.addMaterial(uran);
     	
     	asteroid.addNeighbour(neighbour);
     	
@@ -1629,15 +1629,15 @@ public class Main {
     	settler.setInventory(inventory);
     	settler.setSTARGATE_RECIPE(STARGATE_RECIPE);
     	
-    	inventory.addInventory(iron1);
-    	inventory.addInventory(iron2);
-    	inventory.addInventory(uran1);
-    	inventory.addInventory(ice1);
+    	inventory.addMaterial(iron1);
+    	inventory.addMaterial(iron2);
+    	inventory.addMaterial(uran1);
+    	inventory.addMaterial(ice1);
     	
-    	STARGATE_RECIPE.addInventory(iron3);
-    	STARGATE_RECIPE.addInventory(iron4);
-    	STARGATE_RECIPE.addInventory(uran2);
-    	STARGATE_RECIPE.addInventory(ice2);
+    	STARGATE_RECIPE.addMaterial(iron3);
+    	STARGATE_RECIPE.addMaterial(iron4);
+    	STARGATE_RECIPE.addMaterial(uran2);
+    	STARGATE_RECIPE.addMaterial(ice2);
     	
     	settler.buildStarGate();
     	
@@ -1775,32 +1775,32 @@ public class Main {
     	settler2.setInventory(inventory2);
     	settler2.setBASE_RECIPE(BASE_RECIPE);
     	
-    	inventory1.addInventory(iron1);
-    	inventory1.addInventory(iron2);
-    	inventory1.addInventory(iron3);
-    	inventory1.addInventory(uran1);
-    	inventory1.addInventory(uran2);
-    	inventory1.addInventory(uran3);
+    	inventory1.addMaterial(iron1);
+    	inventory1.addMaterial(iron2);
+    	inventory1.addMaterial(iron3);
+    	inventory1.addMaterial(uran1);
+    	inventory1.addMaterial(uran2);
+    	inventory1.addMaterial(uran3);
     	
-    	inventory2.addInventory(ice1);
-    	inventory2.addInventory(ice2);
-    	inventory2.addInventory(ice3);
-    	inventory2.addInventory(coal1);
-    	inventory2.addInventory(coal2);
-    	inventory2.addInventory(coal3);
+    	inventory2.addMaterial(ice1);
+    	inventory2.addMaterial(ice2);
+    	inventory2.addMaterial(ice3);
+    	inventory2.addMaterial(coal1);
+    	inventory2.addMaterial(coal2);
+    	inventory2.addMaterial(coal3);
     	
-    	BASE_RECIPE.addInventory(iron4);
-    	BASE_RECIPE.addInventory(iron5);
-    	BASE_RECIPE.addInventory(iron6);
-    	BASE_RECIPE.addInventory(uran4);
-    	BASE_RECIPE.addInventory(uran5);
-    	BASE_RECIPE.addInventory(uran6);
-    	BASE_RECIPE.addInventory(ice4);
-    	BASE_RECIPE.addInventory(ice5);
-    	BASE_RECIPE.addInventory(ice6);
-    	BASE_RECIPE.addInventory(coal4);
-    	BASE_RECIPE.addInventory(coal5);
-    	BASE_RECIPE.addInventory(coal6);
+    	BASE_RECIPE.addMaterial(iron4);
+    	BASE_RECIPE.addMaterial(iron5);
+    	BASE_RECIPE.addMaterial(iron6);
+    	BASE_RECIPE.addMaterial(uran4);
+    	BASE_RECIPE.addMaterial(uran5);
+    	BASE_RECIPE.addMaterial(uran6);
+    	BASE_RECIPE.addMaterial(ice4);
+    	BASE_RECIPE.addMaterial(ice5);
+    	BASE_RECIPE.addMaterial(ice6);
+    	BASE_RECIPE.addMaterial(coal4);
+    	BASE_RECIPE.addMaterial(coal5);
+    	BASE_RECIPE.addMaterial(coal6);
     	
     	settler1.buildBase();
     	
@@ -1870,13 +1870,13 @@ public class Main {
     	settler.setROBOT_RECIPE(ROBOT_RECIPE);
     	settler.setInventory(inventory);
     	
-    	inventory.addInventory(iron1);
-    	inventory.addInventory(coal1);
-    	inventory.addInventory(uran1);
+    	inventory.addMaterial(iron1);
+    	inventory.addMaterial(coal1);
+    	inventory.addMaterial(uran1);
     	
-    	ROBOT_RECIPE.addInventory(iron2);
-    	ROBOT_RECIPE.addInventory(coal2);
-    	ROBOT_RECIPE.addInventory(uran2);
+    	ROBOT_RECIPE.addMaterial(iron2);
+    	ROBOT_RECIPE.addMaterial(coal2);
+    	ROBOT_RECIPE.addMaterial(uran2);
     	
     	settler.buildRobot();
     	

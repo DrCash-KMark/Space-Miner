@@ -12,8 +12,6 @@ package main;
 //
 
 
-
-
 public class Ice extends Material {
 	
 	/**

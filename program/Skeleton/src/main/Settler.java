@@ -89,7 +89,7 @@ public class Settler extends Entity {
 	public void mine() {
 		main.log(false, name, this.getClass().getName(), "mine()");
 		Material m = this.asteroid.removeMaterial();
-		inventory.addInventory(m);
+		inventory.addMaterial(m);
 		main.log(true, "void", "void", "");
 	}
 	/**

@@ -98,12 +98,41 @@ StarGate.java
 2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
 Az StarGate osztályt tartalmazza.
 
+SkeletonBuildScript.bat
+90 byte
+2021. ‎március ‎22., ‎hétfő, ‏‎10:52:02
+mkdir ./bin
+javac -d ./bin src/main/*.java
+jar cfve Skeleton.jar main.Main -C ./bin/ .
+
+
+SkeletonRunScript.bat
+22 byte
+2021. ‎március ‎22., ‎hétfő, ‏‎11:35:39
+java -jar Skeleton.jar
+
 -------------------------------------------------------------------------------------------------------------
 
-Fordítási
+Fordítás
+A fordításhoz szükséges Java Development Kit (JDK).
+Csomagoljuk ki a Brainstormers_skeleton.zip-et.
+Futtassul a SkeletonBuildScript.bat fájlt.
+Ez létrehoz egy bin könyvtárat a root könyvtárban és a src mappa tartalmát lefordítva a bin/-be írja.
+(Ehhez a binben létrejön egy main alkönyvtár is.)
+Végül a lefordított classokat egy Skeleton.jar-ba csomagolja. A Main osztályt határozza meg mint főosztály.
 
-A fordításhoz szükség van
-1. Nyissunk egy 
+Futtatás
+A futtastáshoz a SkeletonRunScript.bat fájlt futtassuk!
+Ez a korábban létrehozott Skeleton.jar csomagot futtatja.
+A megnyílt parancssorban használhatjuk az elindult skeleton programot.
+
+
+
+
+
+
+
+
 
 
 

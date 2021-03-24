@@ -1,0 +1,6 @@
+Észrevételek a teszteléssel kapcsolatban:
+
+A Settler steps on asteroid kommunikacios diagrammjan vannak olyan hivasok is, amik nem hívódnak az inicializálás során, csak a szekvencia végrehajtásakor.
+Ezek a getNeighbour(), accept(), remove().
+
++getSize()

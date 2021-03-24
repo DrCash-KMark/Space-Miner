@@ -98,6 +98,7 @@ StarGate.java
 2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
 Az StarGate osztályt tartalmazza.
 
+
 SkeletonBuildScript.bat
 90 byte
 2021. ‎március ‎22., ‎hétfő, ‏‎10:52:02

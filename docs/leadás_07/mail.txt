@@ -51,3 +51,15 @@ Ha van még kérdésetek, akkor a konzultáción megbeszéljük.
 
 Üdvözlettel:
 Simon Balázs
+
+
+Konzi:
+Itt már teljes értékű szoftver kell.
+Részletesebb tesztesetek.
+Def egy programnyelv, dinamikusan létrehozni egy pályát.
+Lényeg, hogy itt már játszható, pontosan definiált parancsnyelv.
+Akár lehet segédparancsokat is belső állapotokhoz.
+Kellenek parancsok, amivel lekérdezzük mi is az obj. belső állapota, lássunk bele az objektumokba.
+Annyira pontos és részletes leírás, hogy bárki tudja írni a teszet.
+Teszt terveknek teljes kódfedést kell csinálni, olyan tesztek is kellenek amivel "rossz" viselkedést tesztelünk.
+Nem kérdezünk vissza usertől.

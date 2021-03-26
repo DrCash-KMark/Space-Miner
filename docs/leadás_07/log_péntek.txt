@@ -1,11 +1,17 @@
-Módosításk:
-1. Urán memóriával-> exposeCloseToSun minden körben mostmár nem csak drill, uránban lesz számláló, sorrendek(nem probléma mert első kifúrásnál még csak 1 lesz)
-2. Ufók -> űrbéli c-típusú állampolgár, működésben a bányászik de nem fúr miatt interfészben kivisszük a drilt. Aszteroidára ufók tárolása. Interface-> nonPlayer cuccok és így egyben tárolni. (+ amiket az aszteoida hív és így nem controlablebenlenne).Számukat nyelvben inicializálni.
+﻿Módosításk:
+1. Urán memóriával-> exposeCloseToSun minden körben mostmár nem csak drill, uránban lesz számláló, sorrendek
+   (nem probléma mert első kifúrásnál még csak 1 lesz)
+2. Ufók -> űrbéli c-típusú állampolgár, működésben a bányászik de nem fúr miatt interfészben kivisszük a drilt.
+   Aszteroidára ufók tárolása. Interface-> nonPlayer cuccok és így egyben tárolni. (+ amiket az aszteoida hív és 
+   így nem controlablebenlenne).Számukat nyelvben inicializálni.
 3. A telepesek fasza úrhajó, egyik kaput leraktuk már kraftolhatunk új párt. 3db kapu 2 helyett. 
-4. Napszél területenként. Napoknak lennének aszteroidái és azokra hívná meg. Csak napra kell a Game-nek napvihart. Referencia sun-ban is, ha robban napból is ki kell venni.(Aszteroidának kell az onTurn)
-Nem kell forráskódot leadni bujááááááááááááááá lehet nem kell Algel pót.
-5. Kapu. Aszteroidák körül? Kapu -> move, Aszteroid szomszédaiból kivenni+ párjából is mert másik irányból se lehet ide jönni.
-Aszteroidáról nem vesszük le a buildinget. Kapu plusz flag-> megkergült, + OnTurn, Controlable-nek kell lennie és így tud OnTurn-ben mozog, A kapu mozog az interfész megvalósítása.
+4. Napszél területenként. Napoknak lennének aszteroidái és azokra hívná meg. Csak napra kell a Game-nek napvihart. 
+   Referencia sun-ban is, ha robban napból is ki kell venni.(Aszteroidának kell az onTurn)
+   Nem kell forráskódot leadni bujááááááááááááááá lehet nem kell Algel pót.
+5. Kapu. Aszteroidák körül? Kapu -> move, Aszteroid szomszédaiból kivenni+ párjából is mert másik irányból se 
+   lehet ide jönni.
+Aszteroidáról nem vesszük le a buildinget. Kapu plusz flag-> megkergült, + OnTurn, Controlable-nek kell lennie és 
+így tud OnTurn-ben mozog, A kapu mozog az interfész megvalósítása.
 
 Dolgok amik hiányoznak.
 -játék elkészítése
@@ -16,12 +22,21 @@ Dolgok amik hiányoznak.
 -hogyan választjuk ki az adott telepeseket Hanyadik telepes?, Select -> selected állapot?
 - nagy szar Turn ami minden mást turn-öl
 -settler-> volt e már lépés a körben, flag-ek ide is, startTurn, end turn
-- Game-ben move stb hogy settler adott függvényét meghívni, pl move az 5. settler mégse új függvény elintézük By Zoli
-- Game-ben  settler move, szomszéd lekérdezés , játékos megkérdezésre melyik aszteroidára akar menni UA. az utolsó kettő By Moha 
--> oké akkor bind settler, minden releváns inf display-> utána kérdezi mit akarna, Kezelőfelületbe szervezni mert nem a GAme dolga, függ a kijelzéstől, új osztály
+- Game-ben move stb hogy settler adott függvényét meghívni, pl move az 5. settler mégse új függvény elintézük By 
+  Zoli
+- Game-ben  settler move, szomszéd lekérdezés , játékos megkérdezésre melyik aszteroidára akar menni UA. az utolsó 
+  kettő By Moha 
+-> oké akkor bind settler, minden releváns inf display-> utána kérdezi mit akarna, Kezelőfelületbe szervezni mert 
+   nem a GAme dolga, függ a kijelzéstől, új osztály
 ismeri a game-t és a GUI a settlerrel foglalkozik, Ő hívja a move-ot is
 
-Aszteroidában ne se egy nyersanyag legyen.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Aszteroidában ne se egy nyersanyag legyen.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!
 
 
 

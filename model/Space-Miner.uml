@@ -11,7 +11,7 @@
 <XPD:OBJ name="DocumentElement" type="UMLProject" guid="1KWYn2BrJUm1PB7ASEY/lwAA">
 <XPD:ATTR name="Title" type="string">Space-Miner</XPD:ATTR>
 <XPD:ATTR name="Company" type="string">Brainstormers</XPD:ATTR>
-<XPD:ATTR name="#OwnedElements" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">6</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLModel" guid="vU2h/8dVcE2AFQ3Vrg4/6QAA">
 <XPD:ATTR name="Name" type="string">Use Case Model</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
@@ -7574,8 +7574,8 @@
 <XPD:OBJ name="OwnedViews[49]" type="UMLClassView" guid="1ytFbK2r2064P0UraGEIJQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">140</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">16</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">184</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">8</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">160</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">69</XPD:ATTR>
 <XPD:REF name="Model">kaseUF/0tUSg9y2K44LqDgAA</XPD:REF>
@@ -8505,10 +8505,8 @@
 <XPD:REF name="CallActions[4]">kYeCQX1/NkiLoJHHYvvEuQAA</XPD:REF>
 <XPD:REF name="CallActions[5]">ALsOQvzvN064+m8Ewhq93AAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#TypedParameters" type="integer">3</XPD:ATTR>
-<XPD:REF name="TypedParameters[0]" pathname="e">XTt1w+1pjEmfsnCWYxBtogAA</XPD:REF>
-<XPD:REF name="TypedParameters[1]" pathname="e">IcS05vVeb0OjMVecJ0gXgwAA</XPD:REF>
-<XPD:REF name="TypedParameters[2]">7fpW87/7DkSmefe+bDdpSgAA</XPD:REF>
+<XPD:ATTR name="#TypedParameters" type="integer">1</XPD:ATTR>
+<XPD:REF name="TypedParameters[0]">7fpW87/7DkSmefe+bDdpSgAA</XPD:REF>
 <XPD:ATTR name="#Associations" type="integer">5</XPD:ATTR>
 <XPD:REF name="Associations[0]">gv7cs4uIgUiWEmWoB0c3jgAA</XPD:REF>
 <XPD:REF name="Associations[1]">RN0XujPjf0+/zlsJrkjq+gAA</XPD:REF>
@@ -9250,14 +9248,13 @@
 <XPD:REF name="CallActions[8]">7Z/1wJyX3EG1zuz/kdV3AgAA</XPD:REF>
 <XPD:REF name="CallActions[9]">3EI46mxjHUqvRaGi8hSx8QAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#TypedParameters" type="integer">7</XPD:ATTR>
+<XPD:ATTR name="#TypedParameters" type="integer">6</XPD:ATTR>
 <XPD:REF name="TypedParameters[0]">D1AMM7i0KkaCwcrDUeq4rQAA</XPD:REF>
 <XPD:REF name="TypedParameters[1]">2HOEYoKxDUyebIZqMZHR7wAA</XPD:REF>
 <XPD:REF name="TypedParameters[2]">Hnu0jc7tE0uHO4PupuuUlgAA</XPD:REF>
 <XPD:REF name="TypedParameters[3]">XhzdUYLLdUGRdtDf8U7HtQAA</XPD:REF>
 <XPD:REF name="TypedParameters[4]">U4HV90WHVEyNvQU/05fGTAAA</XPD:REF>
-<XPD:REF name="TypedParameters[5]" pathname="m">c1ExMFsI2kmS+c8RnKZx3wAA</XPD:REF>
-<XPD:REF name="TypedParameters[6]">GwpCxeopG0KNByjpX1NjOgAA</XPD:REF>
+<XPD:REF name="TypedParameters[5]">GwpCxeopG0KNByjpX1NjOgAA</XPD:REF>
 <XPD:ATTR name="#Associations" type="integer">2</XPD:ATTR>
 <XPD:REF name="Associations[0]">IIfpwMKZqEi+Bkxt2QPj8wAA</XPD:REF>
 <XPD:REF name="Associations[1]">CSsLta85w0qmmKleY0/IXQAA</XPD:REF>
@@ -9700,12 +9697,11 @@
 <XPD:REF name="CallActions[21]">EWh5COnAbUKJ+MbImJmtWAAA</XPD:REF>
 <XPD:REF name="CallActions[22]">bSxV1hIwUE+3ydfWrEdNSAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#TypedParameters" type="integer">5</XPD:ATTR>
-<XPD:REF name="TypedParameters[0]" pathname="i">WrqVu2LvW025L1m3tu5yhgAA</XPD:REF>
-<XPD:REF name="TypedParameters[1]">i/9J21YUSES2T3KL8VpdgwAA</XPD:REF>
-<XPD:REF name="TypedParameters[2]">HIjutnL04060iIC0Y1KMAQAA</XPD:REF>
-<XPD:REF name="TypedParameters[3]">qZAsxtm0kUGH7o0Pf1auqQAA</XPD:REF>
-<XPD:REF name="TypedParameters[4]">zXssVa9nJ0+7qJMZC1OTKgAA</XPD:REF>
+<XPD:ATTR name="#TypedParameters" type="integer">4</XPD:ATTR>
+<XPD:REF name="TypedParameters[0]">i/9J21YUSES2T3KL8VpdgwAA</XPD:REF>
+<XPD:REF name="TypedParameters[1]">HIjutnL04060iIC0Y1KMAQAA</XPD:REF>
+<XPD:REF name="TypedParameters[2]">qZAsxtm0kUGH7o0Pf1auqQAA</XPD:REF>
+<XPD:REF name="TypedParameters[3]">zXssVa9nJ0+7qJMZC1OTKgAA</XPD:REF>
 <XPD:ATTR name="#Associations" type="integer">6</XPD:ATTR>
 <XPD:REF name="Associations[0]">XfWWt8/FnUSwVmwPzHSu/wAA</XPD:REF>
 <XPD:REF name="Associations[1]">Ye3db9z1jU2vr6k4jPMDWQAA</XPD:REF>
@@ -9966,8 +9962,6 @@
 <XPD:REF name="CallActions[0]">tVQod5jW0keSa0ICO0cfFQAA</XPD:REF>
 <XPD:REF name="CallActions[1]">UpDE2xwt8E+jAhFzM2HJ9AAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#TypedParameters" type="integer">1</XPD:ATTR>
-<XPD:REF name="TypedParameters[0]" pathname="c">pcmHutL9KUu7D+E61ak2eQAA</XPD:REF>
 <XPD:ATTR name="#Associations" type="integer">1</XPD:ATTR>
 <XPD:REF name="Associations[0]">E8R2PNWQHE6WjFZl8SF+VgAA</XPD:REF>
 </XPD:OBJ>
@@ -10599,8 +10593,8 @@
 <XPD:REF name="Participant">6YxpOfyc8UqVZ5SYh4oZmAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">q5DcOOvGTEaDWHmf99df5AAA</XPD:REF>
-<XPD:REF name="Views[1]">fynqIM9F/kGk8Iyaq8+GuAAA</XPD:REF>
-<XPD:REF name="Views[2]">yzO/KpmABkKi2Q146Ox8TwAA</XPD:REF>
+<XPD:REF name="Views[1]">yzO/KpmABkKi2Q146Ox8TwAA</XPD:REF>
+<XPD:REF name="Views[2]">fynqIM9F/kGk8Iyaq8+GuAAA</XPD:REF>
 <XPD:REF name="Views[3]">zP1M6njPS0iApSTqUCDjQwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="EfgXrQG7nEur2sC97E+CQgAA">
@@ -10611,8 +10605,8 @@
 <XPD:REF name="Participant">SkR5x/YQwUmbZRBNY6OkEQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">SfEvNq9/bEW27zRDOhky7QAA</XPD:REF>
-<XPD:REF name="Views[1]">htJCcT+PtUSu6fNkIbplhAAA</XPD:REF>
-<XPD:REF name="Views[2]">qgrkbLY7vEKZJjpEnXiHrAAA</XPD:REF>
+<XPD:REF name="Views[1]">qgrkbLY7vEKZJjpEnXiHrAAA</XPD:REF>
+<XPD:REF name="Views[2]">htJCcT+PtUSu6fNkIbplhAAA</XPD:REF>
 <XPD:REF name="Views[3]">jT+RGhuAuUiWQTV8pXhGxAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -10640,8 +10634,8 @@
 <XPD:REF name="Participant">Z1ZuzMqqwEKWBbguUDVTIgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">5Y+DU3q/nkSvigTnCIjenQAA</XPD:REF>
-<XPD:REF name="Views[1]">spkv0zhc+Emqrf8QLHn0KAAA</XPD:REF>
-<XPD:REF name="Views[2]">+YXlGCvBN0Cf3v5tvFK47AAA</XPD:REF>
+<XPD:REF name="Views[1]">+YXlGCvBN0Cf3v5tvFK47AAA</XPD:REF>
+<XPD:REF name="Views[2]">spkv0zhc+Emqrf8QLHn0KAAA</XPD:REF>
 <XPD:REF name="Views[3]">jgRM5kdvDUKq0u9T90m2zQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="JoUuKLJJJki+d+w7XCKDBQAA">
@@ -10652,8 +10646,8 @@
 <XPD:REF name="Participant">9Bo1kwG43E+PBWkmJzw0JQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">QnlpPU/bGEG+PIoCQ1O8yAAA</XPD:REF>
-<XPD:REF name="Views[1]">2sSdEN6yQ0S5FWYivienNwAA</XPD:REF>
-<XPD:REF name="Views[2]">50RXBSUZm0ykznjJAHyzUAAA</XPD:REF>
+<XPD:REF name="Views[1]">50RXBSUZm0ykznjJAHyzUAAA</XPD:REF>
+<XPD:REF name="Views[2]">2sSdEN6yQ0S5FWYivienNwAA</XPD:REF>
 <XPD:REF name="Views[3]">r1Tl/IBjGUu9py13CpgEeAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -10671,8 +10665,8 @@
 <XPD:REF name="Participant">Z1ZuzMqqwEKWBbguUDVTIgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">arIk7R8ug0umlJ3QCkkt6gAA</XPD:REF>
-<XPD:REF name="Views[1]">4iGB7voKTk6/1ZJC7PVykAAA</XPD:REF>
-<XPD:REF name="Views[2]">KgUwFfD1eU23vn30tFOFYwAA</XPD:REF>
+<XPD:REF name="Views[1]">KgUwFfD1eU23vn30tFOFYwAA</XPD:REF>
+<XPD:REF name="Views[2]">4iGB7voKTk6/1ZJC7PVykAAA</XPD:REF>
 <XPD:REF name="Views[3]">8apE9jONtUOWBx9S0gIMlgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="Bd3nZG32+UKPQiaFUfIwEwAA">
@@ -10683,8 +10677,8 @@
 <XPD:REF name="Participant">Q0aIN0nYlUSxSciFri0igwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">j6L0ylgVp0OERVij+FP/IwAA</XPD:REF>
-<XPD:REF name="Views[1]">jCfkPi0Ue0qo2+hoqwB7kwAA</XPD:REF>
-<XPD:REF name="Views[2]">kTI5D2BF+E2C42d3+HhqigAA</XPD:REF>
+<XPD:REF name="Views[1]">kTI5D2BF+E2C42d3+HhqigAA</XPD:REF>
+<XPD:REF name="Views[2]">jCfkPi0Ue0qo2+hoqwB7kwAA</XPD:REF>
 <XPD:REF name="Views[3]">C7TnSJOsDkGTB6EJtaJWRgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -10721,8 +10715,8 @@
 <XPD:REF name="Participant">Z1ZuzMqqwEKWBbguUDVTIgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">7TLO6tbw/EStwMmmyeV6swAA</XPD:REF>
-<XPD:REF name="Views[1]">leFcoy7xy0aAwWzHZjuSsgAA</XPD:REF>
-<XPD:REF name="Views[2]">0budmFLQQkuA/O17FkZ+AgAA</XPD:REF>
+<XPD:REF name="Views[1]">0budmFLQQkuA/O17FkZ+AgAA</XPD:REF>
+<XPD:REF name="Views[2]">leFcoy7xy0aAwWzHZjuSsgAA</XPD:REF>
 <XPD:REF name="Views[3]">TTtWad2Ha0KVidDZyyumQAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="uLXYE/Nqn0C5nrmUji3GTgAA">
@@ -10733,8 +10727,8 @@
 <XPD:REF name="Participant">VIZUSOEP/Eaus/bDqWEdjAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">+DNqVv/Ia0+LzhMdGbpTQgAA</XPD:REF>
-<XPD:REF name="Views[1]">xd6p8+234kiUwTtWOnXulAAA</XPD:REF>
-<XPD:REF name="Views[2]">numXSRTYyUyu9TR2O6HfjwAA</XPD:REF>
+<XPD:REF name="Views[1]">numXSRTYyUyu9TR2O6HfjwAA</XPD:REF>
+<XPD:REF name="Views[2]">xd6p8+234kiUwTtWOnXulAAA</XPD:REF>
 <XPD:REF name="Views[3]">mdOrbMjgf0KiwooA5TIpPAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -10751,8 +10745,8 @@
 <XPD:REF name="Participant">f2AB87hxVUW0+GXdyibhzAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">DR5YfhVt9kOOXQaC5Zxt4wAA</XPD:REF>
-<XPD:REF name="Views[1]">7m3tKkQ0I0q50Rk+5E2StwAA</XPD:REF>
-<XPD:REF name="Views[2]">x9loAAu4LUqTleB5ojH/iAAA</XPD:REF>
+<XPD:REF name="Views[1]">x9loAAu4LUqTleB5ojH/iAAA</XPD:REF>
+<XPD:REF name="Views[2]">7m3tKkQ0I0q50Rk+5E2StwAA</XPD:REF>
 <XPD:REF name="Views[3]">e67M6U0Iz0it9joThtbX7wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="gZu5mb08AUCu3D1ygx1TigAA">
@@ -10763,8 +10757,8 @@
 <XPD:REF name="Participant">SkR5x/YQwUmbZRBNY6OkEQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">XcUL7hExYUSYOlnDEht2IQAA</XPD:REF>
-<XPD:REF name="Views[1]">8eCt2AgLDEWN1s5SNn1wgQAA</XPD:REF>
-<XPD:REF name="Views[2]">e/V+X4J+6U+FQVJ5Wr/ukQAA</XPD:REF>
+<XPD:REF name="Views[1]">e/V+X4J+6U+FQVJ5Wr/ukQAA</XPD:REF>
+<XPD:REF name="Views[2]">8eCt2AgLDEWN1s5SNn1wgQAA</XPD:REF>
 <XPD:REF name="Views[3]">VQ3lzr0XOUKamOP2p0O2DAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -12537,7 +12531,7 @@
 <XPD:REF name="Tail">CyF0RpbJ6k2LQ7s0MwLkJQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="jn1nG/dgdkSGHUVR4X/1qQAA">
 <XPD:ATTR name="ShowExtendedNotation" type="boolean">True</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : move(destination): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">CPqasaBi80ST2Z/1byi8tgAA</XPD:REF>
 <XPD:REF name="HostEdge">1RYIBNHShEGZ+9FgZugsKgAA</XPD:REF>
 </XPD:OBJ>
@@ -12569,7 +12563,7 @@
 <XPD:REF name="Head">JzHo7d+FyU+t4+wKz57J7wAA</XPD:REF>
 <XPD:REF name="Tail">mS0EKbkKh02vdQAW8B9/OQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="iUeV+iCt3kmWIoFLUBYYggAA">
-<XPD:ATTR name="Text" type="string">2 : addEntity(e): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">2 : addSettler(e): void</XPD:ATTR>
 <XPD:REF name="Model">eMSTLkcl3UqjKddMUQ8SSgAA</XPD:REF>
 <XPD:REF name="HostEdge">krveRlWWR06E68gLFG7DNgAA</XPD:REF>
 </XPD:OBJ>
@@ -12635,7 +12629,7 @@
 <XPD:REF name="Head">CuZIrX5hg0y9k7s9hV+QewAA</XPD:REF>
 <XPD:REF name="Tail">mS0EKbkKh02vdQAW8B9/OQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="rHWAH7imqUSwybbmtv7J4gAA">
-<XPD:ATTR name="Text" type="string">4 : removeEntity(e): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : removeSettler(e): void</XPD:ATTR>
 <XPD:REF name="Model">nLOegBRqM0aI5dK8ekTmqAAA</XPD:REF>
 <XPD:REF name="HostEdge">pWWlvp4OSkOOe5xcWq/uJAAA</XPD:REF>
 </XPD:OBJ>
@@ -13063,7 +13057,7 @@
 <XPD:REF name="Head">GFM+WT5dpUaaMMz8WmfX/QAA</XPD:REF>
 <XPD:REF name="Tail">UZzHEAmZrUWzXQADKAjJUAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="BiR4D29I7kyR8MXm7Q6nzgAA">
-<XPD:ATTR name="Text" type="string">1 : drill(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">7wBY1iD1B0i8PEaUKSQeqAAA</XPD:REF>
 <XPD:REF name="HostEdge">hGcZboeKJ0GPmxvKDC93JgAA</XPD:REF>
 </XPD:OBJ>
@@ -13818,7 +13812,7 @@
 <XPD:REF name="Head">89r9/OgFWEKdctxuI6U4UwAA</XPD:REF>
 <XPD:REF name="Tail">4EmiQB1Pf0KK9nMUeqw22QAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="WTdm4240mUe7/7nWTCs1yAAA">
-<XPD:ATTR name="Text" type="string">1 : mine(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">OzX8lqKDDk6IMY1iTiubAAAA</XPD:REF>
 <XPD:REF name="HostEdge">Acv913EQIECqxgaYcnWDNwAA</XPD:REF>
 </XPD:OBJ>
@@ -14491,7 +14485,7 @@
 <XPD:REF name="Head">52EMrRGkgkSyhSk5iRIVtAAA</XPD:REF>
 <XPD:REF name="Tail">v61nFSzKwUyIHywt5tcqogAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="EcnaWlyX1U+xGfPdMxX5kwAA">
-<XPD:ATTR name="Text" type="string">4 : removeEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : removeSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">7/K/ylpdTEWBqam6y9FxgAAA</XPD:REF>
 <XPD:REF name="HostEdge">LL8dlZIjKEaqruE1Ls7HjAAA</XPD:REF>
 </XPD:OBJ>
@@ -14689,7 +14683,7 @@
 <XPD:REF name="Head">v61nFSzKwUyIHywt5tcqogAA</XPD:REF>
 <XPD:REF name="Tail">v61nFSzKwUyIHywt5tcqogAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="sSV6V2/fQk+SEamPe+c4FwAA">
-<XPD:ATTR name="Text" type="string">10 : move(destination): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">10</XPD:ATTR>
 <XPD:REF name="Model">MuM8jlwgEE2W08qjvZrF0gAA</XPD:REF>
 <XPD:REF name="HostEdge">x+M8cpON0k6fbNaXoo+LLgAA</XPD:REF>
 </XPD:OBJ>
@@ -16531,7 +16525,7 @@ of asteroid a.
 <XPD:REF name="Head">bC7ZranJGkudEcszjefPQAAA</XPD:REF>
 <XPD:REF name="Tail">5RAgNhMpRE206kjht/nIYwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="9Pj9J7X8iUSg10fc/X/RIAAA">
-<XPD:ATTR name="Text" type="string">3 : notifyAllAboutSunFlare(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">3</XPD:ATTR>
 <XPD:REF name="Model">nVoOO6Z+GkCzW+xeppNBSwAA</XPD:REF>
 <XPD:REF name="HostEdge">GwUdP9Wn5Eu2HtIHKgsY5gAA</XPD:REF>
 </XPD:OBJ>
@@ -17886,7 +17880,7 @@ of asteroid a.
 <XPD:REF name="Tail">OHFkPbpuVUuLAqd5tO+FeQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="wHaQw1N2aEmnChrPVTjvvgAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">2 : subSet(ROBOT_RECIPE): bool</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">2 : subSet(ROBOT_RECIPE): void</XPD:ATTR>
 <XPD:REF name="Model">AfmG9eNP4UW0DpFgcywfVQAA</XPD:REF>
 <XPD:REF name="HostEdge">FyZQVHjM8ES1GAW1hNPTiwAA</XPD:REF>
 </XPD:OBJ>
@@ -18018,7 +18012,7 @@ of asteroid a.
 <XPD:REF name="Head">8G3IBvqX5UOAXuXKJN3oLwAA</XPD:REF>
 <XPD:REF name="Tail">OHFkPbpuVUuLAqd5tO+FeQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="v14kI0J4O0WghKL80p2CngAA">
-<XPD:ATTR name="Text" type="string">6 : addEntity(r): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : addSettler(r): void</XPD:ATTR>
 <XPD:REF name="Model">oWJGAiWp4UWThGxhBRToiQAA</XPD:REF>
 <XPD:REF name="HostEdge">1yKB+B5ZekOgewun2PNpdQAA</XPD:REF>
 </XPD:OBJ>
@@ -18085,7 +18079,7 @@ of asteroid a.
 <XPD:REF name="Tail">OHFkPbpuVUuLAqd5tO+FeQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="ZNXYul02a0K2D7Cbt+moRAAA">
 <XPD:ATTR name="Distance" type="real">14</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">8 : addControllable(r): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">8 : addRobot(r): void</XPD:ATTR>
 <XPD:REF name="Model">94nOO/DzaUqj+9J2tUdx6wAA</XPD:REF>
 <XPD:REF name="HostEdge">YPt5EnTiDU2N+0aT7uc4FAAA</XPD:REF>
 </XPD:OBJ>
@@ -18536,7 +18530,7 @@ of asteroid a.
 <XPD:REF name="Head">ciIxwOCGpkKezNyuG6vVYQAA</XPD:REF>
 <XPD:REF name="Tail">63llZJYOlkSCd8K6b6eJ7AAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="5qiHyUOsM0az57m7nJRSAAAA">
-<XPD:ATTR name="Text" type="string">2 : subSet(STARGATE_RECIPE): bool</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">2 : subSet(STARGATE_RECIPE): void</XPD:ATTR>
 <XPD:REF name="Model">p6/MBLNQQUKKH+4UYS8MxwAA</XPD:REF>
 <XPD:REF name="HostEdge">f/4xRFn73U6Tm/LOZFaREQAA</XPD:REF>
 </XPD:OBJ>
@@ -19112,7 +19106,7 @@ of asteroid a.
 <XPD:REF name="Tail">IRIiRWMZB02dS6sBpOnnRwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="wIb1ZQjqg0uGwwlWmDrxygAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">2 : subSet(BASE_RECIPE): bool</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">2 : subSet(BASE_RECIPE): void</XPD:ATTR>
 <XPD:REF name="Model">74KT0A6WpkmnpzBtYjdeFQAA</XPD:REF>
 <XPD:REF name="HostEdge">RARB89nqFkyRrN7sht652QAA</XPD:REF>
 </XPD:OBJ>
@@ -22885,7 +22879,7 @@ of asteroid a.
 <XPD:REF name="Tail">A7l39VAXXkOHJRDl9+uTLwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="+x+MTyCbg02FU2E4sFOWTAAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : mine(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">HxSU/S7vZkm03bFwVccHUAAA</XPD:REF>
 <XPD:REF name="HostEdge">0mdzrnHQK0ehzDs9EKQiWAAA</XPD:REF>
 </XPD:OBJ>
@@ -22985,7 +22979,7 @@ of asteroid a.
 <XPD:REF name="Tail">ItwC+GSw9k+s8UJPWPt0tAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="i0Noa1cpgEmIr0IPA6IU/gAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">4 : addInventory(iron): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : addMaterial(iron): void</XPD:ATTR>
 <XPD:REF name="Model">W6xN7ZxWS0eWPq/TWfD3agAA</XPD:REF>
 <XPD:REF name="HostEdge">40fJl1BuwEugETddidQm0wAA</XPD:REF>
 </XPD:OBJ>
@@ -23372,7 +23366,7 @@ of asteroid a.
 <XPD:REF name="Tail">TDbMzTJgE0KJPihBobJpdAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="lavMI373zUGEA+a6hrc4ZQAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : mine(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">jWXepW2Aw0m8TvvtWrJv/AAA</XPD:REF>
 <XPD:REF name="HostEdge">JWlfosdnH0uR1aB/GN4QdgAA</XPD:REF>
 </XPD:OBJ>
@@ -23472,7 +23466,7 @@ of asteroid a.
 <XPD:REF name="Tail">FE5yOtiCYUCC5W4z6IL2OAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="NlC2nKUwZEmnQxY1O4hIaAAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">4 : addInventory(uran): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : addMaterial(uran): void</XPD:ATTR>
 <XPD:REF name="Model">olvu4gWOS0KQgBNHjha1/QAA</XPD:REF>
 <XPD:REF name="HostEdge">xGQf6VrfikixVyVeA/MSQAAA</XPD:REF>
 </XPD:OBJ>
@@ -23859,7 +23853,7 @@ of asteroid a.
 <XPD:REF name="Head">DRoTLY+yMEK+zuOr96YM+gAA</XPD:REF>
 <XPD:REF name="Tail">lhIfAtHOcU2VEGBixsxUkQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="g3Sc0adE80ejFO1EWjfwwAAA">
-<XPD:ATTR name="Text" type="string">1 : mine(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">LtNUU8jSW0OcKyIVWv2sXAAA</XPD:REF>
 <XPD:REF name="HostEdge">CN63X8gmhkSJGhcUYeYKAwAA</XPD:REF>
 </XPD:OBJ>
@@ -23958,7 +23952,7 @@ of asteroid a.
 <XPD:REF name="Tail">DRoTLY+yMEK+zuOr96YM+gAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="3NOv4eW3tkecjVcNmrokZQAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">4 : addInventory(ice): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : addMaterial(ice): void</XPD:ATTR>
 <XPD:REF name="Model">Ee8vlD2HHUWbTUjVpknC0wAA</XPD:REF>
 <XPD:REF name="HostEdge">eF+XHC8rcEKLWmXYh86WSAAA</XPD:REF>
 </XPD:OBJ>
@@ -24346,7 +24340,7 @@ of asteroid a.
 <XPD:REF name="Tail">pCqiXAifh0eTIJJr1i7KNwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="GCQDEKu2l0m8h+19SUIEOAAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : mine(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">Zq4IabvNdEGxUZUvQX4kAwAA</XPD:REF>
 <XPD:REF name="HostEdge">odJeC2C5s0GB7CnMk5WUxQAA</XPD:REF>
 </XPD:OBJ>
@@ -24446,7 +24440,7 @@ of asteroid a.
 <XPD:REF name="Tail">1Wx7Qpc84kaDKnjaimtGbwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="y2C5h4G6UEqFjfdriFi/TwAA">
 <XPD:ATTR name="Distance" type="real">11</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">4 : addInventory(coal): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : addMaterial(coal): void</XPD:ATTR>
 <XPD:REF name="Model">6GxI+++WUU+DVDMLNG3heAAA</XPD:REF>
 <XPD:REF name="HostEdge">2egTAx2YN0aQNoRn1arBBQAA</XPD:REF>
 </XPD:OBJ>
@@ -25957,7 +25951,7 @@ of asteroid a.
 <XPD:REF name="Head">PV72gQ82CEC75DE8fkKKiwAA</XPD:REF>
 <XPD:REF name="Tail">Keriww4x7UGtXkhd9VQSygAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="nIj91W6K0EShAKjg/D6xJQAA">
-<XPD:ATTR name="Text" type="string">7 : removeEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">7 : removeSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">zw2ZFgME9E6nCoIhqzvwiwAA</XPD:REF>
 <XPD:REF name="HostEdge">LDAoZEK2OEmaFb2+NLabFQAA</XPD:REF>
 </XPD:OBJ>
@@ -28684,7 +28678,7 @@ of asteroid a.
 <XPD:REF name="Tail">/W7L0CzPmUmtYZ166T51wwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="XhcdLzLu4k2ay0vFKvcxrwAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">2 : subSet(ROBOT_RECIPE): bool</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">2 : subSet(ROBOT_RECIPE): void</XPD:ATTR>
 <XPD:REF name="Model">6tlkNDDpWEe0KgwHbMsbnQAA</XPD:REF>
 <XPD:REF name="HostEdge">je3QtMr0YEirRzv1XDLw6wAA</XPD:REF>
 </XPD:OBJ>
@@ -28816,7 +28810,7 @@ of asteroid a.
 <XPD:REF name="Head">q8Az51zQHU2zyFFqs/jHJgAA</XPD:REF>
 <XPD:REF name="Tail">/W7L0CzPmUmtYZ166T51wwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="/EAvqr6MWk27dNXeTYXzMAAA">
-<XPD:ATTR name="Text" type="string">6 : addEntity(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : addSettler(robot): void</XPD:ATTR>
 <XPD:REF name="Model">n6aWhZZ5X0iDGTPp02U6jgAA</XPD:REF>
 <XPD:REF name="HostEdge">I8AjsMRf8EqkWYw7KTICbgAA</XPD:REF>
 </XPD:OBJ>
@@ -28882,7 +28876,7 @@ of asteroid a.
 <XPD:REF name="Tail">/W7L0CzPmUmtYZ166T51wwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="bJ9yc1bpUEG9yu8tXvzmOAAA">
 <XPD:ATTR name="Distance" type="real">113</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">8 : addControllable(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">8 : addRobot(robot): void</XPD:ATTR>
 <XPD:REF name="Model">rKuL3TMXdE+qcGhW6P7xPAAA</XPD:REF>
 <XPD:REF name="HostEdge">xttHn1UcVEyx9Qf9VK0U+wAA</XPD:REF>
 </XPD:OBJ>
@@ -29476,7 +29470,7 @@ of asteroid a.
 <XPD:REF name="Head">UPzKechwxkO+IbMTZBw5mgAA</XPD:REF>
 <XPD:REF name="Tail">9ayA1uhETUWVWY8u5BvnTAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="MAZdMAXa5EyiKtiBXxL/WQAA">
-<XPD:ATTR name="Text" type="string">2 : subSet(STARGATE_RECIPE): bool</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">2 : subSet(STARGATE_RECIPE): void</XPD:ATTR>
 <XPD:REF name="Model">MVylztuF/U+e1q2vEd7eaAAA</XPD:REF>
 <XPD:REF name="HostEdge">2N0RXf8E+0+Japat7kHnPQAA</XPD:REF>
 </XPD:OBJ>
@@ -30578,7 +30572,7 @@ of asteroid a.
 <XPD:REF name="Head">wzh1vnq4p0qULFBkNyxBdAAA</XPD:REF>
 <XPD:REF name="Tail">mlBDluoLY0Gz5FNwPbMw6QAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="7AHOilpDDUe3d6IuQtgpfAAA">
-<XPD:ATTR name="Text" type="string">2 : subSet(BASE_RECIPE): bool</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">2 : subSet(BASE_RECIPE): void</XPD:ATTR>
 <XPD:REF name="Model">SaCvsUPK/kCBdgoQpfxAMAAA</XPD:REF>
 <XPD:REF name="HostEdge">nSTU9QLpmUyA5v89egx1MAAA</XPD:REF>
 </XPD:OBJ>
@@ -34234,7 +34228,7 @@ of asteroid a.
 <XPD:REF name="Tail">e17XiZEqgUCkwXeMBzQm1wAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="Kf3eI1tybEWGSyJ6FIlaFwAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">2 : notifyAllAboutSunFlare(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">2</XPD:ATTR>
 <XPD:REF name="Model">Cw7pLbsM20ay1e5m7DQGBgAA</XPD:REF>
 <XPD:REF name="HostEdge">1tbYcMUD8kmyaI0H5MkdFQAA</XPD:REF>
 </XPD:OBJ>
@@ -34333,7 +34327,7 @@ of asteroid a.
 <XPD:REF name="Tail">8tyw9pqBhUeyGK86rLsnKAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="1b6tCwfgfkSjR6BvTf/z+QAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">5 : removeEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">5 : removeSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">u8r/GVME30ijDWu1I34zggAA</XPD:REF>
 <XPD:REF name="HostEdge">+xChbJ+5xEy/U7ZPcQvR7gAA</XPD:REF>
 </XPD:OBJ>
@@ -34533,7 +34527,7 @@ of asteroid a.
 <XPD:REF name="Tail">EA4xalTDfUGC1LxB9+ZHZAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="+ILzZheYr02dmsgDkyZyGAAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">11 : removeEntity(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">11 : removeSettler(robot): void</XPD:ATTR>
 <XPD:REF name="Model">ANL7jW+QuE6IeYklqqN1lgAA</XPD:REF>
 <XPD:REF name="HostEdge">DVeWJJYl8ken4mr9si/jogAA</XPD:REF>
 </XPD:OBJ>
@@ -35351,7 +35345,7 @@ of asteroid a.
 <XPD:REF name="Tail">Zh82W7Fbp0S9KX0UghbG5QAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="DRrRlHYoxE+ed/pZqn+okQAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : drill()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">2+RCDlPvKEOeLTOVFH5aPwAA</XPD:REF>
 <XPD:REF name="HostEdge">nVmKcQwOPkOxgsUMsT6JXwAA</XPD:REF>
 </XPD:OBJ>
@@ -35908,7 +35902,7 @@ of asteroid a.
 <XPD:REF name="Tail">QuxvSi5jIkqn2XtJGDWN9wAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="hmWGaUIhK0Km44OaVHfHLAAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : drill()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">VGDhqmBUK0m77AtZowUvEgAA</XPD:REF>
 <XPD:REF name="HostEdge">kM7lIZEMb02uqM6Cm6ApAQAA</XPD:REF>
 </XPD:OBJ>
@@ -36465,7 +36459,7 @@ of asteroid a.
 <XPD:REF name="Tail">3OkhX/Vvl0ybezXo+utsZwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="Z57KUpyPzkCeeG5QbknxiAAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : drill()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">vYMzkP9URkyGXa9+b19LFgAA</XPD:REF>
 <XPD:REF name="HostEdge">bFxomMMFEke1eM+tc3w7cAAA</XPD:REF>
 </XPD:OBJ>
@@ -36928,7 +36922,7 @@ of asteroid a.
 <XPD:REF name="Tail">lB5be26Z/0+OAMbcs/QYGAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="l5jsepk4jkqgtf3p+Mo+UQAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : drill()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">fv0vaN07ukyQYbBTMwA6BwAA</XPD:REF>
 <XPD:REF name="HostEdge">V5Y/3ntbhkGV1c8h0r84vwAA</XPD:REF>
 </XPD:OBJ>
@@ -37439,7 +37433,7 @@ of asteroid a.
 <XPD:REF name="Tail">5EnTeAN8fUeFX2J9jjE3iwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="bmQ5sOkpm0ypyBQxQZykCgAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : drill(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">ZpQFNlrSpk2Icfv/SY0XqwAA</XPD:REF>
 <XPD:REF name="HostEdge">NnRPk9z+hUWDU2w1vCwEwgAA</XPD:REF>
 </XPD:OBJ>
@@ -37637,7 +37631,7 @@ of asteroid a.
 <XPD:REF name="Tail">pHyx1ejgmEWhXDEpOI6ubQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="Lh5cc7W+NUecM6higaxIVAAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">7 : removeEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">7 : removeSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">Y84n+Jnqj0ql31nickytmQAA</XPD:REF>
 <XPD:REF name="HostEdge">UYSzLc+6/Uu8JyHCTCrc0wAA</XPD:REF>
 </XPD:OBJ>
@@ -38572,7 +38566,7 @@ of asteroid a.
 <XPD:REF name="Tail">ljpvlfAkNEe1M02y8fAKrwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="m3yJ7XlG8UeawYm2CLiiewAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : drill(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">hA5D6440AEeqxMldgYFAnQAA</XPD:REF>
 <XPD:REF name="HostEdge">V5fK/kErJkKyTMnwXBZLcQAA</XPD:REF>
 </XPD:OBJ>
@@ -38804,7 +38798,7 @@ of asteroid a.
 <XPD:REF name="Tail">GHji0wP4yUmA48TJmZ+utgAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="sYPkbE9czk6k1ouoNJsaKQAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">8 : move(neighbour): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">8</XPD:ATTR>
 <XPD:REF name="Model">ZcDbpLguZ0O2u2yMq+WSoQAA</XPD:REF>
 <XPD:REF name="HostEdge">lJ4SU74YeUCZkEy969MemgAA</XPD:REF>
 </XPD:OBJ>
@@ -38837,7 +38831,7 @@ of asteroid a.
 <XPD:REF name="Tail">GHji0wP4yUmA48TJmZ+utgAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="9MwdpeFuX0aY0sKncWqGIgAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">9 : removeEntity(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">9 : removeSettler(robot): void</XPD:ATTR>
 <XPD:REF name="Model">jWqa4Fhj20e/SfVyOedv3AAA</XPD:REF>
 <XPD:REF name="HostEdge">wAjwtbRPmkulRPhnrthnPwAA</XPD:REF>
 </XPD:OBJ>
@@ -38904,7 +38898,7 @@ of asteroid a.
 <XPD:REF name="Tail">GHji0wP4yUmA48TJmZ+utgAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="43F9plu8M02aL+28ZYSExgAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">11 : addEntity(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">11 : addSettler(robot): void</XPD:ATTR>
 <XPD:REF name="Model">BSLjBldT/0iXl2glMsnLGQAA</XPD:REF>
 <XPD:REF name="HostEdge">DrbgEYAKmkye6k5mFhW2yAAA</XPD:REF>
 </XPD:OBJ>
@@ -39769,7 +39763,7 @@ of asteroid a.
 <XPD:REF name="Tail">7Ix9hlXIaUeT+vrIOEPd4AAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="B6GEyOXMCkGhyTubp0Uz0AAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : drill(): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">7OvoA5n9H0+ngKmnJ3K6jQAA</XPD:REF>
 <XPD:REF name="HostEdge">xImqnWA0aUGTJBYSRfUkdgAA</XPD:REF>
 </XPD:OBJ>
@@ -40034,7 +40028,7 @@ of asteroid a.
 <XPD:REF name="Tail">qvr/5RPMYE+PoGIlqAdldQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="WiA6+w6XQkm3DcGVgkPD9wAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">9 : removeEntity(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">9 : removeSettler(robot): void</XPD:ATTR>
 <XPD:REF name="Model">VueXC1yoGUKB5p6qxBVL+gAA</XPD:REF>
 <XPD:REF name="HostEdge">/EI2q4VQGUSecxf4AxCHfAAA</XPD:REF>
 </XPD:OBJ>
@@ -41131,7 +41125,7 @@ of asteroid a.
 <XPD:REF name="Tail">KJKKMP/mY0Wg+FAwg/6ziAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="RMdmMZdr7EavUT7UwGQ14AAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : move(destination): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">cqiw7BxTH0yfY2pmEwTIUgAA</XPD:REF>
 <XPD:REF name="HostEdge">3+j5AePN70CGVt9tQW1+1QAA</XPD:REF>
 </XPD:OBJ>
@@ -41229,7 +41223,7 @@ of asteroid a.
 <XPD:REF name="Head">DcMkIxH9okGTxBEpeuSheQAA</XPD:REF>
 <XPD:REF name="Tail">TjMOGswxw0iXdTmP8lDvZAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="ljLifa5uG0quR9H8O1KVeAAA">
-<XPD:ATTR name="Text" type="string">4 : removeEntity(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : removeSettler(robot): void</XPD:ATTR>
 <XPD:REF name="Model">wHxUyg/KG0WOZ2lJp83ZUwAA</XPD:REF>
 <XPD:REF name="HostEdge">9BxyUgdwFkqyNIHLStfaaQAA</XPD:REF>
 </XPD:OBJ>
@@ -41296,7 +41290,7 @@ of asteroid a.
 <XPD:REF name="Tail">TjMOGswxw0iXdTmP8lDvZAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="GnAoII1nukmuABumwJ1LYQAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : addEntity(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : addSettler(robot): void</XPD:ATTR>
 <XPD:REF name="Model">cITvL4b5JEm9uxwLWDXQwAAA</XPD:REF>
 <XPD:REF name="HostEdge">bdihz888BEeRLlXpFwRR6gAA</XPD:REF>
 </XPD:OBJ>
@@ -41689,7 +41683,7 @@ of asteroid a.
 <XPD:REF name="Tail">py408NX3BkmtVq4RRuJ2DgAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="qV+PT/W7T0GofMCQ0XyhLgAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : move(destination): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">855UGMsH1EKpntOXdfUYNQAA</XPD:REF>
 <XPD:REF name="HostEdge">ZPefIbVHVEGtfnWipEAfhAAA</XPD:REF>
 </XPD:OBJ>
@@ -41789,7 +41783,7 @@ of asteroid a.
 <XPD:REF name="Tail">nBKHeK/mGkKB5B97Ppr25AAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="ItofNSrtu067T+n3J2hFRQAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">4 : removeEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : removeSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">oiAoi1mT5kyzYTvlnBsXggAA</XPD:REF>
 <XPD:REF name="HostEdge">SQFEMCnjmUySjRtp6efkqgAA</XPD:REF>
 </XPD:OBJ>
@@ -41856,7 +41850,7 @@ of asteroid a.
 <XPD:REF name="Tail">nBKHeK/mGkKB5B97Ppr25AAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="6Tz6O8Bz3E+70g6K56nb6wAA">
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : addEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : addSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">04vtZDxTik+zFd05DBNPOQAA</XPD:REF>
 <XPD:REF name="HostEdge">Zyl1b2Dcuk6BAJUKGJ3argAA</XPD:REF>
 </XPD:OBJ>
@@ -50086,7 +50080,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="2C3JHZccIEOlfaONUDsITwAA">
 <XPD:ATTR name="Width" type="integer">171</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">10 : addControllable(asteroid): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">10 : addRobot(asteroid): void</XPD:ATTR>
 <XPD:REF name="Model">ps0IIFbg+UqLey9DwDkiGAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="g48LDr/PB0aO/rgESd9xywAA">
@@ -50170,7 +50164,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="pJTvh658z0uCmJ8RD0E3yAAA">
 <XPD:ATTR name="Width" type="integer">134</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">13 : addEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">13 : addSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">9eqd2xxv7UC5WnSvX2TVTgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="vokgH9cP7Eq83y/XYhIPwAAA">
@@ -50559,7 +50553,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">141</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">17 : addInventory(iron): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">17 : addMaterial(iron): void</XPD:ATTR>
 <XPD:REF name="Model">bOg4soK24EaOKIIQaWEwyQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="1XZkEsjpS0S61NhF0GYTLwAA">
@@ -50588,7 +50582,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">145</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">18 : addInventory(uran): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">18 : addMaterial(uran): void</XPD:ATTR>
 <XPD:REF name="Model">z3nBBoJCXEqOA/DHXCFGXQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="2ifh0Ngtz0OEuqXyWLVBVQAA">
@@ -50617,7 +50611,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">142</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">19 : addInventory(coal): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">19 : addMaterial(coal): void</XPD:ATTR>
 <XPD:REF name="Model">zm7ARS01+EitX3HaiZLSqgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="5wDAcwgs5UeD8mK4edcXGgAA">
@@ -51514,7 +51508,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="ZoSDCTBA9UyX4hb/USqeegAA">
 <XPD:ATTR name="Width" type="integer">139</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">3 : addInventory(uran): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">3 : addMaterial(uran): void</XPD:ATTR>
 <XPD:REF name="Model">dF8vYr4mIU2xyTbN68KJggAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="pmgzNPD5cEOwZZ3TTi7QDQAA">
@@ -51542,7 +51536,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="n/p/kL9OKUuYoIAvm++boAAA">
 <XPD:ATTR name="Width" type="integer">130</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">4 : addInventory(ice): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : addMaterial(ice): void</XPD:ATTR>
 <XPD:REF name="Model">9oHMfSgKekG6XMTZFm3ctgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="OV1temKJC0Cae7N/tGaFEwAA">
@@ -51755,7 +51749,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">141</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">12 : addInventory(iron): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">12 : addMaterial(iron): void</XPD:ATTR>
 <XPD:REF name="Model">XVamgJDEbkCOCgfSY4t3BgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="vUcvS3oP+kqC8IN8hgNzZQAA">
@@ -51783,7 +51777,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="fkzomV/UY0CyDqzmzdQQxgAA">
 <XPD:ATTR name="Width" type="integer">141</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">13 : addInventory(iron): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">13 : addMaterial(iron): void</XPD:ATTR>
 <XPD:REF name="Model">dTpD6Mlk7U6Qj1mQJ7hIJgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="vtvNghMQg0ezBWIcM65KcgAA">
@@ -52524,7 +52518,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="Vou4qWkgOE2AwFl5PyZxcAAA">
 <XPD:ATTR name="Width" type="integer">171</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">18 : addControllable(asteroid): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">18 : addRobot(asteroid): void</XPD:ATTR>
 <XPD:REF name="Model">CryR6EHPGEeexpAg4zmP7AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="n/y4wksGpUWhpwadO3jruwAA">
@@ -52608,7 +52602,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="NM3NcQ/YJ0mW+E6Ad6+HrAAA">
 <XPD:ATTR name="Width" type="integer">134</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">21 : addEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">21 : addSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">zjFFf2SwmUWa1fMPgwQ8mwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="dGsCwk6L+EqAs2+sMvCYHAAA">
@@ -53850,7 +53844,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">147</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">14</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">26 : addInventory(iron1): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">26 : addMaterial(iron1): void</XPD:ATTR>
 <XPD:REF name="Model">9uOWVgAIK0aYe7ZZpUHiJQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="jmg5nFN34Eq2wBhqJ7aFfAAA">
@@ -53879,7 +53873,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">147</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">27 : addInventory(iron2): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">27 : addMaterial(iron2): void</XPD:ATTR>
 <XPD:REF name="Model">yRQ9W2ukzEK+6Y7+ACLp8wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="7nKkv+W2a0yLETRSyQIhCQAA">
@@ -53908,7 +53902,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">147</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">28 : addInventory(iron3): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">28 : addMaterial(iron3): void</XPD:ATTR>
 <XPD:REF name="Model">Pw/QrO5C7kGvsQe1EyKcVQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="ovgqyELV0USxZu1WIDYqsgAA">
@@ -53936,7 +53930,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="T8DlDjENakiFaTPEzE5wuQAA">
 <XPD:ATTR name="Width" type="integer">151</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">29 : addInventory(uran1): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">29 : addMaterial(uran1): void</XPD:ATTR>
 <XPD:REF name="Model">wXXnF57E102qJzTgKbAuJQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="d+alVm77M0aP6Gr4miHyyAAA">
@@ -53965,7 +53959,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">151</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">30 : addInventory(uran2): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">30 : addMaterial(uran2): void</XPD:ATTR>
 <XPD:REF name="Model">tRvB3I1ZeUq+5k0D4583VQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="bkBxLfrS90aonkI36Ku6vQAA">
@@ -53994,7 +53988,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">151</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">31 : addInventory(uran3): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">31 : addMaterial(uran3): void</XPD:ATTR>
 <XPD:REF name="Model">ucctUbo46EmPlVU9V8LlsAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="HbEzai4v1Ei1sPNZ0NmxoAAA">
@@ -54023,7 +54017,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">142</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">32 : addInventory(ice1): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">32 : addMaterial(ice1): void</XPD:ATTR>
 <XPD:REF name="Model">Izb4+ZcF6kGEdXYHrZU1LwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="lAdofgc+t0uKIKHyI9tA6AAA">
@@ -54052,7 +54046,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">142</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">14</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">33 : addInventory(ice2): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">33 : addMaterial(ice2): void</XPD:ATTR>
 <XPD:REF name="Model">V2mk+3R8ukKmfh7Wh/ecZAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="x9+JflGj+0mWQUFOJfOMBgAA">
@@ -54081,7 +54075,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">142</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">34 : addInventory(ice3): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">34 : addMaterial(ice3): void</XPD:ATTR>
 <XPD:REF name="Model">TelXDZlv9k+mLjHXCMhMmAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="YDmy711TeEGgrfIBWszQUAAA">
@@ -54110,7 +54104,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">148</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">35 : addInventory(coal1): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">35 : addMaterial(coal1): void</XPD:ATTR>
 <XPD:REF name="Model">6TKQL9Z8606jOFkMiZdQ3gAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="9BVaGUkXWUuTLWF6mDi4EAAA">
@@ -54139,7 +54133,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">148</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">36 : addInventory(coal2): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">36 : addMaterial(coal2): void</XPD:ATTR>
 <XPD:REF name="Model">PEyMKQDxMkahXrOQGXIcaQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="gXlRTvFvekKpKBvEPuGRGwAA">
@@ -54168,7 +54162,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">148</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">37 : addInventory(coal3): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">37 : addMaterial(coal3): void</XPD:ATTR>
 <XPD:REF name="Model">D+BwufAwvUGwcL2qO1sn7AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="51mi17ynckCFxtRKGP5uyAAA">
@@ -56789,7 +56783,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="qy/IFi9GdEOgjeftvYKTHAAA">
 <XPD:ATTR name="Width" type="integer">165</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">8 : addControllable(asteroid): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">8 : addRobot(asteroid): void</XPD:ATTR>
 <XPD:REF name="Model">dj9hydh5mEmSMioHKAeehQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="+1pe+SEDakWCPOI0pvZcMwAA">
@@ -56817,7 +56811,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="6aOVprsKhUKoTMaHVNNewAAA">
 <XPD:ATTR name="Width" type="integer">214</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">9 : addControllable(neighbourAsteroid): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">9 : addRobot(neighbourAsteroid): void</XPD:ATTR>
 <XPD:REF name="Model">ePMZnqsnv0WaGL9nvDnqUAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="VF05uReMmEKAT4u3DbCbXwAA">
@@ -56901,7 +56895,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="jj5x+4v11kOX0A3SDwWDZwAA">
 <XPD:ATTR name="Width" type="integer">134</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">12 : addEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">12 : addSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">1q8kdeLuXkeAjMZ7Is+rUQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="k7RqGt2zhE+kKCEBh5bSFQAA">
@@ -58021,7 +58015,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">134</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">10 : addEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">10 : addSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">hpanszdAEESXDfMLiuRf4wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="pMNXvJEqHUGTcRJWZx9OwQAA">
@@ -60268,7 +60262,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">143</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">60</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : addControllable(sun): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : addRobot(sun): void</XPD:ATTR>
 <XPD:REF name="Model">UdRX2NsqWEOQBbjdngamnAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="wnZuiN+naEyGXzbWG3kLJAAA">
@@ -60325,7 +60319,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">128</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">8 : addEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">8 : addSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">jJRRa+wiUUu8S2W8rX1cwwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="cuiiKwZceECiH31aDRVRvQAA">
@@ -60354,7 +60348,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">123</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">9 : addEntity(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">9 : addSettler(robot): void</XPD:ATTR>
 <XPD:REF name="Model">stNu4QPyFECDFl+VRC1A5AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="oxnNks75hk2d+gjP8p+f2AAA">
@@ -60441,7 +60435,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">171</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">23</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">12 : addControllable(asteroid): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">12 : addRobot(asteroid): void</XPD:ATTR>
 <XPD:REF name="Model">DDMe7aeVi0ujTwiL5Ap2hQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="lqAG7+PqmkuEQXAr3gAwQQAA">
@@ -60498,7 +60492,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">158</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">53</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">14 : addControllable(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">14 : addRobot(robot): void</XPD:ATTR>
 <XPD:REF name="Model">iaYx9X2oJk67RsQ8BdQWFgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="/+O6Mb1iUE+OF+yqmXOgQwAA">
@@ -61580,7 +61574,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">96</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : addEntity(robot)</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : addSettler(robot)</XPD:ATTR>
 <XPD:REF name="Model">opOsi5l6wUygJ1K7U+IqDQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="Rp8kw2Mwk0mk6FppLXHGjAAA">
@@ -62101,7 +62095,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">101</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : addEntity(settler)</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : addSettler(settler)</XPD:ATTR>
 <XPD:REF name="Model">TDIGwVYkI02ucuunlKiWqgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="+TsBe5KsnkGLwLWQBGNZKgAA">
@@ -62620,7 +62614,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">101</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : addEntity(settler)</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : addSettler(settler)</XPD:ATTR>
 <XPD:REF name="Model">UTpmBOf6GkStl7w/gxe9UgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="e+gJQNR/9UW/IHnyK/rDMAAA">
@@ -63140,7 +63134,7 @@ of asteroid a.
 <XPD:ATTR name="Width" type="integer">96</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : addEntity(robot)</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : addSettler(robot)</XPD:ATTR>
 <XPD:REF name="Model">kiP3ttaRGEmC8H+6hXJBDQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="Pd84YEeflEqUyXIjeF2CtwAA">
@@ -67485,7 +67479,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="Y6DXVRIpPkSvMLrd+sX3FgAA">
 <XPD:ATTR name="Width" type="integer">123</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">7 : addEntity(robot): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">7 : addSettler(robot): void</XPD:ATTR>
 <XPD:REF name="Model">hRkyKXGCZEqc9/H44AnpEAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="ch6kCloIUkeQzqKp4HkdoAAA">
@@ -68038,7 +68032,7 @@ of asteroid a.
 <XPD:OBJ name="NameLabel" type="NodeLabelView" guid="gGFfb4XC6U2vAYAbxzbBZQAA">
 <XPD:ATTR name="Width" type="integer">128</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">13</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">7 : addEntity(settler): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">7 : addSettler(settler): void</XPD:ATTR>
 <XPD:REF name="Model">LKXj7QQrt0OWT1Fo8Ht8NQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="NodeLabelView" guid="jt9QQV0Zu0KhZA61IfWYzAAA">
@@ -68417,6 +68411,99 @@ of asteroid a.
 <XPD:ATTR name="#Stimuli" type="integer">2</XPD:ATTR>
 <XPD:REF name="Stimuli[0]">TCAP2/cbTUiIn0RpPd6J8QAA</XPD:REF>
 <XPD:REF name="Stimuli[1]">HDm7IYpwKkiu0YyZVEx7sAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[5]" type="UMLModel" guid="oxoIo9UGCUuTaSyn6DZdRQAA">
+<XPD:ATTR name="Name" type="string">Prototype</XPD:ATTR>
+<XPD:REF name="Namespace">1KWYn2BrJUm1PB7ASEY/lwAA</XPD:REF>
+<XPD:ATTR name="#OwnedCollaborationInstanceSets" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="OwnedCollaborationInstanceSets[0]" type="UMLCollaborationInstanceSet" guid="5pXm3lhu206R1BfCwOBmpgAA">
+<XPD:ATTR name="Name" type="string">Crafting</XPD:ATTR>
+<XPD:REF name="RepresentedClassifier">oxoIo9UGCUuTaSyn6DZdRQAA</XPD:REF>
+<XPD:ATTR name="#InteractionInstanceSets" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="mCeOBDLuu0WEHAC2N5Q+fgAA">
+<XPD:ATTR name="Name" type="string">RobotCraftingSequence</XPD:ATTR>
+<XPD:REF name="Context">5pXm3lhu206R1BfCwOBmpgAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLSequenceDiagram" guid="h6FyRQrz4EiU6ebBPq3izwAA">
+<XPD:ATTR name="Name" type="string">RobotCrafting</XPD:ATTR>
+<XPD:ATTR name="MessageSignature" type="UMLMessageSignatureKind">mskNameAndType</XPD:ATTR>
+<XPD:REF name="DiagramOwner">mCeOBDLuu0WEHAC2N5Q+fgAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLSequenceDiagramView" guid="fy0si3WAy0uYjtl+MDfMoAAA">
+<XPD:REF name="Model">h6FyRQrz4EiU6ebBPq3izwAA</XPD:REF>
+<XPD:REF name="Diagram">h6FyRQrz4EiU6ebBPq3izwAA</XPD:REF>
+<XPD:ATTR name="#OwnedViews" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedViews[0]" type="UMLFrameView" guid="InG8/4wmSkeehFb6g2jfMwAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">96</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">60</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">736</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">464</XPD:ATTR>
+<XPD:REF name="Model">nXmKnXtr2E2UxVYwTkp1LwAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="LabelView" guid="ApC6rxGjnk2xFeViDfzs2gAA">
+<XPD:ATTR name="Text" type="string">Robot Crafting</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="knYmlmbTLEeXxB7FW2qI0gAA">
+<XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">sd</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#OwnedFrames" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedFrames[0]" type="UMLFrame" guid="nXmKnXtr2E2UxVYwTkp1LwAA">
+<XPD:ATTR name="Name" type="string">Robot Crafting</XPD:ATTR>
+<XPD:ATTR name="FrameKind" type="string">sd</XPD:ATTR>
+<XPD:REF name="InteractionInstanceSet">mCeOBDLuu0WEHAC2N5Q+fgAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
+<XPD:REF name="Views[0]">InG8/4wmSkeehFb6g2jfMwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="InteractionInstanceSets[1]" type="UMLInteractionInstanceSet" guid="OSeUAsQwO0O8Wga8tmmi9gAA">
+<XPD:ATTR name="Name" type="string">StarGateCraftingSequence</XPD:ATTR>
+<XPD:REF name="Context">5pXm3lhu206R1BfCwOBmpgAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLSequenceDiagram" guid="FYbuq01qnkqRALOWXs341AAA">
+<XPD:ATTR name="Name" type="string">StarGateCrafting</XPD:ATTR>
+<XPD:REF name="DiagramOwner">OSeUAsQwO0O8Wga8tmmi9gAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLSequenceDiagramView" guid="fq8BGXi3YUOP3+MAoBmAhgAA">
+<XPD:REF name="Model">FYbuq01qnkqRALOWXs341AAA</XPD:REF>
+<XPD:REF name="Diagram">FYbuq01qnkqRALOWXs341AAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="InteractionInstanceSets[2]" type="UMLInteractionInstanceSet" guid="cWKkmlJSPkmGe5fOk+biQAAA">
+<XPD:ATTR name="Name" type="string">BaseCraftingSequence</XPD:ATTR>
+<XPD:REF name="Context">5pXm3lhu206R1BfCwOBmpgAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLSequenceDiagram" guid="vW0Fq7HPpEGscbaoihSVGwAA">
+<XPD:ATTR name="Name" type="string">BaseCrafting</XPD:ATTR>
+<XPD:REF name="DiagramOwner">cWKkmlJSPkmGe5fOk+biQAAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLSequenceDiagramView" guid="u0PXC5IM0EWrd9zpkQnWJwAA">
+<XPD:REF name="Model">vW0Fq7HPpEGscbaoihSVGwAA</XPD:REF>
+<XPD:REF name="Diagram">vW0Fq7HPpEGscbaoihSVGwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedCollaborationInstanceSets[1]" type="UMLCollaborationInstanceSet" guid="3wt+Yn21nUaOAGs+Wg5iTQAA">
+<XPD:ATTR name="Name" type="string">CollaborationInstanceSet1</XPD:ATTR>
+<XPD:REF name="RepresentedClassifier">oxoIo9UGCUuTaSyn6DZdRQAA</XPD:REF>
+<XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="olDSwy5fhEmbOVAOTWqUwgAA">
+<XPD:ATTR name="Name" type="string">PlaceStarGateSequence</XPD:ATTR>
+<XPD:REF name="Context">3wt+Yn21nUaOAGs+Wg5iTQAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLSequenceDiagram" guid="IDWOUima4kqDpr8KpoHVGAAA">
+<XPD:ATTR name="Name" type="string">PlaceStarGate</XPD:ATTR>
+<XPD:REF name="DiagramOwner">olDSwy5fhEmbOVAOTWqUwgAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLSequenceDiagramView" guid="5tkAQHu5vU2w6CmFlfZpSAAA">
+<XPD:REF name="Model">IDWOUima4kqDpr8KpoHVGAAA</XPD:REF>
+<XPD:REF name="Diagram">IDWOUima4kqDpr8KpoHVGAAA</XPD:REF>
+</XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>

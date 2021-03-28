@@ -39,148 +39,20 @@ A tesztek leirasa nem ugyanaz, mint a use-case-ek.
 
 ================================================================
 UI:
-                                                                                                              
 
+create game;
 
+list all settlers
+Kilistázza a játékban lévő összes settler ID+jét és asteroidáját.
 
 
+list settler <ID>
+ID
+Asteroid
+	és változói
+Inventory tartalma
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+action 
 
 
 

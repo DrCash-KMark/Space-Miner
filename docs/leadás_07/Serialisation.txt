@@ -1,0 +1,159 @@
+Jelmagyarázat:
+<bool> - t / f
+
+
+--------------------------------------------------
+
+Általános:
+
+class: <Type>
+{
+ID: <id>
+}
+
+--------------------------------------------------
+
+Settler:
+
+class: <Type>
+{
+canStep: <bool>
+ID: <id>
+asteroid: <asteroid id>
+inventory: <inv id>
+}
+
+-----------------------------------------------
+
+Inventory:
+
+class: <Type>
+{
+ID: <id>
+materials:
+{
+<material id>
+<material id>
+...
+}
+}
+
+-----------------------------------------------
+
+Material:
+
+class: <Type>
+{
+ID: <id>
+canExplode: <bool val>
+age: <int age>
+}
+
+-----------------------------------------------
+Asteroid:
+
+class: <Type>
+{
+ID: <id>
+neighbours:
+{
+<id>
+...
+}
+settlers:
+{
+<id>
+...
+}
+nonPlayers:
+{
+<id>
+...
+}
+materials:
+{
+<id>
+...
+}
+buildings:
+{
+<id>
+...
+}
+closeToSun: <bool>
+rockThickness: <bool>
+}
+
+---------------------------------------------------------------
+Sun:
+
+class: <Type>
+{
+ID: <id>
+asteroids:
+{
+<id>
+...
+}
+}
+
+----------------------------------------------------------------
+NonPlayer:
+
+class: <Type>
+{
+ID: <id>
+asteroid: <asteroid id>
+}
+
+-------------------------------------------------------------------
+
+Inicializálás:
+
+init game <manually, random>
+
+load game <file name>
+
+create settler
+create robot
+create alien
+create asteroid
+create sun
+create material <type>
+
+set settler property <id> <property name> <new value>
+set robot property <id> <property name> <new value>
+set alien property <id> <property name> <new value>
+set asteroid property <id> <property name> <new value>
+set sun property <id> <property name> <new value>
+set material <type> property <id> <property name> <new value>
+
+set alien deterministic behaviour <id> <t / f>
+set robot deterministic behaviour <id> <t / f>
+set sun deterministic behaviour <id> <t / f>
+
+add robot behaviour <**>
+add alien behaviour <**>
+add sun behaviour <**>
+
+
+
+start game
+
+save game <file name>
+
+end game
+
+-------------------------------------------------------------------
+
+**
+move <id>
+drill
+mine
+sunflare
+
+
+
+
+
+

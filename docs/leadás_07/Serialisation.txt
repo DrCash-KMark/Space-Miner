@@ -4,21 +4,12 @@ Jelmagyarázat:
 
 --------------------------------------------------
 
-Általános:
-
-class: <Type>
-{
-ID: <id>
-}
-
---------------------------------------------------
-
 Settler:
 
 class: <Type>
 {
-canStep: <bool>
-ID: <id>
+hadActionThisTurn: <bool>
+id: <id>
 asteroid: <asteroid id>
 inventory: <inv id>
 }
@@ -29,24 +20,32 @@ Inventory:
 
 class: <Type>
 {
-ID: <id>
+id: <id>
 materials:
 {
 <material id>
 <material id>
 ...
 }
+stargates
+{
+<stargate id>
+<stargate id>
+...
+}
 }
 
 -----------------------------------------------
 
-Material:
+Material: (Közös struktúra minden nyersanyagra)
 
 class: <Type>
 {
-ID: <id>
-canExplode: <bool val>
-age: <int age>
+id: <id>
+isRadio: <bool>
+name: <string>
+canEvaporate: <bool>
+exposedCounter: <int>
 }
 
 -----------------------------------------------
@@ -55,33 +54,34 @@ Asteroid:
 class: <Type>
 {
 ID: <id>
+rockThickness: <bool>
+closeToSun: <bool>
+isRandom: <bool>
 neighbours:
 {
-<id>
+<neighbour id>
 ...
 }
 settlers:
 {
-<id>
+<settler id>
 ...
 }
 nonPlayers:
 {
-<id>
+<nonPlayer id>
 ...
 }
 materials:
 {
-<id>
+<material id>
 ...
 }
 buildings:
 {
-<id>
+<building id>
 ...
 }
-closeToSun: <bool>
-rockThickness: <bool>
 }
 
 ---------------------------------------------------------------
@@ -89,10 +89,11 @@ Sun:
 
 class: <Type>
 {
-ID: <id>
+id: <id>
+isRandom: <bool>
 asteroids:
 {
-<id>
+<asteroid id>
 ...
 }
 }
@@ -102,7 +103,7 @@ NonPlayer:
 
 class: <Type>
 {
-ID: <id>
+id: <id>
 asteroid: <asteroid id>
 }
 
@@ -121,12 +122,12 @@ create asteroid
 create sun
 create material <type>
 
-set settler property <id> <property name> <new value>
-set robot property <id> <property name> <new value>
-set alien property <id> <property name> <new value>
-set asteroid property <id> <property name> <new value>
-set sun property <id> <property name> <new value>
-set material <type> property <id> <property name> <new value>
+set settler property <settler id> <property name> <new value>
+set robot property <settler id> <property name> <new value>
+set alien property <settler id> <property name> <new value>
+set asteroid property <settler id> <property name> <new value>
+set sun property <settler id> <property name> <new value>
+set material <type> property <settler id> <property name> <new value>
 
 set alien deterministic behaviour <id> <t / f>
 set robot deterministic behaviour <id> <t / f>
@@ -135,25 +136,19 @@ set sun deterministic behaviour <id> <t / f>
 add robot behaviour <**>
 add alien behaviour <**>
 add sun behaviour <**>
-
-
+add stargate behaviour <**>
 
 start game
 
 save game <file name>
 
-end game
+quit
 
 -------------------------------------------------------------------
 
 **
-move <id>
+move <asteroid id>
 drill
 mine
 sunflare
-
-
-
-
-
 

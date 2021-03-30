@@ -1,0 +1,96 @@
+Kedves csapat!
+
+A szkeleton beadásra 20-ból 20 pontot adtam.
+
+Észrevételek:
+---------------------------------
+Minden rendben.
+---------------------------------
+
+A prototípus koncepciójára 20-ból 10 pontot adtam.
+
+Észrevételek:
+---------------------------------
+Nyersanyagok kezelését specifikusan kellene megoldani: csak az urán robban, csak a jég szublimál.
+Kapu mozgása hibásnak tűnik: ha két szomszédos aszteroidára kerül a két szomszédos kapu, majd továbbmennek, akkor megszüntetik az aszteroidák szomszédságát.
+Parancsok specifikációja hiányos: id-k lehetséges értékei nincsenek megadva,
+property-k nevei és azok lehetséges értékei nincsenek megadva,
+viselkedések leheséges értékei nincsenek megadva.
+Ezalapján a doksi alapján nem lehet teszteseteket írni.
+A save csak egy állapotot tud menteni, nem lehet így köztes lépéseket ellenőrizni.
+A kimeneti kiírások sorrendje sem specifikált.
+Kapun való áthaladás nincs tesztelve.
+Kapuk mozgása nincs tesztelve.
+7.4-es szakasz hiányos.
+Parancssorból gradle nélkül futtathatónak kell lennie a teszteknek.
+Lehessen egy kiválasztott tesztet futtatni, vagy az összeset.
+A segédprogram írja ki, hogy melyik teszt sikeres, melyik nem.
+---------------------------------
+
+A következő anyagról leírás:
+---------------------------------
+Objektumok és metódusok tervei:
+- minden metódusnak meg kell lennie (private, protected, public, minden)
+- metódusokban az algoritmusok leírása olyan szinten, hogy a programozó implementálni tudja, ne kelljen kitalálnia semmit
+- ha az objektumnak van állapota, akkor state-chart is kell mellé
+- a hosszabb algoritmusokhoz (legalább 3 sor) kell activity diagram is, de legalább egy pszeudokód-leírás. Java, C#, C++, stb. kódrészlet itt tilos!
+
+Tesztek részletes tervei, leírásuk a teszt nyelvén:
+- pályák megadása a pályaleíró nyelven (ha van)
+- bemenet megadása a bemenet nyelvén, amit majd a kész programmal meg lehet etetni. Az itt megadott inputot el kell fogadja a kész szoftver!
+- elvárt kimenet megadása a kimenet nyelvén. Pontosan ezeknek kell kiíródnia helyes működés esetén (ahol random elem van, ott ezt bele lehet írni, de a determinisztikus részek elvárt kimenetét itt kell rögzíteni).
+
+Tesztelést támogató programok tervei (mindennek parancssorból kell működnie):
+- egy teszt lefuttatása hogyan fog zajlani
+- minden teszt lefuttatása milyen támogatással, ha külön program kell, azt itt kell megtervezni
+- elvárt és tényleges kimenet összehasonlítása hogyan zajlik? (kell rá támogatás, ne a tesztelőnek kelljen többszáz sort kézzel átbogarásznia)
+---------------------------------
+
+Ha van még kérdésetek, akkor a konzultáción megbeszéljük.
+
+Üdvözlettel:
+Simon Balázs
+
+
+---------------------------------
+Feladat:
+
+Inicializálás
+
+
+	
+A1, A2, A3 aszteroida, ebben a sorrendben szomszédok.
+	S1 telepes A1-en áll, zsebében van G4 kapu.
+	G4 párja G3, ami A2 szomszédja.
+	G1 kapu az A1 szomszédja, G2 kapu az A3 szomszédja.
+	G1 és G2 párt alkotnak.
+	R1 robot A3-on.
+	A3 meg van fúrva.
+	A1 meg van fúrva, benne van U1 urán, ami már 2x kapott napközelt.
+
+Vezérlés
+
+
+	
+S1 felveszi U1-et
+	S1 átlép G1-re, és végül A3-ra kerül
+	S1 lerakja U1-et
+	Napközelbe kerül A3
+
+ 
+Elvárt folytatás:
+
+
+	
+U1 felrobban
+	A3 felrobban
+	S1 meghal
+	G4 megsemmisül és magával rántja G3-at
+	G2 megsemmisül és magával rántja G1-et
+	R1 átrepül A2-re
+
+Eredmények ellenőrzése
+
+
+	
+A maradék objektumok állapotait kiíratjuk

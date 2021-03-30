@@ -37,3 +37,47 @@ Ha van még kérdésetek, akkor a konzultáción megbeszéljük.
 
 Üdvözlettel:
 Simon Balázs
+
+
+---------------------------------
+Feladat:
+
+Inicializálás
+
+
+	
+A1, A2, A3 aszteroida, ebben a sorrendben szomszédok.
+	S1 telepes A1-en áll, zsebében van G4 kapu.
+	G4 párja G3, ami A2 szomszédja.
+	G1 kapu az A1 szomszédja, G2 kapu az A3 szomszédja.
+	G1 és G2 párt alkotnak.
+	R1 robot A3-on.
+	A3 meg van fúrva.
+	A1 meg van fúrva, benne van U1 urán, ami már 2x kapott napközelt.
+
+Vezérlés
+
+
+	
+S1 felveszi U1-et
+	S1 átlép G1-re, és végül A3-ra kerül
+	S1 lerakja U1-et
+	Napközelbe kerül A3
+
+ 
+Elvárt folytatás:
+
+
+	
+U1 felrobban
+	A3 felrobban
+	S1 meghal
+	G4 megsemmisül és magával rántja G3-at
+	G2 megsemmisül és magával rántja G1-et
+	R1 átrepül A2-re
+
+Eredmények ellenőrzése
+
+
+	
+A maradék objektumok állapotait kiíratjuk

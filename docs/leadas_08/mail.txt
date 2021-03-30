@@ -11,7 +11,20 @@ A prototípus koncepciójára 20-ból 10 pontot adtam.
 
 Észrevételek:
 ---------------------------------
-Nyersanyagok kezelését specifikusan kellene megoldani: csak az urán robban, csak a jég szublimál. Kapu mozgása hibásnak tűnik: ha két szomszédos aszteroidára kerül a két szomszédos kapu, majd továbbmennek, akkor megszüntetik az aszteroidák szomszédságát. Parancsok specifikációja hiányos: id-k lehetséges értékei nincsenek megadva, property-k nevei és azok lehetséges értékei nincsenek megadva, viselkedések leheséges értékei nincsenek megadva. Ezalapján a doksi alapján nem lehet teszteseteket írni.  A save csak egy állapotot tud menteni, nem lehet így köztes lépéseket ellenőrizni. A kimeneti kiírások sorrendje sem specifikált. Kapun való áthaladás nincs tesztelve. Kapuk mozgása nincs tesztelve. 7.4-es szakasz hiányos. Parancssorból gradle nélkül futtathatónak kell lennie a teszteknek. Lehessen egy kiválasztott tesztet futtatni, vagy az összeset. A segédprogram írja ki, hogy melyik teszt sikeres, melyik nem.
+Nyersanyagok kezelését specifikusan kellene megoldani: csak az urán robban, csak a jég szublimál.
+Kapu mozgása hibásnak tűnik: ha két szomszédos aszteroidára kerül a két szomszédos kapu, majd továbbmennek, akkor megszüntetik az aszteroidák szomszédságát.
+Parancsok specifikációja hiányos: id-k lehetséges értékei nincsenek megadva,
+property-k nevei és azok lehetséges értékei nincsenek megadva,
+viselkedések leheséges értékei nincsenek megadva.
+Ezalapján a doksi alapján nem lehet teszteseteket írni.
+A save csak egy állapotot tud menteni, nem lehet így köztes lépéseket ellenőrizni.
+A kimeneti kiírások sorrendje sem specifikált.
+Kapun való áthaladás nincs tesztelve.
+Kapuk mozgása nincs tesztelve.
+7.4-es szakasz hiányos.
+Parancssorból gradle nélkül futtathatónak kell lennie a teszteknek.
+Lehessen egy kiválasztott tesztet futtatni, vagy az összeset.
+A segédprogram írja ki, hogy melyik teszt sikeres, melyik nem.
 ---------------------------------
 
 A következő anyagról leírás:

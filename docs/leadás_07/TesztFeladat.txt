@@ -1,6 +1,92 @@
 2021. 3. 30.
 Teszt feladat:
 
+--------------------------------------------------------------------------
 Inicializálás:
 
+init game manually
 
+create asteroid A1
+create asteroid A2
+create asteroid A3
+
+create stargate G1
+create stargate G2
+create stargate G3
+create stargate G4
+
+create settler S1
+create robot R1
+
+create inventory I
+create uran U1
+
+set stargate property neighbour G1 G2
+set stargate property neighbour G2 G1
+
+set stargate property neighbour G3 G4
+set stargate property neighbour G4 G3
+
+set material exposed U1 2
+
+add inventory stargate I G4
+
+set settler property asteroid S1 A1
+set settler property inventory S1 I
+set settler property hadActionThisTurn S1 f
+add asteroid settler A1 S1
+
+
+set robot property asteroid R1 A3
+add asteroid nonplayer A3 R1
+
+add asteroid neighbour A1 A2
+add asteroid neighbour A2 A1
+add asteroid neighbour A2 A3
+add asteroid neighbour A3 A2
+
+set asteroid deterministic behaviour A1 t
+set asteroid deterministic behaviour A2 t
+set asteroid deterministic behaviour A3 t
+
+set asteroid property rockthickness A1 0
+set asteroid property rockthickness A3 0
+
+set asteroid property material A1 U1
+
+
+--------------------------------------------------------------------------
+Vezérlés:
+start game
+
+mine settler S1
+
+end turn
+
+move settler S1 dest A3
+
+end turn
+
+drop settler S1 material U1
+
+add asteroid behaviour A3 changeclosetosun
+end turn
+
+--------------------------------------------------------------------------
+Elvárt folytatás (Output):
+
+material exploded U1
+asteroid exploded A3
+settler died S1
+stargate broke G4
+stargate broke G3
+stargate broke G2
+stargate broke G1
+robot move R1 A2
+
+--------------------------------------------------------------------------
+Eredmények ellenőrzése:
+
+list all
+
+--------------------------------------------------------------------------

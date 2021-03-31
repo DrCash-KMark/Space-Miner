@@ -45,6 +45,14 @@ add asteroid neighbour A2 A1
 add asteroid neighbour A2 A3
 add asteroid neighbour A3 A2
 
+set building asteroid G1 A1
+set building asteroid G3 A2
+set building asteroid G2 A3
+
+add asteroid building A1 G1
+add asteroid building A2 G3
+add asteroid building A3 G2
+
 set asteroid deterministic behaviour A1 t
 set asteroid deterministic behaviour A2 t
 set asteroid deterministic behaviour A3 t
@@ -60,20 +68,20 @@ Vezérlés:
 start game
 
 mine settler S1
-
 end turn
 
 move settler S1 dest A3
-
 end turn
 
 drop settler S1 material U1
+end turn
 
 add asteroid behaviour A3 changeclosetosun
 end turn
+list turn events
 
 --------------------------------------------------------------------------
-Elvárt folytatás (Output):
+Elvárt folytatás list turn events (Output):
 
 material exploded U1
 asteroid exploded A3
@@ -88,5 +96,29 @@ robot move R1 A2
 Eredmények ellenőrzése:
 
 list all
+
+Eredmények ellenőrzése (Output):
+
+Asteroid id: A1 thickness: 0 material -
+buildings:
+	building: G1 stargate - broke
+entities:
+	entity: - -
+neighbours:
+	neighbour asteroid: A2
+
+Asteroid id: A2 thickness: 0 material -
+buildings:
+	building: G3 stargate - broke
+entities:
+	entity: R1 robot
+neighbours:
+	neighbour asteroid: A1
+
+Robot id: R1 place: A2 thickness: - material -
+neighbours:
+	neighbour asteroid: A1
+
+
 
 --------------------------------------------------------------------------

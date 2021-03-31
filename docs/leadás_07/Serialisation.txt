@@ -1,0 +1,154 @@
+Jelmagyarázat:
+<bool> - t / f
+
+
+--------------------------------------------------
+
+Settler:
+
+class: <Type>
+{
+hadActionThisTurn: <bool>
+id: <id>
+asteroid: <asteroid id>
+inventory: <inv id>
+}
+
+-----------------------------------------------
+
+Inventory:
+
+class: <Type>
+{
+id: <id>
+materials:
+{
+<material id>
+<material id>
+...
+}
+stargates
+{
+<stargate id>
+<stargate id>
+...
+}
+}
+
+-----------------------------------------------
+
+Material: (Közös struktúra minden nyersanyagra)
+
+class: <Type>
+{
+id: <id>
+isRadio: <bool>
+name: <string>
+canEvaporate: <bool>
+exposedCounter: <int>
+}
+
+-----------------------------------------------
+Asteroid:
+
+class: <Type>
+{
+ID: <id>
+rockThickness: <bool>
+closeToSun: <bool>
+isRandom: <bool>
+neighbours:
+{
+<neighbour id>
+...
+}
+settlers:
+{
+<settler id>
+...
+}
+nonPlayers:
+{
+<nonPlayer id>
+...
+}
+materials:
+{
+<material id>
+...
+}
+buildings:
+{
+<building id>
+...
+}
+}
+
+---------------------------------------------------------------
+Sun:
+
+class: <Type>
+{
+id: <id>
+isRandom: <bool>
+asteroids:
+{
+<asteroid id>
+...
+}
+}
+
+----------------------------------------------------------------
+NonPlayer:
+
+class: <Type>
+{
+id: <id>
+asteroid: <asteroid id>
+}
+
+-------------------------------------------------------------------
+
+Inicializálás:
+
+init game <manually, random>
+
+load game <file name>
+
+create settler
+create robot
+create alien
+create asteroid
+create sun
+create material <type>
+
+set settler property <settler id> <property name> <new value>
+set robot property <settler id> <property name> <new value>
+set alien property <settler id> <property name> <new value>
+set asteroid property <settler id> <property name> <new value>
+set sun property <settler id> <property name> <new value>
+set material <type> property <settler id> <property name> <new value>
+
+set alien deterministic behaviour <id> <t / f>
+set robot deterministic behaviour <id> <t / f>
+set sun deterministic behaviour <id> <t / f>
+
+add robot behaviour <**>
+add alien behaviour <**>
+add sun behaviour <**>
+add stargate behaviour <**>
+
+start game
+
+save game <file name>
+
+quit
+
+-------------------------------------------------------------------
+
+**
+move <asteroid id>
+drill
+mine
+sunflare
+

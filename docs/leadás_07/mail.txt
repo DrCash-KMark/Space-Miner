@@ -1,0 +1,65 @@
+Kedves csapat!
+
+Ezen a héten az értékelést a labor után fogom elküldeni, mert a pontszámba beleszámít a labor idejében végzett tesztelés is.
+
+A jövő heti anyagról leírás:
+---------------------------------
+A jövő hétre beadandó anyagról az alábbiakat kell tudni.
+
+A prototípus egy kész program a grafika nélkül. Nem kell, hogy élvezetesen lehessen játszani, de tesztelni kell tudni a működést.
+Parancssorból vezérelhető kell legyen, input és output átirányítva (fájlba/fájlból) is működjön. Tesztelni is így fogjuk. Lesznek bemenő szöveges fájlok, amik meghajtják a protót, a kimenetet lementjük és összehasonlítjuk az elvárttal.
+
+A fentiek miatt pontosan, precízen definiálni kell:
+- a bemeneti nyelvet: parancsokkal (kb. mint prog3 sörös feladatsor)
+-- parancssorból és fájl-átirányítással is működjön
+-- legyen benne konfigurációbetöltés és teljes állapot kiírása (pl. ha sakk-programot írnánk, akkor egy konkrét sakk-állás betöltése és kiírása). Nem jó, ha mindig elölről kell kezdeni, hogy kipróbáljuk, mi történik a gyaloggal a 8. sorban.
+-- precíz szintaktika definiálása elengedhetetlen. Most kell megadni, nem a végén, hogy ilyen lett :)
+-- legyenek pályaépítő parancsok, ha nincs külön pályaleíró nyelv. Lehet olyan, hogy vannak objektum-létrehozó parancsok meg objektumösszekötő parancsok, de máshogy is lehet. XML, JSON inkább ne legyen, a tapasztalat szerint csak szívás van vele.
+-- legyenek meg az első beadandó doksi (Követelmény, projekt, funkcionalitás) use-case-eihez kapcsolódó vezérlő parancsok
+-- kellenek egyéb belső állapotba belenyúló parancsok, hogy speciális kiindulóhelyzetek is előállíthatóak legyenek
+
+- a kimeneti formátumot
+-- precíz szintaktika definiálása (ezt fogja implementálni az, aki majd megírja a kódot)
+-- legyen elég infó a kimeneten, hogy a belső állapot változása is követhető legyen (pl. ki hol áll, kinél mi van stb.)
+
+Úgy kell definiálni az input/output nyelvet, mintha egy önálló programnyelv lenne: bármely külső szereplőnek (pl. egy másik csapat) odaadjuk a specifikációt, az tudjon belőle írni teszteseteket!
+
+Ha van külön betölthető pálya, akkor a pályaleíró nyelvet is pontosan specifikálni kell!
+
+Use-case: lényegében a tesztelő nyelv parancsai adják meg a use-case-eket.
+
+Meg kell határozni a teszteket:
+- cím
+- rövid leírás: mit tesztelünk (1-2 szabadszöveges mondat)
+- nagyon sok kell belőle (lényegében teljes fedést kell biztosítani vele, de legyen összetettebb, bonyolultabb dolog is, pl 2-3 szereplő mászkál, gyűjt, meghal)
+-- minden interakciót fedjenek le, ami előjöhet a modell elemei között
+-- és ezek alesetei is (pl. teszt: aszteroida robban, alesetek: robot továbbrepül, űrhajós meghal) Ki kell próbálni, hogy valami valóban megtörténik vagy sem.
+-- ezek most csak kb 1-2 szabadmondatos tesztleírások. A részletezés a következő beadandóban lesz.
+
+Ütemezés a belső léptetések (napvihar, napközel stb.) miatt nem mindegy. Már működnie kell a léptető (belső kontroller) függvényeknek is! Mivel most nincs nagyon többszálúság (általában körök vannak, körönként lépések, nincs párhuzamos történés), ez nagyon nem lesz gond.
+
+Léptető parancs: ha szükséges, lehessen determinisztikusan, pl. egy adott objektum önálló léptetése, nem egy nagy közös tikk.
+
+A modellt ne bővítsük ki tesztelő függvényekkel! A tesztelés épüljön rá a modellre, de önálló egységet alkosson!
+
+Specifikálni kell még: a tesztelést támogató segédprogramokat. Hogyan futtatjuk a teszteket (egy konkrét tesztet illetve az összes tesztet), hogyan ellenőrizzük a kimenet helyességét. Ha ehhez a standard windows, linux, akármit használjuk, akkor azokat név szerint, de ha mi írunk pl. pályaépítő külön alkalmazást, akkor azt is specifikálni kell.
+
+A tesztelést majd úgy kell elvégezni, hogy minden tesztesethez definiáljuk a precíz bemenetet és az elvárt kimenetet és ezeket összevetjük a valóssal. Ezek definiálása a következő beadandó (Részletes tervek) része lesz.
+---------------------------------
+
+Ha van még kérdésetek, akkor a konzultáción megbeszéljük.
+
+Üdvözlettel:
+Simon Balázs
+
+
+Konzi:
+Itt már teljes értékű szoftver kell.
+Részletesebb tesztesetek.
+Def egy programnyelv, dinamikusan létrehozni egy pályát.
+Lényeg, hogy itt már játszható, pontosan definiált parancsnyelv.
+Akár lehet segédparancsokat is belső állapotokhoz.
+Kellenek parancsok, amivel lekérdezzük mi is az obj. belső állapota, lássunk bele az objektumokba.
+Annyira pontos és részletes leírás, hogy bárki tudja írni a teszet.
+Teszt terveknek teljes kódfedést kell csinálni, olyan tesztek is kellenek amivel "rossz" viselkedést tesztelünk.
+Nem kérdezünk vissza usertől.

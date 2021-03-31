@@ -1,0 +1,7 @@
+Elrendeztem az osztálydiagramot.
+Az Entity nem interfész volt, hanem osztály.
+A Non player is ahogy nézem leginkább absztrakt tud lenni.
+
+AlienMine, eddig nem volt és más függvényeket használ, hát lett.
+SettlerMine nem változott, az ugyanúgy viselkedik mint az analízis modellben, ezért nem csináltam újat.
+Lett viszont új SettlerMove és NonPlayerMove és StarGateMove, az utóbbit beszéljük át.

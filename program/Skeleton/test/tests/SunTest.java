@@ -5,35 +5,51 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import main.*;
+
 public class SunTest {
 
+	private static Sun sun;
+	private static Game owner;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		sun = new Sun();
+		owner = new Game();
+		Main main = new Main();
+		sun.setOwner(owner);
+		sun.setMain(main);
+		owner.setMain(main);
+		owner.addPlanet(sun);
+		sun.setName("sun");
+		owner.setName("owner");
 	}
 
 	@Test
 	public void testSunFlare() {
-		fail("Not yet implemented");
+		sun.sunFlare();
 	}
 
 	@Test
 	public void testOnTurn() {
-		fail("Not yet implemented");
+		sun.onTurn();
 	}
 
 	@Test
 	public void testGetOwner() {
-		fail("Not yet implemented");
+		assertEquals(owner, sun.getOwner());
 	}
 
 	@Test
 	public void testSetOwner() {
-		fail("Not yet implemented");
+		Game owner2 = new Game();
+		sun.setOwner(owner2);
+		assertEquals(owner2, sun.getOwner());
 	}
 
 	@Test
 	public void testGetNotifiedAboutSunflare() {
-		fail("Not yet implemented");
+		sun.getNotifiedAboutSunflare();
 	}
 
 }

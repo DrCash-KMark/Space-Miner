@@ -1,0 +1,60 @@
+Szombat délelőtt:
+
+------------------------------------------------------------
+Változtatások:
+Class diagram:
+Felvettünk egy NonPlayer class-t. Ez az Entity leszármazottja és a Robot és Alien őse.
+A Game-ben és Asteroid-ban ez a közös ős tárolódik. Ennek megfelelően változtattuk a metódusokat is.
+
+Game:
+killMe(Entity)t destroy(Settler)-re változtattuk.
+
+Building:
++sunFlare() metódus.
+Leirás:
+Akkor hivodik ,amikor az aszteroida, amin az épület áll napviharba kerül.
+(A teleportnál van jelentősége.)
+
+-------------------------
+
+Sunflare szekvencia:
+A main helyett az UI endTurn() hivásával kezdődik.
+Visszatérnek a loopok a tárolt referencia tömbök miatt.
+A Buildingeken meghivodik az új sunFlare() metódus.
+
+Drill szekvenciák:
+A kezdeményező drill() hivás a diagrammon kivülről érkezik.
+
+------------------------------------------------------------
+Megjegyzések:
+Az Alien meg tudjon halni a napvihartól és aszteroida felrobbanástól.
+
+------------------------------------------------------------
+
+Kérdések:
+--A teszteknek kellenek új use-case-ek?
+
+Válasz:
+A tesztek leirasa nem ugyanaz, mint a use-case-ek.
+
+================================================================
+UI:
+
+create game;
+
+list all settlers
+Kilistázza a játékban lévő összes settler ID+jét és asteroidáját.
+
+
+list settler <ID>
+ID
+Asteroid
+	és változói
+Inventory tartalma
+
+action 
+
+
+
+
+

@@ -1,0 +1,50 @@
+Moha:
+-RemoveMaterial inventory-is helyett.
+-Kapu készítés ha van hely.
+-Game-be valami olyasmi ami a parancsot megkapja és végrehajtja.
+	GameWon->
+	GameLOst->
+	IsGameLost-> ellenörzi hogy el lett veszítve. EndTurn-ben hívható.
+-Teleport kapu odamozog egy aszteroidához amik alapból is szomszédosak. Add-> benen van ? Inkább 2x rakjjuk csak kiíráskor figyelhetjünk.
+-Aszteroide ad Alien meg Remove Alien stb 
+-Game kill meg Destroye nevének egyesítése. Done.
+-Game-ben controlable egyesítése. PLanet és nonPlayer Controlable mert a többi leszármazottjai.Planetből a getNotifyAboutSunflare kiszedése.
+-Destroye settler remove.
+
+Zoli:
+-Osztályban: NonPlayer..
+-Destroy-> KillMe?
+-Building-be sunflare metódus
+-Sunflare és drill kész.
+#-Alien napviharban meg ilyesmi -> külön getNotifyAboutSunflare vagy akár entitásban is . INkább interfésszel a napviharról értesítéssel.Dona??
+
+
+-inventroy -1 -> végtelen
+Ádám:
+- külön move-ok.
+
+UI
+-settlert listázza és melyik aszteroida
+-specifikus settler-> inventory + állapot, aszteroida, szomszédok stb
+-mindenhez kell id
+-Ha settler meg aszteroida azt GAme, minden mátst helyben stringezünk
+Settler string: ID, Inventory, min van Aszteroid ID
+Inventory: Nyersanyag és mi az állapotuk, 
+Aszteroid: Kéregvastagság, mi van benne, mi a szomszédjainak az ID 
+StarGate: ID (Place nél RIP), szomszédja
+
+-specifikus toString és ALLToString is
+Függvények.
+-Execute és kül müveletek szerint.
+
+
+Game:
+-lisAllSettlers
+- listázunk minden.
+-dolgok, majd külön ID-kal azok dolgai
+ Dolgoknál: Invetnory
+Sun: Aszteroidái
+Aszteroida cuccai -> building is
+Startgate szomszéd és melyik aszteroidán.
+
+

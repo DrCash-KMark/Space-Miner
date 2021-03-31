@@ -1,0 +1,72 @@
+Jegyzet 2021. 3. 17.
+
+Egy zip-be minden.
+Doksi is.
+
+Pontosoan le kell írni a javac és java parancsokat a forditashoz.
+
+Készítsünk saját Teams csoportot a közös teszteléshez.
+
+Munkamegosztás
+
+--------------------------------------------------------------------------
+
+Megjegyzések:
+A destroyMe és killMe metódusok paraméterei nem Planet és Entity kell hogy legyen. Teljes káosz a Game-ben.
+Az aszteroidát nem lehet megkülönböztetni a többi controllable-től a Gameb-ben!!!
+Nincs gameLost() metódus a Game-ben.
+
+------------------------------------------------------------------------
+Változtatások:
+
+1. Külön Planet tároló a Game-be. / vagy a getNotifiedAboutSunflare()-t felvinni a Controllable-be!
+-> Ehez kellenek külön metódusok, amik a Planetet veszik ki a tárolóból, ha felrobban.
+	-> Igy mar keves az ertelme egyben tarolni a Controllable-t, mert effektiv, csak a Robot van benne.
+	
+-------------------------------------------------------------------------
+
+/**
+* 
+*/
+list<Matreial> subSet(Inventory inv) {
+}
+
+void getNotifiedAboutSunFlare() {
+	
+}
+
+--------------------------------------------------------------------------------
+Implemenált változtatások:
+Game:
+1. controllables törölve, helyette planets: List<Planet> és robots: List<Robot>
+
+2. Külön lett szedve a void destroyMe(Controllable) két metódussá:
+		void destroyMe(Planet) és void destroyMe(Robot)
+
+3. Külön lett szedve az void addControllable(Controllable) két metódussá:
+		void addPlanet(Planet) és void addRobot(Robot)
+
+
+--------------------------------------------------------------------------------
+Javaslat:
+Későbbiekben az Entitásokat tárolni... Szebb lenne a Game-ből nézve. + Alig különböznek, a Settler  is megkaphatná a onTurn()-t.
+
+Fel lehetne venni egy cleanup metódust, hogy szimuláljuk a Game tartalmának tényleges felszabadítását.
+(Teszt célra már megtettem.)	
+
+
+-----------------------------------------------------------------------------------
+Bugreport:
+2021. 3. 19. A Settler die() metódusa leesik, ha nincs neki Asteroid beállítva.
+
+-----------------------------------------------------------------------------------
+Kérdés:
+Miért van a Settler die() metódusa szétszakítva az Entity és Settler közt?
+
+
+
+
+
+
+
+

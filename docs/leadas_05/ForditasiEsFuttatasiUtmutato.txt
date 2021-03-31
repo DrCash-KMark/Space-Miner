@@ -1,0 +1,145 @@
+
+Fordítási és futtatási útmutató
+
+Fájlok:
+
+Asteroid.java
+9974 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+Az Asteroid osztályt tartalmazza.
+
+
+Base.java
+805 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Base osztályt tartalmazza, amely megépítése a játék megnyerését eredményezi.
+
+
+Building.java
+1107 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Building osztályt tartalmazza, ami a Base és StarGate osztályok őse.
+
+
+Coal.java
+277 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Coal osztályt tartalmazza, ami a Material leszármazottja.
+
+
+Controllable.java
+263 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Controllabla interfészt tartalmazza.
+
+
+Entity.java
+2058 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+Az Entity ősosztályt tartalmazza.
+
+
+Game.java
+4845 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Game osztályt tartalmazza, ami a játék fő osztálya.
+
+
+Ice.java
+633 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+Az Ice osztályt tartalmazza, ami a Material leszármazottja.
+
+
+Inventory.java
+5105 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+Az Inventory osztályt tartalmazza, amely nyersanyagokat tárol.
+
+
+Iron.java
+324 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+Az Iron osztályt tartalmazza, ami a Material leszármazottja.
+
+
+Main.java
+50278 byte
+‎2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Main osztályt tartalmazza, amely a skeleton tesztelésért felelős.
+
+
+Material.java
+2589 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Material osztályt tartalmazza, ami az egyes nyersanyag típusok őse.
+
+
+Planet.java
+890 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Planet osztályt tartalmazza, ami az Asteroid és Sun őse.
+
+
+Robot.java
+1863 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Robot osztályt tartalmazza, ami az Entity leszármazottja.
+
+
+Settler.java
+5807 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+A Settler osztályt tartalmazza, ami az Entity leszármazottja.
+
+
+StarGate.java
+2268 byte
+2021. ‎március ‎17., ‎szerda, ‏‎12:50:47
+Az StarGate osztályt tartalmazza.
+
+
+SkeletonBuildScript.bat
+90 byte
+2021. ‎március ‎22., ‎hétfő, ‏‎10:52:02
+mkdir ./bin
+javac -d ./bin src/main/*.java
+jar cfve Skeleton.jar main.Main -C ./bin/ .
+
+
+SkeletonRunScript.bat
+22 byte
+2021. ‎március ‎22., ‎hétfő, ‏‎11:35:39
+java -jar Skeleton.jar
+
+-------------------------------------------------------------------------------------------------------------
+
+Fordítás
+A fordításhoz szükséges Java Development Kit (JDK).
+Csomagoljuk ki a Brainstormers_skeleton.zip-et.
+Futtassul a SkeletonBuildScript.bat fájlt.
+Ez létrehoz egy bin könyvtárat a root könyvtárban és a src mappa tartalmát lefordítva a bin/-be írja.
+(Ehhez a binben létrejön egy main alkönyvtár is.)
+Végül a lefordított classokat egy Skeleton.jar-ba csomagolja. A Main osztályt határozza meg mint főosztály.
+
+Futtatás
+A futtastáshoz a SkeletonRunScript.bat fájlt futtassuk!
+Ez a korábban létrehozott Skeleton.jar csomagot futtatja.
+A megnyílt parancssorban használhatjuk az elindult skeleton programot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,33 +5,48 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import main.Game;
+import main.*;
 
 /**
  * @author simon
  *
  */
+
+
 public class GameTest {
 
-	Game game;
+	private static Game game;
+	private static List<Entity> entities = new ArrayList<Entity>();
+	private static List<Planet> planets = new ArrayList<Planet>();
 	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		game = new Game();
 		
-	}
+		Entity temp = new Settler();
+		entities.add(temp);
+		game.addSettler((Settler)temp);
 
-	/**
-	 * Test method for {@link main.Game#Game()}.
-	 */
-	@Test
-	public void testGame() {
-		fail("Not yet implemented");
+		temp = new Robot();		
+		entities.add(temp);
+		game.addRobot((Robot)temp);
+		
+		planets.add(new Asteroid());
+		planets.add(new Sun());
+			
+		for (Entity entity : entities) {
+			entity.setOwner(game);
+			entity.setAsteroid((Asteroid)planets.get(0));
+		}		
 	}
 
 	/**
@@ -39,7 +54,10 @@ public class GameTest {
 	 */
 	@Test
 	public void testDestroyMe() {
-		fail("Not yet implemented");
+		game.destroyMe((Robot)entities.get(1));
+		game.cleanup();
+		assertEquals(1, game.getRobots().size());
+	
 	}
 
 	/**
@@ -47,7 +65,10 @@ public class GameTest {
 	 */
 	@Test
 	public void testKillMe() {
-		fail("Not yet implemented");
+			int n = game.getSettlers().size();
+			game.killMe((Settler)entities.get(0));
+			game.cleanup();
+			assertEquals(n - 1, game.getSettlers().size());
 	}
 
 	/**
@@ -55,7 +76,11 @@ public class GameTest {
 	 */
 	@Test
 	public void testNotifyAllAboutSunFlare() {
-		fail("Not yet implemented");
+		Sun sun = new Sun();
+		sun.setOwner(game);
+		game.addPlanet(sun);
+		
+		sun.sunFlare();
 	}
 
 	/**
@@ -63,23 +88,18 @@ public class GameTest {
 	 */
 	@Test
 	public void testGameWon() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link main.Game#addControllable(main.Controllable)}.
-	 */
-	@Test
-	public void testAddControllable() {
-		fail("Not yet implemented");
+		game.gameWon();
 	}
 
 	/**
 	 * Test method for {@link main.Game#addSettler(main.Settler)}.
 	 */
 	@Test
-	public void testAddSettler() {
-		fail("Not yet implemented");
+	public void testAddRobot() {
+		int n = game.getRobots().size();
+		game.addRobot(new Robot());
+		assertEquals(n + 1, game.getRobots().size());
+	
 	}
 
 }

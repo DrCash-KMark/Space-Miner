@@ -1,0 +1,27 @@
+Moha:
+-Az épületeknek nem szól az aszteroida hogy robbanjanak fel.
+-Stargate craftolás, amikor lekraftoljuk őket, párosítsuk is.
+-GetAsteroid a Buildinghez kéne és már ott van.
+-Olyan guard, hogy inventoryfull, erre kéne egy függvény. Abban maradtunk hogy erre kéne valami függvény majd, egyenlőre a skeletonban nem.
+-Néhány helyen setEntity van az addEntity helyett a komm diagramokon.
+-Minden visszahelyezésnél kell-e closeToSun? Abban maradtunk, hogy kell.
+-Fúrás robottal, robban kommdiagramon nem kapja meg az owner a controllableket.
+-Mozgásoknál nem látja az aszteroida az adott entity-t.
+
+Totya:
+-A guardokat lekérdezhetem az aszteroidától.
+-A robot/teleport építésénél egyvalaki épít. A receptnek adjuk az inventory-t és a recept nézi meg, hogy a saját nyersanyagai megvannak-e az inventoryban.
+-A subset a recept/inventory nyersanyagkülönbségét adja vissza. Ha végigiterálunk az összes telepesen egy aszteroidán elvileg üresnek kell kijönnie, különbségben.
+-A recepteket inventoryként tároltuk, a bázishoz több nyersanyag kell mint amennyi belefér egy inventoryba.
+-Abban maradtunk hogy lesz két subset és hogy az inventoryban lesz egy tagvált. ami megmondja mennyi nyersanyag fér bele. (A receptes inventorykba több fog.)
+
+Csabi:
+Kell-e kétfajta subset. (Igen, kétféle lesz.)
+
+Márk:
+Jó-e az üres on-Turn? (Igen, egynelőre üres marad.)
+
+Zoli:
+DestroyMe a Gameben szét lett szedve típusonként.
+Szintén az Add controllable is szét lett szedve.
+Mostmár külön tároljuk az Aszteroidákat, Robotokat és Telepeseket.

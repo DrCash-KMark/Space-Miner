@@ -15,4 +15,8 @@ package main;
 
 
 public class Coal extends Material {
+	
+	Coal(){
+		super(false, "Coal", false);
+	}
 }

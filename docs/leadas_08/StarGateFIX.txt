@@ -1,0 +1,4 @@
+Aszteroidákban tároljuk a kaput.(megvan)
+A kapuk által elérhető szomszédok nem kerülnek letárolásra az aszteroidában.
+Lépésnél kiírjuk a szomszédos aszteroidákat valamint az aszteroidán lévő kapukat és az azon keresztül elérhető aszteroidákat.
+Lenne egy olyan move(StarGate) parancs amivel a kapura léphetnénk, és ezen belül a kapun keresztül elérhető aszteroidara tesz minket. Ellenőrizni kell hogy az aszteroidán lévő kaput adunk-e meg. A síma move-nál is hogy téényleg szomszédos-e. 

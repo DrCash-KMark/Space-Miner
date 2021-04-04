@@ -1,11 +1,17 @@
+1. kör
 Ha az egyik őse valósítja meg az interfészt, akkor is fel kell tüntetni? (Jelenleg feltüntetem.)
 Kis material-t is meg kell csinálni: Coal stb.
 Mennyire kell specifikusnak lennie a fv leírásnak, 
 van elegendő nyersanyag vs
 az aszteroidán lévő telepeseknek együtesen van elegendő nyersanyaga.
 tömbség le van írva, de jelezve nincs.
-subSet
-subtracton leírás hiányzik!!
 
 Moha
 Asteroida id leírás, a sun-ról beszél
+
+1.kör válaszok
+move elenörize, hogy mehet-e asz aszteroidán
+stargate magába nem tud lépni
+késziteni kis anyagokrol is leírást
+az aszteroidán lévő telepeseknek együtesen van elegendő nyersanyaga.
+

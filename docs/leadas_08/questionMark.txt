@@ -4,6 +4,8 @@ Mennyire kell specifikusnak lennie a fv leírásnak,
 van elegendő nyersanyag vs
 az aszteroidán lévő telepeseknek együtesen van elegendő nyersanyaga.
 tömbség le van írva, de jelezve nincs.
+subSet
+subtracton leírás hiányzik!!
 
 Moha
 Asteroida id leírás, a sun-ról beszél

@@ -1,0 +1,28 @@
+ 
+ Robot Crafting Teszt
+ 
+ init game manually
+ 
+ create settler 10
+ create inventory 11
+ create iron 111
+ create coal 112
+ create uran 113
+ 
+ create asteroid 20
+ 
+ add inventory material 11 111
+ add inventory material 11 112
+ add inventory material 11 113
+ 
+ set settler inventory 10 11
+ set settler asteroid 20
+ add asteroid settler 20 10
+ 
+ build settler 10 robot
+ end turn
+ 
+ list turn events
+ list all
+ 
+ 

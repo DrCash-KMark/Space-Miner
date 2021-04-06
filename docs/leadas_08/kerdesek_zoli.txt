@@ -11,6 +11,10 @@ Lehetne minden típushoz (stargate base) külön setter és nem az ősosztály s
 Ki akarjuk-e irni a recipe-ket a settlernel?
 
 
+------------------------------------------------------------------------------
+
+Az list asteroid <id> info-nal material helyett materials kell.
+
 
 
 

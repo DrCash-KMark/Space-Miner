@@ -1,0 +1,85 @@
+Mozgás telepessel, siker
+
+Leírás
+Egy telepes az egyik aszteroidáról egy szomszédos aszteroidára mozog.
+
+Ellenőrzött funkcionalitás, várható hibahelyek
+Ez a teszt a Mozgás telepessel use-case megvalósítását ellenőrzi.
+Hiba, ha a telepes nem tud szomszédos aszteroidára lépni.
+
+Bemenet
+
+init game manually
+
+create asteroid a1
+create asteroid a2
+create settler sl1
+
+#a1
+add asteroid settler a1 sl1
+add asteroid neighbour a1 a2
+
+#a2
+add asteroid neighbour a2 a1
+
+#sl1
+set settler hadactionthisturn sl1 f
+set settler asteroid sl1 a1
+
+#Vegrehajtas:
+
+start game
+
+move settler sl1 dest a2
+
+start next turn
+list turn events
+
+list all
+
+#-----------------------------------------------------------
+
+Elvárt kimenet
+
+#list turn events
+settler move sl1 a2
+
+#list all
+Asteroid id: a1
+rockThickness: -
+closeToSun: -
+isRandom: -
+materials:
+	-
+neighbours:
+	neighbour: a2
+buildings:
+	-
+settlers:
+	-
+nonPlayers:
+	-
+	
+Asteroid id: a2
+rockThickness: -
+closeToSun: -
+isRandom: -
+materials:
+	-
+neighbours:
+	neighbour: a1
+buildings:
+	-
+settlers:
+	settler: sl1
+nonPlayers:
+	-
+
+Settler id: sl1
+hadActionThisTurn: f
+asteroid: a2
+inventory:
+	-
+
+
+

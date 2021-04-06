@@ -1,0 +1,100 @@
+Fúrás robottal, felrobban, nincs szomszéd
+
+----------------------------------------------------------------------------
+
+Leírás
+A robot fúr egyet, egy aszteroidán. Az aszteroida kéregvastagsága egy volt a fúrás előtt.
+Az aszteroida a teszteset végéig folyamatosan napközelben áll. A magjában egy radioaktív urán található.
+Ez három kör felfedettség után felrobban, elpusztítva az aszteroidát. Mivel nincs szomszédos aszteroida, ezért a robot is megsemmisül.
+
+----------------------------------------------------------------------------
+
+Ellenőrzött funkcionalitás, várható hibahelyek
+Ez a teszt a Fúrás robottal, felrobban, nincs szomszéd use-case megvalósítását teszteli.
+Főbb hiba lehetőségek, ha a robot nem tudja átfúrni a kérget, az urán pedig nem robban fel 3 kör múlva, vagy esetleg korábban robban fel.
+Hiba, ha az érintett aszteroida és robot nem robban fel.
+
+----------------------------------------------------------------------------
+
+Bemenet
+
+init game manually
+
+create asteroid a1
+create asteroid a2
+create robot r1
+create uran u1
+
+#a1
+set asteroid closeToSun a1 t
+set asteroid rockThickness a1 1
+add asteroid nonPlayer a1 r1
+add asteroid material a1 u1
+set asteroid deterministic behaviour a1 t
+
+#a2
+#-
+
+#r1
+set robot asteroid r1 a1
+set robot deterministic behaviour r1 t
+
+#u1
+set material exposed u1 0
+
+#Vegrehajtas:
+
+start game
+
+drill robot r1
+
+start next turn
+list turn events
+
+start next turn
+
+start next turn
+list turn events
+
+list all
+
+
+#-----------------------------------------------------------
+Elvárt kimenet
+
+#list turn events 1
+asteroid drilled a1
+
+#list turn events 2
+material exploded u1
+asteroid exploded a1
+robot died r1
+
+#list all
+Asteroid id: a2
+rockThickness: -
+closeToSun: -
+isRandom: -
+materials:
+	-
+neighbours:
+	-
+buildings:
+	-
+settlers:
+	-
+nonPlayers:
+	-
+
+
+
+
+
+
+
+
+
+
+
+
+

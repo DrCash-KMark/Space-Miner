@@ -1,12 +1,12 @@
 Fúrás telepessel
 
 Leírás
-A telepes egy kezdetben 2 kéregvastagságú aszteroidán fúr egymás után három körben.
-Ez körönként csökkenti az aszteroida kéregvastagságát, amíg a harmadik fúrást már nem is tudja megtenni.
+A telepes egy kezdetben 2 kéregvastagságú aszteroidán próbál fúrni egymás után három körben.
+Ez körönként csökkenti az aszteroida kéregvastagságát, amíg a harmadik fúrást már nem tudja megtenni.
 
 Ellenőrzött funkcionalitás, várható hibahelyek
 A Fúrás telepessel use-case megvalósítását teszteli.
-Hibás működést jelent, ha az első két fúrást sem tudja megtenni, vagy tud harmadszor is fúrni.
+Hibás működést jelent, ha az első két fúrást sem tudja megtenni, vagy tud harmadszor is fúrni. (Esetleg negatívba fordul a kéregvastagság.)
 
 Bemenet
 
@@ -23,6 +23,7 @@ add asteroid settler a1 s1
 set settler hadActionThisTurn s1 f
 set settler asteroid s1 a1
 
+#--------------------------------------------
 #Vegrehajtas:
 
 start game
@@ -36,10 +37,12 @@ start next turn
 list turn events
 drill settler s1
 
+start next turn
+list turn events
+
 list all
 
-quit
-
+#----------------------------------------
 #Kimenet:
 
 #list turn events 1:
@@ -47,6 +50,9 @@ asteroid drilled a1
 
 #list turn events 2:
 asteroid drilled a1
+
+#list turn events 3:
+-
 
 #list all:
 Asteroid id: a1

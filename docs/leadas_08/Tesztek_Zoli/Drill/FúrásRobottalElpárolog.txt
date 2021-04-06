@@ -1,0 +1,75 @@
+Fúrás robottal, elpárolog
+
+Leírás
+A robot fúr egyet, egy aszteroidán. Az aszteroida kéregvastagsága egy volt a fúrás előtt.
+Az aszteroida a teszteset végéig folyamatosan napközelben áll. A magjában egy vízjég található.
+Ez a kéreg átfúrásakor elpárolog.
+
+-----------------------------------------------------------------
+
+Ellenőrzött funkcionalitás, várható hibahelyek
+Ez a teszt a Fúrás robottal, elpárolog use-case megvalósítását teszteli.
+Főbb hiba lehetőségek, ha a robot nem tudja átfúrni a kérget, a jég pedig nem párolog el.
+
+--------------------------------------------------------------------
+
+Bemenet
+
+init game manually
+
+create asteroid a1
+create robot r1
+create ice e1
+
+#a1
+set asteroid closeToSun a1 t
+set asteroid rockThickness a1 1
+add asteroid nonPlayer a1 r1
+add asteroid material a1 e1
+set asteroid deterministic behaviour a1 t
+
+#r1
+set robot asteroid r1 a1
+set robot deterministic behaviour r1 t
+
+#e1
+set material exposed e1 0
+
+#Vegrehajtas:
+
+start game
+
+drill robot r1
+
+start next turn
+list turn events
+
+list all
+
+#-----------------------------------------------------------
+Elvárt kimenet
+
+#list turn events
+asteroid drilled a1
+material evaporated e1
+
+#list all
+Asteroid id: a1
+rockThickness: 0
+closeToSun: t
+isRandom: f
+materials:
+	-
+neighbours:
+	-
+buildings:
+	-
+settlers:
+	-
+nonPlayers:
+	nonPlayer: r1
+	
+Robot id: r1
+isRandom: f
+asteroid: a1
+

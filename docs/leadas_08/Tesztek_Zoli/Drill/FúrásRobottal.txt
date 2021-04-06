@@ -1,0 +1,77 @@
+Fúrás robottal
+
+Leírás
+A robot egy kezdetben 2 kéregvastagságú aszteroidán próbál fúrni egymás után három körben.
+Ez körönként csökkenti az aszteroida kéregvastagságát, amíg a harmadik fúrást már nem tudja megtenni.
+
+Ellenőrzött funkcionalitás, várható hibahelyek
+A Fúrás robottal use-case megvalósítását teszteli.
+Hibás működést jelent, ha az első két fúrást sem tudja megtenni, vagy tud harmadszor is fúrni. (Esetleg negatívba fordul a kéregvastagság.)
+
+Bemenet
+
+init game manually
+
+create asteroid a1
+create robot r1
+
+#a1
+set asteroid rockThickness a1 2
+add asteroid nonPlayers a1 r1
+
+#r1
+set robot asteroid r1 a1
+set robot deterministic behaviour r1 t
+
+#--------------------------------------------
+#Vegrehajtas:
+
+start game
+drill robot r1
+
+start next turn
+list turn events
+drill robot r1
+
+start next turn
+list turn events
+drill robot r1
+
+start next turn
+list turn events
+
+list all
+
+#-----------------------------------------
+#Kimenet:
+
+#list turn events 1:
+asteroid drilled a1
+
+#list turn events 2:
+asteroid drilled a1
+
+#list turn events 3:
+-
+
+#list all:
+Asteroid id: a1
+rockThickness: 0
+closeToSun: -
+isRandom: -
+material: -
+neighbours:
+	-
+buildings:
+	-
+settlers:
+	-
+nonPlayers:
+	nonPlayer: r1
+
+Robot id: r1
+isRandom: f
+asteroid: a1
+
+
+

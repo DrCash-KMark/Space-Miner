@@ -1,0 +1,45 @@
+[A tesztek részletes tervei alatt meg kell adni azokat a bemeneti adatsorozatokat, amelyekkel a
+program működése ellenőrizhető. Minden bemenő adatsorozathoz definiálni kell, hogy az
+adatsorozat végrehajtásától a program mely részeinek, funkcióinak ellenőrzését várjuk és
+konkrétan milyen eredményekre számítunk, ezek az eredmények hogyan vethetők össze a
+bemenetekkel. A tesztek leírásakor az előző dokumentumban (proto koncepciója) megadott
+szintakszist kell használni.]
+Minta:
+
+Teszteset1
+ Leírás
+[szöveges leírás, kb. 1-5 mondat.]
+ Ellenőrzött funkcionalitás, várható hibahelyek
+ Bemenet
+[a proto bemeneti nyelvén megadva (lásd előző anyag)]
+ Elvárt kimenet
+[a proto kimeneti nyelvén megadva (lásd előző anyag)]
+
+-----------------------------------------------------------------------------------------------------------
+Munka megosztás
+
+Zoli:
+Use-case-ek:
+Napvihar történik
+Fúrás robottal, felrobban
+Fúrás robottal, felrobban, nincs szomszéd
+Fúrás robottal, elpárolog
+Fúrás robottal
+Fúrás telepessel, elpárolog
+Fúrás telepessel, felrobban
+Fúrás telepessel
+Mozgás telepessel
+Mozgás robottal
+
+----------------------------------------------------------
+Csabi:
+
+
+
+----------------------------------------------------------
+Ádám:
+
+
+
+
+------------------------------------------------------------------------------------------------------------

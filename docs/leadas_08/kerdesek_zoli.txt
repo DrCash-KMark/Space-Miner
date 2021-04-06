@@ -1,0 +1,23 @@
+stargate determini
+stic behaviour beállító hiányzik!
+
+setterek legyenek a stargate setterének mintájára.
+(a settler setterei is legyenek a többi settlernél)
+
+Lehetne minden típushoz (stargate base) külön setter és nem az ősosztály setterén keresztül settelnénk.
+
+-starGate -> starGates
+
+Ki akarjuk-e irni a recipe-ket a settlernel?
+
+
+
+
+
+
+
+
+
+
+
+

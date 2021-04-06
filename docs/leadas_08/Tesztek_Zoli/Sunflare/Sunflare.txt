@@ -1,0 +1,208 @@
+Napvihar kitörése nem átfúrt aszteroidán
+
+----------------------------------------------
+Leírás
+Egy kör során az egyetlen Napon napvihar tör ki.
+Ennek következtében az aszteroidán, ami ehhez a Naphoz tartozik a telepes, robot, űrlény megsemmisül és a lehelyezett kapu mozogni kezd.
+
+Ellenőrzött funkcionalitás, várható hibahelyek
+Napvihar történik use-case.
+Hibát jelenthet, ha a napkitörés után az a1 aszteroidán maradnak entitások vagy a g1 kapu nem tárolja, hogy már volt napviharban.
+
+----------------------------------------------
+Bemenet
+
+init game manually
+create sun sun1
+create asteroid a1
+create asteroid a2
+create settler s1
+create robot r1
+create alien al1
+create stargate g1
+create stargate g2
+create inventory i1
+
+
+#sun1
+add sun asteroid sun1 a1
+set sun deterministic behaviour sun1 t
+add sun behaviour sun1 sunflare
+
+#a1
+set asteroid property a1 rockthickness 1
+add asteroid settler a1 s1
+add asteroid nonplayer a1 r1
+add asteroid nonplayer a1 al1
+add asteroid neighbour a1 a2
+add asteroid building a1 g1
+set asteroid deterministic behaviour a1 t
+
+#a2
+add asteroid neighbour a2 a1
+set asteroid deterministic behaviour a2 t
+
+#s1
+set settler property s1 asteroid a1
+set settler property s1 inventory i1
+
+#r1
+set robot property r1 asteroid a1
+set robot deterministic behaviour r1 t
+
+#al1
+set alien property al1 asteroid a1
+set alien deterministic behaviour al1 t
+
+#g1
+set stargate neighbour g1 g2
+set stargate asteroid g1 a1
+set stargate deterministic behaviour g1 t
+
+#g2
+set stargate neighbour g2 g1
+set stargate deterministic behaviour g2 t
+
+#i1
+add inventory stargate i1 g2
+
+#Vegrehajtas:
+
+list all
+start game
+start next turn
+list turn events
+list all
+quit
+
+----------------------------------------------
+
+Elvárt kimeneti
+
+Sun id: sun1
+isRandom: f
+asteroids:
+	asteroid: a1
+
+Asteroid id: a1
+rockThickness: 1
+closeToSun: -
+isRandom: f
+material: -
+neighbours:
+	neighbour: a2
+buildings:
+	building: g1
+settlers:
+	settler: s1
+nonPlayers:
+	nonPlayer: r1
+
+Asteroid id: a2
+rockThickness: -
+closeToSun: -
+isRandom: f
+material: -
+neighbours:
+	neighbour: a1
+buildings:
+	-
+settlers:
+	-
+nonPlayers:
+	-
+	
+StarGate id: g1
+isRandom: f
+works: f
+wasInSunFlare: f
+neighbour: g2
+asteroid: a1
+
+StarGate id: g2
+isRandom: f
+works: f
+wasInSunFlare: f
+neighbour: g2
+asteroid: -
+
+Settler id: s1
+hadActionThisTurn: f
+asteroid: a1
+inventory:
+	materials:
+		-
+	starGates:
+		starGate: g2
+
+Robot id: r1
+isRandom: f
+asteroid: a1
+
+Alien id: al1
+isRandom: f
+asteroid: a1
+
+
+#list turn events
+
+sunflare on sun sun1
+settler died s1
+robot died r1
+alien died al1
+starGate broke
+
+#list all
+
+Sun id: sun1
+isRandom: f
+asteroids:
+	-
+
+Asteroid id: a1
+rockThickness: 1
+closeToSun: -
+isRandom: f
+material: -
+neighbours:
+	neighbour: a2
+buildings:
+	building: g1
+settlers:
+	-
+nonPlayers:
+	-
+
+Asteroid id: a2
+rockThickness: -
+closeToSun: -
+isRandom: f
+material: -
+neighbours:
+	neighbour: a1
+buildings:
+	-
+settlers:
+	-
+nonPlayers:
+	-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

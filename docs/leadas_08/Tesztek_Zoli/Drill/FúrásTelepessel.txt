@@ -70,7 +70,7 @@ nonPlayers:
 	-
 
 Settler id: s1
-hadActionThisTurn: t
+hadActionThisTurn: f
 asteroid: a1
 inventory:
 	-

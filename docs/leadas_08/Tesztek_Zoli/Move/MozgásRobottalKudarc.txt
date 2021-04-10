@@ -1,0 +1,80 @@
+Mozgás robottal, kudarc
+
+Leírás
+Egy robot az egyik aszteroidáról egy másik aszteroidára próbál mozogni, de a másik aszteroida nem szomszédos a jelenlegivel.
+
+Ellenőrzött funkcionalitás, várható hibahelyek
+Ez a teszt a Mozgás robottal use-case megvalósítását ellenőrzi.
+Hiba, ha a robot át tud lépni a másik aszteroidára.
+
+Bemenet
+
+init game manually
+
+create asteroid a1
+create asteroid a2
+create robot r1
+
+#a1
+add asteroid nonplayer a1 r1
+
+#a2
+
+#r1
+set robot asteroid r1 a1
+set robot deterministic behaviour r1 t
+
+#Vegrehajtas:
+
+start game
+
+move robot r1 dest a2
+
+start next turn
+list turn events
+
+list all
+
+#-----------------------------------------------------------
+
+Elvárt kimenet
+
+#list turn events
+-
+
+#list all
+Asteroid id: a1
+rockThickness: -
+closeToSun: -
+isRandom: -
+materials:
+	-
+neighbours:
+	-
+buildings:
+	-
+settlers:
+	-
+nonPlayers:
+	nonPlayer: r1
+	
+Asteroid id: a2
+rockThickness: -
+closeToSun: -
+isRandom: -
+materials:
+	-
+neighbours:
+	-
+buildings:
+	-
+settlers:
+	-
+nonPlayers:
+	-
+
+Robot id: r1
+isRandom: f
+asteroid: a1
+
+

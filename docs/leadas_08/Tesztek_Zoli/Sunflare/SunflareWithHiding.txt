@@ -1,9 +1,10 @@
-Napvihar kitörése nem átfúrt aszteroidán
+Napvihar kitörése átfúrt aszteroidán
 
 ----------------------------------------------
 Leírás
 Egy kör során az egyetlen Napon napvihar tör ki.
-Ennek következtében az aszteroidán, ami ehhez a Naphoz tartozik a telepes, robot, űrlény megsemmisül és a lehelyezett kapu "Napvihar érte" állapotba kerül.
+Ennek ellenére az aszteroidán, ami ehhez a Naphoz tartozik a telepes, robot és űrlény nem semmisül meg, mert elbújnak az aszteroidán.
+A lehelyezett kapu "Napvihar érte" állapotba kerül.
 
 Ellenőrzött funkcionalitás, várható hibahelyek
 Napvihar történik use-case megvalósítását teszteli.

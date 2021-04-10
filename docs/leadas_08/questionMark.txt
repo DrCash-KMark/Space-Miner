@@ -16,3 +16,11 @@ késziteni kis anyagokrol is leírást
 az aszteroidán lévő telepeseknek együtesen van elegendő nyersanyaga.
 
 Onturn leírás
+
+init bevezetése
+robot
+fur x3, majd mozog
+mozgás lekéri a szomszédokat, és véletlenszerüen választ.
+alien
+szed amedig tud, majd mozog
+

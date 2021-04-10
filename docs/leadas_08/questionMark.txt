@@ -15,3 +15,4 @@ stargate magába nem tud lépni
 késziteni kis anyagokrol is leírást
 az aszteroidán lévő telepeseknek együtesen van elegendő nyersanyaga.
 
+Onturn leírás

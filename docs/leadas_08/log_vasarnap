@@ -1,4 +1,4 @@
-Moha:
+﻿Moha:
     Osztályok ábc sorrendben. Ne elfelejteni.
     Game-UI singleton legyen osztályban (elméletileg done)
 
@@ -8,19 +8,19 @@ Moha:
         Planet nem kell mert az is controlable.
         Remove settler -> átnevezni ?
     Controlable agregációban vannak a GAme-ben de a settlerek nem. (Done)
-    Bázisnak nincs Owner-je.Planetnek is stb.(Done)
-    move(StarGate), move(asteroid)-> csekkolás hogy leggit e a mozgás?Works vizsgálat, rajta van e az aszteroidám.
+    	Bázisnak nincs Owner-je.Planetnek is stb.(Done)
+    	move(StarGate), move(asteroid)-> csekkolás hogy leggit e a mozgás?Works vizsgálat, rajta van e az aszteroidám.
     Stargate saját magán ne tudjon átlépni. Másba be tudjon lépni. 
     Aszeroidában nem Material hanem Materials van.
-    Aszteroid neighbour lista nem változi és csak stargate-re lépünk 
-    Aszteroid removeNeighbour() -> törölni, duplikáció?? (Done)
-    Aszteroidába capacity int. Random. 
-    Drilling-nél exposeAndCloseToSun csak akkor ha a kérek = 0 mert öregít is. Eddig fúrásnál és onturn-nél is öregedett. Drillingnél vegyök ki? Jég egyből párolog ... Fix: EndTurn helyett StartTurn és kör elején. Lesz End is és EndTurn hívja StartTurn? Inkább StartTurn EndTurn helyett.
+    	Aszteroid neighbour lista nem változi és csak stargate-re lépünk 
+    	Aszteroid removeNeighbour() -> törölni, duplikáció?? (Done)
+    	Aszteroidába capacity int. Random. 
+    	Drilling-nél exposeAndCloseToSun csak akkor ha a kérek = 0 mert öregít is. Eddig fúrásnál és onturn-nél is öregedett. Drillingnél vegyök ki? Jég egyből párolog ... Fix: EndTurn helyett StartTurn és kör elején. Lesz End is és EndTurn hívja StartTurn? Inkább StartTurn EndTurn helyett.
 Márk:
     Kis osztályokat is leírni.
     
 Zoli:
-    Parancsok: StarGate-hez nem volt determinisztikus beállításos cucc de már van. (Done)
+    	Parancsok: StarGate-hez nem volt determinisztikus beállításos cucc de már van. (Done)
     Settereknél nem úgy néztek ki a formájuk mint az addok? Egységesítve lettek.(Done)
     Külön stargate és base setter a teljesség kedvéért.
     Uml-ben inventoryban stargateket tároló cicc stargates.... Átnevezés.(Done)

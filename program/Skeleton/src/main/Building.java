@@ -16,42 +16,43 @@ package main;
 /**
  * Building abstract base class.
  */
-public abstract class Building {
-	protected Asteroid asteroid;
+public abstract class Building extends Printable implements ReactsToSunFlare {
+	protected Asteroid asteroid;	//Built on this Asteroid.
 	protected Game owner;
-	protected Main main;
-	protected String name;
-	
-	public Asteroid getAsteroid() { return asteroid; }
-	public void setAsteroid(Asteroid a) { asteroid = a; }
-	
-	public Game getGame() { return owner; }
-	public void setGame(Game g) { owner = g; }
-	
-	public void setMain(Main m) { main = m; }
-	
-	public String getName() {
-		return name;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	/**
-	 * constructor for Building without parameters
-	 */
+//Constructors:----------------------------------------------------
+
 	public Building() {
 	}
 	
+//Get/Set---------------------------------------------------------	
+
+	public Asteroid getAsteroid() {
+		return asteroid;
+	}
+
+
+	public void setAsteroid(Asteroid asteroid) {
+		this.asteroid = asteroid;
+	}
+	
+	public Game getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Game owner) {
+		this.owner = owner;
+	}	
+
+//Methods:---------------------------------------------------------
+	
 	/**
-	 * abstract function for placing the building on an asteroid
-	 * @param a: Asteroid: asteroid on which the building is placed
+	 * Called after building got placed on asteroid.
 	 */
 	public abstract void onPlace(); 
 	
 	/**
-	 * abstract function for destroying the building
+	 * Destroys building.
 	 */
 	public abstract void destroy(); 
 }

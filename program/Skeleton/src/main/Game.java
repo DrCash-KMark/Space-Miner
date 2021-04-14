@@ -242,15 +242,14 @@ public class Game {
 			File loadFile = new File(fileName);
 			Scanner loadScanner = new Scanner(loadFile);
 			while (loadScanner.hasNextLine())
-				loadString += loadScanner.nextLine();
-		
+				loadString = loadScanner.nextLine();
+				//TODO
 			loadScanner.close();
 		} 
 		catch (FileNotFoundException e) {
 			System.out.println("Can't load game.");
 		}
 
-		//TODO
 	}
 	
 	public void saveGame(String fileName) {

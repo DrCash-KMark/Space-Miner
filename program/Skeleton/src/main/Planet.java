@@ -18,7 +18,7 @@ package main;
  * @author simon
  *
  */
-public abstract class Planet {
+public abstract class Planet extends Printable {
 	protected Main main; //Logger
 	protected String name;
 	

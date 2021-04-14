@@ -24,8 +24,7 @@ public class Asteroid extends Planet implements Controllable {
 	private int rockThickness;
 	private Boolean closeToSun;
 
-	//private List<Entity> entities;
-	private List<Robot> robots;
+	private List<NonPlayer> nonPlayers;
 	private List<Settler> settlers;	
 	
 	private Material material;
@@ -39,7 +38,7 @@ public class Asteroid extends Planet implements Controllable {
 	 * constructor for Asteroid without parameters
 	 */
 	public Asteroid() {
-		this.robots = new LinkedList<>();
+		this.nonPlayers = new LinkedList<>();
 		this.settlers = new LinkedList<>();
 		
 		this.neighbours = new LinkedList<>();
@@ -67,9 +66,15 @@ public class Asteroid extends Planet implements Controllable {
 		this.buildings = buildings;
 	}
 
-	/**
-	 * This sets the main logger for the class.
-	 */
+
+	public void addNonPlayer(NonPlayer nonPlayer) {
+		nonPlayers.add(nonPlayer);
+	}
+	
+	public void removeNonPlayer(NonPlayer nonPlayer) {
+		nonPlayers.remove(nonPlayer);
+	}
+	
 	public void setMain(Main m) {
 		main = m;
 	}
@@ -100,16 +105,8 @@ public class Asteroid extends Planet implements Controllable {
 		this.closeToSun = closeToSun;
 	}
 
-	public List<Robot> getRobots() {
-		return robots;
-	}
-
 	public List<Settler> getSettelrs() {
 		return settlers;
-	}
-
-	public void setRobots(List<Robot> robots) {
-		this.robots = robots;
 	}
 
 	public void setSettlers(List<Settler> settlers) {
@@ -151,16 +148,6 @@ public class Asteroid extends Planet implements Controllable {
 		this.main.log(true, "void", "Void", "");
 	}
 
-	/**
-	 * Add a new robot to the robots which are on the asteroid
-	 * 
-	 * @param r the robot that will be added to the asteroid.
-	 */
-	public void addRobot(Robot r) {
-		this.main.log(false, this.name, this.getClass().getName(), "addRobot(" + r.getName() + ":" + (r.getClass().getName()));
-		this.robots.add(r);
-		this.main.log(true, "void", "Void", "");
-	}
 
 	/**
 	 * remove a settler to the settlers which are on the asteroid
@@ -174,17 +161,6 @@ public class Asteroid extends Planet implements Controllable {
 	}
 
 	/**
-	 * remove a robot to the robots which are on the asteroid
-	 * 
-	 * @param r the robot that will be removed from the asteroid.
-	 */
-	public void removeRobot(Robot r) {
-		this.main.log(false, this.name, this.getClass().getName(), "removeSettler(" + r.getName() + ":" + (r.getClass().getName()));
-		this.robots.remove(r);
-		this.main.log(true, "void", "void", "");
-	}
-
-	/**
 	 * this function notifies the entities, buildings that it have exploded, and
 	 * removes itself from it's neighbours' neighbours list.
 	 */
@@ -194,8 +170,8 @@ public class Asteroid extends Planet implements Controllable {
 		for (int i = 0; i < this.settlers.size(); i++) {
 			this.settlers.get(i).asteroidExploded();
 		}
-		for (int i = 0; i < this.robots.size(); i++) {
-			this.robots.get(i).asteroidExploded();
+		for (int i = 0; i < this.nonPlayers.size(); i++) {
+			this.nonPlayers.get(i).asteroidExploded();
 		}
 		
 		for (int i = 0; i < this.neighbours.size(); i++) {
@@ -205,7 +181,7 @@ public class Asteroid extends Planet implements Controllable {
 			this.buildings.get(i).destroy();
 		}
 		
-		owner.destroyMe(this);
+		owner.removeAsteroid(this);
 		this.main.log(true, "void", "void", "");
 	}
 

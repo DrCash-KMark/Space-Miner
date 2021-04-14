@@ -18,7 +18,7 @@ package main;
  * @author Tadam
  *
  */
-public class Robot extends Entity implements Controllable {
+public class Robot extends NonPlayer implements Controllable {
 	/**
 	 * Default constructor without parameters.
 	 */

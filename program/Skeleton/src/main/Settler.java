@@ -150,7 +150,7 @@ public class Settler extends Entity {
 			Base base = new Base();
 			base.setName("base");
 			base.setMain(main);
-			base.setGame(owner);
+			base.setOwner(owner);
 			base.setAsteroid(asteroid);
 			base.onPlace();
 		}		

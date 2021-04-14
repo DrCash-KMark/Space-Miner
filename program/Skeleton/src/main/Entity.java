@@ -18,7 +18,7 @@ package main;
  * Entity abstract base class.
  */
 
-public abstract class Entity {
+public abstract class Entity extends Printable implements ReactsToSunFlare, Moving {
 	protected Asteroid asteroid;
 	protected Game owner;
 	protected Main main;
@@ -81,12 +81,7 @@ public abstract class Entity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	/**
-	 * Moves this Entity to another asteroid.
-	 * @param destination: Asteroid
-	 */
-	public void move(Asteroid destination) {
-	}
+	
 	/**
 	 * Entity drills his current asteroid.
 	 */

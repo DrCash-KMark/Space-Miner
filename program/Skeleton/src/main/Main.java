@@ -889,7 +889,7 @@ public class Main {
     	
     	owner.addPlanet(asteroid);
     	owner.addSettler(settler);
-    	owner.addRobot(robot);
+    	owner.addNonPlayer(robot);
     	
     	asteroid.setOwner(owner);
     	

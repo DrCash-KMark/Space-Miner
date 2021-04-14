@@ -1,0 +1,26 @@
+192.168.1.66
+
+Mi a StarGate/onPlace specifikációja?
+
+A buildingnek nincs ownere a classdiagramm szerint. Viszont a Base-nek kelleni fog.
+
+Melyik fuggvennyel lesz a szerializacio?
+
+Protectedre változtattam a Printable valtozoit.
+
+Letrehoztam egy Tools osztalyt.
+
+A Base destroy-ban kiregisztraltam az asteroidbol.
+
+
+Hiba:
+31/ +move(destination: StarGate)
+
+Van / nincs getNeighbourAsteroid???
+
+nonPlayerben nem volt isRandom.
+
+Az isHollow azt is nezi, hogy at van-e furva a kereg???
+
+Az Aliennél nincs megírva, hogy Controllablet megvalositja.
+

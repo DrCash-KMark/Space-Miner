@@ -18,18 +18,29 @@ package main;
  */
 public class Base extends Building {
 	
+//Constructors:------------------------------------------	
 	public Base () {
 	}
 	
+//Get/Set----------------------------------------------
+	
+//Inherited:------------------------------------------------
+	
+	@Override
+	public String genUIString() {
+		return "Base id: " + id + "\n" 
+				+ "asteroid: " + asteroid.getId() + "\n";
+	}
+
+	@Override
+	public void getNotifiedAboutSunflare() {
+		//Do nothing
+	}
+
 	/**
-	 * function for placing the base on an asteroid
-	 * @param a: Asteroid: asteroid on which the base is placed
+	 * method called, when placed on asteroid
 	 */
 	public void onPlace() {
-		main.log(false, name, getClass().getName(), "onPlace()");
-		
-		main.log(true, "void", "Void", "");
-		
 		owner.gameWon();
 	}
 
@@ -37,8 +48,6 @@ public class Base extends Building {
 	 * function for destroying the base
 	 */
 	public void destroy() {
-		main.log(false, name, getClass().getName(), "destroy()");
-		
-		main.log(true, "void", "void", "");
+		asteroid.removeBuilding(this);
 	}
 }

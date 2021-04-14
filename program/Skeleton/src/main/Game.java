@@ -3,6 +3,7 @@ package main;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 //
 //
@@ -23,18 +24,15 @@ import java.util.List;
  *
  */
 public class Game {
-	private Main main;	//Logger
-	private String name;
+	private UI ui;
 	
 	//Lists of objects present in game:
 	private List<Settler> settlers = new ArrayList<Settler>();
-	private List<Robot> robots = new ArrayList<Robot>();
-	private List<Planet> planets = new ArrayList<Planet>();
+	private List<Controllable> controllables = new ArrayList<Controllable>();
 
 	//Lists of objects scheduled to destroy:
-	private List<Settler> settlersToDestroy = new ArrayList<Settler>();;
-	private List<Robot> robotsToDestroy = new ArrayList<Robot>();;
-	private List<Planet> planetsToDestroy = new ArrayList<Planet>();;
+	private List<Settler> settlersToRemove = new ArrayList<Settler>();
+	private List<Controllable> controllablesToRemove = new ArrayList<Controllable>();
 	
 	
 	//Event related:-----------------------------------------------------------------
@@ -44,133 +42,147 @@ public class Game {
 	 * Removes reference to objects, if they called destroyMe or killMe.
 	 */
 	public void cleanup () {
-		for (Settler settler : settlersToDestroy) {
+		for (Settler settler : settlersToRemove) {
 			settlers.remove(settler);
 		}
-		for (Robot robot : robotsToDestroy) {
-			planets.remove(robot);
-		}
-		for (Planet planet : planetsToDestroy) {
-			planets.remove(planet);
-		}
 		
-	}
-	
-	/**
-	 * Notifies all Planets referenced in this Game, about occurrence of a sun flare. 
-	 */
-	public void notifyAllAboutSunFlare() {
-		main.log(false, getName(), "Game", "notifyAllAboutSunFlare()");
-		for (Planet planet : planets) {
-			planet.getNotifiedAboutSunflare();
+		for (Controllable controllable : controllablesToRemove) {
+			controllables.remove(controllable);
 		}
-		main.log(true, "void", "void", "");
 	}
 
-	/**
-	 * Called, when conditions of victory are met.
-	 * Finishes the game.
-	 */
-	public void gameWon() {
-		main.log(false, getName(), "Game", "gameWon()");
-		main.log(true, "void", "void", "");
-	}
-
-	//Adders:-----------------------------------------------------------------
-	
 	/**
 	 * Adds Settler to Game.
 	 * @param settler Settler to be added.
 	 */
 	public void addSettler(Settler settler) {
-		main.log(false, getName(), "Game", "addSettler(" + settler.getName() + ":" + settler.getClass().getName() + ")");
 		settlers.add(settler);
-		main.log(true, "void", "void", "");
+	}
+	
+	public void addControllable(Controllable controllable) {
+		controllables.add(controllable);
+	}
+	
+	public void removeSettler(Settler settler) {
+		settlersToRemove.add(settler);
+	}
+	
+	public void removeControllable(Controllable controllable) {
+		controllablesToRemove.add(controllable);
 	}
 	
 	/**
-	 * Adds Robot to Game.
-	 * @param robot Robot to be added.
+	 * Called, when conditions of victory are met.
+	 * Finishes the game.
 	 */
-	public void addRobot(Robot robot) {
-		main.log(false, getName(), "Game", "addRobot(" + robot.getName() + ":" + robot.getClass().getName() + ")");
-		robots.add(robot);
-		main.log(true, "void", "void", "");
-	}	
-
-	/**
-	 * Adds Planet to Game.
-	 * @param planet Planet to be added.
-	 */
-	public void addPlanet(Planet planet) {
-		main.log(false, getName(), "Game", "addPlanet(" + planet.getName() + ":" + planet.getClass().getName() + ")");
-		planets.add(planet);
-		main.log(true, "void", "void", "");
-	}	
-	
-	//Destroyers:---------------------------------------------------------------
-	
-	/**
-	 * Logs request of caller, to kill Settler in parameter.
-	 * The Settler will be destroyed right after current game turn. 
-	 * @param toKill Settler to kill
-	 */
-	public void killMe(Settler toKill) {
-		main.log(false, getName(), "Game", "killMe(" + toKill.getName() + ":" + toKill.getClass().getName() + ")");
-		settlersToDestroy.add(toKill);
-		main.log(true, "void", "void", "");
+	public void gameWon() {
+		ui.displayMessage("The game is won!");
 	}
 	
-	/**
-	 * Logs request of caller, to destroy the Robot in parameter.
-	 * The Robot will be destroyed right after current game turn. 
-	 * @param toDestroy Robot to destroy
-	 */
-	public void destroyMe(Robot toDestroy) {
-		main.log(false, getName(), "Game", "destroyMe(" + toDestroy.getName() + ":" + toDestroy.getClass().getName() + ")");
-		robotsToDestroy.add(toDestroy);		
-		main.log(true, "void", "void", "");
-	}
+	public Boolean isGameLost() {
+		cleanup();
 		
-	/**
-	 * Logs request of caller, to destroy the Planet in parameter.
-	 * The Planet will be destroyed right after current game turn. 
-	 * @param toDestroy Planet to destroy
-	 */
-	public void destroyMe(Planet toDestroy) {
-		main.log(false, getName(), "Game", "destroyMe(" + toDestroy.getName() + ":" + toDestroy.getClass().getName() + ")");
-		planetsToDestroy.add(toDestroy);
-		main.log(true, "void", "void", "");
-	}
-
-	//========================================================================
-	//Only for testing:------------------------------------------------------
-	
-	public void setMain(Main m) {
-		main = m;
+		if (settlers.size() == 0)
+			return true;
+		
+		return true;
 	}
 	
-	/**
-	 * For testing!!!
-	 * @return
-	 */
-	public List<Robot> getRobots() {
-		return robots;
-	}
-
-	/**
-	 * For testing!!!
-	 * @return
-	 */
-	public List<Settler> getSettlers() {
-		return settlers;
-	}
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void gameLost() {
+		for (Settler settler : settlers)
+			settlersToRemove.add(settler);
+		
+		for (Controllable controllable : controllables)
+			controllablesToRemove.add(controllable);
+		
+		cleanup();
+		
+		ui.displayMessage("The game is lost!");
 	}
 	
+	public void startTurn() {
+		cleanup();
+		
+		for (Controllable controllable : controllables)
+			controllable.onTurn();
+	}
+	
+	public void listAllSettlers() {
+		String ret = "";
+		
+		for (Settler settler : settlers)
+			ret += settler.genUIString();
+		
+		ui.displayMessage(ret);
+	}
+	
+	public void initGame(Boolean isManual) {
+		if (isManual)
+			return;
+		
+		Random rnd = new Random();
+		
+		int amountOfSuns = rnd.nextInt(10) + 10;
+		int amountOfAsteroidsPerSun = rnd.nextInt(30) + 10;
+		
+		int amountOfSettlers = 10;
+		int amountOfAliens = 30;
+		
+		for (int i = 0; i < amountOfSuns; i++) {
+			Sun s = new Sun();
+			
+			addControllable(s);
+			
+			for (int j = 0; j < amountOfAsteroidsPerSun; j++) {
+				Asteroid a = new Asteroid();
+				a.initialize();
+				
+				s.addAsteroid(a);
+				
+				addControllable(a);
+				
+				if (j == 5) {
+					for (int k = 0; k < amountOfSettlers; k++) {
+						Settler set = new Settler();
+						
+						a.addSettler(set);
+					}
+					
+					for (int k = 0; k < amountOfAliens; k++) {
+						Alien ali = new Alien();
+						
+						a.addNonPlayer(ali);
+					}
+				}
+			}
+		}
+	}
+	
+	// do we need this?
+	public void executeCommand(String arguments) {
+		
+	}
+	
+	public void startGame() {
+		startTurn();
+	}
+	
+	public void loadGame(String fileName) {
+		
+	}
+	
+	public void saveGame(String fileName) {
+		
+	}
+	
+	public void list(String id) {
+		Settler s;
+		
+		for (Settler settler : settlers) {
+			if (settler.getId() == id)
+				s = settler;
+		}
+		
+		ui.displayMessage(s.genUIString());
+	}
 }

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 //
 //
@@ -28,12 +33,20 @@ public class Game {
 	
 	//Lists of objects present in game:
 	private List<Settler> settlers = new ArrayList<Settler>();
-	private List<Controllable> controllables = new ArrayList<Controllable>();
+	//private List<Controllable> controllables = new ArrayList<Controllable>();
 
+	// maybe?
+	private List<Sun> suns = new ArrayList<Sun>();
+	private List<Asteroid> asteroids = new ArrayList<Asteroid>();
+	private List<NonPlayer> nonPlayers = new ArrayList<NonPlayer>();
+	
 	//Lists of objects scheduled to destroy:
 	private List<Settler> settlersToRemove = new ArrayList<Settler>();
-	private List<Controllable> controllablesToRemove = new ArrayList<Controllable>();
+	//private List<Controllable> controllablesToRemove = new ArrayList<Controllable>();
 	
+	private List<Sun> sunsToRemove = new ArrayList<Sun>();
+	private List<Asteroid> asteroidsToRemove = new ArrayList<Asteroid>();
+	private List<NonPlayer> nonPlayersToRemove = new ArrayList<NonPlayer>();
 	
 	//Event related:-----------------------------------------------------------------
 	
@@ -46,8 +59,20 @@ public class Game {
 			settlers.remove(settler);
 		}
 		
-		for (Controllable controllable : controllablesToRemove) {
+		/*for (Controllable controllable : controllablesToRemove) {
 			controllables.remove(controllable);
+		}*/
+		
+		for (Sun sun : sunsToRemove) {
+			suns.remove(sun);
+		}
+		
+		for (Asteroid asteroid : asteroidsToRemove) {
+			asteroids.remove(asteroid);
+		}
+		
+		for (NonPlayer nonPlayer : nonPlayersToRemove) {
+			nonPlayers.remove(nonPlayer);
 		}
 	}
 
@@ -59,16 +84,40 @@ public class Game {
 		settlers.add(settler);
 	}
 	
-	public void addControllable(Controllable controllable) {
+	/*public void addControllable(Controllable controllable) {
 		controllables.add(controllable);
+	}*/
+	
+	public void addSun(Sun sun) {
+		suns.add(sun);
+	}
+	
+	public void addAsteroid(Asteroid asteroid) {
+		asteroids.add(asteroid);
+	}
+	
+	public void addNonPlayer(NonPlayer nonPlayer) {
+		nonPlayers.add(nonPlayer);
 	}
 	
 	public void removeSettler(Settler settler) {
 		settlersToRemove.add(settler);
 	}
 	
-	public void removeControllable(Controllable controllable) {
+	/*public void removeControllable(Controllable controllable) {
 		controllablesToRemove.add(controllable);
+	}*/
+	
+	public void removeSun(Sun sun) {
+		sunsToRemove.add(sun);
+	}
+	
+	public void removeAsteroid(Asteroid asteroid) {
+		asteroidsToRemove.add(asteroid);
+	}
+	
+	public void removeNonPlayer(NonPlayer nonPlayer) {
+		nonPlayersToRemove.add(nonPlayer);
 	}
 	
 	/**
@@ -92,8 +141,17 @@ public class Game {
 		for (Settler settler : settlers)
 			settlersToRemove.add(settler);
 		
-		for (Controllable controllable : controllables)
-			controllablesToRemove.add(controllable);
+		/*for (Controllable controllable : controllables)
+			controllablesToRemove.add(controllable);*/
+		
+		for (Sun sun : suns)
+			sunsToRemove.add(sun);
+		
+		for (Asteroid asteroid : asteroids)
+			asteroidsToRemove.add(asteroid);
+		
+		for (NonPlayer nonPlayer : nonPlayers)
+			nonPlayersToRemove.add(nonPlayer);
 		
 		cleanup();
 		
@@ -103,8 +161,14 @@ public class Game {
 	public void startTurn() {
 		cleanup();
 		
-		for (Controllable controllable : controllables)
-			controllable.onTurn();
+		for (Sun sun : suns)
+			sun.onTurn();
+		
+		for (Asteroid asteroid : asteroids)
+			asteroid.onTurn();
+		
+		for (NonPlayer nonPlayer : nonPlayers)
+			nonPlayer.onTurn();
 	}
 	
 	public void listAllSettlers() {
@@ -131,7 +195,7 @@ public class Game {
 		for (int i = 0; i < amountOfSuns; i++) {
 			Sun s = new Sun();
 			
-			addControllable(s);
+			addSun(s);
 			
 			for (int j = 0; j < amountOfAsteroidsPerSun; j++) {
 				Asteroid a = new Asteroid();
@@ -139,22 +203,26 @@ public class Game {
 				
 				s.addAsteroid(a);
 				
-				addControllable(a);
-				
-				if (j == 5) {
-					for (int k = 0; k < amountOfSettlers; k++) {
-						Settler set = new Settler();
-						
-						a.addSettler(set);
-					}
-					
-					for (int k = 0; k < amountOfAliens; k++) {
-						Alien ali = new Alien();
-						
-						a.addNonPlayer(ali);
-					}
-				}
+				addAsteroid(a);
 			}
+		}
+		
+		int numOfAsteroids = amountOfSuns * amountOfAsteroidsPerSun;
+		int asteroidIndex = rnd.nextInt(numOfAsteroids);
+		Asteroid startAsteroid = asteroids.get(asteroidIndex);
+		
+		for (int i = 0; i < amountOfSettlers; i++)
+		{
+			Settler s = new Settler();
+			
+			startAsteroid.addSettler(s);
+		}
+		
+		for (int i = 0; i < amountOfAliens; i++)
+		{
+			Alien a = new Alien();
+			
+			asteroids.get(rnd.nextInt(numOfAsteroids)).addNonPlayer(a);
 		}
 	}
 	
@@ -168,11 +236,46 @@ public class Game {
 	}
 	
 	public void loadGame(String fileName) {
+		String loadString;
 		
+		try {
+			File loadFile = new File(fileName);
+			Scanner loadScanner = new Scanner(loadFile);
+			while (loadScanner.hasNextLine())
+				loadString += loadScanner.nextLine();
+		
+			loadScanner.close();
+		} 
+		catch (FileNotFoundException e) {
+			System.out.println("Can't load game.");
+		}
+
+		//TODO
 	}
 	
 	public void saveGame(String fileName) {
+		String saveString = "";
 		
+		for (Sun sun : suns)
+			saveString += sun.genUIString();
+		
+		for (Asteroid asteroid : asteroids)
+			saveString += asteroid.genUIString();
+		
+		for (Settler settler : settlers)
+			saveString += settler.genUIString();
+		
+		for (NonPlayer nonPlayer : nonPlayers)
+			saveString += nonPlayer.genUIString();
+		
+		try {
+			FileWriter saveWriter = new FileWriter(fileName);
+			saveWriter.write(saveString);
+			saveWriter.close();
+		} 
+		catch (IOException e) {
+		    System.out.println("Can't save game.");
+		}
 	}
 	
 	public void list(String id) {

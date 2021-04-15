@@ -11,35 +11,40 @@ package main;
 //
 //
 
-
-
-
-public abstract class Material implements Cloneable{
+public abstract class Material extends Printable{
 	protected boolean isRadio;
 	protected String name;
 	protected boolean canEvaporate;
-	protected Main main;
+	private int exposedCounter;
 	
+//Constructors:----------------------------------------------------------------
+
 	/**
 	 * constructor for the Material which sets all parameters at once	
 	 * @param isRadio
 	 * @param name
 	 * @param canEvaporate
 	 */
-	Material(boolean isRadio, String name, boolean canEvaporate){
+	Material(boolean isRadio, String name, boolean canEvaporate, int exposedCounter){
 		this.isRadio = isRadio;
 		this.name = name;
 		this.canEvaporate = canEvaporate;
+		this.exposedCounter = exposedCounter;
 	}
 	
+	/**
+	 * constructor for the Material which use other Materials parameters
+	 * @param m
+	 */
 	Material(Material m)
 	{
 		isRadio = m.isRadio();
 		name = m.getName();
 		canEvaporate = m.isCanEvaporate();
-		main = m.getMain();
 	}
 	
+//Get/Set-----------------------------------------------------------------
+
 	public boolean isRadio() {
 		return isRadio;
 	}
@@ -55,60 +60,6 @@ public abstract class Material implements Cloneable{
 	public void setCanEvaporate(boolean canEvaporate) {
 		this.canEvaporate = canEvaporate;
 	}
-
-	public Main getMain() {
-		return main;
-	}
-	
-	public Material clone()throws CloneNotSupportedException{  
-		return (Material)super.clone();
-	  }
-
-	/**
-	 * The setter of the Main logger.
-	 * Only for testing.
-	 * @param m: Main
-	 */
-	public void setMain(Main m) {
-		main = m;
-	}
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (canEvaporate ? 1231 : 1237);
-		result = prime * result + (isRadio ? 1231 : 1237);
-		result = prime * result + ((main == null) ? 0 : main.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Material other = (Material) obj;
-		if (canEvaporate != other.canEvaporate)
-			return false;
-		if (isRadio != other.isRadio)
-			return false;
-		if (main == null) {
-			if (other.main != null)
-				return false;
-		} else if (!main.equals(other.main))
-			return false;
-		return true;
-	}
-
-	public void exposedAndCloseToSun(Asteroid a) {
-		this.main.log(false, this.name, this.getClass().getName(), "exposedAndCloseToSun(" + a.getName() + ":" + (a.getClass().getName()));
-		this.main.log(true, "void", "void", "");
-	}
 	
 	public String getName() {
 		return name;
@@ -118,4 +69,35 @@ public abstract class Material implements Cloneable{
 		this.name = name;
 	}
 	
+	public int getExposedCounter() {
+		return exposedCounter;
+	}
+
+	public void setExposedCounter(int exposedCounter) {		
+		this.exposedCounter = exposedCounter;
+	}
+	
+//Inherited:-----------------------------------------------------------------------------
+
+	//Printable
+	
+    /**
+     * creates a string with this class' all important data.
+     *
+     * @return string containing all the important information for the user
+     */
+	@Override
+	public String genUIString() {
+		return "Material id: " + id + "\n"
+				+ "Name: " + name + "\n";
+	}
+//Own methods:----------------------------------------------------------------------------
+	 
+    /**
+     * If the Material exposed to the sun then this function 
+     * increase the exposedCounter.
+     */
+	public void exposedAndCloseToSun(Asteroid a) {
+		this.exposedCounter++;
+	}
 }

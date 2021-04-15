@@ -7,16 +7,15 @@ package main;
 //  @ Project : Space-Miner
 //  @ File Name : Coal.java
 //  @ Date : 17/03/2021
-//  @ Author : 
+//  @ Author : Barkanyi
 //
 //
-
-
-
 
 public class Coal extends Material {
-	
+
+//Constructors:----------------------------------------------------------------
+
 	Coal(){
-		super(false, "Coal", false);
+		super(false, "Coal", false, 0);
 	}
 }

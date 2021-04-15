@@ -15,26 +15,27 @@ import java.util.List;
 //
 //
 
-
 /**
  * List are only available in java7 or older.
  * @author Barkanyi
  *
  */
-public class Inventory {
+public class Inventory extends Printable{
 	private LinkedList<Material> materials;
-	private LinkedList<StarGate> starGate;
-	private int capacity;
-	private Main main;
-	private String name;
+	private LinkedList<StarGate> starGates;
+	private int capacityM;
+	private int capacitySG;
+
+//Constructors:----------------------------------------------------------------
 	
 	/**
 	 * Constructor for Inventory without parameters.
 	 */
 	Inventory(){
 		this.materials = new LinkedList<>();
-		this.starGate = new LinkedList<>();
-		this.capacity = 10;
+		this.starGates = new LinkedList<>();
+		this.capacityM = 10;
+		this.capacitySG = 3;
 	}
 	
 	/**
@@ -42,29 +43,15 @@ public class Inventory {
 	 * @param materials
 	 * @param starGate
 	 */
-	Inventory(LinkedList<Material> materials, LinkedList<StarGate> starGate, int capacity){
+	Inventory(LinkedList<Material> materials, LinkedList<StarGate> starGates, int capacityM, int capacitySG){
 		this.materials = materials;
-		this.starGate = starGate;
-		this.capacity = capacity;
-	}
-	
-	/**
-	 * The setter of the Main logger.
-	 * Only for testing.
-	 * @param m: Main
-	 */
-	public void setMain(Main m) {
-		main = m;
-	}
-	
-	public String getName() {
-		return name;
+		this.starGates = starGates;
+		this.capacityM = capacityM;
+		this.capacitySG = capacitySG;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
+//Get/Set-----------------------------------------------------------------
+
 	/**
 	 * Getter of the materials.
 	 * @return materials: LinkedList<Material>
@@ -73,21 +60,51 @@ public class Inventory {
 		return materials;
 	}
 	
+	public int getStarGatesCount() {
+		if(starGates!=null)return starGates.size();
+		return 0;
+	}
+	
+	public int getMaterialsCount() {
+		if(materials!=null)return materials.size();
+		return 0;
+	}
+
+//Inherited:-----------------------------------------------------------------------------
+
+	//Printable
+		
+	/**
+	* creates a string with this class' all important data.
+	*
+	* @return string containing all the important information for the user
+	*/
+	@Override
+	public String genUIString() {
+		String dataMaterial = "materials:\n";
+		for(Material material : materials) {
+			dataMaterial += "	material" + material.getId() + "\n";
+		}
+		String dataStarGate = "starGates:\n";
+		for(StarGate starGate : starGates) {
+			dataStarGate += "	starGate: " + starGate.getId() + "\n";
+		}	
+		return "Inventory id: " + id + "\n"
+				+ dataMaterial + dataStarGate;
+	}
+
+//Own methods:----------------------------------------------------------------------------
+
 	/**
 	 * Remove a material to the materials which are in the inventory.
 	 * @param m the material that will be removed from the inventory
 	 * @return removed material or null if the inventory not contains the material
 	 */
-	public Material removeInventory(Material m) {
-		main.log(false, name, getClass().getName(), "removeInventory(" + m.getName() + ":" + m.getClass().getName() + ")");
+	public Material removeMaterial(Material m) {
 	
 		if(materials.remove(m)) {
-			main.log(true, m.getName(), m.getClass().getName(), "");
-			
 			return m;
 		}
-		
-		main.log(true, "null", "null", "");
 		return null;
 	}
 	
@@ -96,16 +113,10 @@ public class Inventory {
 	 * @return removed stargate or null if the inventory not contains stargate
 	 */
 	public StarGate removeStarGate() {
-		main.log(false, name, getClass().getName(), "removeStarGate()");
 		
-		if(starGate.size()!=0) {
-			main.log(true, starGate.get(0).getName(), starGate.get(0).getClass().getName(), "");
-			
-			return starGate.get(0);
+		if(starGates.size()!=0) {
+			return starGates.get(0);
 		}
-		
-		main.log(true, "null", "StarGate", "");
-		
 		return null;
 	}
 	
@@ -116,17 +127,12 @@ public class Inventory {
 	 * @return remainder
 	 */
 	public Inventory subSet(Inventory i) {
-		main.log(false, name, getClass().getName(), "subSet(" + i.getName() + ":" + i.getClass().getName() + ")");
-		
 		Inventory remainder = new Inventory();
-		
-		remainder.setMain(main);
-		remainder.setName("subset");
 		
 		Iterator<Material> iRecipe = materials.iterator();
 	    while (iRecipe.hasNext()) {
 	    	
-	    	Material material = i.removeInventory(iRecipe.next());
+	    	Material material = i.removeMaterial(iRecipe.next());
 	    	if(material==null) {
 	    		remainder.addMaterial(material);
 	    	}
@@ -134,9 +140,7 @@ public class Inventory {
 	    		 i.addMaterial(material);
 	    	}
 	    }
-	    
-	    main.log(true, remainder.getName(), remainder.getClass().getName(), "");
-	    
+
 		return remainder;
 	}
 	
@@ -147,23 +151,16 @@ public class Inventory {
 	 * @return differences
 	 */
 	public Inventory subtraction(Inventory i) {
-		main.log(false, name, getClass().getName(), "subtraction(" + i.getName() + ":" + i.getClass().getName() + ")");
-		
 		Inventory remainder = new Inventory();
-		
-		remainder.setMain(main);
-		remainder.setName("subtraction");
 		
 		Iterator<Material> iRecipe = materials.iterator();
 	    while (iRecipe.hasNext()) {
 	    	
-	    	Material material = i.removeInventory(iRecipe.next());
+	    	Material material = i.removeMaterial(iRecipe.next());
 	    	if(material==null) {
 	    		remainder.addMaterial(material);
 	    	}
 	    }
-	    main.log(true, remainder.getName(), remainder.getClass().getName(), "");
-	    
 		return remainder;
 	}	
 	
@@ -172,13 +169,10 @@ public class Inventory {
 	 * @param sg the stargate the will be added to the stargate list
 	 */
 	public void addStarGate(StarGate sg) {
-		main.log(false, name, getClass().getName(), "addStarGate(" + sg.getName() + ":" + sg.getClass().getName() + ")");
-		
-		if(starGate.size()<2) {
-			starGate.add(sg);
+
+		if(starGates.size()<capacitySG) {
+			starGates.add(sg);
 		}
-		
-		main.log(true, "void", "void", "");
 	}
 	
 	/**
@@ -186,15 +180,10 @@ public class Inventory {
 	 * @param m the material the will be added to the materials list
 	 */
 	public void addMaterial(Material m) {
-		if (m != null)
+		if (m != null && materials.size()<capacityM)
 		{
-			main.log(false, name, getClass().getName(), "addMaterial(" + m.getName() + ":" + m.getClass().getName() + ")");
 			materials.add(m);
 		}
-		else
-			main.log(false, name, getClass().getName(), "addMaterial(null:null)");
-		
-		main.log(true, "void", "void", "");
 	}
 
 }

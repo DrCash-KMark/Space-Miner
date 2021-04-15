@@ -11,15 +11,14 @@ package main;
 //
 //
 
-
-
-
 public class Iron extends Material {
-	
+
+//Constructors:----------------------------------------------------------------
+
 	/**
 	 * Constructor for Iron.
 	 */
 	Iron(){
-		super(false, "Iron", false);
+		super(false, "Iron", false, 0);
 	}
 }

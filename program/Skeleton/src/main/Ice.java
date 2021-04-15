@@ -11,22 +11,25 @@ package main;
 //
 //
 
-
 public class Ice extends Material {
-	
+
+//Constructors:----------------------------------------------------------------
+
 	/**
 	 * Constructor for Ice.
 	 */
 	Ice(){
-		super(false, "Ice", true);
+		super(false, "Ice", true , 0);
 	}
-	
-	/**
-	 * Evaporate the ice from the asteroid.
-	 */
+
+//Own methods:----------------------------------------------------------------------------
+
+    /**
+     * If the Material exposed to the sun then this function 
+     * evaporate the ice from the asteroid.
+     */
 	public void exposedAndCloseToSun(Asteroid a) {
-		this.main.log(false, this.name, this.getClass().getName(), "exposedAndCloseToSun(" + a.getName() + ":" + (a.getClass().getName()));
+		super.exposedAndCloseToSun(a);
 		a.evaporateMaterial();
-		this.main.log(true, "void", "void", "");
 	}
 }

@@ -15,20 +15,24 @@ package main;
 
 
 public class Uran extends Material {
-	
+
+//Constructors:----------------------------------------------------------------
+
 	/**
 	 * Constructor for Uran.
 	 */
 	Uran(){
-		super(true, "Uran", false);
+		super(true, "Uran", false, 0);
 	}
-	
-	/**
-	 * Blow up the asteroid which contains the material.
-	 */
+
+//Own methods:----------------------------------------------------------------------------
+
+    /**
+     * If the Material exposed to the sun 3 times then this function 
+     * blow up the asteroid which contains the material..
+     */
 	public void exposedAndCloseToSun(Asteroid a) {
-		this.main.log(false, this.name, this.getClass().getName(), "exposedAndCloseToSun(" + a.getName() + ":" + (a.getClass().getName()));
-		a.explode();
-		this.main.log(true, "void", "void", "");
+		super.exposedAndCloseToSun(a);
+		if(this.getExposedCounter()>=3) a.explode();
 	}
 }

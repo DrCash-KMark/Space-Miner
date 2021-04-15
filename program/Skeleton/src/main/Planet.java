@@ -7,49 +7,34 @@ package main;
 //  @ Project : Space-Miner
 //  @ File Name : Planet.java
 //  @ Date : 17/03/2021
-//  @ Author : Simon Zoltán
+//  @ Author : Simon Zoltï¿½n, Karpati Mark
 //
 //
-
 
 
 /**
  * Abstract parent class of different space objects in game.
- * @author simon
  *
+ * @author simon
  */
 public abstract class Planet extends Printable {
-	protected Main main; //Logger
-	protected String name;
-	
-	protected Game owner;
-	
-	/**
-	 * Called when sun flare occurs.
-	 * Could be overwritten in derived classes. 
-	 */
-	public void getNotifiedAboutSunflare() {
-	}
 
-	public Game getOwner() {
-		return owner;
-	}
+    protected Game owner;
 
-	public void setOwner(Game owner) {
-		this.owner = owner;
-	}
-	
-	//Logger:-------------------------------------
-	public void setMain(Main m) {
-		main = m;
-	}
-	public String getName() {
-		return name;
-	}
+    /**
+     * Called when sun flare occurs.
+     * Could be overwritten in derived classes.
+     */
+    public void getNotifiedAboutSunflare() {
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
+    public Game getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Game owner) {
+        this.owner = owner;
+    }
+
 
 }

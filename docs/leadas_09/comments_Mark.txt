@@ -1,0 +1,19 @@
+A dokumentumba mindenhol az jelezük, hogy a printable int, pedig emlékem szerint string-ben egyeztünk meg. 
+id_className formátum jó?
+
+mindenki ellenőrize a kommentjeit, hogy tényleg azok legyenek benne, amiket a függvény csinál.
+
+osztálydigramon nem jelezük, hogy controlable is megvalositja a sun
+
+ha nap nem random mindig viharzik, jó ez igy?
+
+a sun asteroidremove jó-e?
+
+material tárolása beálitása
+
+az aszteroida végzi az őlést, vagy csak küldjön tovább értesítést?
+aszteroida kiírás minden szomszéd? hogyan kéne?
+
+visszarakáskor exposoljuk? 2X expose?
+
+game a.Initalize()??

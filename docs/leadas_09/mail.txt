@@ -1,0 +1,17 @@
+Következő beadás jövő hét hétfőn. Egy zip fájl, benne a forrás, a tesztfájlok (pályák leírása (ha van), be- és kimenetek) és a doksi (pdf).
+
+Pontos fájllista kell a doksiban, ugyanaz, mint amit feltölt a csapat. Nem csak a forráskódok, hanem a pályák, bemenetek és elvárt kimenetek is! A tényleges kimenetet (teszteredményeket) nem kell beadni.
+
+A tesztek és a hozzájuk tartozó fájlok számozása egyezzen meg a mostani tervekben beadott tesztesetek sorszámaival, hogy könnyebb legyen őket összepárosítani.
+
+Forráskód tartalmazza az osztályok, metódusok (privát, protected is!) leírását javadoc kommentként. Tervekből kopizható.
+
+NAGYON FONTOS DOLGOK:
+1. Precíz fordítási és futtatási útmutató kell most is. Mindegyikre parancssori megoldás kell, amely a javac-java parancsokra épül. A parancsok segítségképpen beírhatók batch fájlba, hogy a tesztelőnek ne kelljen kézzel begépelnie őket. Nincs Eclipse-ben megnyitás, Maven, Gradle, stb.! Érdemes előre kipróbálni a virtuális gépen, mivel ott kell működniük!
+2. Precíz útmutató kell arra is, hogyan indíthatjuk úgy a protót, hogy várja a bemeneti nyelv parancsait.
+3. Precíz útmutató kell arra is, hogyan futtatunk le egy konkrét tesztet és hogyan tudjuk ellenőrizni a sikerességét. Az összehasonlításra automatizált megoldás kell, ne a futtatónak kelljen szemrevételezéssel hasonlítgatnia! Ide is parancssori megoldás kell, és ne kelljen plusz dolgokat feltelepíteni a gépre.
+4. Precíz útmutató kell arra is, hogyan futtattjuk le az összes tesztet és hogyan tudjuk ellenőrizni a sikerességüket. Az összehasonlításra automatizált megoldás kell, ne a futtatónak kelljen szemrevételezéssel hasonlítgatnia! Ide is parancssori megoldás kell, és ne kelljen plusz dolgokat feltelepíteni a gépre.
+
+Tesztek jegyzőkönyvei (nem excel, hanem a beadandó doksi formátumában) minden egyes tesztesetre, akkor is, ha hiba történt. Ilyen esetben az ismételt tesztről újabb jegyzőkönyv.
+
+Csapattagok értékelése: a projekt kezdete óta eltelt teljes(!) időre.

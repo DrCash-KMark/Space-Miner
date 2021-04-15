@@ -1,0 +1,4 @@
+-epites fuggvenyeit lehet meg at kene neznem
+-kell-e a logolas mainbe
+-kene valami szamlalo a nonplayereknek amivel tudjuk hogy hanyadik kornel jarnak, a viselkedes miatt. Ezt batorkodtam bele is tenni.
+-Entitybe betettem az ownert es az asteroidot is, eddig kulon voltak az oseikben, de igy is kezelhetonek tunik.

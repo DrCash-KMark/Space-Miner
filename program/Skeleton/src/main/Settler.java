@@ -20,12 +20,12 @@ import java.util.List;
  * @author Tadam
  *
  */
-public class Settler extends Entity {
+public class Settler extends Entity implements Drilling, Mining {
 	private Inventory inventory;
 	private Inventory BASE_RECIPE;
 	private Inventory ROBOT_RECIPE;
 	private Inventory STARGATE_RECIPE;
-	
+	private boolean hadactionthisturn;
 	/**
 	 * Default Constructor without parameters.
 	 */
@@ -35,18 +35,20 @@ public class Settler extends Entity {
 		BASE_RECIPE = new Inventory();
 		ROBOT_RECIPE = new Inventory();
 		STARGATE_RECIPE = new Inventory();
+		hadactionthisturn = false;
 	}
 	/**
 	 * Constructor with parameters.
 	 * @param asteroid: Asteroid: The Asteroid which this Settler is standing on.
 	 * @param owner: Game: The game which this Settler belongs to.
 	 */
-	public Settler(Asteroid asteroid, Game owner) {
-		super(asteroid, owner);
+	public Settler(String id, Asteroid asteroid, Game owner) {
+		super(id, owner, asteroid);
 		inventory = new Inventory();
 		BASE_RECIPE = new Inventory();
 		ROBOT_RECIPE = new Inventory();
 		STARGATE_RECIPE = new Inventory();
+		hadactionthisturn = false;
 	}
 	/**
 	 * The setter of the inventory.
@@ -61,6 +63,20 @@ public class Settler extends Entity {
 	 */
 	public Inventory getInventory() {
 		return inventory;
+	}
+	/**
+	 * The setter of the hadaction.
+	 * @param hadaction: boolean
+	 */
+	public void setHadAction(boolean hadaction) {
+		hadactionthisturn = hadaction;
+	}
+	/**
+	 * The getter of the hadaction.
+	 * @retrun boolean
+	 */
+	public boolean getHadAction() {
+		return hadactionthisturn;
 	}
 	/**
 	 * The setter of the STARGATE_RECIPE
@@ -84,57 +100,65 @@ public class Settler extends Entity {
 		BASE_RECIPE = i;
 	}
 	/**
+	 * The settler drill his asteroid.
+	 */
+	public void drill() {
+		this.asteroid.drilling();
+		this.hadactionthisturn = false;
+	}
+	/**
 	 * This settler mines on his asteroid.
 	 */
 	public void mine() {
-		main.log(false, name, this.getClass().getName(), "mine()");
+		//main.log(false, name, this.getClass().getName(), "mine()");
 		Material m = this.asteroid.removeMaterial();
 		inventory.addMaterial(m);
-		main.log(true, "void", "void", "");
+		this.hadactionthisturn = false;
+		//main.log(true, "void", "void", "");
 	}
 	/**
 	 * This settler builds a Stargate.
 	 */
 	public void buildStarGate() {
-		main.log(false, name, this.getClass().getName(), "buildStarGate()");
+		//main.log(false, name, this.getClass().getName(), "buildStarGate()");
 		Inventory remainder = STARGATE_RECIPE.subSet(inventory);
 		if(remainder.getMaterials().size() == 0) {
 			this.setInventory(STARGATE_RECIPE.subtraction(inventory));
 			StarGate s1 = new StarGate();
-			s1.setName("stargate");
+			//s1.setName("stargate");
 			StarGate s2 = new StarGate();
-			s2.setName("neighbour");
+			//s2.setName("neighbour");
 			s1.setNeighbour(s2);
 			s2.setNeighbour(s1);
 			inventory.addStarGate(s1);
 			inventory.addStarGate(s2);
+			this.hadactionthisturn = false;
 		}
-		main.log(true, "void", "void", "");
+		//main.log(true, "void", "void", "");
 	}
 	/**
 	 * This settler builds a Robot.
 	 */
 	public void buildRobot() {
-		main.log(false, name, this.getClass().getName(), "buildRobot()");
+		//main.log(false, name, this.getClass().getName(), "buildRobot()");
 		Inventory remainder = ROBOT_RECIPE.subSet(inventory);
 		if(remainder.getMaterials().size() == 0) {
 			this.setInventory(ROBOT_RECIPE.subtraction(inventory));
 			Robot robot = new Robot();
-			robot.setName("robot");
+			//robot.setName("robot");
 			robot.setAsteroid(asteroid);
-			asteroid.addRobot(robot);
-			owner.addRobot(robot);
+			asteroid.addNonPlayer(robot);
+			owner.addNonPlayer(robot);
+			this.hadactionthisturn = false;
 		}
-		main.log(true, "void", "void", "");
+		//main.log(true, "void", "void", "");
 	}
 	/**
 	 * This settler builds a Base.
 	 */
 	public void buildBase() {
-		main.log(false, name, this.getClass().getName(), "buildBase()");
-		
+		//main.log(false, name, this.getClass().getName(), "buildBase()");
 		List<Settler> settlersOnAsteroid = asteroid.getSettelrs();
-
 		Inventory subSet = BASE_RECIPE.subSet(inventory);
 		for (Settler settler : settlersOnAsteroid) {
 			subSet = subSet.subSet(settler.getInventory());
@@ -148,14 +172,14 @@ public class Settler extends Entity {
 				toSubtract = settler.getInventory().subtraction(toSubtract);
 			}
 			Base base = new Base();
-			base.setName("base");
-			base.setMain(main);
+			//base.setName("base");
+			//base.setMain(main);
 			base.setOwner(owner);
 			base.setAsteroid(asteroid);
 			base.onPlace();
+			this.hadactionthisturn = false;
 		}		
-
-		main.log(true, "void", "void", "");
+		//main.log(true, "void", "void", "");
 	}
 	/**
 	 * This settler tries to drop a material.
@@ -163,50 +187,72 @@ public class Settler extends Entity {
 	 * @param m: Material: The material which the settler wants to drop.
 	 */
 	public void dropMaterial(Material m) {
-		main.log(false, name, this.getClass().getName(), "dropMaterial("+m.getName()+":"+m.getClass().getName()+")");
+		//main.log(false, name, this.getClass().getName(), "dropMaterial("+m.getName()+":"+m.getClass().getName()+")");
 		boolean b = asteroid.addMaterial(m);
 		if(b == true) {
 			this.inventory.removeInventory(m);
+			this.hadactionthisturn = false;
 		}
-		main.log(true, "void", "void", "");
+		//main.log(true, "void", "void", "");
 	}
 	/**
 	 * The settler places a Stargate on the current asteroid.
 	 */
 	public void placeStarGate() {
-		main.log(false, name, this.getClass().getName(), "placeStarGate()");
+		//main.log(false, name, this.getClass().getName(), "placeStarGate()");
 		StarGate sg = inventory.removeStarGate();
 		asteroid.addBuilding(sg);
 		sg.setAsteroid(asteroid);
 		sg.onPlace();
-		main.log(true, "void", "void", "");
+		this.hadactionthisturn = false;
+		//main.log(true, "void", "void", "");
 	}
 	/**
 	 * The settler dies.
 	 */
 	public void die() {
-		main.log(false, name, this.getClass().getName(), "die()");
+		//main.log(false, name, this.getClass().getName(), "die()");
 		asteroid.removeSettler(this);
-		owner.killMe(this);
-		main.log(true, "void", "void", "");
+		owner.removeSettler(this);
+		//main.log(true, "void", "void", "");
 	}
 	/**
 	 * The asteroid of this settler has been exploded.
 	 * The settler dies.
 	 */
 	public void asteroidExploded() {
-		main.log(false, name, this.getClass().getName(), "asteroidExploded()");
+		//main.log(false, name, this.getClass().getName(), "asteroidExploded()");
 		this.die();
-		main.log(true, "void", "void", "");
+		//main.log(true, "void", "void", "");
 	}
 	
-	@Override
+	
 	public void move(Asteroid destination) {
-		main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":"+destination.getClass().getName()+")");
-		destination.addSettler(this);
-		asteroid.removeSettler(this);
-		this.setAsteroid(destination);
-		main.log(true, "void", "void", "");
+		//main.log(false, name, this.getClass().getName(), "move("+destination.getName()+":"+destination.getClass().getName()+")");
+		if(asteroid.getNeighbours().contains(destination)) {
+			destination.addSettler(this);
+			asteroid.removeSettler(this);
+			this.setAsteroid(destination);
+			this.hadactionthisturn = false;
+		}
+		//main.log(true, "void", "void", "");
 	}
-
+	
+	public void move(StarGate destination) {
+		if(asteroid.getBuildings().contains(destination)) {
+			if(destination.getWorks() == true && destination.getWorks() == true) {
+				asteroid.removeSettler(this);
+				this.asteroid = destination.getNeighbour().getAsteroid();
+				this.asteroid.addSettler(this);
+				this.hadactionthisturn = false;
+			}
+		}
+	}
+	
+	public String genUIString() {
+		String resstring = "Settler id: "+this.id+"\n hadAcrtionThisTurn: "+this.hadactionthisturn+"\n asteroid: "+this.asteroid.id+"\n inventory: "+this.inventory.genUIString();
+		return resstring;
+	}
+	
 }
+

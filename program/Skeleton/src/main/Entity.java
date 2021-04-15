@@ -1,4 +1,4 @@
-package main;
+	package main;
 
 //
 //
@@ -19,82 +19,89 @@ package main;
  */
 
 public abstract class Entity extends Printable implements ReactsToSunFlare, Moving {
-	protected Asteroid asteroid;
 	protected Game owner;
-	protected Main main;
-	protected String name;
+	protected Asteroid asteroid;
 	/**
-	 * Constructor with parameters.
-	 * @param a: Asteroid: The Asteroid which this Entity is standing on.
-	 * @param o: Game: The game which this Entity belongs to.
-	 */
-	public Entity(Asteroid a, Game o) {
-		asteroid = a;
-		owner = o;
-	}
-	/**
-	 * Default constructor, without parameters.
+	 * Constructor without parameters.
 	 */
 	public Entity() {
 		
 	}
 	/**
-	 * The getter of the Entity's asteroid.
-	 * @return asteroid: Asteroid
+	 * Constructor with parameters.
+	 * @param _id: String: The id of the Entity object.
+	 * @param _owner: Game: The owner of this Entity object.
+	 * @param _asteroid: Asteroid: The asteroid of the entity.
 	 */
-	public Asteroid getAsteroid() {
-		return asteroid;
+	public Entity(String _id, Game _owner, Asteroid _asteroid) {
+		id = _id;
+		owner = _owner;
+		asteroid = _asteroid;
 	}
 	/**
-	 * The setter of the Entity's asteroid.
-	 * @param asteroid: Asteroid
+	 * Getter for the id.
+	 * @return id: String
 	 */
-	public void setAsteroid(Asteroid asteroid) {
-		this.asteroid = asteroid;
+	public String getId() {
+		return id;
 	}
 	/**
-	 * The getter of the Entity's owner.
+	 * Setter for the id.
+	 * @param newid: String
+	 */
+	public void setId(String newid) {
+		id = newid;
+	}
+	/**
+	 * Getter for the owner.
 	 * @return owner: Game
 	 */
 	public Game getOwner() {
 		return owner;
 	}
 	/**
-	 * The setter of the Entity's owner.
-	 * @param owner: Game
+	 * Setter for the owner.
+	 * @param newowner: Game
 	 */
-	public void setOwner(Game owner) {
-		this.owner = owner;
+	public void setOwner(Game newowner) {
+		owner = newowner;
 	}
 	/**
-	 * The setter of the Main logger.
-	 * Only for testing.
-	 * @param m: Main
+	 * Getter for the asteroid.
+	 * @return asteroid: Asteroid
 	 */
-	public void setMain(Main m) {
-		main = m;
+	public Asteroid getAsteroid() {
+		return asteroid;
 	}
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	/**
+	 * Setter for the asteroid.
+	 * @param newasteroid: Asteroid
+	 */
+	public void setAsteroid(Asteroid newasteroid) {
+		asteroid = newasteroid;
 	}
 	
 	/**
-	 * Entity drills his current asteroid.
+	 * The Entity reacts to sunflare.
+	 * If the asteroid of the entity isn't hollow it dies.
 	 */
-	public void drill() {
-		main.log(false, name, this.getClass().getName(), "drill()");
-		asteroid.drilling();
-		main.log(true, "void", "void", "");
+	public void getNotifiedAboutSunflare() {
+		if(this.asteroid.isHollow() == false) {
+			this.die();
+		}
 	}
+		
 	/**
 	 * Entity dies.
 	 * Removes the entity from the current asteroid.
 	 */
 	public abstract void die();
-	
+	/**
+	 * The asteroid of the entity exploded.
+	 */
 	public abstract void asteroidExploded();
+	/**
+	 * Printing method inherited from Printable.
+	 */
+	public abstract String genUIString();
 }

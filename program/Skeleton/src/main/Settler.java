@@ -190,7 +190,7 @@ public class Settler extends Entity implements Drilling, Mining {
 		//main.log(false, name, this.getClass().getName(), "dropMaterial("+m.getName()+":"+m.getClass().getName()+")");
 		boolean b = asteroid.addMaterial(m);
 		if(b == true) {
-			this.inventory.removeInventory(m);
+			this.inventory.removeMaterial(m);
 			this.hadactionthisturn = false;
 		}
 		//main.log(true, "void", "void", "");
@@ -198,9 +198,7 @@ public class Settler extends Entity implements Drilling, Mining {
 	/**
 	 * The settler places a Stargate on the current asteroid.
 	 */
-	public void placeStarGate() {
-		//main.log(false, name, this.getClass().getName(), "placeStarGate()");
-		StarGate sg = inventory.removeStarGate();
+	public void placeStarGate(StarGate sg) {
 		asteroid.addBuilding(sg);
 		sg.setAsteroid(asteroid);
 		sg.onPlace();

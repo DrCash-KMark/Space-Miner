@@ -21,14 +21,14 @@ public abstract class NonPlayer extends Entity implements Controllable {
 	 * Getter of isRandom
 	 * @return boolean: isRandom
 	 */
-	public boolean getIsRand() {
+	public boolean getIsRandom() {
 		return isRandom;
 	}
 	/**
 	 * Setter of isRandom;
 	 * @param boolean: isRandom
 	 */
-	public void setIsRand(boolean newisrandom) {
+	public void setIsRandom(boolean newisrandom) {
 		isRandom = newisrandom;
 	}
 	/**

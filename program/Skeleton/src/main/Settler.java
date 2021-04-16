@@ -190,7 +190,7 @@ public class Settler extends Entity implements Drilling, Mining {
 		//main.log(false, name, this.getClass().getName(), "dropMaterial("+m.getName()+":"+m.getClass().getName()+")");
 		boolean b = asteroid.addMaterial(m);
 		if(b == true) {
-			this.inventory.removeInventory(m);
+			this.inventory.removeMaterial(m);
 			this.hadactionthisturn = false;
 		}
 		//main.log(true, "void", "void", "");

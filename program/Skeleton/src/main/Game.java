@@ -233,7 +233,7 @@ public class Game {
 	}
 	
 	public void loadGame(String fileName) {
-		List<StarGate> loadStarGates = new ArrayList<StarGate>();
+		/*List<StarGate> loadStarGates = new ArrayList<StarGate>();
 		
 		String loadString;
 		
@@ -588,7 +588,7 @@ public class Game {
 						
 						while (loadString != "----------------------------------------------------")
 						{
-							StarGate sg;
+							StarGate sg = new StarGate();
 							Boolean foundStarGate = false;
 							
 							loadString = loadScanner.nextLine();
@@ -776,7 +776,7 @@ public class Game {
 		catch (FileNotFoundException e) {
 			System.out.println("Can't load game.");
 		}
-
+*/
 	}
 	
 	public void saveGame(String fileName) {

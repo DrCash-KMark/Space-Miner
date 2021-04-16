@@ -163,8 +163,8 @@ public class UI {
 				
 				break;
 			case "move":
-				Asteroid a;
-				StarGate sg;
+				Asteroid a = new Asteroid();
+				StarGate sg = new StarGate();
 				
 				Boolean isAsteroid;
 				

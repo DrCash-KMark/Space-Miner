@@ -70,7 +70,7 @@ public class Inventory extends Printable{
 		return 0;
 	}
 
-	public StarGate getStarGate() {
+	public StarGate getStarGates() {
 		//TODO
 		return null;
 	}

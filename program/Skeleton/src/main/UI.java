@@ -94,7 +94,7 @@ public class UI {
 								
 								break;
 							case "asteroid":
-								alien.setId(game.getAsteroidWithId(splitString[4]));
+								alien.setAsteroid(game.getAsteroidWithId(splitString[4]));
 								
 								break;
 						}

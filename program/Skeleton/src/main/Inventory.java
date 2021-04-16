@@ -70,6 +70,11 @@ public class Inventory extends Printable{
 		return 0;
 	}
 
+	public StarGate getStarGate() {
+		//TODO
+		return null;
+	}
+
 //Inherited:-----------------------------------------------------------------------------
 
 	//Printable

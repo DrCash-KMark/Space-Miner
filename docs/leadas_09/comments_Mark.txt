@@ -17,3 +17,7 @@ aszteroida kiírás minden szomszéd? hogyan kéne?
 visszarakáskor exposoljuk? 2X expose?
 
 game a.Initalize()??
+
+válaszok:
+id=classname+idNumber
+

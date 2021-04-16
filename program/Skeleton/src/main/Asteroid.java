@@ -21,9 +21,13 @@ import java.util.*;
 public class Asteroid extends Planet implements Controllable {
     private int rockThickness;
     private Boolean closeToSun;
+    private int capacity;
+    private boolean isRandom;
 
     private List<NonPlayer> nonPlayers;
     private List<Settler> settlers;
+
+
 
     private List<Material> material;
     private List<Asteroid> neighbours;
@@ -35,7 +39,7 @@ public class Asteroid extends Planet implements Controllable {
      * constructor for Asteroid without parameters
      */
     public Asteroid() {
-        this.id = String.valueOf(nextId);
+        this.id = "Ast" + String.valueOf(nextId);
         nextId++;
 
         this.nonPlayers = new LinkedList<>();
@@ -61,6 +65,9 @@ public class Asteroid extends Planet implements Controllable {
      */
     public Asteroid(int rockThickness, Boolean closeToSun, List<NonPlayer> nonplayers, List<Settler> settlers, List<Material> material,
                     List<Asteroid> neighbours, List<Building> buildings) {
+        this.id = "Ast" + String.valueOf(nextId);
+        nextId++;
+
         this.rockThickness = rockThickness;
         this.closeToSun = closeToSun;
         this.nonPlayers = nonplayers;
@@ -125,6 +132,22 @@ public class Asteroid extends Planet implements Controllable {
         this.buildings = buildings;
     }
 
+    public List<NonPlayer> getNonPlayers() {
+        return  nonPlayers;
+    }
+
+    public void setCapacity(int c) {
+        this.capacity=c;
+    }
+
+    public  void setIsRandom(boolean r) {
+        this.isRandom=r;
+    }
+
+    public  List<Material> getMaterial() {
+        return  material;
+    }
+
     //Inherited:-----------------------------------------------------------------------------
 
     //Printable
@@ -162,18 +185,19 @@ public class Asteroid extends Planet implements Controllable {
      * not hide
      */
     public void getNotifiedAboutSunflare() {
-        //TODO if this class should do the killing
-        if (this.rockThickness != 0 || !this.isHollow()) {
-            while (!settlers.isEmpty()) {
-                this.settlers.get(0).die();
-            }
-            while (!nonPlayers.isEmpty()) {
-                this.nonPlayers.get(0).die();
-            }
+        for (Settler s : settlers) {
+            s.getNotifiedAboutSunflare();
+        }
+        for (NonPlayer np : nonPlayers) {
+            np.getNotifiedAboutSunflare();
         }
     }
 
     //Own methods:----------------------------------------------------------------------------
+
+    public void initalize() {
+        //TODO
+    }
 
     /**
      * Add a new settler to the settlers which are on the asteroid
@@ -243,7 +267,6 @@ public class Asteroid extends Planet implements Controllable {
     public boolean addMaterial(Material m) {
 
         if (this.material != null || this.rockThickness > 0) {
-
             return false;
         }
         if (this.closeToSun && this.material == null)
@@ -260,7 +283,7 @@ public class Asteroid extends Planet implements Controllable {
      * @return the material the was in the asteroid
      */
     public Material removeMaterial() {
-        if (this.rockThickness > 0 || material.size() == 0) // checks if the material can be removed
+        if (this.rockThickness > 0 || material == null || material.size() == 0) // checks if the material can be removed
         {
             return null;
         }

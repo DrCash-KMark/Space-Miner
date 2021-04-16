@@ -30,14 +30,29 @@ public class Sun extends Planet implements Controllable {
 //Constructors:----------------------------------------------------------------
 
     public Sun() {
-        this.id = String.valueOf(nextId); //+ "_SUN";
+        this.id = "Sun" + String.valueOf(nextId);
         nextId++;
         this.isRandom = false;
         this.asteroids = new LinkedList<Asteroid>();
 
     }
 
+    public Sun(boolean isRandom, List<Asteroid> asteroids) {
+        this.id = "Sun" + String.valueOf(nextId);
+        nextId++;
+        this.isRandom = isRandom;
+        this.asteroids = asteroids;
+    }
+
 //Get/Set-----------------------------------------------------------------
+
+    public String getID() {
+        return this.id;
+    }
+
+    public void setID(String id) {
+        this.id = id;
+    }
 
     public boolean getIsRandom() {
         return this.isRandom;
@@ -61,10 +76,8 @@ public class Sun extends Planet implements Controllable {
     public void onTurn() {
         if (isRandom) {
             if (rand.nextInt(100) < 20) {
-                sunFlare();
+                this.sunFlare();
             }
-        } else {
-            sunFlare();
         }
 
     }

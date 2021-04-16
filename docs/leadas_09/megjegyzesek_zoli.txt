@@ -24,3 +24,6 @@ Az isHollow azt is nezi, hogy at van-e furva a kereg???
 
 Az Aliennél nincs megírva, hogy Controllablet megvalositja.
 
+--------------------------------------------------------------------------
+
+isHollow 

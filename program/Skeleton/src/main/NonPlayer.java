@@ -67,4 +67,5 @@ public abstract class NonPlayer extends Entity implements Controllable {
 	 * The NonPlayer takes his turn.
 	 */
 	public abstract void onTurn();
+
 }

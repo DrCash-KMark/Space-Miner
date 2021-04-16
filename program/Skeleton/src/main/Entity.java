@@ -104,4 +104,8 @@ public abstract class Entity extends Printable implements ReactsToSunFlare, Movi
 	 * Printing method inherited from Printable.
 	 */
 	public abstract String genUIString();
+	/**
+	 * Serialization inherited from Printable.
+	 */
+	public abstract String genSaveString();
 }

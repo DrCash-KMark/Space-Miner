@@ -1,0 +1,16 @@
+Robot ezt írja ki:
+
+NonPlayer:
+class: Robot
+id: <id>
+asteroid: <asteroid id>
+;
+
+Settler ezt írja ki:
+
+Settler:
+hadActionThisTurn: <bool>
+id: <id>
+asteroid: <asteroid id>
+inventory: <inv id>
+;

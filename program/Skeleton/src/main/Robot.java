@@ -52,6 +52,7 @@ public class Robot extends NonPlayer implements Controllable, Drilling {
 				int index = rand.nextInt(this.asteroid.getNeighbours().size());
 				this.move(this.asteroid.getNeighbours().get(index));
 			}
+			counter++;
 		}
 	}
 	/**
@@ -74,17 +75,16 @@ public class Robot extends NonPlayer implements Controllable, Drilling {
 		return resstring;
 	}
 	
-	@Override
-	public String genSaveString() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	/**
 	 * The robot drills it's asteroid.
 	 */
 	public void drill() {
 		this.asteroid.drilling();
+	}
+	public String genSaveString() {
+		String resstring = "Nonplayer:\n"+"class: Robot\n id: "+this.id+"\n asteroid: "+this.asteroid.getId()+"\n ;";	
+		return resstring;
 	}
 	
 }

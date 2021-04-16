@@ -248,14 +248,13 @@ public class Settler extends Entity implements Drilling, Mining {
 	}
 	
 	public String genUIString() {
-		String resstring = "Settler id: "+this.id+"\n hadAcrtionThisTurn: "+this.hadactionthisturn+"\n asteroid: "+this.asteroid.id+"\n inventory: "+this.inventory.genUIString();
+		String resstring = "Settler id: "+this.id+"\n hadAcrtionThisTurn: "+this.hadactionthisturn+"\n asteroid: "+this.asteroid.getId()+"\n inventory: "+this.inventory.genUIString();
 		return resstring;
 	}
 	
-	@Override
 	public String genSaveString() {
-		// TODO Auto-generated method stub
-		return null;
+		String resstring = "Settler:\n"+"hadActionThisTurn: "+this.hadactionthisturn+"\n id: "+this.id+"\n asteroid: "+this.asteroid.getId()+"\n inventory: "+this.inventory.getId()+"\n ;";
+		return resstring;
 	}
 	
 	

@@ -13,8 +13,18 @@ public class Alien extends NonPlayer implements Mining {
 		isRandom = true;
 	}
 	
-//Inherited:-------------------------------------------------------	
+//Get/Set:-------------------------------------------------------
 	
+	public Inventory getInventory() {
+		return inventory;
+	}
+
+	public void setInventory(Inventory inventory) {
+		this.inventory = inventory;
+	}
+
+//Inherited:-------------------------------------------------------		
+
 	@Override
 	public String genUIString() {
 		return "Alien id: " + id + "\n"
@@ -24,7 +34,7 @@ public class Alien extends NonPlayer implements Mining {
 
 	@Override
 	public void getNotifiedAboutSunflare() {
-		if (!asteroid.isHollow()) {
+		if (!asteroid.isHollow() || asteroid.getRockThickness() > 0) {
 			this.die();
 		}
 	}

@@ -677,7 +677,7 @@ public class Game {
 									{
 										if (nonPlayer.getId() == loadString.split(" ")[1])
 										{
-											ali = nonPlayer;
+											ali = (Alien)nonPlayer;
 										}
 									}
 								}
@@ -691,7 +691,7 @@ public class Game {
 								
 								Inventory inv = new Inventory();
 								
-								ali.addInventory(inv);
+								ali.setInventory(inv);
 								
 								while (loadString != "stargates:")
 								{
@@ -757,7 +757,7 @@ public class Game {
 									{
 										if (nonPlayer.getId() == loadString.split(" ")[1])
 										{
-											r = nonPlayer;
+											r = (Robot)nonPlayer;
 										}
 									}
 								}
@@ -834,7 +834,7 @@ public class Game {
 	public Alien getAlienWithId(String id) {
 		for (NonPlayer nonPlayer : nonPlayers)
 			if (nonPlayer.getId() == id)
-				return nonPlayer;
+				return (Alien)nonPlayer;
 		
 		ui.displayMessage("No such alien found");
 		return null;
@@ -843,7 +843,7 @@ public class Game {
 	public Robot getRobotWithId(String id) {
 		for (NonPlayer nonPlayer : nonPlayers)
 			if (nonPlayer.getId() == id)
-				return nonPlayer;
+				return (Robot)nonPlayer;
 		
 		ui.displayMessage("No such robot found");
 		return null;

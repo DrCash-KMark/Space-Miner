@@ -33,6 +33,13 @@ public class Alien extends NonPlayer implements Mining {
 	}
 
 	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	@Override
 	public void getNotifiedAboutSunflare() {
 		if (!asteroid.isHollow() || asteroid.getRockThickness() > 0) {
 			this.die();

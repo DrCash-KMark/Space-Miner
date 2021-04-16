@@ -121,6 +121,12 @@ public class StarGate extends Building implements Controllable, Moving {
 				+ "asteroid: " + Tools.id(asteroid) + "\n";
 	}	
 
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 //Controllable:	
 	
 	@Override

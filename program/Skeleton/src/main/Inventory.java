@@ -98,6 +98,12 @@ public class Inventory extends Printable{
 				+ dataMaterial + dataStarGate;
 	}
 
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 //Own methods:----------------------------------------------------------------------------
 
 	/**

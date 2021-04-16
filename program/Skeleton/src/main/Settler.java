@@ -252,5 +252,12 @@ public class Settler extends Entity implements Drilling, Mining {
 		return resstring;
 	}
 	
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 }
 

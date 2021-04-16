@@ -22,6 +22,12 @@ public class Ice extends Material {
 		super(false, "Ice", true , 0);
 	}
 
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 //Own methods:----------------------------------------------------------------------------
 
     /**

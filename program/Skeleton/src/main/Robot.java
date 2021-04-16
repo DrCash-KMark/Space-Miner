@@ -73,6 +73,13 @@ public class Robot extends NonPlayer implements Controllable, Drilling {
 		String resstring = "Robot id: "+this.id+"\n isRandom: "+this.getIsRandom()+"\n asteroid: "+this.asteroid.getId();
 		return resstring;
 	}
+	
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/**
 	 * The robot drills it's asteroid.
 	 */

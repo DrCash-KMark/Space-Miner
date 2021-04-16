@@ -14,17 +14,23 @@ import java.util.Scanner;
 //
 
 
-
-/**
- * Main class. Responsible for executing the skeleton use cases.
- */
-public class Main {
+public class Main {	
 	
+	public static void main(String[] args) {
+		UI ui = new UI();
+		try (Scanner scanner = new Scanner(System.in)) {
+			while(true) {
+				ui.execute(scanner.nextLine());
+			}
+		}
+	}
+
+	/*
 	private int tabulation;
 	private int menuState;
 	
 	private Scanner scan;
-	
+	*/
 	/**
 	 * function for logging the functions executed by individual objects
 	 * @param isReturn: boolean: this boolean marks if this is a "forward" or return call
@@ -32,6 +38,7 @@ public class Main {
 	 * @param cls: String: this string holds the name of the class that calls this function
 	 * @param fnc: String: this string holds the function call in a string
 	 */
+	/*
 	public void log(boolean isReturn, String obj, String cls, String fnc)
 	{
 		if (!isReturn)
@@ -52,26 +59,24 @@ public class Main {
 			
 			System.out.print("<-" + obj + ":" + cls + "\n");
 		}
-	}
+	}*/
 	
 	/**
 	 * constructor without parameters
 	 */
+	/*
 	public Main() {
 		tabulation = 0;
 		menuState = 0;
 		scan = new Scanner(System.in);
 	}
-	
-	public static void main(String[] args) {
-		
-		Main m = new Main();
-	}
-    
+	*/
+	    
 	/**
 	 * this function reads an int from the standard input
 	 * @return num: int: returns the number read from the standard input
 	 */
+	/*
     public int scanNumber()
     {
     	//Scanner scan = new Scanner(System.in);
@@ -82,4 +87,5 @@ public class Main {
         
         return num;
     }
+	*/
 }

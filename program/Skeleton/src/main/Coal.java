@@ -18,4 +18,11 @@ public class Coal extends Material {
 	Coal(){
 		super(false, "Coal", false, 0);
 	}
+	
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

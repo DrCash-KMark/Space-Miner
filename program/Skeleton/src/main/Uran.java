@@ -25,7 +25,8 @@ public class Uran extends Material {
 		super(true, "Uran", false, 0);
 	}
 
-//Own methods:----------------------------------------------------------------------------
+	
+//Methods:----------------------------------------------------------------------------
 
     /**
      * If the Material exposed to the sun 3 times then this function 
@@ -34,5 +35,11 @@ public class Uran extends Material {
 	public void exposedAndCloseToSun(Asteroid a) {
 		super.exposedAndCloseToSun(a);
 		if(this.getExposedCounter()>=3) a.explode();
+	}
+	
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

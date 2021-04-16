@@ -94,6 +94,12 @@ public class Sun extends Planet implements Controllable {
         return "Sun id: " + id + "\n"
                 + "isRandom: " + Tools.bool(isRandom) + "\n";
     }
+    
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 //Own methods:----------------------------------------------------------------------------
 

@@ -33,6 +33,12 @@ public class Base extends Building {
 	}
 
 	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public void getNotifiedAboutSunflare() {
 		//Do nothing
 	}

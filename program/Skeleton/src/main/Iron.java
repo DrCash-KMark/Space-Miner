@@ -21,4 +21,13 @@ public class Iron extends Material {
 	Iron(){
 		super(false, "Iron", false, 0);
 	}
+
+//Methods:--------------------------------------------------------------
+	
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

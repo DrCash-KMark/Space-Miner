@@ -166,6 +166,12 @@ public class Asteroid extends Planet implements Controllable {
                 + "rockThickness: " + String.valueOf(rockThickness) + "\n";
     }
 
+	@Override
+	public String genSaveString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
     //Controllable
 
     /**

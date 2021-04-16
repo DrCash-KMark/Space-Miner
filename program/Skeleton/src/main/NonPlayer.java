@@ -8,6 +8,7 @@ public abstract class NonPlayer extends Entity implements Controllable {
 	 */
 	public NonPlayer() {
 		super();
+		counter = 0;
 	}
 	/**
 	 * Constructor with parameters.

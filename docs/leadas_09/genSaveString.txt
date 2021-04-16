@@ -1,9 +1,9 @@
 Robot ezt írja ki:
 
-NonPlayer:
-class: Robot
+Robot
 id: <id>
 asteroid: <asteroid id>
+isRandom: <t / f>
 ;
 
 Settler ezt írja ki:

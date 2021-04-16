@@ -83,7 +83,7 @@ public class Robot extends NonPlayer implements Controllable, Drilling {
 		this.asteroid.drilling();
 	}
 	public String genSaveString() {
-		String resstring = "Nonplayer:\n"+"class: Robot\n id: "+this.id+"\n asteroid: "+this.asteroid.getId()+"\n ;";	
+		String resstring = "Robot\n id: "+this.id+"\n asteroid: "+this.asteroid.getId()+"\n isRandom: "+this.getIsRandom()+"\n ;";	
 		return resstring;
 	}
 	

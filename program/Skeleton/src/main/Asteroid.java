@@ -27,11 +27,11 @@ public class Asteroid extends Planet implements Controllable {
     private List<NonPlayer> nonPlayers;
     private List<Settler> settlers;
 
-
-
     private List<Material> materials;
     private List<Asteroid> neighbours;
     private List<Building> buildings;
+
+    Random rnd = new Random();
 
 //Constructors:----------------------------------------------------------------
 
@@ -54,6 +54,7 @@ public class Asteroid extends Planet implements Controllable {
 
     /**
      * Constructor for Asteroid
+     *
      * @param rockThickness
      * @param capacity
      * @param closeToSun
@@ -64,14 +65,14 @@ public class Asteroid extends Planet implements Controllable {
      * @param neighbours
      * @param buildings
      */
-    public Asteroid(int rockThickness,int capacity, Boolean closeToSun,boolean isRandom, List<NonPlayer> nonplayers, List<Settler> settlers, List<Material> materials,
+    public Asteroid(int rockThickness, int capacity, Boolean closeToSun, boolean isRandom, List<NonPlayer> nonplayers, List<Settler> settlers, List<Material> materials,
                     List<Asteroid> neighbours, List<Building> buildings) {
         this.id = "Ast" + String.valueOf(nextId);
         nextId++;
 
         this.rockThickness = rockThickness;
-        this.capacity=capacity;
-        this.isRandom=isRandom;
+        this.capacity = capacity;
+        this.isRandom = isRandom;
         this.closeToSun = closeToSun;
         this.nonPlayers = nonplayers;
         this.settlers = settlers;
@@ -89,7 +90,6 @@ public class Asteroid extends Planet implements Controllable {
     public void removeNonPlayer(NonPlayer nonPlayer) {
         nonPlayers.remove(nonPlayer);
     }
-
 
     public int getRockThickness() {
         return rockThickness;
@@ -136,18 +136,18 @@ public class Asteroid extends Planet implements Controllable {
     }
 
     public List<NonPlayer> getNonPlayers() {
-        return  nonPlayers;
+        return nonPlayers;
     }
 
     public void setCapacity(int c) {
-        this.capacity=c;
+        this.capacity = c;
     }
 
-    public  void setIsRandom(boolean r) {
-        this.isRandom=r;
+    public void setIsRandom(boolean r) {
+        this.isRandom = r;
     }
 
-    public  List<Material> getMaterials() {
+    public List<Material> getMaterials() {
         return materials;
     }
 
@@ -166,11 +166,19 @@ public class Asteroid extends Planet implements Controllable {
                 + "rockThickness: " + String.valueOf(rockThickness) + "\n";
     }
 
+<<<<<<< Updated upstream
 	@Override
 	public String genSaveString() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+=======
+    @Override
+    public String genSaveString() {
+        //TODO
+        return  null;
+    }
+>>>>>>> Stashed changes
 
     //Controllable
 
@@ -182,9 +190,13 @@ public class Asteroid extends Planet implements Controllable {
     @Override
     public void onTurn() {
         if (rockThickness <= 0 && closeToSun) {
-            materials.get(0).exposedAndCloseToSun(this);
+            for (Material m : materials) {
+                m.exposedAndCloseToSun(this);
+            }
         }
-
+        if (isRandom && rnd.nextInt(100) < 20) {
+            this.closeToSun = !this.closeToSun;
+        }
     }
 
     //ReactsToSunFlare
@@ -204,8 +216,35 @@ public class Asteroid extends Planet implements Controllable {
 
     //Own methods:----------------------------------------------------------------------------
 
+    /**
+     * initializes the asteroid
+     */
     public void initialize() {
-        //TODO
+        this.isRandom = true;
+        this.capacity = rnd.nextInt(10);
+        this.rockThickness = rnd.nextInt(6) + 2;
+        this.closeToSun = rnd.nextBoolean();
+        //this is hard coded
+        this.materials = new LinkedList<Material>();
+        int materialType = rnd.nextInt(5);
+        for (int i = 0; i < this.capacity; i++) {
+            switch (materialType) {
+                case 0:
+                    materials.add(new Coal());
+                    break;
+                case 1:
+                    materials.add(new Ice());
+                    break;
+                case 2:
+                    materials.add(new Iron());
+                    break;
+                case 3:
+                    materials.add(new Uran());
+                    break;
+                case 4:
+                    break;
+            }
+        }
     }
 
     /**
@@ -233,16 +272,16 @@ public class Asteroid extends Planet implements Controllable {
      */
     public void explode() {
 
-        for(Settler s:settlers) {
+        for (Settler s : settlers) {
             s.asteroidExploded();
         }
-        for (NonPlayer np:nonPlayers) {
+        for (NonPlayer np : nonPlayers) {
             np.asteroidExploded();
         }
-        for (Asteroid n:neighbours) {
+        for (Asteroid n : neighbours) {
             n.removeNeighbour(this);
         }
-        for(Building b:buildings) {
+        for (Building b : buildings) {
             b.destroy();
         }
         owner.removeAsteroid(this);
@@ -254,14 +293,16 @@ public class Asteroid extends Planet implements Controllable {
      */
     public void drilling() {
 
-        this.rockThickness--;
-
-        if (rockThickness < 0)
-            rockThickness = 0;
-
-        if (this.closeToSun && this.rockThickness == 0 && this.materials != null) {
-            this.materials.get(0).exposedAndCloseToSun(this);
+        if (rockThickness > 0) {
+            this.rockThickness--;
+            if (this.materials != null && this.closeToSun && this.rockThickness == 0) {
+                for (Material m : materials) {
+                    m.exposedAndCloseToSun(this);
+                }
+            }
         }
+
+
     }
 
     /**
@@ -272,14 +313,18 @@ public class Asteroid extends Planet implements Controllable {
      * @return if the materials was successfully added or not.
      */
     public boolean addMaterial(Material m) {
-
-        if (this.materials != null || this.rockThickness > 0) {
-            return false;
+        if (this.materials == null) {
+            this.materials = new LinkedList<Material>();
         }
-        /*if (this.closeToSun && this.materials == null && this.)
-            m.exposedAndCloseToSun(this);*/
+        if (this.materials.size() >= this.capacity || this.rockThickness > 0) {
+            return false;
+        } else {
+            this.materials.add(m);
+            m.exposedAndCloseToSun(this);
+            return true;
+        }
 
-        return true;
+
     }
 
     /**
@@ -348,12 +393,11 @@ public class Asteroid extends Planet implements Controllable {
     }
 
     /**
-     * Destroys the materials which was inside the asteroid
+     * Destroys all the materials which was inside the asteroid
      */
     public void evaporateMaterial() {
         this.materials = null;
     }
-
 
 }
 

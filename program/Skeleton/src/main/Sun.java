@@ -62,6 +62,9 @@ public class Sun extends Planet implements Controllable {
         this.isRandom = newIsRandom;
     }
 
+    public List<Asteroid> getAsteroids() {
+        return asteroids;
+    }
 
 //Inherited:-----------------------------------------------------------------------------
 

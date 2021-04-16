@@ -25,4 +25,6 @@ abstract public class Printable {
 //Methods:------------------------------------------------
 	
 	abstract public String genUIString();
+	
+	abstract public String genSaveString();
 }

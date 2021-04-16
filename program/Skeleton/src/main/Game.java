@@ -228,17 +228,12 @@ public class Game {
 		startGame();
 	}
 	
-	// do we need this?
-	public void executeCommand(String arguments) {
-		
-	}
-	
 	public void startGame() {
 		startTurn();
 	}
 	
 	public void loadGame(String fileName) {
-		int loadState = 0; 	// 0 - sun, 1 - asteroids, 2 - settlers, 3 - nonPlayers
+		List<StarGate> loadStarGates = new ArrayList<StarGate>();
 		
 		String loadString;
 		
@@ -437,12 +432,20 @@ public class Game {
 								loadString = loadScanner.nextLine();
 								
 								StarGate sg;
+								Boolean foundStarGate = false;
 								
-								for (Building building : a.getBuildings())
-									if (building.getId() == loadString.split(" ")[1])
-										sg = building;
-									else
-										sg = new StarGate();
+								for (StarGate starGate : loadStarGates)
+									if (starGate.getId() == loadString.split(" ")[1])
+									{
+										foundStarGate = true;
+										sg = starGate;
+									}
+								
+								if (!foundStarGate)
+								{
+									sg = new StarGate();
+									loadStarGates.add(sg);
+								}
 								
 								sg.setId(loadString.split(" ")[1]);
 								
@@ -450,9 +453,30 @@ public class Game {
 								
 								sg.setAsteroid(a);
 								
+								// neighbour ???
+								
 								loadString = loadScanner.nextLine();
 								
-								// neighbour ???
+								StarGate n;
+								Boolean foundNeighbour = false;
+								
+								for (StarGate stargate : loadStarGates)
+								{
+									if (stargate.getId() == loadString.split(" ")[1])
+									{
+										n = stargate;
+										foundNeighbour = true;
+									}
+								}
+								
+								if (!foundNeighbour)
+								{
+									n = new StarGate();
+									n.setId(loadString.split(" ")[1]);
+									loadStarGates.add(n);
+								}
+								
+								sg.setNeighbour(n);
 								
 								loadString = loadScanner.nextLine();
 								
@@ -495,8 +519,6 @@ public class Game {
 									settler = set;
 							}
 						}
-						
-						//a.setId(loadString.split(" ")[1]);
 						
 						loadString = loadScanner.nextLine();
 						
@@ -566,7 +588,77 @@ public class Game {
 						
 						while (loadString != "----------------------------------------------------")
 						{
-							// stargates
+							StarGate sg;
+							Boolean foundStarGate = false;
+							
+							loadString = loadScanner.nextLine();
+							
+							for (StarGate starGate : loadStarGates)
+								if (starGate.getId() == loadString.split(" ")[1])
+								{
+									foundStarGate = true;
+									sg = starGate;
+								}
+							
+							if (!foundStarGate)
+							{
+								sg = new StarGate();
+								loadStarGates.add(sg);
+							}
+							
+							sg.setId(loadString.split(" ")[1]);
+							
+							loadString = loadScanner.nextLine();
+							
+							// dosent have asteroid
+							
+							// neighbour ???
+							
+							loadString = loadScanner.nextLine();
+							
+							StarGate n;
+							Boolean foundNeighbour = false;
+							
+							for (StarGate stargate : loadStarGates)
+							{
+								if (stargate.getId() == loadString.split(" ")[1])
+								{
+									n = stargate;
+									foundNeighbour = true;
+								}
+							}
+							
+							if (!foundNeighbour)
+							{
+								n = new StarGate();
+								n.setId(loadString.split(" ")[1]);
+								loadStarGates.add(n);
+							}
+							
+							sg.setNeighbour(n);
+							
+							loadString = loadScanner.nextLine();
+							
+							if (loadString.split(" ")[1] == "t")
+								sg.setWorks(true);
+							else
+								sg.setWorks(false);
+							
+							loadString = loadScanner.nextLine();
+							
+							if (loadString.split(" ")[1] == "t")
+								sg.setWasInSunFlare(true);
+							else
+								sg.setWasInSunFlare(false);
+							
+							loadString = loadScanner.nextLine();
+							
+							if (loadString.split(" ")[1] == "t")
+								sg.setRandom(true);
+							else
+								sg.setRandom(false);
+							
+							loadString = loadScanner.nextLine();
 						}
 	
 						break;
@@ -716,30 +808,45 @@ public class Game {
 		for (Settler settler : settlers)
 			if (settler.getId() == id)
 				return settler;
+		
+		ui.displayMessage("No such settler found");
+		return null;
 	}
 	
 	public Asteroid getAsteroidWithId(String id) {
 		for (Asteroid asteroid : asteroids)
 			if (asteroid.getId() == id)
 				return asteroid;
+		
+		ui.displayMessage("No such asteroid found");
+		return null;
 	}
 	
 	public Sun getSunWithId(String id) {
 		for (Sun sun : suns)
 			if (sun.getId() == id)
 				return sun;
+		
+		ui.displayMessage("No such sun found");
+		return null;
 	}
 	
 	public Alien getAlienWithId(String id) {
 		for (NonPlayer nonPlayer : nonPlayers)
 			if (nonPlayer.getId() == id)
 				return nonPlayer;
+		
+		ui.displayMessage("No such alien found");
+		return null;
 	}
 	
 	public Robot getRobotWithId(String id) {
 		for (NonPlayer nonPlayer : nonPlayers)
 			if (nonPlayer.getId() == id)
 				return nonPlayer;
+		
+		ui.displayMessage("No such robot found");
+		return null;
 	}
 	
 	public StarGate getStarGateWithId(String id) {
@@ -754,6 +861,9 @@ public class Game {
 				if (starGate.getId() == id)
 					return (StarGate)starGate;
 		}
+		
+		ui.displayMessage("No such stargate found");
+		return null;
 	}
 	
 	public Base getBaseWithId(String id) {
@@ -762,6 +872,9 @@ public class Game {
 				if (base.getId() == id)
 					return (Base)base;
 		}
+		
+		ui.displayMessage("No such base found");
+		return null;
 	}
 	
 	public Material getMaterialWithId(String id) {
@@ -776,5 +889,8 @@ public class Game {
 				if (material.getId() == id)
 					return material;
 		}
+		
+		ui.displayMessage("No such material found");
+		return null;
 	}
 }

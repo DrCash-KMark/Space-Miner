@@ -40,6 +40,84 @@ public class UI {
 				
 				break;
 			case "set":
+				switch (splitString[1]) {
+					case "settler":
+						Settler settler = game.getSettlerWithId(splitString[3]);
+						
+						switch(splitString[2]) {
+							case "id":
+								settler.setId(splitString[4]);
+								
+								break;
+							case "asteroid":
+								settler.setAsteroid(game.getAsteroidWithId(splitString[4]));
+								
+								break;
+							case "hadActionThisTurn":
+								if (splitString[4] == "t")
+									settler.setHadAction(true);
+								else
+									settler.setHadAction(false);
+								
+								break;
+						}
+						
+						break;
+					case "robot":
+						Robot robot = game.getRobotWithId(splitString[3]);
+						
+						switch(splitString[2]) {
+							case "id":
+								robot.setId(splitString[4]);
+								
+								break;
+							case "asteroid":
+								robot.setAsteroid(game.getAsteroidWithId(splitString[4]));
+								
+								break;
+							case "isRandom":
+								if (splitString[4] == "t")
+									robot.setIsRandom(true);
+								else
+									robot.setIsRandom(false);
+								
+								break;
+						}
+						
+						break;
+					case "alien":
+						Alien alien = game.getAlienWithId(splitString[3]);
+						
+						switch(splitString[2]) {
+							case "id":
+								alien.setId(splitString[4]);
+								
+								break;
+							case "asteroid":
+								alien.setId(game.getAsteroidWithId(splitString[4]));
+								
+								break;
+						}
+						
+						break;
+					case "asteroid":
+						Asteroid asteroid = game.getAsteroidWithId(splitString[3]);
+						
+						break;
+					case "stargate":
+						StarGate starGate = game.getStarGateWithId(splitString[3]);
+						
+						break;
+					case "base":
+						Base base = game.getBaseWithId(splitString[3]);
+						
+						break;
+					case "material":
+						Material material = game.getMaterialWithId(splitString[3]);
+						
+						break;
+				}
+				
 				break;
 			case "add":
 				break;

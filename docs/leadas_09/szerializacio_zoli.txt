@@ -19,6 +19,5 @@ Alien:
 id: <id>
 asteroid: <asteroid id>
 isRandom: <t / f>
-counter: int
 inventory: <inventory id>
 ;

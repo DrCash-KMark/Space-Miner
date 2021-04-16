@@ -33,9 +33,11 @@ public class Base extends Building {
 	}
 
 	@Override
-	public String genSaveString() {
-		// TODO Auto-generated method stub
-		return null;
+	public String genSaveString() {		
+		return "Base:\n"
+				+ "id: " + id + "\n"
+				+ "asteroid: " + Tools.id(asteroid) + "\n"
+				+ ";\n";
 	}
 
 	@Override

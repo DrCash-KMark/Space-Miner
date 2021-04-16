@@ -81,13 +81,11 @@ public class Alien extends NonPlayer implements Mining {
 	public void asteroidExploded() {
 		this.die();
 	}
-
-	private boolean doMine = true;
 	
 	@Override
 	public void onTurn() {
 		if (isRandom) {
-			if (doMine) {
+			if (counter % 2 == 0) {
 				mine();
 			}
 			else {
@@ -96,8 +94,8 @@ public class Alien extends NonPlayer implements Mining {
 				int destI = rand.nextInt(list.size()); 
 				move(list.get(destI));
 			}
-			doMine = !doMine;
 		}
+		counter++;
 	}
 	
 	@Override

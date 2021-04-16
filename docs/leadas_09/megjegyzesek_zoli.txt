@@ -26,4 +26,17 @@ Az Aliennél nincs megírva, hogy Controllablet megvalositja.
 
 --------------------------------------------------------------------------
 
-isHollow 
+Megoldas:
+isHollow + vastagsag a elbujas vizsgalatnal.
+
+-------------------------------------------------------------------------------------
+2021. 4. 16.
+
+Mire van a counter a NonPlayerben?
+
+Szerialialjam-e azokat a valtozokat, amik csak a random viselkedeshez segitenek? -> doMine az Alienben;
+
+--------------------------------------------------------------------------------
+Megoldás:
+Ki iratom. A doMine-t helyettesíti a counter.
+

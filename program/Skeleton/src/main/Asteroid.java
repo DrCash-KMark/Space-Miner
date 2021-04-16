@@ -19,13 +19,13 @@ import java.util.*;
  * @author Karpati
  */
 public class Asteroid extends Planet implements Controllable {
+    private boolean isRandom;
     private int rockThickness;
     private Boolean closeToSun;
     private int capacity;
-    private boolean isRandom;
 
-    private List<NonPlayer> nonPlayers;
     private List<Settler> settlers;
+    private List<NonPlayer> nonPlayers;
 
     private List<Material> materials;
     private List<Asteroid> neighbours;
@@ -53,29 +53,26 @@ public class Asteroid extends Planet implements Controllable {
     }
 
     /**
-     * Constructor for Asteroid
+     * Constructor for Asteroid which is usefully during loading in data
      *
      * @param rockThickness
      * @param capacity
      * @param closeToSun
      * @param isRandom
-     * @param nonplayers
+     * @param nonPlayers
      * @param settlers
      * @param materials
      * @param neighbours
      * @param buildings
      */
-    public Asteroid(int rockThickness, int capacity, Boolean closeToSun, boolean isRandom, List<NonPlayer> nonplayers, List<Settler> settlers, List<Material> materials,
-                    List<Asteroid> neighbours, List<Building> buildings) {
-        this.id = "Ast" + String.valueOf(nextId);
-        nextId++;
-
-        this.rockThickness = rockThickness;
-        this.capacity = capacity;
+    public Asteroid(String id, boolean isRandom, int rockThickness, int capacity, boolean closeToSun, List<Settler> settlers, List<NonPlayer> nonPlayers, List<Material> materials, List<Asteroid> neighbours, List<Building> buildings) {
+        this.id = id;
         this.isRandom = isRandom;
+        this.rockThickness = rockThickness;
         this.closeToSun = closeToSun;
-        this.nonPlayers = nonplayers;
+        this.capacity = capacity;
         this.settlers = settlers;
+        this.nonPlayers = nonPlayers;
         this.materials = materials;
         this.neighbours = neighbours;
         this.buildings = buildings;
@@ -166,19 +163,36 @@ public class Asteroid extends Planet implements Controllable {
                 + "rockThickness: " + String.valueOf(rockThickness) + "\n";
     }
 
-<<<<<<< Updated upstream
-	@Override
-	public String genSaveString() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-=======
+    /**
+     * creates a string storing the most important datas of this class
+     *
+     * @return
+     */
     @Override
     public String genSaveString() {
-        //TODO
-        return  null;
+        String returnValue = "Asteroid\n" +
+                "id: " + this.id + "\n" +
+                "isRandom:" + Tools.bool(this.isRandom) + "\n" +
+                "rockThickness: " + this.rockThickness + "\n" +
+                "closeToSun: " + Tools.bool(this.closeToSun) + "\n" +
+                "capacity: " + this.capacity + "\n";
+        for (Settler s : settlers) {
+            returnValue += "settlerId: " + s.id + "\n";
+        }
+        for (NonPlayer np : nonPlayers) {
+            returnValue += "nonPlayerId: " + np.id + "\n";
+        }
+        for (Material m : materials) {
+            returnValue += "MaterialId: " + m.id + "\n";
+        }
+        for (Asteroid n : neighbours) {
+            returnValue += "NeighbourId: " + n.id + "\n";
+        }
+        for (Building b : buildings) {
+            returnValue += "BuildingId: " + b.id + "\n";
+        }
+        return returnValue + ";";
     }
->>>>>>> Stashed changes
 
     //Controllable
 

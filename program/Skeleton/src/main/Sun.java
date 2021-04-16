@@ -29,6 +29,9 @@ public class Sun extends Planet implements Controllable {
 
 //Constructors:----------------------------------------------------------------
 
+    /**
+     * Simple constructor for sun.
+     */
     public Sun() {
         this.id = "Sun" + String.valueOf(nextId);
         nextId++;
@@ -37,9 +40,14 @@ public class Sun extends Planet implements Controllable {
 
     }
 
-    public Sun(boolean isRandom, List<Asteroid> asteroids) {
-        this.id = "Sun" + String.valueOf(nextId);
-        nextId++;
+    /**
+     * Constructor for loading in data
+     * @param id
+     * @param isRandom
+     * @param asteroids
+     */
+    public Sun(String id, boolean isRandom, List<Asteroid> asteroids) {
+        this.id = id;
         this.isRandom = isRandom;
         this.asteroids = asteroids;
     }
@@ -97,12 +105,17 @@ public class Sun extends Planet implements Controllable {
         return "Sun id: " + id + "\n"
                 + "isRandom: " + Tools.bool(isRandom) + "\n";
     }
-    
-	@Override
-	public String genSaveString() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+    @Override
+    public String genSaveString() {
+        String returnValue = "Sun\n" +
+                "id: " + this.id + "\n" +
+                "isRandom:" + Tools.bool(this.isRandom) + "\n";
+        for (Asteroid a : asteroids) {
+            returnValue += "AsteroidId: " + a.id + "\n";
+        }
+        return returnValue + ";";
+    }
 
 //Own methods:----------------------------------------------------------------------------
 

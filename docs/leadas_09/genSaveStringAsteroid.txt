@@ -1,0 +1,19 @@
+Asteroida tartalma (amikböl kettö úgyanolyan van egymásból azokból tetszőleges mennyiségű lehet) van egy konstruktor, ami ezeket az adatokat fogadja többnyire:
+
+Asteroid
+id: <string id>
+isRandom: <t / f bool>
+rockThickness: <int>
+closeToSun: <t / f bool>
+capacity: <int>
+settlerId: <string id>
+settlerId: <string id>
+nonPlayerId: <string id>
+nonPlayerId: <string id>
+MaterialId: <string id>
+MaterialId: <string id>
+NeighbourId: <string id>
+NeighbourId: <string id>
+BuildingId: <string id>
+BuildingId: <string id>
+;

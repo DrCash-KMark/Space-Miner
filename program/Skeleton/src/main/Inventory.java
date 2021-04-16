@@ -70,9 +70,9 @@ public class Inventory extends Printable{
 		return 0;
 	}
 
-	public StarGate getStarGates() {
+	public LinkedList<StarGate> getStarGates() {
 		//TODO
-		return null;
+		return starGates;
 	}
 
 //Inherited:-----------------------------------------------------------------------------

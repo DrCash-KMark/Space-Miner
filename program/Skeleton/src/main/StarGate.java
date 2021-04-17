@@ -137,8 +137,7 @@ public class StarGate extends Building implements Controllable, Moving {
 				+ "neighbour: " + Tools.id(neighbour) + "\n"
 				+ "works: " + Tools.bool(works) + "\n"
 				+ "wasInSunFlare: " + Tools.bool(wasInSunFlare) + "\n"
-				+ "isRandom: " + Tools.bool(isRandom) + "\n"
-				+ ";\n";
+				+ "isRandom: " + Tools.bool(isRandom);
 	}
 
 //Controllable:	

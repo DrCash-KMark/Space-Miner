@@ -42,6 +42,7 @@ public class Sun extends Planet implements Controllable {
 
     /**
      * Constructor for loading in data
+     *
      * @param id
      * @param isRandom
      * @param asteroids
@@ -108,8 +109,7 @@ public class Sun extends Planet implements Controllable {
 
     @Override
     public String genSaveString() {
-        String returnValue = "Sun\n" +
-                "id: " + this.id + "\n" +
+        String returnValue = "id: " + this.id + "\n" +
                 "isRandom:" + Tools.bool(this.isRandom) + "\n";
         for (Asteroid a : asteroids) {
             returnValue += "AsteroidId: " + a.id + "\n";

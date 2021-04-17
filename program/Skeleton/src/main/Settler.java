@@ -111,9 +111,11 @@ public class Settler extends Entity implements Drilling, Mining {
 	 */
 	public void mine() {
 		//main.log(false, name, this.getClass().getName(), "mine()");
-		Material m = this.asteroid.removeMaterial();
-		inventory.addMaterial(m);
-		this.hadactionthisturn = true;
+		if(this.inventory.isFullMaterials() == false) {
+			Material m = this.asteroid.removeMaterial();
+			inventory.addMaterial(m);
+			this.hadactionthisturn = true;
+		}
 		//main.log(true, "void", "void", "");
 	}
 	/**
@@ -121,18 +123,20 @@ public class Settler extends Entity implements Drilling, Mining {
 	 */
 	public void buildStarGate() {
 		//main.log(false, name, this.getClass().getName(), "buildStarGate()");
-		Inventory remainder = STARGATE_RECIPE.subSet(inventory);
-		if(remainder.getMaterials().size() == 0) {
-			this.setInventory(STARGATE_RECIPE.subtraction(inventory));
-			StarGate s1 = new StarGate();
-			//s1.setName("stargate");
-			StarGate s2 = new StarGate();
-			//s2.setName("neighbour");
-			s1.setNeighbour(s2);
-			s2.setNeighbour(s1);
-			inventory.addStarGate(s1);
-			inventory.addStarGate(s2);
-			this.hadactionthisturn = true;
+		if(this.inventory.isFullStarGates() == false) {
+			Inventory remainder = STARGATE_RECIPE.subSet(inventory);
+			if(remainder.getMaterials().size() == 0) {
+				this.setInventory(STARGATE_RECIPE.subtraction(inventory));
+				StarGate s1 = new StarGate();
+				//s1.setName("stargate");
+				StarGate s2 = new StarGate();
+				//s2.setName("neighbour");
+				s1.setNeighbour(s2);
+				s2.setNeighbour(s1);
+				inventory.addStarGate(s1);
+				inventory.addStarGate(s2);
+				this.hadactionthisturn = true;
+			}
 		}
 		//main.log(true, "void", "void", "");
 	}

@@ -244,6 +244,9 @@ public class Asteroid extends Planet implements Controllable {
      */
     @Override
     public void onTurn() {
+        for (Building b : buildings) {
+            b.onTurn();
+        }
         if (rockThickness <= 0 && closeToSun) {
             for (Material m : materials) {
                 m.exposedAndCloseToSun(this);
@@ -261,7 +264,7 @@ public class Asteroid extends Planet implements Controllable {
      * not hide
      */
     public void getNotifiedAboutSunflare() {
-        for(Building b:buildings) {
+        for (Building b : buildings) {
             b.getNotifiedAboutSunflare();
         }
         for (Settler s : settlers) {
@@ -378,7 +381,7 @@ public class Asteroid extends Planet implements Controllable {
             return false;
         } else {
             this.materials.add(m);
-            if (this.closeToSun){
+            if (this.closeToSun) {
                 m.exposedAndCloseToSun(this);
             }
             return true;

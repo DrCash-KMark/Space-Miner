@@ -380,9 +380,7 @@ public class UI {
 						
 						break;
 					case "inventory":
-						Inventory inventory = game.getInventoryWithId(splitString[3]);
-						
-						inventory.setId(splitString[4]);
+						// id-t mindig beállítjuk
 						
 						break;
 					case "material":

@@ -106,18 +106,22 @@ public class Game {
 	public void listAll() {
 		for (Sun sun : suns) {
 			ui.displayMessage(sun.genUIString());
+			ui.displayMessage("--------------------");
 		}
 		
 		for (Asteroid asteroid : asteroids) {
 			ui.displayMessage(asteroid.genUIString());
+			ui.displayMessage("--------------------");
 		}
 		
 		for (Settler settler : settlers) {
 			ui.displayMessage(settler.genUIString());
+			ui.displayMessage("--------------------");
 		}
 		
 		for (NonPlayer nonPlayer : nonPlayers) {
 			ui.displayMessage(nonPlayer.genUIString());
+			ui.displayMessage("--------------------");
 		}
 	}
 	
@@ -435,6 +439,8 @@ public class Game {
 			
 			loadString = scanner.nextLine();
 		}
+		
+		s.setOwner(this);
 	}
 	
 	public void loadAsteroid(Scanner scanner, List<Asteroid> asteroidLoadList, List<Settler> settlerLoadList, List<Material> materialLoadList, List<Robot> robotLoadList, List<Alien> alienLoadList, List<Base> baseLoadList, List<StarGate> starGateLoadList) {
@@ -651,6 +657,8 @@ public class Game {
 			
 			loadString = scanner.nextLine();
 		}
+		
+		a.setOwner(this);
 	}
 	
 	public void loadMaterial(Material m, Scanner scanner, List<Material> materialLoadList) {
@@ -734,6 +742,8 @@ public class Game {
 			sg.setRandom(false);
 		
 		loadString = scanner.nextLine();
+		
+		sg.setOwner(this);
 	}
 	
 	public void loadBase(Scanner scanner, String loadString, List<Base> baseLoadList, List<Asteroid> asteroidLoadList) {
@@ -773,6 +783,8 @@ public class Game {
 		}
 		
 		loadString = scanner.nextLine();
+		
+		b.setOwner(this);
 	}
 	
 	public void loadSettler(Scanner scanner, List<Settler> settlerLoadList, List<Asteroid> asteroidLoadList, List<Inventory> inventoryLoadList) {
@@ -841,6 +853,8 @@ public class Game {
 		}
 		
 		loadString = scanner.nextLine();
+		
+		s.setOwner(this);
 	}
 	
 	public void loadInventory(Scanner scanner, List<Inventory> inventoryLoadList, List<Material> materialLoadList, List<StarGate> starGateLoadList) {
@@ -890,6 +904,8 @@ public class Game {
 			r.setIsRandom(false);
 		
 		loadString = scanner.nextLine();
+		
+		r.setOwner(this);
 	}
 	
 	public void loadAlien(Scanner scanner, String loadString, List<Alien> alienLoadList, List<Asteroid> asteroidLoadList, List<Inventory> inventoryLoadList) {
@@ -956,6 +972,8 @@ public class Game {
 		}
 		
 		loadString = scanner.nextLine();
+		
+		a.setOwner(this);
 	}
 	
 	public void saveGame(String fileName) {
@@ -1099,21 +1117,6 @@ public class Game {
 		}
 		
 		ui.displayMessage("No such material found");
-		return null;
-	}
-	
-	public Inventory getInventoryWithId(String id) {
-		for (Settler settler : settlers) {
-			if (settler.getInventory().getId().equals(id))
-				return settler.getInventory();
-		}
-		
-		for (NonPlayer nonPlayer : nonPlayers) {
-			if (((Alien)nonPlayer).getInventory().getId().equals(id))
-				return ((Alien)nonPlayer).getInventory();
-		}
-		
-		ui.displayMessage("No such inventory found");
 		return null;
 	}
 }

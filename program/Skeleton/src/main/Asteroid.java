@@ -48,7 +48,6 @@ public class Asteroid extends Planet implements Controllable {
         this.neighbours = new LinkedList<>();
         this.buildings = new LinkedList<>();
         this.materials = new LinkedList<>();
-
         this.rockThickness = 0;
     }
 

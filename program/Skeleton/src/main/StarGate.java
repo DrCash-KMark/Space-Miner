@@ -106,6 +106,7 @@ public class StarGate extends Building implements Controllable, Moving {
 		
 		if (neighbour.getAsteroid() != null);
 		{
+			neighbour.setWorks(true);
 			works = true;
 		}
 	}

@@ -153,11 +153,11 @@ public class Inventory extends Printable{
 //Own methods:----------------------------------------------------------------------------
 
 	public boolean isFullMaterials() {
-		return capacityM>materials.size()?true:false;
+		return capacityM>materials.size()?false:true;
 	}
 	
 	public boolean isFullStarGates() {
-		return capacitySG>starGates.size()?true:false;
+		return capacitySG>starGates.size()?false:true;
 	}
 	
 	/**

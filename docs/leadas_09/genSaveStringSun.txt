@@ -1,6 +1,5 @@
 Sun tartalma (amikböl kettö úgyanolyan van egymásból azokból tetszőleges mennyiségű lehet) van egy konstruktor, ami ezeket az adatokat fogadja többnyire:
 
-Asteroid
 id: <string id>
 isRandom: <t / f bool>
 AsteroidId: <string id>

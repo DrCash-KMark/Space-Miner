@@ -170,8 +170,7 @@ public class Asteroid extends Planet implements Controllable {
      */
     @Override
     public String genSaveString() {
-        String returnValue = "Asteroid\n" +
-                "id: " + this.id + "\n" +
+        String returnValue = "id: " + this.id + "\n" +
                 "isRandom:" + Tools.bool(this.isRandom) + "\n" +
                 "rockThickness: " + this.rockThickness + "\n" +
                 "closeToSun: " + Tools.bool(this.closeToSun) + "\n" +
@@ -191,7 +190,7 @@ public class Asteroid extends Planet implements Controllable {
         for (Building b : buildings) {
             returnValue += "BuildingId: " + b.id + "\n";
         }
-        return returnValue ;
+        return returnValue;
     }
 
     //Controllable

@@ -8,16 +8,13 @@ neighbour: <StarGate id>
 works: <t / f>
 wasInSunFlare: <t / f>
 isRandom: <t / f>
-;
 
 Base:
 id: <id>
 asteroid: <asteroid id>
-;
 
 Alien:
 id: <id>
 asteroid: <asteroid id>
 isRandom: <t / f>
 inventory: <inventory id>
-;

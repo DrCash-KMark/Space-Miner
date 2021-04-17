@@ -132,8 +132,7 @@ public class StarGate extends Building implements Controllable, Moving {
 
 	@Override
 	public String genSaveString() {
-		return "StarGate:\n"
-				+ "id: " + id + "\n"
+		return "id: " + id + "\n"
 				+ "asteroid: " + Tools.id(asteroid) + "\n"
 				+ "neighbour: " + Tools.id(neighbour) + "\n"
 				+ "works: " + Tools.bool(works) + "\n"

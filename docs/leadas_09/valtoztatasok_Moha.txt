@@ -68,7 +68,7 @@ set asteroid rockThickness a1 0
 set asteroid isRandom a1 f
 set asteroid closeToSun a1 f
 start game
-drop settler s1 material c1
+drop settler s1 material coal1
 list asteroid a1
 list settler s1
 
@@ -84,7 +84,7 @@ set asteroid rockThickness a1 1
 set asteroid isRandom a1 f
 set asteroid closeToSun a1 f
 start game
-drop settler s1 material c1
+drop settler s1 material coal1
 list asteroid a1
 list settler s1
 
@@ -98,14 +98,239 @@ create uran uran1 settler s1
 set asteroid capacity a1 10
 set asteroid rockThickness a1 0
 set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
+set asteroid closeToSun a1 t
 start game
-drop settler s1 material u1
+drop settler s1 material uran1
 start next turn
 mine settler s1
 start next turn
-drop settler s1 material u1
+drop settler s1 material uran1
+start next turn
 list asteroid a1
 list settler s1
 
 #test6
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+create settler s1 asteroid a1
+create inventory i1 settler s1
+create ice ice1 settler s1
+set asteroid capacity a1 10
+set asteroid rockThickness a1 0
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 t
+start game
+drop settler s1 material ice1
+list asteroid a1
+list settler s1
+
+#test7
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+create alien al1 asteroid a1
+create inventory i1 alien al1
+create coal coal1 asteroid a1
+set asteroid capacity a1 10
+set asteroid rockThickness a1 0
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 f
+set alien isRandom al1 f
+start game
+mine alien al1
+list asteroid a1
+list alien al1
+
+#test8
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+create alien al1 asteroid a1
+create inventory i1 alien al1
+set asteroid capacity a1 10
+create coal coal1 asteroid a1
+set asteroid rockThickness a1 1
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 f
+set alien isRandom al1 f
+start game
+mine alien al1
+list asteroid a1
+list alien al1
+
+#test9 // kvesszük a materialokat s az asteroidon van egy null nonPlayer
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+set asteroid capacity a1 10
+set asteroid rockThickness a1 1
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 f
+create settler s1 asteroid a1
+create inventory i1 settler s1
+create iron iron1 settler s1
+create coal coal1 settler s1
+start game
+build settler s1 robot
+start next turn
+list asteroid a1
+list settler s1
+
+#test10 8.1.2
+
+#test11 8.1.3
+
+#test12 8.1.4
+
+#test13 8.1.5
+
+#test14 8.1.6
+
+#test15 8.1.7
+
+#test16 8.1.8 // sok stargate inventoryban egyébként ok works nem true a lehelyezett starGaten
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+set asteroid closeToSun a1 f
+create settler s1 asteroid a1
+create inventory i1 settler s1
+create stargate sg1 inventory s1
+create stargate sg2 inventory s1
+set stargate neighbour sg1 sg2
+set stargate neighbour sg2 sg1
+set stargate isRandom sg1 f
+set stargate isRandom sg2 f
+start game
+place settler s1 sg1
+start next turn
+list asteroid a1
+list stargate sg1
+list stargate sg2
+list settler s1
+
+#test17 8.1.9 // sok stargate inventoryban egyébként ok works nem true a lehelyezett starGaten
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+set asteroid closeToSun a1 f
+create asteroid a2 sun sun1
+set asteroid closeToSun a2 f
+create settler s1 asteroid a2
+create inventory i1 settler s1
+create stargate sg1 asteroid a1
+create stargate sg2 inventory s1
+set stargate neighbour sg1 sg2
+set stargate neighbour sg2 sg1
+set stargate isRandom sg1 f
+set stargate isRandom sg2 f
+start game
+place settler s1 sg2
+start next turn
+list asteroid a1
+list asteroid a2
+list stargate sg1
+list stargate sg2
+list settler s1
+
+#test18 8.2 // csak az alien hal meg, stargate nem billen wasInSunflarebe s nem is mozog emiatt
+init game manually
+create sun sun1
+set sun isRandom sun1 f
+create sun sun2
+create asteroid a1 sun sun1
+set asteroid rockThickness a1 1
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 f
+create asteroid a2 sun sun2
+set asteroid closeToSun a2 f
+add asteroid neighbour a1 a2
+add asteroid neighbour a2 a1
+create settler s1 asteroid a1
+create robot r1 asteroid a1
+set robot isRandom r1 f
+create alien al1 asteroid a1
+set alien isRandom al1 f
+create stargate sg1 asteroid a1
+set stargate isRandom sg1 f
+create inventory i1 settler s1
+create stargate sg2 settler s1
+set stargate isRandom sg2 f
+set stargate neighbour sg1 sg2
+set stargate neighbour sg2 sg1
+start game
+sunflare sun1
+start next turn
+list sun sun1
+list asteroid a1
+list asteroid a2
+list stargate sg1
+
+#test19 8.3 // stargate nem billen wasInSunflarebe s nem is mozog emiatt
+init game manually
+create sun sun1
+set sun isRandom sun1 f
+create sun sun2
+create asteroid a1 sun sun1
+set asteroid rockThickness a1 0
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 f
+create asteroid a2 sun sun2
+set asteroid closeToSun a2 f
+add asteroid neighbour a1 a2
+add asteroid neighbour a2 a1
+create settler s1 asteroid a1
+create robot r1 asteroid a1
+set robot isRandom r1 f
+create alien al1 asteroid a1
+set alien isRandom al1 f
+create stargate sg1 asteroid a1
+set stargate isRandom sg1 f
+create inventory i1 settler s1
+create stargate sg2 settler s1
+set stargate isRandom sg2 f
+set stargate neighbour sg1 sg2
+set stargate neighbour sg2 sg1
+start game
+sunflare sun1
+start next turn
+list sun sun1
+list asteroid a1
+list asteroid a2
+list stargate sg1
+
+#test20 8.4
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+set asteroid rockThickness a1 2
+set asteroid closeToSun a1 f
+create robot r1 asteroid a1
+set robot isRandom r1 f
+start game
+drill robot r1
+start next turn
+drill robot r1
+start next turn
+drill robot r1
+start next turn
+list asteroid a1
+list robot r1
+
+#test21 8.5 // null lesz az asteroid.materials
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+create robot r1 asteroid a1
+set robot isRandom r1 f
+set asteroid capacity a1 10
+set asteroid isRandom a1 f
+create ice ice1 asteroid a1
+set material exposedCounter ice1 0
+set asteroid closeToSun a1 t
+set asteroid rockThickness a1 1
+drill robot r1
+start next turn
+list asteroid a1
+list robot r1

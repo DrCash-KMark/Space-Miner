@@ -1,5 +1,8 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UI {
 	private Game game;
 	
@@ -19,7 +22,7 @@ public class UI {
 		
 		switch (splitString[0]) {
 			case "init":
-				if (splitString[1].equals("manually"))
+				if (splitString[2].equals("manually"))
 					game.initGame(true);
 				else
 					game.initGame(false);
@@ -49,6 +52,7 @@ public class UI {
 						game.addSettler(settler);
 						game.getAsteroidWithId(splitString[4]).addSettler(settler);
 						settler.setAsteroid(game.getAsteroidWithId(splitString[4]));
+						settler.setOwner(game);
 						
 						break;
 					case "robot":
@@ -58,6 +62,7 @@ public class UI {
 						game.addNonPlayer(robot);
 						game.getAsteroidWithId(splitString[4]).addNonPlayer(robot);
 						robot.setAsteroid(game.getAsteroidWithId(splitString[4]));
+						robot.setOwner(game);
 						
 						break;
 					case "alien":
@@ -67,6 +72,7 @@ public class UI {
 						game.addNonPlayer(alien);
 						game.getAsteroidWithId(splitString[4]).addNonPlayer(alien);
 						alien.setAsteroid(game.getAsteroidWithId(splitString[4]));
+						alien.setOwner(game);
 						
 						break;
 					case "asteroid":
@@ -75,6 +81,7 @@ public class UI {
 						
 						game.addAsteroid(asteroid);
 						game.getSunWithId(splitString[4]).addAsteroid(asteroid);
+						asteroid.setOwner(game);
 						
 						break;
 					case "sun":
@@ -82,6 +89,7 @@ public class UI {
 						sun.setID(splitString[2]);
 						
 						game.addSun(sun);
+						sun.setOwner(game);
 						
 						break;
 					case "inventory":
@@ -121,7 +129,7 @@ public class UI {
 						switch (splitString[3]) {
 						case "asteroid":
 							game.getAsteroidWithId(splitString[4]).addMaterial(ice);
-							
+						
 							break;
 						case "alien":
 							game.getAlienWithId(splitString[4]).getInventory().addMaterial(ice);
@@ -185,6 +193,8 @@ public class UI {
 						else
 							game.getSettlerWithId(splitString[4]).getInventory().addStarGate(starGate);
 						
+						starGate.setOwner(game);
+						
 						break;
 					case "base":
 						Base base = new Base();
@@ -192,6 +202,7 @@ public class UI {
 						
 						game.getAsteroidWithId(splitString[4]).addBuilding(base);
 						base.setAsteroid(game.getAsteroidWithId(splitString[4]));
+						base.setOwner(game);
 						
 						break;
 				}
@@ -253,6 +264,13 @@ public class UI {
 								break;
 							case "asteroid":
 								alien.setAsteroid(game.getAsteroidWithId(splitString[4]));
+								
+								break;
+							case "isRandom":
+								if (splitString[4].equals("t"))
+									alien.setIsRandom(true);
+								else
+									alien.setIsRandom(false);
 								
 								break;
 						}
@@ -405,15 +423,15 @@ public class UI {
 			case "add":
 				switch (splitString[1]) {
 					case "sun":
-						Sun sun = game.getSunWithId(splitString[2]);
+						Sun sun = game.getSunWithId(splitString[3]);
 						
 						sun.addAsteroid(game.getAsteroidWithId(splitString[4]));
 						
 						break;
 					case "asteroid":
-						Asteroid asteroid = game.getAsteroidWithId(splitString[2]);
+						Asteroid asteroid = game.getAsteroidWithId(splitString[3]);
 						
-						switch (splitString[3]) {
+						switch (splitString[2]) {
 							case "neighbour":
 								asteroid.addNeighbour(game.getAsteroidWithId(splitString[4]));
 								
@@ -583,7 +601,7 @@ public class UI {
 				
 				break;
 			case "place":
-				game.getSettlerWithId(splitString[2]).placeStarGate(game.getStarGateWithId(splitString[4]));
+				game.getSettlerWithId(splitString[2]).placeStarGate(game.getStarGateWithId(splitString[3]));
 				
 				break;
 			case "sunflare":

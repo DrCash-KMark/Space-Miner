@@ -253,7 +253,7 @@ public class Settler extends Entity implements Drilling, Mining {
 	}
 	
 	public String genSaveString() {
-		String resstring = "Settler:\n"+"hadActionThisTurn: "+this.hadactionthisturn+"\n id: "+this.id+"\n asteroid: "+this.asteroid.getId()+"\n inventory: "+this.inventory.getId()+"\n ;";
+		String resstring =  "id: "+this.id+"\nhadActionThisTurn: "+this.hadactionthisturn+"\nasteroid: "+this.asteroid.getId()+"\ninventory: "+this.inventory.getId();
 		return resstring;
 	}
 	

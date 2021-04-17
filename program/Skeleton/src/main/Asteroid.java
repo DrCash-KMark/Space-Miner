@@ -262,6 +262,9 @@ public class Asteroid extends Planet implements Controllable {
      * not hide
      */
     public void getNotifiedAboutSunflare() {
+        for(Building b:buildings) {
+            b.getNotifiedAboutSunflare();
+        }
         for (Settler s : settlers) {
             s.getNotifiedAboutSunflare();
         }

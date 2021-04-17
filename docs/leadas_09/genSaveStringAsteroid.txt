@@ -16,4 +16,3 @@ NeighbourId: <string id>
 NeighbourId: <string id>
 BuildingId: <string id>
 BuildingId: <string id>
-;

@@ -114,7 +114,7 @@ public class Sun extends Planet implements Controllable {
         for (Asteroid a : asteroids) {
             returnValue += "AsteroidId: " + a.id + "\n";
         }
-        return returnValue + ";";
+        return returnValue;
     }
 
 //Own methods:----------------------------------------------------------------------------

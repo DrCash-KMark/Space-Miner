@@ -5,3 +5,11 @@ a gameben controllablek helyett asteroids settlers nonplayers s suns lett
 a játék kezdetekor az összes settler egy asszteroidán vban
 getstargates fgv lett inventoryban
 placestargate settlernek mostmár kér egy settler id-t
+
+--------------------------
+
+create settler <id> asteroid <id>
+create inventory <id> alien <id>
+create uran <id> <settler/alien> <id>
+move settler <id> dest <asteroid/stargate> <id>
+set inventory <settler/alien> <id> capacity <value>

@@ -80,6 +80,14 @@ public class Inventory extends Printable{
 		if(materials!=null)return materials.size();
 		return 0;
 	}
+	
+	public int getStarGatesCapacity() {
+		return capacitySG;
+	}
+	
+	public int getMaterialsCapacity() {
+		return capacitySG;
+	}
 
 //Inherited:-----------------------------------------------------------------------------
 

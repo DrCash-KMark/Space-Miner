@@ -165,7 +165,7 @@ public class Asteroid extends Planet implements Controllable {
                 + "isRandom: " + Tools.bool(this.isRandom) + "\n"
                 + "materials:\n";
         if (this.materials == null || this.materials.size() == 0) {
-            returnValue += "\tmaterials: -";
+            returnValue += "\tmaterials: -\n";
         } else {
             for (Material m : materials) {
                 returnValue += "\tmaterial: " + m.id + "\n";
@@ -195,7 +195,7 @@ public class Asteroid extends Planet implements Controllable {
                 returnValue += "\tsettler: " + s.id + "\n";
             }
         }
-        returnValue += "nonPlayers:";
+        returnValue += "nonPlayers:\n";
         if (this.nonPlayers == null || this.nonPlayers.size() == 0) {
             returnValue += "\tnonPlayer: -\n";
         } else {

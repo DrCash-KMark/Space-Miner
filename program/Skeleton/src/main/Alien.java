@@ -41,8 +41,7 @@ public class Alien extends NonPlayer implements Mining {
 
 	@Override
 	public String genSaveString() {
-		return "Alien:\n"
-				+ "id: " + id + "\n"
+		return "id: " + id + "\n"
 				+ "asteroid: " +  Tools.id(asteroid) + "\n"
 				+ "isRandom: " + Tools.bool(isRandom) +"\n"
 				+ "inventory: " + Tools.id(inventory) + "\n" 

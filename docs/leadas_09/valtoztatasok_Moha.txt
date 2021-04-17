@@ -14,11 +14,13 @@ create uran <id> <settler/alien> <id>
 move settler <id> dest <asteroid/stargate> <id>
 set inventory <settler/alien> <id> capacity <value>
 
-start game manually
+#test1
+init game manually
 create sun sun1
 create asteroid a1 sun sun1
 create settler s1 asteroid a1
 create inventory i1 settler s1
+set asteroid capacity a1 10
 create coal coal1 asteroid a1
 set asteroid rockThickness a1 0
 set asteroid isRandom a1 f
@@ -27,3 +29,83 @@ start game
 mine settler s1
 list settler s1
 list asteroid a1
+
+#test2
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+create settler s1 asteroid a1
+create inventory i1 settler s1
+set asteroid capacity a1 10
+create coal coal1 asteroid a1
+create iron iron1 settler s1
+create iron iron2 settler s1
+create iron iron3 settler s1
+create iron iron4 settler s1
+create iron iron5 settler s1
+create iron iron6 settler s1
+create iron iron7 settler s1
+create iron iron8 settler s1
+create iron iron9 settler s1
+create iron iron10 settler s1
+set asteroid rockThickness a1 0
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 f
+start game
+mine settler s1
+list asteroid a1
+list settler s1
+
+#test3
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+create settler s1 asteroid a1
+create inventory i1 settler s1
+create coal coal1 settler s1
+set asteroid capacity a1 10
+set asteroid rockThickness a1 0
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 f
+start game
+drop settler s1 material c1
+list asteroid a1
+list settler s1
+
+#test4
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+create settler s1 asteroid a1
+create inventory i1 settler s1
+create coal coal1 settler s1
+set asteroid capacity a1 10
+set asteroid rockThickness a1 1
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 f
+start game
+drop settler s1 material c1
+list asteroid a1
+list settler s1
+
+#test5
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+create settler s1 asteroid a1
+create inventory i1 settler s1
+create uran uran1 settler s1
+set asteroid capacity a1 10
+set asteroid rockThickness a1 0
+set asteroid isRandom a1 f
+set asteroid closeToSun a1 f
+start game
+drop settler s1 material u1
+start next turn
+mine settler s1
+start next turn
+drop settler s1 material u1
+list asteroid a1
+list settler s1
+
+#test6

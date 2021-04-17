@@ -80,6 +80,14 @@ public class Inventory extends Printable{
 		if(materials!=null)return materials.size();
 		return 0;
 	}
+	
+	public int getStarGatesCapacity() {
+		return capacitySG;
+	}
+	
+	public int getMaterialsCapacity() {
+		return capacitySG;
+	}
 
 //Inherited:-----------------------------------------------------------------------------
 
@@ -144,6 +152,14 @@ public class Inventory extends Printable{
 
 //Own methods:----------------------------------------------------------------------------
 
+	public boolean isFullMaterials() {
+		return capacityM>materials.size()?false:true;
+	}
+	
+	public boolean isFullStarGates() {
+		return capacitySG>starGates.size()?false:true;
+	}
+	
 	/**
 	 * Remove a material to the materials which are in the inventory.
 	 * @param m : the material that will be removed from the inventory
@@ -187,10 +203,10 @@ public class Inventory extends Printable{
 	 * @param m the material the will be added to the materials list
 	 */
 	public void addMaterial(Material m) {
-		//if (m != null && (materials.size()<capacityM || capacityM == -1))
-		//{
+		if (m != null && (materials.size()<capacityM || capacityM == -1))
+		{
 			materials.add(m);
-		//}
+		}
 	}
 	
 	/**

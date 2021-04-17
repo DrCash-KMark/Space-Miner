@@ -111,8 +111,10 @@ public class Settler extends Entity implements Drilling, Mining {
 	 */
 	public void mine() {
 		//main.log(false, name, this.getClass().getName(), "mine()");
-		Material m = this.asteroid.removeMaterial();
-		inventory.addMaterial(m);
+		if(this.inventory.isFullMaterials() == false) {
+			Material m = this.asteroid.removeMaterial();
+			inventory.addMaterial(m);			
+		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
 	}
@@ -121,19 +123,21 @@ public class Settler extends Entity implements Drilling, Mining {
 	 */
 	public void buildStarGate() {
 		//main.log(false, name, this.getClass().getName(), "buildStarGate()");
-		Inventory remainder = STARGATE_RECIPE.subSet(inventory);
-		if(remainder.getMaterials().size() == 0) {
-			this.setInventory(STARGATE_RECIPE.subtraction(inventory));
-			StarGate s1 = new StarGate();
-			//s1.setName("stargate");
-			StarGate s2 = new StarGate();
-			//s2.setName("neighbour");
-			s1.setNeighbour(s2);
-			s2.setNeighbour(s1);
-			inventory.addStarGate(s1);
-			inventory.addStarGate(s2);
-			this.hadactionthisturn = true;
+		if(this.inventory.isFullStarGates() == false) {
+			Inventory remainder = STARGATE_RECIPE.subSet(inventory);
+			if(remainder.getMaterials().size() == 0) {
+				this.setInventory(STARGATE_RECIPE.subtraction(inventory));
+				StarGate s1 = new StarGate();
+				//s1.setName("stargate");
+				StarGate s2 = new StarGate();
+				//s2.setName("neighbour");
+				s1.setNeighbour(s2);
+				s2.setNeighbour(s1);
+				inventory.addStarGate(s1);
+				inventory.addStarGate(s2);
+			}
 		}
+		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
 	}
 	/**
@@ -149,8 +153,8 @@ public class Settler extends Entity implements Drilling, Mining {
 			robot.setAsteroid(asteroid);
 			asteroid.addNonPlayer(robot);
 			owner.addNonPlayer(robot);
-			this.hadactionthisturn = true;
 		}
+		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
 	}
 	/**
@@ -177,8 +181,8 @@ public class Settler extends Entity implements Drilling, Mining {
 			base.setOwner(owner);
 			base.setAsteroid(asteroid);
 			base.onPlace();
-			this.hadactionthisturn = true;
-		}		
+		}
+		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
 	}
 	/**
@@ -191,8 +195,8 @@ public class Settler extends Entity implements Drilling, Mining {
 		boolean b = asteroid.addMaterial(m);
 		if(b == true) {
 			this.inventory.removeMaterial(m);
-			this.hadactionthisturn = true;
 		}
+		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
 	}
 	/**
@@ -230,9 +234,9 @@ public class Settler extends Entity implements Drilling, Mining {
 		if(asteroid.getNeighbours().contains(destination)) {
 			destination.addSettler(this);
 			asteroid.removeSettler(this);
-			this.setAsteroid(destination);
-			this.hadactionthisturn = true;
+			this.setAsteroid(destination);			
 		}
+		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
 	}
 	
@@ -242,9 +246,9 @@ public class Settler extends Entity implements Drilling, Mining {
 				asteroid.removeSettler(this);
 				this.asteroid = destination.getNeighbour().getAsteroid();
 				this.asteroid.addSettler(this);
-				this.hadactionthisturn = true;
 			}
 		}
+		this.hadactionthisturn = true;
 	}
 	
 	public String genUIString() {
@@ -256,7 +260,5 @@ public class Settler extends Entity implements Drilling, Mining {
 		String resstring =  "id: "+this.id+"\nhadActionThisTurn: "+this.hadactionthisturn+"\nasteroid: "+this.asteroid.getId()+"\ninventory: "+this.inventory.getId();
 		return resstring;
 	}
-	
-	
 }
 

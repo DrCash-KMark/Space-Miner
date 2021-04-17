@@ -20,10 +20,10 @@ public abstract class Material extends Printable{
 //Constructors:----------------------------------------------------------------
 
 	/**
-	 * constructor for the Material which sets all parameters at once	
-	 * @param isRadio
-	 * @param name
-	 * @param canEvaporate
+	 * Constructor for the Material which sets all parameters at once.	
+	 * @param boolean: isRadio
+	 * @param String: name
+	 * @param boolean: canEvaporate
 	 */
 	Material(boolean isRadio, String name, boolean canEvaporate, int exposedCounter){
 		this.isRadio = isRadio;
@@ -33,8 +33,8 @@ public abstract class Material extends Printable{
 	}
 	
 	/**
-	 * constructor for the Material which use other Materials parameters
-	 * @param m
+	 * Constructor for the Material which use other Materials parameters.
+	 * @param Material: m
 	 */
 	Material(Material m)
 	{
@@ -83,9 +83,9 @@ public abstract class Material extends Printable{
 	//Printable
 	
     /**
-     * creates a string with this class' all important data.
+     * Creates a string with this class' all important data.
      *
-     * @return string containing all the important information for the user
+     * @return String: containing all the important information for the user
      */
 	@Override
 	public String genUIString() {
@@ -96,10 +96,26 @@ public abstract class Material extends Printable{
 //Own methods:----------------------------------------------------------------------------
 	 
     /**
-     * If the Material exposed to the sun then this function 
+     * If the Material exposed to the sun then this function
      * increase the exposedCounter.
      */
 	public void exposedAndCloseToSun(Asteroid a) {
 		this.exposedCounter++;
+	}
+	
+    /**
+     * Creates a string storing the most important datas of this class.
+     * 
+     * @return String: containing all the important information
+     */
+	@Override
+	public String genSaveString() {
+		 String returnValue = this.name + "\n" +
+	                "id: " + this.id + "\n" +
+	                "isRadio:" + Tools.bool(this.isRadio) + "\n" +
+	                "name: " + this.name + "\n" +
+	                "canEvaporate: " + Tools.bool(this.canEvaporate) + "\n" +
+	                "exposedCounter: " + this.exposedCounter + "\n";
+		return returnValue;
 	}
 }

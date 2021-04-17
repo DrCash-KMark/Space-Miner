@@ -31,25 +31,4 @@ public class Iron extends Material {
         this.id = "Iron" + String.valueOf(nextId);
         nextId++;
 	}
-
-//Inherited:-----------------------------------------------------------------------------
-
-	//Material
-	
-    /**
-     * creates a string storing the most important datas of this class
-     *
-     * @return
-     */
-	@Override
-	public String genSaveString() {
-		 String returnValue = "Iron\n" +
-	                "id: " + this.id + "\n" +
-	                "isRadio:" + Tools.bool(this.isRadio) + "\n" +
-	                "name: " + this.name + "\n" +
-	                "canEvaporate: " + Tools.bool(this.canEvaporate) + "\n" +
-	                "exposedCounter: " + this.exposedCounter + "\n";
-		return returnValue;
-	}
-
 }

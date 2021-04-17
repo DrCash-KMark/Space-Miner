@@ -86,9 +86,9 @@ public class Inventory extends Printable{
 	//Printable
 		
 	/**
-	* creates a string with this class' all important data.
+	* Creates a string with this class' all important data.
 	*
-	* @return string containing all the important information for the user
+	* @return string: containing all the important information for the user
 	*/
 	@Override
 	public String genUIString() {
@@ -105,9 +105,9 @@ public class Inventory extends Printable{
 	}
 
     /**
-     * creates a string storing the most important datas of this class
+     * Creates a string storing the most important datas of this class.
      *
-     * @return
+     * @return string: containing all the important information.
      */
 	@Override
 	public String genSaveString() {
@@ -128,8 +128,8 @@ public class Inventory extends Printable{
 
 	/**
 	 * Remove a material to the materials which are in the inventory.
-	 * @param m the material that will be removed from the inventory
-	 * @return removed material or null if the inventory not contains the material
+	 * @param m : the material that will be removed from the inventory
+	 * @return Material: removed material or null if the inventory not contains the material
 	 */
 	public Material removeMaterial(Material m) {
 	
@@ -141,7 +141,7 @@ public class Inventory extends Printable{
 	
 	/**
 	 * Remove a stargate to the stargates which are in the inventory.
-	 * @return removed stargate or null if the inventory not contains stargate
+	 * @return StarGate: removed stargate or null if the inventory not contains stargate
 	 */
 	public StarGate removeStarGate() {
 		
@@ -154,7 +154,7 @@ public class Inventory extends Printable{
 	/**
 	 * Adds the given stargate to the stargate list.
 	 * If the inventory capacity value is -1 then it's not have limit.
-	 * @param sg the stargate the will be added to the stargate list
+	 * @param sg: the stargate the will be added to the stargate list
 	 */
 	public void addStarGate(StarGate sg) {
 
@@ -178,8 +178,8 @@ public class Inventory extends Printable{
 	/**
 	 * Compares the given and the local inventory material list and 
 	 * returns with the not remainder.
-	 * @param i the given inventory
-	 * @return remainder
+	 * @param i: the given inventory
+	 * @return Inventory: remainder 
 	 */
 	public Inventory subSet(Inventory i) {
 		if(i==null)return null;
@@ -203,8 +203,8 @@ public class Inventory extends Printable{
 	/**
  	 *Compares the given and the local inventory materials list and
 	 *removes all contained element and return the remainder.
-	 * @param i the given inventory
-	 * @return differences
+	 * @param i: the given inventory
+	 * @return Inventory: differences
 	 */
 	public Inventory subtraction(Inventory i) {
 		if(i==null)return null;

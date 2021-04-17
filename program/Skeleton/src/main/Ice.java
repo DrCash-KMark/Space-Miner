@@ -42,24 +42,4 @@ public class Ice extends Material {
 		super.exposedAndCloseToSun(a);
 		a.evaporateMaterial();
 	}
-	
-//Inherited:-----------------------------------------------------------------------------
-	
-	//Material
-	
-    /**
-     * creates a string storing the most important datas of this class
-     *
-     * @return
-     */
-	@Override
-	public String genSaveString() {
-		 String returnValue = "Ice\n" +
-	                "id: " + this.id + "\n" +
-	                "isRadio:" + Tools.bool(this.isRadio) + "\n" +
-	                "name: " + this.name + "\n" +
-	                "canEvaporate: " + Tools.bool(this.canEvaporate) + "\n" +
-	                "exposedCounter: " + this.exposedCounter + "\n";
-		return returnValue;
-	}
 }

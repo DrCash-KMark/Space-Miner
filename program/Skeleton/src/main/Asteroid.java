@@ -168,7 +168,7 @@ public class Asteroid extends Planet implements Controllable {
             returnValue += "\tmaterials: -";
         } else {
             for (Material m : materials) {
-                returnValue += "\tmaterial: " + m.id;
+                returnValue += "\tmaterial: " + m.id + "\n";
             }
         }
         returnValue += "neighbours:\n";
@@ -180,7 +180,7 @@ public class Asteroid extends Planet implements Controllable {
             }
         }
         returnValue += "buildings:\n";
-        if (this.settlers == null || this.settlers.size() == 0) {
+        if (this.buildings == null || this.buildings.size() == 0) {
             returnValue += "\tbuilding: -\n";
         } else {
             for (Building b : buildings) {
@@ -188,7 +188,7 @@ public class Asteroid extends Planet implements Controllable {
             }
         }
         returnValue += "settlers:\n";
-        if (this.materials == null || this.materials.size() == 0) {
+        if (this.settlers == null || this.settlers.size() == 0) {
             returnValue += "\tsettler: -\n";
         } else {
             for (Settler s : settlers) {
@@ -196,7 +196,7 @@ public class Asteroid extends Planet implements Controllable {
             }
         }
         returnValue += "nonPlayers:";
-        if (this.materials == null || this.materials.size() == 0) {
+        if (this.nonPlayers == null || this.nonPlayers.size() == 0) {
             returnValue += "\tnonPlayer: -\n";
         } else {
             for (NonPlayer np : nonPlayers) {

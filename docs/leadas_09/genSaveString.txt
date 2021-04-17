@@ -1,4 +1,4 @@
-Robot ezt írja ki:
+﻿Robot ezt írja ki:
 
 Robot
 id: <id>

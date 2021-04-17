@@ -105,7 +105,7 @@ public class Inventory extends Printable{
 			}
         }
         if(starGates.size()==0) {
-        	dataMaterial = "starGate: -\n";
+        	dataStarGate = "starGate: -\n";
         }else {
         	for(StarGate starGate : starGates) {
         		dataStarGate += "	starGate: " + starGate.getId() + "\n";

@@ -187,10 +187,10 @@ public class Inventory extends Printable{
 	 * @param m the material the will be added to the materials list
 	 */
 	public void addMaterial(Material m) {
-		//if (m != null && (materials.size()<capacityM || capacityM == -1))
-		//{
+		if (m != null && (materials.size()<capacityM || capacityM == -1))
+		{
 			materials.add(m);
-		//}
+		}
 	}
 	
 	/**

@@ -21,10 +21,19 @@ public class Uran extends Material {
 	/**
 	 * Constructor for Uran.
 	 */
-	Uran(){
+	Uran(String id){
 		super(true, "Uran", false, 0);
+		this.id = id;
 	}
 
+	/**
+	 * Constructor for Uran without parameters.
+	 */
+	Uran(){
+		super(false, "Uran", true , 0);
+        this.id = "Uran" + String.valueOf(nextId);
+        nextId++;
+	}
 	
 //Methods:----------------------------------------------------------------------------
 
@@ -37,9 +46,23 @@ public class Uran extends Material {
 		if(this.getExposedCounter()>=3) a.explode();
 	}
 	
+//Inherited:-----------------------------------------------------------------------------
+
+	//Material
+
+    /**
+     * creates a string storing the most important datas of this class
+     *
+     * @return
+     */
 	@Override
 	public String genSaveString() {
-		// TODO Auto-generated method stub
-		return null;
+		 String returnValue = "Uran\n" +
+	                "id: " + this.id + "\n" +
+	                "isRadio:" + Tools.bool(this.isRadio) + "\n" +
+	                "name: " + this.name + "\n" +
+	                "canEvaporate: " + Tools.bool(this.canEvaporate) + "\n" +
+	                "exposedCounter: " + this.exposedCounter + "\n";
+		return returnValue;
 	}
 }

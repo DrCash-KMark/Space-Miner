@@ -15,7 +15,7 @@ public abstract class Material extends Printable{
 	protected boolean isRadio;
 	protected String name;
 	protected boolean canEvaporate;
-	private int exposedCounter;
+	protected int exposedCounter;
 	
 //Constructors:----------------------------------------------------------------
 
@@ -38,9 +38,10 @@ public abstract class Material extends Printable{
 	 */
 	Material(Material m)
 	{
-		isRadio = m.isRadio();
-		name = m.getName();
-		canEvaporate = m.isCanEvaporate();
+		this.id = m.id;
+		this.isRadio = m.isRadio();
+		this.name = m.getName();
+		this.canEvaporate = m.isCanEvaporate();
 	}
 	
 //Get/Set-----------------------------------------------------------------
@@ -91,6 +92,7 @@ public abstract class Material extends Printable{
 		return "Material id: " + id + "\n"
 				+ "Name: " + name + "\n";
 	}
+	
 //Own methods:----------------------------------------------------------------------------
 	 
     /**

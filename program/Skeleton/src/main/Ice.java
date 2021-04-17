@@ -18,14 +18,18 @@ public class Ice extends Material {
 	/**
 	 * Constructor for Ice.
 	 */
+	Ice(String id){
+		super(false, "Ice", true , 0);
+		this.id = id;
+	}
+	
+	/**
+	 * Constructor for Ice without parameters.
+	 */
 	Ice(){
 		super(false, "Ice", true , 0);
-	}
-
-	@Override
-	public String genSaveString() {
-		// TODO Auto-generated method stub
-		return null;
+        this.id = "Ice" + String.valueOf(nextId);
+        nextId++;
 	}
 
 //Own methods:----------------------------------------------------------------------------
@@ -37,5 +41,25 @@ public class Ice extends Material {
 	public void exposedAndCloseToSun(Asteroid a) {
 		super.exposedAndCloseToSun(a);
 		a.evaporateMaterial();
+	}
+	
+//Inherited:-----------------------------------------------------------------------------
+	
+	//Material
+	
+    /**
+     * creates a string storing the most important datas of this class
+     *
+     * @return
+     */
+	@Override
+	public String genSaveString() {
+		 String returnValue = "Ice\n" +
+	                "id: " + this.id + "\n" +
+	                "isRadio:" + Tools.bool(this.isRadio) + "\n" +
+	                "name: " + this.name + "\n" +
+	                "canEvaporate: " + Tools.bool(this.canEvaporate) + "\n" +
+	                "exposedCounter: " + this.exposedCounter + "\n";
+		return returnValue;
 	}
 }

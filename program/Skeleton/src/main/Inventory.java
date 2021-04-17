@@ -2,7 +2,6 @@ package main;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
 //
 //
@@ -32,6 +31,9 @@ public class Inventory extends Printable{
 	 * Constructor for Inventory without parameters.
 	 */
 	Inventory(){
+        this.id = "I" + String.valueOf(nextId);
+        nextId++;
+		
 		this.materials = new LinkedList<>();
 		this.starGates = new LinkedList<>();
 		this.capacityM = 10;
@@ -43,7 +45,8 @@ public class Inventory extends Printable{
 	 * @param materials
 	 * @param starGate
 	 */
-	Inventory(LinkedList<Material> materials, LinkedList<StarGate> starGates, int capacityM, int capacitySG){
+	Inventory(String id, LinkedList<Material> materials, LinkedList<StarGate> starGates, int capacityM, int capacitySG){
+		this.id = id;
 		this.materials = materials;
 		this.starGates = starGates;
 		this.capacityM = capacityM;
@@ -60,6 +63,14 @@ public class Inventory extends Printable{
 		return materials;
 	}
 	
+	/**
+	 * Getter of the materials.
+	 * @return materials: LinkedList<Material>
+	 */
+	public LinkedList<StarGate> getStarGates() {
+		return starGates;
+	}
+	
 	public int getStarGatesCount() {
 		if(starGates!=null)return starGates.size();
 		return 0;
@@ -68,11 +79,6 @@ public class Inventory extends Printable{
 	public int getMaterialsCount() {
 		if(materials!=null)return materials.size();
 		return 0;
-	}
-
-	public LinkedList<StarGate> getStarGates() {
-		//TODO
-		return starGates;
 	}
 
 //Inherited:-----------------------------------------------------------------------------
@@ -98,10 +104,24 @@ public class Inventory extends Printable{
 				+ dataMaterial + dataStarGate;
 	}
 
+    /**
+     * creates a string storing the most important datas of this class
+     *
+     * @return
+     */
 	@Override
 	public String genSaveString() {
-		// TODO Auto-generated method stub
-		return null;
+        String returnValue = "Inventory\n" +
+                "id: " + this.id + "\n" +
+                "capacityM:" + this.capacityM + "\n" +
+                "capacitySG: " + this.capacitySG + "\n";
+		for(Material material : materials) {
+			returnValue += "MaterialId" + material.getId() + "\n";
+		}
+		for(StarGate starGate : starGates) {
+			returnValue += "StarGatesId: " + starGate.getId() + "\n";
+		}
+        return returnValue + ";";
 	}
 
 //Own methods:----------------------------------------------------------------------------
@@ -113,7 +133,7 @@ public class Inventory extends Printable{
 	 */
 	public Material removeMaterial(Material m) {
 	
-		if(materials.remove(m)) {
+		if(materials!= null && materials.remove(m)) {
 			return m;
 		}
 		return null;
@@ -125,10 +145,34 @@ public class Inventory extends Printable{
 	 */
 	public StarGate removeStarGate() {
 		
-		if(starGates.size()!=0) {
+		if(starGates!= null && starGates.size()!=0) {
 			return starGates.get(0);
 		}
 		return null;
+	}
+	
+	/**
+	 * Adds the given stargate to the stargate list.
+	 * If the inventory capacity value is -1 then it's not have limit.
+	 * @param sg the stargate the will be added to the stargate list
+	 */
+	public void addStarGate(StarGate sg) {
+
+		if(sg != null && (starGates.size()<capacitySG || capacitySG == -1)) {
+			starGates.add(sg);
+		}
+	}
+	
+	/**
+	 * Adds the given material to the materials list.
+	 * If the inventory capacity value is -1 then it's not have limit.
+	 * @param m the material the will be added to the materials list
+	 */
+	public void addMaterial(Material m) {
+		if (m != null && (materials.size()<capacityM || capacityM == -1))
+		{
+			materials.add(m);
+		}
 	}
 	
 	/**
@@ -138,6 +182,7 @@ public class Inventory extends Printable{
 	 * @return remainder
 	 */
 	public Inventory subSet(Inventory i) {
+		if(i==null)return null;
 		Inventory remainder = new Inventory();
 		
 		Iterator<Material> iRecipe = materials.iterator();
@@ -162,6 +207,7 @@ public class Inventory extends Printable{
 	 * @return differences
 	 */
 	public Inventory subtraction(Inventory i) {
+		if(i==null)return null;
 		Inventory remainder = new Inventory();
 		
 		Iterator<Material> iRecipe = materials.iterator();
@@ -174,28 +220,5 @@ public class Inventory extends Printable{
 	    }
 		return remainder;
 	}	
-	
-	/**
-	 * Adds the given stargate to the stargate list.
-	 * @param sg the stargate the will be added to the stargate list
-	 */
-	public void addStarGate(StarGate sg) {
-
-		if(starGates.size()<capacitySG) {
-			starGates.add(sg);
-		}
-	}
-	
-	/**
-	 * Adds the given material to the materials list.
-	 * @param m the material the will be added to the materials list
-	 */
-	public void addMaterial(Material m) {
-		if (m != null && materials.size()<capacityM)
-		{
-			materials.add(m);
-		}
-	}
-
 }
 		

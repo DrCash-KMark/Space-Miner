@@ -15,14 +15,41 @@ public class Coal extends Material {
 
 //Constructors:----------------------------------------------------------------
 
-	Coal(){
+	/**
+	 * Constructor for Coal.
+	 */
+	Coal(String id){
 		super(false, "Coal", false, 0);
+		this.id = id;
 	}
 	
+	/**
+	 * Constructor for Coal without parameters.
+	 */
+	Coal(){
+		super(false, "Coal", true , 0);
+        this.id = "Coal" + String.valueOf(nextId);
+        nextId++;
+	}
+	
+//Inherited:-----------------------------------------------------------------------------
+
+	//Material
+
+    /**
+     * creates a string storing the most important datas of this class
+     *
+     * @return
+     */
 	@Override
 	public String genSaveString() {
-		// TODO Auto-generated method stub
-		return null;
+		 String returnValue = "Coal\n" +
+	                "id: " + this.id + "\n" +
+	                "isRadio:" + Tools.bool(this.isRadio) + "\n" +
+	                "name: " + this.name + "\n" +
+	                "canEvaporate: " + Tools.bool(this.canEvaporate) + "\n" +
+	                "exposedCounter: " + this.exposedCounter + "\n";
+		return returnValue;
 	}
 
 }

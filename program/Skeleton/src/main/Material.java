@@ -110,8 +110,7 @@ public abstract class Material extends Printable{
      */
 	@Override
 	public String genSaveString() {
-		 String returnValue = this.name + "\n" +
-	                "id: " + this.id + "\n" +
+		 String returnValue ="id: " + this.id + "\n" +
 	                "isRadio:" + Tools.bool(this.isRadio) + "\n" +
 	                "name: " + this.name + "\n" +
 	                "canEvaporate: " + Tools.bool(this.canEvaporate) + "\n" +

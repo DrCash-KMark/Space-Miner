@@ -3,6 +3,11 @@ package main;
 public class UI {
 	private Game game;
 	
+	public UI(){
+		game = new Game();
+		game.setUI(this);
+	}
+	
 	public void displayMessage(String s)
 	{
 		System.out.println(s);
@@ -14,14 +19,14 @@ public class UI {
 		
 		switch (splitString[0]) {
 			case "init":
-				if (splitString[1] == "manually")
+				if (splitString[1].equals("manually"))
 					game.initGame(true);
 				else
 					game.initGame(false);
 				
 				break;
 			case "start":
-				if (splitString[1] == "game")
+				if (splitString[1].equals("game"))
 					game.startGame();
 				else
 					game.startTurn();
@@ -39,13 +44,16 @@ public class UI {
 				switch (splitString[1]) {
 					case "settler":
 						Settler settler = new Settler();
+						settler.setId(splitString[2]);
 						
 						game.addSettler(settler);
 						game.getAsteroidWithId(splitString[4]).addSettler(settler);
+						settler.setAsteroid(game.getAsteroidWithId(splitString[4]));
 						
 						break;
 					case "robot":
 						Robot robot = new Robot();
+						robot.setId(splitString[2]);
 						
 						game.addNonPlayer(robot);
 						game.getAsteroidWithId(splitString[4]).addNonPlayer(robot);
@@ -53,6 +61,7 @@ public class UI {
 						break;
 					case "alien":
 						Alien alien = new Alien();
+						alien.setId(splitString[2]);
 						
 						game.addNonPlayer(alien);
 						game.getAsteroidWithId(splitString[4]).addNonPlayer(alien);
@@ -60,6 +69,7 @@ public class UI {
 						break;
 					case "asteroid":
 						Asteroid asteroid = new Asteroid();
+						asteroid.setId(splitString[2]);
 						
 						game.addAsteroid(asteroid);
 						game.getSunWithId(splitString[4]).addAsteroid(asteroid);
@@ -67,14 +77,16 @@ public class UI {
 						break;
 					case "sun":
 						Sun sun = new Sun();
+						sun.setID(splitString[2]);
 						
 						game.addSun(sun);
 						
 						break;
 					case "inventory":
 						Inventory inventory = new Inventory();
+						inventory.setId(splitString[2]);
 						
-						if (splitString[3] == "settler")
+						if (splitString[3].equals("settler"))
 							game.getSettlerWithId(splitString[4]).setInventory(inventory);
 						else
 							game.getAlienWithId(splitString[4]).setInventory(inventory);
@@ -82,6 +94,7 @@ public class UI {
 						break;
 					case "coal":
 						Coal coal = new Coal();
+						coal.setId(splitString[2]);
 						
 						switch (splitString[3]) {
 							case "asteroid":
@@ -101,6 +114,7 @@ public class UI {
 						break;
 					case "ice":
 						Ice ice = new Ice();
+						ice.setId(splitString[2]);
 						
 						switch (splitString[3]) {
 						case "asteroid":
@@ -120,6 +134,7 @@ public class UI {
 						break;
 					case "iron":
 						Iron iron = new Iron();
+						iron.setId(splitString[2]);
 						
 						switch (splitString[3]) {
 						case "asteroid":
@@ -139,6 +154,7 @@ public class UI {
 						break;
 					case "uran":
 						Uran uran = new Uran();
+						uran.setId(splitString[2]);
 						
 						switch (splitString[3]) {
 						case "asteroid":
@@ -158,6 +174,7 @@ public class UI {
 						break;
 					case "stargate":
 						StarGate starGate = new StarGate();
+						starGate.setId(splitString[2]);
 						
 						if (splitString[3] == "asteroid")
 							game.getAsteroidWithId(splitString[4]).addBuilding(starGate);
@@ -167,6 +184,7 @@ public class UI {
 						break;
 					case "base":
 						Base base = new Base();
+						base.setId(splitString[2]);
 						
 						game.getAsteroidWithId(splitString[4]).addBuilding(base);
 						

@@ -14,6 +14,12 @@ create uran <id> <settler/alien> <id>
 move settler <id> dest <asteroid/stargate> <id>
 set inventory <settler/alien> <id> capacity <value>
 
+LIST ALL TURN EVENTS
+game -> turnEvents<String>
+addTurnEvent(s: String)
+owner.addTurnEvent(description)
+asteroid.getOwner().addTurnEvent("ice elpáolog")
+
 #test1
 init game manually
 create sun sun1
@@ -159,7 +165,7 @@ mine alien al1
 list asteroid a1
 list alien al1
 
-#test9 // kvesszük a materialokat s az asteroidon van egy null nonPlayer
+#test9 8.1.1 // kivesszük a materialokat s az asteroidon van egy null nonPlayer
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -234,7 +240,7 @@ list stargate sg1
 list stargate sg2
 list settler s1
 
-#test18 8.2 // csak az alien hal meg, stargate nem billen wasInSunflarebe s nem is mozog emiatt
+#test18 8.2 // csak az alien hal meg, stargate nem mozog emiatt
 init game manually
 create sun sun1
 set sun isRandom sun1 f
@@ -253,7 +259,7 @@ set robot isRandom r1 f
 create alien al1 asteroid a1
 set alien isRandom al1 f
 create stargate sg1 asteroid a1
-set stargate isRandom sg1 f
+set stargate isRandom sg1 t
 create inventory i1 settler s1
 create stargate sg2 settler s1
 set stargate isRandom sg2 f
@@ -267,7 +273,7 @@ list asteroid a1
 list asteroid a2
 list stargate sg1
 
-#test19 8.3 // stargate nem billen wasInSunflarebe s nem is mozog emiatt
+#test19 8.3 // stargate nem mozog emiatt
 init game manually
 create sun sun1
 set sun isRandom sun1 f
@@ -286,7 +292,7 @@ set robot isRandom r1 f
 create alien al1 asteroid a1
 set alien isRandom al1 f
 create stargate sg1 asteroid a1
-set stargate isRandom sg1 f
+set stargate isRandom sg1 t
 create inventory i1 settler s1
 create stargate sg2 settler s1
 set stargate isRandom sg2 f
@@ -334,3 +340,48 @@ drill robot r1
 start next turn
 list asteroid a1
 list robot r1
+
+#test22 8.6 // null lesz az asteroid.materials
+init game manually
+create sun sun1
+create asteroid a1 sun sun1
+set asteroid rockThickness a1 1
+set asteroid closeToSun a1 t
+set asteroid isRandom a1 f
+create asteroid a2 sun sun1
+set asteroid closeToSun a2 f
+set asteroid isRandom a2 f
+add asteroid neighbour a1 a2
+add asteroid neighbour a2 a1
+create robot r1 asteroid a1
+set robot isRandom r1 f
+create uran uran1 asteroid a1
+set material exposedCounter uran1 0
+start game
+drill robot r1
+start next turn
+start next turn
+start next turn
+list asteroid a1
+list asteroid a2
+list robot r1
+
+#test23 8.7
+
+#test24 8.8
+
+#test25 8.9
+
+#test26 8.10
+
+#test27 8.11
+
+#test28 8.12
+
+#test29 8.13
+
+#test30 8.14
+
+#test31 8.15
+
+#test32 8.16

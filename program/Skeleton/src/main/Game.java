@@ -47,11 +47,17 @@ public class Game {
 	private List<Asteroid> asteroidsToRemove = new ArrayList<Asteroid>();
 	private List<NonPlayer> nonPlayersToRemove = new ArrayList<NonPlayer>();
 	
+	private List<String> turnEvents = new ArrayList<String>();
+	
 	public void setUI(UI u) {
 		ui = u;
 	}
 	
 	//Event related:-----------------------------------------------------------------
+	
+	public void addTurnEvent(String s) {
+		turnEvents.add(s);
+	}
 	
 	/**
 	 * For testing only!
@@ -85,6 +91,34 @@ public class Game {
 	 */
 	public void addSettler(Settler settler) {
 		settlers.add(settler);
+	}
+	
+	public void listTurnEvents() {
+		String displayString = "";
+		
+		for (String s : turnEvents) {
+			displayString += s + "\n";
+		}
+		
+		ui.displayMessage(displayString);
+	}
+	
+	public void listAll() {
+		for (Sun sun : suns) {
+			ui.displayMessage(sun.genUIString());
+		}
+		
+		for (Asteroid asteroid : asteroids) {
+			ui.displayMessage(asteroid.genUIString());
+		}
+		
+		for (Settler settler : settlers) {
+			ui.displayMessage(settler.genUIString());
+		}
+		
+		for (NonPlayer nonPlayer : nonPlayers) {
+			ui.displayMessage(nonPlayer.genUIString());
+		}
 	}
 	
 	/*public void addControllable(Controllable controllable) {

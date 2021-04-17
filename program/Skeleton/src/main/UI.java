@@ -1,8 +1,5 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class UI {
 	private Game game;
 	
@@ -476,7 +473,10 @@ public class UI {
 			case "list":
 				switch (splitString[1]) {
 					case "all":
-						game.listAllSettlers();
+						if (splitString.length == 3)
+							game.listAllSettlers();
+						else
+							game.listAll();
 						
 						break;
 					case "sun":
@@ -505,6 +505,10 @@ public class UI {
 						break;
 					case "alien":
 						displayMessage(game.getAlienWithId(splitString[2]).genUIString());
+						
+						break;
+					case "turn":
+						game.listTurnEvents();
 						
 						break;
 				}

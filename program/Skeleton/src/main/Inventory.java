@@ -152,6 +152,14 @@ public class Inventory extends Printable{
 
 //Own methods:----------------------------------------------------------------------------
 
+	public boolean isFullMaterials() {
+		return capacityM>materials.size()?true:false;
+	}
+	
+	public boolean isFullStarGates() {
+		return capacitySG>starGates.size()?true:false;
+	}
+	
 	/**
 	 * Remove a material to the materials which are in the inventory.
 	 * @param m : the material that will be removed from the inventory

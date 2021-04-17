@@ -47,6 +47,10 @@ public class Game {
 	private List<Asteroid> asteroidsToRemove = new ArrayList<Asteroid>();
 	private List<NonPlayer> nonPlayersToRemove = new ArrayList<NonPlayer>();
 	
+	public void setUI(UI u) {
+		ui = u;
+	}
+	
 	//Event related:-----------------------------------------------------------------
 	
 	/**
@@ -976,7 +980,7 @@ public class Game {
 	
 	public Settler getSettlerWithId(String id) {
 		for (Settler settler : settlers)
-			if (settler.getId() == id)
+			if (settler.getId().equals(id))
 				return settler;
 		
 		ui.displayMessage("No such settler found");
@@ -985,7 +989,7 @@ public class Game {
 	
 	public Asteroid getAsteroidWithId(String id) {
 		for (Asteroid asteroid : asteroids)
-			if (asteroid.getId() == id)
+			if (asteroid.getId().equals(id))
 				return asteroid;
 		
 		ui.displayMessage("No such asteroid found");
@@ -994,7 +998,7 @@ public class Game {
 	
 	public Sun getSunWithId(String id) {
 		for (Sun sun : suns)
-			if (sun.getId() == id)
+			if (sun.getId().equals(id))
 				return sun;
 		
 		ui.displayMessage("No such sun found");
@@ -1003,7 +1007,7 @@ public class Game {
 	
 	public Alien getAlienWithId(String id) {
 		for (NonPlayer nonPlayer : nonPlayers)
-			if (nonPlayer.getId() == id)
+			if (nonPlayer.getId().equals(id))
 				return (Alien)nonPlayer;
 		
 		ui.displayMessage("No such alien found");
@@ -1012,7 +1016,7 @@ public class Game {
 	
 	public Robot getRobotWithId(String id) {
 		for (NonPlayer nonPlayer : nonPlayers)
-			if (nonPlayer.getId() == id)
+			if (nonPlayer.getId().equals(id))
 				return (Robot)nonPlayer;
 		
 		ui.displayMessage("No such robot found");
@@ -1022,13 +1026,13 @@ public class Game {
 	public StarGate getStarGateWithId(String id) {
 		for (Settler settler : settlers) {
 			for (StarGate starGate : settler.getInventory().getStarGates())
-				if (starGate.getId() == id)
+				if (starGate.getId().equals(id))
 					return starGate;
 		}
 		
 		for (Asteroid asteroid : asteroids) {
 			for (Building starGate : asteroid.getBuildings())
-				if (starGate.getId() == id)
+				if (starGate.getId().equals(id))
 					return (StarGate)starGate;
 		}
 		
@@ -1039,7 +1043,7 @@ public class Game {
 	public Base getBaseWithId(String id) {
 		for (Asteroid asteroid : asteroids) {
 			for (Building base : asteroid.getBuildings())
-				if (base.getId() == id)
+				if (base.getId().equals(id))
 					return (Base)base;
 		}
 		
@@ -1050,13 +1054,13 @@ public class Game {
 	public Material getMaterialWithId(String id) {
 		for (Settler settler : settlers) {
 			for (Material material : settler.getInventory().getMaterials())
-				if (material.getId() == id)
+				if (material.getId().equals(id))
 					return material;
 		}
 		
 		for (Asteroid asteroid : asteroids) {
 			for (Material material : asteroid.getMaterials())
-				if (material.getId() == id)
+				if (material.getId().equals(id))
 					return material;
 		}
 		
@@ -1066,12 +1070,12 @@ public class Game {
 	
 	public Inventory getInventoryWithId(String id) {
 		for (Settler settler : settlers) {
-			if (settler.getInventory().getId() == id)
+			if (settler.getInventory().getId().equals(id))
 				return settler.getInventory();
 		}
 		
 		for (NonPlayer nonPlayer : nonPlayers) {
-			if (((Alien)nonPlayer).getInventory().getId() == id)
+			if (((Alien)nonPlayer).getInventory().getId().equals(id))
 				return ((Alien)nonPlayer).getInventory();
 		}
 		

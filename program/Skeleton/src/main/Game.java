@@ -310,13 +310,13 @@ public class Game {
 							case 'i':
 								if (loadString.split(" ")[1].charAt(1) == 'c') {
 									Ice ice = new Ice();
-									ice.setId(loadString.split(" ")[1]);
+									//ice.setId(loadString.split(" ")[1]);
 									
 									loadMaterial(ice, loadScanner, materialLoadList);
 								}
 								else {
 									Iron iron = new Iron();
-									iron.setId(loadString.split(" ")[1]);
+									//iron.setId(loadString.split(" ")[1]);
 									
 									loadMaterial(iron, loadScanner, materialLoadList);
 								}
@@ -324,14 +324,14 @@ public class Game {
 								break;
 							case 'u':
 								Uran uran = new Uran();
-								uran.setId(loadString.split(" ")[1]);
+								//uran.setId(loadString.split(" ")[1]);
 								
 								loadMaterial(uran, loadScanner, materialLoadList);
 								
 								break;
 							case 'c':
 								Coal coal = new Coal();
-								coal.setId(loadString.split(" ")[1]);
+								//coal.setId(loadString.split(" ")[1]);
 								
 								loadMaterial(coal, loadScanner, materialLoadList);
 								
@@ -662,6 +662,45 @@ public class Game {
 	}
 	
 	public void loadMaterial(Material m, Scanner scanner, List<Material> materialLoadList) {
+		String loadString = scanner.nextLine();
+		
+		Boolean foundMaterial = false;
+		
+		for (Material material : materialLoadList) {
+			if (material.getId().equals(loadString.split(" ")[1])) {
+				foundMaterial = true;
+				m = material;
+			}
+		}
+		
+		if (!foundMaterial) {
+			materialLoadList.add(m);
+			m.setId(loadString.split(" ")[1]);
+		}
+		
+		loadString = scanner.nextLine();
+		
+		if (loadString.split(" ")[1].equals("t"))
+			m.setRadio(true);
+		else
+			m.setRadio(false);
+		
+		loadString = scanner.nextLine(); 
+		
+		m.setName(loadString.split(" ")[1]);
+		
+		loadString = scanner.nextLine();
+		
+		if (loadString.split(" ")[1].equals("t"))
+			m.setCanEvaporate(true);
+		else
+			m.setCanEvaporate(false);
+		
+		loadString = scanner.nextLine();
+		
+		m.setExposedCounter(Integer.parseInt(loadString.split(" ")[1]));
+		
+		loadString = scanner.nextLine();
 	}
 	
 	public void loadStarGate(Scanner scanner, String loadString, List<StarGate> starGateLoadList, List<Asteroid> asteroidLoadList) {
@@ -858,6 +897,129 @@ public class Game {
 	}
 	
 	public void loadInventory(Scanner scanner, List<Inventory> inventoryLoadList, List<Material> materialLoadList, List<StarGate> starGateLoadList) {
+		String loadString = scanner.nextLine();
+		
+		Boolean foundInventory = false;
+		Inventory i = new Inventory();
+		
+		for (Inventory inventory : inventoryLoadList) {
+			if (inventory.getId().equals(loadString.split(" ")[1])) {
+				foundInventory = true;
+				i = inventory;
+			}
+		}
+		
+		if (!foundInventory) {
+			i.setId(loadString.split(" ")[1]);
+			inventoryLoadList.add(i);
+		}
+		
+		loadString = scanner.nextLine();
+		
+		//i.setCapacityM(Integer.parseInt(loadString.split(" ")[1]));
+		
+		loadString = scanner.nextLine();
+		
+		//i.setCapacitySG(Integer.parseInt(loadString.split(" ")[1]));
+		
+		loadString = scanner.nextLine();
+		
+		while (loadString.split(" ")[0].equals("MaterialId:")) {
+			Boolean foundMaterial = false;
+			
+			if (loadString.split(" ")[1].charAt(0) == 'i') {
+				if (loadString.split(" ")[1].charAt(1) == 'r') {
+					Iron iron = new Iron();
+					
+					for (Material material : materialLoadList) {
+						if (material.getId().equals(loadString.split(" ")[1])) {
+							foundMaterial = true;
+							iron = (Iron)material;
+						}
+					}
+					
+					if (!foundMaterial) {
+						iron.setId(loadString.split(" ")[1]);
+						i.addMaterial(iron);
+						
+						materialLoadList.add(iron);
+					}
+				} else {
+					Ice ice = new Ice();
+					
+					for (Material material : materialLoadList) {
+						if (material.getId().equals(loadString.split(" ")[1])) {
+							foundMaterial = true;
+							ice = (Ice)material;
+						}
+					}
+					
+					if (!foundMaterial) {
+						ice.setId(loadString.split(" ")[1]);
+						i.addMaterial(ice);
+						
+						materialLoadList.add(ice);
+					}
+				}
+			}
+			else if(loadString.split(" ")[1].charAt(0) == 'u') {
+				Uran uran = new Uran();
+				
+				for (Material material : materialLoadList) {
+					if (material.getId().equals(loadString.split(" ")[1])) {
+						foundMaterial = true;
+						uran = (Uran)material;
+					}
+				}
+				
+				if (!foundMaterial) {
+					uran.setId(loadString.split(" ")[1]);
+					i.addMaterial(uran);
+					
+					materialLoadList.add(uran);
+				}
+			} else {
+				Coal coal = new Coal();
+				
+				for (Material material : materialLoadList) {
+					if (material.getId().equals(loadString.split(" ")[1])) {
+						foundMaterial = true;
+						coal = (Coal)material;
+					}
+				}
+				
+				if (!foundMaterial) {
+					coal.setId(loadString.split(" ")[1]);
+					i.addMaterial(coal);
+					
+					materialLoadList.add(coal);
+				}
+			}
+		}
+		
+		while (loadString.split(" ")[0].equals("StarGateId:")) {
+			Boolean foundStarGate = false;
+			
+			StarGate sg = new StarGate();
+			
+			for (StarGate starGate : starGateLoadList) {
+				if (starGate.getId().equals(loadString.split(" ")[1])) {
+					foundStarGate = true;
+					sg = starGate;
+				}
+			}
+			
+			if (!foundStarGate) {
+				sg.setId(loadString.split(" ")[1]);
+				starGateLoadList.add(sg);
+				
+				i.addStarGate(sg);
+			}
+			
+			loadString = scanner.nextLine();
+		}
+		
+		loadString = scanner.nextLine();
 	}
 	
 	public void loadRobot(Scanner scanner, String loadString, List<Robot> robotLoadList, List<Asteroid> asteroidLoadList) {

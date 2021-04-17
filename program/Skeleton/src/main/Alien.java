@@ -44,8 +44,7 @@ public class Alien extends NonPlayer implements Mining {
 		return "id: " + id + "\n"
 				+ "asteroid: " +  Tools.id(asteroid) + "\n"
 				+ "isRandom: " + Tools.bool(isRandom) +"\n"
-				+ "inventory: " + Tools.id(inventory) + "\n" 
-				+ ";\n";
+				+ "inventory: " + Tools.id(inventory);
 	}
 
 	

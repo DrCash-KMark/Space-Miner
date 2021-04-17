@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * StarGate class. Responsible for creating destroying and managing StarGates.
  */
-public class StarGate extends Building implements Controllable, Moving {
+public class StarGate extends Building implements Moving {
 	private StarGate neighbour;
 	private boolean works;
 	private boolean wasInSunFlare;

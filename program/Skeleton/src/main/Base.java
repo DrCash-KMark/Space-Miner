@@ -61,4 +61,10 @@ public class Base extends Building {
 	public void destroy() {
 		asteroid.removeBuilding(this);
 	}
+
+	@Override
+	public void onTurn() {
+		//Do nothing
+	}
+	
 }

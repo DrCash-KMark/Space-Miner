@@ -12,11 +12,10 @@ package main;
 //
 
 
-
 /**
  * Building abstract base class.
  */
-public abstract class Building extends Printable implements ReactsToSunFlare {
+public abstract class Building extends Printable implements Controllable, ReactsToSunFlare {
 	protected Asteroid asteroid;	//Built on this Asteroid.
 	protected Game owner;
 

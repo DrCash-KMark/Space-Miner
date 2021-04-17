@@ -111,8 +111,7 @@ public class Inventory extends Printable{
      */
 	@Override
 	public String genSaveString() {
-        String returnValue = "Inventory\n" +
-                "id: " + this.id + "\n" +
+        String returnValue = "id: " + this.id + "\n" +
                 "capacityM:" + this.capacityM + "\n" +
                 "capacitySG: " + this.capacitySG + "\n";
 		for(Material material : materials) {
@@ -121,7 +120,7 @@ public class Inventory extends Printable{
 		for(StarGate starGate : starGates) {
 			returnValue += "StarGatesId: " + starGate.getId() + "\n";
 		}
-        return returnValue + ";";
+        return returnValue;
 	}
 
 //Own methods:----------------------------------------------------------------------------

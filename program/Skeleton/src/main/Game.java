@@ -1,7 +1,6 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.io.File;
@@ -263,16 +262,48 @@ public class Game {
 						
 						break;
 					case "Material":
-						loadMaterial(loadScanner);
+						loadString = loadScanner.nextLine();
+						
+						switch (loadString.split(" ")[1].charAt(0)) {
+							case 'i':
+								if (loadString.split(" ")[1].charAt(1) == 'c') {
+									Ice ice = new Ice();
+									ice.setId(loadString.split(" ")[1]);
+									
+									loadMaterial(ice, loadScanner, materialLoadList);
+								}
+								else {
+									Iron iron = new Iron();
+									iron.setId(loadString.split(" ")[1]);
+									
+									loadMaterial(iron, loadScanner, materialLoadList);
+								}
+								
+								break;
+							case 'u':
+								Uran uran = new Uran();
+								uran.setId(loadString.split(" ")[1]);
+								
+								loadMaterial(uran, loadScanner, materialLoadList);
+								
+								break;
+							case 'c':
+								Coal coal = new Coal();
+								coal.setId(loadString.split(" ")[1]);
+								
+								loadMaterial(coal, loadScanner, materialLoadList);
+								
+								break;
+						}
 						
 						break;
 					case "Building":
 						loadString = loadScanner.nextLine();
 						
 						if (loadString.split(" ")[1].charAt(0) == 's')
-							loadStarGate(loadScanner);
+							loadStarGate(loadScanner, loadString, starGateLoadList, asteroidLoadList);
 						else
-							loadBase(loadScanner);
+							loadBase(loadScanner, loadString, baseLoadList, asteroidLoadList);
 						
 						break;
 					case "Settler":
@@ -280,7 +311,7 @@ public class Game {
 						
 						break;
 					case "Inventory":
-						loadInventory(loadScanner);
+						loadInventory(loadScanner, inventoryLoadList, materialLoadList, starGateLoadList);
 						
 						break;
 					case "NonPlayer":
@@ -289,7 +320,7 @@ public class Game {
 						if (loadString.split(" ")[1].charAt(0) == 'r')
 							loadRobot(loadScanner, loadString, robotLoadList, asteroidLoadList);
 						else
-							loadAlien(loadScanner);
+							loadAlien(loadScanner, loadString, alienLoadList, asteroidLoadList, inventoryLoadList);
 						
 						break;
 				}
@@ -584,7 +615,7 @@ public class Game {
 		}
 	}
 	
-	public void loadMaterial(Scanner scanner) {
+	public void loadMaterial(Material m, Scanner scanner, List<Material> materialLoadList) {
 	}
 	
 	public void loadStarGate(Scanner scanner, String loadString, List<StarGate> starGateLoadList, List<Asteroid> asteroidLoadList) {
@@ -774,7 +805,7 @@ public class Game {
 		loadString = scanner.nextLine();
 	}
 	
-	public void loadInventory(Scanner scanner) {
+	public void loadInventory(Scanner scanner, List<Inventory> inventoryLoadList, List<Material> materialLoadList, List<StarGate> starGateLoadList) {
 	}
 	
 	public void loadRobot(Scanner scanner, String loadString, List<Robot> robotLoadList, List<Asteroid> asteroidLoadList) {

@@ -159,8 +159,51 @@ public class Asteroid extends Planet implements Controllable {
      */
     @Override
     public String genUIString() {
-        return "Sun id: " + id + "\n"
-                + "rockThickness: " + String.valueOf(rockThickness) + "\n";
+        String returnValue = "Asteroid id: " + id + "\n"
+                + "rockThickness: " + String.valueOf(rockThickness) + "\n"
+                + "closeToSun: " + Tools.bool(this.closeToSun) + "\n"
+                + "isRandom: " + Tools.bool(this.isRandom) + "\n"
+                + "materials:\n";
+        if (this.materials == null || this.materials.size() == 0) {
+            returnValue += "\tmaterials: -";
+        } else {
+            for (Material m : materials) {
+                returnValue += "\tmaterial: " + m.id;
+            }
+        }
+        returnValue += "neighbours:\n";
+        if (this.neighbours == null || this.neighbours.size() == 0) {
+            returnValue += "\tneighbour: -\n";
+        } else {
+            for (Asteroid n : neighbours) {
+                returnValue += "\tneighbour: " + n.id + "\n";
+            }
+        }
+        returnValue += "buildings:\n";
+        if (this.settlers == null || this.settlers.size() == 0) {
+            returnValue += "\tbuilding: -\n";
+        } else {
+            for (Settler s : settlers) {
+                returnValue += "\tbuilding: " + s.id + "\n";
+            }
+        }
+        returnValue += "settlers:\n";
+        if (this.materials == null || this.materials.size() == 0) {
+            returnValue += "\tsettler: -\n";
+        } else {
+            for (Material m : materials) {
+                returnValue += "\tsettler: " + m.id + "\n";
+            }
+        }
+        returnValue += "nonPlayers:";
+        if (this.materials == null || this.materials.size() == 0) {
+            returnValue += "\tnonPlayer: -\n";
+        } else {
+            for (Material m : materials) {
+                returnValue += "\tnonPlayer: " + m.id + "\n";
+            }
+        }
+        return returnValue;
     }
 
     /**

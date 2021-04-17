@@ -57,6 +57,7 @@ public class UI {
 						
 						game.addNonPlayer(robot);
 						game.getAsteroidWithId(splitString[4]).addNonPlayer(robot);
+						robot.setAsteroid(game.getAsteroidWithId(splitString[4]));
 						
 						break;
 					case "alien":
@@ -65,6 +66,7 @@ public class UI {
 						
 						game.addNonPlayer(alien);
 						game.getAsteroidWithId(splitString[4]).addNonPlayer(alien);
+						alien.setAsteroid(game.getAsteroidWithId(splitString[4]));
 						
 						break;
 					case "asteroid":
@@ -176,8 +178,10 @@ public class UI {
 						StarGate starGate = new StarGate();
 						starGate.setId(splitString[2]);
 						
-						if (splitString[3] == "asteroid")
+						if (splitString[3].equals("asteroid")) {
 							game.getAsteroidWithId(splitString[4]).addBuilding(starGate);
+							starGate.setAsteroid(game.getAsteroidWithId(splitString[4]));
+						}
 						else
 							game.getSettlerWithId(splitString[4]).getInventory().addStarGate(starGate);
 						
@@ -187,6 +191,7 @@ public class UI {
 						base.setId(splitString[2]);
 						
 						game.getAsteroidWithId(splitString[4]).addBuilding(base);
+						base.setAsteroid(game.getAsteroidWithId(splitString[4]));
 						
 						break;
 				}
@@ -207,7 +212,7 @@ public class UI {
 								
 								break;
 							case "hadActionThisTurn":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									settler.setHadAction(true);
 								else
 									settler.setHadAction(false);
@@ -229,7 +234,7 @@ public class UI {
 								
 								break;
 							case "isRandom":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									robot.setIsRandom(true);
 								else
 									robot.setIsRandom(false);
@@ -285,21 +290,21 @@ public class UI {
 								
 								break;
 							case "works":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									starGate.setWorks(true);
 								else
 									starGate.setWorks(false);
 								
 								break;
 							case "wasInSunFlare":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									starGate.setWasInSunFlare(true);
 								else
 									starGate.setWasInSunFlare(false);
 								
 								break;
 							case "isRandom":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									starGate.setRandom(true);
 								else
 									starGate.setRandom(false);
@@ -317,7 +322,7 @@ public class UI {
 							
 								break;
 							case "isRandom":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									sun.setIsRandom(true);
 								else
 									sun.setIsRandom(false);
@@ -343,14 +348,14 @@ public class UI {
 								
 								break;
 							case "closeToSun":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									asteroid.setCloseToSun(true);
 								else
 									asteroid.setCloseToSun(false);
 								
 								break;
 							case "isRandom":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									asteroid.setIsRandom(true);
 								else
 									asteroid.setIsRandom(false);
@@ -374,14 +379,14 @@ public class UI {
 								
 								break;
 							case "isRadio":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									material.setRadio(true);
 								else
 									material.setRadio(false);
 								
 								break;
 							case "canEvaporate":
-								if (splitString[4] == "t")
+								if (splitString[4].equals("t"))
 									material.setRadio(true);
 								else
 									material.setRadio(false);

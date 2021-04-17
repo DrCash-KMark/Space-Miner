@@ -233,7 +233,7 @@ public class Game {
 	}
 	
 	public void loadGame(String fileName) {
-		/*List<StarGate> loadStarGates = new ArrayList<StarGate>();
+		List<StarGate> loadStarGates = new ArrayList<StarGate>();
 		
 		String loadString;
 		
@@ -245,528 +245,21 @@ public class Game {
 			{
 				loadString = loadScanner.nextLine();
 				
-				switch (loadString)
-				{
-					case "Sun:":
-						Sun s = new Sun();
-						
-						loadString = loadScanner.nextLine();
-						
-						s.setId(loadString.split(" ")[1]);
-						
-						loadString = loadScanner.nextLine();
-						
-						if (loadString.split(" ")[1] == "t")
-							s.setIsRandom(true);
-						else
-							s.setIsRandom(false);
-						
-						loadString = loadScanner.nextLine();
-						
-						while (loadString != "----------------------------------------------------")
-						{
-							if (loadString == "asteroids:")
-							{
-								Asteroid a = new Asteroid();
-								
-								loadString = loadScanner.nextLine();
-								
-								a.setId(loadString.split(" ")[1]);
-								
-								s.addAsteroid(a);
-								
-								addAsteroid(a);
-							}
-							
-							loadString = loadScanner.nextLine();
-						}
-						
-						addSun(s);
+				switch (loadString) {
+					case "Sun":
 						
 						break;
-					case "Asteroid:":
-						Asteroid a = new Asteroid();
-						
-						loadString = loadScanner.nextLine();
-						
-						a.setId(loadString.split(" ")[1]);
-						
-						loadString = loadScanner.nextLine();
-						
-						a.setRockThickness(Integer.parseInt(loadString.split(" ")[1]));
-						
-						loadString = loadScanner.nextLine();
-						
-						if (loadString.split(" ")[1] == "t")
-							a.setCloseToSun(true);
-						else
-							a.setCloseToSun(false);
-						
-						loadString = loadScanner.nextLine();
-						
-						if (loadString.split(" ")[1] == "t")
-							a.setIsRandom(true);
-						else
-							a.setIsRandom(false);
-						
-						loadString = loadScanner.nextLine();
-						
-						a.setCapacity(Integer.parseInt(loadString.split(" ")[1]));
-						
-						loadString = loadScanner.nextLine();
-						
-						// neighbour ids
-						while (loadString != "settlers:")
-						{
-							Asteroid n = asteroids.get(0);
-							
-							int i = 0;
-							while (n.getId() != loadString)
-							{
-								i++;
-								n = asteroids.get(i);
-							}
-							
-							a.addNeighbour(n);
-							
-							loadString = loadScanner.nextLine();
-						}
-						
-						loadString = loadScanner.nextLine();
-						
-						while (loadString != "nonPlayers:")
-						{
-							Settler settler = new Settler();
-							
-							settler.setId(loadString);
-							settler.setAsteroid(a);
-							
-							a.addSettler(settler);
-						
-							loadString = loadScanner.nextLine();
-						}
-						
-						loadString = loadScanner.nextLine();
-						
-						while (loadString != "materials:")
-						{
-							NonPlayer np;
-							
-							if (loadString.charAt(0) == 'a')
-								np = new Alien();
-							else
-								np = new Robot();
-							
-							np.setId(loadString);
-							np.setAsteroid(a);
-							
-							a.addNonPlayer(np);
-							
-							loadString = loadScanner.nextLine();
-						}
-						
-						loadString = loadScanner.nextLine();
-						
-						while (loadString != "buildings:")
-						{
-							loadString = loadScanner.nextLine();
-							
-							Material m;
-							
-							switch (loadString.split(" ")[1]) {
-								case "Coal":
-									m = new Coal();
-									break;
-								case "Iron":
-									m = new Iron();
-									break;
-								case "Uran":
-									m = new Uran();
-									break;
-								case "Ice":
-									m = new Ice();
-									break;
-							}
-									
-							loadString = loadScanner.nextLine();
-									
-							m.setExposedCounter(Integer.parseInt(loadString.split(" ")[1]));
-							
-							loadString = loadScanner.nextLine();
-							
-							if (loadString.split(" ")[1] == "t")
-								m.setRadio(true);
-							else
-								m.setRadio(false);
-							
-							loadString = loadScanner.nextLine();
-							
-							if (loadString.split(" ")[1] == "t")
-								m.setCanEvaporate(true);
-							else
-								m.setCanEvaporate(false);
-							
-							a.addMaterial(m);
-							
-							loadString = loadScanner.nextLine();
-						}
-						
-						loadString = loadScanner.nextLine();
-						
-						while (loadString != "----------------------------------------------------")
-						{
-							switch (loadString.split(" ")[1]) {
-							case "Base":
-								Base b = new Base();
-								
-								loadString = loadScanner.nextLine();
-								
-								b.setId(loadString.split(" ")[1]);
-								
-								loadString = loadScanner.nextLine();
-								
-								b.setAsteroid(a);
-								
-								break;
-							case "StarGate":
-								loadString = loadScanner.nextLine();
-								
-								StarGate sg;
-								Boolean foundStarGate = false;
-								
-								for (StarGate starGate : loadStarGates)
-									if (starGate.getId() == loadString.split(" ")[1])
-									{
-										foundStarGate = true;
-										sg = starGate;
-									}
-								
-								if (!foundStarGate)
-								{
-									sg = new StarGate();
-									loadStarGates.add(sg);
-								}
-								
-								sg.setId(loadString.split(" ")[1]);
-								
-								loadString = loadScanner.nextLine();
-								
-								sg.setAsteroid(a);
-								
-								// neighbour ???
-								
-								loadString = loadScanner.nextLine();
-								
-								StarGate n;
-								Boolean foundNeighbour = false;
-								
-								for (StarGate stargate : loadStarGates)
-								{
-									if (stargate.getId() == loadString.split(" ")[1])
-									{
-										n = stargate;
-										foundNeighbour = true;
-									}
-								}
-								
-								if (!foundNeighbour)
-								{
-									n = new StarGate();
-									n.setId(loadString.split(" ")[1]);
-									loadStarGates.add(n);
-								}
-								
-								sg.setNeighbour(n);
-								
-								loadString = loadScanner.nextLine();
-								
-								if (loadString.split(" ")[1] == "t")
-									sg.setWorks(true);
-								else
-									sg.setWorks(false);
-								
-								loadString = loadScanner.nextLine();
-								
-								if (loadString.split(" ")[1] == "t")
-									sg.setWasInSunFlare(true);
-								else
-									sg.setWasInSunFlare(false);
-								
-								loadString = loadScanner.nextLine();
-								
-								if (loadString.split(" ")[1] == "t")
-									sg.setRandom(true);
-								else
-									sg.setRandom(false);
-								
-								loadString = loadScanner.nextLine();
-								
-								break;
-							}
-						}
-						
+					case "Asteroid":
 						break;
-					case "Settler:":
-						Settler settler;// = new Settler();
-						
-						loadString = loadScanner.nextLine();
-						
-						for (Asteroid asteroid : asteroids)
-						{
-							for (Settler set : asteroid.getSettelrs())
-							{
-								if (set.getId() == loadString.split(" ")[1])
-									settler = set;
-							}
-						}
-						
-						loadString = loadScanner.nextLine();
-						
-						if (loadString.split(" ")[1] == "t")
-							settler.setHadAction(true);
-						else
-							settler.setHadAction(false);
-						
-						loadString = loadScanner.nextLine();
-						
-						// asteroid
-						
-						loadString = loadScanner.nextLine(); // inventiry
-						loadString = loadScanner.nextLine(); // Inventiry
-						loadString = loadScanner.nextLine(); // materials
-						loadString = loadScanner.nextLine(); // Material:
-						
-						Inventory i = new Inventory();
-						
-						settler.setInventory(i);
-						
-						while (loadString != "stargates:")
-						{
-							loadString = loadScanner.nextLine();
-							
-							Material m;
-							
-							switch (loadString.split(" ")[1]) {
-								case "Coal":
-									m = new Coal();
-									break;
-								case "Iron":
-									m = new Iron();
-									break;
-								case "Uran":
-									m = new Uran();
-									break;
-								case "Ice":
-									m = new Ice();
-									break;
-							}
-									
-							loadString = loadScanner.nextLine();
-									
-							m.setExposedCounter(Integer.parseInt(loadString.split(" ")[1]));
-							
-							loadString = loadScanner.nextLine();
-							
-							if (loadString.split(" ")[1] == "t")
-								m.setRadio(true);
-							else
-								m.setRadio(false);
-							
-							loadString = loadScanner.nextLine();
-							
-							if (loadString.split(" ")[1] == "t")
-								m.setCanEvaporate(true);
-							else
-								m.setCanEvaporate(false);
-							
-							i.addMaterial(m);
-							
-							loadString = loadScanner.nextLine();
-						}
-						
-						loadString = loadScanner.nextLine();
-						
-						while (loadString != "----------------------------------------------------")
-						{
-							StarGate sg = new StarGate();
-							Boolean foundStarGate = false;
-							
-							loadString = loadScanner.nextLine();
-							
-							for (StarGate starGate : loadStarGates)
-								if (starGate.getId() == loadString.split(" ")[1])
-								{
-									foundStarGate = true;
-									sg = starGate;
-								}
-							
-							if (!foundStarGate)
-							{
-								sg = new StarGate();
-								loadStarGates.add(sg);
-							}
-							
-							sg.setId(loadString.split(" ")[1]);
-							
-							loadString = loadScanner.nextLine();
-							
-							// dosent have asteroid
-							
-							// neighbour ???
-							
-							loadString = loadScanner.nextLine();
-							
-							StarGate n;
-							Boolean foundNeighbour = false;
-							
-							for (StarGate stargate : loadStarGates)
-							{
-								if (stargate.getId() == loadString.split(" ")[1])
-								{
-									n = stargate;
-									foundNeighbour = true;
-								}
-							}
-							
-							if (!foundNeighbour)
-							{
-								n = new StarGate();
-								n.setId(loadString.split(" ")[1]);
-								loadStarGates.add(n);
-							}
-							
-							sg.setNeighbour(n);
-							
-							loadString = loadScanner.nextLine();
-							
-							if (loadString.split(" ")[1] == "t")
-								sg.setWorks(true);
-							else
-								sg.setWorks(false);
-							
-							loadString = loadScanner.nextLine();
-							
-							if (loadString.split(" ")[1] == "t")
-								sg.setWasInSunFlare(true);
-							else
-								sg.setWasInSunFlare(false);
-							
-							loadString = loadScanner.nextLine();
-							
-							if (loadString.split(" ")[1] == "t")
-								sg.setRandom(true);
-							else
-								sg.setRandom(false);
-							
-							loadString = loadScanner.nextLine();
-						}
-	
+					case "Material":
 						break;
-					case "NonPlayer:":
-						loadString = loadScanner.nextLine();
-						
-						switch (loadString.split(" ")[1]) {
-							case "Alien":
-								Alien ali;
-								
-								loadString = loadScanner.nextLine();
-								
-								for (Asteroid asteroid : asteroids)
-								{
-									for (NonPlayer nonPlayer : asteroid.getNonPlayers())
-									{
-										if (nonPlayer.getId() == loadString.split(" ")[1])
-										{
-											ali = (Alien)nonPlayer;
-										}
-									}
-								}
-								
-								loadString = loadScanner.nextLine(); // asteroid
-								
-								loadString = loadScanner.nextLine(); // inventory????
-								loadString = loadScanner.nextLine(); // Inventory:
-								loadString = loadScanner.nextLine(); // materials
-								loadString = loadScanner.nextLine(); // Material:
-								
-								Inventory inv = new Inventory();
-								
-								ali.setInventory(inv);
-								
-								while (loadString != "stargates:")
-								{
-									loadString = loadScanner.nextLine();
-									
-									Material m;
-									
-									switch (loadString.split(" ")[1]) {
-										case "Coal":
-											m = new Coal();
-											break;
-										case "Iron":
-											m = new Iron();
-											break;
-										case "Uran":
-											m = new Uran();
-											break;
-										case "Ice":
-											m = new Ice();
-											break;
-									}
-											
-									loadString = loadScanner.nextLine();
-											
-									m.setExposedCounter(Integer.parseInt(loadString.split(" ")[1]));
-									
-									loadString = loadScanner.nextLine();
-									
-									if (loadString.split(" ")[1] == "t")
-										m.setRadio(true);
-									else
-										m.setRadio(false);
-									
-									loadString = loadScanner.nextLine();
-									
-									if (loadString.split(" ")[1] == "t")
-										m.setCanEvaporate(true);
-									else
-										m.setCanEvaporate(false);
-									
-									inv.addMaterial(m);
-									
-									loadString = loadScanner.nextLine();
-								}
-								
-								loadString = loadScanner.nextLine(); // stargates
-								
-								while (loadString != "----------------------------------------------------")
-								{
-									// stargates 
-									// NOT needed here cos alien dont have settlers
-								}
-								
-								break;
-							case "Robot":
-								Robot r;
-								
-								loadString = loadScanner.nextLine();
-								
-								for (Asteroid asteroid : asteroids)
-								{
-									for (NonPlayer nonPlayer : asteroid.getNonPlayers())
-									{
-										if (nonPlayer.getId() == loadString.split(" ")[1])
-										{
-											r = (Robot)nonPlayer;
-										}
-									}
-								}
-								
-								loadString = loadScanner.nextLine(); // asteroid
-								
-								break;
-						}
-	
+					case "Building":
+						break;
+					case "Settler":
+						break;
+					case "Inventory":
+						break;
+					case "NonPlayer":
 						break;
 				}
 			}
@@ -776,23 +269,51 @@ public class Game {
 		catch (FileNotFoundException e) {
 			System.out.println("Can't load game.");
 		}
-*/
 	}
 	
 	public void saveGame(String fileName) {
 		String saveString = "";
 		
-		for (Sun sun : suns)
-			saveString += "Sun:\n" + sun.genUIString() + "\n----------------------------------------------------";
-		
-		for (Asteroid asteroid : asteroids)
-			saveString += "Asteroids:\n" + asteroid.genUIString() + "\n----------------------------------------------------";;
-		
-		for (Settler settler : settlers)
-			saveString += "Settlers:\n" + settler.genUIString() + "\n----------------------------------------------------";;
-		
-		for (NonPlayer nonPlayer : nonPlayers)
-			saveString += "NonPlayer:\n" + nonPlayer.genUIString() + "\n----------------------------------------------------";;
+		for (Sun sun : suns) {
+			saveString += "Sun:\n" + sun.genSaveString() + "\n----------------------------------------------------\n";
+			
+			for (Asteroid asteroid : sun.getAsteroids()) {
+				saveString += "Asteroid:\n" + asteroid.genSaveString() + "\n----------------------------------------------------\n";
+				
+				for (Material material : asteroid.getMaterials()) {
+					saveString += "Material:\n" + material.genUIString() + "\n----------------------------------------------------\n";
+				}
+				
+				for (Building building : asteroid.getBuildings()) {
+					saveString += "Building:\n" + building.genSaveString() + "\n----------------------------------------------------\n";
+				}
+				
+				for (Settler settler : asteroid.getSettelrs()) {
+					saveString += "Settler:\n" + settler.genSaveString() + "\n----------------------------------------------------\n";
+					
+					saveString += "Inventory:\n" + settler.getInventory().genSaveString() + "\n----------------------------------------------------\n";
+					
+					for (Material material : settler.getInventory().getMaterials()) {
+						saveString += "Material:\n" + material.genSaveString() + "\n----------------------------------------------------\n";
+					}
+					
+					for (StarGate stargate : settler.getInventory().getStarGates()) {
+						saveString += "Building:\n" + stargate.genSaveString() + "\n----------------------------------------------------\n";
+					}
+				}
+				
+				for (NonPlayer nonPlayer : asteroid.getNonPlayers()) {
+					saveString += "NonPlayer:" + nonPlayer.genSaveString() + "\n----------------------------------------------------\n";
+					
+					if (((Alien)nonPlayer).getInventory() != null) {
+						for (Material material : ((Alien)nonPlayer).getInventory().getMaterials()) {
+							saveString += "Material:\n" + material.genSaveString() + "\n----------------------------------------------------\n";
+						}
+					}
+						
+				}
+			}
+		}
 		
 		try {
 			FileWriter saveWriter = new FileWriter(fileName);
@@ -891,6 +412,21 @@ public class Game {
 		}
 		
 		ui.displayMessage("No such material found");
+		return null;
+	}
+	
+	public Inventory getInventoryWithId(String id) {
+		for (Settler settler : settlers) {
+			if (settler.getInventory().getId() == id)
+				return settler.getInventory();
+		}
+		
+		for (NonPlayer nonPlayer : nonPlayers) {
+			if (((Alien)nonPlayer).getInventory().getId() == id)
+				return ((Alien)nonPlayer).getInventory();
+		}
+		
+		ui.displayMessage("No such inventory found");
 		return null;
 	}
 }

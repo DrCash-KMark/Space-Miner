@@ -342,7 +342,9 @@ public class UI {
 						
 						break;
 					case "inventory":
-						// stinky
+						Inventory inventory = game.getInventoryWithId(splitString[3]);
+						
+						inventory.setId(splitString[4]);
 						
 						break;
 					case "material":
@@ -421,8 +423,7 @@ public class UI {
 						
 						break;
 					case "inventory":
-						// TODO
-						
+						// Theoretically not important. Beacous of create and how that works.
 						break;
 				}
 				

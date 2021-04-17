@@ -93,13 +93,24 @@ public class Inventory extends Printable{
 	@Override
 	public String genUIString() {
 		String dataMaterial = "materials:\n";
-		for(Material material : materials) {
-			dataMaterial += "	material" + material.getId() + "\n";
-		}
 		String dataStarGate = "starGates:\n";
 		for(StarGate starGate : starGates) {
 			dataStarGate += "	starGate: " + starGate.getId() + "\n";
 		}	
+        if(materials.size()==0) {
+        	dataMaterial = "materials: -\n";
+        }else {
+        	for(Material material : materials) {
+        		dataMaterial += "material: " + material.getId() + "\n";
+			}
+        }
+        if(starGates.size()==0) {
+        	dataMaterial = "starGate: -\n";
+        }else {
+        	for(StarGate starGate : starGates) {
+        		dataStarGate += "	starGate: " + starGate.getId() + "\n";
+    		}
+        }
 		return "Inventory id: " + id + "\n"
 				+ dataMaterial + dataStarGate;
 	}
@@ -114,12 +125,20 @@ public class Inventory extends Printable{
         String returnValue = "id: " + this.id + "\n" +
                 "capacityM:" + this.capacityM + "\n" +
                 "capacitySG: " + this.capacitySG + "\n";
-		for(Material material : materials) {
-			returnValue += "MaterialId:" + material.getId() + "\n";
-		}
-		for(StarGate starGate : starGates) {
-			returnValue += "StarGatesId: " + starGate.getId() + "\n";
-		}
+        if(materials.size()==0) {
+        	returnValue += "MaterialId: -\n";
+        }else {
+        	for(Material material : materials) {
+				returnValue += "MaterialId:" + material.getId() + "\n";
+			}
+        }
+        if(starGates.size()==0) {
+        	returnValue += "StarGatesId: -\n";
+        }else {
+        	for(StarGate starGate : starGates) {
+    			returnValue += "StarGatesId: " + starGate.getId() + "\n";
+    		}
+        }
         return returnValue;
 	}
 

@@ -360,7 +360,7 @@ public class Game {
 		
 		// for clarity
 		for (Sun sun : sunLoadList) {
-			if (sun.getId() == loadString.split(" ")[1]) {
+			if (sun.getId().equals(loadString.split(" ")[1])) {
 				foundSun = true;
 				s = sun;
 			}
@@ -373,18 +373,18 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		if (loadString.split(" ")[1] == "t")
+		if (loadString.split(" ")[1].equals("t"))
 			s.setIsRandom(true);
 		else
 			s.setIsRandom(false);
 		
 		loadString = scanner.nextLine();
 		
-		while (loadString == "AsteroidId:") {
+		while (loadString.equals("AsteroidId:")) {
 			Boolean foundAsteroid = false;
 			
 			for (Asteroid asteroid : asteroidLoadList) {
-				if (asteroid.getId() == loadString.split(" ")[1]) {
+				if (asteroid.getId().equals(loadString.split(" ")[1])) {
 					foundAsteroid = true;
 					s.addAsteroid(asteroid);
 				}
@@ -410,7 +410,7 @@ public class Game {
 		Asteroid a = new Asteroid();
 		
 		for (Asteroid asteroid : asteroidLoadList) {
-			if (asteroid.getId() == loadString.split(" ")[1]) {
+			if (asteroid.getId().equals(loadString.split(" ")[1])) {
 				foundAsteroid = true;
 				a = asteroid;
 			}
@@ -423,7 +423,7 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		if (loadString.split(" ")[1] == "t")
+		if (loadString.split(" ")[1].equals("t"))
 			a.setIsRandom(true);
 		else
 			a.setIsRandom(false);
@@ -434,7 +434,7 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		if (loadString.split(" ")[1] == "t")
+		if (loadString.split(" ")[1].equals("t"))
 			a.setCloseToSun(true);
 		else
 			a.setCloseToSun(false);
@@ -445,11 +445,11 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		while (loadString.split(" ")[0] == "settlerId:") {
+		while (loadString.split(" ")[0].equals("settlerId:")) {
 			Boolean foundSettler = false;
 			
 			for (Settler settler : settlerLoadList) {
-				if (settler.getId() == loadString.split(" ")[1]) {
+				if (settler.getId().equals(loadString.split(" ")[1])) {
 					foundSettler = true;
 					a.addSettler(settler);
 				}
@@ -467,18 +467,18 @@ public class Game {
 			loadString = scanner.nextLine();
 		}
 		
-		while (loadString.split(" ")[0] == "nonPlayerId:") {
+		while (loadString.split(" ")[0].equals("nonPlayerId:")) {
 			Boolean foundNonPlayer = false;
 			
 			for (Alien alien : alienLoadList) {
-				if (alien.getId() == loadString.split(" ")[1]) {
+				if (alien.getId().equals(loadString.split(" ")[1])) {
 					foundNonPlayer = true;
 					a.addNonPlayer(alien);
 				}
 			}
 			
 			for (Robot robot : robotLoadList) {
-				if (robot.getId() == loadString.split(" ")[1]) {
+				if (robot.getId().equals(loadString.split(" ")[1])) {
 					foundNonPlayer = true;
 					a.addNonPlayer(robot);
 				}
@@ -507,11 +507,11 @@ public class Game {
 			loadString = scanner.nextLine();
 		}
 
-		while (loadString.split(" ")[0] == "MaterialId:") {
+		while (loadString.split(" ")[0].equals("MaterialId:")) {
 			Boolean foundMaterial = false;
 			
 			for (Material material : materialLoadList) {
-				if (material.getId() == loadString.split(" ")[1]) {
+				if (material.getId().equals(loadString.split(" ")[1])) {
 					foundMaterial = true;
 					a.addMaterial(material);
 				}
@@ -557,11 +557,11 @@ public class Game {
 			loadString = scanner.nextLine();
 		}
 
-		while (loadString.split(" ")[0] == "NeighbourId:") {
+		while (loadString.split(" ")[0].equals("NeighbourId:")) {
 			Boolean foundNeighbour = false;
 			
 			for (Asteroid asteroid : asteroidLoadList) {
-				if (asteroid.getId() == loadString.split(" ")[1]) {
+				if (asteroid.getId().equals(loadString.split(" ")[1])) {
 					foundNeighbour = true;
 					a.addNeighbour(asteroid);
 				}
@@ -579,18 +579,18 @@ public class Game {
 			loadString = scanner.nextLine();
 		}
 
-		while (loadString.split(" ")[0] == "BuildingId:") {
+		while (loadString.split(" ")[0].equals("BuildingId:")) {
 			Boolean foundBuilding = false;
 			
 			for (Base base : baseLoadList) {
-				if (base.getId() == loadString.split(" ")[1]) {
+				if (base.getId().equals(loadString.split(" ")[1])) {
 					foundBuilding = true;
 					a.addBuilding(base);
 				}
 			}
 			
 			for (StarGate starGate : starGateLoadList) {
-				if (starGate.getId() == loadString.split(" ")[1]) {
+				if (starGate.getId().equals(loadString.split(" ")[1])) {
 					foundBuilding = true;
 					a.addBuilding(starGate);
 				}
@@ -627,7 +627,7 @@ public class Game {
 		StarGate sg = new StarGate();
 		
 		for (StarGate starGate : starGateLoadList) {
-			if (starGate.getId() == loadString.split(" ")[1]) {
+			if (starGate.getId().equals(loadString.split(" ")[1])) {
 				foundStarGate = true;
 				sg = starGate;
 			}
@@ -643,7 +643,7 @@ public class Game {
 		Boolean foundAsteroid = false;
 		
 		for (Asteroid asteroid : asteroidLoadList) {
-			if (asteroid.getId() == loadString.split(" ")[1]) {
+			if (asteroid.getId().equals(loadString.split(" ")[1])) {
 				foundAsteroid = true;
 				sg.setAsteroid(asteroid);
 			}
@@ -663,7 +663,7 @@ public class Game {
 		Boolean foundNeighbour = false;
 		
 		for (StarGate neighbour : starGateLoadList) {
-			if (neighbour.getId() == loadString.split(" ")[1]) {
+			if (neighbour.getId().equals(loadString.split(" ")[1])) {
 				foundNeighbour = true;
 				sg.setNeighbour(neighbour);
 			}
@@ -680,21 +680,21 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		if (loadString.split(" ")[1] == "t")
+		if (loadString.split(" ")[1].equals("t"))
 			sg.setWorks(true);
 		else
 			sg.setWorks(false);
 			
 		loadString = scanner.nextLine();
 		
-		if (loadString.split(" ")[1] == "t")
+		if (loadString.split(" ")[1].equals("t"))
 			sg.setWasInSunFlare(true);
 		else
 			sg.setWasInSunFlare(false);
 			
 		loadString = scanner.nextLine();
 		
-		if (loadString.split(" ")[1] == "t")
+		if (loadString.split(" ")[1].equals("t"))
 			sg.setRandom(true);
 		else
 			sg.setRandom(false);
@@ -707,7 +707,7 @@ public class Game {
 		Base b = new Base();
 		
 		for (Base base : baseLoadList) {
-			if (base.getId() == loadString.split(" ")[1]) {
+			if (base.getId().equals(loadString.split(" ")[1])) {
 				foundBase = true;
 				b = base;
 			}
@@ -723,7 +723,7 @@ public class Game {
 		Boolean foundAsteroid = false;
 		
 		for (Asteroid asteroid : asteroidLoadList) {
-			if (asteroid.getId() == loadString.split(" ")[1]) {
+			if (asteroid.getId().equals(loadString.split(" ")[1])) {
 				foundAsteroid = true;
 				b.setAsteroid(asteroid);
 			}
@@ -748,7 +748,7 @@ public class Game {
 		Settler s = new Settler();
 		
 		for (Settler settler : settlerLoadList) {
-			if (settler.getId() == loadString.split(" ")[1]) {
+			if (settler.getId().equals(loadString.split(" ")[1])) {
 				foundSettler = true;
 				s = settler;
 			}
@@ -761,7 +761,7 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		if (loadString.split(" ")[1] == "t")
+		if (loadString.split(" ")[1].equals("t"))
 			s.setHadAction(true);
 		else
 			s.setHadAction(false);
@@ -771,7 +771,7 @@ public class Game {
 		Boolean foundAsteroid = false;
 		
 		for (Asteroid asteroid : asteroidLoadList) {
-			if (asteroid.getId() == loadString.split(" ")[1]) {
+			if (asteroid.getId().equals(loadString.split(" ")[1])) {
 				foundAsteroid = true;
 				s.setAsteroid(asteroid);
 			}
@@ -791,7 +791,7 @@ public class Game {
 		Boolean foundInventory = false;
 		
 		for (Inventory inventory : inventoryLoadList) {
-			if (inventory.getId() == loadString.split(" ")[1]) {
+			if (inventory.getId().equals(loadString.split(" ")[1])) {
 				foundInventory = true;
 				s.setInventory(inventory);
 			}
@@ -817,7 +817,7 @@ public class Game {
 		Robot r = new Robot();
 		
 		for (Robot robot : robotLoadList) {
-			if (robot.getId() == loadString.split(" ")[1]) {
+			if (robot.getId().equals(loadString.split(" ")[1])) {
 				foundRobot = true;
 				r = robot;
 			}
@@ -833,7 +833,7 @@ public class Game {
 		Boolean foundAsteroid = false;
 		
 		for (Asteroid asteroid : asteroidLoadList) {
-			if (asteroid.getId() == loadString.split(" ")[1]) {
+			if (asteroid.getId().equals(loadString.split(" ")[1])) {
 				foundAsteroid = true;
 				r.setAsteroid(asteroid);
 			}
@@ -850,7 +850,7 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		if (loadString.split(" ")[1] == "t")
+		if (loadString.split(" ")[1].equals("t"))
 			r.setIsRandom(true);
 		else
 			r.setIsRandom(false);
@@ -863,7 +863,7 @@ public class Game {
 		Alien a = new Alien();
 		
 		for (Alien alien : alienLoadList) {
-			if (alien.getId() == loadString.split(" ")[1]) {
+			if (alien.getId().equals(loadString.split(" ")[1])) {
 				foundAlien = true;
 				a = alien;
 			}
@@ -879,7 +879,7 @@ public class Game {
 		Boolean foundAsteroid = false;
 		
 		for (Asteroid asteroid : asteroidLoadList) {
-			if (asteroid.getId() == loadString.split(" ")[1]) {
+			if (asteroid.getId().equals(loadString.split(" ")[1])) {
 				foundAsteroid = true;
 				a.setAsteroid(asteroid);
 			}
@@ -896,7 +896,7 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		if (loadString.split(" ")[1] == "t")
+		if (loadString.split(" ")[1].equals("t"))
 			a.setIsRandom(true);
 		else
 			a.setIsRandom(false);
@@ -906,7 +906,7 @@ public class Game {
 		Boolean foundInventory = false;
 		
 		for (Inventory inventory : inventoryLoadList) {
-			if (inventory.getId() == loadString.split(" ")[1]) {
+			if (inventory.getId().equals(loadString.split(" ")[1])) {
 				foundInventory = true;
 				a.setInventory(inventory);
 			}

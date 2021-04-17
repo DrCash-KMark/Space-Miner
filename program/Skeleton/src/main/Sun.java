@@ -103,8 +103,17 @@ public class Sun extends Planet implements Controllable {
      */
     @Override
     public String genUIString() {
-        return "Sun id: " + id + "\n"
-                + "isRandom: " + Tools.bool(isRandom) + "\n";
+        String returnValue = "Sun id: " + id + "\n"
+                + "isRandom: " + Tools.bool(isRandom) + "\n"
+                + "asteroids:\n";
+        if (asteroids == null || asteroids.size() == 0) {
+            returnValue += "\tasteroid: -";
+        } else {
+            for (Asteroid a : asteroids) {
+                returnValue += "\tasteroid: " + a.id;
+            }
+        }
+        return returnValue;
     }
 
     @Override

@@ -183,24 +183,24 @@ public class Asteroid extends Planet implements Controllable {
         if (this.settlers == null || this.settlers.size() == 0) {
             returnValue += "\tbuilding: -\n";
         } else {
-            for (Settler s : settlers) {
-                returnValue += "\tbuilding: " + s.id + "\n";
+            for (Building b : buildings) {
+                returnValue += "\tbuilding: " + b.id + "\n";
             }
         }
         returnValue += "settlers:\n";
         if (this.materials == null || this.materials.size() == 0) {
             returnValue += "\tsettler: -\n";
         } else {
-            for (Material m : materials) {
-                returnValue += "\tsettler: " + m.id + "\n";
+            for (Settler s : settlers) {
+                returnValue += "\tsettler: " + s.id + "\n";
             }
         }
         returnValue += "nonPlayers:";
         if (this.materials == null || this.materials.size() == 0) {
             returnValue += "\tnonPlayer: -\n";
         } else {
-            for (Material m : materials) {
-                returnValue += "\tnonPlayer: " + m.id + "\n";
+            for (NonPlayer np : nonPlayers) {
+                returnValue += "\tnonPlayer: " + np.id + "\n";
             }
         }
         return returnValue;

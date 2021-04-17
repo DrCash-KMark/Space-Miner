@@ -115,7 +115,7 @@ public class Inventory extends Printable{
                 "capacityM:" + this.capacityM + "\n" +
                 "capacitySG: " + this.capacitySG + "\n";
 		for(Material material : materials) {
-			returnValue += "MaterialId" + material.getId() + "\n";
+			returnValue += "MaterialId:" + material.getId() + "\n";
 		}
 		for(StarGate starGate : starGates) {
 			returnValue += "StarGatesId: " + starGate.getId() + "\n";

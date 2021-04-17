@@ -191,7 +191,7 @@ public class Asteroid extends Planet implements Controllable {
         for (Building b : buildings) {
             returnValue += "BuildingId: " + b.id + "\n";
         }
-        return returnValue + ";";
+        return returnValue ;
     }
 
     //Controllable

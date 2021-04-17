@@ -13,6 +13,13 @@ public class Alien extends NonPlayer implements Mining {
 		isRandom = true;
 	}
 	
+	public Alien(String _id, Asteroid _asteroid, Boolean _isRandom, Inventory _inventory) {
+		id = _id;
+		asteroid = _asteroid;
+		isRandom = _isRandom;
+		inventory = _inventory;
+	}
+	
 //Get/Set:-------------------------------------------------------
 	
 	public Inventory getInventory() {

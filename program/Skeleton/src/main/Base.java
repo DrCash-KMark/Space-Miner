@@ -22,6 +22,11 @@ public class Base extends Building {
 	public Base () {
 	}
 	
+	public Base (String _id, Asteroid _asteroid) {
+		id = _id;
+		asteroid = _asteroid;
+	}
+	
 //Get/Set----------------------------------------------
 	
 //Inherited:------------------------------------------------

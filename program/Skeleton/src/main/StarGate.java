@@ -34,6 +34,15 @@ public class StarGate extends Building implements Controllable, Moving {
 		wasInSunFlare = false;
 		isRandom = true;
 	}
+	
+	public StarGate(String _id, Asteroid _asteroid, StarGate _neighbour, Boolean _works, Boolean _wasInSunFlare, Boolean _isRandom) {
+		id = _id;
+		asteroid = _asteroid;
+		neighbour = _neighbour;
+		works = _works;
+		wasInSunFlare = _wasInSunFlare;
+		isRandom = _isRandom;
+	}
 
 //Get/Set-----------------------------------------------------------------
 	

@@ -255,8 +255,8 @@ public class Asteroid extends Planet implements Controllable {
             b.onTurn();
         }
         if (rockThickness <= 0 && closeToSun) {
-            //List<Material> forChe
-            for (Material m : materials) {
+            List<Material> forChecking=materials;
+            for (Material m : forChecking) {
                 m.exposedAndCloseToSun(this);
             }
         }
@@ -343,16 +343,19 @@ public class Asteroid extends Planet implements Controllable {
      */
     public void explode() {
         this.owner.addTurnEvent("AsteroidId:" + this.id + " asteroid exploded");
-        for (Settler s : settlers) {
+        List<Settler> forCheckingSettler=settlers;
+        for (Settler s : forCheckingSettler) {
             s.asteroidExploded();
         }
-        for (NonPlayer np : nonPlayers) {
+        List<NonPlayer> forCheckingNonPlayer=nonPlayers;
+        for (NonPlayer np : forCheckingNonPlayer) {
             np.asteroidExploded();
         }
         for (Asteroid n : neighbours) {
             n.removeNeighbour(this);
         }
-        for (Building b : buildings) {
+        List<Building> forCheckingBuildings=buildings;
+        for (Building b : forCheckingBuildings) {
             b.destroy();
         }
         this.mySun.removeAsteroid(this);

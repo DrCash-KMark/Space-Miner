@@ -1,5 +1,6 @@
 package main;
 
+import java.util.LinkedList;
 import java.util.List;
 
 //
@@ -34,6 +35,9 @@ public class Settler extends Entity implements Drilling, Mining {
 		inventory = new Inventory();
 		BASE_RECIPE = new Inventory();
 		ROBOT_RECIPE = new Inventory();
+		ROBOT_RECIPE.addMaterial(new Iron());
+        ROBOT_RECIPE.addMaterial(new Uran());
+        ROBOT_RECIPE.addMaterial(new Coal());
 		STARGATE_RECIPE = new Inventory();
 		hadactionthisturn = false;
 		this.setId("s"+ String.valueOf(nextId));
@@ -49,6 +53,9 @@ public class Settler extends Entity implements Drilling, Mining {
 		inventory = new Inventory();
 		BASE_RECIPE = new Inventory();
 		ROBOT_RECIPE = new Inventory();
+		ROBOT_RECIPE.addMaterial(new Iron());
+        ROBOT_RECIPE.addMaterial(new Uran());
+        ROBOT_RECIPE.addMaterial(new Coal());
 		STARGATE_RECIPE = new Inventory();
 		hadactionthisturn = false;
 	}
@@ -126,9 +133,9 @@ public class Settler extends Entity implements Drilling, Mining {
 	public void buildStarGate() {
 		//main.log(false, name, this.getClass().getName(), "buildStarGate()");
 		if(this.inventory.isFullStarGates() == false) {
-			Inventory remainder = STARGATE_RECIPE.subSet(inventory);
-			if(remainder.getMaterials().size() == 0) {
-				this.setInventory(STARGATE_RECIPE.subtraction(inventory));
+			LinkedList<Material> remainder = STARGATE_RECIPE.subSet(inventory.getMaterials());
+			if(remainder.size() == 0) {
+				STARGATE_RECIPE.subtraction(inventory.getMaterials());
 				StarGate s1 = new StarGate();
 				//s1.setName("stargate");
 				StarGate s2 = new StarGate();
@@ -147,9 +154,9 @@ public class Settler extends Entity implements Drilling, Mining {
 	 */
 	public void buildRobot() {
 		//main.log(false, name, this.getClass().getName(), "buildRobot()");
-		Inventory remainder = ROBOT_RECIPE.subSet(inventory);
-		if(remainder.getMaterials().size() == 0) {
-			this.setInventory(ROBOT_RECIPE.subtraction(inventory));
+		LinkedList<Material> remainder = ROBOT_RECIPE.subSet(inventory.getMaterials());
+		if(remainder.size() == 0) {
+			ROBOT_RECIPE.subtraction(inventory.getMaterials());
 			Robot robot = new Robot();
 			//robot.setName("robot");
 			robot.setAsteroid(asteroid);
@@ -165,16 +172,22 @@ public class Settler extends Entity implements Drilling, Mining {
 	public void buildBase() {
 		//main.log(false, name, this.getClass().getName(), "buildBase()");
 		List<Settler> settlersOnAsteroid = asteroid.getSettelrs();
-		Inventory subSet = BASE_RECIPE.subSet(inventory);
+		LinkedList<Material> subSet = BASE_RECIPE.subSet(inventory.getMaterials());
 		for (Settler settler : settlersOnAsteroid) {
-			subSet = subSet.subSet(settler.getInventory());
-			if (subSet.getMaterials().size() == 0) {				
+			if(settler.id.equals(this.id)) {
+				continue;
+			}
+			subSet = BASE_RECIPE.subSet(subSet);
+			if (subSet.size() == 0) {				
 				break;
 			}
 		}
-		if (subSet.getMaterials().size() == 0) {
-			Inventory toSubtract = BASE_RECIPE;		
+		if (subSet.size() == 0) {
+			LinkedList<Material> toSubtract = BASE_RECIPE.getMaterials();		
 			for (Settler settler : settlersOnAsteroid) {
+				if(settler.id.equals(this.id)) {
+					continue;
+				}
 				toSubtract = settler.getInventory().subtraction(toSubtract);
 			}
 			Base base = new Base();

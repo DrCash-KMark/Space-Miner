@@ -173,7 +173,7 @@ mine alien al1
 list asteroid a1
 list alien al1
 
-#test9 8.1.1 // kivesszük a materialokat s az asteroidon van egy null nonPlayer, settler inventoryja kicserelodik
+#test9 8.1.1
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -185,7 +185,6 @@ create iron iron1 settler s1
 create coal coal1 settler s1
 start game
 build settler s1 robot
-start next turn
 list asteroid a1
 list settler s1
 
@@ -328,7 +327,7 @@ list stargate sg1
 list stargate sg2
 list settler s1
 
-#test17 8.1.9 // sok stargate inventoryban egyébként ok works nem true a lehelyezett starGaten
+#test17 8.1.9 // sok stargate inventoryban
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -352,7 +351,7 @@ list stargate sg1
 list stargate sg2
 list settler s1
 
-#test18 8.2 // csak az alien hal meg, stargate nem mozog emiatt
+#test18 8.2 // csak az alien hal meg
 init game manually
 create sun sun1
 set sun isRandom sun1 f
@@ -385,7 +384,7 @@ list asteroid a1
 list asteroid a2
 list stargate sg1
 
-#test19 8.3 // stargate nem mozog emiatt
+#test19 8.3
 init game manually
 create sun sun1
 set sun isRandom sun1 f
@@ -501,7 +500,7 @@ start next turn
 start next turn
 list asteroid a2
 
-#test24 8.8 // settler hadActionThisTurn true lesz pedig falsenak kene lennie (game felol megoldhato, kell setHadActionThisTurn() settlerbe)
+#test24 8.8
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -518,7 +517,7 @@ drill settler s1
 start next turn
 list all
 
-#test25 8.9 // asteroid.materials null, amikor elpárolog valami ne nullozzuk ki pls nincs valami list.clear v vmi?
+#test25 8.9
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -676,3 +675,5 @@ set stargate neighbour sg2 sg1
 start game
 sunflare sun1
 list all
+list stargate sg1
+list stargate sg2

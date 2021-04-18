@@ -1,14 +1,20 @@
 Mark:
-kivevesek asteroidbol
+list turn events
+kivevesek asteroidbol listasan
+changelog
 
 Zoli:
-
+list turn events
+doksi
 
 Csabi:
-
+kommentek
+list turn events
+changelog (sajat valtoztatasok)
 
 Adam:
-
+list turn events
+changelog
 
 Moha:
 kommentek

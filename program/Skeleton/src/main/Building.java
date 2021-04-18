@@ -23,6 +23,14 @@ public abstract class Building extends Printable implements Controllable, Reacts
 
 //Constructors:----------------------------------------------------
 
+	public boolean isHadActionThisTurn() {
+		return hadActionThisTurn;
+	}
+
+	public void setHadActionThisTurn(boolean hadActionThisTurn) {
+		this.hadActionThisTurn = hadActionThisTurn;
+	}
+
 	public Building() {
 	}
 	

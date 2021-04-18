@@ -101,9 +101,6 @@ public class Inventory extends Printable{
 	public String genUIString() {
 		String dataMaterial = "materials:\n";
 		String dataStarGate = "starGates:\n";
-		for(StarGate starGate : starGates) {
-			dataStarGate += "	starGate: " + starGate.getId() + "\n";
-		}	
         if(materials.size()==0) {
         	dataMaterial = "materials: -\n";
         }else {

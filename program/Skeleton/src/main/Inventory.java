@@ -208,6 +208,17 @@ public class Inventory extends Printable{
 		return null;
 	}
 	
+	public boolean isHaveStarGate(StarGate SG) {
+		for(int i = 0; i<starGates.size();i++) {
+
+			   if(starGates.get(i).getId().equals(SG.getId())) {
+			      return true;
+			   }
+
+		}
+		return false;
+	}
+	
 	/**
 	 * Adds the given stargate to the stargate list.
 	 * If the inventory capacity value is -1 then it's not have limit.

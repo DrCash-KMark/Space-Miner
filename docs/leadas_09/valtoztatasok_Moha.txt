@@ -22,6 +22,11 @@ asteroid.getOwner().addTurnEvent("ice elpáolog")
 
 --------------------------
 
+game->init kitorli az eddigi osszes tarolt cucclit + reseteli a nextId-t
+kommentek "# "-el kezdodnek nem csak "#"-al
+
+--------------------------
+
 #test1
 init game manually
 create sun sun1

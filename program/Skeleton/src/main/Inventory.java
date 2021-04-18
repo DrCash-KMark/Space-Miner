@@ -179,6 +179,21 @@ public class Inventory extends Printable{
 		return null;
 	}
 	
+	public Material removeMaterialFromList(LinkedList<Material> materialList,Material m) {
+		
+		for(int i = 0; i<materialList.size();i++) {
+
+			   if(materialList.get(i).getName().equals(m.getName())) {
+				  Material temp = materialList.get(i);
+				  materialList.remove(temp);
+			      return temp;
+			   }
+
+		}
+
+		return null;
+	}
+	
 	/**
 	 * Remove a stargate to the stargates which are in the inventory.
 	 * @return StarGate: removed stargate or null if the inventory not contains stargate
@@ -222,16 +237,14 @@ public class Inventory extends Printable{
 	 */
 	public LinkedList<Material> subSet(LinkedList<Material> materialList) {
 		LinkedList<Material> remainder = new LinkedList<>();
+		LinkedList<Material> copyMatList = materialList;
 		
 		if(materialList.size()!=0) {
 			for(Material item : materials) {
 		    	
-		    	Material material = this.removeMaterial(item);
+		    	Material material = removeMaterialFromList(copyMatList,item);
 		    	if(material==null) {
-		    		remainder.add(material);
-		    	}
-		    	else {
-		    		materialList.add(material);
+		    		remainder.add(item);
 		    	}
 		    }
 		}
@@ -246,13 +259,12 @@ public class Inventory extends Printable{
 	 */
 	public LinkedList<Material> subtraction(LinkedList<Material> materialList) {
 		LinkedList<Material> remainder = new LinkedList<>();
-		
 		if(materialList.size()!=0) {
 			for(Material item : materials) {
 		    	
-		    	Material material = this.removeMaterial(item);
+		    	Material material = removeMaterialFromList(materialList,item);
 		    	if(material==null) {
-		    		remainder.add(material);
+		    		remainder.add(item);
 		    	}
 		    }
 		}

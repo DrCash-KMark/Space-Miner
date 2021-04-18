@@ -195,9 +195,15 @@ public class Inventory extends Printable{
 	 * Remove a stargate to the stargates which are in the inventory.
 	 * @return StarGate: removed stargate or null if the inventory not contains stargate
 	 */
-	public StarGate removeStarGate() {
-		if(starGates!= null && starGates.size()!=0) {
-			return starGates.get(0);
+	public StarGate removeStarGate(StarGate SG) {
+		for(int i = 0; i<starGates.size();i++) {
+
+			   if(starGates.get(i).getId().equals(SG.getId())) {
+				  StarGate temp = starGates.get(i);
+				  starGates.remove(temp);
+			      return temp;
+			   }
+
 		}
 		return null;
 	}

@@ -142,13 +142,16 @@ public class StarGate extends Building implements Moving {
 	
 	@Override
 	public void onTurn() {
-		if (wasInSunFlare) {
-			if (isRandom) {
-				List<Asteroid> neighbourAsteroids = asteroid.getNeighbours();
-				if (!neighbourAsteroids.isEmpty()) {
-					this.move(neighbourAsteroids.get(0));
+		if (!hadActionThisTurn) {
+			hadActionThisTurn = true;
+			if (wasInSunFlare) {
+				if (isRandom) {
+					List<Asteroid> neighbourAsteroids = asteroid.getNeighbours();
+					if (!neighbourAsteroids.isEmpty()) {
+						this.move(neighbourAsteroids.get(0));
+					}
 				}
-			}
+			}			
 		}
 	}
 

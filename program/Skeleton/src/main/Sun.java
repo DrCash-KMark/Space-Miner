@@ -33,7 +33,7 @@ public class Sun extends Planet implements Controllable {
      * Simple constructor for sun.
      */
     public Sun() {
-        this.id = "Sun" + String.valueOf(nextId);
+        this.id = "sun" + String.valueOf(nextId);
         nextId++;
         this.isRandom = false;
         this.asteroids = new LinkedList<Asteroid>();
@@ -92,6 +92,7 @@ public class Sun extends Planet implements Controllable {
             }
         }
 
+
     }
 
     //Printable
@@ -132,6 +133,7 @@ public class Sun extends Planet implements Controllable {
      * Causes sun flare. Notifies all the asteroids about sun flare.
      */
     public void sunFlare() {
+        this.owner.addTurnEvent("SunId:"+this.id+" sun flare happened");
         for (Asteroid a : asteroids) {
             a.getNotifiedAboutSunflare();
         }

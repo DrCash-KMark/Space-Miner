@@ -39,7 +39,7 @@ public class Asteroid extends Planet implements Controllable {
      * constructor for Asteroid without parameters
      */
     public Asteroid() {
-        this.id = "Ast" + String.valueOf(nextId);
+        this.id = "ast" + String.valueOf(nextId);
         nextId++;
 
         this.nonPlayers = new LinkedList<>();
@@ -255,6 +255,7 @@ public class Asteroid extends Planet implements Controllable {
             }
         }
         if (isRandom && rnd.nextInt(100) < 20) {
+            this.owner.addTurnEvent("Asteroid:" + this.id + " asteroid close to sun changed");
             this.closeToSun = !this.closeToSun;
         }
     }
@@ -333,7 +334,7 @@ public class Asteroid extends Planet implements Controllable {
      * removes itself from it's neighbours' neighbours list.
      */
     public void explode() {
-
+        this.owner.addTurnEvent("AsteroidId:" + this.id + " asteroid exploded");
         for (Settler s : settlers) {
             s.asteroidExploded();
         }
@@ -354,7 +355,6 @@ public class Asteroid extends Planet implements Controllable {
      * notifies it.
      */
     public void drilling() {
-
         if (rockThickness > 0) {
             this.rockThickness--;
             if (this.materials != null && this.closeToSun && this.rockThickness == 0) {

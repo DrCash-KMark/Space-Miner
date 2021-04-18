@@ -1,10 +1,10 @@
-listAllSettlers string helyett voidot returnol, már o írja ki a dolgokat.
-gambeol kikerült az executeCommand függvény
+listAllSettlers string helyett voidot returnol, mar o írja ki a dolgokat.
+gambeol kikerult az executeCommand fuggvény
 sunnak lett addAsteroid
 a gameben controllablek helyett asteroids settlers nonplayers s suns lett
-a játék kezdetekor az összes settler egy asszteroidán vban
+a jatrk kezdetekor az osszes settler egy asszteroidan van
 getstargates fgv lett inventoryban
-placestargate settlernek mostmár kér egy settler id-t
+placestargate settlernek mostmar ker egy settler id-t
 
 --------------------------
 
@@ -18,12 +18,18 @@ LIST ALL TURN EVENTS
 game -> turnEvents<String>
 addTurnEvent(s: String)
 owner.addTurnEvent(description)
-asteroid.getOwner().addTurnEvent("ice elpáolog")
+asteroid.getOwner().addTurnEvent("ice elpaolog")
 
 --------------------------
 
 game->init kitorli az eddigi osszes tarolt cucclit + reseteli a nextId-t
 kommentek "# "-el kezdodnek nem csak "#"-al
+
+--------------------------
+
+list all turn events
+list all
+list all settlers
 
 --------------------------
 

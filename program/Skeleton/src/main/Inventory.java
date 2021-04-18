@@ -1,6 +1,5 @@
 package main;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 //
@@ -225,10 +224,9 @@ public class Inventory extends Printable{
 		LinkedList<Material> remainder = new LinkedList<>();
 		
 		if(materialList.size()!=0) {
-			Iterator<Material> iRecipe = materials.iterator();
-		    while (iRecipe.hasNext()) {
+			for(Material item : materials) {
 		    	
-		    	Material material = this.removeMaterial(iRecipe.next());
+		    	Material material = this.removeMaterial(item);
 		    	if(material==null) {
 		    		remainder.add(material);
 		    	}
@@ -250,10 +248,9 @@ public class Inventory extends Printable{
 		LinkedList<Material> remainder = new LinkedList<>();
 		
 		if(materialList.size()!=0) {
-			Iterator<Material> iRecipe = materials.iterator();
-		    while (iRecipe.hasNext()) {
+			for(Material item : materials) {
 		    	
-		    	Material material = this.removeMaterial(iRecipe.next());
+		    	Material material = this.removeMaterial(item);
 		    	if(material==null) {
 		    		remainder.add(material);
 		    	}

@@ -87,6 +87,14 @@ public class Inventory extends Printable{
 	public int getMaterialsCapacity() {
 		return capacitySG;
 	}
+	
+	public void setCapacitySG(int value) {
+		this.capacitySG=value;
+	}
+	
+	public void setCapacityM(int value) {
+		this.capacityM=value;
+	}
 
 //Inherited:-----------------------------------------------------------------------------
 

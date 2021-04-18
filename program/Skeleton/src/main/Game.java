@@ -205,11 +205,21 @@ public class Game {
 		for (Sun sun : suns)
 			sun.onTurn();
 		
-		for (Asteroid asteroid : asteroids)
+		for (Asteroid asteroid : asteroids) {
+			for (Building building : asteroid.getBuildings()) {
+				building.setHadActionThisTurn(false);
+			}
+		}
+		
+		for (Asteroid asteroid : asteroids) 
 			asteroid.onTurn();
 		
 		for (NonPlayer nonPlayer : nonPlayers)
 			nonPlayer.onTurn();
+		
+		for (Settler settler : settlers) {
+			settler.setHadAction(false);
+		}
 	}
 	
 	public void listAllSettlers() {

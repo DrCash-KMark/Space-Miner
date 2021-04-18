@@ -277,7 +277,7 @@ public class Asteroid extends Planet implements Controllable {
         for (Building b : buildings) {
             b.getNotifiedAboutSunflare();
         }
-        List<Settler> tempSettlerList = new LinkedList<Settler>();
+        List<Settler> tempSettlerList = new LinkedList<>();
         for (Settler settler : settlers) {
             tempSettlerList.add(settler);
         }
@@ -285,7 +285,7 @@ public class Asteroid extends Planet implements Controllable {
         for (Settler settler : tempSettlerList) {
             settler.getNotifiedAboutSunflare();
         }
-        List<NonPlayer> tempNonPlayerList = new LinkedList<NonPlayer>();
+        List<NonPlayer> tempNonPlayerList = new LinkedList<>();
         for (NonPlayer np : nonPlayers) {
             tempNonPlayerList.add(np);
         }

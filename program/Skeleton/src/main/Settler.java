@@ -206,12 +206,14 @@ public class Settler extends Entity implements Drilling, Mining {
 			}
 		}
 		if (subSet.size() == 0) {
-			LinkedList<Material> toSubtract = BASE_RECIPE.getMaterials();		
+			LinkedList<Material> toSubtract = BASE_RECIPE.getMaterials();
+			toSubtract = this.getInventory().subtraction(toSubtract);
 			for (Settler settler : settlersOnAsteroid) {
 				if(settler.id.equals(this.id)) {
 					continue;
 				}
-				toSubtract = settler.getInventory().subtraction(toSubtract);
+				Inventory temp = new Inventory("temp", subSet, new LinkedList<StarGate>(), 10, 3);
+				toSubtract = temp.subtraction(toSubtract);
 			}
 			Base base = new Base();
 			//base.setName("base");

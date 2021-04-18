@@ -44,3 +44,6 @@ Ki iratom. A doMine-t helyettesíti a counter.
 
 A Controllable-t már a Building valósítja meg és nem csak a StarGate.
 
+A StarGate-be felvettünk egy hadActionThisTurn: Boolean
+
+

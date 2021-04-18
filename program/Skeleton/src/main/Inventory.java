@@ -238,7 +238,7 @@ public class Inventory extends Printable{
 	public LinkedList<Material> subSet(LinkedList<Material> materialList) {
 		LinkedList<Material> remainder = new LinkedList<>();
 		LinkedList<Material> copyMatList = new LinkedList<Material>();
-		for(Material item : materials) {
+		for(Material item : materialList) {
 			if(item.getName().equals("Iron")) {
 				copyMatList.add(new Iron("teszt"));
 			}

@@ -219,17 +219,19 @@ public class Inventory extends Printable{
 		if(i==null)return null;
 		LinkedList<Material> remainder = new LinkedList<>();
 		
-		Iterator<Material> iRecipe = materials.iterator();
-	    while (iRecipe.hasNext()) {
-	    	
-	    	Material material = i.removeMaterial(iRecipe.next());
-	    	if(material==null) {
-	    		remainder.add(material);
-	    	}
-	    	else {
-	    		 i.addMaterial(material);
-	    	}
-	    }
+		if(i.getMaterials().size()!=0) {
+			Iterator<Material> iRecipe = materials.iterator();
+		    while (iRecipe.hasNext()) {
+		    	
+		    	Material material = i.removeMaterial(iRecipe.next());
+		    	if(material==null) {
+		    		remainder.add(material);
+		    	}
+		    	else {
+		    		 i.addMaterial(material);
+		    	}
+		    }
+		}
 
 		return remainder;
 	}
@@ -244,14 +246,16 @@ public class Inventory extends Printable{
 		if(i==null)return null;
 		LinkedList<Material> remainder = new LinkedList<>();
 		
-		Iterator<Material> iRecipe = materials.iterator();
-	    while (iRecipe.hasNext()) {
-	    	
-	    	Material material = i.removeMaterial(iRecipe.next());
-	    	if(material==null) {
-	    		remainder.add(material);
-	    	}
-	    }
+		if(i.getMaterials().size()!=0) {
+			Iterator<Material> iRecipe = materials.iterator();
+		    while (iRecipe.hasNext()) {
+		    	
+		    	Material material = i.removeMaterial(iRecipe.next());
+		    	if(material==null) {
+		    		remainder.add(material);
+		    	}
+		    }
+		}
 		return remainder;
 	}	
 }

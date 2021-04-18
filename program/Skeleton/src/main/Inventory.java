@@ -87,6 +87,14 @@ public class Inventory extends Printable{
 	public int getMaterialsCapacity() {
 		return capacitySG;
 	}
+	
+	public int setCapacitySG() {
+		return capacitySG;
+	}
+	
+	public int setCapacityM() {
+		return capacityM;
+	}
 
 //Inherited:-----------------------------------------------------------------------------
 

@@ -88,12 +88,12 @@ public class Inventory extends Printable{
 		return capacitySG;
 	}
 	
-	public int setCapacitySG() {
-		return capacitySG;
+	public void setCapacitySG(int value) {
+		this.capacitySG=value;
 	}
 	
-	public int setCapacityM() {
-		return capacityM;
+	public void setCapacityM(int value) {
+		this.capacityM=value;
 	}
 
 //Inherited:-----------------------------------------------------------------------------

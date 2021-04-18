@@ -255,9 +255,8 @@ public class Asteroid extends Planet implements Controllable {
             b.onTurn();
         }
         if (rockThickness <= 0 && closeToSun) {
-            List<Material> forChecking=materials;
-            for (Material m : forChecking) {
-                m.exposedAndCloseToSun(this);
+            for(int i=materials.size();i>0;i--) {
+                materials.get(i).exposedAndCloseToSun(this);
             }
         }
         if (isRandom && rnd.nextInt(100) < 20) {
@@ -272,16 +271,14 @@ public class Asteroid extends Planet implements Controllable {
      * This function notifies every entity on the surface of the asteroid
      */
     public void getNotifiedAboutSunflare() {
-        for (Building b : buildings) {
-            b.getNotifiedAboutSunflare();
+        for(int i=buildings.size();i>0;i--) {
+            buildings.get(i).getNotifiedAboutSunflare();
         }
-        List<Settler> forCheckingSettler=settlers;
-        for (Settler s : forCheckingSettler) {
-            s.getNotifiedAboutSunflare();
+        for(int i=settlers.size();i>0;i--) {
+            settlers.get(i).getNotifiedAboutSunflare();
         }
-        List<NonPlayer> forCheckingNonPlayer=nonPlayers;
-        for (NonPlayer np : forCheckingNonPlayer) {
-            np.getNotifiedAboutSunflare();
+        for(int i=nonPlayers.size();i>0;i--) {
+            nonPlayers.get(i).getNotifiedAboutSunflare();
         }
     }
 
@@ -343,20 +340,18 @@ public class Asteroid extends Planet implements Controllable {
      */
     public void explode() {
         this.owner.addTurnEvent("AsteroidId:" + this.id + " asteroid exploded");
-        List<Settler> forCheckingSettler=settlers;
-        for (Settler s : forCheckingSettler) {
-            s.asteroidExploded();
+
+        for(int i=settlers.size();i>0;i--) {
+            settlers.get(i).asteroidExploded();
         }
-        List<NonPlayer> forCheckingNonPlayer=nonPlayers;
-        for (NonPlayer np : forCheckingNonPlayer) {
-            np.asteroidExploded();
+        for(int i=nonPlayers.size();i>0;i--) {
+            nonPlayers.get(i).asteroidExploded();
+        }
+        for(int i=buildings.size();i>0;i--) {
+            buildings.get(i).destroy();
         }
         for (Asteroid n : neighbours) {
             n.removeNeighbour(this);
-        }
-        List<Building> forCheckingBuildings=buildings;
-        for (Building b : forCheckingBuildings) {
-            b.destroy();
         }
         this.mySun.removeAsteroid(this);
         owner.removeAsteroid(this);

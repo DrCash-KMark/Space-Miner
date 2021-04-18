@@ -225,9 +225,10 @@ public class Settler extends Entity implements Drilling, Mining {
 	 * The settler places a Stargate on the current asteroid.
 	 */
 	public void placeStarGate(StarGate sg) {
-		asteroid.addBuilding(sg);
-		sg.setAsteroid(asteroid);
-		sg.onPlace();
+		if(this.inventory.removeStarGate(sg) != null) {
+			sg.setAsteroid(asteroid);
+			sg.onPlace();
+		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
 	}

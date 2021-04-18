@@ -217,6 +217,7 @@ public class Settler extends Entity implements Drilling, Mining {
 			base.setOwner(owner);
 			base.setAsteroid(asteroid);
 			base.onPlace();
+			asteroid.addBuilding(base);
 			owner.addTurnEvent("base crafted "+base.getId());
 		}
 		this.hadactionthisturn = true;
@@ -244,6 +245,7 @@ public class Settler extends Entity implements Drilling, Mining {
 		if(this.inventory.isHaveStarGate(sg) == true) {
 			StarGate nsg = new StarGate(sg.getId(), sg.getAsteroid(), sg.getNeighbour(), sg.getWorks(), sg.getWasInSunFlare(), sg.getRandom());
 			nsg.setAsteroid(asteroid);
+			asteroid.addBuilding(nsg);
 			nsg.onPlace();
 			this.inventory.removeStarGate(sg);
 		}

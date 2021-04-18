@@ -34,11 +34,27 @@ public class Settler extends Entity implements Drilling, Mining {
 		super();
 		inventory = new Inventory();
 		BASE_RECIPE = new Inventory();
+		BASE_RECIPE.addMaterial(new Iron());
+		BASE_RECIPE.addMaterial(new Iron());
+		BASE_RECIPE.addMaterial(new Iron());
+		BASE_RECIPE.addMaterial(new Uran());
+		BASE_RECIPE.addMaterial(new Uran());
+		BASE_RECIPE.addMaterial(new Uran());
+		BASE_RECIPE.addMaterial(new Coal());
+		BASE_RECIPE.addMaterial(new Coal());
+		BASE_RECIPE.addMaterial(new Coal());
+		BASE_RECIPE.addMaterial(new Ice());
+		BASE_RECIPE.addMaterial(new Ice());
+		BASE_RECIPE.addMaterial(new Ice());
 		ROBOT_RECIPE = new Inventory();
 		ROBOT_RECIPE.addMaterial(new Iron());
         ROBOT_RECIPE.addMaterial(new Uran());
         ROBOT_RECIPE.addMaterial(new Coal());
 		STARGATE_RECIPE = new Inventory();
+		STARGATE_RECIPE.addMaterial(new Iron());
+		STARGATE_RECIPE.addMaterial(new Iron());
+		STARGATE_RECIPE.addMaterial(new Uran());
+		STARGATE_RECIPE.addMaterial(new Ice());
 		hadactionthisturn = false;
 		this.setId("SET"+ String.valueOf(nextId));
 		nextId++;
@@ -226,8 +242,9 @@ public class Settler extends Entity implements Drilling, Mining {
 	 */
 	public void placeStarGate(StarGate sg) {
 		if(this.inventory.isHaveStarGate(sg) == true) {
-			sg.setAsteroid(asteroid);
-			sg.onPlace();
+			StarGate nsg = new StarGate(sg.getId(), sg.getAsteroid(), sg.getNeighbour(), sg.getWorks(), sg.getWasInSunFlare(), sg.getRandom());
+			nsg.setAsteroid(asteroid);
+			nsg.onPlace();
 			this.inventory.removeStarGate(sg);
 		}
 		this.hadactionthisturn = true;

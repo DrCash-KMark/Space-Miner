@@ -86,7 +86,7 @@ public abstract class Entity extends Printable implements ReactsToSunFlare, Movi
 	 * If the asteroid of the entity isn't hollow it dies.
 	 */
 	public void getNotifiedAboutSunflare() {
-		if(this.asteroid.isHollow() == false) {
+		if(this.asteroid.isHollow() == false && this.asteroid.getRockThickness() == 0) {
 			this.die();
 		}
 	}

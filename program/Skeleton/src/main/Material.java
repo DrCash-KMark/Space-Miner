@@ -100,6 +100,7 @@ public abstract class Material extends Printable{
      * increase the exposedCounter.
      */
 	public void exposedAndCloseToSun(Asteroid a) {
+		if(exposedCounter>=3) return;
 		this.exposedCounter++;
 	}
 	

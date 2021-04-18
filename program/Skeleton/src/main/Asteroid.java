@@ -82,7 +82,7 @@ public class Asteroid extends Planet implements Controllable {
 //Get/Set-----------------------------------------------------------------
 
     public void setMySun(Sun s) {
-        this.mySun = s;
+        this.mySun=s;
     }
 
     public void addNonPlayer(NonPlayer nonPlayer) {
@@ -255,8 +255,9 @@ public class Asteroid extends Planet implements Controllable {
             b.onTurn();
         }
         if (rockThickness <= 0 && closeToSun) {
-            for (int i = materials.size(); i > 0; i--) {
-                materials.get(i).exposedAndCloseToSun(this);
+            List<Material> forChecking=materials;
+            for (Material m : forChecking) {
+                m.exposedAndCloseToSun(this);
             }
         }
         if (isRandom && rnd.nextInt(100) < 20) {
@@ -271,14 +272,24 @@ public class Asteroid extends Planet implements Controllable {
      * This function notifies every entity on the surface of the asteroid
      */
     public void getNotifiedAboutSunflare() {
-        for (int i = buildings.size()-1; i > 0; i--) {
-            buildings.get(i).getNotifiedAboutSunflare();
+
+        for (Building b : buildings) {
+            b.getNotifiedAboutSunflare();
         }
-        for (int i = settlers.size()-1; i > 0; i--) {
-            settlers.get(i).getNotifiedAboutSunflare();
+        List<Settler> tempSettlerList = new LinkedList<Settler>();
+        for (Settler settler : settlers) {
+            tempSettlerList.add(settler);
         }
-        for (int i = nonPlayers.size()-1; i > 0; i--) {
-            nonPlayers.get(i).getNotifiedAboutSunflare();
+
+        for (Settler settler : tempSettlerList) {
+            settler.getNotifiedAboutSunflare();
+        }
+        List<NonPlayer> tempNonPlayerList = new LinkedList<NonPlayer>();
+        for (NonPlayer np : nonPlayers) {
+            tempNonPlayerList.add(np);
+        }
+        for (NonPlayer np : tempNonPlayerList) {
+            np.getNotifiedAboutSunflare();
         }
     }
 
@@ -340,18 +351,20 @@ public class Asteroid extends Planet implements Controllable {
      */
     public void explode() {
         this.owner.addTurnEvent("AsteroidId:" + this.id + " asteroid exploded");
-
-        for (int i = settlers.size()-1; i > 0; i--) {
-            settlers.get(i).asteroidExploded();
+        List<Settler> forCheckingSettler=settlers;
+        for (Settler s : forCheckingSettler) {
+            s.asteroidExploded();
         }
-        for (int i = nonPlayers.size()-1; i > 0; i--) {
-            nonPlayers.get(i).asteroidExploded();
-        }
-        for (int i = buildings.size()-1; i > 0; i--) {
-            buildings.get(i).destroy();
+        List<NonPlayer> forCheckingNonPlayer=nonPlayers;
+        for (NonPlayer np : forCheckingNonPlayer) {
+            np.asteroidExploded();
         }
         for (Asteroid n : neighbours) {
             n.removeNeighbour(this);
+        }
+        List<Building> forCheckingBuildings=buildings;
+        for (Building b : forCheckingBuildings) {
+            b.destroy();
         }
         this.mySun.removeAsteroid(this);
         owner.removeAsteroid(this);

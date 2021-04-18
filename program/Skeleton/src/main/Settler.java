@@ -36,6 +36,8 @@ public class Settler extends Entity implements Drilling, Mining {
 		ROBOT_RECIPE = new Inventory();
 		STARGATE_RECIPE = new Inventory();
 		hadactionthisturn = false;
+		this.setId("s"+ String.valueOf(nextId));
+		nextId++;
 	}
 	/**
 	 * Constructor with parameters.

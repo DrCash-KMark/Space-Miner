@@ -189,7 +189,7 @@ start next turn
 list asteroid a1
 list settler s1
 
-#test10 8.1.2 // lecrafrtolódik a robot de az asteroidon null lesz illetve settler inventory kicserelodik
+#test10 8.1.2
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -204,7 +204,7 @@ build settler s1 robot
 start next turn
 list all
 
-#test11 8.1.3 // negy darab null stargate lesz??? materialok kivevodnek
+#test11 8.1.3 // 2 * 2 stargate lesz
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -307,7 +307,7 @@ build settler s1 base
 start next turn
 list all
 
-#test16 8.1.8 // sok stargate inventoryban egyébként ok works nem true a lehelyezett starGaten
+#test16 8.1.8 // sok stargate inventoryban
 init game manually
 create sun sun1
 create asteroid a1 sun sun1

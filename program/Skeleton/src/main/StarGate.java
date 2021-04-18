@@ -96,16 +96,13 @@ public class StarGate extends Building implements Moving {
 	 * @param a: Asteroid: asteroid on which the StarGate is placed
 	 */
 	public void onPlace() {				
-		if (neighbour == null)
+		if (neighbour == null || neighbour.getAsteroid() == null)
 		{
 			return;
 		}
 				
-		if (neighbour.getAsteroid() != null);
-		{
-			neighbour.setWorks(true);
-			works = true;
-		}
+		neighbour.setWorks(true);
+		works = true;
 	}
 
 	/**

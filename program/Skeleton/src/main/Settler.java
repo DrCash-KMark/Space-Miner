@@ -206,7 +206,7 @@ public class Settler extends Entity implements Drilling, Mining {
 			}
 		}
 		if (subSet.size() == 0) {
-			LinkedList<Material> toSubtract = BASE_RECIPE.getMaterials();
+			LinkedList<Material> toSubtract = BASE_RECIPE.subtraction(inventory.getMaterials());
 			toSubtract = this.getInventory().subtraction(toSubtract);
 			for (Settler settler : settlersOnAsteroid) {
 				if(settler.id.equals(this.id)) {

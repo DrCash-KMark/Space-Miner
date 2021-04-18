@@ -199,7 +199,8 @@ public class Settler extends Entity implements Drilling, Mining {
 			if(settler.id.equals(this.id)) {
 				continue;
 			}
-			subSet = BASE_RECIPE.subSet(subSet);
+			Inventory temp = new Inventory("temp", subSet, new LinkedList<StarGate>(), 10, 3);
+			subSet = temp.subSet(subSet);
 			if (subSet.size() == 0) {				
 				break;
 			}

@@ -82,7 +82,7 @@ public class Asteroid extends Planet implements Controllable {
 //Get/Set-----------------------------------------------------------------
 
     public void setMySun(Sun s) {
-        this.mySun=s;
+        this.mySun = s;
     }
 
     public void addNonPlayer(NonPlayer nonPlayer) {
@@ -255,7 +255,7 @@ public class Asteroid extends Planet implements Controllable {
             b.onTurn();
         }
         if (rockThickness <= 0 && closeToSun) {
-            for(int i=materials.size();i>0;i--) {
+            for (int i = materials.size(); i > 0; i--) {
                 materials.get(i).exposedAndCloseToSun(this);
             }
         }
@@ -271,13 +271,13 @@ public class Asteroid extends Planet implements Controllable {
      * This function notifies every entity on the surface of the asteroid
      */
     public void getNotifiedAboutSunflare() {
-        for(int i=buildings.size();i>0;i--) {
+        for (int i = buildings.size()-1; i > 0; i--) {
             buildings.get(i).getNotifiedAboutSunflare();
         }
-        for(int i=settlers.size();i>0;i--) {
+        for (int i = settlers.size()-1; i > 0; i--) {
             settlers.get(i).getNotifiedAboutSunflare();
         }
-        for(int i=nonPlayers.size();i>0;i--) {
+        for (int i = nonPlayers.size()-1; i > 0; i--) {
             nonPlayers.get(i).getNotifiedAboutSunflare();
         }
     }
@@ -341,13 +341,13 @@ public class Asteroid extends Planet implements Controllable {
     public void explode() {
         this.owner.addTurnEvent("AsteroidId:" + this.id + " asteroid exploded");
 
-        for(int i=settlers.size();i>0;i--) {
+        for (int i = settlers.size()-1; i > 0; i--) {
             settlers.get(i).asteroidExploded();
         }
-        for(int i=nonPlayers.size();i>0;i--) {
+        for (int i = nonPlayers.size()-1; i > 0; i--) {
             nonPlayers.get(i).asteroidExploded();
         }
-        for(int i=buildings.size();i>0;i--) {
+        for (int i = buildings.size()-1; i > 0; i--) {
             buildings.get(i).destroy();
         }
         for (Asteroid n : neighbours) {

@@ -20,6 +20,8 @@ public class Base extends Building {
 	
 //Constructors:------------------------------------------	
 	public Base () {
+		id = "bas" + nextId;
+		nextId++;
 	}
 	
 	public Base (String _id, Asteroid _asteroid) {

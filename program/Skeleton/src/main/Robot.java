@@ -26,7 +26,7 @@ public class Robot extends NonPlayer implements Controllable, Drilling {
 	 */
 	public Robot() {
 		super();
-		this.setId("r"+ String.valueOf(nextId));
+		this.setId("ROB"+ String.valueOf(nextId));
 		nextId++;
 	}
 	/**
@@ -77,12 +77,39 @@ public class Robot extends NonPlayer implements Controllable, Drilling {
 		return resstring;
 	}
 	
+	/**
+	 * Robot moves to an asteroid.
+	 * @param destination: Asteroid
+	 */
+	public void move(Asteroid destination) {
+		super.move(destination);
+		owner.addTurnEvent("robot move "+this.getId()+" "+destination.getId());
+	}
+	
+	/**
+	 * Robot moves to an asteroid through a stargate.
+	 * @param destination: StarGate
+	 */
+	public void move(StarGate destination) {
+		super.move(destination);
+		owner.addTurnEvent("robot move "+this.getId()+" "+destination.getAsteroid().getId());
+	}
+	
+	/**
+	 * Robot dies.
+	 */
+	public void die() {
+		super.die();
+		owner.addTurnEvent("robot died "+this.getId());
+	}
+	
 
 	/**
 	 * The robot drills it's asteroid.
 	 */
 	public void drill() {
 		this.asteroid.drilling();
+		owner.addTurnEvent("asteroid drilled "+this.asteroid.getId());
 	}
 	public String genSaveString() {
 		String resstring = "id: "+this.id+"\nasteroid: "+this.asteroid.getId()+"\nisRandom: "+this.getIsRandom();	

@@ -275,7 +275,7 @@ start game
 build settler s1 base
 list all
 
-#test15 8.1.7 // nem craftolódik bazis
+#test15 8.1.7
 init game manually
 create sun sun1
 create asteroid a1 sun sun1

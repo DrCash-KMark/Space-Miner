@@ -27,3 +27,10 @@ ha nem random akkor manuális
 
 minden counter nöjön anyag
 
+2021.04.18
+
+8.10 teszt be van-e állítva az owner je az asteroidának? Mármint a Game típusu
+
+8.9 ok, átírtam már nem null-zok
+
+8.1.1 a nonlpayer-nek mindene van csak idja nem (Robot) Ádám

@@ -64,7 +64,8 @@ public class Asteroid extends Planet implements Controllable {
      * @param neighbours
      * @param buildings
      */
-    public Asteroid(String id, boolean isRandom, int rockThickness, int capacity, boolean closeToSun, List<Settler> settlers, List<NonPlayer> nonPlayers, List<Material> materials, List<Asteroid> neighbours, List<Building> buildings) {
+    public Asteroid(/*Game owner,*/ String id, boolean isRandom, int rockThickness, int capacity, boolean closeToSun, List<Settler> settlers, List<NonPlayer> nonPlayers, List<Material> materials, List<Asteroid> neighbours, List<Building> buildings) {
+        //this.owner = owner;
         this.id = id;
         this.isRandom = isRandom;
         this.rockThickness = rockThickness;
@@ -152,7 +153,7 @@ public class Asteroid extends Planet implements Controllable {
     //Printable
 
     /**
-     * creates a string with this class' all important data.
+     * Creates a string with this class' all important data for a Player.
      *
      * @return string containing all the important information for the user
      */
@@ -206,9 +207,9 @@ public class Asteroid extends Planet implements Controllable {
     }
 
     /**
-     * creates a string storing the most important datas of this class
+     * Creates a string storing the most important datas of this class
      *
-     * @return
+     * @return the string the will be written into the file.
      */
     @Override
     public String genSaveString() {
@@ -240,7 +241,8 @@ public class Asteroid extends Planet implements Controllable {
     /**
      * Implements autonomous behaviour performed in every game turn.
      * <p>
-     * if this is close to sun it reacts to it
+     * If this is close to sun and there is no crust than the materials got exposed.
+     * With 20% chance close to sun will change.
      */
     @Override
     public void onTurn() {
@@ -260,8 +262,7 @@ public class Asteroid extends Planet implements Controllable {
     //ReactsToSunFlare
 
     /**
-     * This function kills every entity on the surface of the asteroid, if they can
-     * not hide
+     * This function notifies every entity on the surface of the asteroid
      */
     public void getNotifiedAboutSunflare() {
         for (Building b : buildings) {
@@ -278,7 +279,7 @@ public class Asteroid extends Planet implements Controllable {
     //Own methods:----------------------------------------------------------------------------
 
     /**
-     * initializes the asteroid
+     * Initializes the asteroid with random values
      */
     public void initialize() {
         this.isRandom = true;
@@ -459,7 +460,7 @@ public class Asteroid extends Planet implements Controllable {
      * Destroys all the materials which was inside the asteroid
      */
     public void evaporateMaterial() {
-        this.materials = null;
+        this.materials.clear();
     }
 
 }

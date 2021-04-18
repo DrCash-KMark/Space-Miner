@@ -112,6 +112,9 @@ public class StarGate extends Building implements Moving {
 	public void destroy() {
 		neighbour.setWorks(false);		
 		neighbour.setNeighbour(null);
+		if (asteroid != null) {
+			asteroid.removeBuilding(this);			
+		}
 	}
 
 	//Printable:	

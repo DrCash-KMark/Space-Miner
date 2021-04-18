@@ -215,16 +215,16 @@ public class Inventory extends Printable{
 	 * @param i: the given inventory
 	 * @return Inventory: remainder 
 	 */
-	public Inventory subSet(Inventory i) {
+	public LinkedList<Material> subSet(Inventory i) {
 		if(i==null)return null;
-		Inventory remainder = new Inventory();
+		LinkedList<Material> remainder = new LinkedList<>();
 		
 		Iterator<Material> iRecipe = materials.iterator();
 	    while (iRecipe.hasNext()) {
 	    	
 	    	Material material = i.removeMaterial(iRecipe.next());
 	    	if(material==null) {
-	    		remainder.addMaterial(material);
+	    		remainder.add(material);
 	    	}
 	    	else {
 	    		 i.addMaterial(material);
@@ -240,16 +240,16 @@ public class Inventory extends Printable{
 	 * @param i: the given inventory
 	 * @return Inventory: differences
 	 */
-	public Inventory subtraction(Inventory i) {
+	public LinkedList<Material> subtraction(Inventory i) {
 		if(i==null)return null;
-		Inventory remainder = new Inventory();
+		LinkedList<Material> remainder = new LinkedList<>();
 		
 		Iterator<Material> iRecipe = materials.iterator();
 	    while (iRecipe.hasNext()) {
 	    	
 	    	Material material = i.removeMaterial(iRecipe.next());
 	    	if(material==null) {
-	    		remainder.addMaterial(material);
+	    		remainder.add(material);
 	    	}
 	    }
 		return remainder;

@@ -535,7 +535,7 @@ drill settler s1
 start next turn
 list all
 
-#test26 8.10 // amikor felrobban az aszteroida nem removeoljuk a suntol
+#test26 8.10
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -647,7 +647,7 @@ start game
 move settler s1 dest stargate sg1
 list all
 
-#test32 8.16 // newm mozog el
+#test32 8.16
 init game manually
 create sun sun1
 set sun isRandom sun1 f
@@ -667,13 +667,14 @@ set asteroid rockThickness a3 1
 add asteroid neighbour a1 a3
 add asteroid neighbour a3 a1
 create stargate sg1 asteroid a1
-set stargate isRandom sg1 f
+set stargate isRandom sg1 t
 create stargate sg2 asteroid a2
-set stargate isRandom sg2 f
+set stargate isRandom sg2 t
 set stargate neighbour sg1 sg2
 set stargate neighbour sg2 sg1
 start game
 sunflare sun1
+start next turn
 list all
 list stargate sg1
 list stargate sg2

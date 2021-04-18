@@ -34,6 +34,7 @@ public class Settler extends Entity implements Drilling, Mining {
 		super();
 		inventory = new Inventory();
 		BASE_RECIPE = new Inventory();
+		BASE_RECIPE.setCapacityM(12);
 		BASE_RECIPE.addMaterial(new Iron());
 		BASE_RECIPE.addMaterial(new Iron());
 		BASE_RECIPE.addMaterial(new Iron());

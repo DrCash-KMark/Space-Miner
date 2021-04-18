@@ -40,7 +40,7 @@ public class Settler extends Entity implements Drilling, Mining {
         ROBOT_RECIPE.addMaterial(new Coal());
 		STARGATE_RECIPE = new Inventory();
 		hadactionthisturn = false;
-		this.setId("s"+ String.valueOf(nextId));
+		this.setId("SET"+ String.valueOf(nextId));
 		nextId++;
 	}
 	/**
@@ -114,6 +114,7 @@ public class Settler extends Entity implements Drilling, Mining {
 	public void drill() {
 		this.asteroid.drilling();
 		this.hadactionthisturn = true;
+		owner.addTurnEvent("asteroid drilled "+this.asteroid.getId());
 	}
 	/**
 	 * This settler mines on his asteroid.
@@ -122,7 +123,8 @@ public class Settler extends Entity implements Drilling, Mining {
 		//main.log(false, name, this.getClass().getName(), "mine()");
 		if(this.inventory.isFullMaterials() == false) {
 			Material m = this.asteroid.removeMaterial();
-			inventory.addMaterial(m);			
+			inventory.addMaterial(m);
+			owner.addTurnEvent("asteroid mined "+this.asteroid.getId());
 		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
@@ -144,6 +146,8 @@ public class Settler extends Entity implements Drilling, Mining {
 				s2.setNeighbour(s1);
 				inventory.addStarGate(s1);
 				inventory.addStarGate(s2);
+				owner.addTurnEvent("stargate crafted "+s1.getId());
+				owner.addTurnEvent("stargate crafted "+s2.getId());
 			}
 		}
 		this.hadactionthisturn = true;
@@ -162,6 +166,7 @@ public class Settler extends Entity implements Drilling, Mining {
 			robot.setAsteroid(asteroid);
 			asteroid.addNonPlayer(robot);
 			owner.addNonPlayer(robot);
+			owner.addTurnEvent("robot crafted "+robot.getId());
 		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
@@ -196,6 +201,7 @@ public class Settler extends Entity implements Drilling, Mining {
 			base.setOwner(owner);
 			base.setAsteroid(asteroid);
 			base.onPlace();
+			owner.addTurnEvent("base crafted "+base.getId());
 		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
@@ -212,6 +218,7 @@ public class Settler extends Entity implements Drilling, Mining {
 			this.inventory.removeMaterial(m);
 		}
 		this.hadactionthisturn = true;
+		owner.addTurnEvent("material dropped" + m.getId());
 		//main.log(true, "void", "void", "");
 	}
 	/**
@@ -231,6 +238,7 @@ public class Settler extends Entity implements Drilling, Mining {
 		//main.log(false, name, this.getClass().getName(), "die()");
 		asteroid.removeSettler(this);
 		owner.removeSettler(this);
+		owner.addTurnEvent("settler died " + this.id);
 		//main.log(true, "void", "void", "");
 	}
 	/**
@@ -249,7 +257,8 @@ public class Settler extends Entity implements Drilling, Mining {
 		if(asteroid.getNeighbours().contains(destination)) {
 			destination.addSettler(this);
 			asteroid.removeSettler(this);
-			this.setAsteroid(destination);			
+			this.setAsteroid(destination);
+			owner.addTurnEvent("settler move " + this.id + " "+ destination.getId());
 		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
@@ -261,6 +270,7 @@ public class Settler extends Entity implements Drilling, Mining {
 				asteroid.removeSettler(this);
 				this.asteroid = destination.getNeighbour().getAsteroid();
 				this.asteroid.addSettler(this);
+				owner.addTurnEvent("settler move " + this.id + " "+ destination.getAsteroid().getId());
 			}
 		}
 		this.hadactionthisturn = true;

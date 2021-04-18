@@ -98,12 +98,7 @@ public class StarGate extends Building implements Moving {
 		{
 			return;
 		}
-		
-		if (neighbour.getWorks() == false)
-		{
-			return;
-		}
-		
+				
 		if (neighbour.getAsteroid() != null);
 		{
 			neighbour.setWorks(true);

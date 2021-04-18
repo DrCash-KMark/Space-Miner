@@ -30,6 +30,8 @@ public class StarGate extends Building implements Moving {
 	 * constructor for StarGate without parameter
 	 */
 	public StarGate() {
+		id = "stg" + nextId;
+		nextId++;
 		works = false;
 		wasInSunFlare = false;
 		isRandom = true;

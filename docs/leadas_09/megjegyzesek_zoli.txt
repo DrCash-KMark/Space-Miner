@@ -40,3 +40,7 @@ Szerialialjam-e azokat a valtozokat, amik csak a random viselkedeshez segitenek?
 Megoldás:
 Ki iratom. A doMine-t helyettesíti a counter.
 
+--------------------------------------------------------------------------------
+
+A Controllable-t már a Building valósítja meg és nem csak a StarGate.
+

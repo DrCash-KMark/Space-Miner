@@ -101,9 +101,6 @@ public class Inventory extends Printable{
 	public String genUIString() {
 		String dataMaterial = "materials:\n";
 		String dataStarGate = "starGates:\n";
-		for(StarGate starGate : starGates) {
-			dataStarGate += "	starGate: " + starGate.getId() + "\n";
-		}	
         if(materials.size()==0) {
         	dataMaterial = "materials: -\n";
         }else {
@@ -198,9 +195,15 @@ public class Inventory extends Printable{
 	 * Remove a stargate to the stargates which are in the inventory.
 	 * @return StarGate: removed stargate or null if the inventory not contains stargate
 	 */
-	public StarGate removeStarGate() {
-		if(starGates!= null && starGates.size()!=0) {
-			return starGates.get(0);
+	public StarGate removeStarGate(StarGate SG) {
+		for(int i = 0; i<starGates.size();i++) {
+
+			   if(starGates.get(i).getId().equals(SG.getId())) {
+				  StarGate temp = starGates.get(i);
+				  starGates.remove(temp);
+			      return temp;
+			   }
+
 		}
 		return null;
 	}
@@ -238,7 +241,7 @@ public class Inventory extends Printable{
 	public LinkedList<Material> subSet(LinkedList<Material> materialList) {
 		LinkedList<Material> remainder = new LinkedList<>();
 		LinkedList<Material> copyMatList = new LinkedList<Material>();
-		for(Material item : materials) {
+		for(Material item : materialList) {
 			if(item.getName().equals("Iron")) {
 				copyMatList.add(new Iron("teszt"));
 			}

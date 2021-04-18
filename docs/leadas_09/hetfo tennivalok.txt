@@ -1,0 +1,19 @@
+Mark:
+kivevesek asteroidbol
+
+Zoli:
+
+
+Csabi:
+
+
+Adam:
+
+
+Moha:
+kommentek
+list turn events
+list all
+tesztek logikusan
+load/save
+init remove all prev entities

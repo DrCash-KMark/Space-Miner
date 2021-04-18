@@ -237,7 +237,21 @@ public class Inventory extends Printable{
 	 */
 	public LinkedList<Material> subSet(LinkedList<Material> materialList) {
 		LinkedList<Material> remainder = new LinkedList<>();
-		LinkedList<Material> copyMatList = materialList;
+		LinkedList<Material> copyMatList = new LinkedList<Material>();
+		for(Material item : materials) {
+			if(item.getName().equals("Iron")) {
+				copyMatList.add(new Iron("teszt"));
+			}
+			if(item.getName().equals("Uran")) {
+				copyMatList.add(new Uran("teszt"));
+			}
+			if(item.getName().equals("Ice")) {
+				copyMatList.add(new Ice("teszt"));
+			}
+			if(item.getName().equals("Coal")) {
+				copyMatList.add(new Coal("teszt"));
+			}
+		}
 		
 		if(materialList.size()!=0) {
 			for(Material item : materials) {

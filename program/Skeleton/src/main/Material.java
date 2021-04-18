@@ -18,7 +18,7 @@ public abstract class Material extends Printable{
 	protected int exposedCounter;
 	
 //Constructors:----------------------------------------------------------------
-
+	
 	/**
 	 * Constructor for the Material which sets all parameters at once.	
 	 * @param boolean: isRadio

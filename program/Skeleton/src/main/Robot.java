@@ -26,6 +26,8 @@ public class Robot extends NonPlayer implements Controllable, Drilling {
 	 */
 	public Robot() {
 		super();
+		this.setId("r"+ String.valueOf(nextId));
+		nextId++;
 	}
 	/**
 	 * Constructor with parameters.

@@ -18,6 +18,8 @@ package main;
 public abstract class Building extends Printable implements Controllable, ReactsToSunFlare {
 	protected Asteroid asteroid;	//Built on this Asteroid.
 	protected Game owner;
+	protected boolean hadActionThisTurn = false;
+
 
 //Constructors:----------------------------------------------------
 

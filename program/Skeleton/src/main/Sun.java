@@ -141,6 +141,7 @@ public class Sun extends Planet implements Controllable {
 
     public void addAsteroid(Asteroid a) {
         asteroids.add(a);
+        a.setMySun(this);
     }
 
     public void removeAsteroid(Asteroid a) {

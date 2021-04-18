@@ -23,6 +23,7 @@ public class Asteroid extends Planet implements Controllable {
     private int rockThickness;
     private Boolean closeToSun;
     private int capacity;
+    private Sun mySun;
 
     private List<Settler> settlers;
     private List<NonPlayer> nonPlayers;
@@ -79,6 +80,10 @@ public class Asteroid extends Planet implements Controllable {
     }
 
 //Get/Set-----------------------------------------------------------------
+
+    public void setMySun(Sun s) {
+        this.mySun=s;
+    }
 
     public void addNonPlayer(NonPlayer nonPlayer) {
         nonPlayers.add(nonPlayer);
@@ -347,6 +352,7 @@ public class Asteroid extends Planet implements Controllable {
         for (Building b : buildings) {
             b.destroy();
         }
+        this.mySun.removeAsteroid(this);
         owner.removeAsteroid(this);
     }
 

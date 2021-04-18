@@ -166,10 +166,17 @@ public class Inventory extends Printable{
 	 * @return Material: removed material or null if the inventory not contains the material
 	 */
 	public Material removeMaterial(Material m) {
-	
-		if(materials!= null && materials.remove(m)) {
-			return m;
+		
+		for(int i = 0; i<materials.size();i++) {
+
+			   if(materials.get(i).equals(m)) {
+				  Material temp = materials.get(i);
+				  materials.remove(temp);
+			      return temp;
+			   }
+
 		}
+
 		return null;
 	}
 	
@@ -178,7 +185,6 @@ public class Inventory extends Printable{
 	 * @return StarGate: removed stargate or null if the inventory not contains stargate
 	 */
 	public StarGate removeStarGate() {
-		
 		if(starGates!= null && starGates.size()!=0) {
 			return starGates.get(0);
 		}
@@ -213,26 +219,24 @@ public class Inventory extends Printable{
 	 * Compares the given and the local inventory material list and 
 	 * returns with the not remainder.
 	 * @param i: the given inventory
-	 * @return Inventory: remainder 
+	 * @return LinkedList<Material>: remainder 
 	 */
-	public LinkedList<Material> subSet(Inventory i) {
-		if(i==null)return null;
+	public LinkedList<Material> subSet(LinkedList<Material> materialList) {
 		LinkedList<Material> remainder = new LinkedList<>();
 		
-		if(i.getMaterials().size()!=0) {
+		if(materialList.size()!=0) {
 			Iterator<Material> iRecipe = materials.iterator();
 		    while (iRecipe.hasNext()) {
 		    	
-		    	Material material = i.removeMaterial(iRecipe.next());
+		    	Material material = this.removeMaterial(iRecipe.next());
 		    	if(material==null) {
 		    		remainder.add(material);
 		    	}
 		    	else {
-		    		 i.addMaterial(material);
+		    		materialList.add(material);
 		    	}
 		    }
 		}
-
 		return remainder;
 	}
 	
@@ -240,17 +244,16 @@ public class Inventory extends Printable{
  	 *Compares the given and the local inventory materials list and
 	 *removes all contained element and return the remainder.
 	 * @param i: the given inventory
-	 * @return Inventory: differences
+	 * @return LinkedList<Material>: differences
 	 */
-	public LinkedList<Material> subtraction(Inventory i) {
-		if(i==null)return null;
+	public LinkedList<Material> subtraction(LinkedList<Material> materialList) {
 		LinkedList<Material> remainder = new LinkedList<>();
 		
-		if(i.getMaterials().size()!=0) {
+		if(materialList.size()!=0) {
 			Iterator<Material> iRecipe = materials.iterator();
 		    while (iRecipe.hasNext()) {
 		    	
-		    	Material material = i.removeMaterial(iRecipe.next());
+		    	Material material = this.removeMaterial(iRecipe.next());
 		    	if(material==null) {
 		    		remainder.add(material);
 		    	}

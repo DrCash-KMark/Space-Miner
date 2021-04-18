@@ -272,6 +272,7 @@ public class Asteroid extends Planet implements Controllable {
      * This function notifies every entity on the surface of the asteroid
      */
     public void getNotifiedAboutSunflare() {
+<<<<<<< HEAD
         for (Building b : buildings) {
             b.getNotifiedAboutSunflare();
         }
@@ -281,6 +282,25 @@ public class Asteroid extends Planet implements Controllable {
         }
         List<NonPlayer> forCheckingNonPlayer=nonPlayers;
         for (NonPlayer np : forCheckingNonPlayer) {
+=======
+
+        for (Building b : buildings) {
+            b.getNotifiedAboutSunflare();
+        }
+        List<Settler> tempSettlerList = new LinkedList<Settler>();
+        for (Settler settler : settlers) {
+            tempSettlerList.add(settler);
+        }
+
+        for (Settler settler : tempSettlerList) {
+            settler.getNotifiedAboutSunflare();
+        }
+        List<NonPlayer> tempNonPlayerList = new LinkedList<NonPlayer>();
+        for (NonPlayer np : nonPlayers) {
+            tempNonPlayerList.add(np);
+        }
+        for (NonPlayer np : tempNonPlayerList) {
+>>>>>>> c18fbc7254a39cdf55aaffd08c773332ae535537
             np.getNotifiedAboutSunflare();
         }
     }

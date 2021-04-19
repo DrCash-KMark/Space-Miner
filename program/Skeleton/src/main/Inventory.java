@@ -153,19 +153,14 @@ public class Inventory extends Printable{
         	dataMaterial = "materials: -\n";
         }else {
         	for(int i =0; i<materials.size(); i++) {
-        		if(i!=materials.size()-1) {
         			dataMaterial += "MaterialId: " + materials.get(i).id + "\n";
-        		}
-        		else {
-        			dataMaterial += "MaterialId: " + materials.get(i).id;
-        		}
-			}
+        	}
         }
         if(starGates.size()==0) {
         	dataStarGate = "starGate: -\n";
         }else {
         	for(int i =0; i<starGates.size(); i++) {
-        		if(i!=starGates.size()-1) {
+        		if(i<starGates.size()-1) {
         			dataStarGate += "	starGate: " + starGates.get(i).id + "\n";
         		}
         		else {
@@ -191,20 +186,14 @@ public class Inventory extends Printable{
         	returnValue += "MaterialId: -\n";
         }else {
         	for(int i =0; i<materials.size(); i++) {
-        		if(i!=materials.size()-1) {
-        			returnValue += "MaterialId: " + materials.get(i).id + "\n";
-        		}
-        		else {
-        			returnValue += "MaterialId: " + materials.get(i).id;
-        		}
-				
+        		returnValue += "MaterialId: " + materials.get(i).id + "\n";
 			}
         }
         if(starGates.size()==0) {
         	returnValue += "StarGatesId: -\n";
         }else {
         	for(int i =0; i<starGates.size(); i++) {
-        		if(i!=starGates.size()-1) {
+        		if(i<starGates.size()-1) {
         			returnValue += "StarGatesId: " + starGates.get(i).id + "\n";
         		}
         		else {

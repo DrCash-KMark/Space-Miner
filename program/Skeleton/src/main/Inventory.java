@@ -275,6 +275,11 @@ public class Inventory extends Printable{
 		return null;
 	}
 	
+	/**
+	 * True, if the Inventory contains the given StarGate.
+	 * @param SG
+	 * @return boolean
+	 */
 	public boolean isHaveStarGate(StarGate SG) {
 		for(int i = 0; i<starGates.size();i++) {
 

@@ -55,7 +55,7 @@ public class Inventory extends Printable{
 //Get/Set-----------------------------------------------------------------
 
 	/**
-	 * Getter of the materials.
+	 * Getter for the materials.
 	 * @return materials: LinkedList<Material>
 	 */
 	public LinkedList<Material> getMaterials(){
@@ -63,37 +63,77 @@ public class Inventory extends Printable{
 	}
 	
 	/**
-	 * Getter of the materials.
+	 * Getter for the materials.
 	 * @return materials: LinkedList<Material>
 	 */
 	public LinkedList<StarGate> getStarGates() {
 		return starGates;
 	}
 	
+	/**
+	 * Getter for the StarGates count.
+	 * @return int: count
+	 */
 	public int getStarGatesCount() {
 		if(starGates!=null)return starGates.size();
 		return 0;
 	}
 	
+	/**
+	 * Getter for the StarGates count.
+	 * @return int: count
+	 */
 	public int getMaterialsCount() {
 		if(materials!=null)return materials.size();
 		return 0;
 	}
 	
+	/**
+	 * Getter for the StarGates capacity.
+	 * @return int: capacity
+	 */
 	public int getStarGatesCapacity() {
 		return capacitySG;
 	}
 	
+	/**
+	 * Getter for the Material capacity.
+	 * @return int: capacity
+	 */
 	public int getMaterialsCapacity() {
 		return capacitySG;
 	}
 	
+	/**
+	 * Setter for the Material capacity.
+	 * @param int: value
+	 */
 	public void setCapacitySG(int value) {
 		this.capacitySG=value;
 	}
 	
+	/**
+	 * Setter for the StarGate capacity.
+	 * @param int: value
+	 */
 	public void setCapacityM(int value) {
 		this.capacityM=value;
+	}
+	
+	/**
+	 * True, if the Material inventory is full.
+	 * @param boolean
+	 */
+	public boolean isFullMaterials() {
+		return capacityM>materials.size()?false:true;
+	}
+	
+	/**
+	 * True, if the StarGates inventory is full.
+	 * @param boolean
+	 */
+	public boolean isFullStarGates() {
+		return capacitySG>starGates.size()?false:true;
 	}
 
 //Inherited:-----------------------------------------------------------------------------
@@ -112,15 +152,25 @@ public class Inventory extends Printable{
         if(materials.size()==0) {
         	dataMaterial = "materials: -\n";
         }else {
-        	for(Material material : materials) {
-        		dataMaterial += "material: " + material.getId() + "\n";
+        	for(int i =0; i<materials.size(); i++) {
+        		if(i!=materials.size()-1) {
+        			dataMaterial += "MaterialId: " + materials.get(i).id + "\n";
+        		}
+        		else {
+        			dataMaterial += "MaterialId: " + materials.get(i).id;
+        		}
 			}
         }
         if(starGates.size()==0) {
         	dataStarGate = "starGate: -\n";
         }else {
-        	for(StarGate starGate : starGates) {
-        		dataStarGate += "	starGate: " + starGate.getId() + "\n";
+        	for(int i =0; i<starGates.size(); i++) {
+        		if(i!=starGates.size()-1) {
+        			dataStarGate += "	starGate: " + starGates.get(i).id + "\n";
+        		}
+        		else {
+        			dataStarGate += "	starGate: " + starGates.get(i).id;
+        		}
     		}
         }
 		return "Inventory id: " + id + "\n"
@@ -166,14 +216,6 @@ public class Inventory extends Printable{
 	}
 
 //Own methods:----------------------------------------------------------------------------
-
-	public boolean isFullMaterials() {
-		return capacityM>materials.size()?false:true;
-	}
-	
-	public boolean isFullStarGates() {
-		return capacitySG>starGates.size()?false:true;
-	}
 	
 	/**
 	 * Remove a material to the materials which are in the inventory.
@@ -195,6 +237,12 @@ public class Inventory extends Printable{
 		return null;
 	}
 	
+	/**
+	 * Remove a material from the given list.
+	 * @param m : the material that will be removed from the inventory
+	 * @param materialList : the target list
+	 * @return Material: removed material or null if the inventory not contains the material
+	 */
 	public Material removeMaterialFromList(LinkedList<Material> materialList,Material m) {
 		
 		for(int i = 0; i<materialList.size();i++) {

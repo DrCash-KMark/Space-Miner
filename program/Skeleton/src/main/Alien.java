@@ -38,7 +38,7 @@ public class Alien extends NonPlayer implements Mining {
 	public String genUIString() {
 		return "Alien id: " + id + "\n"
 				+ "isRandom: " + Tools.bool(isRandom) + "\n"
-				+ "asteroid: " + Tools.id(asteroid) + "\n";
+				+ "asteroid: " + Tools.id(asteroid);
 	}
 
 	@Override
@@ -116,6 +116,7 @@ public class Alien extends NonPlayer implements Mining {
 	public void mine() {
 		if (0 == asteroid.getRockThickness()) {
 			inventory.addMaterial(asteroid.removeMaterial());
+			owner.addTurnEvent("asteroid mined " + asteroid.getId());
 		}
 	}
 

@@ -125,7 +125,7 @@ public class StarGate extends Building implements Moving {
 				+ "works: " + Tools.bool(works) + "\n"
 				+ "wasInSunFlare: " + Tools.bool(wasInSunFlare) + "\n" 
 				+ "neighbour: " + Tools.id(neighbour) + "\n"
-				+ "asteroid: " + Tools.id(asteroid) + "\n";
+				+ "asteroid: " + Tools.id(asteroid);
 	}	
 
 	@Override
@@ -177,7 +177,7 @@ public class StarGate extends Building implements Moving {
 				owner.addTurnEvent("stargate move " + id + " " + destination.getId());
 				this.asteroid.removeBuilding(this);
 				destination.addBuilding(this);
-				this.asteroid = destination;				
+				this.asteroid = destination;			
 			}
 		}
 	}

@@ -90,7 +90,7 @@ public abstract class Material extends Printable{
 	@Override
 	public String genUIString() {
 		return "Material id: " + id + "\n"
-				+ "Name: " + name + "\n";
+				+ "Name: " + name;
 	}
 	
 //Own methods:----------------------------------------------------------------------------

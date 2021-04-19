@@ -139,7 +139,7 @@ public class Sun extends Planet implements Controllable {
      * tempList is used so when a material is removed the for loop won't break the whole game
      */
     public void sunFlare() {
-        this.owner.addTurnEvent("SunId:" + this.id + " sun flare happened");
+        this.owner.addTurnEvent("sunflare on sun "+this.id);
         for (Asteroid a : asteroids) {
             a.getNotifiedAboutSunflare();
         }

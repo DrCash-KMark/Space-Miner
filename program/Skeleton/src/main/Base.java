@@ -36,7 +36,7 @@ public class Base extends Building {
 	@Override
 	public String genUIString() {
 		return "Base id: " + id + "\n" 
-				+ "asteroid: " + asteroid.getId() + "\n";
+				+ "asteroid: " + asteroid.getId();
 	}
 
 	@Override

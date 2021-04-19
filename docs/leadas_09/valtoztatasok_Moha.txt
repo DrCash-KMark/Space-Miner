@@ -1,45 +1,46 @@
-listAllSettlers string helyett voidot returnol, mar o írja ki a dolgokat.
-gambeol kikerult az executeCommand fuggvény
-sunnak lett addAsteroid
-a gameben controllablek helyett asteroids settlers nonplayers s suns lett
+	listAllSettlers string helyett voidot returnol, mar o írja ki a dolgokat.
+	gambeol kikerult az executeCommand fuggvény
+	sunnak lett addAsteroid
+	a gameben controllablek helyett asteroids settlers nonplayers s suns lett
 a jatrk kezdetekor az osszes settler egy asszteroidan van
-getstargates fgv lett inventoryban
-placestargate settlernek mostmar ker egy settler id-t
+	getstargates fgv lett inventoryban
+	placestargate settlernek mostmar ker egy settler id-t
 
 --------------------------
 
-create settler <id> asteroid <id>
-create inventory <id> alien <id>
-create uran <id> <settler/alien> <id>
-move settler <id> dest <asteroid/stargate> <id>
-set inventory <settler/alien> <id> capacity <value>
+	create settler <id> asteroid <id>
+	create inventory <id> alien <id>
+	create uran <id> <settler/alien> <id>
+	move settler <id> dest <asteroid/stargate> <id>
+	set inventory <settler/alien> <id> capacity <value>
 
-LIST ALL TURN EVENTS
-game -> turnEvents<String>
-addTurnEvent(s: String)
+	LIST ALL TURN EVENTS
+	game -> turnEvents<String>
+	addTurnEvent(s: String)
 owner.addTurnEvent(description)
 asteroid.getOwner().addTurnEvent("ice elpaolog")
 
 --------------------------
 
-game->init kitorli az eddigi osszes tarolt cucclit + reseteli a nextId-t
-kommentek "# "-el kezdodnek nem csak "#"-al
+	game->init kitorli az eddigi osszes tarolt cucclit + reseteli a nextId-t
+	kommentek "# "-el kezdodnek nem csak "#"-al
 
 --------------------------
 
-list all turn events
-list all
-list all settlers
-id-ben az osztaly elso 3 betuje szerepel
+	list all turn events
+	list all
+	list all settlers
+	id-ben az osztaly elso 3 betuje szerepel
 
 --------------------------
 
-Itt lesznek a testek atirasai:
-Miert kellet atirnunk? A nyelv szintaktikajat (de szigoruan nem szemantikajat) valtoztattuk.
-Az alabb szereplo tesztek megfelelnek az elozo leadasban definialt tesztekkel, ugyanazt tesztelik, csak most az uj szintaktikaval vannak leirva
-Helyenkent apro valtoztatasok szerepelnek bennuk, mivel a korabbi tesztek nem voltak helyesek
-(pl uj kort inditottunk mikor pont azt akartuk tesztelni, hogy a settler hadActionThisTurn valtozoja helyesen beallitodott)
-// az elvart eredmenyek is valtoztak azt is majd fogom updatelni de az meg nincs itt
+	Itt lesznek a testek atirasai:
+	Miert kellet atirnunk? A nyelv szintaktikajat (de szigoruan nem szemantikajat) valtoztattuk.
+	Az alabb szereplo tesztek megfelelnek az elozo leadasban definialt tesztekkel, ugyanazt tesztelik, csak most az uj szintaktikaval vannak leirva
+	Helyenkent apro valtoztatasok szerepelnek bennuk, mivel a korabbi tesztek nem voltak helyesek
+	(pl uj kort inditottunk mikor pont azt akartuk tesztelni, hogy a settler hadActionThisTurn valtozoja helyesen beallitodott)
+	// az elvart eredmenyek is valtoztak azt is majd fogom updatelni de az meg nincs itt
+	+testek ha kesz lesznek
 
 <<--------------------------------- TEST SEPARATING LINE --------------------------------->>
 
@@ -57,8 +58,8 @@ set asteroid isRandom a1 f
 set asteroid closeToSun a1 f
 start game
 mine settler s1
-list settler s1
-list asteroid a1
+list turn events
+list all
 
 # ELVART KIMENET: 
 

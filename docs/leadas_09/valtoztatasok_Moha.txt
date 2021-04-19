@@ -47,17 +47,15 @@ asteroid.getOwner().addTurnEvent("ice elpaolog")
 # test1 8.2.1 Banyaszas telepessel
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create settler s1 asteroid a1
-create inventory i1 settler s1
-set asteroid capacity a1 10
-set asteroid closeToSun a1 f
-create coal coal1 asteroid a1
-set asteroid rockThickness a1 0
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+set asteroid capacity ast1 10
+create coal coa1 asteroid ast1
+set asteroid rockThickness ast1 0
+set asteroid closeToSun ast1 f
 start game
-mine settler s1
+mine settler set1
 list turn events
 list all
 
@@ -68,28 +66,26 @@ list all
 # test2 8.2.2 Banyaszas telepessel, teli taroloval
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create settler s1 asteroid a1
-create inventory i1 settler s1
-set asteroid capacity a1 10
-create coal coal1 asteroid a1
-create iron iron1 settler s1
-create iron iron2 settler s1
-create iron iron3 settler s1
-create iron iron4 settler s1
-create iron iron5 settler s1
-create iron iron6 settler s1
-create iron iron7 settler s1
-create iron iron8 settler s1
-create iron iron9 settler s1
-create iron iron10 settler s1
-set asteroid rockThickness a1 0
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+set asteroid capacity ast1 10
+create coal coa1 asteroid ast1
+create iron iro1 settler set1
+create iron iro2 settler set1
+create iron iro3 settler set1
+create iron iro4 settler set1
+create iron iro5 settler set1
+create iron iro6 settler set1
+create iron iro7 settler set1
+create iron iro8 settler set1
+create iron iro9 settler set1
+create iron iro10 settler set1
+set asteroid rockThickness ast1 0
 start game
-mine settler s1
-list asteroid a1
-list settler s1
+mine settler set1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -98,18 +94,16 @@ list settler s1
 # test3 8.2.3 Telepes visszahelyez egy nyersanyagot
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create coal coal1 settler s1
-set asteroid capacity a1 10
-set asteroid rockThickness a1 0
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create coal coa1 settler set1
+set asteroid capacity ast1 10
+set asteroid rockThickness ast1 0
 start game
-drop settler s1 material coal1
-list asteroid a1
-list settler s1
+drop settler set1 material coa1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -118,18 +112,16 @@ list settler s1
 # test4 8.2.4 Telepes nem tud visszahelyezni egy nyersanyagot
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create coal coal1 settler s1
-set asteroid capacity a1 10
-set asteroid rockThickness a1 1
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create coal coa1 settler set1
+set asteroid capacity ast1 10
+set asteroid rockThickness ast1 1
 start game
-drop settler s1 material coal1
-list asteroid a1
-list settler s1
+drop settler set1 material coa1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -138,23 +130,22 @@ list settler s1
 # test5 8.2.5 Telepes visszahelyez egy urant napkozelben
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create uran uran1 settler s1
-set asteroid capacity a1 10
-set asteroid rockThickness a1 0
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 t
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create uran ura1 settler set1
+set asteroid capacity ast1 10
+set asteroid rockThickness ast1 0
+set asteroid closeToSun ast1 t
 start game
-drop settler s1 material uran1
+drop settler set1 material ura1
 start next turn
-mine settler s1
+mine settler set1
 start next turn
-drop settler s1 material uran1
+drop settler set1 material ura1
 start next turn
-list asteroid a1
-list settler s1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -163,18 +154,17 @@ list settler s1
 # test6 8.2.6 Telepes visszahelyez egy vizjeget napkozleben
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create ice ice1 settler s1
-set asteroid capacity a1 10
-set asteroid rockThickness a1 0
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 t
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create ice ice1 settler set1
+set asteroid capacity ast1 10
+set asteroid rockThickness ast1 0
+set asteroid closeToSun ast1 t
 start game
-drop settler s1 material ice1
-list asteroid a1
-list settler s1
+drop settler set1 material ice1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -183,19 +173,16 @@ list settler s1
 # test7 8.2.7 Alien banyaszik
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create alien al1 asteroid a1
-create inventory i1 alien al1
-create coal coal1 asteroid a1
-set asteroid capacity a1 10
-set asteroid rockThickness a1 0
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-set alien isRandom al1 f
+create asteroid ast1 sun sun1
+create alien ali1 asteroid ast1
+create inventory inv1 alien ali1
+create coal coa1 asteroid ast1
+set asteroid capacity ast1 10
+set asteroid rockThickness ast1 0
 start game
-mine alien al1
-list asteroid a1
-list alien al1
+mine alien ali1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -204,19 +191,16 @@ list alien al1
 # test8 8.2.8 Alien banyaszna
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create alien al1 asteroid a1
-create inventory i1 alien al1
-set asteroid capacity a1 10
-create coal coal1 asteroid a1
-set asteroid rockThickness a1 1
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-set alien isRandom al1 f
+create asteroid ast1 sun sun1
+create alien ali1 asteroid ast1
+create inventory inv1 alien ali1
+set asteroid capacity ast1 10
+create coal coa1 asteroid ast1
+set asteroid rockThickness ast1 1
 start game
-mine alien al1
-list asteroid a1
-list alien al1
+mine alien ali1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -225,17 +209,15 @@ list alien al1
 # test9 8.1.1 Nem elvegezheto Robot Crafting
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create iron iron1 settler s1
-create coal coal1 settler s1
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create iron iro1 settler set1
+create coal coa1 settler set1
 start game
-build settler s1 robot
-list asteroid a1
-list settler s1
+build settler set1 robot
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -244,16 +226,16 @@ list settler s1
 # test10 8.1.2 Elvegezheto Robot Crafting
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid closeToSun a1 f
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create iron iron1 settler s1
-create uran uran1 settler s1
-create coal coal1 settler s1
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create iron iro1 settler set1
+create uran ura1 settler set1
+create coal coa1 settler set1
 start game
-build settler s1 robot
+build settler set1 robot
 start next turn
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -263,16 +245,15 @@ list all
 # test11 8.1.3 Nem elvegezheto Stargate Crafting
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid closeToSun a1 f
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create iron iron1 settler s1
-create uran uran1 settler s1
-create ice ice1 settler s1
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create iron iro1 settler set1
+create uran ura1 settler set1
+create ice ice1 settler set1
 start game
-build settler s1 stargate
-start next turn
+build settler set1 stargate
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -282,16 +263,16 @@ list all
 # test12 8.1.4 Elvegezheto Stargate Crafting
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid closeToSun a1 f
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create iron iron1 settler s1
-create iron iron1 settler s1
-create uran uran1 settler s1
-create ice ice1 settler s1
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create iron iro1 settler set1
+create iron iro1 settler set1
+create uran ura1 settler set1
+create ice ice1 settler set1
 start game
-build settler s1 stargate
+build settler set1 stargate
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -301,16 +282,16 @@ list all
 # test13 8.1.5 Nem elvegezheto Base Crafting egy telepessel
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid closeToSun a1 f
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create iron iron1 settler s1
-create coal coal1 settler s1
-create uran uran1 settler s1
-create ice ice1 settler s1
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create iron iro1 settler set1
+create coal coa1 settler set1
+create uran ura1 settler set1
+create ice ice1 settler set1
 start game
-build settler s1 base
+build settler set1 base
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -320,28 +301,27 @@ list all
 # test14 8.1.6 Nem elvegezheto Base Crafting telepesek kulon aszteroidan
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid closeToSun a1 f
-create asteroid a2 sun sun1
-set asteroid closeToSun a2 f
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create iron iron1 settler s1
-create iron iron2 settler s1
-create iron iron3 settler s1
-create coal coal1 settler s1
-create coal coal2 settler s1
-create coal coal3 settler s1
-create settler s2 asteroid a2
-create inventory i2 settler s2
-create uran uran1 settler s2
-create uran uran2 settler s2
-create uran uran3 settler s2
-create ice ice1 settler s2
-create ice ice2 settler s2
-create ice ice3 settler s2
+create asteroid ast1 sun sun1
+create asteroid ast2 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create iron iro1 settler set1
+create iron iro2 settler set1
+create iron iro3 settler set1
+create coal coa1 settler set1
+create coal coa2 settler set1
+create coal coa3 settler set1
+create settler set2 asteroid ast2
+create inventory inv2 settler set2
+create uran ura1 settler set2
+create uran ura2 settler set2
+create uran ura3 settler set2
+create ice ice1 settler set2
+create ice ice2 settler set2
+create ice ice3 settler set2
 start game
-build settler s1 base
+build settler set1 base
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -351,28 +331,27 @@ list all
 # test15 8.1.7 Elvegezheto Base Crafting
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid closeToSun a1 f
-create asteroid a2 sun sun1
-set asteroid closeToSun a2 f
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create iron iron1 settler s1
-create iron iron2 settler s1
-create iron iron3 settler s1
-create coal coal1 settler s1
-create coal coal2 settler s1
-create coal coal3 settler s1
-create settler s2 asteroid a1
-create inventory i2 settler s2
-create uran uran1 settler s2
-create uran uran2 settler s2
-create uran uran3 settler s2
-create ice ice1 settler s2
-create ice ice2 settler s2
-create ice ice3 settler s2
+create asteroid ast1 sun sun1
+create asteroid ast2 sun sun1
+create settler set1 asteroid ast1
+create inventory i1 settler set1
+create iron iro1 settler set1
+create iron iro2 settler set1
+create iron iro3 settler set1
+create coal coa1 settler set1
+create coal coa2 settler set1
+create coal coa3 settler set1
+create settler set2 asteroid ast1
+create inventory inv2 settler set2
+create uran ura1 settler set2
+create uran ura2 settler set2
+create uran ura3 settler set2
+create ice ice1 settler set2
+create ice ice2 settler set2
+create ice ice3 settler set2
 start game
-build settler s1 base
+build settler set1 base
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -382,23 +361,17 @@ list all
 # test16 8.1.8 Elso Stargate lehelyezese a parbol
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid closeToSun a1 f
-create settler s1 asteroid a1
-create inventory i1 settler s1
-create stargate sg1 inventory s1
-create stargate sg2 inventory s1
-set stargate neighbour sg1 sg2
-set stargate neighbour sg2 sg1
-set stargate isRandom sg1 f
-set stargate isRandom sg2 f
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+create inventory inv1 settler set1
+create stargate sta1 inventory set1
+create stargate sta2 inventory set1
+set stargate neighbour sta1 sta2
+set stargate neighbour sta2 sta1
 start game
-place settler s1 sg1
-start next turn
-list asteroid a1
-list stargate sg1
-list stargate sg2
-list settler s1
+place settler set1 sta1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -407,26 +380,18 @@ list settler s1
 # test17 8.1.9 Masodik Stargate lehelyezese a parbol
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid closeToSun a1 f
-create asteroid a2 sun sun1
-set asteroid closeToSun a2 f
-create settler s1 asteroid a2
-create inventory i1 settler s1
-create stargate sg1 asteroid a1
-create stargate sg2 inventory s1
-set stargate neighbour sg1 sg2
-set stargate neighbour sg2 sg1
-set stargate isRandom sg1 f
-set stargate isRandom sg2 f
+create asteroid ast1 sun sun1
+create asteroid ast2 sun sun1
+create settler set1 asteroid ast2
+create inventory inv1 settler set1
+create stargate sta1 asteroid ast1
+create stargate sta2 inventory set1
+set stargate neighbour sta1 sta2
+set stargate neighbour sta2 sta1
 start game
-place settler s1 sg2
-start next turn
-list asteroid a1
-list asteroid a2
-list stargate sg1
-list stargate sg2
-list settler s1
+place settler set1 sta2
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -435,35 +400,25 @@ list settler s1
 # test18 8.2 Napvihar kitorese nem atfurt aszteroidan
 init game manually
 create sun sun1
-set sun isRandom sun1 f
 create sun sun2
-create asteroid a1 sun sun1
-set asteroid rockThickness a1 1
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-create asteroid a2 sun sun2
-set asteroid closeToSun a2 f
-add asteroid neighbour a1 a2
-add asteroid neighbour a2 a1
-create settler s1 asteroid a1
-create robot r1 asteroid a1
-set robot isRandom r1 f
-create alien al1 asteroid a1
-set alien isRandom al1 f
-create stargate sg1 asteroid a1
-set stargate isRandom sg1 t
-create inventory i1 settler s1
-create stargate sg2 settler s1
-set stargate isRandom sg2 f
-set stargate neighbour sg1 sg2
-set stargate neighbour sg2 sg1
+create asteroid ast1 sun sun1
+set asteroid rockThickness ast1 1
+create asteroid ast2 sun sun2
+add asteroid neighbour ast1 ast2
+add asteroid neighbour ast2 ast1
+create settler set1 asteroid ast1
+create robot rob1 asteroid ast1
+create alien ali1 asteroid ast1
+create stargate sta1 asteroid ast1
+set stargate isRandom sta1 t
+create inventory inv1 settler set1
+create stargate sta2 settler set1
+set stargate neighbour sta1 sta2
+set stargate neighbour sta2 sta1
 start game
 sunflare sun1
-start next turn
-list sun sun1
-list asteroid a1
-list asteroid a2
-list stargate sg1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -472,35 +427,25 @@ list stargate sg1
 # test19 8.3 Napvihar kitorese atfurt aszteroidan
 init game manually
 create sun sun1
-set sun isRandom sun1 f
 create sun sun2
-create asteroid a1 sun sun1
-set asteroid rockThickness a1 0
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-create asteroid a2 sun sun2
-set asteroid closeToSun a2 f
-add asteroid neighbour a1 a2
-add asteroid neighbour a2 a1
-create settler s1 asteroid a1
-create robot r1 asteroid a1
-set robot isRandom r1 f
-create alien al1 asteroid a1
-set alien isRandom al1 f
-create stargate sg1 asteroid a1
-set stargate isRandom sg1 t
-create inventory i1 settler s1
-create stargate sg2 settler s1
-set stargate isRandom sg2 f
-set stargate neighbour sg1 sg2
-set stargate neighbour sg2 sg1
+create asteroid ast1 sun sun1
+set asteroid rockThickness ast1 0
+create asteroid ast2 sun sun2
+add asteroid neighbour ast1 ast2
+add asteroid neighbour ast2 ast1
+create settler set1 asteroid ast1
+create robot rob1 asteroid ast1
+create alien ali1 asteroid ast1
+create stargate sta1 asteroid ast1
+set stargate isRandom sta1 t
+create inventory inv1 settler set1
+create stargate sta2 settler set1
+set stargate neighbour sta1 sta2
+set stargate neighbour sta2 sta1
 start game
 sunflare sun1
-start next turn
-list sun sun1
-list asteroid a1
-list asteroid a2
-list stargate sg1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -509,20 +454,20 @@ list stargate sg1
 # test20 8.4 Furas robottal
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid rockThickness a1 2
-set asteroid closeToSun a1 f
-create robot r1 asteroid a1
-set robot isRandom r1 f
+create asteroid ast1 sun sun1
+set asteroid rockThickness ast1 2
+create robot rob1 asteroid ast1
 start game
-drill robot r1
+drill robot rob1
+list turn events
 start next turn
-drill robot r1
+drill robot rob1
+list turn events
 start next turn
-drill robot r1
+drill robot rob1
+list turn events
 start next turn
-list asteroid a1
-list robot r1
+list all
 
 # ELVART KIMENET: 
 
@@ -531,20 +476,17 @@ list robot r1
 # test21 8.5 Furas robottal, elparolog
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create robot r1 asteroid a1
-set robot isRandom r1 f
-set asteroid capacity a1 10
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-create ice ice1 asteroid a1
+create asteroid ast1 sun sun1
+create robot rob1 asteroid ast1
+set asteroid capacity ast1 10
+create ice ice1 asteroid ast1
 set material exposedCounter ice1 0
-set asteroid rockThickness a1 1
-set asteroid closeToSun a1 t
+set asteroid rockThickness ast1 1
+set asteroid closeToSun ast1 t
 start game
-drill robot r1
-list asteroid a1
-list robot r1
+drill robot rob1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -553,27 +495,20 @@ list robot r1
 # test22 8.6 Furas robottal felrobban
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create robot r1 asteroid a1
-set robot isRandom r1 f
-set asteroid capacity a1 10
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-create uran uran1 asteroid a1
-set material exposedCounter uran1 0
-set asteroid rockThickness a1 1
-set asteroid closeToSun a1 t
-create asteroid a2 sun sun1
-set asteroid isRandom a2 f
-set asteroid closeToSun a2 f
-add asteroid neighbour a1 a2
-add asteroid neighbour a2 a1
+create asteroid ast1 sun sun1
+create robot rob1 asteroid ast1
+set asteroid capacity ast1 10
+create uran ura1 asteroid ast1
+set material exposedCounter ura1 0
+set asteroid rockThickness ast1 1
+set asteroid closeToSun ast1 t
+create asteroid ast2 sun sun1
+add asteroid neighbour ast1 ast2
+add asteroid neighbour ast2 ast1
 start game
-drill robot r1
-start next turn
-start next turn
-start next turn
-list robot r1
+drill robot rob1
+list turn events
+list all
 
 # ELVART KIMENET: 
 
@@ -582,24 +517,22 @@ list robot r1
 # test23 8.7 Furas robottal felrobban nincs szomszed
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create robot r1 asteroid a1
-set robot isRandom r1 f
-set asteroid capacity a1 10
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-create uran uran1 asteroid a1
-set material exposedCounter uran1 0
-set asteroid rockThickness a1 1
-set asteroid closeToSun a1 t
-create asteroid a2 sun sun1
-set asteroid isRandom a2 f
-set asteroid closeToSun a2 f
+create asteroid ast1 sun sun1
+create robot rob1 asteroid ast1
+set asteroid capacity ast1 10
+create uran ura1 asteroid ast1
+set material exposedCounter ura1 0
+set asteroid rockThickness ast1 1
+set asteroid closeToSun ast1 t
+create asteroid ast2 sun sun1
 start game
+drill robot rob1
+list turn events
 start next turn
 start next turn
+list turn evnets
 start next turn
-list asteroid a2
+list all
 
 # ELVART KIMENET: 
 
@@ -608,8 +541,7 @@ list asteroid a2
 # test24 8.8 Furas telepessel
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid closeToSun a1 f
+create asteroid ast1 sun sun1
 create settler s1 asteroid a1
 set asteroid rockThickness a1 2
 set settler hadActionThisTurn s1 f
@@ -633,8 +565,6 @@ create asteroid a1 sun sun1
 create settler s1 asteroid a1
 set settler hadActionThisTurn s1 f
 set asteroid capacity a1 10
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
 create ice ice1 asteroid a1
 set material exposedCounter ice1 0
 set asteroid rockThickness a1 1
@@ -655,8 +585,6 @@ create asteroid a1 sun sun1
 create settler s1 asteroid a1
 set settler hadActionThisTurn s1 f
 set asteroid capacity a1 10
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
 create uran uran1 asteroid a1
 set material exposedCounter uran1 0
 set asteroid rockThickness a1 1
@@ -678,11 +606,6 @@ create sun sun1
 create asteroid a1 sun sun1
 create asteroid a2 sun sun1
 create robot r1 asteroid a1
-set robot isRandom r1 f
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-set asteroid isRandom a2 f
-set asteroid closeToSun a2 f
 start game
 move robot r1 dest asteroid a2
 start next turn
@@ -698,11 +621,6 @@ create sun sun1
 create asteroid a1 sun sun1
 create asteroid a2 sun sun1
 create robot r1 asteroid a1
-set robot isRandom r1 f
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-set asteroid isRandom a2 f
-set asteroid closeToSun a2 f
 add asteroid neighbour a1 a2
 add asteroid neighbour a2 a1
 start game
@@ -721,10 +639,6 @@ create asteroid a1 sun sun1
 create asteroid a2 sun sun1
 create settler s1 asteroid a1
 set settler hadActionThisTurn s1 f
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-set asteroid isRandom a2 f
-set asteroid closeToSun a2 f
 start game
 move settler s1 dest asteroid a2
 start next turn
@@ -741,10 +655,6 @@ create asteroid a1 sun sun1
 create asteroid a2 sun sun1
 create settler s1 asteroid a1
 set settler hadActionThisTurn s1 f
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
-set asteroid isRandom a2 f
-set asteroid closeToSun a2 f
 add asteroid neighbour a1 a2
 add asteroid neighbour a2 a1
 start game
@@ -760,19 +670,13 @@ list all
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
 set asteroid rockThickness a1 1
 create asteroid a2 sun sun1
-set asteroid isRandom a2 f
-set asteroid closeToSun a2 f
 set asteroid rockThickness a2 1
 create settler s1 asteroid a1
 create stargate sg1 asteroid a1
-set stargate isRandom sg1 f
 set stargate works sg1 t
 create stargate sg2 asteroid a2
-set stargate isRandom sg2 f
 set stargate works sg2 t
 set stargate neighbour sg1 sg2
 set stargate neighbour sg2 sg1
@@ -787,19 +691,12 @@ list all
 # test32 8.16 Teleportkapu elromlik
 init game manually
 create sun sun1
-set sun isRandom sun1 f
 create sun sun2
 create asteroid a1 sun sun1
-set asteroid isRandom a1 f
-set asteroid closeToSun a1 f
 set asteroid rockThickness a1 1
 create asteroid a2 sun sun2
-set asteroid isRandom a2 f
-set asteroid closeToSun a2 f
 set asteroid rockThickness a2 1
 create asteroid a3 sun sun2
-set asteroid isRandom a3 f
-set asteroid closeToSun a3 f
 set asteroid rockThickness a3 1
 add asteroid neighbour a1 a3
 add asteroid neighbour a3 a1

@@ -101,6 +101,9 @@ public class Game {
 			displayString += s + "\n";
 		}
 		
+		if (turnEvents.size() == 0)
+			displayString += "-\n";
+		
 		ui.displayMessage(displayString);
 	}
 	
@@ -227,7 +230,7 @@ public class Game {
 	 * Finishes the game.
 	 */
 	public void gameLost() {
-		for (Settler settler : settlers)
+		/*for (Settler settler : settlers)
 			settlersToRemove.add(settler);
 		
 		for (Sun sun : suns)
@@ -239,7 +242,7 @@ public class Game {
 		for (NonPlayer nonPlayer : nonPlayers)
 			nonPlayersToRemove.add(nonPlayer);
 		
-		cleanup();
+		cleanup();*/
 		
 		ui.displayMessage("The game is lost!");
 	}
@@ -315,6 +318,7 @@ public class Game {
 		for (int i = 0; i < amountOfSuns; i++) {
 			Sun s = new Sun();
 			s.setOwner(this);
+			s.setIsRandom(true);
 			
 			addSun(s);
 			
@@ -322,6 +326,7 @@ public class Game {
 				Asteroid a = new Asteroid();
 				a.initialize();
 				a.setOwner(this);
+				a.setIsRandom(true);
 				
 				s.addAsteroid(a);
 				
@@ -345,6 +350,7 @@ public class Game {
 		{
 			Alien a = new Alien();
 			a.setOwner(this);
+			a.setIsRandom(true);
 			
 			asteroids.get(rnd.nextInt(numOfAsteroids)).addNonPlayer(a);
 		}

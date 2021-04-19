@@ -190,7 +190,7 @@ public class Inventory extends Printable{
 			}
         }
         if(starGates.size()==0) {
-        	returnValue += "StarGatesId: -\n";
+        	returnValue += "StarGatesId:";
         }else {
         	for(int i =0; i<starGates.size(); i++) {
         		if(i<starGates.size()-1) {

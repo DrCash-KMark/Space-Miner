@@ -1,19 +1,34 @@
 package main;
 
+/**
+ * This class is used to communicate between the player and the game
+ * @author Moha
+ *
+ */
 public class UI {
 	private Game game;
 	
+	/**
+	 * Constructor for ui without parameters
+	 */
 	public UI(){
 		game = new Game();
 		game.setUI(this);
 	}
 	
-	// Writes the String s to the console
+	/**
+	 * This function writes the s string to the console
+	 * @param s this String will be written to the console
+	 */
 	public void displayMessage(String s)
 	{
 		System.out.println(s);
 	}
 	
+	/**
+	 * This function executes the command defined by s
+	 * @param s this String contains the commend to be executed
+	 */
 	public void execute(String s)
 	{
 		String splitString[] = s.split(" ");

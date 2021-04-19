@@ -10,11 +10,10 @@ package main;
 //  @ Author : KMark
 //
 //
-
-
-
-
 public interface Controllable {
-	public void onTurn();
 	
+	/**
+	 * Abstract function that gets called at the start of turn when the given controllable does its job
+	 */
+	public void onTurn();
 }

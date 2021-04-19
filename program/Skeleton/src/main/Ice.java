@@ -28,7 +28,7 @@ public class Ice extends Material {
 	 */
 	Ice(){
 		super(false, "Ice", true , 0);
-        this.id = "Ice" + String.valueOf(nextId);
+        this.id = "ice" + String.valueOf(nextId);
         nextId++;
 	}
 
@@ -41,5 +41,6 @@ public class Ice extends Material {
 	public void exposedAndCloseToSun(Asteroid a) {
 		super.exposedAndCloseToSun(a);
 		a.evaporateMaterial();
+		a.owner.addTurnEvent("material evaporated " + this.id );
 	}
 }

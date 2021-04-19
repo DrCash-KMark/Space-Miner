@@ -30,7 +30,7 @@ public class Inventory extends Printable{
 	 * Constructor for Inventory without parameters.
 	 */
 	Inventory(){
-        this.id = "I" + String.valueOf(nextId);
+        this.id = "inv" + String.valueOf(nextId);
         nextId++;
 		
 		this.materials = new LinkedList<>();
@@ -135,20 +135,31 @@ public class Inventory extends Printable{
 	@Override
 	public String genSaveString() {
         String returnValue = "id: " + this.id + "\n" +
-                "capacityM:" + this.capacityM + "\n" +
+                "capacityM: " + this.capacityM + "\n" +
                 "capacitySG: " + this.capacitySG + "\n";
         if(materials.size()==0) {
         	returnValue += "MaterialId: -\n";
         }else {
-        	for(Material material : materials) {
-				returnValue += "MaterialId:" + material.getId() + "\n";
+        	for(int i =0; i<materials.size(); i++) {
+        		if(i!=materials.size()-1) {
+        			returnValue += "MaterialId: " + materials.get(i).id + "\n";
+        		}
+        		else {
+        			returnValue += "MaterialId: " + materials.get(i).id;
+        		}
+				
 			}
         }
         if(starGates.size()==0) {
         	returnValue += "StarGatesId: -\n";
         }else {
-        	for(StarGate starGate : starGates) {
-    			returnValue += "StarGatesId: " + starGate.getId() + "\n";
+        	for(int i =0; i<starGates.size(); i++) {
+        		if(i!=starGates.size()-1) {
+        			returnValue += "StarGatesId: " + starGates.get(i).id + "\n";
+        		}
+        		else {
+        			returnValue += "StarGatesId: " + starGates.get(i).id;
+        		}
     		}
         }
         return returnValue;

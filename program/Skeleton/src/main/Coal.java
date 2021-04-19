@@ -28,7 +28,7 @@ public class Coal extends Material {
 	 */
 	Coal(){
 		super(false, "Coal", true , 0);
-        this.id = "Coal" + String.valueOf(nextId);
+        this.id = "coa" + String.valueOf(nextId);
         nextId++;
 	}
 }

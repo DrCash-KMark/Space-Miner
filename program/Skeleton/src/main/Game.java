@@ -23,8 +23,8 @@ import java.util.Scanner;
 
 
 /**
- * Represents an instance of the running game. Hold reference to all the present Settlers, Robots and Planets in the game.
- * @author Simon
+ * Represents an instance of the running game. Hold reference to all the present Settlers, NonPlayers and Planets in the game.
+ * @author Moha
  *
  */
 public class Game {
@@ -46,19 +46,24 @@ public class Game {
 	
 	private List<String> turnEvents = new ArrayList<String>();
 	
+	/**
+	 * A setter for the ui variable
+	 * @param u this will be set as the new ui variable
+	 */
 	public void setUI(UI u) {
 		ui = u;
 	}
 	
-	//Event related:-----------------------------------------------------------------
-	
+	/**
+	 * Adds a string to the turn events
+	 * @param s this String will be in the turnEvents list (till the end of the turn)
+	 */
 	public void addTurnEvent(String s) {
 		turnEvents.add(s);
 	}
 	
 	/**
-	 * For testing only!
-	 * Removes reference to objects, if they called destroyMe or killMe.
+	 * Removes reference to objects, if they called remove
 	 */
 	public void cleanup () {
 		for (Settler settler : settlersToRemove) {
@@ -86,8 +91,11 @@ public class Game {
 		settlers.add(settler);
 	}
 	
+	/**
+	 * Prints all the turn events on the console 
+	 */
 	public void listTurnEvents() {
-		String displayString = "";
+		String displayString = "# turn events:\n";
 		
 		for (String s : turnEvents) {
 			displayString += s + "\n";
@@ -96,7 +104,12 @@ public class Game {
 		ui.displayMessage(displayString);
 	}
 	
+	/**
+	 * Lists all of the Planets, Enitities and Buildings currently present in the game
+	 */
 	public void listAll() {
+		ui.displayMessage("# list all:");
+		
 		for (Sun sun : suns) {
 			ui.displayMessage(sun.genUIString());
 			ui.displayMessage("--------------------");
@@ -132,30 +145,58 @@ public class Game {
 		}
 	}
 	
+	/**
+	 * Adds Sun to Game.
+	 * @param sun Sun to be added.
+	 */
 	public void addSun(Sun sun) {
 		suns.add(sun);
 	}
 	
+	/**
+	 * Adds Asteroid to Game
+	 * @param asteroid Asteroid to be added
+	 */
 	public void addAsteroid(Asteroid asteroid) {
 		asteroids.add(asteroid);
 	}
 	
+	/**
+	 * Adds NonPlayer to Game
+	 * @param nonPlayer NonPlayer to be added
+	 */
 	public void addNonPlayer(NonPlayer nonPlayer) {
 		nonPlayers.add(nonPlayer);
 	}
 	
+	/**
+	 * Adds Settler to the settlersToRemove list
+	 * @param settler Settler to be added to the settlersToRemove list
+	 */
 	public void removeSettler(Settler settler) {
 		settlersToRemove.add(settler);
 	}
 	
+	/**
+	 * Adds Sun to the sunsToRemove list
+	 * @param sun Sun to be added to the sunsToRemove list
+	 */
 	public void removeSun(Sun sun) {
 		sunsToRemove.add(sun);
 	}
 	
+	/**
+	 * Adds Asteroid to the asteroidsToRemove list
+	 * @param asteroid Asteroid to be added to the asteroidsToRemove list
+	 */
 	public void removeAsteroid(Asteroid asteroid) {
 		asteroidsToRemove.add(asteroid);
 	}
 	
+	/**
+	 * Adds NonPlayer to the nonPlayersToRemove list
+	 * @param nonPlayer NonPlayer to be added to the asteroidsToRemove list
+	 */
 	public void removeNonPlayer(NonPlayer nonPlayer) {
 		nonPlayersToRemove.add(nonPlayer);
 	}
@@ -168,6 +209,10 @@ public class Game {
 		ui.displayMessage("The game is won!");
 	}
 	
+	/**
+	 * Checks if the game is lost
+	 * @return true if the game is lost
+	 */
 	public Boolean isGameLost() {
 		cleanup();
 		
@@ -177,6 +222,10 @@ public class Game {
 		return false;
 	}
 	
+	/**
+	 * Called, when conditions of faliure are met.
+	 * Finishes the game.
+	 */
 	public void gameLost() {
 		for (Settler settler : settlers)
 			settlersToRemove.add(settler);
@@ -195,6 +244,9 @@ public class Game {
 		ui.displayMessage("The game is lost!");
 	}
 	
+	/**
+	 * Starts turn, resets Settlers ability to make actions, calls onTurn on every controllable (directly or indirectly)
+	 */
 	public void startTurn() {
 		cleanup();
 		
@@ -224,6 +276,9 @@ public class Game {
 		}
 	}
 	
+	/**
+	 * Lists every settler to the console
+	 */
 	public void listAllSettlers() {
 		String ret = "";
 		
@@ -233,6 +288,10 @@ public class Game {
 		ui.displayMessage(ret);
 	}
 	
+	/**
+	 * Inits the game
+	 * @param isManual if this is true the user has to init every object in the game, if this is false the game will init itself
+	 */
 	public void initGame(Boolean isManual) {
 		Inventory inventory = new Inventory();
 		inventory.setNextId(0);
@@ -293,10 +352,16 @@ public class Game {
 		startGame();
 	}
 	
+	/**
+	 * This function starts the game
+	 */
 	public void startGame() {
 		startTurn();
 	}
 	
+	/**
+	 * This function loads the game from the game.txt
+	 */
 	public void loadGame() {
 		List<StarGate> starGateLoadList = new ArrayList<StarGate>();
 		List<Base> baseLoadList = new ArrayList<Base>();
@@ -414,6 +479,13 @@ public class Game {
 		}
 	}
 	
+	/**
+	 * This function loads a sun.
+	 * The function assumes that the scanner is on the "Sun:" line in the txt and loads sun accordingly
+	 * @param scanner scanner for the txt
+	 * @param sunLoadList a temporary list cointaining all the suns loaded so far
+	 * @param asteroidLoadList a temporary list containing all the asteroids loaded so far
+	 */
 	public void loadSun(Scanner scanner, List<Sun> sunLoadList, List<Asteroid> asteroidLoadList) {
 		String loadString = scanner.nextLine();
 		
@@ -469,6 +541,18 @@ public class Game {
 		loadString = scanner.nextLine();
 	}
 	
+	/**
+	 * This function loads an asteroid.
+	 * The function assumes that the scanner is on the "Asteroid:" line in the txt and loads asteroid accordingly
+	 * @param scanner scanner for the txt
+	 * @param asteroidLoadList a temporary list containing all the asteroids loaded so far
+	 * @param settlerLoadList a temporary list containing all the settlers loaded so far
+	 * @param materialLoadList a temporary list containing all the materials loaded so far
+	 * @param robotLoadList a temporary list containing all the robots loaded so far
+	 * @param alienLoadList a temporary list containing all the aliens loaded so far
+	 * @param baseLoadList a temporary list containing all the bases loaded so far
+	 * @param starGateLoadList a temporary list containing all the stargates loaded so far
+	 */
 	public void loadAsteroid(Scanner scanner, List<Asteroid> asteroidLoadList, List<Settler> settlerLoadList, List<Material> materialLoadList, List<Robot> robotLoadList, List<Alien> alienLoadList, List<Base> baseLoadList, List<StarGate> starGateLoadList) {
 		String loadString = scanner.nextLine();
 		
@@ -687,6 +771,14 @@ public class Game {
 		a.setOwner(this);
 	}
 	
+	/**
+	 * This function loads a material.
+	 * The function assumes that the scanner is on the "id: <id>" line in the txt and loads material accordingly
+	 * @param m this is where the material will be loaded
+	 * @param loadString This is a string containing the "id <id>"
+	 * @param scanner scanner for the txt
+	 * @param materialLoadList a temporary list containing all the materials loaded so far
+	 */
 	public void loadMaterial(Material m, String loadString, Scanner scanner, List<Material> materialLoadList) {
 		Boolean foundMaterial = false;
 		
@@ -727,6 +819,14 @@ public class Game {
 		loadString = scanner.nextLine();
 	}
 	
+	/**
+	 * This function loads a stargate.
+	 * The function assumes that the scanner is on the "id: <id>" line in the txt and loads stargate accordingly
+	 * @param scanner scanner for the txt
+	 * @param loadString This is a string containing the "id <id>"
+	 * @param starGateLoadList a temporary list containing all the stargates loaded so far
+	 * @param asteroidLoadList a temporary list containing all the asteroids loaded so far
+	 */
 	public void loadStarGate(Scanner scanner, String loadString, List<StarGate> starGateLoadList, List<Asteroid> asteroidLoadList) {
 		Boolean foundStarGate = false;
 		StarGate sg = new StarGate();
@@ -811,6 +911,14 @@ public class Game {
 		sg.setOwner(this);
 	}
 	
+	/**
+	 * This function loads a base.
+	 * The function assumes that the scanner is on the "id: <id>" line in the txt and loads base accordingly
+	 * @param scanner scanner for the txt
+	 * @param loadString This is a string containing the "id <id>"
+	 * @param baseLoadList a temporary list containing all the bases loaded so far
+	 * @param asteroidLoadList a temporary list containing all the stargates loaded so far
+	 */
 	public void loadBase(Scanner scanner, String loadString, List<Base> baseLoadList, List<Asteroid> asteroidLoadList) {
 		Boolean foundBase = false;
 		Base b = new Base();
@@ -852,6 +960,14 @@ public class Game {
 		b.setOwner(this);
 	}
 	
+	/**
+	 * This function loads an settler.
+	 * The function assumes that the scanner is on the "Settler:" line in the txt and loads settler accordingly
+	 * @param scanner scanner for the txt
+	 * @param settlerLoadList a temporary list containing all the settlers loaded so far
+	 * @param asteroidLoadList a temporary list containing all the asteroids loaded so far
+	 * @param inventoryLoadList a temporary list containing all the inventories loaded so far
+	 */
 	public void loadSettler(Scanner scanner, List<Settler> settlerLoadList, List<Asteroid> asteroidLoadList, List<Inventory> inventoryLoadList) {
 		String loadString = scanner.nextLine();
 		
@@ -922,6 +1038,14 @@ public class Game {
 		s.setOwner(this);
 	}
 	
+	/**
+	 * This function loads an inventory.
+	 * The function assumes that the scanner is on the "Inventory:" line in the txt and loads inventory accordingly
+	 * @param scanner scanner for the txt
+	 * @param inventoryLoadList a temporary list containing all the inventories loaded so far
+	 * @param materialLoadList a temporary list containing all the materials loaded so far
+	 * @param starGateLoadList a temporary list containing all the stargates loaded so far
+	 */
 	public void loadInventory(Scanner scanner, List<Inventory> inventoryLoadList, List<Material> materialLoadList, List<StarGate> starGateLoadList) {
 		String loadString = scanner.nextLine();
 		
@@ -1056,6 +1180,14 @@ public class Game {
 		loadString = scanner.nextLine();
 	}
 	
+	/**
+	 * This function loads an robot.
+	 * The function assumes that the scanner is on the "id: <id>" line in the txt and loads robot accordingly
+	 * @param scanner scanner for the txt
+	 * @param loadString This is a string containing the "id <id>"
+	 * @param robotLoadList a temporary list containing all the robots loaded so far
+	 * @param asteroidLoadList a temporary list containing all the asteroids loaded so far
+	 */
 	public void loadRobot(Scanner scanner, String loadString, List<Robot> robotLoadList, List<Asteroid> asteroidLoadList) {
 		Boolean foundRobot = false;
 		Robot r = new Robot();
@@ -1104,6 +1236,15 @@ public class Game {
 		r.setOwner(this);
 	}
 	
+	/**
+	 * This function loads an alien.
+	 * The function assumes that the scanner is on the "id: <id>" line in the txt and loads alien accordingly
+	 * @param scanner scanner for the txt
+	 * @param loadString This is a string containing the "id <id>"
+	 * @param alienLoadList a temporary list containing all the aliens loaded so far
+	 * @param asteroidLoadList a temporary list containing all the asteroids loaded so far
+	 * @param inventoryLoadList a temporary list containing all the inventories loaded so far
+	 */
 	public void loadAlien(Scanner scanner, String loadString, List<Alien> alienLoadList, List<Asteroid> asteroidLoadList, List<Inventory> inventoryLoadList) {
 		Boolean foundAlien = false;
 		Alien a = new Alien();
@@ -1172,6 +1313,9 @@ public class Game {
 		a.setOwner(this);
 	}
 	
+	/**
+	 * This function saves game to the game.txt
+	 */
 	public void saveGame() {
 		String saveString = "";
 		
@@ -1226,6 +1370,11 @@ public class Game {
 		}
 	}
 	
+	/**
+	 * This function returns a settler with a given id
+	 * @param id the id of the settler
+	 * @return the settler with the id
+	 */
 	public Settler getSettlerWithId(String id) {
 		for (Settler settler : settlers)
 			if (settler.getId().equals(id))
@@ -1235,6 +1384,11 @@ public class Game {
 		return null;
 	}
 	
+	/**
+	 * This function returns an asteroid with a given id
+	 * @param id the id of the asteroid
+	 * @return the asteroid with the id
+	 */
 	public Asteroid getAsteroidWithId(String id) {
 		for (Asteroid asteroid : asteroids)
 			if (asteroid.getId().equals(id))
@@ -1244,6 +1398,11 @@ public class Game {
 		return null;
 	}
 	
+	/**
+	 * This function returns an sun with a given id
+	 * @param id the id of the sun
+	 * @return the sun with the id
+	 */
 	public Sun getSunWithId(String id) {
 		for (Sun sun : suns)
 			if (sun.getId().equals(id))
@@ -1253,6 +1412,11 @@ public class Game {
 		return null;
 	}
 	
+	/**
+	 * This function returns an alien with a given id
+	 * @param id the id of the alien
+	 * @return the alien with the id
+	 */
 	public Alien getAlienWithId(String id) {
 		for (NonPlayer nonPlayer : nonPlayers)
 			if (nonPlayer.getId().equals(id))
@@ -1262,6 +1426,11 @@ public class Game {
 		return null;
 	}
 	
+	/**
+	 * This function returns an robot with a given id
+	 * @param id the id of the robot
+	 * @return the robot with the id
+	 */
 	public Robot getRobotWithId(String id) {
 		for (NonPlayer nonPlayer : nonPlayers)
 			if (nonPlayer.getId().equals(id))
@@ -1271,6 +1440,11 @@ public class Game {
 		return null;
 	}
 	
+	/**
+	 * This function returns an stargate with a given id
+	 * @param id the id of the stargate
+	 * @return the stargate with the id
+	 */
 	public StarGate getStarGateWithId(String id) {
 		for (Settler settler : settlers) {
 			for (StarGate starGate : settler.getInventory().getStarGates())
@@ -1288,6 +1462,11 @@ public class Game {
 		return null;
 	}
 	
+	/**
+	 * This function returns an base with a given id
+	 * @param id the id of the base
+	 * @return the base with the id
+	 */
 	public Base getBaseWithId(String id) {
 		for (Asteroid asteroid : asteroids) {
 			for (Building base : asteroid.getBuildings())
@@ -1298,7 +1477,12 @@ public class Game {
 		ui.displayMessage("No such base found");
 		return null;
 	}
-	
+
+	/**
+	 * This function returns an material with a given id
+	 * @param id the id of the material
+	 * @return the material with the id
+	 */
 	public Material getMaterialWithId(String id) {
 		for (Settler settler : settlers) {
 			for (Material material : settler.getInventory().getMaterials())

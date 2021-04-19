@@ -454,7 +454,7 @@ public class Asteroid extends Planet implements Controllable {
             return null;
         }
         Material returnValue = this.materials.remove(0);
-        this.owner.addTurnEvent("asteroid mined "+this.id);
+        this.owner.addTurnEvent("material mined "+returnValue.id);
         return returnValue;
     }
 

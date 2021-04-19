@@ -1,1 +1,3 @@
 asteoid-ba került egy sun, hogy sun-ból kilehesen venni, amikor felrobban.
+
+Mostmár az aszteroida tárolja, hogy melyik sun-hoz tartozik. Mert csak így tudjuk a sun-nak jelezni, hogy melyik aszetroidát kell kivenni a listájából.

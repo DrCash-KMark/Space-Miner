@@ -43,7 +43,10 @@ public class Uran extends Material {
      */
 	public void exposedAndCloseToSun(Asteroid a) {
 		super.exposedAndCloseToSun(a);
-		if(this.getExposedCounter()>=3) a.explode();
+		if(this.getExposedCounter()>=3) {
+			a.explode();
+			a.owner.addTurnEvent("material exploded " + this.id );
+		}
 	}
 	
 }

@@ -41,5 +41,6 @@ public class Ice extends Material {
 	public void exposedAndCloseToSun(Asteroid a) {
 		super.exposedAndCloseToSun(a);
 		a.evaporateMaterial();
+		a.owner.addTurnEvent("material evaporated " + this.id );
 	}
 }

@@ -150,18 +150,18 @@ public class Inventory extends Printable{
 		String dataMaterial = "materials:\n";
 		String dataStarGate = "starGates:\n";
         if(materials.size()==0) {
-        	dataMaterial = "materials: -\n";
+        	dataMaterial = " material: -\n";
         }else {
         	for(int i =0; i<materials.size(); i++) {
-        			dataMaterial += "MaterialId: " + materials.get(i).id + "\n";
+        			dataMaterial += " material: " + materials.get(i).id + "\n";
         	}
         }
         if(starGates.size()==0) {
-        	dataStarGate = "starGate: -\n";
+        	dataStarGate = " starGate: -";
         }else {
         	for(int i =0; i<starGates.size(); i++) {
         		if(i<starGates.size()-1) {
-        			dataStarGate += "	starGate: " + starGates.get(i).id + "\n";
+        			dataStarGate += " starGate: " + starGates.get(i).id + "\n";
         		}
         		else {
         			dataStarGate += "	starGate: " + starGates.get(i).id;

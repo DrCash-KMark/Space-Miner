@@ -38,9 +38,9 @@ changelog
 
 Moha:
 kommentek (UI, game, printable, controllable)
-create material direkt belehelyezéssel
 tesztek logikusan
-load/save
+	load/save
+NICE TO HAVE: create material direkt belehelyezéssel
 NICE TO HAVE: Could not parse command rendesen
 
 # load/save test
@@ -49,10 +49,13 @@ create sun sun1
 create asteroid ast1 sun sun1
 set asteroid closeToSun ast1 f
 create settler set1 asteroid ast1
+create alien ali1 asteroid ast1
+create robot rob1 asteroid ast1
 create ice ice1 asteroid ast1
 create iron iro1 settler set1
-create coal coa1 settler set1
+create coal coa1 alien ali1
 create uran ura1 settler set1
 create stargate sta1 asteroid ast1
 create base bas1 asteroid ast1
 list all
+save

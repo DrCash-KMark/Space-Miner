@@ -38,8 +38,8 @@ changelog
 
 Moha:
 	kommentek (UI, game, printable, controllable)
-tesztek logikusan
-	load/save
+	tesztek logikusan
+		load/save
 NICE TO HAVE: create material direkt belehelyezéssel
 NICE TO HAVE: Could not parse command rendesen
 
@@ -54,6 +54,7 @@ create robot rob1 asteroid ast1
 create ice ice1 asteroid ast1
 create iron iro1 settler set1
 create coal coa1 alien ali1
+# create coal coa1 settler set1
 create uran ura1 settler set1
 create stargate sta1 asteroid ast1
 create base bas1 asteroid ast1

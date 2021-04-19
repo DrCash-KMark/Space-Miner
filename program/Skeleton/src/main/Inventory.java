@@ -312,7 +312,7 @@ public class Inventory extends Printable{
 	
 	/**
 	 * Compares the given and the local inventory material list and 
-	 * returns with the not remainder.
+	 * returns with the remainder.
 	 * @param i: the given inventory
 	 * @return LinkedList<Material>: remainder 
 	 */
@@ -321,19 +321,18 @@ public class Inventory extends Printable{
 		LinkedList<Material> copyMatList = new LinkedList<Material>();
 		for(Material item : materialList) {
 			if(item.getName().equals("Iron")) {
-				copyMatList.add(new Iron("teszt"));
+				copyMatList.add(new Iron("temp"));
 			}
 			if(item.getName().equals("Uran")) {
-				copyMatList.add(new Uran("teszt"));
+				copyMatList.add(new Uran("temp"));
 			}
 			if(item.getName().equals("Ice")) {
-				copyMatList.add(new Ice("teszt"));
+				copyMatList.add(new Ice("temp"));
 			}
 			if(item.getName().equals("Coal")) {
-				copyMatList.add(new Coal("teszt"));
+				copyMatList.add(new Coal("temp"));
 			}
 		}
-		
 		if(materialList.size()!=0) {
 			for(Material item : materials) {
 		    	

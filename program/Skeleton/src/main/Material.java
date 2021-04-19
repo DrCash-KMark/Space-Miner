@@ -115,7 +115,7 @@ public abstract class Material extends Printable{
 	                "isRadio:" + Tools.bool(this.isRadio) + "\n" +
 	                "name: " + this.name + "\n" +
 	                "canEvaporate: " + Tools.bool(this.canEvaporate) + "\n" +
-	                "exposedCounter: " + this.exposedCounter + "\n";
+	                "exposedCounter: " + this.exposedCounter;
 		return returnValue;
 	}
 }

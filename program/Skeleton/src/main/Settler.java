@@ -57,7 +57,7 @@ public class Settler extends Entity implements Drilling, Mining {
 		STARGATE_RECIPE.addMaterial(new Uran());
 		STARGATE_RECIPE.addMaterial(new Ice());
 		hadactionthisturn = false;
-		this.setId("SET"+ String.valueOf(nextId));
+		this.setId("set"+ String.valueOf(nextId));
 		nextId++;
 	}
 	/**

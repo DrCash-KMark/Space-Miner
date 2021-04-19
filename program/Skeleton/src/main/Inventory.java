@@ -141,14 +141,25 @@ public class Inventory extends Printable{
         	returnValue += "MaterialId: -\n";
         }else {
         	for(int i =0; i<materials.size(); i++) {
-				returnValue += "MaterialId: " + materials.get(i).id + "\n";
+        		if(i!=materials.size()-1) {
+        			returnValue += "MaterialId: " + materials.get(i).id + "\n";
+        		}
+        		else {
+        			returnValue += "MaterialId: " + materials.get(i).id;
+        		}
+				
 			}
         }
         if(starGates.size()==0) {
         	returnValue += "StarGatesId: -\n";
         }else {
         	for(int i =0; i<starGates.size(); i++) {
-    			returnValue += "StarGatesId: " + starGates.get(i).id + "\n";
+        		if(i!=starGates.size()-1) {
+        			returnValue += "StarGatesId: " + starGates.get(i).id + "\n";
+        		}
+        		else {
+        			returnValue += "StarGatesId: " + starGates.get(i).id;
+        		}
     		}
         }
         return returnValue;

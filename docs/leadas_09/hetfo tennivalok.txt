@@ -21,5 +21,6 @@ kommentek
 init remove all prev entities + reset nextId to 0
 list turn events
 list all
+"# "-es kommentek
 tesztek logikusan
 load/save (csak game.txt be/bol)

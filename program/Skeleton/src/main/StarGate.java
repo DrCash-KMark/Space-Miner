@@ -30,11 +30,11 @@ public class StarGate extends Building implements Moving {
 	 * constructor for StarGate without parameter
 	 */
 	public StarGate() {
-		id = "stg" + nextId;
+		id = "sta" + nextId;
 		nextId++;
 		works = false;
 		wasInSunFlare = false;
-		isRandom = true;
+		isRandom = false;
 	}
 	
 	public StarGate(String _id, Asteroid _asteroid, StarGate _neighbour, Boolean _works, Boolean _wasInSunFlare, Boolean _isRandom) {
@@ -159,6 +159,7 @@ public class StarGate extends Building implements Moving {
 	
 	@Override
 	public void getNotifiedAboutSunflare() {
+		owner.addTurnEvent("stargate broke " + id);
 		wasInSunFlare = true;
 	}
 
@@ -173,6 +174,7 @@ public class StarGate extends Building implements Moving {
 	public void move(Asteroid destination) {
 		if (asteroid != null) {
 			if (asteroid.getNeighbours().contains(destination)) {
+				owner.addTurnEvent("stargate move " + id + " " + destination.getId());
 				this.asteroid.removeBuilding(this);
 				destination.addBuilding(this);
 				this.asteroid = destination;				
@@ -189,6 +191,7 @@ public class StarGate extends Building implements Moving {
 		if (destination.getWorks()) {
 			Asteroid destAsteroid = destination.getNeighbour().getAsteroid();
 			if (destAsteroid != null) {
+				owner.addTurnEvent("stargate move " + id + " " + destAsteroid.getId());
 				if (asteroid != null) {
 					asteroid.removeBuilding(this);
 				}

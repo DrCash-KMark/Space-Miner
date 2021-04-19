@@ -715,6 +715,8 @@ set stargate neighbour sta2 sta1
 start game
 sunflare sun1
 list turn events
+start next turn
+list turn events
 list all
 
 # ELVART KIMENET: 

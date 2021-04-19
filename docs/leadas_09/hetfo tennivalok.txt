@@ -1,6 +1,7 @@
 Mark:
 az Asteroid() konstruktor allitsa be a closeToSun erteket f re plspls
 a basic constructor allitsa be az isRandomot f re plspls
+a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
 list turn events
 jol legyen az id beallitva
 kivevesek asteroidbol listasan
@@ -8,11 +9,13 @@ changelog
 
 Zoli:
 a basic constructor allitsa be az isRandomot f re plspls
+a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
 list turn events
 jol legyen az id beallitva
 doksi
 
 Csabi:
+a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
 kommentek
 list turn events
 jol legyen az id beallitva
@@ -20,11 +23,13 @@ changelog (sajat valtoztatasok)
 
 Adam:
 a basic constructor allitsa be az isRandomot f re plspls
+a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
 list turn events
 jol legyen az id beallitva
 changelog
 
 Moha:
+initbe valtozokba sunAmount, asteroidSunAmount stb...
 kommentek (UI, game, printable, controllable)
 tesztek logikusan
 load/save (csak game.txt be/bol)

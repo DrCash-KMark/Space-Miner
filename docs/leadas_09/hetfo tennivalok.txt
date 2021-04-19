@@ -38,8 +38,8 @@ changelog
 
 Moha:
 	kommentek (UI, game, printable, controllable)
-tesztek logikusan
-	load/save
+	tesztek logikusan
+		load/save
 NICE TO HAVE: create material direkt belehelyezéssel
 NICE TO HAVE: Could not parse command rendesen
 

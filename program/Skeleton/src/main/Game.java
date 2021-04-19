@@ -1354,14 +1354,7 @@ public class Game {
 				}
 				
 				for (NonPlayer nonPlayer : asteroid.getNonPlayers()) {
-					saveString += "NonPlayer:\n" + nonPlayer.genSaveString() + "\n----------------------------------------------------\n";
-					
-					/*if (((Alien)nonPlayer).getInventory() != null) {
-						for (Material material : ((Alien)nonPlayer).getInventory().getMaterials()) {
-							saveString += "Material:\n" + material.genSaveString() + "\n----------------------------------------------------\n";
-						}
-					}*/
-						
+					saveString += "NonPlayer:\n" + nonPlayer.genSaveString() + "\n----------------------------------------------------\n";		
 				}
 			}
 		}

@@ -1,0 +1,12 @@
+A Robot, StarGate és Base elkészítésénél a mögöttes logika több pontos is módosításra került.	
+Az oka ennek, hogy eddig Inventory példányokon működtek a kapcsolódó subSet és subTraction metódusok az Inventory
+osztályban, viszont ezek mostantól Material listákon működnek. 
+A változtatást nagymértékben érintő metódusok:
+public LinkedList<Material> subSet(LinkedList<Material> materialList) : Mostantól listákon keresztül dolgozik és listában is adja vissza
+a visszatérési értékét. A belső logika nem változott.
+public LinkedList<Material> subtraction(LinkedList<Material> materialList): Mostantól listákon keresztül dolgozik és listában is adja vissza
+a visszatérési értékét. A belső logika nem változott.
+public Material removeMaterialFromList(LinkedList<Material> materialList,Material m): A kapott listából eltávolítja a kapott Materialt, ha
+azt tartalmazza és vissza is adja. Ez egy új metodus ami eddig nem létezett.
+A változtatás oka, hogy így sokkal kezelhetőbb és egyszerűbb lett a dolgok elkészítése és a problémamegoldás is sokkal 
+gördülékenyebben véghezvihető.

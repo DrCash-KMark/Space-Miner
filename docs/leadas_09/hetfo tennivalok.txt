@@ -2,6 +2,7 @@ Mark:
 az Asteroid() konstruktor allitsa be a closeToSun erteket f re plspls
 a basic constructor allitsa be az isRandomot f re plspls
 a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
+genSaveString()-ben legyen a valtozo neve s erteke spaccel elvalasztva
 list turn events
 jol legyen az id beallitva
 kivevesek asteroidbol listasan
@@ -10,12 +11,14 @@ changelog
 Zoli:
 a basic constructor allitsa be az isRandomot f re plspls
 a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
+genSaveString()-ben legyen a valtozo neve s erteke spaccel elvalasztva
 list turn events
 jol legyen az id beallitva
 doksi
 
 Csabi:
 a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
+genSaveString()-ben legyen a valtozo neve s erteke spaccel elvalasztva
 kommentek
 list turn events
 jol legyen az id beallitva
@@ -24,12 +27,28 @@ changelog (sajat valtoztatasok)
 Adam:
 a basic constructor allitsa be az isRandomot f re plspls
 a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
+genSaveString()-ben legyen a valtozo neve s erteke spaccel elvalasztva
 list turn events
 jol legyen az id beallitva
 changelog
 
 Moha:
 kommentek (UI, game, printable, controllable)
+create material direkt belehelyezéssel
 tesztek logikusan
 load/save
 NICE TO HAVE: Could not parse command rendesen
+
+# load/save test
+
+create sun sun1
+create asteroid ast1 sun sun1
+set asteroid closeToSun ast1 f
+create settler set1 asteroid ast1
+create ice ice1 asteroid ast1
+create iron iro1 settler set1
+create coal coa1 settler set1
+create uran ura1 settler set1
+create stargate sta1 asteroid ast1
+create base bas1 asteroid ast1
+list all

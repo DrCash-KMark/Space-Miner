@@ -1,0 +1,63 @@
+Sun:
+id: sun1
+isRandom: f
+AsteroidId: ast1
+----------------------------------------------------
+Asteroid:
+id: ast1
+isRandom: f
+rockThickness: 0
+closeToSun: f
+capacity: 0
+settlerId: set1
+BuildingId: sta1
+BuildingId: bas1
+----------------------------------------------------
+Building:
+id: sta1
+asteroid: ast1
+neighbour: -
+works: f
+wasInSunFlare: f
+isRandom: t
+----------------------------------------------------
+Building:
+id: bas1
+asteroid: ast1
+----------------------------------------------------
+Settler:
+id: set1
+hadActionThisTurn: false
+asteroid: ast1
+inventory: I2
+----------------------------------------------------
+Inventory:
+id: I2
+capacityM: 10
+capacitySG: 3
+MaterialId: iro1
+MaterialId: coa1
+MaterialId: ura1
+StarGatesId: -
+----------------------------------------------------
+Material:
+id: iro1
+isRadio: f
+name: Iron
+canEvaporate: t
+exposedCounter: 0
+----------------------------------------------------
+Material:
+id: coa1
+isRadio: f
+name: Coal
+canEvaporate: t
+exposedCounter: 0
+----------------------------------------------------
+Material:
+id: ura1
+isRadio: f
+name: Uran
+canEvaporate: t
+exposedCounter: 0
+----------------------------------------------------

@@ -319,47 +319,51 @@ public class Game {
 				loadString = loadScanner.nextLine();
 				
 				switch (loadString) {
-					case "Sun":
+					case "Sun:":
 						loadSun(loadScanner, sunLoadList, asteroidLoadList);
 						
 						break;
-					case "Asteroid":
+					case "Asteroid:":
 						loadAsteroid(loadScanner, asteroidLoadList, settlerLoadList, materialLoadList, robotLoadList, alienLoadList, baseLoadList, starGateLoadList);
 						
 						break;
-					case "Material":
+					case "Material:":
 						loadString = loadScanner.nextLine();
 						
 						switch (loadString.split(" ")[1].charAt(0)) {
 							case 'i':
 								if (loadString.split(" ")[1].charAt(1) == 'c') {
 									Ice ice = new Ice();
+									ice.setId(loadString.split(" ")[1]);
 									
-									loadMaterial(ice, loadScanner, materialLoadList);
+									loadMaterial(ice, loadString, loadScanner, materialLoadList);
 								}
 								else {
 									Iron iron = new Iron();
+									iron.setId(loadString.split(" ")[1]);
 									
-									loadMaterial(iron, loadScanner, materialLoadList);
+									loadMaterial(iron, loadString, loadScanner, materialLoadList);
 								}
 								
 								break;
 							case 'u':
 								Uran uran = new Uran();
+								uran.setId(loadString.split(" ")[1]);
 								
-								loadMaterial(uran, loadScanner, materialLoadList);
+								loadMaterial(uran, loadString, loadScanner, materialLoadList);
 								
 								break;
 							case 'c':
 								Coal coal = new Coal();
+								coal.setId(loadString.split(" ")[1]);
 								
-								loadMaterial(coal, loadScanner, materialLoadList);
+								loadMaterial(coal, loadString, loadScanner, materialLoadList);
 								
 								break;
 						}
 						
 						break;
-					case "Building":
+					case "Building:":
 						loadString = loadScanner.nextLine();
 						
 						if (loadString.split(" ")[1].charAt(0) == 's')
@@ -368,15 +372,15 @@ public class Game {
 							loadBase(loadScanner, loadString, baseLoadList, asteroidLoadList);
 						
 						break;
-					case "Settler":
+					case "Settler:":
 						loadSettler(loadScanner, settlerLoadList, asteroidLoadList, inventoryLoadList);
 						
 						break;
-					case "Inventory":
+					case "Inventory:":
 						loadInventory(loadScanner, inventoryLoadList, materialLoadList, starGateLoadList);
 						
 						break;
-					case "NonPlayer":
+					case "NonPlayer:":
 						loadString = loadScanner.nextLine();
 						
 						if (loadString.split(" ")[1].charAt(0) == 'r')
@@ -461,6 +465,8 @@ public class Game {
 		}
 		
 		s.setOwner(this);
+		
+		loadString = scanner.nextLine();
 	}
 	
 	public void loadAsteroid(Scanner scanner, List<Asteroid> asteroidLoadList, List<Settler> settlerLoadList, List<Material> materialLoadList, List<Robot> robotLoadList, List<Alien> alienLoadList, List<Base> baseLoadList, List<StarGate> starGateLoadList) {
@@ -681,9 +687,7 @@ public class Game {
 		a.setOwner(this);
 	}
 	
-	public void loadMaterial(Material m, Scanner scanner, List<Material> materialLoadList) {
-		String loadString = scanner.nextLine();
-		
+	public void loadMaterial(Material m, String loadString, Scanner scanner, List<Material> materialLoadList) {
 		Boolean foundMaterial = false;
 		
 		for (Material material : materialLoadList) {

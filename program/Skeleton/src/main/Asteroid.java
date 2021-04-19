@@ -14,6 +14,7 @@ import java.util.*;
 //
 
 /**
+ * This class is responsible for the asteroid's behaviour and methods.
  * List are only available in java7 or older.
  *
  * @author Karpati
@@ -43,9 +44,11 @@ public class Asteroid extends Planet implements Controllable {
         this.id = "ast" + String.valueOf(nextId);
         nextId++;
 
+        this.mySun = null;
         this.nonPlayers = new LinkedList<>();
         this.settlers = new LinkedList<>();
-
+        this.closeToSun = false;
+        this.isRandom = false;
         this.neighbours = new LinkedList<>();
         this.buildings = new LinkedList<>();
         this.materials = new LinkedList<>();
@@ -53,7 +56,7 @@ public class Asteroid extends Planet implements Controllable {
     }
 
     /**
-     * Constructor for Asteroid which is usefully during loading in data
+     * Constructor for Asteroid which could be usefully during loading in data
      *
      * @param rockThickness
      * @param capacity
@@ -65,8 +68,8 @@ public class Asteroid extends Planet implements Controllable {
      * @param neighbours
      * @param buildings
      */
-    public Asteroid(/*Game owner,*/ String id, boolean isRandom, int rockThickness, int capacity, boolean closeToSun, List<Settler> settlers, List<NonPlayer> nonPlayers, List<Material> materials, List<Asteroid> neighbours, List<Building> buildings) {
-        //this.owner = owner;
+    public Asteroid(Sun sun, String id, boolean isRandom, int rockThickness, int capacity, boolean closeToSun, List<Settler> settlers, List<NonPlayer> nonPlayers, List<Material> materials, List<Asteroid> neighbours, List<Building> buildings) {
+        this.mySun = sun;
         this.id = id;
         this.isRandom = isRandom;
         this.rockThickness = rockThickness;
@@ -82,7 +85,7 @@ public class Asteroid extends Planet implements Controllable {
 //Get/Set-----------------------------------------------------------------
 
     public void setMySun(Sun s) {
-        this.mySun=s;
+        this.mySun = s;
     }
 
     public void addNonPlayer(NonPlayer nonPlayer) {
@@ -158,7 +161,8 @@ public class Asteroid extends Planet implements Controllable {
     //Printable
 
     /**
-     * Creates a string with this class' all important data for a Player.
+     * Creates a string with this class' all important data for a Player. This will be show on the screen.
+     * If there is something missing - is printed
      *
      * @return string containing all the important information for the user
      */
@@ -212,14 +216,14 @@ public class Asteroid extends Planet implements Controllable {
     }
 
     /**
-     * Creates a string storing the most important datas of this class
+     * Creates a string storing the most important data of this class
      *
      * @return the string the will be written into the file.
      */
     @Override
     public String genSaveString() {
         String returnValue = "id: " + this.id + "\n" +
-                "isRandom:" + Tools.bool(this.isRandom) + "\n" +
+                "isRandom: " + Tools.bool(this.isRandom) + "\n" +
                 "rockThickness: " + this.rockThickness + "\n" +
                 "closeToSun: " + Tools.bool(this.closeToSun) + "\n" +
                 "capacity: " + this.capacity + "\n";
@@ -255,12 +259,13 @@ public class Asteroid extends Planet implements Controllable {
             b.onTurn();
         }
         if (rockThickness <= 0 && closeToSun) {
-            List<Material> forChecking=materials;
+            List<Material> forChecking = materials;
             for (Material m : forChecking) {
                 m.exposedAndCloseToSun(this);
             }
         }
         if (isRandom && rnd.nextInt(100) < 20) {
+            //so we know what happened in this turn
             this.owner.addTurnEvent("Asteroid:" + this.id + " asteroid close to sun changed");
             this.closeToSun = !this.closeToSun;
         }
@@ -269,19 +274,22 @@ public class Asteroid extends Planet implements Controllable {
     //ReactsToSunFlare
 
     /**
-     * This function notifies every entity on the surface of the asteroid
+     * This function tells everything on the asteroid tha a sun flare happened.
+     * tempList is used so when a material is removed the for loop won't break the whole game
      */
     public void getNotifiedAboutSunflare() {
 
-
+        List<Building> tempBuildingList = new LinkedList<>();
         for (Building b : buildings) {
-            b.getNotifiedAboutSunflare();
+            tempBuildingList.add(b);
+        }
+        for (Building building : tempBuildingList) {
+            building.getNotifiedAboutSunflare();
         }
         List<Settler> tempSettlerList = new LinkedList<>();
         for (Settler settler : settlers) {
             tempSettlerList.add(settler);
         }
-
         for (Settler settler : tempSettlerList) {
             settler.getNotifiedAboutSunflare();
         }
@@ -307,6 +315,7 @@ public class Asteroid extends Planet implements Controllable {
         //this is hard coded
         this.materials = new LinkedList<Material>();
         int materialType = rnd.nextInt(5);
+        //this maybe is not optimal
         for (int i = 0; i < this.capacity; i++) {
             switch (materialType) {
                 case 0:
@@ -349,23 +358,37 @@ public class Asteroid extends Planet implements Controllable {
     /**
      * this function notifies the entities, buildings that it have exploded, and
      * removes itself from it's neighbours' neighbours list.
+     * tempList is used so when a material is removed the for loop won't break the whole game
      */
     public void explode() {
         this.owner.addTurnEvent("AsteroidId:" + this.id + " asteroid exploded");
-        List<Settler> forCheckingSettler=settlers;
-        for (Settler s : forCheckingSettler) {
-            s.asteroidExploded();
+
+
+        List<Building> tempBuildingList = new LinkedList<>();
+        for (Building b : buildings) {
+            tempBuildingList.add(b);
         }
-        List<NonPlayer> forCheckingNonPlayer=nonPlayers;
-        for (NonPlayer np : forCheckingNonPlayer) {
+        for (Building building : tempBuildingList) {
+            building.destroy();
+        }
+        List<Settler> tempSettlerList = new LinkedList<>();
+        for (Settler settler : settlers) {
+            tempSettlerList.add(settler);
+        }
+        for (Settler settler : tempSettlerList) {
+            settler.asteroidExploded();
+        }
+        List<NonPlayer> tempNonPlayerList = new LinkedList<>();
+        for (NonPlayer np : nonPlayers) {
+            tempNonPlayerList.add(np);
+        }
+        for (NonPlayer np : tempNonPlayerList) {
             np.asteroidExploded();
         }
+
+
         for (Asteroid n : neighbours) {
             n.removeNeighbour(this);
-        }
-        List<Building> forCheckingBuildings=buildings;
-        for (Building b : forCheckingBuildings) {
-            b.destroy();
         }
         this.mySun.removeAsteroid(this);
         owner.removeAsteroid(this);
@@ -374,12 +397,18 @@ public class Asteroid extends Planet implements Controllable {
     /**
      * Decreases the rock's thickness and if the materials gets to the surface
      * notifies it.
+     * tempList is used so when a material is removed the for loop won't break the whole game
      */
     public void drilling() {
+        this.owner.addTurnEvent("AsteroidId:" + this.id + " asteroid is drilled");
         if (rockThickness > 0) {
             this.rockThickness--;
             if (this.materials != null && this.closeToSun && this.rockThickness == 0) {
+                List<Material> tempMaterial = new LinkedList<>();
                 for (Material m : materials) {
+                    tempMaterial.add(m);
+                }
+                for (Material m : tempMaterial) {
                     m.exposedAndCloseToSun(this);
                 }
             }
@@ -392,8 +421,8 @@ public class Asteroid extends Planet implements Controllable {
      * this function adds materials to the asteroid if possible and returns whether
      * the operation was successful
      *
-     * @param m the materials that the function try to add to the asteroid
-     * @return if the materials was successfully added or not.
+     * @param m the material that the function try to add to the asteroid
+     * @return whether the materials was successfully added or not.
      */
     public boolean addMaterial(Material m) {
         if (this.materials == null) {

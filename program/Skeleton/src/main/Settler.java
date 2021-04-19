@@ -131,7 +131,6 @@ public class Settler extends Entity implements Drilling, Mining {
 	public void drill() {
 		this.asteroid.drilling();
 		this.hadactionthisturn = true;
-		owner.addTurnEvent("asteroid drilled "+this.asteroid.getId());
 	}
 	/**
 	 * This settler mines on his asteroid.
@@ -141,7 +140,6 @@ public class Settler extends Entity implements Drilling, Mining {
 		if(this.inventory.isFullMaterials() == false) {
 			Material m = this.asteroid.removeMaterial();
 			inventory.addMaterial(m);
-			owner.addTurnEvent("asteroid mined "+this.asteroid.getId());
 		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");

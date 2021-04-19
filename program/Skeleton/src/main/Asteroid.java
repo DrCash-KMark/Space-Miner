@@ -432,6 +432,7 @@ public class Asteroid extends Planet implements Controllable {
             return false;
         } else {
             this.materials.add(m);
+            this.owner.addTurnEvent("material dropped" + m.id);
             if (this.closeToSun) {
                 m.exposedAndCloseToSun(this);
             }

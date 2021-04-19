@@ -37,7 +37,7 @@ jol legyen az id beallitva
 changelog
 
 Moha:
-kommentek (UI, game, printable, controllable)
+	kommentek (UI, game, printable, controllable)
 tesztek logikusan
 	load/save
 NICE TO HAVE: create material direkt belehelyezéssel

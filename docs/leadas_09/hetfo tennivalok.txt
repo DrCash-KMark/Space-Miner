@@ -3,6 +3,7 @@ az Asteroid() konstruktor allitsa be a closeToSun erteket f re plspls
 a basic constructor allitsa be az isRandomot f re plspls
 a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
 genSaveString()-ben legyen a valtozo neve s erteke spaccel elvalasztva
+genSaveString() + genUIString() vegen ne legyen \n
 list turn events
 jol legyen az id beallitva
 kivevesek asteroidbol listasan
@@ -12,6 +13,7 @@ Zoli:
 a basic constructor allitsa be az isRandomot f re plspls
 a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
 genSaveString()-ben legyen a valtozo neve s erteke spaccel elvalasztva
+genSaveString() + genUIString() vegen ne legyen \n
 list turn events
 jol legyen az id beallitva
 doksi
@@ -19,6 +21,7 @@ doksi
 Csabi:
 a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
 genSaveString()-ben legyen a valtozo neve s erteke spaccel elvalasztva
+genSaveString() + genUIString() vegen ne legyen \n
 kommentek
 list turn events
 jol legyen az id beallitva
@@ -28,6 +31,7 @@ Adam:
 a basic constructor allitsa be az isRandomot f re plspls
 a basic konstruktor rendesen adjon id-t (az osztaly elso harom karaktere kisbetusen + szam)
 genSaveString()-ben legyen a valtozo neve s erteke spaccel elvalasztva
+genSaveString() + genUIString() vegen ne legyen \n
 list turn events
 jol legyen az id beallitva
 changelog

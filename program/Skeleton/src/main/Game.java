@@ -765,22 +765,24 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		Boolean foundNeighbour = false;
+		if (!loadString.split(" ")[1].equals("-")) {
+			Boolean foundNeighbour = false;
 		
-		for (StarGate neighbour : starGateLoadList) {
-			if (neighbour.getId().equals(loadString.split(" ")[1])) {
-				foundNeighbour = true;
-				sg.setNeighbour(neighbour);
+			for (StarGate neighbour : starGateLoadList) {
+				if (neighbour.getId().equals(loadString.split(" ")[1])) {
+					foundNeighbour = true;
+					sg.setNeighbour(neighbour);
+				}
 			}
-		}
 		
-		if (!foundNeighbour) {
-			StarGate neighbour = new StarGate();
-			neighbour.setId(loadString.split(" ")[1]);
+			if (!foundNeighbour) {
+				StarGate neighbour = new StarGate();
+				neighbour.setId(loadString.split(" ")[1]);
 			
-			sg.setNeighbour(neighbour);
-			
-			starGateLoadList.add(neighbour);
+				sg.setNeighbour(neighbour);
+					
+				starGateLoadList.add(neighbour);
+			}
 		}
 		
 		loadString = scanner.nextLine();
@@ -949,6 +951,9 @@ public class Game {
 		loadString = scanner.nextLine();
 		
 		while (loadString.split(" ")[0].equals("MaterialId:")) {
+			if (loadString.split(" ")[1].equals("-"))
+				continue;
+			
 			Boolean foundMaterial = false;
 			
 			if (loadString.split(" ")[1].charAt(0) == 'i') {
@@ -1019,9 +1024,14 @@ public class Game {
 					materialLoadList.add(coal);
 				}
 			}
+			
+			loadString = scanner.nextLine();
 		}
 		
 		while (loadString.split(" ")[0].equals("StarGateId:")) {
+			if (loadString.split(" ")[0].equals("MaterialId:"))
+				continue;
+			
 			Boolean foundStarGate = false;
 			
 			StarGate sg = new StarGate();

@@ -10,6 +10,8 @@ rockThickness: 0
 closeToSun: f
 capacity: 0
 settlerId: set1
+nonPlayerId: ali1
+nonPlayerId: rob1
 BuildingId: sta1
 BuildingId: bas1
 ----------------------------------------------------
@@ -19,7 +21,7 @@ asteroid: ast1
 neighbour: -
 works: f
 wasInSunFlare: f
-isRandom: t
+isRandom: f
 ----------------------------------------------------
 Building:
 id: bas1
@@ -29,16 +31,15 @@ Settler:
 id: set1
 hadActionThisTurn: false
 asteroid: ast1
-inventory: I2
+inventory: inv2
 ----------------------------------------------------
 Inventory:
-id: I2
+id: inv2
 capacityM: 10
 capacitySG: 3
 MaterialId: iro1
-MaterialId: coa1
 MaterialId: ura1
-StarGatesId: -
+
 ----------------------------------------------------
 Material:
 id: iro1
@@ -48,16 +49,34 @@ canEvaporate: t
 exposedCounter: 0
 ----------------------------------------------------
 Material:
+id: ura1
+isRadio: f
+name: Uran
+canEvaporate: t
+exposedCounter: 0
+----------------------------------------------------
+NonPlayer:
+id: ali1
+asteroid: ast1
+isRandom: f
+inventory: inv8
+----------------------------------------------------
+Inventory
+id: inv8
+capacityM: 10
+capacitySG: 3
+MaterialId: coa1
+
+----------------------------------------------------
+Material:
 id: coa1
 isRadio: f
 name: Coal
 canEvaporate: t
 exposedCounter: 0
 ----------------------------------------------------
-Material:
-id: ura1
-isRadio: f
-name: Uran
-canEvaporate: t
-exposedCounter: 0
+NonPlayer:
+id: rob1
+asteroid: ast1
+isRandom: false
 ----------------------------------------------------

@@ -520,7 +520,7 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		while (loadString.equals("AsteroidId:")) {
+		while (loadString.split(" ")[0].equals("AsteroidId:")) {
 			Boolean foundAsteroid = false;
 			
 			for (Asteroid asteroid : asteroidLoadList) {
@@ -1354,13 +1354,13 @@ public class Game {
 				}
 				
 				for (NonPlayer nonPlayer : asteroid.getNonPlayers()) {
-					saveString += "NonPlayer:" + nonPlayer.genSaveString() + "\n----------------------------------------------------\n";
+					saveString += "NonPlayer:\n" + nonPlayer.genSaveString() + "\n----------------------------------------------------\n";
 					
-					if (((Alien)nonPlayer).getInventory() != null) {
+					/*if (((Alien)nonPlayer).getInventory() != null) {
 						for (Material material : ((Alien)nonPlayer).getInventory().getMaterials()) {
 							saveString += "Material:\n" + material.genSaveString() + "\n----------------------------------------------------\n";
 						}
-					}
+					}*/
 						
 				}
 			}

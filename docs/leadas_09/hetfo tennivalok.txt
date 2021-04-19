@@ -54,6 +54,7 @@ create robot rob1 asteroid ast1
 create ice ice1 asteroid ast1
 create iron iro1 settler set1
 create coal coa1 alien ali1
+# create coal coa1 settler set1
 create uran ura1 settler set1
 create stargate sta1 asteroid ast1
 create base bas1 asteroid ast1

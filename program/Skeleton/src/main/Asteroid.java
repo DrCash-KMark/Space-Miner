@@ -266,7 +266,7 @@ public class Asteroid extends Planet implements Controllable {
         }
         if (isRandom && rnd.nextInt(100) < 20) {
             //so we know what happened in this turn
-            this.owner.addTurnEvent("Asteroid:" + this.id + " asteroid close to sun changed");
+            this.owner.addTurnEvent("asteroid sun distance changed "+this.id);
             this.closeToSun = !this.closeToSun;
         }
     }
@@ -361,7 +361,7 @@ public class Asteroid extends Planet implements Controllable {
      * tempList is used so when a material is removed the for loop won't break the whole game
      */
     public void explode() {
-        this.owner.addTurnEvent("AsteroidId:" + this.id + " asteroid exploded");
+        this.owner.addTurnEvent("asteroid exploded "+this.id);
 
 
         List<Building> tempBuildingList = new LinkedList<>();
@@ -400,7 +400,7 @@ public class Asteroid extends Planet implements Controllable {
      * tempList is used so when a material is removed the for loop won't break the whole game
      */
     public void drilling() {
-        this.owner.addTurnEvent("AsteroidId:" + this.id + " asteroid is drilled");
+        this.owner.addTurnEvent("asteroid drilled "+this.id);
         if (rockThickness > 0) {
             this.rockThickness--;
             if (this.materials != null && this.closeToSun && this.rockThickness == 0) {
@@ -454,6 +454,7 @@ public class Asteroid extends Planet implements Controllable {
             return null;
         }
         Material returnValue = this.materials.remove(0);
+        this.owner.addTurnEvent("asteroid mined "+this.id);
         return returnValue;
     }
 

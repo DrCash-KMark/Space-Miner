@@ -9,8 +9,10 @@ public class Alien extends NonPlayer implements Mining {
 //Constructors:-----------------------------------------------
 
 	public Alien() {
+		id = "ali" + nextId;
+		nextId++;
 		inventory = new Inventory();
-		isRandom = true;
+		isRandom = false;
 	}
 	
 	public Alien(String _id, Asteroid _asteroid, Boolean _isRandom, Inventory _inventory) {
@@ -51,6 +53,7 @@ public class Alien extends NonPlayer implements Mining {
 	@Override
 	public void getNotifiedAboutSunflare() {
 		if (!asteroid.isHollow() || asteroid.getRockThickness() > 0) {
+			owner.addTurnEvent("alien died " + id);
 			this.die();
 		}
 	}
@@ -59,6 +62,7 @@ public class Alien extends NonPlayer implements Mining {
 	public void move(Asteroid destination) {
 		if (asteroid != null) {
 			if (asteroid.getNeighbours().contains(destination)) {
+				owner.addTurnEvent("alien move " + id + " " + destination.getId());
 				asteroid.removeNonPlayer(this);
 				destination.addNonPlayer(this);
 				asteroid = destination;
@@ -71,6 +75,7 @@ public class Alien extends NonPlayer implements Mining {
 		if (destination.getWorks()) {
 			Asteroid destAsteroid = destination.getNeighbour().getAsteroid();
 			if (destAsteroid != null) {
+				owner.addTurnEvent("alien move " + id + " " + destAsteroid.getId());
 				if (asteroid != null) {
 					asteroid.removeNonPlayer(this);
 				}

@@ -144,7 +144,7 @@ public abstract class Material extends Printable{
 	@Override
 	public String genSaveString() {
 		 String returnValue ="id: " + this.id + "\n" +
-	                "isRadio:" + Tools.bool(this.isRadio) + "\n" +
+	                "isRadio: " + Tools.bool(this.isRadio) + "\n" +
 	                "name: " + this.name + "\n" +
 	                "canEvaporate: " + Tools.bool(this.canEvaporate) + "\n" +
 	                "exposedCounter: " + this.exposedCounter;

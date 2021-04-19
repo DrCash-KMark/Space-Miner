@@ -35,27 +35,27 @@ public class Settler extends Entity implements Drilling, Mining {
 		inventory = new Inventory();
 		BASE_RECIPE = new Inventory();
 		BASE_RECIPE.setCapacityM(12);
-		BASE_RECIPE.addMaterial(new Iron());
-		BASE_RECIPE.addMaterial(new Iron());
-		BASE_RECIPE.addMaterial(new Iron());
-		BASE_RECIPE.addMaterial(new Uran());
-		BASE_RECIPE.addMaterial(new Uran());
-		BASE_RECIPE.addMaterial(new Uran());
-		BASE_RECIPE.addMaterial(new Coal());
-		BASE_RECIPE.addMaterial(new Coal());
-		BASE_RECIPE.addMaterial(new Coal());
-		BASE_RECIPE.addMaterial(new Ice());
-		BASE_RECIPE.addMaterial(new Ice());
-		BASE_RECIPE.addMaterial(new Ice());
+		BASE_RECIPE.addMaterial(new Iron("recept"));
+		BASE_RECIPE.addMaterial(new Iron("recept"));
+		BASE_RECIPE.addMaterial(new Iron("recept"));
+		BASE_RECIPE.addMaterial(new Uran("recept"));
+		BASE_RECIPE.addMaterial(new Uran("recept"));
+		BASE_RECIPE.addMaterial(new Uran("recept"));
+		BASE_RECIPE.addMaterial(new Coal("recept"));
+		BASE_RECIPE.addMaterial(new Coal("recept"));
+		BASE_RECIPE.addMaterial(new Coal("recept"));
+		BASE_RECIPE.addMaterial(new Ice("recept"));
+		BASE_RECIPE.addMaterial(new Ice("recept"));
+		BASE_RECIPE.addMaterial(new Ice("recept"));
 		ROBOT_RECIPE = new Inventory();
-		ROBOT_RECIPE.addMaterial(new Iron());
-        ROBOT_RECIPE.addMaterial(new Uran());
-        ROBOT_RECIPE.addMaterial(new Coal());
+		ROBOT_RECIPE.addMaterial(new Iron("recept"));
+        ROBOT_RECIPE.addMaterial(new Uran("recept"));
+        ROBOT_RECIPE.addMaterial(new Coal("recept"));
 		STARGATE_RECIPE = new Inventory();
-		STARGATE_RECIPE.addMaterial(new Iron());
-		STARGATE_RECIPE.addMaterial(new Iron());
-		STARGATE_RECIPE.addMaterial(new Uran());
-		STARGATE_RECIPE.addMaterial(new Ice());
+		STARGATE_RECIPE.addMaterial(new Iron("recept"));
+		STARGATE_RECIPE.addMaterial(new Iron("recept"));
+		STARGATE_RECIPE.addMaterial(new Uran("recept"));
+		STARGATE_RECIPE.addMaterial(new Ice("recept"));
 		hadactionthisturn = false;
 		this.setId("set"+ String.valueOf(nextId));
 		nextId++;
@@ -131,7 +131,6 @@ public class Settler extends Entity implements Drilling, Mining {
 	public void drill() {
 		this.asteroid.drilling();
 		this.hadactionthisturn = true;
-		owner.addTurnEvent("asteroid drilled "+this.asteroid.getId());
 	}
 	/**
 	 * This settler mines on his asteroid.
@@ -141,7 +140,6 @@ public class Settler extends Entity implements Drilling, Mining {
 		if(this.inventory.isFullMaterials() == false) {
 			Material m = this.asteroid.removeMaterial();
 			inventory.addMaterial(m);
-			owner.addTurnEvent("asteroid mined "+this.asteroid.getId());
 		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");
@@ -238,7 +236,6 @@ public class Settler extends Entity implements Drilling, Mining {
 			this.inventory.removeMaterial(m);
 		}
 		this.hadactionthisturn = true;
-		owner.addTurnEvent("material dropped" + m.getId());
 		//main.log(true, "void", "void", "");
 	}
 	/**
@@ -251,6 +248,7 @@ public class Settler extends Entity implements Drilling, Mining {
 			asteroid.addBuilding(nsg);
 			nsg.onPlace();
 			this.inventory.removeStarGate(sg);
+			owner.addTurnEvent("stargate placed "+nsg.getId() + " "+asteroid.getId());
 		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");

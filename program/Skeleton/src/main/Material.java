@@ -46,34 +46,66 @@ public abstract class Material extends Printable{
 	
 //Get/Set-----------------------------------------------------------------
 
+	/**
+	 * True, if the Material is radioactive.
+	 * @param boolean
+	 */
 	public boolean isRadio() {
 		return isRadio;
 	}
 
+	/**
+	 * Setter for the Material radioactive state.
+	 * @param boolean: isRadio
+	 */
 	public void setRadio(boolean isRadio) {
 		this.isRadio = isRadio;
 	}
 
+	/**
+	 * True, if the Material is evaporated.
+	 * @param boolean
+	 */
 	public boolean isCanEvaporate() {
 		return canEvaporate;
 	}
 
+	/**
+	 * Setter for the Material evaporated state.
+	 * @param boolean: canEvaporate
+	 */
 	public void setCanEvaporate(boolean canEvaporate) {
 		this.canEvaporate = canEvaporate;
 	}
 	
+	/**
+	 * Getter for the Material name.
+	 * @return String
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Setter for the Material name.
+	 * @param String: name
+	 */
 	public void setName(String name) {		
 		this.name = name;
 	}
 	
+	/**
+	 * Getter for the ExposedCounter.
+	 * @return int
+	 */
 	public int getExposedCounter() {
 		return exposedCounter;
 	}
 
+	/**
+	 * Setter for the Material ExposedCounter.
+	 * @param int: exposedCounter
+	 */
 	public void setExposedCounter(int exposedCounter) {		
 		this.exposedCounter = exposedCounter;
 	}
@@ -90,7 +122,7 @@ public abstract class Material extends Printable{
 	@Override
 	public String genUIString() {
 		return "Material id: " + id + "\n"
-				+ "Name: " + name + "\n";
+				+ "Name: " + name;
 	}
 	
 //Own methods:----------------------------------------------------------------------------

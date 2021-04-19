@@ -34,11 +34,11 @@ public class UI {
 				
 				break;
 			case "load":
-				game.loadGame(splitString[1]);
+				game.loadGame();
 				
 				break;
 			case "save":
-				game.saveGame(splitString[1]);
+				game.saveGame();
 				
 				break;
 			case "create":

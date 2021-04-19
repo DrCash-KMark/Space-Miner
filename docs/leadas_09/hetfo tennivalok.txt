@@ -29,8 +29,7 @@ jol legyen az id beallitva
 changelog
 
 Moha:
-initbe valtozokba sunAmount, asteroidSunAmount stb...
 kommentek (UI, game, printable, controllable)
 tesztek logikusan
-load/save (csak game.txt be/bol)
+load/save
 NICE TO HAVE: Could not parse command rendesen

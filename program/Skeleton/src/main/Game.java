@@ -32,16 +32,13 @@ public class Game {
 	
 	//Lists of objects present in game:
 	private List<Settler> settlers = new ArrayList<Settler>();
-	//private List<Controllable> controllables = new ArrayList<Controllable>();
 
-	// maybe?
 	private List<Sun> suns = new ArrayList<Sun>();
 	private List<Asteroid> asteroids = new ArrayList<Asteroid>();
 	private List<NonPlayer> nonPlayers = new ArrayList<NonPlayer>();
 	
 	//Lists of objects scheduled to destroy:
 	private List<Settler> settlersToRemove = new ArrayList<Settler>();
-	//private List<Controllable> controllablesToRemove = new ArrayList<Controllable>();
 	
 	private List<Sun> sunsToRemove = new ArrayList<Sun>();
 	private List<Asteroid> asteroidsToRemove = new ArrayList<Asteroid>();
@@ -67,10 +64,6 @@ public class Game {
 		for (Settler settler : settlersToRemove) {
 			settlers.remove(settler);
 		}
-		
-		/*for (Controllable controllable : controllablesToRemove) {
-			controllables.remove(controllable);
-		}*/
 		
 		for (Sun sun : sunsToRemove) {
 			suns.remove(sun);
@@ -139,10 +132,6 @@ public class Game {
 		}
 	}
 	
-	/*public void addControllable(Controllable controllable) {
-		controllables.add(controllable);
-	}*/
-	
 	public void addSun(Sun sun) {
 		suns.add(sun);
 	}
@@ -158,10 +147,6 @@ public class Game {
 	public void removeSettler(Settler settler) {
 		settlersToRemove.add(settler);
 	}
-	
-	/*public void removeControllable(Controllable controllable) {
-		controllablesToRemove.add(controllable);
-	}*/
 	
 	public void removeSun(Sun sun) {
 		sunsToRemove.add(sun);
@@ -196,9 +181,6 @@ public class Game {
 		for (Settler settler : settlers)
 			settlersToRemove.add(settler);
 		
-		/*for (Controllable controllable : controllables)
-			controllablesToRemove.add(controllable);*/
-		
 		for (Sun sun : suns)
 			sunsToRemove.add(sun);
 		
@@ -224,7 +206,7 @@ public class Game {
 		for (Sun sun : suns)
 			sun.onTurn();
 		
-		// Ha egy stargate elmozog egy asteroidra mely az asteroidsban kesobb van akkor azon is mozogna ha ezt itt nem allitanank be.
+		// If a stargate moves to an asteroid that is later in the asteroids list then the stargate will move on from that asteroid if we dont set this variable here
 		for (Asteroid asteroid : asteroids) {
 			for (Building building : asteroid.getBuildings()) {
 				building.setHadActionThisTurn(false);
@@ -315,7 +297,7 @@ public class Game {
 		startTurn();
 	}
 	
-	public void loadGame(String fileName) {
+	public void loadGame() {
 		List<StarGate> starGateLoadList = new ArrayList<StarGate>();
 		List<Base> baseLoadList = new ArrayList<Base>();
 		List<Material> materialLoadList = new ArrayList<Material>();
@@ -329,7 +311,7 @@ public class Game {
 		String loadString;
 		
 		try {
-			File loadFile = new File(fileName);
+			File loadFile = new File("game.txt");
 			Scanner loadScanner = new Scanner(loadFile);
 			
 			while (loadScanner.hasNextLine())
@@ -352,13 +334,11 @@ public class Game {
 							case 'i':
 								if (loadString.split(" ")[1].charAt(1) == 'c') {
 									Ice ice = new Ice();
-									//ice.setId(loadString.split(" ")[1]);
 									
 									loadMaterial(ice, loadScanner, materialLoadList);
 								}
 								else {
 									Iron iron = new Iron();
-									//iron.setId(loadString.split(" ")[1]);
 									
 									loadMaterial(iron, loadScanner, materialLoadList);
 								}
@@ -366,14 +346,12 @@ public class Game {
 								break;
 							case 'u':
 								Uran uran = new Uran();
-								//uran.setId(loadString.split(" ")[1]);
 								
 								loadMaterial(uran, loadScanner, materialLoadList);
 								
 								break;
 							case 'c':
 								Coal coal = new Coal();
-								//coal.setId(loadString.split(" ")[1]);
 								
 								loadMaterial(coal, loadScanner, materialLoadList);
 								
@@ -958,11 +936,11 @@ public class Game {
 		
 		loadString = scanner.nextLine();
 		
-		//i.setCapacityM(Integer.parseInt(loadString.split(" ")[1]));
+		i.setCapacityM(Integer.parseInt(loadString.split(" ")[1]));
 		
 		loadString = scanner.nextLine();
 		
-		//i.setCapacitySG(Integer.parseInt(loadString.split(" ")[1]));
+		i.setCapacitySG(Integer.parseInt(loadString.split(" ")[1]));
 		
 		loadString = scanner.nextLine();
 		
@@ -1180,7 +1158,7 @@ public class Game {
 		a.setOwner(this);
 	}
 	
-	public void saveGame(String fileName) {
+	public void saveGame() {
 		String saveString = "";
 		
 		for (Sun sun : suns) {
@@ -1225,7 +1203,7 @@ public class Game {
 		}
 		
 		try {
-			FileWriter saveWriter = new FileWriter(fileName);
+			FileWriter saveWriter = new FileWriter("game.txt");
 			saveWriter.write(saveString);
 			saveWriter.close();
 		} 

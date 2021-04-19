@@ -182,25 +182,18 @@ public class Inventory extends Printable{
         String returnValue = "id: " + this.id + "\n" +
                 "capacityM: " + this.capacityM + "\n" +
                 "capacitySG: " + this.capacitySG + "\n";
-        if(materials.size()==0) {
-        	returnValue += "MaterialId: -\n";
-        }else {
-        	for(int i =0; i<materials.size(); i++) {
-        		returnValue += "MaterialId: " + materials.get(i).id + "\n";
-			}
-        }
-        if(starGates.size()==0) {
-        	returnValue += "StarGatesId:";
-        }else {
-        	for(int i =0; i<starGates.size(); i++) {
-        		if(i<starGates.size()-1) {
-        			returnValue += "StarGatesId: " + starGates.get(i).id + "\n";
-        		}
-        		else {
-        			returnValue += "StarGatesId: " + starGates.get(i).id;
-        		}
+    	for(int i =0; i<materials.size(); i++) {
+    		returnValue += "MaterialId: " + materials.get(i).id + "\n";
+		}
+
+    	for(int i =0; i<starGates.size(); i++) {
+    		if(i<starGates.size()-1) {
+    			returnValue += "StarGatesId: " + starGates.get(i).id + "\n";
     		}
-        }
+    		else {
+    			returnValue += "StarGatesId: " + starGates.get(i).id;
+    		}
+		}
         return returnValue;
 	}
 

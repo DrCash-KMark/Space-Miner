@@ -250,6 +250,7 @@ public class Settler extends Entity implements Drilling, Mining {
 			asteroid.addBuilding(nsg);
 			nsg.onPlace();
 			this.inventory.removeStarGate(sg);
+			owner.addTurnEvent("stargate placed "+nsg.getId() + " "+asteroid.getId());
 		}
 		this.hadactionthisturn = true;
 		//main.log(true, "void", "void", "");

@@ -31,7 +31,7 @@ public class Uran extends Material {
 	 */
 	Uran(){
 		super(false, "Uran", true , 0);
-        this.id = "Uran" + String.valueOf(nextId);
+        this.id = "ura" + String.valueOf(nextId);
         nextId++;
 	}
 	

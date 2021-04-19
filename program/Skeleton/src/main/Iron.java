@@ -28,7 +28,7 @@ public class Iron extends Material {
 	 */
 	Iron(){
 		super(false, "Iron", true , 0);
-        this.id = "Iron" + String.valueOf(nextId);
+        this.id = "iro" + String.valueOf(nextId);
         nextId++;
 	}
 }

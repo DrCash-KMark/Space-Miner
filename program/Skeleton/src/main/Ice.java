@@ -28,7 +28,7 @@ public class Ice extends Material {
 	 */
 	Ice(){
 		super(false, "Ice", true , 0);
-        this.id = "Ice" + String.valueOf(nextId);
+        this.id = "ice" + String.valueOf(nextId);
         nextId++;
 	}
 

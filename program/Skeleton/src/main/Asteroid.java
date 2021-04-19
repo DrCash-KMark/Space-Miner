@@ -212,7 +212,7 @@ public class Asteroid extends Planet implements Controllable {
                 returnValue += "\tnonPlayer: " + np.id + "\n";
             }
         }
-        return returnValue;
+        return returnValue.substring(0, returnValue.length() - 1);
     }
 
     /**
@@ -242,7 +242,7 @@ public class Asteroid extends Planet implements Controllable {
         for (Building b : buildings) {
             returnValue += "BuildingId: " + b.id + "\n";
         }
-        return returnValue;
+        return returnValue.substring(0, returnValue.length() - 1);
     }
 
     //Controllable
@@ -266,7 +266,7 @@ public class Asteroid extends Planet implements Controllable {
         }
         if (isRandom && rnd.nextInt(100) < 20) {
             //so we know what happened in this turn
-            this.owner.addTurnEvent("asteroid sun distance changed "+this.id);
+            this.owner.addTurnEvent("asteroid sun distance changed " + this.id);
             this.closeToSun = !this.closeToSun;
         }
     }
@@ -361,7 +361,7 @@ public class Asteroid extends Planet implements Controllable {
      * tempList is used so when a material is removed the for loop won't break the whole game
      */
     public void explode() {
-        this.owner.addTurnEvent("asteroid exploded "+this.id);
+        this.owner.addTurnEvent("asteroid exploded " + this.id);
 
 
         List<Building> tempBuildingList = new LinkedList<>();
@@ -400,7 +400,7 @@ public class Asteroid extends Planet implements Controllable {
      * tempList is used so when a material is removed the for loop won't break the whole game
      */
     public void drilling() {
-        this.owner.addTurnEvent("asteroid drilled "+this.id);
+        this.owner.addTurnEvent("asteroid drilled " + this.id);
         if (rockThickness > 0) {
             this.rockThickness--;
             if (this.materials != null && this.closeToSun && this.rockThickness == 0) {
@@ -432,6 +432,7 @@ public class Asteroid extends Planet implements Controllable {
             return false;
         } else {
             this.materials.add(m);
+            this.owner.addTurnEvent("material dropped" + m.id);
             if (this.closeToSun) {
                 m.exposedAndCloseToSun(this);
             }
@@ -454,7 +455,7 @@ public class Asteroid extends Planet implements Controllable {
             return null;
         }
         Material returnValue = this.materials.remove(0);
-        this.owner.addTurnEvent("material mined "+returnValue.id);
+        this.owner.addTurnEvent("material mined " + returnValue.id);
         return returnValue;
     }
 

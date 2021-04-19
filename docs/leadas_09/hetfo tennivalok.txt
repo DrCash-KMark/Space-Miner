@@ -1,26 +1,31 @@
 Mark:
+az Asteroid() konstruktor allitsa be a closeToSun erteket f re plspls
+a basic constructor allitsa be az isRandomot f re plspls
 list turn events
+jol legyen az id beallitva
 kivevesek asteroidbol listasan
 changelog
 
 Zoli:
+a basic constructor allitsa be az isRandomot f re plspls
 list turn events
+jol legyen az id beallitva
 doksi
 
 Csabi:
 kommentek
 list turn events
+jol legyen az id beallitva
 changelog (sajat valtoztatasok)
 
 Adam:
+a basic constructor allitsa be az isRandomot f re plspls
 list turn events
+jol legyen az id beallitva
 changelog
 
 Moha:
-kommentek
-init remove all prev entities + reset nextId to 0
-list turn events
-list all
-"# "-es kommentek
+kommentek (UI, game, printable, controllable)
 tesztek logikusan
 load/save (csak game.txt be/bol)
+NICE TO HAVE: Could not parse command rendesen

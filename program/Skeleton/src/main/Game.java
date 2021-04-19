@@ -123,6 +123,20 @@ public class Game {
 			ui.displayMessage(nonPlayer.genUIString());
 			ui.displayMessage("--------------------");
 		}
+		
+		for (Asteroid asteroid : asteroids) {
+			for (Building building : asteroid.getBuildings()) {
+				ui.displayMessage(building.genUIString());
+				ui.displayMessage("--------------------");
+			}
+		}
+		
+		for (Settler settler : settlers) {
+			for (StarGate starGate : settler.getInventory().getStarGates()) {
+				ui.displayMessage(starGate.genUIString());
+				ui.displayMessage("--------------------");
+			}
+		}
 	}
 	
 	/*public void addControllable(Controllable controllable) {
@@ -175,7 +189,7 @@ public class Game {
 		if (settlers.size() == 0)
 			return true;
 		
-		return true;
+		return false;
 	}
 	
 	public void gameLost() {
@@ -202,9 +216,15 @@ public class Game {
 	public void startTurn() {
 		cleanup();
 		
+		turnEvents.clear();
+		
+		if (isGameLost())
+			gameLost();
+		
 		for (Sun sun : suns)
 			sun.onTurn();
 		
+		// Ha egy stargate elmozog egy asteroidra mely az asteroidsban kesobb van akkor azon is mozogna ha ezt itt nem allitanank be.
 		for (Asteroid asteroid : asteroids) {
 			for (Building building : asteroid.getBuildings()) {
 				building.setHadActionThisTurn(false);
@@ -232,6 +252,14 @@ public class Game {
 	}
 	
 	public void initGame(Boolean isManual) {
+		Inventory inventory = new Inventory();
+		inventory.setNextId(0);
+		
+		suns.clear();
+		asteroids.clear();
+		settlers.clear();
+		nonPlayers.clear();
+		
 		if (isManual)
 			return;
 		
@@ -245,12 +273,14 @@ public class Game {
 		
 		for (int i = 0; i < amountOfSuns; i++) {
 			Sun s = new Sun();
+			s.setOwner(this);
 			
 			addSun(s);
 			
 			for (int j = 0; j < amountOfAsteroidsPerSun; j++) {
 				Asteroid a = new Asteroid();
 				a.initialize();
+				a.setOwner(this);
 				
 				s.addAsteroid(a);
 				
@@ -265,6 +295,7 @@ public class Game {
 		for (int i = 0; i < amountOfSettlers; i++)
 		{
 			Settler s = new Settler();
+			s.setOwner(this);
 			
 			startAsteroid.addSettler(s);
 		}
@@ -272,6 +303,7 @@ public class Game {
 		for (int i = 0; i < amountOfAliens; i++)
 		{
 			Alien a = new Alien();
+			a.setOwner(this);
 			
 			asteroids.get(rnd.nextInt(numOfAsteroids)).addNonPlayer(a);
 		}

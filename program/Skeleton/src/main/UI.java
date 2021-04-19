@@ -8,6 +8,7 @@ public class UI {
 		game.setUI(this);
 	}
 	
+	// Writes the String s to the console
 	public void displayMessage(String s)
 	{
 		System.out.println(s);
@@ -610,6 +611,10 @@ public class UI {
 				game.getSunWithId(splitString[1]).sunFlare();
 				
 				break;
+			case "#":
+				break;
+			default:
+				displayMessage("Could not parse command.");
 		}
 	}
 }

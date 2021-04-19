@@ -41,7 +41,9 @@ Helyenkent apro valtoztatasok szerepelnek bennuk, mivel a korabbi tesztek nem vo
 (pl uj kort inditottunk mikor pont azt akartuk tesztelni, hogy a settler hadActionThisTurn valtozoja helyesen beallitodott)
 // az elvart eredmenyek is valtoztak azt is majd fogom updatelni de az meg nincs itt
 
-# test1
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test1 8.2.1 Banyaszas telepessel
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -58,7 +60,11 @@ mine settler s1
 list settler s1
 list asteroid a1
 
-# test2
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test2 8.2.2 Banyaszas telepessel, teli taroloval
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -84,7 +90,11 @@ mine settler s1
 list asteroid a1
 list settler s1
 
-# test3
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test3 8.2.3 Telepes visszahelyez egy nyersanyagot
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -100,7 +110,11 @@ drop settler s1 material coal1
 list asteroid a1
 list settler s1
 
-# test4
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test4 8.2.4 Telepes nem tud visszahelyezni egy nyersanyagot
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -116,7 +130,11 @@ drop settler s1 material coal1
 list asteroid a1
 list settler s1
 
-# test5
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test5 8.2.5 Telepes visszahelyez egy urant napkozelben
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -137,7 +155,11 @@ start next turn
 list asteroid a1
 list settler s1
 
-# test6
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test6 8.2.6 Telepes visszahelyez egy vizjeget napkozleben
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -153,7 +175,11 @@ drop settler s1 material ice1
 list asteroid a1
 list settler s1
 
-# test7
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test7 8.2.7 Alien banyaszik
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -170,7 +196,11 @@ mine alien al1
 list asteroid a1
 list alien al1
 
-# test8
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test8 8.2.8 Alien banyaszna
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -187,7 +217,11 @@ mine alien al1
 list asteroid a1
 list alien al1
 
-# test9 8.1.1
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test9 8.1.1 Nem elvegezheto Robot Crafting
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -202,7 +236,11 @@ build settler s1 robot
 list asteroid a1
 list settler s1
 
-# test10 8.1.2
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test10 8.1.2 Elvegezheto Robot Crafting
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -217,7 +255,11 @@ build settler s1 robot
 start next turn
 list all
 
-# test11 8.1.3
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test11 8.1.3 Nem elvegezheto Stargate Crafting
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -232,7 +274,11 @@ build settler s1 stargate
 start next turn
 list all
 
-# test12 8.1.4 
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test12 8.1.4 Elvegezheto Stargate Crafting
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -247,7 +293,11 @@ start game
 build settler s1 stargate
 list all
 
-# test13 8.1.5
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test13 8.1.5 Nem elvegezheto Base Crafting egy telepessel
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -262,7 +312,11 @@ start game
 build settler s1 base
 list all
 
-# test14 8.1.6
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test14 8.1.6 Nem elvegezheto Base Crafting telepesek kulon aszteroidan
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -289,7 +343,11 @@ start game
 build settler s1 base
 list all
 
-# test15 8.1.7
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test15 8.1.7 Elvegezheto Base Crafting
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -316,7 +374,11 @@ start game
 build settler s1 base
 list all
 
-# test16 8.1.8
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test16 8.1.8 Elso Stargate lehelyezese a parbol
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -337,7 +399,11 @@ list stargate sg1
 list stargate sg2
 list settler s1
 
-# test17 8.1.9
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test17 8.1.9 Masodik Stargate lehelyezese a parbol
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -361,7 +427,11 @@ list stargate sg1
 list stargate sg2
 list settler s1
 
-# test18 8.2
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test18 8.2 Napvihar kitorese nem atfurt aszteroidan
 init game manually
 create sun sun1
 set sun isRandom sun1 f
@@ -394,7 +464,11 @@ list asteroid a1
 list asteroid a2
 list stargate sg1
 
-# test19 8.3
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test19 8.3 Napvihar kitorese atfurt aszteroidan
 init game manually
 create sun sun1
 set sun isRandom sun1 f
@@ -427,7 +501,11 @@ list asteroid a1
 list asteroid a2
 list stargate sg1
 
-# test20 8.4
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test20 8.4 Furas robottal
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -445,7 +523,11 @@ start next turn
 list asteroid a1
 list robot r1
 
-# test21 8.5
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test21 8.5 Furas robottal, elparolog
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -463,7 +545,11 @@ drill robot r1
 list asteroid a1
 list robot r1
 
-# test22 8.6
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test22 8.6 Furas robottal felrobban
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -488,7 +574,11 @@ start next turn
 start next turn
 list robot r1
 
-# test23 8.7
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test23 8.7 Furas robottal felrobban nincs szomszed
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -510,7 +600,11 @@ start next turn
 start next turn
 list asteroid a2
 
-# test24 8.8
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test24 8.8 Furas telepessel
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -527,7 +621,11 @@ drill settler s1
 start next turn
 list all
 
-# test25 8.9
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test25 8.9 Furas telepessel elparolog
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -545,7 +643,11 @@ drill settler s1
 start next turn
 list all
 
-# test26 8.10
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test26 8.10 Furas telepessel felrobban
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -565,7 +667,11 @@ start next turn
 start next turn
 list all
 
-# test27 8.11
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test27 8.11 Mozgas robottal kudarc
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -581,7 +687,11 @@ move robot r1 dest asteroid a2
 start next turn
 list all
 
-# test28 8.12
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test28 8.12 Mozgas robottal siker
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -599,7 +709,11 @@ move robot r1 dest asteroid a2
 start next turn
 list all
 
-# test29 8.13
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test29 8.13 Mozgas telepessel kudarc
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -615,7 +729,11 @@ move settler s1 dest asteroid a2
 start next turn
 list all
 
-# test30 8.14
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test30 8.14 Mozgas telepessel siker
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -633,7 +751,11 @@ move settler s1 dest asteroid a2
 start next turn
 list all
 
-# test31 8.15
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test31 8.15 Telepes atlep egy kapun
 init game manually
 create sun sun1
 create asteroid a1 sun sun1
@@ -657,7 +779,11 @@ start game
 move settler s1 dest stargate sg1
 list all
 
-# test32 8.16
+# ELVART KIMENET: 
+
+<<--------------------------------- TEST SEPARATING LINE --------------------------------->>
+
+# test32 8.16 Teleportkapu elromlik
 init game manually
 create sun sun1
 set sun isRandom sun1 f
@@ -688,3 +814,5 @@ start next turn
 list all
 list stargate sg1
 list stargate sg2
+
+# ELVART KIMENET: 

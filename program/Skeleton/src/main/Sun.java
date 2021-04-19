@@ -114,7 +114,7 @@ public class Sun extends Planet implements Controllable {
                 returnValue += "\tasteroid: " + a.id;
             }
         }
-        return returnValue;
+        return returnValue.substring(0, returnValue.length() - 1);
     }
 
     /**
@@ -129,7 +129,7 @@ public class Sun extends Planet implements Controllable {
         for (Asteroid a : asteroids) {
             returnValue += "AsteroidId: " + a.id + "\n";
         }
-        return returnValue;
+        return returnValue.substring(0, returnValue.length() - 1);
     }
 
 //Own methods:----------------------------------------------------------------------------

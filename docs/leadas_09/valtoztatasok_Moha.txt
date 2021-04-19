@@ -542,15 +542,18 @@ list all
 init game manually
 create sun sun1
 create asteroid ast1 sun sun1
-create settler s1 asteroid a1
-set asteroid rockThickness a1 2
-set settler hadActionThisTurn s1 f
+create settler set1 asteroid ast1
+set asteroid rockThickness ast1 2
+set settler hadActionThisTurn set1 f
 start game
-drill settler s1
+drill settler set1
+list turn events
 start next turn
-drill settler s1
+drill settler set1
+list turn events
 start next turn
-drill settler s1
+drill settler set1
+list turn events
 start next turn
 list all
 
@@ -561,17 +564,17 @@ list all
 # test25 8.9 Furas telepessel elparolog
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create settler s1 asteroid a1
-set settler hadActionThisTurn s1 f
-set asteroid capacity a1 10
-create ice ice1 asteroid a1
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+set settler hadActionThisTurn set1 f
+set asteroid capacity ast1 10
+create ice ice1 asteroid ast1
 set material exposedCounter ice1 0
-set asteroid rockThickness a1 1
-set asteroid closeToSun a1 t
+set asteroid rockThickness ast1 1
+set asteroid closeToSun ast1 t
 start game
-drill settler s1
-start next turn
+drill settler set1
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -581,18 +584,20 @@ list all
 # test26 8.10 Furas telepessel felrobban
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create settler s1 asteroid a1
-set settler hadActionThisTurn s1 f
-set asteroid capacity a1 10
-create uran uran1 asteroid a1
-set material exposedCounter uran1 0
-set asteroid rockThickness a1 1
-set asteroid closeToSun a1 t
+create asteroid ast1 sun sun1
+create settler set1 asteroid ast1
+set settler hadActionThisTurn set1 f
+set asteroid capacity ast1 10
+create uran ura1 asteroid ast1
+set material exposedCounter ura1 0
+set asteroid rockThickness ast1 1
+set asteroid closeToSun ast1 t
 start game
-drill settler s1
+drill settler set1
+list turn events
 start next turn
 start next turn
+list turn events
 start next turn
 list all
 
@@ -603,12 +608,12 @@ list all
 # test27 8.11 Mozgas robottal kudarc
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create asteroid a2 sun sun1
-create robot r1 asteroid a1
+create asteroid ast1 sun sun1
+create asteroid ast2 sun sun1
+create robot rob1 asteroid ast1
 start game
-move robot r1 dest asteroid a2
-start next turn
+move robot rob1 dest asteroid ast2
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -618,14 +623,14 @@ list all
 # test28 8.12 Mozgas robottal siker
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create asteroid a2 sun sun1
-create robot r1 asteroid a1
-add asteroid neighbour a1 a2
-add asteroid neighbour a2 a1
+create asteroid ast1 sun sun1
+create asteroid ast2 sun sun1
+create robot rob1 asteroid ast1
+add asteroid neighbour ast1 ast2
+add asteroid neighbour ast2 ast1
 start game
-move robot r1 dest asteroid a2
-start next turn
+move robot rob1 dest asteroid ast2
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -635,13 +640,13 @@ list all
 # test29 8.13 Mozgas telepessel kudarc
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create asteroid a2 sun sun1
-create settler s1 asteroid a1
-set settler hadActionThisTurn s1 f
+create asteroid ast1 sun sun1
+create asteroid ast2 sun sun1
+create settler set1 asteroid ast1
+set settler hadActionThisTurn set1 f
 start game
-move settler s1 dest asteroid a2
-start next turn
+move settler set1 dest asteroid ast2
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -651,15 +656,15 @@ list all
 # test30 8.14 Mozgas telepessel siker
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-create asteroid a2 sun sun1
-create settler s1 asteroid a1
-set settler hadActionThisTurn s1 f
-add asteroid neighbour a1 a2
-add asteroid neighbour a2 a1
+create asteroid ast1 sun sun1
+create asteroid ast2 sun sun1
+create settler set1 asteroid ast1
+set settler hadActionThisTurn set1 f
+add asteroid neighbour ast1 ast2
+add asteroid neighbour ast2 ast1
 start game
-move settler s1 dest asteroid a2
-start next turn
+move settler set1 dest asteroid ast2
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -669,19 +674,20 @@ list all
 # test31 8.15 Telepes atlep egy kapun
 init game manually
 create sun sun1
-create asteroid a1 sun sun1
-set asteroid rockThickness a1 1
-create asteroid a2 sun sun1
-set asteroid rockThickness a2 1
-create settler s1 asteroid a1
-create stargate sg1 asteroid a1
-set stargate works sg1 t
-create stargate sg2 asteroid a2
-set stargate works sg2 t
-set stargate neighbour sg1 sg2
-set stargate neighbour sg2 sg1
+create asteroid ast1 sun sun1
+set asteroid rockThickness ast1 1
+create asteroid ast2 sun sun1
+set asteroid rockThickness ast2 1
+create settler set1 asteroid ast1
+create stargate sta1 asteroid ast1
+set stargate works sta1 t
+create stargate sta2 asteroid ast2
+set stargate works sta2 t
+set stargate neighbour sta1 sta2
+set stargate neighbour sta2 sta1
 start game
-move settler s1 dest stargate sg1
+move settler set1 dest stargate sta1
+list turn events
 list all
 
 # ELVART KIMENET: 
@@ -692,25 +698,25 @@ list all
 init game manually
 create sun sun1
 create sun sun2
-create asteroid a1 sun sun1
-set asteroid rockThickness a1 1
-create asteroid a2 sun sun2
-set asteroid rockThickness a2 1
-create asteroid a3 sun sun2
-set asteroid rockThickness a3 1
-add asteroid neighbour a1 a3
-add asteroid neighbour a3 a1
-create stargate sg1 asteroid a1
-set stargate isRandom sg1 t
-create stargate sg2 asteroid a2
-set stargate isRandom sg2 t
-set stargate neighbour sg1 sg2
-set stargate neighbour sg2 sg1
+create asteroid ast1 sun sun1
+set asteroid rockThickness ast1 1
+create asteroid ast2 sun sun2
+set asteroid rockThickness ast2 1
+create asteroid ast3 sun sun2
+set asteroid rockThickness ast3 1
+add asteroid neighbour ast1 ast3
+add asteroid neighbour ast3 ast1
+create stargate sta1 asteroid ast1
+set stargate isRandom sta1 t
+create stargate sta2 asteroid ast2
+set stargate isRandom sta2 t
+set stargate neighbour sta1 sta2
+set stargate neighbour sta2 sta1
 start game
 sunflare sun1
+list turn events
 start next turn
+list turn events
 list all
-list stargate sg1
-list stargate sg2
 
 # ELVART KIMENET: 

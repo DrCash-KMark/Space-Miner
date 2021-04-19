@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Represents the Star in the game. It can cause sun flares.
+ * Represents the Star in the game. It can cause sun flares and notifies the asteroids around it.
  *
  * @author Simon, Karpati
  */
@@ -104,7 +104,7 @@ public class Sun extends Planet implements Controllable {
      */
     @Override
     public String genUIString() {
-        String returnValue = "Sun id: " + id + "\n"
+        String returnValue = "SunId: " + id + "\n"
                 + "isRandom: " + Tools.bool(isRandom) + "\n"
                 + "asteroids:\n";
         if (asteroids == null || asteroids.size() == 0) {
@@ -117,10 +117,15 @@ public class Sun extends Planet implements Controllable {
         return returnValue;
     }
 
+    /**
+     * This function creates a string for saving the current stance of the game.
+     *
+     * @return the string the contains the important data of this class.
+     */
     @Override
     public String genSaveString() {
         String returnValue = "id: " + this.id + "\n" +
-                "isRandom:" + Tools.bool(this.isRandom) + "\n";
+                "isRandom: " + Tools.bool(this.isRandom) + "\n";
         for (Asteroid a : asteroids) {
             returnValue += "AsteroidId: " + a.id + "\n";
         }
@@ -131,19 +136,30 @@ public class Sun extends Planet implements Controllable {
 
     /**
      * Causes sun flare. Notifies all the asteroids about sun flare.
+     * tempList is used so when a material is removed the for loop won't break the whole game
      */
     public void sunFlare() {
-        this.owner.addTurnEvent("SunId:"+this.id+" sun flare happened");
+        this.owner.addTurnEvent("SunId:" + this.id + " sun flare happened");
         for (Asteroid a : asteroids) {
             a.getNotifiedAboutSunflare();
         }
     }
 
+    /**
+     * Adds the given asteroid to the sun.
+     *
+     * @param a the asteroid that will be added to the sun.
+     */
     public void addAsteroid(Asteroid a) {
         asteroids.add(a);
         a.setMySun(this);
     }
 
+    /**
+     * removes an asteroid
+     *
+     * @param a the asteroid that will be removed.
+     */
     public void removeAsteroid(Asteroid a) {
         asteroids.remove(a);
     }

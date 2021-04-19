@@ -99,7 +99,7 @@ StarGate.java
 Az StarGate osztályt tartalmazza.
 
 
-SkeletonBuildScript.bat
+ProtoBuildScript.bat
 90 byte
 2021. ‎március ‎22., ‎hétfő, ‏‎10:52:02
 mkdir ./bin
@@ -107,7 +107,7 @@ javac -d ./bin src/main/*.java
 jar cfve Skeleton.jar main.Main -C ./bin/ .
 
 
-SkeletonRunScript.bat
+ProtoRunScript.bat
 22 byte
 2021. ‎március ‎22., ‎hétfő, ‏‎11:35:39
 java -jar Skeleton.jar

@@ -1,0 +1,15 @@
+
+Minden objektumot le kell-e írni?
+
+Vezessük-e fel az összes változtatást az összes korábbi diagramra, vagy elég, 
+hogy a következő dokumentumokban mindig feltüntettük az előző doksihoz képesti változtatásokat?
+
+
+
+
+
+
+
+
+
+

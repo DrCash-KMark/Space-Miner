@@ -9,6 +9,9 @@ add asteroid neighbour ast1 ast2
 add asteroid neighbour ast2 ast1
 add asteroid neighbour ast2 ast3
 add asteroid neighbour ast3 ast2
+set asteroid capacity ast1 10
+set asteroid capacity ast2 10
+set asteroid capacity ast3 10
 
 create settler set1 asteroid ast1
 create robot rob1 asteroid ast3
@@ -39,6 +42,3 @@ drop settler set1 material ura1
 set asteroid closeToSun ast3 t
 list turn events
 list all
-
-
-

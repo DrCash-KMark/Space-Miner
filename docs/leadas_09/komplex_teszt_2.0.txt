@@ -1,0 +1,44 @@
+init game manually
+create sun sun1
+
+create asteroid ast1 sun sun1
+create asteroid ast2 sun sun1
+create asteroid ast3 sun sun1
+
+add asteroid neighbour ast1 ast2
+add asteroid neighbour ast2 ast1
+add asteroid neighbour ast2 ast3
+add asteroid neighbour ast3 ast2
+
+create settler set1 asteroid ast1
+create robot rob1 asteroid ast3
+
+create stargate sta1 asteroid ast1
+create stargate sta2 asteroid ast3
+set stargate neighbour sta1 sta2
+set stargate neighbour sta2 sta1
+set stargate works sta1 t
+set stargate works sta2 t
+
+create stargate sta3 asteroid ast2
+create stargate sta4 inventory set1
+set stargate neighbour sta3 sta4
+set stargate neighbour sta4 sta3
+
+set asteroid rockThickness ast1 0
+set asteroid rockThickness ast3 0
+create uran ura1 asteorid ast1
+set material exposedCounter ura1 2
+
+start game
+mine settler set1
+start next turn
+move settler set1 dest stargate sta1
+start next turn
+drop settler set1 material ura1
+set asteroid closeToSun ast3 t
+list turn events
+list all
+
+
+

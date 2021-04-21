@@ -30,7 +30,7 @@ set stargate neighbour sta4 sta3
 
 set asteroid rockThickness ast1 0
 set asteroid rockThickness ast3 0
-create uran ura1 asteorid ast1
+create uran ura1 asteroid ast1
 set material exposedCounter ura1 2
 
 start game

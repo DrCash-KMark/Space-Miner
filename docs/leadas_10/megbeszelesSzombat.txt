@@ -1,0 +1,7 @@
+Push!!!
+
+A UI most a View része lesz.
+Tartalmazza a 
+
+ID-s megoldás a parancsokhoz. (Nem a bindelt.)
+

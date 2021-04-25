@@ -1,0 +1,15 @@
+showDialogoknak nem kéne valami stringet beállítani?
+Azt a controllernek kell?
+((Ezzel hívnánk a commandot, a game-ben))
+Az összes Dialog String paramétereket vár, de mi nem Stringeket tudunk legettelni a game-ből
+A Dialogoknak össze kéne legózni a stringet, amit odaadunk a command paraméterében, nem?
+((Stringgel kéne visszatérniük))
+
+Ha minden egyes commandra csinálunk egy felugró ablakot a bindnak mi értelme van?
+((A rajzoláson kívül))
+
+A MoveDialognál nem biztos hogy kéne a type, és asteroid sem biztos hogy kéne.
+
+handleDrop nem is volt a controllerben
+showDropDialognál kell nekünk átadni materials-t?
+Egy darab settlerrel lépünk, akinek tudjuk az inventory-ját.

@@ -1,0 +1,25 @@
+Változtatások:
+
+A showBindDialog() függvénybe felvettem egy type:String[] és id:String[]
+
+Probléma, hogyan fogja a dialógusablak megkülönböztetni
+az egyes választásokhoz tartozó allehetőségeket?
+
+Megoldás javaslat:
+Legyen minden allehetőséghez átadva egy külön lista.
+Ennek problémája, hogy a különböző számú lista kellhet.
+
+Alkalmazott megoldás:
+Felvettem több paraméteret>
+
+Bind-> settlers - asteroids
+
+Move-> asteroidDestinations - stargateDestinations
+
+! Place-> settlers, buildings
+
+-----------------------------------------------------------------
+
+
+
+

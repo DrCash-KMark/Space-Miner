@@ -7,7 +7,7 @@ amelyekhez a grafikus felületet létrehozó osztályok kapcsolódnak.]
 
 ------------------------------------------------------------------------------------------------------------------
 
-Gragikus elemek:
+Gragikus elemek csoportjai:
 ---------------
 
 EventFeed
@@ -31,9 +31,10 @@ Bind
 ---------------------------------------------------------
 
 +---------------------+
-|	EventFeed +---------------------+
+|		EventFeed	  |
++---------------------+
 
-------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
 
 11.2.1	A felület működési elve
 
@@ -44,24 +45,82 @@ pull alapú: a felület kérdezi le a modellt, hogy változott-e; kevert: a kett
 
 Áttekintés:
 Az aplikáció MVC felépítésű.
+
 A Controller és View részletesebb bemutatása:
 A felületelemek vizuálisan három csoportba szerveződnek.
 Ezek a köresemények listázása és játék kezelés, a kiválasztott objektum megjelenítése és annak kezelése
 és végül a kiválasztott objektum tulajdonságainak listázása és objektum választás.
 A felsoroltak tehát további két részre bomlanak: View és Controller. Az ablakban felül megjelenő mezők a View részei a lenti gombok pedig a Controller részei.
 
+-----------------------------------------------------------------------------------------------
+
 TurnEvents
 
-A View része.
-A köresemények listázása egy Java Swing szövegdoboz.
+Szemantikailag a view része. A köresemények listázása egy Java Swing szövegdoboz.
 Ebben az egyes játékkörök végén kiíródnak, az adott körben végbement események.
 pl.: mozgás, bányászás, robbanás stb.
-Ismeri a UI osztályt. Kör végén Lekérdezi a UI-tól TurnEvents listát. (Pull elv.)
+A Controller handleNextTurn() tölti fel új tartalommal.
 
+-----------------------------------------------------------------------------------------------
+
+GameControls
+Szemantikailag a controller része. Ez A View-ban gombokként jelenik meg.
+A Next turn gomb hatására a Controller handleNextTurn()-je befejezi a kört és új kört indít Game hívásokkal.
+A New gombra kattintva a Controller handleNew() függvénye új játék kezd.
+A Load gombra kattintva a Controller handleLoad() függvénye betölt egy korábbi játékállást fájlból.
+A Save gombra kattintva a Controller handleSave() függvénye elmenti a játékállást.
+Az Exit gombra kattintva a Controller handleExit() függvénye leállítja a programot.
 
 -----------------------------------------------------------------------------------------------
 
 GraphicView
+Szemantikailag a view része. Egy panel tartozik hozzá. Megjelnít egy ábrát, ami az éppen bindelt objetumtól függ, azt ábrázolja.
+A Controller handleBind() függvénye adja át a képet, amit meg kell jelenítenie.
+
+-----------------------------------------------------------------------------------------------
+
+EntityControls
+Szemantikailag a controller része. A View-ben gombok tartoznak hozzá. A gombok lenyomására dialógusok jelennek meg. Ezek szintén a view részei.
+
+A Move gomb lenyomásának hatására megjelenik egy dialógus, amiben kiválaszthatjuk,
+hogy melyik settler mozogjon, aszeteroidára vagy kapura lépjen és konkértan mi legyen a célja.
+A "Select" gombbal bezárul a dialógus és a Controller handleMove() függvénye továbbítja a Game felé a parancsot.
+
+A Drill gomb lenyomásának hatására megjelenik egy dialógus, amiben kiválaszthatjuk,
+hogy melyik settler fúrjon.
+A "Select" gombbal bezárul a dialógus és a Controller handleDrill() függvénye továbbítja a Game felé a parancsot.
+
+A Mine gomb lenyomásának hatására megjelenik egy dialógus, amiben kiválaszthatjuk,
+hogy melyik settler bányásszon.
+A "Select" gombbal bezárul a dialógus és a Controller handleMine() függvénye továbbítja a Game felé a parancsot.
+
+A Drop gomb lenyomásának hatására megjelenik egy dialógus, amiben kiválaszthatjuk,
+hogy melyik settler tegyen le nyersanyagot és melyik nyersanyagot tegye le.
+A "Select" gombbal bezárul a dialógus és a Controller handleDrop() függvénye továbbítja a Game felé a parancsot.
+
+A Build gomb lenyomásának hatására megjelenik egy dialógus, amiben kiválaszthatjuk,
+hogy melyik settler építsen és mit építsen.
+A "Select" gombbal bezárul a dialógus és a Controller handleBuild() függvénye továbbítja a Game felé a parancsot.
+
+A Place gomb lenyomásának hatására megjelenik egy dialógus, amiben kiválaszthatjuk,
+hogy melyik settler rakjon le épületet és melyik már megépített épületet tegye le.
+A "Select" gombbal bezárul a dialógus és a Controller handlePlace() függvénye továbbítja a Game felé a parancsot.
+
+---------------------------------------------------------------------------------------------------------
+
+Properties
+
+Szemantikailag a view része. A View-ban egy panel tartozik hozzá, ami kiírja az aktuálisan kiválasztott settler vagy asteroid adatai.
+A Controller handleBind() függvénye lekérdezi a Game-ből a bind-olt objektum adatait (pull), majd továbbadja a View-ba a Properties panelnek.
+
+---------------------------------------------------------------------------------------------------------
+
+Bind
+
+Szemantikailag a controller része. A View-ben egy gomb és egy megjelenő dialógus tartozik hozzá.
+A Bind gombra kattintva megjelenik egy dialógus, amiben kiválaszthatjuk, hogy aszteroidát vagy telepeset szeretnénk bind-olni. (Az aszteroidáról is megjeleníthetünk adatokat.)
+A "Select" gombbal bezárul a dialógus és a Controller handleBind() függvénye lekérdezi a Game-ből a bind-olt objektum adatait (pull),
+majd továbbadja a View-ba a Properties panelnek.
 
 
 

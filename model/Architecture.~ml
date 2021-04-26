@@ -6217,7 +6217,7 @@
 <XPD:REF name="Views[5]">Ta7CugrjYkiaS+GJbQVx9QAA</XPD:REF>
 <XPD:REF name="Views[6]">uQ3LjXSRd0uggAaeEPCpOgAA</XPD:REF>
 <XPD:REF name="Views[7]">KXd9Om4SokiuneGR4K5gTQAA</XPD:REF>
-<XPD:ATTR name="#Operations" type="integer">18</XPD:ATTR>
+<XPD:ATTR name="#Operations" type="integer">14</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="tv+WUYLTXE2ZyA2p37ykwgAA">
 <XPD:ATTR name="Name" type="string">removeSettler</XPD:ATTR>
 <XPD:REF name="Owner">aij9h6u+W0SQomYjfjWBsQAA</XPD:REF>
@@ -6319,51 +6319,11 @@
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">r/V8mx+v3EaJ5nUHzKmXKwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[11]" type="UMLOperation" guid="Mpo2H/lbfEWfsVqTgBsUiwAA">
-<XPD:ATTR name="Name" type="string">create</XPD:ATTR>
-<XPD:REF name="Owner">aij9h6u+W0SQomYjfjWBsQAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="AZ9g5qUTi0y2OfemRfC6CQAA">
-<XPD:ATTR name="Name" type="string">arguments</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">Mpo2H/lbfEWfsVqTgBsUiwAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[12]" type="UMLOperation" guid="wLbZsmHBJ0uzKNdXEkZdfQAA">
-<XPD:ATTR name="Name" type="string">set</XPD:ATTR>
-<XPD:REF name="Owner">aij9h6u+W0SQomYjfjWBsQAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="rvCMNZAIRkateuOQ8k/yjwAA">
-<XPD:ATTR name="Name" type="string">arguments</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">wLbZsmHBJ0uzKNdXEkZdfQAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[13]" type="UMLOperation" guid="lC3KxxZ6BkeUBErqMkVjgAAA">
-<XPD:ATTR name="Name" type="string">add</XPD:ATTR>
-<XPD:REF name="Owner">aij9h6u+W0SQomYjfjWBsQAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="KpW/tzkjIEeRZLS67jyxrAAA">
-<XPD:ATTR name="Name" type="string">argumentums</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">lC3KxxZ6BkeUBErqMkVjgAAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[14]" type="UMLOperation" guid="K3xsmSp9oU2yGXoBQqmDxgAA">
-<XPD:ATTR name="Name" type="string">executeCommand</XPD:ATTR>
-<XPD:REF name="Owner">aij9h6u+W0SQomYjfjWBsQAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="RqzCplcU20eTtFfFZ6vC0AAA">
-<XPD:ATTR name="Name" type="string">arguments</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">K3xsmSp9oU2yGXoBQqmDxgAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[15]" type="UMLOperation" guid="iXqEg4hl9keLcoTxXq3bCgAA">
+<XPD:OBJ name="Operations[11]" type="UMLOperation" guid="iXqEg4hl9keLcoTxXq3bCgAA">
 <XPD:ATTR name="Name" type="string">startGame</XPD:ATTR>
 <XPD:REF name="Owner">aij9h6u+W0SQomYjfjWBsQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[16]" type="UMLOperation" guid="bZkOOd1O9UChkLkCdSixJAAA">
+<XPD:OBJ name="Operations[12]" type="UMLOperation" guid="bZkOOd1O9UChkLkCdSixJAAA">
 <XPD:ATTR name="Name" type="string">saveGame</XPD:ATTR>
 <XPD:REF name="Owner">aij9h6u+W0SQomYjfjWBsQAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
@@ -6375,7 +6335,7 @@
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">I/bcZto10kG0pxhcWIIeEwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[17]" type="UMLOperation" guid="kpZHGfUT7kyALtlfEZY84AAA">
+<XPD:OBJ name="Operations[13]" type="UMLOperation" guid="kpZHGfUT7kyALtlfEZY84AAA">
 <XPD:ATTR name="Name" type="string">list</XPD:ATTR>
 <XPD:REF name="Owner">aij9h6u+W0SQomYjfjWBsQAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>

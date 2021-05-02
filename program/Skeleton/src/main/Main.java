@@ -17,6 +17,10 @@ import java.util.Scanner;
 public class Main {	
 	
 	public static void main(String[] args) {
+		
+		//test
+		View test = new View();
+		
 		UI ui = new UI();
 		try (Scanner scanner = new Scanner(System.in)) {
 			while(true) {

@@ -7,4 +7,10 @@ A labvez által írt hobákat is ki kellene javítani?
 
 A kapuk elromlását teljesen úgy kell kezelni, mintha megsemmisült volna. pl. Ha mozgásnál kilistázzuk a kapukat, akkor nem szabad kilistázni a már elromlottakat.
 
+!!! Az aszteroida nem implementálja a ReactsToSunFlare interface-t!!!
+
+A 2. és 3. dokumentáció is kell az összesítettbe? A kettő lényegében uaz, csak a második közelebb van a véglegeshez.
+
+
+
 

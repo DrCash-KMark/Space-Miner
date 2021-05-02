@@ -102,12 +102,108 @@ Objektum katalógus:
 Statikus struktúra diagramok
 Az osztály diagramm elavult.
 
-----------------------------------------------------------------------
+====================================================================================
 
 Osztályok leírása
 
+
+-----------------------------------------------------------
+Asteroid
+-----------------------------------------------------------
+
 Ősosztályok
 Printable -> Planet -> Asteroid
+
+Interfészek:
+Controllable, ReactsToSunFlare
+
+Attribútumok:
+material <- Helyette materials, ami lista.
+
+entities <- Helyette nonPlayers és settlers
+
+Hiányzó attribútumok:
+capacity
+isRandom
+mySun
+rnd <- ezt valszeg nem kell.
+owner: Game A játékot vezénylő objektum.
+id: String	Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok:
+addEntity (Entity e) <- Helyette addNonPlayer(NonPlayer) és addSettler(Settler) metódusok vannak.
+
+removeEntity (Entity e) <- Helyette removeSettler és removeNonPlayer metódusok vannak.
+
+getNotifiedAboutSunFlare() <- Ez nem a Controllable-ből jön, hanem a ReactsToSunFlare interface-ből.
+
+Hiányzó metódusok:
+evaporateMaterial()
+genSaveString()
+genUIString()
+initialize()
+onTurn()
+
+
+
+-----------------------------------------------------------
+Base
+-----------------------------------------------------------
+Felelősség:
+Ez az osztály felel a bázis kezeléséért, itt tároljuk a bázis helyét illetve ez az osztály döni el, hogy egyáltalán meg tudjuk-e építeni azt. <-elírás: "döni".
+
+Ősosztályok:
+Printable -> Building -> Base
+
+Interfészek:
+Controllable, ReactsToSunFlare
+
+Hiányzó attribútumok:
+hadActionThisTurn:	bool	Végzett-e műveletet a jelenlegi játékkörben.
+owner:	Game				...
+id: String	Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok:
+isBuildable(I: Inventory) <- Ilyen nincs.
+
+Hiányzó metódusok:
+destroy()
+genSaveString(): String
+genUIString(): String
+getNotifiedAboutSunflare()
+
+
+
+-------------------------------------------------------
+Buildable
+-------------------------------------------------------
+Ilyen nincs.
+
+
+
+-------------------------------------------------------
+Building
+-------------------------------------------------------
+Ősosztályok:
+Printable
+
+Interfészek:
+Controllable, ReactsToSunFlare
+
+Hiányzó attribútumok:
+hadActionThisTurn:	bool	Végzett-e műveletet a jelenlegi játékkörben.
+owner: Game A játékot vezénylő objektum.
+id: String	Egy adott objektumot azonosító egyedi jelölés.
+
+
+
+-------------------------------------------------------
+Coal
+-------------------------------------------------------
+
+
+
+
 
 
 

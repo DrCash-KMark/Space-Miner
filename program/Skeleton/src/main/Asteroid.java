@@ -19,7 +19,7 @@ import java.util.*;
  *
  * @author Karpati
  */
-public class Asteroid extends Planet implements Controllable {
+public class Asteroid extends Planet implements Controllable, ReactsToSunFlare {
     private boolean isRandom;
     private int rockThickness;
     private Boolean closeToSun;

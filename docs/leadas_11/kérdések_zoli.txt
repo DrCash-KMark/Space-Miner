@@ -1,0 +1,10 @@
+
+Kérdések
+
+A később  behozott változtatásokat visszamenőleg fel kell-e vezetni?
+
+A labvez által írt hobákat is ki kellene javítani?
+
+A kapuk elromlását teljesen úgy kell kezelni, mintha megsemmisült volna. pl. Ha mozgásnál kilistázzuk a kapukat, akkor nem szabad kilistázni a már elromlottakat.
+
+

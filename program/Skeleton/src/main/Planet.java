@@ -21,13 +21,6 @@ public abstract class Planet extends Printable {
 
     protected Game owner;
 
-    /**
-     * Called when sun flare occurs.
-     * Could be overwritten in derived classes.
-     */
-    public void getNotifiedAboutSunflare() {
-    }
-
     public Game getOwner() {
         return owner;
     }

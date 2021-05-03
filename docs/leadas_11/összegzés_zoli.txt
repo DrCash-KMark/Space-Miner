@@ -114,15 +114,15 @@ Asteroid
 Ősosztályok
 Printable -> Planet -> Asteroid
 
-Interfészek:
+Interfészek
 Controllable, ReactsToSunFlare
 
-Attribútumok:
+Attribútumok
 material <- Helyette materials, ami lista.
 
 entities <- Helyette nonPlayers és settlers
 
-Hiányzó attribútumok:
+Hiányzó attribútumok
 capacity
 isRandom
 mySun
@@ -130,14 +130,14 @@ rnd <- ezt valszeg nem kell.
 owner: Game A játékot vezénylő objektum.
 id: String	Egy adott objektumot azonosító egyedi jelölés.
 
-Metódusok:
+Metódusok
 addEntity (Entity e) <- Helyette addNonPlayer(NonPlayer) és addSettler(Settler) metódusok vannak.
 
 removeEntity (Entity e) <- Helyette removeSettler és removeNonPlayer metódusok vannak.
 
 getNotifiedAboutSunFlare() <- Ez nem a Controllable-ből jön, hanem a ReactsToSunFlare interface-ből.
 
-Hiányzó metódusok:
+Hiányzó metódusok
 evaporateMaterial()
 genSaveString()
 genUIString()
@@ -149,24 +149,24 @@ onTurn()
 -----------------------------------------------------------
 Base
 -----------------------------------------------------------
-Felelősség:
+Felelősség
 Ez az osztály felel a bázis kezeléséért, itt tároljuk a bázis helyét illetve ez az osztály döni el, hogy egyáltalán meg tudjuk-e építeni azt. <-elírás: "döni".
 
-Ősosztályok:
+Ősosztályok
 Printable -> Building -> Base
 
-Interfészek:
+Interfészek
 Controllable, ReactsToSunFlare
 
-Hiányzó attribútumok:
+Hiányzó attribútumok
 hadActionThisTurn:	bool	Végzett-e műveletet a jelenlegi játékkörben.
 owner:	Game				...
 id: String	Egy adott objektumot azonosító egyedi jelölés.
 
-Metódusok:
+Metódusok
 isBuildable(I: Inventory) <- Ilyen nincs.
 
-Hiányzó metódusok:
+Hiányzó metódusok
 destroy()
 genSaveString(): String
 genUIString(): String
@@ -184,16 +184,16 @@ Ilyen nincs.
 -------------------------------------------------------
 Building
 -------------------------------------------------------
-Ősosztályok:
+Ősosztályok
 Printable
 
-Interfészek:
+Interfészek
 Controllable, ReactsToSunFlare
 
-Hiányzó attribútumok:
+Hiányzó attribútumok
 hadActionThisTurn:	bool	Végzett-e műveletet a jelenlegi játékkörben.
-owner: Game A játékot vezénylő objektum.
-id: String	Egy adott objektumot azonosító egyedi jelölés.
+owner: Game			A játékot vezénylő objektumra mutató hivatkozás.
+id: String			Egy adott objektumot azonosító egyedi jelölés.
 
 
 
@@ -201,10 +201,464 @@ id: String	Egy adott objektumot azonosító egyedi jelölés.
 Coal
 -------------------------------------------------------
 
+Ősosztályok
+Printable -> Material -> Coal
+
+Attribútumok
+canEvaporate : boolean	El tud-e párologni az anyag egy aszteroida belsejéből?
+exposedCounter : int	Számolja, hogy hány kör során volt feltárt aszteroidában, miközben az aszteroida napközelben volt.
+isRadio : boolean		Radioaktív-e a nyersanyag?
+name : String			Megadja a nyersanyag típusának nevét.
+id : String				Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok
+exposedAndCloseToSun(Asteroid a)	Körönként egyszer kell hívni, amikor egy a nyersanyag egy aszteroida üregében van, az aszteroida kérge teljesen át van fúrva, és az aszteroida napközelben van.
+genSaveString(): String				Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String				Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+
+
+
+-------------------------------------------------------
+Controllable
+-------------------------------------------------------
+OK
+
+
+-------------------------------------------------------
+Entity
+-------------------------------------------------------
+Ősosztályok
+Printable -> Entity
+
+Interfészek
+ReactsToSunFlare, Moving
+
+Hiányzó attribútumok:
+owner: Game			A játékot vezénylő objektumra mutató hivatkozás.
+id : String			Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok:
+move <- Már két move van, de ezeket nem implementálja.
+
+Összes metódus:
+asteroidExploded()				Értesíti az entitást, hogy az aszteroida, amin állt megsemmisült. A konkrét implementáció az entitás típusától függ.
+die()							Elpusztítja az entitást. A konkrét implementáció az entitás típusától függ.
+genSaveString(): String			Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String			Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+getNotifiedAboutSunflare()		Hatására az entitás elpusztítja magát, ha nem átfúrt kérgű vagy nem üreges belsejű aszteroidán tartózkodik.
+
+
+
+-------------------------------------------------------
+Game
+-------------------------------------------------------
+Attribútumok:
+asteroids : List<Asteroid>				A játékban szereplő aszteroidák listája.
+asteroidsToRemove : List<Asteroid>		Egy körben megsemmisülő aszteroidák listája. Ez a lista minden körben kiürül, amikor a Game végleg törli a hivatkozást az aszteroidákra.
+nonPlayers : List<NonPlayer>			A játékban szereplő nem játékos által irányított entitások listája.
+nonPlayersToRemove : List<NonPlayer>	Egy körben megsemmisülő nem játékos által irányított entitások listája. Ez a lista minden körben kiürül, amikor a Game végleg törli a hivatkozást az entitásokra.
+settlers : List<Settler>				A játékban szereplő telepesek listája.
+settlersToRemove : List<Settler>		Egy körben megsemmisülő telepesek listája. Ez a lista minden körben kiürül, amikor a Game végleg törli a hivatkozást a telepesekre.
+suns : List<Sun>						A játékban szereplő napok listája.
+sunsToRemove : List<Sun>				Egy körben megsemmisülő napok listája. Ez a lista minden körben kiürül, amikor a Game végleg törli a hivatkozást a napokra.
+turnEvents : List<String>				Egy string lista, ami az adott körben lejátszódott eseményekről tájékoztatja a felhasználót.
+ui : UI									Hivatkozás a felhasználói inputot megvalósító objektumra.
+
+Metódusok:
+addAsteroid(Asteroid)					Új aszteroidát ad a megfelelő listához.
+addNonPlayer(NonPlayer)					Új nem játékos által irányított entitást ad a megfelelő listához.
+addSettler(Settler)						Új telepest ad a megfelelő listához.
+addSun(Sun)								Új napot ad a megfelelő listához.
+addTurnEvent(String)					Új bejegyzéssel bővíti a kör eseményeit tároló listát.
+cleanup()								Megszünteti a hivatkozást az összes megsemmisítére kijelölt telepesre, napra, aszteroidára és nem játékos által irányított entitásra.
+gameLost()								Hívására a telepesek elvesztik a játékot.
+gameWon()								Hívására a telepesek megnyerik a játékot.
+initGame(isManual : Boolean)			Inicializálja a játékot. Ha false értékű paraméterrel hívjuk véletlenszerűen generálja a játékmezőt. 
+isGameLost()							Akkor tekinti elveszítettnek a játszmát,ha nem maradt telepes.
+listAll()								Struktúrált módon listázza a játékban szereplő összes főbb objektumhoz kapcsolódó információkat.
+listAllSettlers()						Listázza a telepesekhez kapcsolódó információkat.
+listTurnEvents()						Listázza egy körben történt eseményeket.
+loadAlien(Scanner, String, List<Alien>, List<Asteroid>, List<Inventory>)	Az űrlény fájlból való betöltésére szolgál.
+loadAsteroid(Scanner, List<Asteroid>, List<Settler>, List<Material>, List<Robot>, List<Alien>, List<Base>, List<StarGate>)	Az aszteroida fájlból való betöltésére szolgál.
+loadBase(Scanner, String, List<Base>, List<Asteroid>)							A bázis fájlból való betöltésére szolgál.
+loadGame()																		Betölti a "game.txt" fájlban tárolt játékállást.
+loadInventory(Scanner, List<Inventory>, List<Material>, List<StarGate>)			A tároló fájlból való betöltésére szolgál.
+loadMaterial(Material, String, Scanner, List<Material>)							A nyersanyag fájlból való betöltésére szolgál.
+loadRobot(Scanner, String, List<Robot>, List<Asteroid>)							A robot fájlból való betöltésére szolgál.
+loadSettler(Scanner, List<Settler>, List<Asteroid>, List<Inventory>)			A telepes fájlból való betöltésére szolgál.
+loadStarGate(Scanner, String, List<StarGate>, List<Asteroid>)					A teleportkapu fájlból való betöltésére szolgál.
+loadSun(Scanner, List<Sun>, List<Asteroid>)										A nap fájlból való betöltésére szolgál.
+removeAsteroid(Asteroid)														A paraméterként kapott objektumot megsemmisítésre jelöli ki.
+removeNonPlayer(NonPlayer)														A paraméterként kapott objektumot megsemmisítésre jelöli ki.
+removeSettler(Settler)															A paraméterként kapott objektumot megsemmisítésre jelöli ki.
+removeSun(Sun)																	A paraméterként kapott objektumot megsemmisítésre jelöli ki.
+saveGame()																		Elmenti az aktuális játékállást a "game.txt" fájlba.
+startGame()																		Az inicializálás után ezzel a metódussal indíthatjuk a játékot.
+startTurn()																		Lezárja az előző kört. Megkezdi az újat. Felelőssége, hogy végleg törölje a hivatkozást az előző körben erre kijelölt objektumokra, és, hogy onTurn() hívást végezzen minden erre alkalmas objektumon.
+
+
+
+-------------------------------------------------------
+Ice
+-------------------------------------------------------
+Ősosztályok
+Printable -> Material -> Coal
+
+Attribútumok
+canEvaporate : boolean	El tud-e párologni az anyag egy aszteroida belsejéből?
+exposedCounter : int	Számolja, hogy hány kör során volt feltárt aszteroidában, miközben az aszteroida napközelben volt.
+isRadio : boolean		Radioaktív-e a nyersanyag?
+name : String			Megadja a nyersanyag típusának nevét.
+id : String				Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok
+exposedAndCloseToSun(Asteroid a)	Körönként egyszer kell hívni, amikor egy a nyersanyag egy aszteroida üregében van, az aszteroida kérge teljesen át van fúrva, és az aszteroida napközelben van.
+genSaveString(): String				Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String				Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
 
 
 
 
+-------------------------------------------------------
+Inventory
+-------------------------------------------------------
+Attribútumok:
+capacityM : int						A maximális mennyiség, amennyi nyersanyagot tárolni tud.
+capacitySG : int					A maximális mennyiség, amennyi teleportkaput tárolni tud.
+materials : LinkedList<Material>	A tárolt nyersanyagok.
+starGates : LinkedList<StarGate>	A tárolt teleportkapuk.
+id : String				Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok:
+addMaterial(Material)			Betesz egy nyersanyagot a tárolóba.
+addStarGate(StarGate)			Betesz egy teleportkaput a tárolóba.
+genSaveString(): String			Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String			Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+isFullMaterials() : bool		Megtelt-e a tároló nyersanyagokkal?
+isFullStarGates() : bool		Megtelt-e a tároló teleportkapukkal?
+isHaveStarGate(StarGate) : bool	Tartalmazza-e a paraméterként kapott teleportkaput?
+removeMaterial(Material) : Material Kivesz egy ugyanolyan típusú nyersanyagot, mint amilyet paraméterként kapott.
+removeMaterialFromList(LinkedList<Material>, Material)	Egy paraméterként kapott listából vesz ki nyersanyagot.
+removeStarGate(StarGate)		Kivesz egy paraméterként kapott nyersanyagot a tárolóból.
+subSet(LinkedList<Material>) : LinkedList<Material>	Összehasonlítja a paraméterként kapott és a tárolóban lévő nyersanyag listát. Visszaadja a két lista különbségét.
+subtraction(LinkedList<Material>) : LinkedList<Material>	Kivonja a paraméterként kapott listát a tárolóban lévő nyersanyag listából. Visszaadja a két lista különbségét.
+
+
+
+-------------------------------------------------------
+Iron
+-------------------------------------------------------
+Ősosztályok
+Printable -> Material -> Coal
+
+Attribútumok
+canEvaporate : boolean	El tud-e párologni az anyag egy aszteroida belsejéből?
+exposedCounter : int	Számolja, hogy hány kör során volt feltárt aszteroidában, miközben az aszteroida napközelben volt.
+isRadio : boolean		Radioaktív-e a nyersanyag?
+name : String			Megadja a nyersanyag típusának nevét.
+id : String				Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok
+exposedAndCloseToSun(Asteroid a)	Körönként egyszer kell hívni, amikor egy a nyersanyag egy aszteroida üregében van, az aszteroida kérge teljesen át van fúrva, és az aszteroida napközelben van.
+genSaveString(): String				Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String				Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+
+
+
+-------------------------------------------------------
+Material
+-------------------------------------------------------
+Ősosztályok
+Printable -> Material
+
+Attribútumok
+canEvaporate : boolean	El tud-e párologni az anyag egy aszteroida belsejéből?
+exposedCounter : int	Számolja, hogy hány kör során volt feltárt aszteroidában, miközben az aszteroida napközelben volt.
+isRadio : boolean		Radioaktív-e a nyersanyag?
+name : String			Megadja a nyersanyag típusának nevét.
+id : String				Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok
+exposedAndCloseToSun(Asteroid a)	Körönként egyszer kell hívni, amikor egy a nyersanyag egy aszteroida üregében van, az aszteroida kérge teljesen át van fúrva, és az aszteroida napközelben van.
+genSaveString(): String				Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String				Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+
+
+----------------------------------------------------------
+//Új bejegyzések:
+
+-------------------------------------------------------
+Mining
+-------------------------------------------------------
+Felelősség
+Azon osztályok valósítják meg, amelyek képesek bányászni.
+
+Ősosztályok
+
+Interfészek
+
+Attribútumok
+
+Metódusok
+mine()		Bányászás műveletét kell, hogy megvalósítsa.
+
+
+
+-------------------------------------------------------
+Moving
+-------------------------------------------------------
+Felelősség
+Azon osztályok valósítják meg, amelyek képesek mozogni.
+
+Ősosztályok
+
+Interfészek
+
+Attribútumok
+
+Metódusok
+move(Asteroid)		Aszteroidára történő mozgást kell, hogy implementálja.
+move(StarGate)		Teleportkapura történő mozgást kell, hogy implementálja.
+
+
+
+-------------------------------------------------------
+NonPlayer
+-------------------------------------------------------
+Felelősség
+A nem játékos által irányított entitások ősosztálya.
+
+Ősosztályok
+Printable -> Entity -> NonPlayer
+
+Interfészek
+Controllable, ReactsToSunFlare, Moving
+
+Attribútumok
+counter : int		Az önálló viselkedéshez szükséges változó, ami lehetővé teszi, hogy változatos cselekvéseket hajtson végre az entitás.
+isRandom : boolean	Véletlenszerű viselkedést hajtson-e végre az entitás?
+owner: Game			A játékot vezénylő objektumra mutató hivatkozás.
+id : String			Egy adott objektumot azonosító egyedi jelölés.
+asteroid : Asteroid : Azt tárolja, hogy az adott entitás éppen melyik aszteroidán tartózkodik.
+
+Metódusok
+asteroidExploded()				Értesíti az entitást, hogy az aszteroida, amin állt megsemmisült. A konkrét implementáció az entitás típusától függ.
+die()							Elpusztítja az entitást.
+genSaveString(): String			Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String			Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+getNotifiedAboutSunflare()		Hatására az entitás elpusztítja magát, ha nem átfúrt kérgű vagy nem üreges belsejű aszteroidán tartózkodik.
+move(Asteroid)					Az entitás egy szomszédos aszteroidára lép.
+move(StarGate)					Az entitás egy teleportkapura lép.
+onTurn()						Minden kör elején hívott metódus, ami az autonóm viselkedést valósítja meg.
+
+
+
+-------------------------------------------------------
+Planet
+-------------------------------------------------------
+Ősosztályok
+Printable -> Planet
+
+Attribútumok
+owner: Game				A játékot vezénylő objektum.
+id : String				Egy adott objektumot azonosító egyedi jelölés.
+
+
+Metódusok
+Nincs
+
+
+
+----------------------------------------------------------
+//Új bejegyzések:
+
+-------------------------------------------------------
+Printable
+-------------------------------------------------------
+Felelősség
+Azon osztályok őse, amelyek szerializálhatóak, a felhasználó számára információkat lehet róluk megjeleníteni és egyedi azonosítóval rendelkeznek.
+
+Ősosztályok
+
+
+Interfészek
+
+
+Attribútumok
+nextId : int	Egy statikus változó, amely megjegyzi, hogy az összes objektum id-jében mi volt a legnagyobb kiosztott index.
+id : String		Egy objektum egyedi azonosítója.
+
+Metódusok
+genSaveString(): String				Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String				Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+
+
+
+-------------------------------------------------------
+ReactsToSunFlare
+-------------------------------------------------------
+Felelősség
+Ezt az interface-t azok az osztályok valósítják meg, amelyek valamilyen módon reagálni tudnak a napkitörésekre.
+
+Ősosztályok
+
+Interfészek
+
+Attribútumok
+
+Metódusok
+getNotifiedAboutSunflare()		Hatására az entitás elpusztítja magát, ha nem átfúrt kérgű vagy nem üreges belsejű aszteroidán tartózkodik.
+
+
+
+----------------------------------------------------------
+//Régi bejegyzések:
+
+-------------------------------------------------------
+Robot
+-------------------------------------------------------
+Ősosztályok
+Printable -> Entity -> NonPlayer -> Robot
+
+Interfészek
+Controllable, Drilling, ReactsToSunFlare, Moving
+
+Attribútumok
+counter : int		Az önálló viselkedéshez szükséges változó, ami lehetővé teszi, hogy változatos cselekvéseket hajtson végre az entitás.
+isRandom : boolean	Véletlenszerű viselkedést hajtson-e végre az entitás?
+owner: Game			A játékot vezénylő objektumra mutató hivatkozás.
+id : String			Egy adott objektumot azonosító egyedi jelölés.
+asteroid : Asteroid : Azt tárolja, hogy az adott entitás éppen melyik aszteroidán tartózkodik.
+
+Metódusok
+asteroidExploded()				Értesíti az entitást, hogy az aszteroida, amin állt megsemmisült. A konkrét implementáció az entitás típusától függ.
+die()							Elpusztítja az entitást.
+drill()							A robot fúr egyet az aszteroidáján.
+genSaveString(): String			Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String			Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+getNotifiedAboutSunflare()		Hatására az entitás elpusztítja magát, ha nem átfúrt kérgű vagy nem üreges belsejű aszteroidán tartózkodik.
+move(Asteroid)					Az entitás egy szomszédos aszteroidára lép.
+move(StarGate)					Az entitás egy teleportkapura lép.
+onTurn()						Minden kör elején hívott metódus, ami az autonóm viselkedést valósítja meg.
+
+
+
+-------------------------------------------------------
+Settler
+-------------------------------------------------------
+Ősosztályok
+Printable -> Entity -> Settler
+
+Interfészek
+Drilling, Mining, ReactsToSunFlare, Moving
+
+Attribútumok
+BASE_RECIPE : Inventory			A bázis építésének receptje.
+hadactionthisturn : boolean		Volt-e már akció ebben a körben.
+inventory : Inventory			A telepes tárolója.
+ROBOT_RECIPE : Inventory		A robot építésének receptje.
+STARGATE_RECIPE : Inventory		A teleportkapu építésének receptje.
+isRandom : boolean				Véletlenszerű viselkedést hajtson-e végre az entitás?
+owner: Game						A játékot vezénylő objektumra mutató hivatkozás.
+id : String						Egy adott objektumot azonosító egyedi jelölés.
+asteroid : Asteroid 			Azt tárolja, hogy az adott entitás éppen melyik aszteroidán tartózkodik.
+
+Metódusok
+asteroidExploded()				Értesíti az entitást, hogy az aszteroida, amin állt megsemmisült. A konkrét implementáció az entitás típusától függ.
+buildBase()						Bázis építése.
+buildRobot()					Robot építése.
+buildStarGate()					Teleportkapu építése.
+die()							Elpusztítja az entitást.
+drill()							A robot fúr egyet az aszteroidáján.
+dropMaterial(Material)			Paraméterként kapott nyersanyag eldobása.
+genSaveString(): String			Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String			Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+getNotifiedAboutSunflare()		Hatására az entitás elpusztítja magát, ha nem átfúrt kérgű vagy nem üreges belsejű aszteroidán tartózkodik.
+mine()							Bányászás.
+move(Asteroid)					Az entitás egy szomszédos aszteroidára lép.
+move(StarGate)					Az entitás egy teleportkapura lép.
+placeStarGate(StarGate)			Teleportkapu lehelyezése.
+
+
+
+//Új bejegyzés:-----------------------------------------------------
+
+-------------------------------------------------------
+StarGate
+-------------------------------------------------------
+Felelősség
+A teleportkaput valósítja meg, ami aszteroidára helyezhető. Ha egy kapupár mindkét eleme le van helyezve egy-egy aszteroidára, akkor eljuthatunk rajtuk keresztül az egyikről a másik aszteroidára.
+
+Ősosztályok
+Printable -> Building -> StarGate
+
+Interfészek
+Moving, Controllable, ReactsToSunFlare
+
+Attribútumok
+isRandom : boolean				Véletlenszerű viselkedést hajtson-e végre az kapu, ha meghibásodott?
+neighbour : StarGate			A kapu szomszédja (párja).
+wasInSunFlare : boolean			Volt-e már napviharnak kitéve?
+works : boolean					Működik-e?
+asteroid : Asteroid				Azt az aszteroidát tárolja amelyiken az épület található.
+hadActionThisTurn :	boolean		Végzett-e műveletet a jelenlegi játékkörben.
+owner : Game					A játékot vezénylő objektumra mutató hivatkozás.
+id : String						Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok
+destroy()						Elpusztítja magát.
+genSaveString(): String			Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String			Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+move(Asteroid)					A kapu egy szomszédos aszteroidára lép.
+move(StarGate)					A kapu egy másik teleportkapura lép.
+onPlace()						Aszteroidára történő lehelyezéskor hívódik.
+onTurn()						Minden kör elején hívott metódus, ami az autonóm viselkedést valósítja meg. (Itt csak akkor van szerepe, ha már érte napvihar a kaput.)
+
+
+
+-------------------------------------------------------
+Sun
+-------------------------------------------------------
+
+Ősosztályok
+Printable -> Planet -> Sun
+
+Interfészek
+Controllable
+
+Attribútumok
+asteroids : List<Asteroid>		A naphoy tartozó aszteroidák.
+isRandom : boolean				Véletlenszerű viselkedést hajtson-e végre a nap?
+owner : Game					A játékot vezénylő objektumra mutató hivatkozás.
+id : String						Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok
+addAsteroid(Asteroid)			Új aszteroida hozzáadása a naphoz.
+genSaveString(): String			Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String			Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
+onTurn()						Minden kör elején hívott metódus, ami az autonóm viselkedést valósítja meg.
+removeAsteroid(Asteroid)		Aszteroida eltávolítása a nap tárolójából.
+sunFlare()						Napvihar előidézése.
+
+
+
+-------------------------------------------------------
+Uran
+-------------------------------------------------------
+Ősosztályok
+Printable -> Material -> Coal
+
+Attribútumok
+canEvaporate : boolean	El tud-e párologni az anyag egy aszteroida belsejéből?
+exposedCounter : int	Számolja, hogy hány kör során volt feltárt aszteroidában, miközben az aszteroida napközelben volt.
+isRadio : boolean		Radioaktív-e a nyersanyag?
+name : String			Megadja a nyersanyag típusának nevét.
+id : String				Egy adott objektumot azonosító egyedi jelölés.
+
+Metódusok
+exposedAndCloseToSun(Asteroid a)	Körönként egyszer kell hívni, amikor egy a nyersanyag egy aszteroida üregében van, az aszteroida kérge teljesen át van fúrva, és az aszteroida napközelben van.
+genSaveString(): String				Visszaadja az objektum szerializálásához szükséges szöveget.
+genUIString() : String				Visszaadja az objektumról a játékos számára lényeges információkat tartalmazó szöveget.
 
 
 

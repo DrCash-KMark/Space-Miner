@@ -3,6 +3,7 @@ package main;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -12,63 +13,24 @@ import javax.swing.JPanel;
 /**
  * A bányászás elvégzéséhez szükséges dialógusablak.
  * @author Totya
- *
  */
 public class MineDialog extends DialogSelect1 {
 	/**
-	 * 
+	 * A bányászás dialógusablakának konstruktora.
+	 * Feliratozza a labelek-et, valamint hozzáadja az eseménykezelést.
 	 * @param g: A játékot reprezentáló osztály, amitõl a szükséges adatokat lekérheti.
 	 * @param cont: A kontroller példánya, amin a kiadott parancshoz tartozó kezelõket hívhatjuk meg.
 	 */
 	public MineDialog(Game g, Controller cont) {
-		super();
-		game = g;
-		controller = cont;
-		JPanel panel = new JPanel(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
-		c.gridheight = 4;
-		c.gridwidth = 3;
-		
-		//Legelsõ label elhelyezése.
-		c.gridy = 0;
-		c.gridx = 1;
-		c.fill = GridBagConstraints.HORIZONTAL;
-		JLabel textLabel = new JLabel("Mine with Settler");
-		panel.add(textLabel, c);
-		
-		//Második label elhelyezése.
-		c.gridy = 1;
-		c.fill = GridBagConstraints.HORIZONTAL;
-		JLabel settlerLabel = new JLabel("Settler ID:");
-		panel.add(settlerLabel, c);
-		
-		//Combobox elhelyezése.
-		c.gridy = 2;
-		c.gridx = 0;
-		c.fill = GridBagConstraints.HORIZONTAL;
-		this.comboTop = new JComboBox<String>(game.getSettlerIDs());
-		panel.add(this.comboTop, c);
-		
-		//Select gomb elhelyezése.
-		c.gridy = 3;
-		c.gridx = 1;
-		c.fill = GridBagConstraints.NONE;
-		this.bSelect = new JButton("Select");
-		//Ez itt nem lesz jó, kell egy saját actionListener osztály.
-		//De itt lenne az eseménykezelés.
-		this.bSelect.addActionListener(selectAction);
-		panel.add(this.bSelect, c);
-	}
-	/**
-	 * A kattintás eseménykezelése.
-	 */
-	public void selectAction(ActionEvent e) {
-		controller.handleMine((String) this.comboTop.getSelectedItem());
-		this.setVisible(false);
-	}
-	
+		super(g, cont);
+		this.labelTitle.setText("Mine with Settler");
+		this.labelTop.setText("Settler ID:");
+		MineSelectListener mineListener = new MineSelectListener(this, this.controller, this.comboTop);
+		this.bSelect.addActionListener(mineListener);
+	}	
 	/**
 	 * A dialógusablak megjelenítése.
+	 * A dobozok régi értékeit eltávolítja, lekérdezi az újakat a játéktól.
 	 */
 	public void show() {
 		this.comboTop.removeAllItems();
@@ -77,5 +39,36 @@ public class MineDialog extends DialogSelect1 {
 			this.comboTop.addItem(ids[i]);
 		}
 	}
-
+	/**
+	 * A fúrás eseménykezelésének privát osztálya.
+	 * A DrillDialog belsõ osztálya.
+	 * @author Totya
+	 */
+	private class MineSelectListener implements ActionListener{
+		private DialogSelect1 parentDialog;
+		private Controller controller;
+		private JComboBox<String> box;
+		/**
+		 * Az bányászás eseménykezelésének konstruktora.
+		 * @param dial: DialogSelect1: A dialógusablak, amit esetleg be kell majd zárni.
+		 * @param cont: Controller: A kontroller, amin függvényt hívja.
+		 * @param b: JComboBox<String> A doboz, amibõl kiolvassa a paramétert.
+		 */
+		public MineSelectListener(DialogSelect1 dial, Controller cont, JComboBox<String> b) {
+			parentDialog = dial;
+			controller = cont;
+			box = b;
+		}
+		/**
+		 * Megnyomjuk a select gombot, bányászunk, majd bezárjuk.
+		 */
+		public void actionPerformed(ActionEvent e) {
+			String settlerID = (String) box.getSelectedItem();
+			if(settlerID == null || settlerID == "") {
+				return;
+			}
+			controller.handleMine(settlerID);
+			parentDialog.setVisible(false);
+		}
+	}	
 }

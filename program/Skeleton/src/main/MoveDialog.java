@@ -52,14 +52,14 @@ public class MoveDialog extends DialogSelect3 {
 				//Itt a kiválasztott célnak megfelelõen feltöltöm a középsõ comboboxot.
 				if(selectedType == "Asteroid") {
 					this.comboMiddle.removeAllItems();
-					String[] ids = game.getAsteroidIDs();
+					String[] ids = game.getAsteroidIds();
 					for(int i = 0; i < ids.length; i++) {
 						this.comboMiddle.addItem(ids[i]);
 					}
 				}
 				else if(selectedType == "StarGate") {
 					this.comboMiddle.removeAllItems();
-					String[] ids = game.getStarGateIDs();
+					String[] ids = game.getStarGateIds();
 					for(int i = 0; i < ids.length; i++) {
 						this.comboMiddle.addItem(ids[i]);
 					}

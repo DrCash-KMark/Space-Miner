@@ -34,7 +34,7 @@ public class MineDialog extends DialogSelect1 {
 	 */
 	public void show() {
 		this.comboTop.removeAllItems();
-		String[] ids = game.getSettlerIDs();
+		String[] ids = game.getSettlerIds();
 		for(int i = 0; i < ids.length; i++) {
 			this.comboTop.addItem(ids[i]);
 		}

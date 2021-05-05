@@ -36,7 +36,7 @@ public class DrillDialog extends DialogSelect1 {
 	 */
 	public void show() {
 		this.comboTop.removeAllItems();
-		String[] settlerIDs = game.getSettlerIDs();
+		String[] settlerIDs = game.getSettlerIds();
 		for(int i = 0; i < settlerIDs.length; i++) {
 			this.comboTop.addItem(settlerIDs[i]);
 		}

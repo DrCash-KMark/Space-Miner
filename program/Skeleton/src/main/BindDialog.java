@@ -3,6 +3,7 @@ package main;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -24,89 +25,103 @@ public class BindDialog extends DialogSelect2 {
 	 * @param cont: A játék vezérlõje.
 	 */
 	public BindDialog(Game g, Controller cont) {
-		game = g;
-		controller = cont;
-		JPanel panel = new JPanel(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
-		c.gridheight = 6;
-		c.gridwidth = 3;
-		
-		//Legelsõ label elhelyezése.
-		c.gridy = 0;
-		c.gridx = 1;
-		c.fill = GridBagConstraints.HORIZONTAL;
-		JLabel textLabel = new JLabel("Bind");
-		panel.add(textLabel, c);
-		
-		//Második label elhelyezése.
-		c.gridy = 1;
-		c.gridx = 0;
-		JLabel buildTypeLabel = new JLabel("Type");
-		panel.add(buildTypeLabel, c);
-		
-		//Típusválasztó combobox lehelyezése.
-		c.gridy = 2;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		super(g, cont);
+		this.labelTitle.setText("Bind");
+		this.labelTop.setText("Type");
 		String[] types = new String[] {"Setteler", "Asteroid"};
-		this.comboTop = new JComboBox<String>(types);
-		//Eseménykezelõ a felsõ combo boxhoz, amivle megmondhatjuk milyen típust akarunk bindolni.
-		this.comboTop.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent e) {
-				JComboBox<String> combo = (JComboBox<String>) e.getSource();
-				String selectedType = (String) combo.getSelectedItem();
-				if(selectedType == "Settler") {
-					this.comboBottom.removeAllItems();
-					String[] ids = game.getSettlerIDs();
-					for(int i = 0; i < ids.length; i++) {
-						this.comboBottom.addItem(ids[i]);
-					}
-				}
-				else if(selectedType == "Asteroid") {
-					this.comboBottom.removeAllItems();
-					String[] ids = game.getAsteroidIDs();
-					for(int i = 0; i < ids.length; i++) {
-						this.comboBottom.addItem(ids[i]);
-					}
-				}
-			}
-		});
-		panel.add(this.comboTop, c);
-		
-		//Második label elhelyezése.
-		c.gridy = 3;
-		c.fill = GridBagConstraints.HORIZONTAL;
-		JLabel settlerLabel = new JLabel("Settler ID:");
-		panel.add(settlerLabel, c);
-		
-		//Combobox elhelyezése.
-		c.gridy = 4;
-		c.gridx = 0;
-		c.fill = GridBagConstraints.HORIZONTAL;
-		this.comboBottom = new JComboBox<String>();
-		panel.add(this.comboTop, c);
-		
-		//Select gomb elhelyezése.
-		c.gridy = 5;
-		c.gridx = 1;
-		c.fill = GridBagConstraints.NONE;
-		this.bSelect = new JButton("Select");
-		//Ez itt nem lesz jó, kell egy saját actionListener osztály.
-		//De itt lenne az eseménykezelés.
-		this.bSelect.addActionListener(selectAction);
-		panel.add(this.bSelect, c);
-	}
-
-	public void selectAction(ActionEvent e) {
-		controller.handleBind(getWarningString(), getName());
-		this.setVisible(false);
-	}
-	
+		for(int i= 0; i < types.length; i++) {
+			comboTop.addItem(types[i]);
+		}
+		this.labelBottom.setText("ID:");
+		SelectTypeListener typeChangeListener = new SelectTypeListener(this.game, this.comboBottom);
+		this.comboTop.addItemListener(typeChangeListener);
+		BindListener bindListener = new BindListener(this, this.controller, this.comboTop, this.comboBottom);
+		this.bSelect.addActionListener(bindListener);
+	}	
 	/**
 	 * A dialógusablak megjelenítése.
 	 * Ebben az esetben, mikor újra megnyitjuk, csak kiveszem az alsó ablakból a régi értékeket.
+	 * Újra ki kell majd választani a fajtát.
 	 */
 	public void show() {
 		this.comboBottom.removeAllItems();
 	}
-
+	
+	/**
+	 * A bind mûvelet eseménykezelõ osztálya.
+	 * @author Totya
+	 */
+	private class BindListener implements ActionListener {
+		private DialogSelect2 parentDialog;
+		private Controller controller;
+		private JComboBox<String> comboType;
+		private JComboBox<String> comboSelected;
+		/**
+		 * A bind mûvelet eseménykezelõjének konstruktora.
+		 * @param dial: DialogSelect2: A dialógusablak, amit a mûvelet végén be kell zárni.
+		 * @param cont: Controller: A vezérlõ ami a bind mûveletet végzi.
+		 * @param type: JComboBox<String>: A típust kiválasztó combobox, amit bindolunk.
+		 * @param selected: Az azonosító amit bindolunk.
+		 */
+		public BindListener(DialogSelect2 dial, Controller cont, JComboBox<String> type, JComboBox<String> selected) {
+			parentDialog = dial;
+			controller = cont;
+			comboType = type;
+			comboSelected = selected;
+		}
+		/**
+		 * A bindolás eseménye.
+		 * @param e
+		 */
+		public void actionPerformed(ActionEvent e) {
+			String selectedType = (String) comboType.getSelectedItem();
+			String selectedID = (String) comboSelected.getSelectedItem();
+			//Ha bármi üres, vissza.
+			if((selectedType == null || selectedType == "") && (selectedID == null || selectedID == "")) {
+				return;
+			}
+			controller.handleBind(selectedID, selectedType);
+			parentDialog.setVisible(false);
+		}	
+	}
+	
+	/**
+	 * Bindolt típus választásának eseménykezelõ osztálya.
+	 * A bind dialógus belsõ osztálya.
+	 * @author Totya.
+	 */
+	private class SelectTypeListener implements ItemListener {
+		private Game game;
+		private JComboBox<String> selectableCombo;
+		/**
+		 * A Típusválasztó eseménykezelõ konstruktora.
+		 * @param g: Game: A játék, amitõ lekérdezzük az adatokat.
+		 * @param gc: JComboBox<String> tc: A típusokat tartalmazó comboBox.
+		 */
+		public SelectTypeListener(Game g, JComboBox<String> tc) {
+			game = g;
+			selectableCombo = tc;
+		}
+		/**
+		 * Az eddigi azonosítókat tartalmazó comboBoxot kiüríti, majd lekéri a játéktól az új adatokat, a kiválaszott típus alapján.
+		 * Ezután feltölti az azonosítókat tartalmazó comboboxot.
+		 */
+		public void itemStateChanged(ItemEvent e) {
+			selectableCombo.removeAllItems();
+			JComboBox<String> src = (JComboBox<String>) e.getSource();
+			String selectedType = (String) src.getSelectedItem();
+			if(selectedType == "Asteroid") {
+				String[] availableAsteroids = game.getAsteroidIds();
+				for(int i = 0; i < availableAsteroids.length; i++) {
+					selectableCombo.addItem(availableAsteroids[i]);
+				}
+			}
+			else if(selectedType == "Settler") {
+				String[] availableSettlers = game.getSettlerIds();
+				for(int i = 0; i < availableSettlers.length; i++) {
+					selectableCombo.addItem(availableSettlers[i]);
+				}
+			}
+		}
+	}
 }

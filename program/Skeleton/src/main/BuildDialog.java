@@ -44,7 +44,7 @@ public class BuildDialog extends DialogSelect2 {
 	 */
 	public void show() {
 		this.comboBottom.removeAllItems();
-		String[] ids = game.getSettlerIDs();
+		String[] ids = game.getSettlerIds();
 		for(int i = 0; i < ids.length; i++) {
 			this.comboBottom.addItem(ids[i]);
 		}

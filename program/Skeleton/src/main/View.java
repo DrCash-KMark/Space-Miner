@@ -9,12 +9,18 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -38,6 +44,7 @@ public class View {
 	private JButton bLoad;
 	private JButton bExit;
 	private JButton bNextTurn;
+	private JTextArea tbTurnEvents;
 	
 	private JPanel pGraphicView;
 	private JPanel pPictureGraphicView;
@@ -55,8 +62,12 @@ public class View {
 	private JPanel mProperties;
 	private JPanel bSetProperties;
 	private JButton bBind;
+	private JTextField tbProperties;
+	
+	private Controller controller;
 	
 	public View(){
+		
 		fMainWindow = new JFrame();
 		pMainWindow = new JPanel();
 		pMainWindowborder = new JPanel();
@@ -73,6 +84,7 @@ public class View {
 		bSave = new JButton("Save");
 		bLoad = new JButton("Load");
 		bExit = new JButton("Exit");
+		tbTurnEvents = new JTextArea();
 		
 		pGraphicView = new JPanel();
 		pPictureGraphicView = new JPanel();
@@ -93,7 +105,21 @@ public class View {
 		
 		pMainBottomLabel = new JPanel();
 		lMainBottomLabel = new JLabel("Created by: Brainstormers");
+	}
+	
+	public void setController(Controller controller) {
+		this.controller = controller;
+	}
+	
+	public void Display() {
 		BuildView();
+		
+		bNextTurn.addActionListener( new NextTurnListener());
+		bNew.addActionListener( new NewListener());
+		bSave.addActionListener( new SaveListener());
+		bLoad.addActionListener( new LoadListener());
+		bExit.addActionListener( new ExitListener());
+		
 		fMainWindow.setVisible(true);
 	}
 	
@@ -233,6 +259,50 @@ public class View {
 		setSidePanel(pTurnEvents, pLabelTurnEvents, 0, 0);
 		setSidePanel(pTurnEvents, mTurnEvents, 0, 1);
 		setSidePanel(pTurnEvents, bSetTurnEvents, 0, 2);
+		
+		JScrollPane scroll = new JScrollPane (tbTurnEvents, 
+				   JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scroll.setPreferredSize(new Dimension(500, 500));
+		
+		tbTurnEvents.setFont(new Font("Broadway", Font.BOLD, 25));
+		tbTurnEvents.append("SunId: sun1\r\n" + 
+				"isRandom: f\r\n" + 
+				"asteroids:\r\n" + 
+				"asteroid: ast\r\n" + 
+				"--------------------\r\n" + 
+				"Asteroid id: ast1\r\n" + 
+				"rockThickness: 0\r\n" + 
+				"closeToSun: f\r\n" + 
+				"isRandom: f\r\n" + 
+				"materials:\r\n" + 
+				"material: coa1\r\n" + 
+				"neighbours:\r\n" + 
+				"neighbour: -\r\n" + 
+				"buildings:\r\n" + 
+				"building: -\r\n" + 
+				"settlers:\r\n" + 
+				"settler: set1\r\n" + 
+				"nonPlayers:\r\n" + 
+				"nonPlayer: -\r\n" + 
+				"--------------------\r\n" + 
+				"Settler id: set1\r\n" + 
+				"hadAcrtionThisTurn: true\r\n" + 
+				"asteroid: ast1\r\n" + 
+				"inventory: Inventory id: inv1\r\n" + 
+				"materials:\r\n" + 
+				"material: iro1\r\n" + 
+				"material: iro2\r\n" + 
+				"material: iro3\r\n" + 
+				"material: iro4\r\n" + 
+				"material: iro5\r\n" + 
+				"material: iro6\r\n" + 
+				"material: iro7\r\n" + 
+				"material: iro8\r\n" + 
+				"material: iro9\r\n" + 
+				"material: iro10\r\n" + 
+				"starGates:\r\n" + 
+				"starGate: -\r\n");
+		mTurnEvents.add(scroll);
 	}
 	
 	public void setSidePanel(JPanel panel, JPanel contained, int gridx, int gridy) {
@@ -279,4 +349,41 @@ public class View {
 		gbcButtonSet.gridheight = gridheight;
 		panel.add(buttun,gbcButtonSet);
 	}
+	
+	private class NextTurnListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			controller.handdleNextTurn();
+		}
+	}
+	
+	private class NewListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			controller.handleNew();
+		}
+	}
+	
+	private class LoadListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			controller.handleLoad();
+		}
+	}
+	
+	private class SaveListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			controller.handleSave();
+		}
+	}
+	
+	private class ExitListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			controller.handleExit();
+		}
+	}
 }
+
+

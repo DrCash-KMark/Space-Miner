@@ -84,7 +84,7 @@ public class Game {
 	/**
 	 * Prints all the turn events on the console 
 	 */
-	public void listTurnEvents() {
+	public String listTurnEvents() {
 		String displayString = "# turn events:\n";
 		
 		for (String s : turnEvents) {
@@ -93,6 +93,8 @@ public class Game {
 		
 		if (turnEvents.size() == 0)
 			displayString += "-\n";
+		
+		return displayString;
 	}
 	
 	/**
@@ -226,11 +228,13 @@ public class Game {
 	/**
 	 * Lists every settler to the console
 	 */
-	public void listAllSettlers() {
+	public String listAllSettlers() {
 		String ret = "";
 		
 		for (Settler settler : settlers)
 			ret += settler.genUIString();
+		
+		return ret;
 	}
 	
 	/**

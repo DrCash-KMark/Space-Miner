@@ -1,24 +1,6452 @@
 Sun:
-id: sun1
-isRandom: f
+id: sun0
+isRandom: t
 AsteroidId: ast1
+AsteroidId: ast8
+AsteroidId: ast10
+AsteroidId: ast18
+AsteroidId: ast28
+AsteroidId: ast34
+AsteroidId: ast42
+AsteroidId: ast52
+AsteroidId: ast54
+AsteroidId: ast56
+AsteroidId: ast57
+AsteroidId: ast65
 ----------------------------------------------------
 Asteroid:
 id: ast1
-isRandom: f
-rockThickness: 0
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 6
+MaterialId: ice2
+MaterialId: ice3
+MaterialId: ice4
+MaterialId: ice5
+MaterialId: ice6
+MaterialId: ice7
+----------------------------------------------------
+Material:
+Material id: ice2
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice3
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice4
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice5
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice6
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice7
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast8
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 1
+MaterialId: coa9
+----------------------------------------------------
+Material:
+Material id: coa9
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast10
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 7
+MaterialId: iro11
+MaterialId: iro12
+MaterialId: iro13
+MaterialId: iro14
+MaterialId: iro15
+MaterialId: iro16
+MaterialId: iro17
+----------------------------------------------------
+Material:
+Material id: iro11
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro12
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro13
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro14
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro15
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro16
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro17
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast18
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 9
+MaterialId: coa19
+MaterialId: coa20
+MaterialId: coa21
+MaterialId: coa22
+MaterialId: coa23
+MaterialId: coa24
+MaterialId: coa25
+MaterialId: coa26
+MaterialId: coa27
+----------------------------------------------------
+Material:
+Material id: coa19
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa20
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa21
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa22
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa23
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa24
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa25
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa26
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa27
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast28
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 5
+MaterialId: coa29
+MaterialId: coa30
+MaterialId: coa31
+MaterialId: coa32
+MaterialId: coa33
+----------------------------------------------------
+Material:
+Material id: coa29
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa30
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa31
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa32
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa33
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast34
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 7
+MaterialId: iro35
+MaterialId: iro36
+MaterialId: iro37
+MaterialId: iro38
+MaterialId: iro39
+MaterialId: iro40
+MaterialId: iro41
+----------------------------------------------------
+Material:
+Material id: iro35
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro36
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro37
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro38
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro39
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro40
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro41
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast42
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 9
+MaterialId: ice43
+MaterialId: ice44
+MaterialId: ice45
+MaterialId: ice46
+MaterialId: ice47
+MaterialId: ice48
+MaterialId: ice49
+MaterialId: ice50
+MaterialId: ice51
+----------------------------------------------------
+Material:
+Material id: ice43
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice44
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice45
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice46
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice47
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice48
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice49
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice50
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice51
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast52
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 1
+MaterialId: iro53
+----------------------------------------------------
+Material:
+Material id: iro53
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast54
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 1
+MaterialId: coa55
+----------------------------------------------------
+Material:
+Material id: coa55
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast56
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 9
+----------------------------------------------------
+Asteroid:
+id: ast57
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 7
+MaterialId: ice58
+MaterialId: ice59
+MaterialId: ice60
+MaterialId: ice61
+MaterialId: ice62
+MaterialId: ice63
+MaterialId: ice64
+----------------------------------------------------
+Material:
+Material id: ice58
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice59
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice60
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice61
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice62
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice63
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice64
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast65
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 8
+MaterialId: iro66
+MaterialId: iro67
+MaterialId: iro68
+MaterialId: iro69
+MaterialId: iro70
+MaterialId: iro71
+MaterialId: iro72
+MaterialId: iro73
+----------------------------------------------------
+Material:
+Material id: iro66
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro67
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro68
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro69
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro70
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro71
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro72
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro73
+Name: Iron
+----------------------------------------------------
+Sun:
+id: sun74
+isRandom: t
+AsteroidId: ast75
+AsteroidId: ast83
+AsteroidId: ast86
+AsteroidId: ast87
+AsteroidId: ast96
+AsteroidId: ast104
+AsteroidId: ast108
+AsteroidId: ast109
+AsteroidId: ast114
+AsteroidId: ast118
+AsteroidId: ast123
+AsteroidId: ast128
+----------------------------------------------------
+Asteroid:
+id: ast75
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 7
+MaterialId: coa76
+MaterialId: coa77
+MaterialId: coa78
+MaterialId: coa79
+MaterialId: coa80
+MaterialId: coa81
+MaterialId: coa82
+----------------------------------------------------
+Material:
+Material id: coa76
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa77
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa78
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa79
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa80
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa81
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa82
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast83
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 2
+MaterialId: ura84
+MaterialId: ura85
+----------------------------------------------------
+Material:
+Material id: ura84
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura85
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast86
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast87
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 8
+MaterialId: ice88
+MaterialId: ice89
+MaterialId: ice90
+MaterialId: ice91
+MaterialId: ice92
+MaterialId: ice93
+MaterialId: ice94
+MaterialId: ice95
+----------------------------------------------------
+Material:
+Material id: ice88
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice89
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice90
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice91
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice92
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice93
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice94
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice95
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast96
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 7
+MaterialId: iro97
+MaterialId: iro98
+MaterialId: iro99
+MaterialId: iro100
+MaterialId: iro101
+MaterialId: iro102
+MaterialId: iro103
+----------------------------------------------------
+Material:
+Material id: iro97
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro98
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro99
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro100
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro101
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro102
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro103
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast104
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 3
+nonPlayerId: ali1174
+MaterialId: ice105
+MaterialId: ice106
+MaterialId: ice107
+----------------------------------------------------
+Material:
+Material id: ice105
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice106
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice107
+Name: Ice
+----------------------------------------------------
+NonPlayer:
+id: ali1174
+asteroid: ast104
+isRandom: t
+inventory: inv1175
+----------------------------------------------------
+Inventory
+id: inv1175
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast108
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 9
+----------------------------------------------------
+Asteroid:
+id: ast109
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 4
+MaterialId: iro110
+MaterialId: iro111
+MaterialId: iro112
+MaterialId: iro113
+----------------------------------------------------
+Material:
+Material id: iro110
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro111
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro112
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro113
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast114
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 3
+MaterialId: ura115
+MaterialId: ura116
+MaterialId: ura117
+----------------------------------------------------
+Material:
+Material id: ura115
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura116
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura117
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast118
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 4
+MaterialId: iro119
+MaterialId: iro120
+MaterialId: iro121
+MaterialId: iro122
+----------------------------------------------------
+Material:
+Material id: iro119
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro120
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro121
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro122
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast123
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 4
+MaterialId: ice124
+MaterialId: ice125
+MaterialId: ice126
+MaterialId: ice127
+----------------------------------------------------
+Material:
+Material id: ice124
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice125
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice126
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice127
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast128
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 6
+MaterialId: iro129
+MaterialId: iro130
+MaterialId: iro131
+MaterialId: iro132
+MaterialId: iro133
+MaterialId: iro134
+----------------------------------------------------
+Material:
+Material id: iro129
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro130
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro131
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro132
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro133
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro134
+Name: Iron
+----------------------------------------------------
+Sun:
+id: sun135
+isRandom: t
+AsteroidId: ast136
+AsteroidId: ast141
+AsteroidId: ast147
+AsteroidId: ast150
+AsteroidId: ast151
+AsteroidId: ast160
+AsteroidId: ast161
+AsteroidId: ast162
+AsteroidId: ast163
+AsteroidId: ast173
+AsteroidId: ast176
+AsteroidId: ast183
+----------------------------------------------------
+Asteroid:
+id: ast136
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 4
+MaterialId: iro137
+MaterialId: iro138
+MaterialId: iro139
+MaterialId: iro140
+----------------------------------------------------
+Material:
+Material id: iro137
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro138
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro139
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro140
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast141
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 5
+MaterialId: coa142
+MaterialId: coa143
+MaterialId: coa144
+MaterialId: coa145
+MaterialId: coa146
+----------------------------------------------------
+Material:
+Material id: coa142
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa143
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa144
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa145
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa146
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast147
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 2
+MaterialId: ura148
+MaterialId: ura149
+----------------------------------------------------
+Material:
+Material id: ura148
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura149
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast150
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast151
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 8
+MaterialId: coa152
+MaterialId: coa153
+MaterialId: coa154
+MaterialId: coa155
+MaterialId: coa156
+MaterialId: coa157
+MaterialId: coa158
+MaterialId: coa159
+----------------------------------------------------
+Material:
+Material id: coa152
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa153
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa154
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa155
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa156
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa157
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa158
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa159
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast160
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast161
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 3
+----------------------------------------------------
+Asteroid:
+id: ast162
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 6
+----------------------------------------------------
+Asteroid:
+id: ast163
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 9
+MaterialId: ice164
+MaterialId: ice165
+MaterialId: ice166
+MaterialId: ice167
+MaterialId: ice168
+MaterialId: ice169
+MaterialId: ice170
+MaterialId: ice171
+MaterialId: ice172
+----------------------------------------------------
+Material:
+Material id: ice164
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice165
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice166
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice167
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice168
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice169
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice170
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice171
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice172
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast173
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 2
+MaterialId: coa174
+MaterialId: coa175
+----------------------------------------------------
+Material:
+Material id: coa174
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa175
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast176
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 6
+MaterialId: ura177
+MaterialId: ura178
+MaterialId: ura179
+MaterialId: ura180
+MaterialId: ura181
+MaterialId: ura182
+----------------------------------------------------
+Material:
+Material id: ura177
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura178
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura179
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura180
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura181
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura182
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast183
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 1
+----------------------------------------------------
+Sun:
+id: sun184
+isRandom: t
+AsteroidId: ast185
+AsteroidId: ast191
+AsteroidId: ast198
+AsteroidId: ast202
+AsteroidId: ast205
+AsteroidId: ast214
+AsteroidId: ast224
+AsteroidId: ast225
+AsteroidId: ast227
+AsteroidId: ast234
+AsteroidId: ast236
+AsteroidId: ast237
+----------------------------------------------------
+Asteroid:
+id: ast185
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 5
+MaterialId: ura186
+MaterialId: ura187
+MaterialId: ura188
+MaterialId: ura189
+MaterialId: ura190
+----------------------------------------------------
+Material:
+Material id: ura186
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura187
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura188
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura189
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura190
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast191
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 6
+MaterialId: coa192
+MaterialId: coa193
+MaterialId: coa194
+MaterialId: coa195
+MaterialId: coa196
+MaterialId: coa197
+----------------------------------------------------
+Material:
+Material id: coa192
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa193
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa194
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa195
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa196
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa197
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast198
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 3
+nonPlayerId: ali1168
+MaterialId: ice199
+MaterialId: ice200
+MaterialId: ice201
+----------------------------------------------------
+Material:
+Material id: ice199
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice200
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice201
+Name: Ice
+----------------------------------------------------
+NonPlayer:
+id: ali1168
+asteroid: ast198
+isRandom: t
+inventory: inv1169
+----------------------------------------------------
+Inventory
+id: inv1169
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast202
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 2
+MaterialId: ice203
+MaterialId: ice204
+----------------------------------------------------
+Material:
+Material id: ice203
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice204
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast205
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 8
+MaterialId: iro206
+MaterialId: iro207
+MaterialId: iro208
+MaterialId: iro209
+MaterialId: iro210
+MaterialId: iro211
+MaterialId: iro212
+MaterialId: iro213
+----------------------------------------------------
+Material:
+Material id: iro206
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro207
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro208
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro209
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro210
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro211
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro212
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro213
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast214
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 9
+MaterialId: coa215
+MaterialId: coa216
+MaterialId: coa217
+MaterialId: coa218
+MaterialId: coa219
+MaterialId: coa220
+MaterialId: coa221
+MaterialId: coa222
+MaterialId: coa223
+----------------------------------------------------
+Material:
+Material id: coa215
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa216
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa217
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa218
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa219
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa220
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa221
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa222
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa223
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast224
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast225
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 1
+MaterialId: coa226
+----------------------------------------------------
+Material:
+Material id: coa226
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast227
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 6
+MaterialId: iro228
+MaterialId: iro229
+MaterialId: iro230
+MaterialId: iro231
+MaterialId: iro232
+MaterialId: iro233
+----------------------------------------------------
+Material:
+Material id: iro228
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro229
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro230
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro231
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro232
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro233
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast234
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 1
+nonPlayerId: ali1154
+MaterialId: ice235
+----------------------------------------------------
+Material:
+Material id: ice235
+Name: Ice
+----------------------------------------------------
+NonPlayer:
+id: ali1154
+asteroid: ast234
+isRandom: t
+inventory: inv1155
+----------------------------------------------------
+Inventory
+id: inv1155
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast236
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 6
+----------------------------------------------------
+Asteroid:
+id: ast237
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 3
+MaterialId: iro238
+MaterialId: iro239
+MaterialId: iro240
+----------------------------------------------------
+Material:
+Material id: iro238
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro239
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro240
+Name: Iron
+----------------------------------------------------
+Sun:
+id: sun241
+isRandom: t
+AsteroidId: ast242
+AsteroidId: ast248
+AsteroidId: ast254
+AsteroidId: ast255
+AsteroidId: ast263
+AsteroidId: ast264
+AsteroidId: ast268
+AsteroidId: ast275
+AsteroidId: ast280
+AsteroidId: ast289
+AsteroidId: ast290
+AsteroidId: ast298
+----------------------------------------------------
+Asteroid:
+id: ast242
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 5
+nonPlayerId: ali1144
+MaterialId: iro243
+MaterialId: iro244
+MaterialId: iro245
+MaterialId: iro246
+MaterialId: iro247
+----------------------------------------------------
+Material:
+Material id: iro243
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro244
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro245
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro246
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro247
+Name: Iron
+----------------------------------------------------
+NonPlayer:
+id: ali1144
+asteroid: ast242
+isRandom: t
+inventory: inv1145
+----------------------------------------------------
+Inventory
+id: inv1145
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast248
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 5
+nonPlayerId: ali1142
+MaterialId: coa249
+MaterialId: coa250
+MaterialId: coa251
+MaterialId: coa252
+MaterialId: coa253
+----------------------------------------------------
+Material:
+Material id: coa249
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa250
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa251
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa252
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa253
+Name: Coal
+----------------------------------------------------
+NonPlayer:
+id: ali1142
+asteroid: ast248
+isRandom: t
+inventory: inv1143
+----------------------------------------------------
+Inventory
+id: inv1143
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast254
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 9
+----------------------------------------------------
+Asteroid:
+id: ast255
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 7
+MaterialId: iro256
+MaterialId: iro257
+MaterialId: iro258
+MaterialId: iro259
+MaterialId: iro260
+MaterialId: iro261
+MaterialId: iro262
+----------------------------------------------------
+Material:
+Material id: iro256
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro257
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro258
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro259
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro260
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro261
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro262
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast263
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 8
+----------------------------------------------------
+Asteroid:
+id: ast264
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 3
+nonPlayerId: ali1138
+MaterialId: ura265
+MaterialId: ura266
+MaterialId: ura267
+----------------------------------------------------
+Material:
+Material id: ura265
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura266
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura267
+Name: Uran
+----------------------------------------------------
+NonPlayer:
+id: ali1138
+asteroid: ast264
+isRandom: t
+inventory: inv1139
+----------------------------------------------------
+Inventory
+id: inv1139
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast268
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 6
+MaterialId: iro269
+MaterialId: iro270
+MaterialId: iro271
+MaterialId: iro272
+MaterialId: iro273
+MaterialId: iro274
+----------------------------------------------------
+Material:
+Material id: iro269
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro270
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro271
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro272
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro273
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro274
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast275
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 4
+MaterialId: coa276
+MaterialId: coa277
+MaterialId: coa278
+MaterialId: coa279
+----------------------------------------------------
+Material:
+Material id: coa276
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa277
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa278
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa279
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast280
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 8
+MaterialId: coa281
+MaterialId: coa282
+MaterialId: coa283
+MaterialId: coa284
+MaterialId: coa285
+MaterialId: coa286
+MaterialId: coa287
+MaterialId: coa288
+----------------------------------------------------
+Material:
+Material id: coa281
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa282
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa283
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa284
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa285
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa286
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa287
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa288
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast289
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast290
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 7
+MaterialId: coa291
+MaterialId: coa292
+MaterialId: coa293
+MaterialId: coa294
+MaterialId: coa295
+MaterialId: coa296
+MaterialId: coa297
+----------------------------------------------------
+Material:
+Material id: coa291
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa292
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa293
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa294
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa295
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa296
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa297
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast298
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 7
+MaterialId: iro299
+MaterialId: iro300
+MaterialId: iro301
+MaterialId: iro302
+MaterialId: iro303
+MaterialId: iro304
+MaterialId: iro305
+----------------------------------------------------
+Material:
+Material id: iro299
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro300
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro301
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro302
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro303
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro304
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro305
+Name: Iron
+----------------------------------------------------
+Sun:
+id: sun306
+isRandom: t
+AsteroidId: ast307
+AsteroidId: ast313
+AsteroidId: ast314
+AsteroidId: ast315
+AsteroidId: ast322
+AsteroidId: ast332
+AsteroidId: ast336
+AsteroidId: ast340
+AsteroidId: ast341
+AsteroidId: ast348
+AsteroidId: ast349
+AsteroidId: ast356
+----------------------------------------------------
+Asteroid:
+id: ast307
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 5
+MaterialId: iro308
+MaterialId: iro309
+MaterialId: iro310
+MaterialId: iro311
+MaterialId: iro312
+----------------------------------------------------
+Material:
+Material id: iro308
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro309
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro310
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro311
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro312
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast313
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 9
+----------------------------------------------------
+Asteroid:
+id: ast314
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 5
+----------------------------------------------------
+Asteroid:
+id: ast315
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 6
+MaterialId: coa316
+MaterialId: coa317
+MaterialId: coa318
+MaterialId: coa319
+MaterialId: coa320
+MaterialId: coa321
+----------------------------------------------------
+Material:
+Material id: coa316
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa317
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa318
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa319
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa320
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa321
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast322
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 9
+MaterialId: iro323
+MaterialId: iro324
+MaterialId: iro325
+MaterialId: iro326
+MaterialId: iro327
+MaterialId: iro328
+MaterialId: iro329
+MaterialId: iro330
+MaterialId: iro331
+----------------------------------------------------
+Material:
+Material id: iro323
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro324
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro325
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro326
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro327
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro328
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro329
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro330
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro331
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast332
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 3
+MaterialId: ura333
+MaterialId: ura334
+MaterialId: ura335
+----------------------------------------------------
+Material:
+Material id: ura333
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura334
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura335
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast336
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 3
+MaterialId: coa337
+MaterialId: coa338
+MaterialId: coa339
+----------------------------------------------------
+Material:
+Material id: coa337
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa338
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa339
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast340
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast341
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 6
+MaterialId: ura342
+MaterialId: ura343
+MaterialId: ura344
+MaterialId: ura345
+MaterialId: ura346
+MaterialId: ura347
+----------------------------------------------------
+Material:
+Material id: ura342
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura343
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura344
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura345
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura346
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura347
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast348
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 2
+----------------------------------------------------
+Asteroid:
+id: ast349
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 6
+MaterialId: ice350
+MaterialId: ice351
+MaterialId: ice352
+MaterialId: ice353
+MaterialId: ice354
+MaterialId: ice355
+----------------------------------------------------
+Material:
+Material id: ice350
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice351
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice352
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice353
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice354
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice355
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast356
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 4
+MaterialId: ice357
+MaterialId: ice358
+MaterialId: ice359
+MaterialId: ice360
+----------------------------------------------------
+Material:
+Material id: ice357
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice358
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice359
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice360
+Name: Ice
+----------------------------------------------------
+Sun:
+id: sun361
+isRandom: t
+AsteroidId: ast362
+AsteroidId: ast365
+AsteroidId: ast375
+AsteroidId: ast376
+AsteroidId: ast377
+AsteroidId: ast384
+AsteroidId: ast385
+AsteroidId: ast393
+AsteroidId: ast403
+AsteroidId: ast409
+AsteroidId: ast410
+AsteroidId: ast417
+----------------------------------------------------
+Asteroid:
+id: ast362
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 2
+MaterialId: iro363
+MaterialId: iro364
+----------------------------------------------------
+Material:
+Material id: iro363
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro364
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast365
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 9
+MaterialId: iro366
+MaterialId: iro367
+MaterialId: iro368
+MaterialId: iro369
+MaterialId: iro370
+MaterialId: iro371
+MaterialId: iro372
+MaterialId: iro373
+MaterialId: iro374
+----------------------------------------------------
+Material:
+Material id: iro366
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro367
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro368
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro369
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro370
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro371
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro372
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro373
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro374
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast375
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 6
+----------------------------------------------------
+Asteroid:
+id: ast376
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast377
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 6
+nonPlayerId: ali1146
+MaterialId: ura378
+MaterialId: ura379
+MaterialId: ura380
+MaterialId: ura381
+MaterialId: ura382
+MaterialId: ura383
+----------------------------------------------------
+Material:
+Material id: ura378
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura379
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura380
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura381
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura382
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura383
+Name: Uran
+----------------------------------------------------
+NonPlayer:
+id: ali1146
+asteroid: ast377
+isRandom: t
+inventory: inv1147
+----------------------------------------------------
+Inventory
+id: inv1147
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast384
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 4
+----------------------------------------------------
+Asteroid:
+id: ast385
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 7
+MaterialId: ura386
+MaterialId: ura387
+MaterialId: ura388
+MaterialId: ura389
+MaterialId: ura390
+MaterialId: ura391
+MaterialId: ura392
+----------------------------------------------------
+Material:
+Material id: ura386
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura387
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura388
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura389
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura390
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura391
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura392
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast393
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 9
+MaterialId: ura394
+MaterialId: ura395
+MaterialId: ura396
+MaterialId: ura397
+MaterialId: ura398
+MaterialId: ura399
+MaterialId: ura400
+MaterialId: ura401
+MaterialId: ura402
+----------------------------------------------------
+Material:
+Material id: ura394
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura395
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura396
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura397
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura398
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura399
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura400
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura401
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura402
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast403
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 5
+nonPlayerId: ali1164
+MaterialId: iro404
+MaterialId: iro405
+MaterialId: iro406
+MaterialId: iro407
+MaterialId: iro408
+----------------------------------------------------
+Material:
+Material id: iro404
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro405
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro406
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro407
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro408
+Name: Iron
+----------------------------------------------------
+NonPlayer:
+id: ali1164
+asteroid: ast403
+isRandom: t
+inventory: inv1165
+----------------------------------------------------
+Inventory
+id: inv1165
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast409
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 7
+nonPlayerId: ali1166
+----------------------------------------------------
+NonPlayer:
+id: ali1166
+asteroid: ast409
+isRandom: t
+inventory: inv1167
+----------------------------------------------------
+Inventory
+id: inv1167
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast410
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 6
+MaterialId: ice411
+MaterialId: ice412
+MaterialId: ice413
+MaterialId: ice414
+MaterialId: ice415
+MaterialId: ice416
+----------------------------------------------------
+Material:
+Material id: ice411
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice412
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice413
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice414
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice415
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice416
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast417
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 1
+MaterialId: ice418
+----------------------------------------------------
+Material:
+Material id: ice418
+Name: Ice
+----------------------------------------------------
+Sun:
+id: sun419
+isRandom: t
+AsteroidId: ast420
+AsteroidId: ast430
+AsteroidId: ast440
+AsteroidId: ast442
+AsteroidId: ast449
+AsteroidId: ast450
+AsteroidId: ast451
+AsteroidId: ast460
+AsteroidId: ast467
+AsteroidId: ast473
+AsteroidId: ast481
+AsteroidId: ast484
+----------------------------------------------------
+Asteroid:
+id: ast420
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 9
+MaterialId: coa421
+MaterialId: coa422
+MaterialId: coa423
+MaterialId: coa424
+MaterialId: coa425
+MaterialId: coa426
+MaterialId: coa427
+MaterialId: coa428
+MaterialId: coa429
+----------------------------------------------------
+Material:
+Material id: coa421
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa422
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa423
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa424
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa425
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa426
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa427
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa428
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa429
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast430
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 9
+MaterialId: coa431
+MaterialId: coa432
+MaterialId: coa433
+MaterialId: coa434
+MaterialId: coa435
+MaterialId: coa436
+MaterialId: coa437
+MaterialId: coa438
+MaterialId: coa439
+----------------------------------------------------
+Material:
+Material id: coa431
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa432
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa433
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa434
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa435
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa436
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa437
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa438
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa439
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast440
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 1
+MaterialId: coa441
+----------------------------------------------------
+Material:
+Material id: coa441
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast442
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 6
+MaterialId: coa443
+MaterialId: coa444
+MaterialId: coa445
+MaterialId: coa446
+MaterialId: coa447
+MaterialId: coa448
+----------------------------------------------------
+Material:
+Material id: coa443
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa444
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa445
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa446
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa447
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa448
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast449
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 1
+----------------------------------------------------
+Asteroid:
+id: ast450
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 2
+----------------------------------------------------
+Asteroid:
+id: ast451
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 8
+MaterialId: ura452
+MaterialId: ura453
+MaterialId: ura454
+MaterialId: ura455
+MaterialId: ura456
+MaterialId: ura457
+MaterialId: ura458
+MaterialId: ura459
+----------------------------------------------------
+Material:
+Material id: ura452
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura453
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura454
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura455
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura456
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura457
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura458
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura459
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast460
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 6
+MaterialId: coa461
+MaterialId: coa462
+MaterialId: coa463
+MaterialId: coa464
+MaterialId: coa465
+MaterialId: coa466
+----------------------------------------------------
+Material:
+Material id: coa461
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa462
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa463
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa464
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa465
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa466
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast467
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 5
+MaterialId: ice468
+MaterialId: ice469
+MaterialId: ice470
+MaterialId: ice471
+MaterialId: ice472
+----------------------------------------------------
+Material:
+Material id: ice468
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice469
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice470
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice471
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice472
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast473
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 7
+MaterialId: ura474
+MaterialId: ura475
+MaterialId: ura476
+MaterialId: ura477
+MaterialId: ura478
+MaterialId: ura479
+MaterialId: ura480
+----------------------------------------------------
+Material:
+Material id: ura474
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura475
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura476
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura477
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura478
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura479
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura480
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast481
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 2
+MaterialId: iro482
+MaterialId: iro483
+----------------------------------------------------
+Material:
+Material id: iro482
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro483
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast484
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 4
+----------------------------------------------------
+Sun:
+id: sun485
+isRandom: t
+AsteroidId: ast486
+AsteroidId: ast490
+AsteroidId: ast498
+AsteroidId: ast500
+AsteroidId: ast506
+AsteroidId: ast509
+AsteroidId: ast511
+AsteroidId: ast518
+AsteroidId: ast522
+AsteroidId: ast529
+AsteroidId: ast537
+AsteroidId: ast547
+----------------------------------------------------
+Asteroid:
+id: ast486
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 3
+MaterialId: coa487
+MaterialId: coa488
+MaterialId: coa489
+----------------------------------------------------
+Material:
+Material id: coa487
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa488
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa489
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast490
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 7
+MaterialId: ura491
+MaterialId: ura492
+MaterialId: ura493
+MaterialId: ura494
+MaterialId: ura495
+MaterialId: ura496
+MaterialId: ura497
+----------------------------------------------------
+Material:
+Material id: ura491
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura492
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura493
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura494
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura495
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura496
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura497
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast498
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 1
+MaterialId: coa499
+----------------------------------------------------
+Material:
+Material id: coa499
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast500
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 5
+MaterialId: iro501
+MaterialId: iro502
+MaterialId: iro503
+MaterialId: iro504
+MaterialId: iro505
+----------------------------------------------------
+Material:
+Material id: iro501
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro502
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro503
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro504
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro505
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast506
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 2
+MaterialId: coa507
+MaterialId: coa508
+----------------------------------------------------
+Material:
+Material id: coa507
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa508
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast509
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 1
+MaterialId: iro510
+----------------------------------------------------
+Material:
+Material id: iro510
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast511
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 6
+MaterialId: coa512
+MaterialId: coa513
+MaterialId: coa514
+MaterialId: coa515
+MaterialId: coa516
+MaterialId: coa517
+----------------------------------------------------
+Material:
+Material id: coa512
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa513
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa514
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa515
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa516
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa517
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast518
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 3
+MaterialId: coa519
+MaterialId: coa520
+MaterialId: coa521
+----------------------------------------------------
+Material:
+Material id: coa519
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa520
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa521
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast522
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 6
+MaterialId: iro523
+MaterialId: iro524
+MaterialId: iro525
+MaterialId: iro526
+MaterialId: iro527
+MaterialId: iro528
+----------------------------------------------------
+Material:
+Material id: iro523
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro524
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro525
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro526
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro527
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro528
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast529
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 7
+MaterialId: coa530
+MaterialId: coa531
+MaterialId: coa532
+MaterialId: coa533
+MaterialId: coa534
+MaterialId: coa535
+MaterialId: coa536
+----------------------------------------------------
+Material:
+Material id: coa530
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa531
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa532
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa533
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa534
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa535
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa536
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast537
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 9
+MaterialId: ura538
+MaterialId: ura539
+MaterialId: ura540
+MaterialId: ura541
+MaterialId: ura542
+MaterialId: ura543
+MaterialId: ura544
+MaterialId: ura545
+MaterialId: ura546
+----------------------------------------------------
+Material:
+Material id: ura538
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura539
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura540
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura541
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura542
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura543
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura544
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura545
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura546
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast547
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 2
+MaterialId: ice548
+MaterialId: ice549
+----------------------------------------------------
+Material:
+Material id: ice548
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice549
+Name: Ice
+----------------------------------------------------
+Sun:
+id: sun550
+isRandom: t
+AsteroidId: ast551
+AsteroidId: ast552
+AsteroidId: ast557
+AsteroidId: ast559
+AsteroidId: ast569
+AsteroidId: ast579
+AsteroidId: ast586
+AsteroidId: ast587
+AsteroidId: ast589
+AsteroidId: ast591
+AsteroidId: ast592
+AsteroidId: ast593
+----------------------------------------------------
+Asteroid:
+id: ast551
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 5
+----------------------------------------------------
+Asteroid:
+id: ast552
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 4
+nonPlayerId: ali1140
+MaterialId: coa553
+MaterialId: coa554
+MaterialId: coa555
+MaterialId: coa556
+----------------------------------------------------
+Material:
+Material id: coa553
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa554
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa555
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa556
+Name: Coal
+----------------------------------------------------
+NonPlayer:
+id: ali1140
+asteroid: ast552
+isRandom: t
+inventory: inv1141
+----------------------------------------------------
+Inventory
+id: inv1141
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast557
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 1
+nonPlayerId: ali1176
+MaterialId: coa558
+----------------------------------------------------
+Material:
+Material id: coa558
+Name: Coal
+----------------------------------------------------
+NonPlayer:
+id: ali1176
+asteroid: ast557
+isRandom: t
+inventory: inv1177
+----------------------------------------------------
+Inventory
+id: inv1177
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast559
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 9
+MaterialId: iro560
+MaterialId: iro561
+MaterialId: iro562
+MaterialId: iro563
+MaterialId: iro564
+MaterialId: iro565
+MaterialId: iro566
+MaterialId: iro567
+MaterialId: iro568
+----------------------------------------------------
+Material:
+Material id: iro560
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro561
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro562
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro563
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro564
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro565
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro566
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro567
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro568
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast569
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 9
+MaterialId: iro570
+MaterialId: iro571
+MaterialId: iro572
+MaterialId: iro573
+MaterialId: iro574
+MaterialId: iro575
+MaterialId: iro576
+MaterialId: iro577
+MaterialId: iro578
+----------------------------------------------------
+Material:
+Material id: iro570
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro571
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro572
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro573
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro574
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro575
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro576
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro577
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro578
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast579
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 6
+MaterialId: iro580
+MaterialId: iro581
+MaterialId: iro582
+MaterialId: iro583
+MaterialId: iro584
+MaterialId: iro585
+----------------------------------------------------
+Material:
+Material id: iro580
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro581
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro582
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro583
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro584
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro585
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast586
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast587
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 1
+MaterialId: iro588
+----------------------------------------------------
+Material:
+Material id: iro588
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast589
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 1
+MaterialId: ura590
+----------------------------------------------------
+Material:
+Material id: ura590
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast591
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 2
+----------------------------------------------------
+Asteroid:
+id: ast592
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast593
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 2
+MaterialId: iro594
+MaterialId: iro595
+----------------------------------------------------
+Material:
+Material id: iro594
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro595
+Name: Iron
+----------------------------------------------------
+Sun:
+id: sun596
+isRandom: t
+AsteroidId: ast597
+AsteroidId: ast598
+AsteroidId: ast605
+AsteroidId: ast615
+AsteroidId: ast616
+AsteroidId: ast620
+AsteroidId: ast621
+AsteroidId: ast622
+AsteroidId: ast624
+AsteroidId: ast629
+AsteroidId: ast633
+AsteroidId: ast637
+----------------------------------------------------
+Asteroid:
+id: ast597
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 8
+nonPlayerId: ali1132
+----------------------------------------------------
+NonPlayer:
+id: ali1132
+asteroid: ast597
+isRandom: t
+inventory: inv1133
+----------------------------------------------------
+Inventory
+id: inv1133
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast598
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 6
+MaterialId: iro599
+MaterialId: iro600
+MaterialId: iro601
+MaterialId: iro602
+MaterialId: iro603
+MaterialId: iro604
+----------------------------------------------------
+Material:
+Material id: iro599
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro600
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro601
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro602
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro603
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro604
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast605
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 9
+MaterialId: ice606
+MaterialId: ice607
+MaterialId: ice608
+MaterialId: ice609
+MaterialId: ice610
+MaterialId: ice611
+MaterialId: ice612
+MaterialId: ice613
+MaterialId: ice614
+----------------------------------------------------
+Material:
+Material id: ice606
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice607
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice608
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice609
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice610
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice611
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice612
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice613
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice614
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast615
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 9
+----------------------------------------------------
+Asteroid:
+id: ast616
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 3
+MaterialId: ice617
+MaterialId: ice618
+MaterialId: ice619
+----------------------------------------------------
+Material:
+Material id: ice617
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice618
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice619
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast620
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast621
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast622
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 1
+MaterialId: iro623
+----------------------------------------------------
+Material:
+Material id: iro623
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast624
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 4
+MaterialId: coa625
+MaterialId: coa626
+MaterialId: coa627
+MaterialId: coa628
+----------------------------------------------------
+Material:
+Material id: coa625
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa626
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa627
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa628
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast629
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 3
+nonPlayerId: ali1150
+MaterialId: ura630
+MaterialId: ura631
+MaterialId: ura632
+----------------------------------------------------
+Material:
+Material id: ura630
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura631
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura632
+Name: Uran
+----------------------------------------------------
+NonPlayer:
+id: ali1150
+asteroid: ast629
+isRandom: t
+inventory: inv1151
+----------------------------------------------------
+Inventory
+id: inv1151
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast633
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 3
+MaterialId: iro634
+MaterialId: iro635
+MaterialId: iro636
+----------------------------------------------------
+Material:
+Material id: iro634
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro635
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro636
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast637
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Sun:
+id: sun638
+isRandom: t
+AsteroidId: ast639
+AsteroidId: ast640
+AsteroidId: ast646
+AsteroidId: ast655
+AsteroidId: ast656
+AsteroidId: ast660
+AsteroidId: ast663
+AsteroidId: ast672
+AsteroidId: ast678
+AsteroidId: ast684
+AsteroidId: ast685
+AsteroidId: ast686
+----------------------------------------------------
+Asteroid:
+id: ast639
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 9
+----------------------------------------------------
+Asteroid:
+id: ast640
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 5
+MaterialId: ice641
+MaterialId: ice642
+MaterialId: ice643
+MaterialId: ice644
+MaterialId: ice645
+----------------------------------------------------
+Material:
+Material id: ice641
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice642
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice643
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice644
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice645
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast646
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 8
+MaterialId: coa647
+MaterialId: coa648
+MaterialId: coa649
+MaterialId: coa650
+MaterialId: coa651
+MaterialId: coa652
+MaterialId: coa653
+MaterialId: coa654
+----------------------------------------------------
+Material:
+Material id: coa647
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa648
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa649
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa650
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa651
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa652
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa653
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa654
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast655
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 6
+----------------------------------------------------
+Asteroid:
+id: ast656
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 3
+MaterialId: coa657
+MaterialId: coa658
+MaterialId: coa659
+----------------------------------------------------
+Material:
+Material id: coa657
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa658
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa659
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast660
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 2
+MaterialId: iro661
+MaterialId: iro662
+----------------------------------------------------
+Material:
+Material id: iro661
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro662
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast663
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 8
+MaterialId: ura664
+MaterialId: ura665
+MaterialId: ura666
+MaterialId: ura667
+MaterialId: ura668
+MaterialId: ura669
+MaterialId: ura670
+MaterialId: ura671
+----------------------------------------------------
+Material:
+Material id: ura664
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura665
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura666
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura667
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura668
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura669
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura670
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura671
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast672
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 5
+MaterialId: iro673
+MaterialId: iro674
+MaterialId: iro675
+MaterialId: iro676
+MaterialId: iro677
+----------------------------------------------------
+Material:
+Material id: iro673
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro674
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro675
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro676
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro677
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast678
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 5
+MaterialId: ura679
+MaterialId: ura680
+MaterialId: ura681
+MaterialId: ura682
+MaterialId: ura683
+----------------------------------------------------
+Material:
+Material id: ura679
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura680
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura681
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura682
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura683
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast684
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 6
+----------------------------------------------------
+Asteroid:
+id: ast685
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast686
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 7
+MaterialId: ice687
+MaterialId: ice688
+MaterialId: ice689
+MaterialId: ice690
+MaterialId: ice691
+MaterialId: ice692
+MaterialId: ice693
+----------------------------------------------------
+Material:
+Material id: ice687
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice688
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice689
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice690
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice691
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice692
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice693
+Name: Ice
+----------------------------------------------------
+Sun:
+id: sun694
+isRandom: t
+AsteroidId: ast695
+AsteroidId: ast700
+AsteroidId: ast701
+AsteroidId: ast702
+AsteroidId: ast712
+AsteroidId: ast718
+AsteroidId: ast724
+AsteroidId: ast725
+AsteroidId: ast730
+AsteroidId: ast737
+AsteroidId: ast740
+AsteroidId: ast741
+----------------------------------------------------
+Asteroid:
+id: ast695
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 4
+MaterialId: ura696
+MaterialId: ura697
+MaterialId: ura698
+MaterialId: ura699
+----------------------------------------------------
+Material:
+Material id: ura696
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura697
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura698
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura699
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast700
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 8
+----------------------------------------------------
+Asteroid:
+id: ast701
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 5
+----------------------------------------------------
+Asteroid:
+id: ast702
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 9
+MaterialId: coa703
+MaterialId: coa704
+MaterialId: coa705
+MaterialId: coa706
+MaterialId: coa707
+MaterialId: coa708
+MaterialId: coa709
+MaterialId: coa710
+MaterialId: coa711
+----------------------------------------------------
+Material:
+Material id: coa703
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa704
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa705
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa706
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa707
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa708
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa709
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa710
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa711
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast712
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 5
+MaterialId: coa713
+MaterialId: coa714
+MaterialId: coa715
+MaterialId: coa716
+MaterialId: coa717
+----------------------------------------------------
+Material:
+Material id: coa713
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa714
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa715
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa716
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa717
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast718
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 5
+MaterialId: ice719
+MaterialId: ice720
+MaterialId: ice721
+MaterialId: ice722
+MaterialId: ice723
+----------------------------------------------------
+Material:
+Material id: ice719
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice720
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice721
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice722
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice723
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast724
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 2
+----------------------------------------------------
+Asteroid:
+id: ast725
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 4
+MaterialId: iro726
+MaterialId: iro727
+MaterialId: iro728
+MaterialId: iro729
+----------------------------------------------------
+Material:
+Material id: iro726
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro727
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro728
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro729
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast730
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 6
+MaterialId: ura731
+MaterialId: ura732
+MaterialId: ura733
+MaterialId: ura734
+MaterialId: ura735
+MaterialId: ura736
+----------------------------------------------------
+Material:
+Material id: ura731
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura732
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura733
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura734
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura735
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura736
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast737
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 2
+MaterialId: iro738
+MaterialId: iro739
+----------------------------------------------------
+Material:
+Material id: iro738
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro739
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast740
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 2
+----------------------------------------------------
+Asteroid:
+id: ast741
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 2
+----------------------------------------------------
+Sun:
+id: sun742
+isRandom: t
+AsteroidId: ast743
+AsteroidId: ast753
+AsteroidId: ast761
+AsteroidId: ast762
+AsteroidId: ast772
+AsteroidId: ast773
+AsteroidId: ast781
+AsteroidId: ast782
+AsteroidId: ast785
+AsteroidId: ast794
+AsteroidId: ast801
+AsteroidId: ast802
+----------------------------------------------------
+Asteroid:
+id: ast743
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 9
+nonPlayerId: ali1186
+MaterialId: coa744
+MaterialId: coa745
+MaterialId: coa746
+MaterialId: coa747
+MaterialId: coa748
+MaterialId: coa749
+MaterialId: coa750
+MaterialId: coa751
+MaterialId: coa752
+----------------------------------------------------
+Material:
+Material id: coa744
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa745
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa746
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa747
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa748
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa749
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa750
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa751
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa752
+Name: Coal
+----------------------------------------------------
+NonPlayer:
+id: ali1186
+asteroid: ast743
+isRandom: t
+inventory: inv1187
+----------------------------------------------------
+Inventory
+id: inv1187
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast753
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 7
+MaterialId: ice754
+MaterialId: ice755
+MaterialId: ice756
+MaterialId: ice757
+MaterialId: ice758
+MaterialId: ice759
+MaterialId: ice760
+----------------------------------------------------
+Material:
+Material id: ice754
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice755
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice756
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice757
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice758
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice759
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice760
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast761
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 6
+----------------------------------------------------
+Asteroid:
+id: ast762
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 9
+MaterialId: iro763
+MaterialId: iro764
+MaterialId: iro765
+MaterialId: iro766
+MaterialId: iro767
+MaterialId: iro768
+MaterialId: iro769
+MaterialId: iro770
+MaterialId: iro771
+----------------------------------------------------
+Material:
+Material id: iro763
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro764
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro765
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro766
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro767
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro768
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro769
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro770
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro771
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast772
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 9
+----------------------------------------------------
+Asteroid:
+id: ast773
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 7
+nonPlayerId: ali1158
+MaterialId: ura774
+MaterialId: ura775
+MaterialId: ura776
+MaterialId: ura777
+MaterialId: ura778
+MaterialId: ura779
+MaterialId: ura780
+----------------------------------------------------
+Material:
+Material id: ura774
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura775
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura776
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura777
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura778
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura779
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura780
+Name: Uran
+----------------------------------------------------
+NonPlayer:
+id: ali1158
+asteroid: ast773
+isRandom: t
+inventory: inv1159
+----------------------------------------------------
+Inventory
+id: inv1159
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast781
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 9
+----------------------------------------------------
+Asteroid:
+id: ast782
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 2
+MaterialId: iro783
+MaterialId: iro784
+----------------------------------------------------
+Material:
+Material id: iro783
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro784
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast785
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 8
+MaterialId: ice786
+MaterialId: ice787
+MaterialId: ice788
+MaterialId: ice789
+MaterialId: ice790
+MaterialId: ice791
+MaterialId: ice792
+MaterialId: ice793
+----------------------------------------------------
+Material:
+Material id: ice786
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice787
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice788
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice789
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice790
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice791
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice792
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice793
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast794
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 6
+MaterialId: iro795
+MaterialId: iro796
+MaterialId: iro797
+MaterialId: iro798
+MaterialId: iro799
+MaterialId: iro800
+----------------------------------------------------
+Material:
+Material id: iro795
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro796
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro797
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro798
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro799
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro800
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast801
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 2
+----------------------------------------------------
+Asteroid:
+id: ast802
+isRandom: t
+rockThickness: 2
 closeToSun: f
 capacity: 0
 ----------------------------------------------------
 Sun:
-id: sun1
-isRandom: f
-AsteroidId: ast1
+id: sun803
+isRandom: t
+AsteroidId: ast804
+AsteroidId: ast808
+AsteroidId: ast813
+AsteroidId: ast817
+AsteroidId: ast823
+AsteroidId: ast824
+AsteroidId: ast826
+AsteroidId: ast828
+AsteroidId: ast837
+AsteroidId: ast838
+AsteroidId: ast845
+AsteroidId: ast851
 ----------------------------------------------------
 Asteroid:
-id: ast1
-isRandom: f
-rockThickness: 0
+id: ast804
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 3
+MaterialId: coa805
+MaterialId: coa806
+MaterialId: coa807
+----------------------------------------------------
+Material:
+Material id: coa805
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa806
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa807
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast808
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 4
+MaterialId: coa809
+MaterialId: coa810
+MaterialId: coa811
+MaterialId: coa812
+----------------------------------------------------
+Material:
+Material id: coa809
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa810
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa811
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa812
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast813
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 3
+MaterialId: iro814
+MaterialId: iro815
+MaterialId: iro816
+----------------------------------------------------
+Material:
+Material id: iro814
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro815
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro816
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast817
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 5
+MaterialId: coa818
+MaterialId: coa819
+MaterialId: coa820
+MaterialId: coa821
+MaterialId: coa822
+----------------------------------------------------
+Material:
+Material id: coa818
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa819
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa820
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa821
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa822
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast823
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast824
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 1
+MaterialId: iro825
+----------------------------------------------------
+Material:
+Material id: iro825
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast826
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 1
+MaterialId: iro827
+----------------------------------------------------
+Material:
+Material id: iro827
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast828
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 8
+MaterialId: ura829
+MaterialId: ura830
+MaterialId: ura831
+MaterialId: ura832
+MaterialId: ura833
+MaterialId: ura834
+MaterialId: ura835
+MaterialId: ura836
+----------------------------------------------------
+Material:
+Material id: ura829
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura830
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura831
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura832
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura833
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura834
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura835
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura836
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast837
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 7
+----------------------------------------------------
+Asteroid:
+id: ast838
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 6
+MaterialId: ura839
+MaterialId: ura840
+MaterialId: ura841
+MaterialId: ura842
+MaterialId: ura843
+MaterialId: ura844
+----------------------------------------------------
+Material:
+Material id: ura839
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura840
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura841
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura842
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura843
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura844
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast845
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 5
+MaterialId: coa846
+MaterialId: coa847
+MaterialId: coa848
+MaterialId: coa849
+MaterialId: coa850
+----------------------------------------------------
+Material:
+Material id: coa846
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa847
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa848
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa849
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa850
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast851
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 1
+MaterialId: ice852
+----------------------------------------------------
+Material:
+Material id: ice852
+Name: Ice
+----------------------------------------------------
+Sun:
+id: sun853
+isRandom: t
+AsteroidId: ast854
+AsteroidId: ast860
+AsteroidId: ast869
+AsteroidId: ast876
+AsteroidId: ast880
+AsteroidId: ast888
+AsteroidId: ast894
+AsteroidId: ast903
+AsteroidId: ast904
+AsteroidId: ast905
+AsteroidId: ast912
+AsteroidId: ast916
+----------------------------------------------------
+Asteroid:
+id: ast854
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 5
+MaterialId: ice855
+MaterialId: ice856
+MaterialId: ice857
+MaterialId: ice858
+MaterialId: ice859
+----------------------------------------------------
+Material:
+Material id: ice855
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice856
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice857
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice858
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice859
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast860
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 8
+MaterialId: coa861
+MaterialId: coa862
+MaterialId: coa863
+MaterialId: coa864
+MaterialId: coa865
+MaterialId: coa866
+MaterialId: coa867
+MaterialId: coa868
+----------------------------------------------------
+Material:
+Material id: coa861
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa862
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa863
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa864
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa865
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa866
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa867
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa868
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast869
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 6
+MaterialId: ura870
+MaterialId: ura871
+MaterialId: ura872
+MaterialId: ura873
+MaterialId: ura874
+MaterialId: ura875
+----------------------------------------------------
+Material:
+Material id: ura870
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura871
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura872
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura873
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura874
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura875
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast876
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 3
+MaterialId: ura877
+MaterialId: ura878
+MaterialId: ura879
+----------------------------------------------------
+Material:
+Material id: ura877
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura878
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura879
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast880
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 7
+nonPlayerId: ali1136
+MaterialId: ice881
+MaterialId: ice882
+MaterialId: ice883
+MaterialId: ice884
+MaterialId: ice885
+MaterialId: ice886
+MaterialId: ice887
+----------------------------------------------------
+Material:
+Material id: ice881
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice882
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice883
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice884
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice885
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice886
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice887
+Name: Ice
+----------------------------------------------------
+NonPlayer:
+id: ali1136
+asteroid: ast880
+isRandom: t
+inventory: inv1137
+----------------------------------------------------
+Inventory
+id: inv1137
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast888
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 5
+MaterialId: coa889
+MaterialId: coa890
+MaterialId: coa891
+MaterialId: coa892
+MaterialId: coa893
+----------------------------------------------------
+Material:
+Material id: coa889
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa890
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa891
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa892
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa893
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast894
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 8
+MaterialId: coa895
+MaterialId: coa896
+MaterialId: coa897
+MaterialId: coa898
+MaterialId: coa899
+MaterialId: coa900
+MaterialId: coa901
+MaterialId: coa902
+----------------------------------------------------
+Material:
+Material id: coa895
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa896
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa897
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa898
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa899
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa900
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa901
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa902
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast903
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 2
+----------------------------------------------------
+Asteroid:
+id: ast904
+isRandom: t
+rockThickness: 7
 closeToSun: f
 capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast905
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 6
+MaterialId: iro906
+MaterialId: iro907
+MaterialId: iro908
+MaterialId: iro909
+MaterialId: iro910
+MaterialId: iro911
+----------------------------------------------------
+Material:
+Material id: iro906
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro907
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro908
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro909
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro910
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro911
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast912
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 3
+nonPlayerId: ali1162
+MaterialId: ura913
+MaterialId: ura914
+MaterialId: ura915
+----------------------------------------------------
+Material:
+Material id: ura913
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura914
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura915
+Name: Uran
+----------------------------------------------------
+NonPlayer:
+id: ali1162
+asteroid: ast912
+isRandom: t
+inventory: inv1163
+----------------------------------------------------
+Inventory
+id: inv1163
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast916
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 6
+MaterialId: iro917
+MaterialId: iro918
+MaterialId: iro919
+MaterialId: iro920
+MaterialId: iro921
+MaterialId: iro922
+----------------------------------------------------
+Material:
+Material id: iro917
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro918
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro919
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro920
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro921
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro922
+Name: Iron
+----------------------------------------------------
+Sun:
+id: sun923
+isRandom: t
+AsteroidId: ast924
+AsteroidId: ast928
+AsteroidId: ast935
+AsteroidId: ast939
+AsteroidId: ast943
+AsteroidId: ast945
+AsteroidId: ast952
+AsteroidId: ast958
+AsteroidId: ast968
+AsteroidId: ast974
+AsteroidId: ast975
+AsteroidId: ast979
+----------------------------------------------------
+Asteroid:
+id: ast924
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 3
+MaterialId: ice925
+MaterialId: ice926
+MaterialId: ice927
+----------------------------------------------------
+Material:
+Material id: ice925
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice926
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice927
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast928
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 6
+MaterialId: iro929
+MaterialId: iro930
+MaterialId: iro931
+MaterialId: iro932
+MaterialId: iro933
+MaterialId: iro934
+----------------------------------------------------
+Material:
+Material id: iro929
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro930
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro931
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro932
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro933
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro934
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast935
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 3
+MaterialId: coa936
+MaterialId: coa937
+MaterialId: coa938
+----------------------------------------------------
+Material:
+Material id: coa936
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa937
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa938
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast939
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 3
+MaterialId: iro940
+MaterialId: iro941
+MaterialId: iro942
+----------------------------------------------------
+Material:
+Material id: iro940
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro941
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro942
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast943
+isRandom: t
+rockThickness: 6
+closeToSun: f
+capacity: 1
+MaterialId: ura944
+----------------------------------------------------
+Material:
+Material id: ura944
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast945
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 6
+MaterialId: iro946
+MaterialId: iro947
+MaterialId: iro948
+MaterialId: iro949
+MaterialId: iro950
+MaterialId: iro951
+----------------------------------------------------
+Material:
+Material id: iro946
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro947
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro948
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro949
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro950
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro951
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast952
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 5
+MaterialId: ice953
+MaterialId: ice954
+MaterialId: ice955
+MaterialId: ice956
+MaterialId: ice957
+----------------------------------------------------
+Material:
+Material id: ice953
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice954
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice955
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice956
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice957
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast958
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 9
+nonPlayerId: ali1156
+MaterialId: coa959
+MaterialId: coa960
+MaterialId: coa961
+MaterialId: coa962
+MaterialId: coa963
+MaterialId: coa964
+MaterialId: coa965
+MaterialId: coa966
+MaterialId: coa967
+----------------------------------------------------
+Material:
+Material id: coa959
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa960
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa961
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa962
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa963
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa964
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa965
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa966
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa967
+Name: Coal
+----------------------------------------------------
+NonPlayer:
+id: ali1156
+asteroid: ast958
+isRandom: t
+inventory: inv1157
+----------------------------------------------------
+Inventory
+id: inv1157
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast968
+isRandom: t
+rockThickness: 5
+closeToSun: f
+capacity: 5
+MaterialId: ura969
+MaterialId: ura970
+MaterialId: ura971
+MaterialId: ura972
+MaterialId: ura973
+----------------------------------------------------
+Material:
+Material id: ura969
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura970
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura971
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura972
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura973
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast974
+isRandom: t
+rockThickness: 5
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast975
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 3
+MaterialId: iro976
+MaterialId: iro977
+MaterialId: iro978
+----------------------------------------------------
+Material:
+Material id: iro976
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro977
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro978
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast979
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 6
+MaterialId: iro980
+MaterialId: iro981
+MaterialId: iro982
+MaterialId: iro983
+MaterialId: iro984
+MaterialId: iro985
+----------------------------------------------------
+Material:
+Material id: iro980
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro981
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro982
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro983
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro984
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro985
+Name: Iron
+----------------------------------------------------
+Sun:
+id: sun986
+isRandom: t
+AsteroidId: ast987
+AsteroidId: ast996
+AsteroidId: ast997
+AsteroidId: ast1006
+AsteroidId: ast1007
+AsteroidId: ast1008
+AsteroidId: ast1014
+AsteroidId: ast1020
+AsteroidId: ast1021
+AsteroidId: ast1022
+AsteroidId: ast1024
+AsteroidId: ast1025
+----------------------------------------------------
+Asteroid:
+id: ast987
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 8
+MaterialId: iro988
+MaterialId: iro989
+MaterialId: iro990
+MaterialId: iro991
+MaterialId: iro992
+MaterialId: iro993
+MaterialId: iro994
+MaterialId: iro995
+----------------------------------------------------
+Material:
+Material id: iro988
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro989
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro990
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro991
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro992
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro993
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro994
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro995
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast996
+isRandom: t
+rockThickness: 4
+closeToSun: t
+capacity: 3
+----------------------------------------------------
+Asteroid:
+id: ast997
+isRandom: t
+rockThickness: 3
+closeToSun: t
+capacity: 8
+MaterialId: iro998
+MaterialId: iro999
+MaterialId: iro1000
+MaterialId: iro1001
+MaterialId: iro1002
+MaterialId: iro1003
+MaterialId: iro1004
+MaterialId: iro1005
+----------------------------------------------------
+Material:
+Material id: iro998
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro999
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro1000
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro1001
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro1002
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro1003
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro1004
+Name: Iron
+----------------------------------------------------
+Material:
+Material id: iro1005
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast1006
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 3
+----------------------------------------------------
+Asteroid:
+id: ast1007
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 4
+----------------------------------------------------
+Asteroid:
+id: ast1008
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 5
+MaterialId: ura1009
+MaterialId: ura1010
+MaterialId: ura1011
+MaterialId: ura1012
+MaterialId: ura1013
+----------------------------------------------------
+Material:
+Material id: ura1009
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1010
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1011
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1012
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1013
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast1014
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 5
+MaterialId: coa1015
+MaterialId: coa1016
+MaterialId: coa1017
+MaterialId: coa1018
+MaterialId: coa1019
+----------------------------------------------------
+Material:
+Material id: coa1015
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1016
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1017
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1018
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1019
+Name: Coal
+----------------------------------------------------
+Asteroid:
+id: ast1020
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 4
+----------------------------------------------------
+Asteroid:
+id: ast1021
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast1022
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 1
+MaterialId: iro1023
+----------------------------------------------------
+Material:
+Material id: iro1023
+Name: Iron
+----------------------------------------------------
+Asteroid:
+id: ast1024
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 9
+----------------------------------------------------
+Asteroid:
+id: ast1025
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 7
+MaterialId: ice1026
+MaterialId: ice1027
+MaterialId: ice1028
+MaterialId: ice1029
+MaterialId: ice1030
+MaterialId: ice1031
+MaterialId: ice1032
+----------------------------------------------------
+Material:
+Material id: ice1026
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1027
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1028
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1029
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1030
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1031
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1032
+Name: Ice
+----------------------------------------------------
+Sun:
+id: sun1033
+isRandom: t
+AsteroidId: ast1034
+AsteroidId: ast1035
+AsteroidId: ast1036
+AsteroidId: ast1037
+AsteroidId: ast1038
+AsteroidId: ast1045
+AsteroidId: ast1054
+AsteroidId: ast1055
+AsteroidId: ast1056
+AsteroidId: ast1063
+AsteroidId: ast1064
+AsteroidId: ast1074
+----------------------------------------------------
+Asteroid:
+id: ast1034
+isRandom: t
+rockThickness: 7
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast1035
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 0
+----------------------------------------------------
+Asteroid:
+id: ast1036
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 4
+----------------------------------------------------
+Asteroid:
+id: ast1037
+isRandom: t
+rockThickness: 7
+closeToSun: f
+capacity: 3
+----------------------------------------------------
+Asteroid:
+id: ast1038
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 6
+MaterialId: ura1039
+MaterialId: ura1040
+MaterialId: ura1041
+MaterialId: ura1042
+MaterialId: ura1043
+MaterialId: ura1044
+----------------------------------------------------
+Material:
+Material id: ura1039
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1040
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1041
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1042
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1043
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1044
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast1045
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 8
+MaterialId: ice1046
+MaterialId: ice1047
+MaterialId: ice1048
+MaterialId: ice1049
+MaterialId: ice1050
+MaterialId: ice1051
+MaterialId: ice1052
+MaterialId: ice1053
+----------------------------------------------------
+Material:
+Material id: ice1046
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1047
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1048
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1049
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1050
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1051
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1052
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1053
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast1054
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 9
+settlerId: set1086
+settlerId: set1091
+settlerId: set1096
+settlerId: set1101
+settlerId: set1106
+settlerId: set1111
+settlerId: set1116
+settlerId: set1121
+settlerId: set1126
+settlerId: set1131
+nonPlayerId: ali1152
+----------------------------------------------------
+Settler:
+id: set1086
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1082
+----------------------------------------------------
+Inventory:
+id: inv1082
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Settler:
+id: set1091
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1087
+----------------------------------------------------
+Inventory:
+id: inv1087
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Settler:
+id: set1096
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1092
+----------------------------------------------------
+Inventory:
+id: inv1092
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Settler:
+id: set1101
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1097
+----------------------------------------------------
+Inventory:
+id: inv1097
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Settler:
+id: set1106
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1102
+----------------------------------------------------
+Inventory:
+id: inv1102
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Settler:
+id: set1111
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1107
+----------------------------------------------------
+Inventory:
+id: inv1107
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Settler:
+id: set1116
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1112
+----------------------------------------------------
+Inventory:
+id: inv1112
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Settler:
+id: set1121
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1117
+----------------------------------------------------
+Inventory:
+id: inv1117
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Settler:
+id: set1126
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1122
+----------------------------------------------------
+Inventory:
+id: inv1122
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Settler:
+id: set1131
+hadActionThisTurn: f
+asteroid: ast1054
+inventory: inv1127
+----------------------------------------------------
+Inventory:
+id: inv1127
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+NonPlayer:
+id: ali1152
+asteroid: ast1054
+isRandom: t
+inventory: inv1153
+----------------------------------------------------
+Inventory
+id: inv1153
+capacityM: 10
+capacitySG: 3
+
+----------------------------------------------------
+Asteroid:
+id: ast1055
+isRandom: t
+rockThickness: 2
+closeToSun: t
+capacity: 7
+----------------------------------------------------
+Asteroid:
+id: ast1056
+isRandom: t
+rockThickness: 2
+closeToSun: f
+capacity: 6
+MaterialId: ura1057
+MaterialId: ura1058
+MaterialId: ura1059
+MaterialId: ura1060
+MaterialId: ura1061
+MaterialId: ura1062
+----------------------------------------------------
+Material:
+Material id: ura1057
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1058
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1059
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1060
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1061
+Name: Uran
+----------------------------------------------------
+Material:
+Material id: ura1062
+Name: Uran
+----------------------------------------------------
+Asteroid:
+id: ast1063
+isRandom: t
+rockThickness: 3
+closeToSun: f
+capacity: 1
+----------------------------------------------------
+Asteroid:
+id: ast1064
+isRandom: t
+rockThickness: 4
+closeToSun: f
+capacity: 9
+MaterialId: ice1065
+MaterialId: ice1066
+MaterialId: ice1067
+MaterialId: ice1068
+MaterialId: ice1069
+MaterialId: ice1070
+MaterialId: ice1071
+MaterialId: ice1072
+MaterialId: ice1073
+----------------------------------------------------
+Material:
+Material id: ice1065
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1066
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1067
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1068
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1069
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1070
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1071
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1072
+Name: Ice
+----------------------------------------------------
+Material:
+Material id: ice1073
+Name: Ice
+----------------------------------------------------
+Asteroid:
+id: ast1074
+isRandom: t
+rockThickness: 6
+closeToSun: t
+capacity: 7
+MaterialId: coa1075
+MaterialId: coa1076
+MaterialId: coa1077
+MaterialId: coa1078
+MaterialId: coa1079
+MaterialId: coa1080
+MaterialId: coa1081
+----------------------------------------------------
+Material:
+Material id: coa1075
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1076
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1077
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1078
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1079
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1080
+Name: Coal
+----------------------------------------------------
+Material:
+Material id: coa1081
+Name: Coal
 ----------------------------------------------------

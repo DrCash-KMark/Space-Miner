@@ -262,21 +262,19 @@ public class Game {
 		int amountOfAliens = 30;
 		
 		for (int i = 0; i < amountOfSuns; i++) {
-			Sun s = new Sun();
-			s.setOwner(this);
-			s.setIsRandom(true);
-			
-			addSun(s);
+			Sun sun = new Sun();
+			sun.setOwner(this);
+			sun.setIsRandom(true);
+			suns.add(sun);
 			
 			for (int j = 0; j < amountOfAsteroidsPerSun; j++) {
-				Asteroid a = new Asteroid();
-				a.initialize();
-				a.setOwner(this);
-				a.setIsRandom(true);
-				
-				s.addAsteroid(a);
-				
-				addAsteroid(a);
+				Asteroid asteroid = new Asteroid();
+				asteroid.initialize();
+				asteroid.setOwner(this);
+				asteroid.setIsRandom(true);
+				asteroid.setMySun(sun);
+				sun.addAsteroid(asteroid);
+				asteroids.add(asteroid);
 			}
 		}
 		
@@ -286,20 +284,47 @@ public class Game {
 		
 		for (int i = 0; i < amountOfSettlers; i++)
 		{
-			Settler s = new Settler();
-			s.setOwner(this);
-			
-			startAsteroid.addSettler(s);
+			Settler settler = new Settler();
+			settler.setOwner(this);
+			settler.setAsteroid(startAsteroid);
+			startAsteroid.addSettler(settler);
+			settlers.add(settler);
 		}
 		
 		for (int i = 0; i < amountOfAliens; i++)
 		{
-			Alien a = new Alien();
-			a.setOwner(this);
-			a.setIsRandom(true);
+			Asteroid randomAsteroid = asteroids.get(rnd.nextInt(numOfAsteroids));
 			
-			asteroids.get(rnd.nextInt(numOfAsteroids)).addNonPlayer(a);
+			Alien alien = new Alien();
+			alien.setIsRandom(true);
+			alien.setOwner(this);
+			alien.setAsteroid(randomAsteroid);
+			randomAsteroid.addNonPlayer(alien);
+			nonPlayers.add(alien);
 		}
+		
+		/*Sun sun = new Sun();
+		sun.setOwner(this);
+		suns.add(sun);
+		
+		Asteroid asteroid = new Asteroid();
+		asteroid.initialize();
+		asteroid.setOwner(this);
+		asteroid.setMySun(sun);
+		sun.addAsteroid(asteroid);
+		asteroids.add(asteroid);
+		
+		Settler settler = new Settler();
+		settler.setOwner(this);
+		settler.setAsteroid(asteroid);
+		asteroid.addSettler(settler);
+		settlers.add(settler);
+		
+		Alien alien = new Alien();
+		alien.setOwner(this);
+		alien.setAsteroid(asteroid);
+		asteroid.addNonPlayer(alien);
+		nonPlayers.add(alien);*/
 		
 		startGame();
 	}

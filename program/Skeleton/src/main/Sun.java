@@ -37,6 +37,8 @@ public class Sun extends Planet implements Controllable {
         nextId++;
         this.isRandom = false;
         this.asteroids = new LinkedList<Asteroid>();
+        
+        rand = new Random();
 
     }
 
@@ -51,6 +53,8 @@ public class Sun extends Planet implements Controllable {
         this.id = id;
         this.isRandom = isRandom;
         this.asteroids = asteroids;
+        
+        rand = new Random();
     }
 
 //Get/Set-----------------------------------------------------------------

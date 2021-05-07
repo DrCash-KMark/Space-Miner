@@ -44,6 +44,7 @@ public class BindDialog extends DialogSelect2 {
 	 * Újra ki kell majd választani a fajtát.
 	 */
 	public void show() {
+		super.show();
 		this.comboBottom.removeAllItems();
 	}
 	
@@ -110,13 +111,13 @@ public class BindDialog extends DialogSelect2 {
 			selectableCombo.removeAllItems();
 			JComboBox<String> src = (JComboBox<String>) e.getSource();
 			String selectedType = (String) src.getSelectedItem();
-			if(selectedType == "Asteroid") {
+			if(selectedType.equals("Asteroid")) {
 				String[] availableAsteroids = game.getAsteroidIds();
 				for(int i = 0; i < availableAsteroids.length; i++) {
 					selectableCombo.addItem(availableAsteroids[i]);
 				}
 			}
-			else if(selectedType == "Settler") {
+			else if(selectedType.equals("Settler")) {
 				String[] availableSettlers = game.getSettlerIds();
 				for(int i = 0; i < availableSettlers.length; i++) {
 					selectableCombo.addItem(availableSettlers[i]);

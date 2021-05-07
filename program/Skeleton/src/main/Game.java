@@ -217,7 +217,7 @@ public class Game {
 		for (Asteroid asteroid : asteroids) 
 			asteroid.onTurn();
 		
-		for (NonPlayer nonPlayer : nonPlayers)
+		for (NonPlayer nonPlayer : anonPlayers)
 			nonPlayer.onTurn();
 		
 		for (Settler settler : settlers) {

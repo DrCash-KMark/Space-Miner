@@ -24,6 +24,7 @@ public class Main {
 		controller.setGame(game);
 		controller.setView(view);
 		view.setController(controller);
+		view.setGame(game);
 		view.Display();
 	}
 

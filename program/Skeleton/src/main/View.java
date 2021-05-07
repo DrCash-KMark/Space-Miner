@@ -5,14 +5,17 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -24,6 +27,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+import javax.swing.plaf.basic.BasicScrollBarUI;
 
 public class View {
 	private JFrame fMainWindow;
@@ -55,6 +59,12 @@ public class View {
 	private JButton bDrop;
 	private JButton bBuild;
 	private JButton bPlace;
+	private MoveDialog moveDialog;
+	private DrillDialog drillDialog;
+	private MineDialog mineDialog;
+	private DropDialog dropDialog;
+	private BuildDialog buildDialog;
+	private PlaceDialog placeDialog;
 	
 	private JPanel pProperties;
 	private JLabel lProperties;
@@ -62,9 +72,11 @@ public class View {
 	private JPanel mProperties;
 	private JPanel bSetProperties;
 	private JButton bBind;
-	private JTextField tbProperties;
+	private JTextArea tbProperties;
+	private BindDialog bindDialog;
 	
 	private Controller controller;
+	private Game game;
 	
 	public View(){
 		
@@ -95,6 +107,13 @@ public class View {
 		bDrop= new JButton("Drop");
 		bBuild= new JButton("Build");
 		bPlace= new JButton("Place");
+		moveDialog = new MoveDialog(game, controller);
+		drillDialog = new DrillDialog(game, controller);
+		mineDialog = new MineDialog(game, controller);
+		dropDialog  = new DropDialog(game, controller);
+		buildDialog = new BuildDialog(game, controller);
+		placeDialog  = new PlaceDialog(game, controller);
+		
 		
 		pProperties = new JPanel();
 		lProperties = new JLabel("Properties");
@@ -102,6 +121,8 @@ public class View {
 		mProperties = new JPanel();
 		bSetProperties = new JPanel();
 		bBind = new JButton("Bind");
+		bindDialog= new BindDialog(game, controller);
+		tbProperties = new JTextArea();
 		
 		pMainBottomLabel = new JPanel();
 		lMainBottomLabel = new JLabel("Created by: Brainstormers");
@@ -109,6 +130,10 @@ public class View {
 	
 	public void setController(Controller controller) {
 		this.controller = controller;
+	}
+	
+	public void setGame(Game game) {
+		this.game = game;
 	}
 	
 	public void Display() {
@@ -119,6 +144,15 @@ public class View {
 		bSave.addActionListener( new SaveListener());
 		bLoad.addActionListener( new LoadListener());
 		bExit.addActionListener( new ExitListener());
+		
+		bMove.addActionListener( new MoveListener());
+		bDrill.addActionListener( new DrillListener());
+		bMine.addActionListener( new MineListener());
+		bDrop.addActionListener( new DropListener());
+		bBuild.addActionListener( new BuildListener());
+		bPlace.addActionListener( new PlaceListener());
+		
+		bBind.addActionListener( new BindListener());
 		
 		fMainWindow.setVisible(true);
 	}
@@ -165,12 +199,15 @@ public class View {
 	}
 	public void viewGraphicView() {
 		pGraphicView.setBackground(Color.WHITE);
-		pPictureGraphicView.setBackground(Color.WHITE);
+		pPictureGraphicView.setBackground(Color.BLACK);
 		bSetGraphicView.setBackground(Color.WHITE);
 		
-		pPictureGraphicView.setPreferredSize(new Dimension(500, 500));
+		pPictureGraphicView.setPreferredSize(new Dimension(500, 555));
 		pPictureGraphicView.setBorder(BorderFactory.createMatteBorder(0, 0, 4, 0, Color.BLACK));
 		pGraphicView.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.BLACK));
+		
+		//image.setBorder(BorderFactory.createMatteBorder(0, 0, 4, 0, Color.BLACK));
+		//pPictureGraphicView.add(image);
 		
 		viewGraphicButtonSet();
 		
@@ -191,13 +228,13 @@ public class View {
 		
 		GridBagLayout buttonSet = new GridBagLayout();
 		bSetGraphicView.setLayout(buttonSet);
-		
+		 
 		buttonPositionSet(bSetGraphicView,bMove,new Insets(5,5,5,0), 0, 0, 1, 1);
 		buttonPositionSet(bSetGraphicView,bDrill,new Insets(5,5,5,0), 1, 0, 1, 1);
 		buttonPositionSet(bSetGraphicView,bMine,new Insets(5,5,5,5), 2, 0, 1, 1);
-		buttonPositionSet(bSetGraphicView,bDrop,new Insets(0,5,33,0), 0, 1, 1, 1);
-		buttonPositionSet(bSetGraphicView,bBuild,new Insets(0,5,33,0), 1, 1, 1, 1);
-		buttonPositionSet(bSetGraphicView,bPlace,new Insets(0,5,33,5), 2, 1, 1, 1);
+		buttonPositionSet(bSetGraphicView,bDrop,new Insets(0,5,90,0), 0, 1, 1, 1);
+		buttonPositionSet(bSetGraphicView,bBuild,new Insets(0,5,90,0), 1, 1, 1, 1);
+		buttonPositionSet(bSetGraphicView,bPlace,new Insets(0,5,90,5), 2, 1, 1, 1);
 	}
 	
 	public void viewProperties() {
@@ -224,6 +261,8 @@ public class View {
 		setSidePanel(pProperties, pLabelProperties, 0, 0);
 		setSidePanel(pProperties, mProperties, 0, 1);
 		setSidePanel(pProperties, bSetProperties, 0, 2);
+		
+		ScrolledPaneForText(mProperties, tbProperties);
 	}
 	
 	public void viewPropertiesSet() {
@@ -260,49 +299,39 @@ public class View {
 		setSidePanel(pTurnEvents, mTurnEvents, 0, 1);
 		setSidePanel(pTurnEvents, bSetTurnEvents, 0, 2);
 		
-		JScrollPane scroll = new JScrollPane (tbTurnEvents, 
-				   JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		ScrolledPaneForText(mTurnEvents, tbTurnEvents);
+	}
+	
+	public void ScrolledPaneForText(JPanel panel, JTextArea textArea) {
+		JScrollPane scroll = new JScrollPane (textArea, 
+				   JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scroll.setPreferredSize(new Dimension(500, 500));
-		
-		tbTurnEvents.setFont(new Font("Broadway", Font.BOLD, 25));
-		tbTurnEvents.append("SunId: sun1\r\n" + 
-				"isRandom: f\r\n" + 
-				"asteroids:\r\n" + 
-				"asteroid: ast\r\n" + 
-				"--------------------\r\n" + 
-				"Asteroid id: ast1\r\n" + 
-				"rockThickness: 0\r\n" + 
-				"closeToSun: f\r\n" + 
-				"isRandom: f\r\n" + 
-				"materials:\r\n" + 
-				"material: coa1\r\n" + 
-				"neighbours:\r\n" + 
-				"neighbour: -\r\n" + 
-				"buildings:\r\n" + 
-				"building: -\r\n" + 
-				"settlers:\r\n" + 
-				"settler: set1\r\n" + 
-				"nonPlayers:\r\n" + 
-				"nonPlayer: -\r\n" + 
-				"--------------------\r\n" + 
-				"Settler id: set1\r\n" + 
-				"hadAcrtionThisTurn: true\r\n" + 
-				"asteroid: ast1\r\n" + 
-				"inventory: Inventory id: inv1\r\n" + 
-				"materials:\r\n" + 
-				"material: iro1\r\n" + 
-				"material: iro2\r\n" + 
-				"material: iro3\r\n" + 
-				"material: iro4\r\n" + 
-				"material: iro5\r\n" + 
-				"material: iro6\r\n" + 
-				"material: iro7\r\n" + 
-				"material: iro8\r\n" + 
-				"material: iro9\r\n" + 
-				"material: iro10\r\n" + 
-				"starGates:\r\n" + 
-				"starGate: -\r\n");
-		mTurnEvents.add(scroll);
+		scroll.getVerticalScrollBar().setBackground(Color.WHITE);
+		scroll.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, Color.WHITE) );
+		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI()
+	    {   
+		    @Override
+		    protected void configureScrollBarColors() {
+		        this.thumbColor = Color.DARK_GRAY;
+		    }
+	        @Override
+	        protected JButton createDecreaseButton(int orientation) {
+	            return createZeroButton();
+	        }
+	        @Override    
+	        protected JButton createIncreaseButton(int orientation) {
+	            return createZeroButton();
+	        }
+	        private JButton createZeroButton() {
+	            JButton jbutton = new JButton();
+	            jbutton.setPreferredSize(new Dimension(0, 0));
+	            jbutton.setMinimumSize(new Dimension(0, 0));
+	            jbutton.setMaximumSize(new Dimension(0, 0));
+	            return jbutton;
+	        }
+	    });
+		textArea.setFont(new Font("Broadway", Font.BOLD, 25));
+		panel.add(scroll);
 	}
 	
 	public void setSidePanel(JPanel panel, JPanel contained, int gridx, int gridy) {
@@ -354,6 +383,7 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			controller.handdleNextTurn();
+			tbTurnEvents.append(game.listTurnEvents());
 		}
 	}
 	
@@ -384,6 +414,86 @@ public class View {
 			controller.handleExit();
 		}
 	}
+	
+	private class MoveListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			moveDialog.show();
+		}
+	}
+	
+	private class MineListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			mineDialog.show();
+		}
+	}
+	
+	private class DrillListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			drillDialog.show();
+		}
+	}
+	
+	private class BuildListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			buildDialog.show();
+		}
+	}
+	
+	private class PlaceListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			placeDialog.show();
+		}
+	}
+	
+	private class DropListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			dropDialog.show();
+		}
+	}
+	
+	private class BindListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			dropDialog.show();
+			
+			//tbProperties.append(game.ge);
+			
+			/*if(controller.get)
+			ImagePanel image = new ImagePanel(
+			        new ImageIcon("asteroid.png").getImage());
+		image.setPreferredSize(new Dimension(500, 545));*/
+		}
+	}
+	
+	private class ImagePanel extends JPanel {
+
+		  private Image img;
+
+		  public ImagePanel(String img) {
+		    this(new ImageIcon(img).getImage());
+		  }
+
+		  public ImagePanel(Image img) {
+		    this.img = img;
+		    Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
+		    setPreferredSize(size);
+		    setMinimumSize(size);
+		    setMaximumSize(size);
+		    setSize(size);
+		    setLayout(null);
+		  }
+
+		  public void paintComponent(Graphics g) {
+		    g.drawImage(img, 0, 0, null);
+		  }
+
+		}
 }
 
 

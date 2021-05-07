@@ -28,8 +28,6 @@ import java.util.Scanner;
  *
  */
 public class Game {
-	private UI ui;
-	
 	//Lists of objects present in game:
 	private List<Settler> settlers = new ArrayList<Settler>();
 
@@ -45,14 +43,6 @@ public class Game {
 	private List<NonPlayer> nonPlayersToRemove = new ArrayList<NonPlayer>();
 	
 	private List<String> turnEvents = new ArrayList<String>();
-	
-	/**
-	 * A setter for the ui variable
-	 * @param u this will be set as the new ui variable
-	 */
-	public void setUI(UI u) {
-		ui = u;
-	}
 	
 	/**
 	 * Adds a string to the turn events
@@ -103,49 +93,6 @@ public class Game {
 		
 		if (turnEvents.size() == 0)
 			displayString += "-\n";
-		
-		ui.displayMessage(displayString);
-	}
-	
-	/**
-	 * Lists all of the Planets, Enitities and Buildings currently present in the game
-	 */
-	public void listAll() {
-		ui.displayMessage("# list all:");
-		
-		for (Sun sun : suns) {
-			ui.displayMessage(sun.genUIString());
-			ui.displayMessage("--------------------");
-		}
-		
-		for (Asteroid asteroid : asteroids) {
-			ui.displayMessage(asteroid.genUIString());
-			ui.displayMessage("--------------------");
-		}
-		
-		for (Settler settler : settlers) {
-			ui.displayMessage(settler.genUIString());
-			ui.displayMessage("--------------------");
-		}
-		
-		for (NonPlayer nonPlayer : nonPlayers) {
-			ui.displayMessage(nonPlayer.genUIString());
-			ui.displayMessage("--------------------");
-		}
-		
-		for (Asteroid asteroid : asteroids) {
-			for (Building building : asteroid.getBuildings()) {
-				ui.displayMessage(building.genUIString());
-				ui.displayMessage("--------------------");
-			}
-		}
-		
-		for (Settler settler : settlers) {
-			for (StarGate starGate : settler.getInventory().getStarGates()) {
-				ui.displayMessage(starGate.genUIString());
-				ui.displayMessage("--------------------");
-			}
-		}
 	}
 	
 	/**
@@ -209,7 +156,6 @@ public class Game {
 	 * Finishes the game.
 	 */
 	public void gameWon() {
-		ui.displayMessage("The game is won!");
 	}
 	
 	/**
@@ -243,8 +189,6 @@ public class Game {
 			nonPlayersToRemove.add(nonPlayer);
 		
 		cleanup();*/
-		
-		ui.displayMessage("The game is lost!");
 	}
 	
 	/**
@@ -287,8 +231,6 @@ public class Game {
 		
 		for (Settler settler : settlers)
 			ret += settler.genUIString();
-		
-		ui.displayMessage(ret);
 	}
 	
 	/**
@@ -1379,7 +1321,6 @@ public class Game {
 			if (settler.getId().equals(id))
 				return settler;
 		
-		ui.displayMessage("No such settler found");
 		return null;
 	}
 	
@@ -1393,7 +1334,6 @@ public class Game {
 			if (asteroid.getId().equals(id))
 				return asteroid;
 		
-		ui.displayMessage("No such asteroid found");
 		return null;
 	}
 	
@@ -1407,7 +1347,6 @@ public class Game {
 			if (sun.getId().equals(id))
 				return sun;
 		
-		ui.displayMessage("No such sun found");
 		return null;
 	}
 	
@@ -1421,7 +1360,6 @@ public class Game {
 			if (nonPlayer.getId().equals(id))
 				return (Alien)nonPlayer;
 		
-		ui.displayMessage("No such alien found");
 		return null;
 	}
 	
@@ -1435,7 +1373,6 @@ public class Game {
 			if (nonPlayer.getId().equals(id))
 				return (Robot)nonPlayer;
 		
-		ui.displayMessage("No such robot found");
 		return null;
 	}
 	
@@ -1457,7 +1394,6 @@ public class Game {
 					return (StarGate)starGate;
 		}
 		
-		ui.displayMessage("No such stargate found");
 		return null;
 	}
 	
@@ -1473,7 +1409,6 @@ public class Game {
 					return (Base)base;
 		}
 		
-		ui.displayMessage("No such base found");
 		return null;
 	}
 
@@ -1495,7 +1430,18 @@ public class Game {
 					return material;
 		}
 		
-		ui.displayMessage("No such material found");
 		return null;
+	}
+	
+	public String[] getSettlerIds() {
+		String[] ret = new String[settlers.size()];
+		
+		int i = 0;
+		
+		for (Settler settler : settlers) {
+			ret[i] = settler.getId();
+		}
+		
+		return ret;
 	}
 }

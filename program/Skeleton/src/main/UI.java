@@ -13,7 +13,6 @@ public class UI {
 	 */
 	public UI(){
 		game = new Game();
-		game.setUI(this);
 	}
 	
 	/**
@@ -489,8 +488,6 @@ public class UI {
 					case "all":
 						if (splitString.length == 3)
 							game.listAllSettlers();
-						else
-							game.listAll();
 						
 						break;
 					case "sun":

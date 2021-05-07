@@ -397,7 +397,7 @@ public class View {
 	 */
 	public void ScrolledPaneForText(JPanel panel, JTextArea textArea) {
 		JScrollPane scroll = new JScrollPane (textArea, 
-				   JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+				   JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scroll.setPreferredSize(new Dimension(500, 500));
 		scroll.getVerticalScrollBar().setBackground(Color.WHITE);
 		scroll.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, Color.WHITE) );
@@ -423,7 +423,7 @@ public class View {
 	            return jbutton;
 	        }
 	    });
-		textArea.setFont(new Font("Broadway", Font.BOLD, 25));
+		textArea.setFont(new Font("Consolas", Font.BOLD, 20));
 		panel.add(scroll);
 	}
 	

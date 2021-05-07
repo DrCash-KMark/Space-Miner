@@ -3,6 +3,7 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -108,12 +109,12 @@ public class View {
 		bDrop= new JButton("Drop");
 		bBuild= new JButton("Build");
 		bPlace= new JButton("Place");
-		moveDialog = new MoveDialog(game, controller);
+		/*moveDialog = new MoveDialog(game, controller);
 		drillDialog = new DrillDialog(game, controller);
 		mineDialog = new MineDialog(game, controller);
 		dropDialog  = new DropDialog(game, controller);
 		buildDialog = new BuildDialog(game, controller);
-		placeDialog  = new PlaceDialog(game, controller);
+		placeDialog  = new PlaceDialog(game, controller);*/
 		
 		
 		pProperties = new JPanel();
@@ -122,7 +123,7 @@ public class View {
 		mProperties = new JPanel();
 		bSetProperties = new JPanel();
 		bBind = new JButton("Bind");
-		bindDialog= new BindDialog(game, controller);
+		//bindDialog= new BindDialog(game, controller);
 		tbProperties = new JTextArea();
 		
 		pMainBottomLabel = new JPanel();
@@ -143,6 +144,15 @@ public class View {
 	
 	public void Display() {
 		BuildView();
+		
+		moveDialog = new MoveDialog(game, controller);
+		drillDialog = new DrillDialog(game, controller);
+		mineDialog = new MineDialog(game, controller);
+		dropDialog  = new DropDialog(game, controller);
+		buildDialog = new BuildDialog(game, controller);
+		placeDialog  = new PlaceDialog(game, controller);
+		
+		bindDialog= new BindDialog(game, controller);
 		
 		bNextTurn.addActionListener( new NextTurnListener());
 		bNew.addActionListener( new NewListener());
@@ -462,7 +472,10 @@ public class View {
 	private class BindListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
-			dropDialog.show();
+			bindDialog.show();
+
+			if(controller.getBoundAsteroid()==null)
+				tbProperties.append("alma");
 			
 			if(controller.getBoundAsteroid()!=null) {
 				pPictureGraphicView.remove(image);
@@ -471,8 +484,8 @@ public class View {
 				pPictureGraphicView.add(image);
 				tbProperties.append(controller.getBoundAsteroid().genUIString());
 				BuildView();
-				
-			}else {
+			}
+			else if(controller.getBoundSettler()!=null){
 				pPictureGraphicView.remove(image);
 				image = new ImagePanel(new ImageIcon("settler.png").getImage());
 				image.setPreferredSize(new Dimension(500, 545));

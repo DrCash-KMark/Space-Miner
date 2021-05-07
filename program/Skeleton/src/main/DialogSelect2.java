@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -35,9 +36,11 @@ public class DialogSelect2 extends JDialog {
 		this.game = g;
 		this.controller = cont;
 		JPanel panel = new JPanel(new GridBagLayout());
+		this.setPreferredSize(new Dimension(200, 200));
+		panel.setPreferredSize(new Dimension(200, 200));
 		GridBagConstraints c = new GridBagConstraints();
-		c.gridheight = 6;
-		c.gridwidth = 3;
+		//c.gridheight = 60;
+		//c.gridwidth = 30;
 		
 		//Cím label elhelyezése.
 		c.gridy = 0;
@@ -76,6 +79,7 @@ public class DialogSelect2 extends JDialog {
 		
 		//Panel elhelyezése a dialógusablakon.
 		this.add(panel);
+		this.pack();
 	}
 	
 

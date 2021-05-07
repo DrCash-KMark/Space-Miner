@@ -33,6 +33,7 @@ public class DialogSelect2 extends JDialog {
 	 */
 	public DialogSelect2(Game g, Controller cont) {
 		super();
+		this.setModal(true);
 		this.game = g;
 		this.controller = cont;
 		JPanel panel = new JPanel(new GridBagLayout());
@@ -78,6 +79,7 @@ public class DialogSelect2 extends JDialog {
 		panel.add(bSelect, c);
 		
 		//Panel elhelyezése a dialógusablakon.
+		this.setLocationRelativeTo(null);
 		this.add(panel);
 		this.pack();
 	}

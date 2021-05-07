@@ -78,9 +78,9 @@ public class BindDialog extends DialogSelect2 {
 			String selectedType = (String) comboType.getSelectedItem();
 			String selectedID = (String) comboSelected.getSelectedItem();
 			//Ha bármi üres, vissza.
-			if((selectedType == null || selectedType == "") && (selectedID == null || selectedID == "")) {
+			/*if((selectedType == null || selectedType == "") && (selectedID == null || selectedID == "")) {
 				return;
-			}
+			}*/
 			controller.handleBind(selectedID, selectedType);
 			parentDialog.setVisible(false);
 		}	

@@ -20,6 +20,14 @@ public class Controller {
 		view = v;
 	}
 	
+	public Settler getBoundSettler() {
+		return boundSettler;
+	}
+	
+	public Asteroid getBoundAsteroid() {
+		return boundAsteroid;
+	}
+	
 	public void handdleNextTurn() {
 		game.startTurn();
 	}

@@ -65,6 +65,7 @@ public class View {
 	private DropDialog dropDialog;
 	private BuildDialog buildDialog;
 	private PlaceDialog placeDialog;
+	private ImagePanel image;
 	
 	private JPanel pProperties;
 	private JLabel lProperties;
@@ -126,6 +127,10 @@ public class View {
 		
 		pMainBottomLabel = new JPanel();
 		lMainBottomLabel = new JLabel("Created by: Brainstormers");
+		
+		image = new ImagePanel(new ImageIcon("main.png").getImage());
+		image.setPreferredSize(new Dimension(500, 545));
+		pPictureGraphicView.add(image);
 	}
 	
 	public void setController(Controller controller) {
@@ -199,15 +204,12 @@ public class View {
 	}
 	public void viewGraphicView() {
 		pGraphicView.setBackground(Color.WHITE);
-		pPictureGraphicView.setBackground(Color.BLACK);
+		pPictureGraphicView.setBackground(Color.WHITE);
 		bSetGraphicView.setBackground(Color.WHITE);
 		
 		pPictureGraphicView.setPreferredSize(new Dimension(500, 555));
 		pPictureGraphicView.setBorder(BorderFactory.createMatteBorder(0, 0, 4, 0, Color.BLACK));
 		pGraphicView.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.BLACK));
-		
-		//image.setBorder(BorderFactory.createMatteBorder(0, 0, 4, 0, Color.BLACK));
-		//pPictureGraphicView.add(image);
 		
 		viewGraphicButtonSet();
 		
@@ -462,12 +464,22 @@ public class View {
 		public void actionPerformed(ActionEvent e) {
 			dropDialog.show();
 			
-			//tbProperties.append(game.ge);
-			
-			/*if(controller.get)
-			ImagePanel image = new ImagePanel(
-			        new ImageIcon("asteroid.png").getImage());
-		image.setPreferredSize(new Dimension(500, 545));*/
+			if(controller.getBoundAsteroid()!=null) {
+				pPictureGraphicView.remove(image);
+				image = new ImagePanel(new ImageIcon("asteroid.png").getImage());
+				image.setPreferredSize(new Dimension(500, 545));
+				pPictureGraphicView.add(image);
+				tbProperties.append(controller.getBoundAsteroid().genUIString());
+				BuildView();
+				
+			}else {
+				pPictureGraphicView.remove(image);
+				image = new ImagePanel(new ImageIcon("settler.png").getImage());
+				image.setPreferredSize(new Dimension(500, 545));
+				pPictureGraphicView.add(image);
+				tbProperties.append(controller.getBoundSettler().genUIString());
+				BuildView();
+			}
 		}
 	}
 	

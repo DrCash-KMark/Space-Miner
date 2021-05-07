@@ -1440,6 +1440,72 @@ public class Game {
 		
 		for (Settler settler : settlers) {
 			ret[i] = settler.getId();
+			i++;
+		}
+		
+		return ret;
+	}
+	
+	public String[] getAsteroidIds() {
+		String[] ret = new String[asteroids.size()];
+		
+		int i = 0;
+		
+		for (Asteroid asteroid : asteroids) {
+			ret[i] = asteroid.getId();
+			i++;
+		}
+		
+		return ret;
+	}
+	
+	public String[] getSettlersGates(String id) {
+		String[] ret = new String[getSettlerWithId(id).getInventory().getStarGates().size()];
+		
+		int i = 0;
+		
+		for (StarGate stargate : getSettlerWithId(id).getInventory().getStarGates()) {
+			ret[i] = stargate.getId();
+			i++;
+		}
+		
+		return ret;
+	}
+	
+	public String[] getSettlersMaterials(String id) {
+		String[] ret = new String[getSettlerWithId(id).getInventory().getMaterials().size()];
+		
+		int i = 0;
+		
+		for (Material material : getSettlerWithId(id).getInventory().getMaterials()) {
+			ret[i] = material.getId();
+			i++;
+		}
+		
+		return ret;
+	}
+	
+	public String[] getSettlersNeighboursID(String id) {
+		String[] ret = new String[getSettlerWithId(id).getAsteroid().getNeighbours().size()];
+		
+		int i = 0;
+		
+		for (Asteroid asteroid : getSettlerWithId(id).getAsteroid().getNeighbours()) {
+			ret[i] = asteroid.getId();
+			i++;
+		}
+		
+		return ret;
+	}
+	
+	public String[] getSettlersStargatesID(String id) {
+		String[] ret = new String[getSettlerWithId(id).getAsteroid().getBuildings().size()];
+		
+		int i = 0;
+		
+		for (Building building : getSettlerWithId(id).getAsteroid().getBuildings()) {
+			ret[i] = building.getId();
+			i++;
 		}
 		
 		return ret;

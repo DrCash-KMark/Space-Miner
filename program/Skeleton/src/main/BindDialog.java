@@ -28,7 +28,7 @@ public class BindDialog extends DialogSelect2 {
 		super(g, cont);
 		this.labelTitle.setText("Bind");
 		this.labelTop.setText("Type");
-		String[] types = new String[] {"Setteler", "Asteroid"};
+		String[] types = new String[] {"Settler", "Asteroid"};
 		for(int i= 0; i < types.length; i++) {
 			comboTop.addItem(types[i]);
 		}

@@ -43,6 +43,7 @@ public class BuildDialog extends DialogSelect2 {
 	 * Az alsó comboboxbol elveszi az elemeket, majd felteszi az újakat.
 	 */
 	public void show() {
+		super.show();
 		this.comboBottom.removeAllItems();
 		String[] ids = game.getSettlerIds();
 		for(int i = 0; i < ids.length; i++) {

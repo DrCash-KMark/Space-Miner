@@ -44,6 +44,7 @@ public class MoveDialog extends DialogSelect3 {
 	 * Dialógusablak megjelenítésekor levesszük az eddigi telepeseket, majd feltöltjük az aktuális adatokkal az alsó dobozt.
 	 */
 	public void show() {
+		super.show();
 		this.comboBottom.removeAllItems();
 		this.comboMiddle.removeAllItems();
 		String[] settlerIDs = game.getSettlerIds();

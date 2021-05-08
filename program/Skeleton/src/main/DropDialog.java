@@ -38,6 +38,7 @@ public class DropDialog extends DialogSelect2 {
 	 * A dialógusablak megjelenítése.
 	 */
 	public void show() {
+		super.show();
 		this.comboBottom.removeAllItems();
 		String[] ids = game.getSettlerIds();
 		for(int i = 0; i < ids.length; i++) {

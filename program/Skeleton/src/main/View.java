@@ -473,6 +473,7 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			controller.handdleNextTurn();
+			tbTurnEvents.removeAll();
 			tbTurnEvents.append(game.listTurnEvents());
 		}
 	}
@@ -619,6 +620,7 @@ public class View {
 				pPictureGraphicView.remove(image);
 				image.setImage(new ImageIcon("asteroid.png").getImage());
 				pPictureGraphicView.add(image);
+				tbProperties.removeAll();
 				tbProperties.append(controller.getBoundAsteroid().genUIString());
 				pPictureGraphicView.revalidate();
 			}
@@ -626,6 +628,7 @@ public class View {
 				pPictureGraphicView.remove(image);
 				image.setImage(new ImageIcon("settler.png").getImage());
 				pPictureGraphicView.add(image);
+				tbProperties.removeAll();
 				tbProperties.append(controller.getBoundSettler().genUIString());
 				pPictureGraphicView.revalidate();
 			}

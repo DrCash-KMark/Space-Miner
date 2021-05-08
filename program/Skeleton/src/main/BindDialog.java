@@ -37,6 +37,7 @@ public class BindDialog extends DialogSelect2 {
 		this.comboTop.addItemListener(typeChangeListener);
 		BindListener bindListener = new BindListener(this, this.controller, this.comboTop, this.comboBottom);
 		this.bSelect.addActionListener(bindListener);
+		
 	}	
 	/**
 	 * A dialógusablak megjelenítése.

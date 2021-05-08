@@ -620,7 +620,7 @@ public class View {
 				pPictureGraphicView.remove(image);
 				image.setImage(new ImageIcon("asteroid.png").getImage());
 				pPictureGraphicView.add(image);
-				tbProperties.removeAll();
+				tbProperties.setText(null);
 				tbProperties.append(controller.getBoundAsteroid().genUIString());
 				pPictureGraphicView.revalidate();
 			}
@@ -628,7 +628,7 @@ public class View {
 				pPictureGraphicView.remove(image);
 				image.setImage(new ImageIcon("settler.png").getImage());
 				pPictureGraphicView.add(image);
-				tbProperties.removeAll();
+				tbProperties.setText(null);
 				tbProperties.append(controller.getBoundSettler().genUIString());
 				pPictureGraphicView.revalidate();
 			}

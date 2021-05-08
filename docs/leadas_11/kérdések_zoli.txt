@@ -19,5 +19,6 @@ Csabi rá kellene, hogy nézzen az Inventory subtract és subSet metódusaihoz �
 Kész a második doksi frissítése. Ez elég lesz a harmadik doksi helyett is.
 Maradt a negyedik.
 
+A naplókat egyberakva tehetnénk a végére. Vagy legalább ne felejtsük el 3. doksi naplóját.
 
 

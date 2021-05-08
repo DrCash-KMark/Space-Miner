@@ -91,7 +91,7 @@ public class Sun extends Planet implements Controllable {
     @Override
     public void onTurn() {
         if (isRandom) {
-            if (rand.nextInt(100) < 20) {
+            if (rand.nextInt(100) < 5) {
                 this.sunFlare();
             }
         }

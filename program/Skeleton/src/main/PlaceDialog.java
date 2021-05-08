@@ -40,12 +40,12 @@ public class PlaceDialog extends DialogSelect2 {
 	 * Feltölti a settler-valsztó dobozt, az aktuális azonosítókkal.
 	 */
 	public void show() {
-		super.show();
 		this.comboBottom.removeAllItems();
 		String[] ids = game.getSettlerIds();
 		for(int i = 0; i < ids.length; i++) {
 			this.comboBottom.addItem(ids[i]);
 		}
+		super.show();
 	}
 	
 	/**

@@ -663,6 +663,88 @@ genUIString() : String				Visszaadja az objektumról a játékos számára lény
 
 
 
+----------------------------------------------------------------
+
++---------------+
+|	3. leadás	|
++---------------+
+
+----------------------------------------------------------------
+
++---------------+
+|	4. leadás	|
++---------------+
+
+A változatások fejezetet kitörölhetjük.
+----------------------------------------
+
+======================================================
+Use-case leírások:
+======================================================
+
+------------------------------------------------------
+Urán visszahelyezése
+------------------------------------------------------
+Alternatív forgatókönyv
+2.B.1. Ha az aszteroida napközelben van, akkor visszahelyezés után az aszteroida felrobban.		<- Nem azonnal robban fel.
+2.B.2. A telepes elpusztul.
+2.B.3. Az aszteroida szól minden szomszédjának, hogy elpusztult.
+
+Javított változat:
+2.B.1. Ha az aszteroida napközelben van, akkor egy belső számlálója növekszik. Ha a számláló elérte a 3-at, akkor a nyersanyag felrobban.
+2.B.2. Ha a nyersanyag felrobbant, az aszteroida elpusztul.
+2.B.3. Az aszteroidán lévő összes entitások reagálnak az aszteroida megsemmisülésére. (A robotok kivételével az öszzes objektum megsemmisül.)
+
+
+
+------------------------------------------------------
+Napvihar történik
+------------------------------------------------------
+Forgatókönyv
+1. A nap amelyik kitör szól a game osztálynak, hogy napvihar történik.	<- Nem a Gamenek szól.
+2. A game osztály szól minden aszteroidának, hogy napvihar van.	<-	Nem a Game szól.
+3. Minden aszteroida minden rajta található entitást elpusztít.	<-	Csak a naphoz tartozók. + a kapuk csak elromlanak.
+Alternatív forgatókönyv
+3.A.1. Ha az aszteroida üreges, s kérgének vastagsága 0 akkor nem csinál semmit a rajta található entitásokkal.		<-	A kapu így is meghibásodik.
+
+Javított változat:
+Forgatókönyv
+1. A nap amelyik kitör szól a saját aszteroidáinak, hogy napvihar történik.
+2. Az értesített aszteroidák minden rajtuk található entitást értesítenek a napviharról.
+3a. Ha nincs fedezékhely, az entitások megsemmisülnek.
+4. A teleportkapuk "napvihar érte" állapotba kerülnek, ami hatására a további körökben véletleszerűen fognak mozogni az elérhető aszteroidák közt.
+Alternatív forgatókönyv
+3b. Ha az aszteroida üreges és kérgének vastagsága 0 akkor a rajta található entitások megmenekülnek. (A kapu ilyenkor is meghibásodik.)
+
+
+
+------------------------------------------------------
+Fúrás robottal, robban, van szomszéd
+------------------------------------------------------
+Alternatív forgatókönyv
+2.B.1. Ha az aszteroida napközelben van és a kérge átfúrt, akkor egy belső számlálója növekszik. Ha a számláló elérte a 3-at, akkor a nyersanyag felrobban.
+2.B.2. Ha a nyersanyag felrobbant, az aszteroida elpusztul.
+2.B.3. Az aszteroidán lévő robot egy szomszédos aszteroidára lép.
+
+
+
+------------------------------------------------------
+Fúrás robottal, robban, nincs szomszéd
+------------------------------------------------------
+Alternatív forgatókönyv
+2.B.1. Ha az aszteroida napközelben van és a kérge átfúrt, akkor egy belső számlálója növekszik. Ha a számláló elérte a 3-at, akkor a nyersanyag felrobban.
+2.B.2. Ha a nyersanyag felrobbant, az aszteroida elpusztul.
+2.B.3. Az aszteroidán lévő robot megsemmisül, mert nincs szomszédos aszteroida.
+
+
+
+------------------------------------------------------
+Fúrás telepessel, robban
+------------------------------------------------------
+Alternatív forgatókönyv
+2.B.1. Ha az aszteroida napközelben van és a kérge átfúrt, akkor egy belső számlálója növekszik. Ha a számláló elérte a 3-at, akkor a nyersanyag felrobban.
+2.B.2. Ha a nyersanyag felrobbant, az aszteroida elpusztul.
+2.B.3. Az aszteroidán lévő telepes megsemmisül.
 
 
 
@@ -670,4 +752,26 @@ genUIString() : String				Visszaadja az objektumról a játékos számára lény
 
 
 
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

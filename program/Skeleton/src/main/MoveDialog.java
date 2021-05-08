@@ -44,13 +44,13 @@ public class MoveDialog extends DialogSelect3 {
 	 * Dialógusablak megjelenítésekor levesszük az eddigi telepeseket, majd feltöltjük az aktuális adatokkal az alsó dobozt.
 	 */
 	public void show() {
-		super.show();
 		this.comboBottom.removeAllItems();
 		this.comboMiddle.removeAllItems();
 		String[] settlerIDs = game.getSettlerIds();
 		for(int i = 0; i < settlerIDs.length; i++) {
 			this.comboBottom.addItem(settlerIDs[i]);
 		}
+		super.show();
 	}
 	
 	/**

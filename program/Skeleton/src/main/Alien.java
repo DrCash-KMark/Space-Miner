@@ -117,8 +117,10 @@ public class Alien extends NonPlayer implements Mining {
 			else {
 				List<Asteroid> list = asteroid.getNeighbours();
 				Random rand = new Random();
-				int destI = rand.nextInt(list.size()); 
-				move(list.get(destI));
+				if (list.size() > 0) {
+					int destI = rand.nextInt(list.size()); 					
+					move(list.get(destI));
+				}
 			}
 		}
 		counter++;

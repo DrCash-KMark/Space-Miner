@@ -34,10 +34,17 @@ public class Controller {
 	
 	public void handleNew() {
 		game.initGame(false);
+		//Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi 
+		String[] settlers = game.getSettlerIds();
+		boundSettler = game.getSettlerWithId(settlers[0]);
 	}
 	
 	public void handleLoad() {
 		game.loadGame();
+		
+		//Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi 
+		String[] settlers = game.getSettlerIds();
+		boundSettler = game.getSettlerWithId(settlers[0]);
 	}
 	
 	public void handleSave() {
@@ -101,7 +108,7 @@ public class Controller {
 	}
 	
 	public void handleBind(String ID, String bindType) {
-		if (bindType.equals("asteroid")) {
+		if (bindType.equals("Asteroid")) {
 			boundAsteroid = game.getAsteroidWithId(ID);
 			boundSettler = null;
 		}

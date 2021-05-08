@@ -28,7 +28,7 @@ public class BindDialog extends DialogSelect2 {
 		super(g, cont);
 		this.labelTitle.setText("Bind");
 		this.labelTop.setText("Type");
-		String[] types = new String[] {"Setteler", "Asteroid"};
+		String[] types = new String[] {"Settler", "Asteroid"};
 		for(int i= 0; i < types.length; i++) {
 			comboTop.addItem(types[i]);
 		}
@@ -78,9 +78,9 @@ public class BindDialog extends DialogSelect2 {
 			String selectedType = (String) comboType.getSelectedItem();
 			String selectedID = (String) comboSelected.getSelectedItem();
 			//Ha bármi üres, vissza.
-			if((selectedType == null || selectedType == "") && (selectedID == null || selectedID == "")) {
+			/*if((selectedType == null || selectedType == "") && (selectedID == null || selectedID == "")) {
 				return;
-			}
+			}*/
 			controller.handleBind(selectedID, selectedType);
 			parentDialog.setVisible(false);
 		}	

@@ -84,7 +84,7 @@ public class Controller {
 				settler.buildRobot();
 				
 				break;
-			case "Stargate":
+			case "StarGate":
 				settler.buildStarGate();
 				
 				break;

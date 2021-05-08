@@ -473,7 +473,7 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			controller.handdleNextTurn();
-			tbTurnEvents.removeAll();
+			tbTurnEvents.setText(null);
 			tbTurnEvents.append(game.listTurnEvents());
 		}
 	}

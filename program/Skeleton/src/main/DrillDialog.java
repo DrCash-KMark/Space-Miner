@@ -35,12 +35,12 @@ public class DrillDialog extends DialogSelect1 {
 	 * Ezután lekérdezem a játéktól, hogy mibõl élünk és az felrakom.
 	 */
 	public void show() {
-		super.show();
 		this.comboTop.removeAllItems();
 		String[] settlerIDs = game.getSettlerIds();
 		for(int i = 0; i < settlerIDs.length; i++) {
 			this.comboTop.addItem(settlerIDs[i]);
 		}
+		super.show();
 	}	
 	/**
 	 * A fúrás eseménykezelésének privát osztálya.

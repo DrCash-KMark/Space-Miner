@@ -33,12 +33,12 @@ public class MineDialog extends DialogSelect1 {
 	 * A dobozok régi értékeit eltávolítja, lekérdezi az újakat a játéktól.
 	 */
 	public void show() {
-		super.show();
 		this.comboTop.removeAllItems();
 		String[] ids = game.getSettlerIds();
 		for(int i = 0; i < ids.length; i++) {
 			this.comboTop.addItem(ids[i]);
 		}
+		super.show();
 	}
 	/**
 	 * A fúrás eseménykezelésének privát osztálya.

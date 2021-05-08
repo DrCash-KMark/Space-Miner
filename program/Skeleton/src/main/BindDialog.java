@@ -37,7 +37,6 @@ public class BindDialog extends DialogSelect2 {
 		this.comboTop.addItemListener(typeChangeListener);
 		BindListener bindListener = new BindListener(this, this.controller, this.comboTop, this.comboBottom);
 		this.bSelect.addActionListener(bindListener);
-		
 	}	
 	/**
 	 * A dialógusablak megjelenítése.
@@ -45,8 +44,13 @@ public class BindDialog extends DialogSelect2 {
 	 * Újra ki kell majd választani a fajtát.
 	 */
 	public void show() {
-		super.show();
 		this.comboBottom.removeAllItems();
+		this.comboTop.setSelectedItem("Settler");
+		String[] availableSettlers = game.getSettlerIds();
+		for(int i = 0; i < availableSettlers.length; i++) {
+			comboBottom.addItem(availableSettlers[i]);
+		}
+		super.show();
 	}
 	
 	/**
@@ -79,9 +83,9 @@ public class BindDialog extends DialogSelect2 {
 			String selectedType = (String) comboType.getSelectedItem();
 			String selectedID = (String) comboSelected.getSelectedItem();
 			//Ha bármi üres, vissza.
-			/*if((selectedType == null || selectedType == "") && (selectedID == null || selectedID == "")) {
+			if((selectedType == null || selectedType == "") || (selectedID == null || selectedID == "")) {
 				return;
-			}*/
+			}
 			controller.handleBind(selectedID, selectedType);
 			parentDialog.setVisible(false);
 		}	
@@ -124,6 +128,7 @@ public class BindDialog extends DialogSelect2 {
 					selectableCombo.addItem(availableSettlers[i]);
 				}
 			}
+			selectableCombo.revalidate();
 		}
 	}
 }

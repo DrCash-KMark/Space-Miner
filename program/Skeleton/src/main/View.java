@@ -504,6 +504,28 @@ public class View {
 	}
 	
 	/**
+	 * The selected asteroid and settler properties sets in display.
+	 */
+	public void setBindedAndRefresh(){
+		if(controller.getBoundAsteroid()!=null) {
+			pPictureGraphicView.remove(image);
+			image.setImage(new ImageIcon("asteroid.png").getImage());
+			pPictureGraphicView.add(image);
+			tbProperties.setText(null);
+			tbProperties.append(controller.getBoundAsteroid().genUIString());
+			pPictureGraphicView.revalidate();
+		}
+		else if(controller.getBoundSettler()!=null){
+			pPictureGraphicView.remove(image);
+			image.setImage(new ImageIcon("settler.png").getImage());
+			pPictureGraphicView.add(image);
+			tbProperties.setText(null);
+			tbProperties.append(controller.getBoundSettler().genUIString());
+			pPictureGraphicView.revalidate();
+		}
+	}
+	
+	/**
 	 * Event listener for the Load button.
 	 */
 	private class LoadListener implements ActionListener{
@@ -555,6 +577,7 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			moveDialog.show();
+			setBindedAndRefresh();
 		}
 	}
 	
@@ -575,6 +598,7 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			drillDialog.show();
+			setBindedAndRefresh();
 		}
 	}
 	
@@ -585,6 +609,7 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			buildDialog.show();
+			setBindedAndRefresh();
 		}
 	}
 	
@@ -595,6 +620,7 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			placeDialog.show();
+			setBindedAndRefresh();
 		}
 	}
 	
@@ -605,6 +631,7 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			dropDialog.show();
+			setBindedAndRefresh();
 		}
 	}
 	
@@ -616,22 +643,7 @@ public class View {
 		public void actionPerformed(ActionEvent e) {
 			bindDialog.show();
 			
-			if(controller.getBoundAsteroid()!=null) {
-				pPictureGraphicView.remove(image);
-				image.setImage(new ImageIcon("asteroid.png").getImage());
-				pPictureGraphicView.add(image);
-				tbProperties.setText(null);
-				tbProperties.append(controller.getBoundAsteroid().genUIString());
-				pPictureGraphicView.revalidate();
-			}
-			else if(controller.getBoundSettler()!=null){
-				pPictureGraphicView.remove(image);
-				image.setImage(new ImageIcon("settler.png").getImage());
-				pPictureGraphicView.add(image);
-				tbProperties.setText(null);
-				tbProperties.append(controller.getBoundSettler().genUIString());
-				pPictureGraphicView.revalidate();
-			}
+			setBindedAndRefresh();
 		}
 	}
 	

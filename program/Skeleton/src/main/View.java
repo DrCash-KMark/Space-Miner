@@ -475,6 +475,7 @@ public class View {
 			controller.handdleNextTurn();
 			tbTurnEvents.setText(null);
 			tbTurnEvents.append(game.listTurnEvents());
+			setBindedAndRefresh();
 		}
 	}
 	
@@ -485,7 +486,9 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			controller.handleNew();
-			
+			tbTurnEvents.setText(null);
+			tbProperties.setText(null);
+
 			pPictureGraphicView.remove(image);
 			image.setImage(new ImageIcon("settler.png").getImage());
 			pPictureGraphicView.add(image);
@@ -577,7 +580,6 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			moveDialog.show();
-			setBindedAndRefresh();
 		}
 	}
 	
@@ -598,7 +600,6 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			drillDialog.show();
-			setBindedAndRefresh();
 		}
 	}
 	
@@ -609,7 +610,6 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			buildDialog.show();
-			setBindedAndRefresh();
 		}
 	}
 	
@@ -620,7 +620,6 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			placeDialog.show();
-			setBindedAndRefresh();
 		}
 	}
 	
@@ -631,7 +630,6 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			dropDialog.show();
-			setBindedAndRefresh();
 		}
 	}
 	
@@ -641,8 +639,7 @@ public class View {
 	private class BindListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
-			bindDialog.show();
-			
+			bindDialog.show();	
 			setBindedAndRefresh();
 		}
 	}

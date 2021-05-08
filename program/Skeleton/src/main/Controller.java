@@ -58,7 +58,7 @@ public class Controller {
 	public void handleMove(String settlerID, String destType, String destID) {
 		Settler settler = game.getSettlerWithId(settlerID);
 		
-		if (destType.equals("asteroid"))
+		if (destType.equals("Asteroid"))
 			settler.move(game.getAsteroidWithId(destID));
 		else
 			settler.move(game.getStarGateWithId(destID));
@@ -80,15 +80,15 @@ public class Controller {
 		Settler settler = game.getSettlerWithId(settlerID);
 		
 		switch (buildType) {
-			case "robot":
+			case "Robot":
 				settler.buildRobot();
 				
 				break;
-			case "stargate":
+			case "Stargate":
 				settler.buildStarGate();
 				
 				break;
-			case "base":
+			case "Base":
 				settler.buildBase();
 				
 				break;

@@ -298,6 +298,7 @@ public class Game {
 		int numOfAsteroids = amountOfSuns * amountOfAsteroidsPerSun;
 		int asteroidIndex = rnd.nextInt(numOfAsteroids);
 		Asteroid startAsteroid = asteroids.get(asteroidIndex);
+		startAsteroid.setCloseToSun(false);
 		
 		for (int i = 0; i < amountOfSettlers; i++)
 		{

@@ -486,7 +486,9 @@ public class View {
 		
 		public void actionPerformed(ActionEvent e) {
 			controller.handleNew();
-			
+			tbTurnEvents.setText(null);
+			tbProperties.setText(null);
+
 			pPictureGraphicView.remove(image);
 			image.setImage(new ImageIcon("settler.png").getImage());
 			pPictureGraphicView.add(image);

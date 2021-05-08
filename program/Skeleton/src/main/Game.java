@@ -278,6 +278,23 @@ public class Game {
 			}
 		}
 		
+		int neighbourhoodAmount = amountOfSuns * amountOfAsteroidsPerSun;
+		
+		for (int i = 0; i < neighbourhoodAmount; i++) {
+			int first = rnd.nextInt(asteroids.size());
+			Asteroid firstAsteroid = asteroids.get(first);
+			
+			int second = rnd.nextInt(asteroids.size());
+			while (first == second) {
+				second = rnd.nextInt(asteroids.size());
+			}
+			
+			Asteroid secondAsteroid = asteroids.get(second);
+			
+			firstAsteroid.addNeighbour(secondAsteroid);
+			secondAsteroid.addNeighbour(firstAsteroid);
+		}
+		
 		int numOfAsteroids = amountOfSuns * amountOfAsteroidsPerSun;
 		int asteroidIndex = rnd.nextInt(numOfAsteroids);
 		Asteroid startAsteroid = asteroids.get(asteroidIndex);

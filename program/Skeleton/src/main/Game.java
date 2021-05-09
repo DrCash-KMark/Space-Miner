@@ -560,7 +560,7 @@ public class Game {
 		
 		s.setOwner(this);
 		
-		loadString = scanner.nextLine();
+		//loadString = scanner.nextLine();
 	}
 	
 	/**
@@ -1348,7 +1348,7 @@ public class Game {
 				saveString += "Asteroid:\n" + asteroid.genSaveString() + "\n----------------------------------------------------\n";
 				
 				for (Material material : asteroid.getMaterials()) {
-					saveString += "Material:\n" + material.genUIString() + "\n----------------------------------------------------\n";
+					saveString += "Material:\n" + material.genSaveString() + "\n----------------------------------------------------\n";
 				}
 				
 				for (Building building : asteroid.getBuildings()) {

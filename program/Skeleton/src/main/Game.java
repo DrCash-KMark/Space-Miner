@@ -28,6 +28,8 @@ import java.util.Scanner;
  *
  */
 public class Game {
+	private View view; 
+	
 	//Lists of objects present in game:
 	private List<Settler> settlers = new ArrayList<Settler>();
 
@@ -43,6 +45,10 @@ public class Game {
 	private List<NonPlayer> nonPlayersToRemove = new ArrayList<NonPlayer>();
 	
 	private List<String> turnEvents = new ArrayList<String>();
+	
+	public void setView(View _view) {
+		view = _view;
+	}
 	
 	/**
 	 * Adds a string to the turn events
@@ -158,6 +164,7 @@ public class Game {
 	 * Finishes the game.
 	 */
 	public void gameWon() {
+		view.youWin();
 	}
 	
 	/**
@@ -191,6 +198,8 @@ public class Game {
 			nonPlayersToRemove.add(nonPlayer);
 		
 		cleanup();*/
+		
+		view.gameOver();
 	}
 	
 	/**

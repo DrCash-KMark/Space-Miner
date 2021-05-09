@@ -21,6 +21,7 @@ public class Main {
 		Game game = new Game();
 		Controller controller = new Controller();
 		View view = new View();
+		game.setView(view);
 		controller.setGame(game);
 		controller.setView(view);
 		view.setController(controller);

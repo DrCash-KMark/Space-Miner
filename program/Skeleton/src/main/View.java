@@ -549,6 +549,7 @@ public class View {
 		image.setImage(new ImageIcon("graphical elements/gameover.png").getImage());
 		pPictureGraphicView.add(image);
 		pPictureGraphicView.revalidate();
+		System.out.print("alma");
 		buttonSetInWinAndGameOver();
 	}
 	

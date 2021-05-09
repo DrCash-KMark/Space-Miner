@@ -531,7 +531,7 @@ public class View {
 	/**
 	 * A játék megnyeréséhez kapcsolódó felületi beállítások.
 	 */
-	public void YouWin() {
+	public void youWin() {
 		pPictureGraphicView.remove(image);
 		image.setImage(new ImageIcon("graphical elements/gamewin.png").getImage());
 		pPictureGraphicView.add(image);
@@ -542,7 +542,7 @@ public class View {
 	/**
 	 * A játék elvesztéséhez kapcsolódó felületi beállítások.
 	 */
-	public void GameOver() {
+	public void gameOver() {
 		pPictureGraphicView.remove(image);
 		image.setImage(new ImageIcon("graphical elements/gameover.png").getImage());
 		pPictureGraphicView.add(image);

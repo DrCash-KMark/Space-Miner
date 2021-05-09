@@ -116,6 +116,7 @@ public class View {
 		bLoad = new JButton("Load");
 		bExit = new JButton("Exit");
 		tbTurnEvents = new JTextArea();
+		tbTurnEvents.setEditable(false);
 		
 		pGraphicView = new JPanel();
 		pPictureGraphicView = new JPanel();
@@ -141,6 +142,7 @@ public class View {
 		bBind = new JButton("Bind");
 		bBind.setEnabled(false);
 		tbProperties = new JTextArea();
+		tbProperties.setEditable(false);
 		
 		pMainBottomLabel = new JPanel();
 		lMainBottomLabel = new JLabel("Created by: Brainstormers");

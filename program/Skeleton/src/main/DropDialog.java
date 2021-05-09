@@ -71,6 +71,9 @@ public class DropDialog extends DialogSelect2 {
 			materialCombo.removeAllItems();
 			JComboBox<String> src = (JComboBox<String>) e.getSource();
 			String settlerID = (String) src.getSelectedItem();
+			if(settlerID == null || settlerID == "") {
+				return;
+			}
 			String[] availableItems = game.getSettlersMaterials(settlerID);
 			for(int i = 0; i < availableItems.length; i++) {
 				materialCombo.addItem(availableItems[i]);

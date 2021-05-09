@@ -73,6 +73,9 @@ public class PlaceDialog extends DialogSelect2 {
 			gateCombo.removeAllItems();
 			JComboBox<String> src = (JComboBox<String>) e.getSource();
 			String settlerID = (String) src.getSelectedItem();
+			if(settlerID == null || settlerID == "") {
+				return;
+			}
 			String[] availableGates = game.getSettlersGates(settlerID);
 			for(int i = 0; i < availableGates.length; i++) {
 				gateCombo.addItem(availableGates[i]);

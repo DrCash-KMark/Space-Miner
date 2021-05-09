@@ -27,20 +27,20 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 //  @ Project : Space-Miner
 //  @ File Name : View.java
 //  @ Date : 07/05/2021
-//  @ Author : B�rk�nyi Csaba
+//  @ Author : Bárkányi Csaba
 //
 //
 
 
 
 /**
- * Represent the application view.
- * @author B�rk�nyi
+ * Az alkalmazás nézetét megvalósító osztály.
+ * @author Bárkányi
  *
  */
 public class View {
-	//The elements of the view.
-		//Main window.
+	//A nézet egyes fő elemei.
+		//Főablak.
 	private JFrame fMainWindow;
 	private JPanel pMainWindow;
 	private JPanel pMainWindowborder;
@@ -48,7 +48,7 @@ public class View {
 	private JLabel lMainLabel;
 	private JPanel pMainBottomLabel;
 	private JLabel lMainBottomLabel;
-		//Left side panel.
+		//Bal oldali ablakrész.
 	private JPanel pTurnEvents;
 	private JPanel pLabelTurnEvents;
 	private JLabel lTurnEvents;
@@ -60,7 +60,7 @@ public class View {
 	private JButton bExit;
 	private JButton bNextTurn;
 	private JTextArea tbTurnEvents;
-		//Panel on the center.
+		//Az ablak középső részének elemei..
 	private JPanel pGraphicView;
 	private JPanel pPictureGraphicView;
 	private JPanel bSetGraphicView;
@@ -77,7 +77,7 @@ public class View {
 	private BuildDialog buildDialog;
 	private PlaceDialog placeDialog;
 	private GraphicalPanel image;
-		//Right side panel.
+		//A jobb oldali ablak elemei.
 	private JPanel pProperties;
 	private JLabel lProperties;
 	private JPanel pLabelProperties;
@@ -91,7 +91,9 @@ public class View {
 	private Game game;
 	
 	/**
-	 * Constructor which create the elements in the view.
+	 * Konstruktor.
+	 * Létrehozza az ablak elemeit,valamint beállítja a kezdő szöveget és
+	 * meghívja a további ablakfelépítő függvényeket.
 	 */
 	public View(){
 		
@@ -110,6 +112,7 @@ public class View {
 		bNextTurn.setEnabled(false);
 		bNew = new JButton("New");
 		bSave = new JButton("Save");
+		bSave.setEnabled(false);
 		bLoad = new JButton("Load");
 		bExit = new JButton("Exit");
 		tbTurnEvents = new JTextArea();
@@ -141,8 +144,8 @@ public class View {
 		
 		pMainBottomLabel = new JPanel();
 		lMainBottomLabel = new JLabel("Created by: Brainstormers");
-		
-		image = new GraphicalPanel(new ImageIcon("main.png").getImage());
+		//Kezdőkép beállítása.
+		image = new GraphicalPanel(new ImageIcon("graphical elements/main.png").getImage());
 		image.setPreferredSize(new Dimension(500, 545));
 		pPictureGraphicView.add(image);
 	}
@@ -150,7 +153,7 @@ public class View {
 //Get/Set-----------------------------------------------------------------
 	
 	/**
-	 * Setter for the controller.
+	 * Setter, amely beállítja a controller tagváltozót.
 	 * @param boolean: isRadio
 	 */
 	public void setController(Controller controller) {
@@ -158,7 +161,7 @@ public class View {
 	}
 	
 	/**
-	 * Setter for the game.
+	 * Setter, amely beállítja a game tagváltozót.
 	 * @param boolean: isRadio
 	 */
 	public void setGame(Game game) {
@@ -168,8 +171,9 @@ public class View {
 //Own methods:----------------------------------------------------------------------------
 	
 	/**
-	 * Sets the buttons events and create the dialogs.
-	 * It start to build the view.
+	 * Beállítja a gombok eseménykezelőit, valamint
+	 * létrehozza a dialógusablakokat és továbbhívja az
+	 * ablak létrehozásának következő metódusát.
 	 */
 	public void Display() {
 		BuildView();
@@ -198,7 +202,7 @@ public class View {
 		
 		bBind.addActionListener( new BindListener());
 		
-		//Set visible after all settings.
+		//Csak minden beállítása után jelenik meg az ablak.
 		Image icon = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB_PRE);
 		fMainWindow.setIconImage(icon);
 		fMainWindow.setLocationRelativeTo(null);
@@ -206,7 +210,7 @@ public class View {
 	}
 	
 	/**
-	 * Creates the view in a bigger pieces.
+	 * Elvégzi az ablak alapvető rendezését és beállításait.
 	 */
 	public void BuildView() {
 		fMainWindow.setBackground(Color.WHITE);
@@ -238,7 +242,7 @@ public class View {
 	    pMainLabel.add(lMainLabel,BorderLayout.CENTER);
 	    pMainWindow.add(pMainLabel, BorderLayout.PAGE_START);
 	    
-	    //Creates the smaller view elements.
+	    //Továbbhívja az ablak egyes részeinek létrehozására.
 	    viewTurnEvents();
 	    viewProperties();
 	    viewGraphicView();
@@ -251,7 +255,7 @@ public class View {
 	}
 	
 	/**
-	 * Creates the panel on the windows center.
+	 * Elrendezi a középső ablakrész elemeit.
 	 */
 	public void viewGraphicView() {
 		pGraphicView.setBackground(Color.WHITE);
@@ -272,7 +276,7 @@ public class View {
 	}
 	
 	/**
-	 * Sets the Graphical panel buttons position and other properties of the buttons.
+	 * BEállítja a középső ablak gombjaiknak helyzetét és stílusát.
 	 */
 	public void viewGraphicButtonSet() {
 		buttonStyleSet(bMove,162,75);
@@ -285,7 +289,7 @@ public class View {
 		
 		GridBagLayout buttonSet = new GridBagLayout();
 		bSetGraphicView.setLayout(buttonSet);
-		//Sets the button in the given position with the given insets. 
+		//Beállítja a gombok helyzetét a megadottra. 
 		buttonPositionSet(bSetGraphicView,bMove,new Insets(5,5,5,0), 0, 0, 1, 1);
 		buttonPositionSet(bSetGraphicView,bDrill,new Insets(5,5,5,0), 1, 0, 1, 1);
 		buttonPositionSet(bSetGraphicView,bMine,new Insets(5,5,5,5), 2, 0, 1, 1);
@@ -295,7 +299,7 @@ public class View {
 	}
 	
 	/**
-	 * Sets the button in the given position with the given insets.
+	 * A jobb oldali ablak elrendezését hajtja végre.
 	 */
 	public void viewProperties() {
 		pProperties.setBackground(Color.WHITE);
@@ -318,7 +322,7 @@ public class View {
 		
 		GridBagLayout labelPropertiesLayout = new GridBagLayout();
 		pProperties.setLayout(labelPropertiesLayout);
-		//Adds the given element to the first panel.
+		//Hozzáadja az adott elemeket a középső ablakhoz.
 		setSidePanel(pProperties, pLabelProperties, 0, 0);
 		setSidePanel(pProperties, mProperties, 0, 1);
 		setSidePanel(pProperties, bSetProperties, 0, 2);
@@ -327,7 +331,7 @@ public class View {
 	}
 	
 	/**
-	 * Sets the Properties panel buttons position and other properties of the buttons.
+	 * Beállítja a középső ablak gombjainak elhelyezését és stílusát.
 	 */
 	public void viewPropertiesSet() {
 		buttonStyleSet(bBind,500,80);
@@ -339,7 +343,7 @@ public class View {
 	}
 	
 	/**
-	 * Creates the left panel.
+	 * Létrehozza a bal oldali panel elrendezését.
 	 */
 	public void viewTurnEvents() {
 		pTurnEvents.setBackground(Color.WHITE);
@@ -370,8 +374,7 @@ public class View {
 	}
 	
 	/**
-	 * Sets the Turn Events panel buttons in the right positions.
-	 * It sets the buttons properties also.
+	 * Beállítja a jobb oldali panel helyzetét és elemeit.
 	 */
 	public void viewTurnEventsButtonSet() {
 		buttonStyleSet(bNextTurn,500,80);
@@ -392,8 +395,11 @@ public class View {
 	}
 	
 	/**
-	 * Creates individual scrollable panel for the side TextArea.
-	 * It changes the default colors and style.
+	 * Létrehoz a szöveges mezők számára egy ScrollPane-t, hogy a nem
+	 * látható részek is elérhetőek legyenek.
+	 * 
+	 * @param JPanel panel: Panel, amelyre el akarjuk helyezni.
+	 * @param JTextArea textArea, A szöveges mező, amelyre használni akarjuk.
 	 */
 	public void ScrolledPaneForText(JPanel panel, JTextArea textArea) {
 		JScrollPane scroll = new JScrollPane (textArea, 
@@ -429,7 +435,11 @@ public class View {
 	
 	
 	/**
-	 * Sets the side panels elements in the given positions.
+	 * Beállítja az oldalsó panelek elmeinek a megadott értékeket.
+	 * @param JPanel panel: tartalmazó panel
+	 * @param JPanel contained: tartalmazott panel
+	 * @param int gridx: beállítandó helyzet
+	 * @param int gridy: beállítandó helyzet
 	 */
 	public void setSidePanel(JPanel panel, JPanel contained, int gridx, int gridy) {
 		GridBagConstraints gbc = new GridBagConstraints();
@@ -440,7 +450,10 @@ public class View {
 	}
 	
 	/**
-	 * Sets the given button style.
+	 * Beállítja a gomb stílusát.
+	 * @param JButton button : cél gomb
+	 * @param int width: beállítandó szélesség
+	 * @param int height: beállítandó magasság
 	 */
 	void buttonStyleSet(JButton button,int width, int height) {
 		button.setBackground(Color.GRAY);
@@ -451,7 +464,14 @@ public class View {
 	}
 	
 	/**
-	 * Sets the given button in the panel with the given properties.
+	 * Beállítja az adott panelra a gomb helyzetét.
+	 * @param JPanel panel: tartalmazó panel
+	 * @param JButton buttun: beállítandó gomb
+	 * @param Insets ins: tartás beállítása
+	 * @param int gridx: x pozíció
+	 * @param int gridy: y pozíció
+	 * @param int gridwidth: szélesség
+	 * @param int gridheight: magasság
 	 */
 	void buttonPositionSet(JPanel panel,JButton buttun,Insets ins, int gridx, int gridy, int gridwidth, int gridheight) {
 		GridBagConstraints gbcButtonSet = new GridBagConstraints();
@@ -464,10 +484,98 @@ public class View {
 		panel.add(buttun,gbcButtonSet);
 	}
 	
+	/**
+	 * Beállítja a középső képet settler részére vagy
+	 * asteroida számára megfelelőnek.
+	 */
+	public void setBindedAndRefresh(){
+		if(controller.getBoundAsteroid()!=null) {
+			pPictureGraphicView.remove(image);
+			image.setImage(new ImageIcon("graphical elements/asteroid.png").getImage());
+			pPictureGraphicView.add(image);
+			tbProperties.setText(null);
+			tbProperties.append(controller.getBoundAsteroid().genUIString());
+			pPictureGraphicView.revalidate();
+		}
+		else if(controller.getBoundSettler()!=null){
+			pPictureGraphicView.remove(image);
+			image.setImage(new ImageIcon("graphical elements/settler.png").getImage());
+			pPictureGraphicView.add(image);
+			tbProperties.setText(null);
+			tbProperties.append(controller.getBoundSettler().genUIString());
+			pPictureGraphicView.revalidate();
+		}
+	}
+	
+	/**
+	 * Beállítja a játék végén, hogy mely
+	 * gombok elérhetők a felhasználók számára.
+	 */
+	public void buttonSetInWinAndGameOver() {
+		bNextTurn.setEnabled(false);
+		bNew.setEnabled(true);
+		bSave.setEnabled(false);
+		bLoad.setEnabled(true);
+		bExit.setEnabled(true);
+		
+		bMove.setEnabled(false);
+		bDrill.setEnabled(false);
+		bMine.setEnabled(false);
+		bDrop.setEnabled(false);
+		bBuild.setEnabled(false);
+		bPlace.setEnabled(false);
+		
+		bBind.setEnabled(false);
+	}
+	
+	/**
+	 * A játék megnyeréséhez kapcsolódó felületi beállítások.
+	 */
+	public void YouWin() {
+		pPictureGraphicView.remove(image);
+		image.setImage(new ImageIcon("graphical elements/gamewin.png").getImage());
+		pPictureGraphicView.add(image);
+		pPictureGraphicView.revalidate();
+		buttonSetInWinAndGameOver();
+	}
+	
+	/**
+	 * A játék elvesztéséhez kapcsolódó felületi beállítások.
+	 */
+	public void GameOver() {
+		pPictureGraphicView.remove(image);
+		image.setImage(new ImageIcon("graphical elements/gameover.png").getImage());
+		pPictureGraphicView.add(image);
+		pPictureGraphicView.revalidate();
+		buttonSetInWinAndGameOver();
+	}
+	
+	/**
+	 * Beállítja az a játék elkezdése utána kezdő állípotokat.
+	 */
+	public void gameStartSet() {
+		tbTurnEvents.setText(null);
+		tbProperties.setText(null);
+		pPictureGraphicView.remove(image);
+		image.setImage(new ImageIcon("graphical elements/settler.png").getImage());
+		pPictureGraphicView.add(image);
+		tbProperties.append(controller.getBoundSettler().genUIString());
+		pPictureGraphicView.revalidate();
+		
+		bNextTurn.setEnabled(true);
+		bMove.setEnabled(true);
+		bMine.setEnabled(true);
+		bPlace.setEnabled(true);
+		bDrill.setEnabled(true);
+		bDrop.setEnabled(true);
+		bBuild.setEnabled(true);
+		bBind.setEnabled(true);
+		bSave.setEnabled(true);
+	}
 //Internal classes-----------------------------------------------------------------
 	
 	/**
-	 * Event listener for the Next Turn button.
+	 * Eseménykezelő a NextTrun gom részére.
 	 */
 	private class NextTurnListener implements ActionListener{
 		
@@ -480,81 +588,31 @@ public class View {
 	}
 	
 	/**
-	 * Event listener for the New button.
+	 * Eseménykezelő a New gomb részére.
 	 */
 	private class NewListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
 			controller.handleNew();
-			tbTurnEvents.setText(null);
-			tbProperties.setText(null);
 
-			pPictureGraphicView.remove(image);
-			image.setImage(new ImageIcon("settler.png").getImage());
-			pPictureGraphicView.add(image);
-			tbProperties.append(controller.getBoundSettler().genUIString());
-			pPictureGraphicView.revalidate();
-			
-			bNextTurn.setEnabled(true);
-			bMove.setEnabled(true);
-			bMine.setEnabled(true);
-			bPlace.setEnabled(true);
-			bDrill.setEnabled(true);
-			bDrop.setEnabled(true);
-			bBuild.setEnabled(true);
-			bBind.setEnabled(true);
+			gameStartSet();
 		}
 	}
 	
 	/**
-	 * The selected asteroid and settler properties sets in display.
-	 */
-	public void setBindedAndRefresh(){
-		if(controller.getBoundAsteroid()!=null) {
-			pPictureGraphicView.remove(image);
-			image.setImage(new ImageIcon("asteroid.png").getImage());
-			pPictureGraphicView.add(image);
-			tbProperties.setText(null);
-			tbProperties.append(controller.getBoundAsteroid().genUIString());
-			pPictureGraphicView.revalidate();
-		}
-		else if(controller.getBoundSettler()!=null){
-			pPictureGraphicView.remove(image);
-			image.setImage(new ImageIcon("settler.png").getImage());
-			pPictureGraphicView.add(image);
-			tbProperties.setText(null);
-			tbProperties.append(controller.getBoundSettler().genUIString());
-			pPictureGraphicView.revalidate();
-		}
-	}
-	
-	/**
-	 * Event listener for the Load button.
+	 * Eseménykezelő a Load gomb részére.
 	 */
 	private class LoadListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
 			controller.handleLoad();
 			
-			pPictureGraphicView.remove(image);
-			image.setImage(new ImageIcon("settler.png").getImage());
-			pPictureGraphicView.add(image);
-			tbProperties.append(controller.getBoundSettler().genUIString());
-			pPictureGraphicView.revalidate();
-			
-			bNextTurn.setEnabled(true);
-			bMove.setEnabled(true);
-			bMine.setEnabled(true);
-			bPlace.setEnabled(true);
-			bDrill.setEnabled(true);
-			bDrop.setEnabled(true);
-			bBuild.setEnabled(true);
-			bBind.setEnabled(true);
+			gameStartSet();
 		}
 	}
 	
 	/**
-	 * Event listener for the Save button.
+	 * Eseménykezelő a Save gomb részére.
 	 */
 	private class SaveListener implements ActionListener{
 		
@@ -564,7 +622,7 @@ public class View {
 	}
 	
 	/**
-	 * Event listener for the Exit button.
+	 * Eseménykezelő a Exit gomb részére.
 	 */
 	private class ExitListener implements ActionListener{
 		
@@ -574,7 +632,7 @@ public class View {
 	}
 	
 	/**
-	 * Event listener for the Move button.
+	 * Eseménykezelő a Move gomb részére.
 	 */
 	private class MoveListener implements ActionListener{
 		
@@ -584,7 +642,7 @@ public class View {
 	}
 	
 	/**
-	 * Event listener for the Mine button.
+	 * Eseménykezelő a Mine gomb részére.
 	 */
 	private class MineListener implements ActionListener{
 		
@@ -594,7 +652,7 @@ public class View {
 	}
 	
 	/**
-	 * Event listener for the Drill button.
+	 * Eseménykezelő a Drill gomb részére.
 	 */
 	private class DrillListener implements ActionListener{
 		
@@ -604,7 +662,7 @@ public class View {
 	}
 	
 	/**
-	 * Event listener for the Build button.
+	 * Eseménykezelő a Build gomb részére.
 	 */
 	private class BuildListener implements ActionListener{
 		
@@ -614,7 +672,7 @@ public class View {
 	}
 	
 	/**
-	 * Event listener for the Place button.
+	 * Eseménykezelő a PLace gomb részére.
 	 */
 	private class PlaceListener implements ActionListener{
 		
@@ -624,7 +682,7 @@ public class View {
 	}
 	
 	/**
-	 * Event listener for the Drop button.
+	 * Eseménykezelő a Drop gomb részére.
 	 */
 	private class DropListener implements ActionListener{
 		
@@ -634,7 +692,7 @@ public class View {
 	}
 	
 	/**
-	 * Event listener for the Bind button.
+	 * Eseménykezelő a Move gomb részére.
 	 */
 	private class BindListener implements ActionListener{
 		
@@ -645,15 +703,14 @@ public class View {
 	}
 	
 	/**
-	 * Represent a panel with has a picture in the background.
+	 * Egy kép panelt reprezentál, amelyre be lehet állítani a
+	 * megadott képet.
 	 */
 	private class GraphicalPanel extends JPanel {
 
-		  private Image img;
-
-		  public GraphicalPanel(String img) {
-		    this(new ImageIcon(img).getImage());
-		  }
+		private static final long serialVersionUID = 1518683176124655681L;
+		
+		private Image img;
 
 		  public GraphicalPanel(Image img) {
 			  setImage(img);

@@ -11,41 +11,41 @@
 +---------------+
 
 Funkciók:
-2. oldal:	Az aszteroidák naphoz viszonyított távolsága nem változik. <- Tud változni!
+X	2. oldal:	Az aszteroidák naphoz viszonyított távolsága nem változik. <- Tud változni!
 
-3. oldal (legfelül):	A napok véletlen időnként napkitörést idéznek elő, amely az egész aszteroidaövet végig futja. <- Nem futja végig az egész övet, csak az adott nap aszteroidáit!
+X	3. oldal (legfelül):	A napok véletlen időnként napkitörést idéznek elő, amely az egész aszteroidaövet végig futja. <- Nem futja végig az egész övet, csak az adott nap aszteroidáit!
 
-3. oldal: Az aszteroidák magja mindig csak egyfajta nyersanyagból épül fel, ha nem üreges. <- Lehet benne többféle is.
+X	3. oldal: Az aszteroidák magja mindig csak egyfajta nyersanyagból épül fel, ha nem üreges. <- Lehet benne többféle is.
 
-3. oldal: Kiemelendő, hogy a telepes a már nála lévő nyersanyagokat visszahelyezheti egy üreges aszteroida magjába, de természetesen egy aszteroidába csak egyfajta nyersanyagot helyezhet vissza és egy körben csak egy egységnyit. <- Nem csak egyfélét helyezhet vissza.
+X	3. oldal: Kiemelendő, hogy a telepes a már nála lévő nyersanyagokat visszahelyezheti egy üreges aszteroida magjába, de természetesen egy aszteroidába csak egyfajta nyersanyagot helyezhet vissza és egy körben csak egy egységnyit. <- Nem csak egyfélét helyezhet vissza.
 
-3. oldal: A telepes az utazása során kinyert nyersanyagokat felhasználva képes a kapukat előállítani, amelyekből egyszerre kettő darab fér el nála. <-  Már három fér el nála.
+X	3. oldal: A telepes az utazása során kinyert nyersanyagokat felhasználva képes a kapukat előállítani, amelyekből egyszerre kettő darab fér el nála. <-  Már három fér el nála.
 
-3. oldal: A robotok csak szomszédos aszteroidák közötti mozgásra és fúrásra képesek. <- Nem csak szomszédos aszteroidára, hanem kapura is léphetnek.
+X	3. oldal: A robotok csak szomszédos aszteroidák közötti mozgásra és fúrásra képesek. <- Nem csak szomszédos aszteroidára, hanem kapura is léphetnek.
 
-3. oldal: Ha azonban sikerült minden fajta nyersanyagból legalább egy egységet kibányásznia és egy közös aszteroidára összegyűjteni azokat, akkor a telepesek felépíthetik a bázist és megnyerik a játékot. <- 3 egység kell mindből.
+X	3. oldal: Ha azonban sikerült minden fajta nyersanyagból legalább egy egységet kibányásznia és egy közös aszteroidára összegyűjteni azokat, akkor a telepesek felépíthetik a bázist és megnyerik a játékot. <- 3 egység kell mindből.
 
-Írni kéne a szublimálásról.
+X	Írni kéne a szublimálásról.
 
 --------------------------------------------------------------------------------------------
 
 Use-case leírások:
 
 fúrás:
-2b: Ha az aszteroida tartalma radioaktív és az aszteroida napközelben tartózkodik, felrobban az aszteroida. <- Nem robban fel azonnal.
+X	2b: Ha az aszteroida tartalma radioaktív és az aszteroida napközelben tartózkodik, felrobban az aszteroida. <- Nem robban fel azonnal.
 
-bányászás:  Bővíteni kellene, hogy az Alien is tudjon bányászni.	<- Elég a fogalmazást megváltoztatni.
+X	bányászás:  Bővíteni kellene, hogy az Alien is tudjon bányászni.	<- Elég a fogalmazást megváltoztatni.
 
 visszahelyezés:
-1b: Ha a telepes olyan átfúrt köpenyű aszteroidán tartózkodik, amely magjában található nyersanyag, de fér még ebből a nyersanyag típusból, akkor a saját tárolójában lévő nyersanyagok közül kiválaszthat ilyen típusú nyersanyagból egy egységnyit visszahelyezésre. <- Nem csak egyféle nyersanyag lehet egy aszteroidában.
+X	1b: Ha a telepes olyan átfúrt köpenyű aszteroidán tartózkodik, amely magjában található nyersanyag, de fér még ebből a nyersanyag típusból, akkor a saját tárolójában lévő nyersanyagok közül kiválaszthat ilyen típusú nyersanyagból egy egységnyit visszahelyezésre. <- Nem csak egyféle nyersanyag lehet egy aszteroidában.
 
 autonóm cselekvés:
-A robot autonóm módon dönt néhány cselekvés végrehajtásáról. Ezekből körönként egyet tud elvégezni a felhasználó beavatkozása nélkül. <- Nem csak robot, hanem űrlény is.
-1a, 1b
+X	A robot autonóm módon dönt néhány cselekvés végrehajtásáról. Ezekből körönként egyet tud elvégezni a felhasználó beavatkozása nélkül. <- Nem csak robot, hanem űrlény is.
+X	1a, 1b
 
 napvihar:
-1a. Ha napvihar alakul ki, a nem átfúrt köpenyű aszteroidán tartózkodó vagy entitások megsemmisülnek.
-1b. Ha napvihar közben a telepesek vagy robotok átfúrt köpenyű aszteroidán tartózkodnak, akkor megmenekülnek a napvihartól. <- Nem csak átfúrt köpenyű, hanem üreges aszteroida is kell.
+X	1a. Ha napvihar alakul ki, a nem átfúrt köpenyű aszteroidán tartózkodó vagy entitások megsemmisülnek.
+X	1b. Ha napvihar közben a telepesek vagy robotok átfúrt köpenyű aszteroidán tartózkodnak, akkor megmenekülnek a napvihartól. <- Nem csak átfúrt köpenyű, hanem üreges aszteroida is kell.
 
 Use-case diagram:
 A bányászást is inklúdolnia kell az Autonóm cselekvésnek!
@@ -56,11 +56,11 @@ A bányászást is inklúdolnia kell az Autonóm cselekvésnek!
 
 Szótár:
 
-aktív teleportkapu: Egy teleportkapu akkor aktív, ha el van helyezve egy aszteroidán (tehát nincsen elpusztítva, illetve nem egy telepesnél van). <- =működés???
+X	aktív teleportkapu: Egy teleportkapu akkor aktív, ha el van helyezve egy aszteroidán (tehát nincsen elpusztítva, illetve nem egy telepesnél van). <- =működés???
 
-napkitörés: Egy random esemény mely az egész játéktérre kihat s annak elemeivel az elemek tulajdonságának megfelelően interaktál. <- Nem hat ki a teljes játéktérre.
+X	napkitörés: Egy random esemény mely az egész játéktérre kihat s annak elemeivel az elemek tulajdonságának megfelelően interaktál. <- Nem hat ki a teljes játéktérre.
 
-radioaktív: Olyan speciális nyersanyag, amely napközelben kibányászva felrobban. <- Nem azonnal...
+X	radioaktív: Olyan speciális nyersanyag, amely napközelben kibányászva felrobban. <- Nem azonnal...
 
 + Kellene a szublimálás.
 
@@ -83,19 +83,19 @@ Azon aszteroidák, amelyek magjában vízjég van új eseménnyel bővültek. Az
 
 Objektum katalógus:
 
-2. oldal: Azon objektum, amin telepesek és robotok állhatnak, valamint azon égitestek, amelyek között közlekedhetnek. <- Űrlények is.
+X	2. oldal: Azon objektum, amin telepesek és robotok állhatnak, valamint azon égitestek, amelyek között közlekedhetnek. <- Űrlények is.
 
-2. oldadl: A sziklarétegek alatt legfeljebb egyfajta nyersanyag található meg minden esetben. <- Nem csak egyfajta nyersanyag található meg.
+X	2. oldadl: A sziklarétegek alatt legfeljebb egyfajta nyersanyag található meg minden esetben. <- Nem csak egyfajta nyersanyag található meg.
 
-2. oldadl: Ha egy telepes vagy egy robot egy üreges aszteroidán tartózkodik akkor, ha napszél közeledik annak bekövetkezése előtt az üregben elbújik magától. <- Átfúrtnak is kell lennie.
+X	2. oldadl: Ha egy telepes vagy egy robot egy üreges aszteroidán tartózkodik akkor, ha napszél közeledik annak bekövetkezése előtt az üregben elbújik magától. <- Átfúrtnak is kell lennie.
 
-2. oldal: Ha egy aszteroida felrobban, akkor a rajta álló telepesek meghalnak, valamint a rajta lévő robotok egy szomszédos aszteroidára sodródnak. <- Űrlényről is legyen szó!
+X	2. oldal: Ha egy aszteroida felrobban, akkor a rajta álló telepesek meghalnak, valamint a rajta lévő robotok egy szomszédos aszteroidára sodródnak. <- Űrlényről is legyen szó!
 
-2. A pályán elhelyezkedve napkitöréseket okoznak, amelyek az egész játéktéren végigsöpörnek.<- Nem az egész játéktéren.
+X	2. A pályán elhelyezkedve napkitöréseket okoznak, amelyek az egész játéktéren végigsöpörnek.<- Nem az egész játéktéren.
 
-3. oldal: A játékos által irányított telepes képes építeni bizonyos nyersanyagok bírtokában, de egyszerre mindig csak egy párt. <- Nem csak egy párt lehet.
+X	3. oldal: A játékos által irányított telepes képes építeni bizonyos nyersanyagok bírtokában, de egyszerre mindig csak egy párt. <- Nem csak egy párt lehet.
 
-3. oldal: Ha az aszteroida, ahonnan bányásszák napközelben van, akkor az aszteroida felrobban. <- Nincs szó a nem rögtöni felrobbanásról.
+X	3. oldal: Ha az aszteroida, ahonnan bányásszák napközelben van, akkor az aszteroida felrobban. <- Nincs szó a nem rögtöni felrobbanásról.
 
 ----------------------------------------------------------------------
 
@@ -159,7 +159,7 @@ Interfészek
 Controllable, ReactsToSunFlare
 
 Hiányzó attribútumok
-hadActionThisTurn:	bool	Végzett-e műveletet a jelenlegi játékkörben.
+hadActionThisTurn:	bool	Végzett-e műveletet a jelenlegi játékkörben?
 owner:	Game				...
 id: String	Egy adott objektumot azonosító egyedi jelölés.
 
@@ -302,7 +302,7 @@ startTurn()																		Lezárja az előző kört. Megkezdi az újat. Felel
 Ice
 -------------------------------------------------------
 Ősosztályok
-Printable -> Material -> Coal
+Printable -> Material -> Ice
 
 Attribútumok
 canEvaporate : boolean	El tud-e párologni az anyag egy aszteroida belsejéből?

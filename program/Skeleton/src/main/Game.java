@@ -318,24 +318,6 @@ public class Game {
 			settlers.add(settler);
 		}
 		
-		// CHEAT SETTLER PLS REMOVE FROM PRODUCTION THX
-		Settler settler = new Settler();
-		settler.setOwner(this);
-		settler.setAsteroid(startAsteroid);
-		startAsteroid.addSettler(settler);
-		settlers.add(settler);
-		
-		Inventory inv = settler.getInventory();
-		inv.setCapacityM(1000);
-		
-		for (int i = 0; i < 100; i++) {
-			inv.addMaterial(new Coal());
-			inv.addMaterial(new Iron());
-			inv.addMaterial(new Uran());
-			inv.addMaterial(new Ice());
-		}
-		// -------------------------------------------
-		
 		for (int i = 0; i < amountOfAliens; i++)
 		{
 			Asteroid randomAsteroid = asteroids.get(rnd.nextInt(numOfAsteroids));

@@ -12,6 +12,8 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -147,7 +149,7 @@ public class View {
 		pMainBottomLabel = new JPanel();
 		lMainBottomLabel = new JLabel("Created by: Brainstormers");
 		//Kezdőkép beállítása.
-		image = new GraphicalPanel(new ImageIcon("graphical elements/main.png").getImage());
+		image = new GraphicalPanel("graphical elements/main.png");
 		image.setPreferredSize(new Dimension(500, 545));
 		pPictureGraphicView.add(image);
 	}
@@ -491,21 +493,24 @@ public class View {
 	 * asteroida számára megfelelőnek.
 	 */
 	public void setBindedAndRefresh(){
-		if(controller.getBoundAsteroid()!=null) {
-			pPictureGraphicView.remove(image);
-			image.setImage(new ImageIcon("graphical elements/asteroid.png").getImage());
-			pPictureGraphicView.add(image);
-			tbProperties.setText(null);
-			tbProperties.append(controller.getBoundAsteroid().genUIString());
-			pPictureGraphicView.revalidate();
-		}
-		else if(controller.getBoundSettler()!=null){
-			pPictureGraphicView.remove(image);
-			image.setImage(new ImageIcon("graphical elements/settler.png").getImage());
-			pPictureGraphicView.add(image);
-			tbProperties.setText(null);
-			tbProperties.append(controller.getBoundSettler().genUIString());
-			pPictureGraphicView.revalidate();
+		if(image.getPath().equals("graphical elements/gamewin.png")==false &&
+				image.getPath().equals("graphical elements/gameover.png")==false) {
+			if(controller.getBoundAsteroid()!=null) {
+				pPictureGraphicView.remove(image);
+				image.setImageFromPath("graphical elements/asteroid.png");
+				pPictureGraphicView.add(image);
+				tbProperties.setText(null);
+				tbProperties.append(controller.getBoundAsteroid().genUIString());
+				pPictureGraphicView.revalidate();
+			}
+			else if(controller.getBoundSettler()!=null){
+				pPictureGraphicView.remove(image);
+				image.setImageFromPath("graphical elements/settler.png");
+				pPictureGraphicView.add(image);
+				tbProperties.setText(null);
+				tbProperties.append(controller.getBoundSettler().genUIString());
+				pPictureGraphicView.revalidate();
+			}
 		}
 	}
 	
@@ -534,9 +539,7 @@ public class View {
 	 * A játék megnyeréséhez kapcsolódó felületi beállítások.
 	 */
 	public void youWin() {
-		pPictureGraphicView.remove(image);
-		image.setImage(new ImageIcon("graphical elements/gamewin.png").getImage());
-		pPictureGraphicView.add(image);
+		image.setImageFromPath("graphical elements/gamewin.png");
 		pPictureGraphicView.revalidate();
 		buttonSetInWinAndGameOver();
 	}
@@ -545,11 +548,8 @@ public class View {
 	 * A játék elvesztéséhez kapcsolódó felületi beállítások.
 	 */
 	public void gameOver() {
-		pPictureGraphicView.remove(image);
-		image.setImage(new ImageIcon("graphical elements/gameover.png").getImage());
-		pPictureGraphicView.add(image);
+		image.setImageFromPath("graphical elements/gameover.png");
 		pPictureGraphicView.revalidate();
-		System.out.print("alma");
 		buttonSetInWinAndGameOver();
 	}
 	
@@ -559,9 +559,7 @@ public class View {
 	public void gameStartSet() {
 		tbTurnEvents.setText(null);
 		tbProperties.setText(null);
-		pPictureGraphicView.remove(image);
-		image.setImage(new ImageIcon("graphical elements/settler.png").getImage());
-		pPictureGraphicView.add(image);
+		image.setImageFromPath("graphical elements/settler.png");
 		tbProperties.append(controller.getBoundSettler().genUIString());
 		pPictureGraphicView.revalidate();
 		
@@ -587,6 +585,7 @@ public class View {
 			tbTurnEvents.setText(null);
 			tbTurnEvents.append(game.listTurnEvents());
 			setBindedAndRefresh();
+			pPictureGraphicView.revalidate();
 		}
 	}
 	
@@ -608,9 +607,11 @@ public class View {
 	private class LoadListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
-			controller.handleLoad();
-			
-			gameStartSet();
+			File tempFile = new File("game.txt");
+			if(tempFile.exists()) {
+				controller.handleLoad();
+				gameStartSet();
+			}
 		}
 	}
 	
@@ -714,13 +715,16 @@ public class View {
 		private static final long serialVersionUID = 1518683176124655681L;
 		
 		private Image img;
+		private String path;
 
-		  public GraphicalPanel(Image img) {
-			  setImage(img);
+		  public GraphicalPanel(String path) {
+			  setImageFromPath(path);
+			  this.path = path;
 		  }
 		  
-		  public void setImage(Image img) {
-			  this.img = img;
+		  public void setImageFromPath(String path) {
+			  this.path = path;
+			  this.img = new ImageIcon(path).getImage();
 			  Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
 			  setPreferredSize(size);
 			  setMinimumSize(size);
@@ -729,10 +733,13 @@ public class View {
 			  setLayout(null);
 		  }
 		  
+		  public String getPath() {
+			  return path;
+		  }
+		  
 		  public void paintComponent(Graphics g) {
 		    g.drawImage(img, 0, 0, null);
 		  }
-
 	}
 }
 

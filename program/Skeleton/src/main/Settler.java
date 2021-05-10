@@ -170,7 +170,7 @@ public class Settler extends Entity implements Drilling, Mining {
         //main.log(false, name, this.getClass().getName(), "buildStarGate()");
         if (this.inventory.isFullStarGates() == false) {
             LinkedList<Material> remainder = STARGATE_RECIPE.subSet(inventory.getMaterials());
-            if (remainder.size() == 0) {
+            if (remainder.size() == 0 && (inventory.getStarGatesCapacity()-inventory.getStarGatesCount())>=2) {
                 STARGATE_RECIPE.subtraction(inventory.getMaterials());
                 StarGate s1 = new StarGate();
                 //s1.setName("stargate");

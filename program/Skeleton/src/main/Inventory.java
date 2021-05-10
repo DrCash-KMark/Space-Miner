@@ -280,7 +280,7 @@ public class Inventory extends Printable{
 	 */
 	public void addStarGate(StarGate sg) {
 
-		if(sg != null && (starGates.size()<capacitySG || capacitySG == -1)) {
+		if(sg != null && (starGates.size()<capacitySG-1 || capacitySG == -1)) {
 			starGates.add(sg);
 		}
 	}

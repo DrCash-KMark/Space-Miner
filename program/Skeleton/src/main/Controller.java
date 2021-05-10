@@ -34,15 +34,12 @@ public class Controller {
 	
 	public void handleNew() {
 		game.initGame(false);
-		//Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi 
 		String[] settlers = game.getSettlerIds();
 		boundSettler = game.getSettlerWithId(settlers[0]);
 	}
 	
 	public void handleLoad() {
 		game.loadGame();
-		
-		//Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi Csabi 
 		String[] settlers = game.getSettlerIds();
 		boundSettler = game.getSettlerWithId(settlers[0]);
 	}
